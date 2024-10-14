@@ -1,0 +1,84 @@
+
+%╔════════════════════════════╗
+%║		Szablon wykonał		  ║
+%║	mgr inż. Dawid Kotlarski  ║
+%║		  06.10.2024		  ║
+%╚════════════════════════════╝
+
+\documentclass[12pt,a4paper]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{tabularray}
+
+\geometry{legalpaper, margin=1.5cm}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{document}
+	
+\begin{center}
+	\Huge RAPORT
+\end{center}
+
+\begin{table}[h!]
+	\centering
+	\begin{tblr}{
+			width = \linewidth,
+			colspec = {Q[156]Q[156]Q[156]Q[156]Q[156]Q[156]},
+			row{1} = {c},
+			column{4} = {c},
+			column{6} = {c},
+			cell{1}{1} = {c=6}{0.936\linewidth},
+			cell{2}{2} = {c=5}{0.803\linewidth},
+			cell{3}{2} = {c=5}{0.803\linewidth},
+			cell{4}{2} = {c},
+			cell{5}{2} = {c=5}{0.803\linewidth},
+			hline{1,6} = {1}{-}{leftpos = 1, rightpos = 1},
+			hline{1,6} = {2}{-}{leftpos = 1, rightpos = 1},
+			hline{2,2} = {1}{-}{leftpos = 1, rightpos = 1},
+			hline{2,2} = {2}{-}{leftpos = 1, rightpos = 1},
+			vline{1,1} = {1}{-}{abovepos = 1, belowpos = 1},
+			vline{1,1} = {2}{-}{abovepos = 1, belowpos = 1},
+			vline{7,1} = {1}{-}{abovepos = 1, belowpos = 1},
+			vline{7,1} = {2}{-}{abovepos = 1, belowpos = 1},
+			hlines,
+			vlines,
+		}
+		{AKADEMIA NAUK STOSOWANYCH W NOWYM SĄCZU\\Wydział Nauk Inżynieryjnych, Katedra informatyki} &  &  &  &  &  \\
+		Przedmiot:  & Programowanie urządzeń mobilnych – projekt, mgr inż. Dawid Kotlarski          &  &  &  &  \\
+		Temat:      & ... Wpisać temat ...                                                          &  &  &  &  \\
+		Grupa:      & IS-2(s)P1  & Nr raportu: & 1 & Data: & 08.10.2023 \\
+		Osoby:      & imie1 nazwisko1, imie2 nazwisko2                                              &  &  &  &            
+	\end{tblr}
+\end{table}
+
+
+\section{Wykonane zadania}
+
+\textit{Co udało się wykonać} % Usunąć
+
+\section{Niewykonane zadania}
+
+\textit{Czego nie udało się wykonać} % Usunąć
+
+\section{Napotkane problemy}
+
+\textit{Jakie pojawiły się problemy} % Usunąć
+
+\section{Zadania na kolejny tydzień}
+
+\textit{Jakie są plany na kolejny tydzień} % Usunąć
+
+\section{Stan dokumentacji projektowej}
+
+\textit{Jakie są postępy z dokumentacją projektową od ostatniego spotkania} % Usunąć
+
+\end{document}

@@ -1,0 +1,85 @@
+% ------------------------------------------------------------------------
+% STRONA TYTU£OWA
+% ------------------------------------------------------------------------
+
+\def\uczelnia#1{\gdef\@uczelnia{#1}}
+\def\instytut#1{\gdef\@instytut{#1}}
+\def\rok#1{\gdef\@rok{#1}}
+\def\prowadzacy#1{\gdef\@prowadzacy{#1}}
+\def\praca#1{\gdef\@praca{#1}}
+\def\kierunek#1{\gdef\@kierunek{#1}}
+\def\authorI#1{\gdef\@authorI{#1}}
+\def\authorII#1{\gdef\@authorII{#1}}
+\def\przedmiot#1{\gdef\@przedmiot{#1}}
+% -----------------------------------------
+% Zmienna typu prawda/fałsz     wartość domyślna
+\newif\ifdraft@mode             \draft@modefalse
+% -----------------------------------------
+
+\def\draft{
+    \draft@modetrue
+}
+
+\def\stronatytulowa{
+
+    \newcommand*{\tmpthesisDraftKomunikat}{
+        \begin{array}{c}
+            \\
+            \mbox{\Large UWAGA -- TO JEST DRAFT}\\
+            \\
+            \mbox{\large Wydruk z \today}\\
+            \\
+        \end{array}
+    }
+
+    \vskip0.5in
+
+    \begin{center}
+        \hyphenpenalty=10000\LARGE\expandafter{\@uczelnia}
+    \end{center}
+
+	\vskip0.55in
+    \begin{center}
+        \large \@instytut \\
+        \@kierunek
+    \end{center}
+    \vskip0.6in
+
+    \begin{center}
+		\Huge\@praca \\
+		\large \@przedmiot
+	\end{center}
+    
+    \vskip0.8in
+
+    \begin{center}
+        \hyphenpenalty=10000\Large\sffamily\expandafter{\textbf{\@title}}
+    \end{center}
+    %\vskip0.5in
+
+    \ifdraft@mode
+      \begin{center}\framebox{$\tmpthesisDraftKomunikat$}\end{center}
+    \fi
+	\vfill
+    %\vskip1.5in
+    \begin{flushright}
+        \begin{tabular}{l}
+       \large Autor: \\
+       \large \@author \\
+       \large \@authorI \\
+       \large \@authorII \\
+       
+	   \\  \\
+       Prowadzący: \\
+       \@prowadzacy
+        \end{tabular}
+    \end{flushright}
+
+    
+    \vskip0.75in
+    \begin{center}
+       \large \rm Nowy Sącz \@rok
+    \end{center}
+    \newpage
+
+}
