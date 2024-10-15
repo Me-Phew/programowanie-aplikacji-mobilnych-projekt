@@ -18,7 +18,7 @@ jobs:
 
       - name: Install commitlint
         run: |
-          npm install conventional-changelog-conventionalcommits
+          npm install @commitlint/{cli,config-conventional}
           npm install commitlint@latest
 
       - name: Validate current commit (last commit) with commitlint
