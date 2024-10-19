@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "87204848812",
+    "project_id": "wirtualny-dziekanat-72543",
+    "storage_bucket": "wirtualny-dziekanat-72543.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87204848812:android:51f130191d34b37b9a2b09",
+        "android_client_info": {
+          "package_name": "com.example.wirtualny_dziekanat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7KolT2RBoOTx5gpnI5l4pCRraBfWx5mQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
