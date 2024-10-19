@@ -1,4 +1,4 @@
-package com.example.flutter_application
+package com.example.wirtualny_dziekanat
 
 import io.flutter.embedding.android.FlutterActivity
 
