@@ -18,6 +18,8 @@ class _SignUpFormState extends State<SignUpForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  String? _errorFeedback;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -106,10 +108,16 @@ class _SignUpFormState extends State<SignUpForm> {
             const SizedBox(height: 16.0),
 
             // error feedback
+            if (_errorFeedback != null)
+              Text(_errorFeedback!, style: const TextStyle(color: Colors.red)),
 
             // sumbit button
             StyledButton(
               onPressed: () async {
+                setState(() {
+                  _errorFeedback = null;
+                });
+
                 // Daje ! na końcu bo wiem że formKey nie będzie posiadać wartowści null
                 if (_formKey.currentState!.validate()) {
                   // trim żeby pozbyć się pustej przestrzeni
@@ -119,6 +127,11 @@ class _SignUpFormState extends State<SignUpForm> {
                   final user = await AuthService.signUp(email, password);
 
                   // error feedback
+                  if (user == null) {
+                    setState(() {
+                      _errorFeedback = "Proszę podać inny Email!";
+                    });
+                  }
                 }
                 ;
               },

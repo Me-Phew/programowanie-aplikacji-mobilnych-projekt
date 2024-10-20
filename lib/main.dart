@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/models/app_user.dart';
+import 'package:flutter_application/providers/auth_provider.dart';
 import 'package:flutter_application/screens/home/home.dart';
+import 'package:flutter_application/screens/profile/profile.dart';
 import 'package:flutter_application/screens/welcome/welcome.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -11,10 +15,32 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  runApp(const ProviderScope(child: MyApp()));
+}
 
-  runApp(MaterialApp(
-    home: const WelcomeScreen(),
-  ));
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Demo',
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+            useMaterial3: true),
+        home: Consumer(builder: (context, ref, child) {
+          final AsyncValue<AppUser?> user = ref.watch(authProvider);
+          return user.when(
+              data: (value) {
+                if (value == null) {
+                  return const WelcomeScreen();
+                }
+                return ProfileScreen(user: value);
+              },
+              error: (error, _) => const Text("Error loading auth status ..."),
+              loading: () => const Text("Loading"));
+        }));
+  }
 }
 
 // Sandbox do testowania żeby nie rozwalać kody już w apce itp.
