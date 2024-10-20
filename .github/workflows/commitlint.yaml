@@ -1,9 +1,10 @@
-name: Commitlint
+name: Lint commit messages
 
 on: [push, pull_request]
 
 jobs:
   commitlint:
+    name: Lint commit messages
     runs-on: ubuntu-22.04
     steps:
       - name: Get latest code
