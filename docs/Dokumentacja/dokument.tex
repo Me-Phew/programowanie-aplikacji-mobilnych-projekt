@@ -9,7 +9,7 @@
     \input{preambula_ustawienia.tex}
 
     %polecenia zdefiniowane w pakiecie strona_tytulowa.sty
-    \title{...Spacer...}		%...Wpisać nazwę projektu...
+    \title{\ldots Spacer \ldots}		%...Wpisać nazwę projektu...
     \author{Imie1 Nazwisko1}
     \authorI{Imie2 Nazwisko2}
     \authorII{Imie3 Nazwisko3}		%jeśli są dwie osoby w projekcie to zostawiamy:    \authorII{}
@@ -27,80 +27,80 @@
 \usepackage{fancyvrb}
 \DefineVerbatimEnvironment{MT}{Verbatim}%
 {commandchars=\+\[\],fontsize=\small,formatcom=\color{red},frame=lines,baselinestretch=1,} 
-\let\mt\verb 
+\let\mt\verb
 %zakonczenie definicji składni mikrotik
 
 \usepackage{fancyhdr}    %biblioteka do nagłówka i stopki
 
 			
 \begin{document}
-   
-    \renewcommand{\figurename}{Rys.}    %musi byc pod \begin{document}, bo w~tym miejscu pakiet 'babel' narzuca swoje ustawienia
-    \renewcommand{\tablename}{Tab.}     %j.w.
-    \thispagestyle{empty}               %na tej stronie: brak numeru
-    \stronatytulowa                     %strona tytułowa tworzona przez pakiet strona_tytulowa.tex
- 
- \pagestyle{fancy}
 
-    \newpage
+\renewcommand{\figurename}{Rys.}    %musi byc pod \begin{document}, bo w~tym miejscu pakiet 'babel' narzuca swoje ustawienia
+\renewcommand{\tablename}{Tab.}     %j.w.
+\thispagestyle{empty}               %na tej stronie: brak numeru
+\stronatytulowa{}                     %strona tytułowa tworzona przez pakiet strona_tytulowa.tex
 
-    %formatowanie spisu treści i~nagłówków
-    \renewcommand{\cftbeforesecskip}{8pt}
-    \renewcommand{\cftsecafterpnum}{\vskip 8pt}
-    \renewcommand{\cftparskip}{3pt}
-    \renewcommand{\cfttoctitlefont}{\Large\bfseries\sffamily}
-    \renewcommand{\cftsecfont}{\bfseries\sffamily}
-    \renewcommand{\cftsubsecfont}{\sffamily}
-    \renewcommand{\cftsubsubsecfont}{\sffamily}
-    \renewcommand{\cftparafont}{\sffamily}
-    %koniec formatowania spisu treści i nagłówków
-     
-    \tableofcontents    %spis treści
-    \thispagestyle{fancy}
-    \newpage
+\pagestyle{fancy}
 
-    
-    \newpage
+\newpage
 
-    
+%formatowanie spisu treści i~nagłówków
+\renewcommand{\cftbeforesecskip}{8pt}
+\renewcommand{\cftsecafterpnum}{\vskip 8pt}
+\renewcommand{\cftparskip}{3pt}
+\renewcommand{\cfttoctitlefont}{\Large\bfseries\sffamily}
+\renewcommand{\cftsecfont}{\bfseries\sffamily}
+\renewcommand{\cftsubsecfont}{\sffamily}
+\renewcommand{\cftsubsubsecfont}{\sffamily}
+\renewcommand{\cftparafont}{\sffamily}
+%koniec formatowania spisu treści i nagłówków
+
+\tableofcontents    %spis treści
+\thispagestyle{fancy}
+\newpage
+
+
+\newpage
+
+
 %%%%%%%%%%%%%%%%%%% treść główna dokumentu %%%%%%%%%%%%%%%%%%%%%%%%%
 
-   \input{tex/rozdzial1.tex}
-   \input{tex/rozdzial2.tex}
-   \input{tex/rozdzial3.tex}
-   \input{tex/rozdzial4.tex}
-   \input{tex/rozdzial5.tex}
-   \input{tex/rozdzial6.tex}
-       
+\input{tex/rozdzial1.tex}
+\input{tex/rozdzial2.tex}
+\input{tex/rozdzial3.tex}
+\input{tex/rozdzial4.tex}
+\input{tex/rozdzial5.tex}
+\input{tex/rozdzial6.tex}
+
 %%%%%%%%%%%%%%%%%%% koniec treść główna dokumentu %%%%%%%%%%%%%%%%%%%%%
-	\newpage
-    \addcontentsline{toc}{section}{Literatura}  
-	\printbibliography
+\newpage
+\addcontentsline{toc}{section}{Literatura}
+\printbibliography{}
 
-    \newpage
-    \hypersetup{linkcolor=black}
-    \renewcommand{\cftparskip}{3pt}
-    \clearpage
-    \renewcommand{\cftloftitlefont}{\Large\bfseries\sffamily}
-    \listoffigures
-    \addcontentsline{toc}{section}{Spis rysunków}
-	\thispagestyle{fancy}
-	
-    \newpage
-    \renewcommand{\cftlottitlefont}{\Large\bfseries\sffamily}
-    \def\listtablename{Spis tabel}
-    \addcontentsline{toc}{section}{Spis tabel}\listoftables 
-	\thispagestyle{fancy}
-	
-	\newpage
-	\renewcommand{\cftlottitlefont}{\Large\bfseries\sffamily}
-	\renewcommand\lstlistlistingname{Spis listingów}
-	\addcontentsline{toc}{section}{Spis listingów}\lstlistoflistings 
-	\thispagestyle{fancy}
-	
+\newpage
+\hypersetup{linkcolor=black}
+\renewcommand{\cftparskip}{3pt}
+\clearpage
+\renewcommand{\cftloftitlefont}{\Large\bfseries\sffamily}
+\listoffigures
+\addcontentsline{toc}{section}{Spis rysunków}
+\thispagestyle{fancy}
+
+\newpage
+\renewcommand{\cftlottitlefont}{\Large\bfseries\sffamily}
+\def\listtablename{Spis tabel}
+\addcontentsline{toc}{section}{Spis tabel}\listoftables
+\thispagestyle{fancy}
+
+\newpage
+\renewcommand{\cftlottitlefont}{\Large\bfseries\sffamily}
+\renewcommand\lstlistlistingname{Spis listingów}
+\addcontentsline{toc}{section}{Spis listingów}\lstlistoflistings{}
+\thispagestyle{fancy}
 
 
-    %lista rzeczy do zrobienia: wypisuje na koñcu dokumentu, patrz: pakiet todo.sty
-    \todos
-    %koniec listy rzeczy do zrobienia
+
+%lista rzeczy do zrobienia: wypisuje na koñcu dokumentu, patrz: pakiet todo.sty
+\todos{}
+%koniec listy rzeczy do zrobienia
 \end{document}
