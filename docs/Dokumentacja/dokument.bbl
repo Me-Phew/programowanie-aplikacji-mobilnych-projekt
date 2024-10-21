@@ -1,0 +1,117 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{legierski}{book}{}{}
+      \name{author}{4}{}{%
+        {{hash=0a9a18ab81ce251594650bdff476525c}{%
+           family={Legierski},
+           familyi={L\bibinitperiod},
+           given={Tadeusz},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6a51d7eab49633ccf212e2ebe84b1265}{%
+           family={Wyrwał},
+           familyi={W\bibinitperiod},
+           given={Janusz},
+           giveni={J\bibinitperiod}}}%
+        {{hash=dbc8bc49f801dfc2c8f11f55e9ae9780}{%
+           family={Kasprzyk},
+           familyi={K\bibinitperiod},
+           given={Jerzy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ee90177087ad2d20dbffd5a19951bb0b}{%
+           family={Hajda},
+           familyi={H\bibinitperiod},
+           given={Janusz},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Gliwice}%
+      }
+      \list{publisher}{1}{%
+        {Wydawnictwo Pracowni Komputerowej Jacka Skalmierskiego}%
+      }
+      \strng{namehash}{494206f2c41e771b73f154626fd7fc86}
+      \strng{fullhash}{4f8eec9f899d783fecc36f901eaf66cb}
+      \strng{fullhashraw}{4f8eec9f899d783fecc36f901eaf66cb}
+      \strng{bibnamehash}{494206f2c41e771b73f154626fd7fc86}
+      \strng{authorbibnamehash}{494206f2c41e771b73f154626fd7fc86}
+      \strng{authornamehash}{494206f2c41e771b73f154626fd7fc86}
+      \strng{authorfullhash}{4f8eec9f899d783fecc36f901eaf66cb}
+      \strng{authorfullhashraw}{4f8eec9f899d783fecc36f901eaf66cb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Programowanie Sterowników PLC}
+      \field{year}{1998}
+    \endentry
+    \entry{www1}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa firmy SELS}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2012}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://www.sels.com.pl/index.php?cPath=1
+      \endverb
+      \verb{url}
+      \verb http://www.sels.com.pl/index.php?cPath=1
+      \endverb
+    \endentry
+    \entry{www2}{online}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa TexLive}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.tug.org/texlive/acquire-netinstall.html
+      \endverb
+      \verb{url}
+      \verb https://www.tug.org/texlive/acquire-netinstall.html
+      \endverb
+    \endentry
+    \entry{www3}{online}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa TeXstudio}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2022}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.texstudio.org
+      \endverb
+      \verb{url}
+      \verb https://www.texstudio.org
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
