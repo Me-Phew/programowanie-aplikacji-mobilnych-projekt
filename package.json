@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+    "prepare": "lefthook install"
+  },
   "devDependencies": {
     "lefthook": "^1.7.18"
   }
