@@ -109,7 +109,9 @@ class _SignUpFormState extends State<SignUpForm> {
 
             // error feedback
             if (_errorFeedback != null)
-              Text(_errorFeedback!, style: const TextStyle(color: Colors.red)),
+              Center(
+                  child: Text(_errorFeedback!,
+                      style: const TextStyle(color: Colors.red))),
 
             // sumbit button
             StyledButton(
