@@ -43,7 +43,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/doxygen/html
-          cname: gh-pages.mateuszbasiaga.pl
+          # cname: gh-pages.mateuszbasiaga.pl
 
       - name: Prepare PDF file
         if: startsWith(github.ref, 'refs/tags/')
