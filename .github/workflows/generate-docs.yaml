@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'main'
+    tags:
+      - '*.*.*'
   workflow_dispatch:
 
 jobs:
@@ -26,7 +28,12 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
-      - name: Generate Doxygen documentation
+      - name: Generate Doxygen Documentation without LaTeX
+        if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+        uses: mattnotmitt/doxygen-action@edge
+
+      - name: Generate Doxygen Documentation with LaTeX
+        if: startsWith(github.ref, 'refs/tags/')
         uses: mattnotmitt/doxygen-action@edge
         with:
           enable-latex: true
@@ -39,9 +46,11 @@ jobs:
           cname: gh-pages.mateuszbasiaga.pl
 
       - name: Prepare PDF file
+        if: startsWith(github.ref, 'refs/tags/')
         run: cp ./docs/doxygen/latex/refman.pdf ./doxygen-docs.pdf
 
       - name: Release the pdf
+        if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
         with:
           artifacts: "doxygen-docs.pdf"
