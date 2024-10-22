@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - 'main'
-    tags:
-      - '*.*.*'
   workflow_dispatch:
 
 jobs:
@@ -28,12 +26,16 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate Doxygen Documentation without LaTeX
-        if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
         uses: mattnotmitt/doxygen-action@edge
 
       - name: Generate Doxygen Documentation with LaTeX
-        if: startsWith(github.ref, 'refs/tags/')
         uses: mattnotmitt/doxygen-action@edge
         with:
           enable-latex: true
@@ -46,12 +48,13 @@ jobs:
           # cname: gh-pages.mateuszbasiaga.pl
 
       - name: Prepare PDF file
-        if: startsWith(github.ref, 'refs/tags/')
         run: cp ./docs/doxygen/latex/refman.pdf ./doxygen-docs.pdf
 
-      - name: Release the pdf
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Create a GitHub release
         uses: ncipollo/release-action@v1
         with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
           artifacts: "doxygen-docs.pdf"
           allowUpdates: true
