@@ -1,0 +1,48 @@
+name: Generate Doxygen documentation website
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  generate-doxygen-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Install packages
+        run: sudo apt update && sudo apt install -y graphviz
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Generate Doxygen documentation
+        uses: mattnotmitt/doxygen-action@edge
+        with:
+          enable-latex: true
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/doxygen/html
+          cname: gh-pages.mateuszbasiaga.pl
+
+      - name: Rename PDF file
+        run: cp ./docs/latex/refman.pdf ./doxygen-docs.pdf
+
+      - name: Release the pdf
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "doxygen-docs.pdf"
+          allowUpdates: true
