@@ -1,4 +1,4 @@
-name: Generate Doxygen documentation website
+name: Generate Doxygen documentation
 
 on:
   push:
@@ -38,8 +38,8 @@ jobs:
           publish_dir: ./docs/doxygen/html
           cname: gh-pages.mateuszbasiaga.pl
 
-      - name: Rename PDF file
-        run: cp ./docs/latex/refman.pdf ./doxygen-docs.pdf
+      - name: Prepare PDF file
+        run: cp ./docs/doxygen/latex/refman.pdf ./doxygen-docs.pdf
 
       - name: Release the pdf
         uses: ncipollo/release-action@v1
