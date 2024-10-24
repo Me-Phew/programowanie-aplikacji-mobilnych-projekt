@@ -1,14 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
 import 'package:flutter_application/screens/notifications/notifications_page.dart';
 import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
-import 'package:flutter_application/screens/shared/styled_button.dart';
-import 'package:flutter_application/screens/shared/styled_text.dart';
-import 'package:flutter_application/services/auth_service.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class ProfileScreen extends StatefulWidget {

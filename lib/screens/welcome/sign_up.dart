@@ -135,7 +135,6 @@ class _SignUpFormState extends State<SignUpForm> {
                     });
                   }
                 }
-                ;
               },
               child: const StyledButtonText("Zajerestruj się"),
             )
