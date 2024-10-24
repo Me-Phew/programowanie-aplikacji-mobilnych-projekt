@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
-import 'package:flutter_application/providers/auth_provider.dart';
-import 'package:flutter_application/screens/home/home_page.dart';
+import 'package:flutter_application/providers/firebase_provider.dart';
+import 'package:flutter_application/screens/notifications/push_notifications.dart';
 import 'package:flutter_application/screens/profile/profile.dart';
 import 'package:flutter_application/screens/welcome/welcome.dart';
 
@@ -17,6 +17,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  //Test
+  await FirebaseApi().initNotifications();
 
   initializeDateFormatting()
       .then((_) => runApp(const ProviderScope(child: MyApp())));
