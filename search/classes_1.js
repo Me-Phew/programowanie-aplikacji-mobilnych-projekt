@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['custominputborders_0',['CustomInputBorders',['../classCustomInputBorders.html',1,'']]]
+  ['consumerstatefulwidget_0',['ConsumerStatefulWidget',['../classConsumerStatefulWidget.html',1,'']]],
+  ['custominputborders_1',['CustomInputBorders',['../classCustomInputBorders.html',1,'']]]
 ];

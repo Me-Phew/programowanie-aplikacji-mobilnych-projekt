@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['win32window_0',['Win32Window',['../class_win32_window.html',1,'']]],
-  ['windowclassregistrar_1',['WindowClassRegistrar',['../class_window_class_registrar.html',1,'']]]
+  ['urządzeń_20mobilnych_20projekt_0',['Programowanie urządzeń mobilnych - projekt',['../md_README.html',1,'']]]
 ];
