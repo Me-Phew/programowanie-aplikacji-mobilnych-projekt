@@ -41,6 +41,15 @@ class _HomePageState extends ConsumerState<HomePage> {
               .where((event) => isSameDay(event.date, selectedDay))
               .toList();
 
+          // Sort events by startTime
+          selectedEvents.sort((a, b) {
+            final aStart = DateTime(today.year, today.month, today.day,
+                a.startTime.hour, a.startTime.minute);
+            final bStart = DateTime(today.year, today.month, today.day,
+                b.startTime.hour, b.startTime.minute);
+            return aStart.compareTo(bStart);
+          });
+
           return Scaffold(
               body: Padding(
             padding: const EdgeInsets.all(32.0),
