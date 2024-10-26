@@ -13,8 +13,10 @@ class NotificationsPage extends StatelessWidget {
     return Center(
       child: StyledHeading("Ogłoszenia"),
     );
+  }
+}
 
-    /*
+/*
           return Scaffold(
             body: Column(
               children: [
@@ -29,5 +31,3 @@ class NotificationsPage extends StatelessWidget {
         }
       }
       */
-  }
-}

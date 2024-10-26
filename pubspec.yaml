@@ -64,10 +64,13 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+# Ikona naszej apki
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/logo1.PNG"
+  image_path: "assets/images/logoWithoutBg.PNG"
+  # Dla androida tak trzeba https://romannurik.github.io/AndroidAssetStudio/index.html
+  # https://icon.kitchen/
   adaptive_icon_background: "#ffffff"
   adaptive_icon_foreground: "assets/images/logoWithoutBg.png"
 
