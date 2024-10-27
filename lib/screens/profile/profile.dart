@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     HomePage(),
     NotificationsPage(),
     ProfilePage(user: widget.user),
-    SettingsPage(),
+    SettingsPage(user: widget.user),
   ];
 
   @override

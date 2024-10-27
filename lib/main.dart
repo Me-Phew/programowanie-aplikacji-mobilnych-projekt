@@ -18,7 +18,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  //Test
+  // Powiadomienia
   await FirebaseApi().initNotifications();
 
   initializeDateFormatting()
@@ -31,10 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Demo',
-        theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-            useMaterial3: true),
+
         home: Consumer(builder: (context, ref, child) {
           final AsyncValue<AppUser?> user = ref.watch(authProvider);
           return user.when(
@@ -47,6 +44,7 @@ class MyApp extends StatelessWidget {
               error: (error, _) => const Text("Error loading auth status ..."),
               loading: () => const Text("Loading"));
         }));
+
   }
 }
 
