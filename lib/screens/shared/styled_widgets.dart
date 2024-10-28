@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application/screens/shared/styled_button.dart';
 import 'package:flutter_application/screens/shared/styled_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SettingItem extends StatelessWidget {
   final String title;
@@ -89,11 +90,40 @@ class SettingSwitch extends StatelessWidget {
           const SizedBox(width: 20),
           SettingsText(title),
           const Spacer(),
-          SettingsTextInside(value ? "On":"Off"),
+          SettingsTextInside(value ? "On" : "Off"),
           const SizedBox(width: 20),
           CupertinoSwitch(value: value, onChanged: onTap),
         ],
       ),
+    );
+  }
+}
+
+class EditItem extends StatelessWidget {
+  final Widget widget;
+  final String title;
+
+  const EditItem({super.key, required this.widget, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          flex: 2,
+          child: Text(
+            title,
+            style: GoogleFonts.poppins(
+                textStyle: TextStyle(fontSize: 16, color: Colors.grey)),
+          ),
+        ),
+        const SizedBox(width: 30),
+        Expanded(
+          flex: 3,
+          child: widget,
+        ),
+      ],
     );
   }
 }

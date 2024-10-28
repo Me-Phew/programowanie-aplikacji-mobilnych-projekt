@@ -67,8 +67,11 @@ class SettingsHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(text,
         style: GoogleFonts.poppins(
-          textStyle: TextStyle(fontSize: 24,fontWeight: FontWeight.w600,),
-      ));
+          textStyle: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+          ),
+        ));
   }
 }
 
@@ -81,8 +84,11 @@ class SettingsText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(text,
         style: GoogleFonts.poppins(
-          textStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
-      ));
+          textStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+        ));
   }
 }
 
@@ -96,6 +102,38 @@ class SettingsTextInside extends StatelessWidget {
     return Text(text,
         style: GoogleFonts.poppins(
           textStyle: TextStyle(fontSize: 14, color: Colors.grey[600]),
-      ));
+        ));
+  }
+}
+
+class ProfileTextLeft extends StatelessWidget {
+  const ProfileTextLeft(this.text, {super.key});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.poppins(
+        textStyle: TextStyle(fontSize: 16, color: Colors.grey),
+      ),
+    );
+  }
+}
+
+class ProfileTextRight extends StatelessWidget {
+  const ProfileTextRight(this.text, {super.key});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.poppins(
+        textStyle: TextStyle(fontSize: 14, color: Colors.black),
+      ),
+    );
   }
 }

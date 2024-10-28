@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/providers/firebase_provider.dart';
 import 'package:flutter_application/screens/notifications/push_notifications.dart';
-import 'package:flutter_application/screens/profile/profile.dart';
+import 'package:flutter_application/screens/welcome/profile_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -30,21 +30,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-
-        home: Consumer(builder: (context, ref, child) {
-          final AsyncValue<AppUser?> user = ref.watch(authProvider);
-          return user.when(
-              data: (value) {
-                if (value == null) {
-                  return const WelcomeScreen();
-                }
-                return ProfileScreen(user: value);
-              },
-              error: (error, _) => const Text("Error loading auth status ..."),
-              loading: () => const Text("Loading"));
-        }));
-
+    return MaterialApp(home: Consumer(builder: (context, ref, child) {
+      final AsyncValue<AppUser?> user = ref.watch(authProvider);
+      return user.when(
+          data: (value) {
+            if (value == null) {
+              return const WelcomeScreen();
+            }
+            return ProfileScreen(user: value);
+          },
+          error: (error, _) => const Text("Error loading auth status ..."),
+          loading: () => const Text("Loading"));
+    }));
   }
 }
 

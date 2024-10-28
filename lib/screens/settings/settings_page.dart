@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
+import 'package:flutter_application/providers/riverpod_provider.dart';
+import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/shared/styled_button.dart';
 import 'package:flutter_application/screens/shared/styled_text.dart';
 import 'package:flutter_application/screens/shared/styled_widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SettingsPage extends StatefulWidget {
+class SettingsPage extends ConsumerWidget {
   final AppUser user;
   const SettingsPage({super.key, required this.user});
 
   @override
-  State<SettingsPage> createState() => _SettingsPageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Pobieranie wartości isDarkMode z providera
+    final isDarkMode = ref.watch(darkModeProvider);
 
-class _SettingsPageState extends State<SettingsPage> {
-  bool isDarkMode = false;
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -34,22 +33,29 @@ class _SettingsPageState extends State<SettingsPage> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(35),
-                      child: Image.asset("assets/images/Example.png",
-                          width: 70, height: 70, fit: BoxFit.cover),
+                      child: Image.asset(
+                        "assets/images/Example.png",
+                        width: 70,
+                        height: 70,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    const SizedBox(height: 20, width: 20),
+                    const SizedBox(width: 20), // Usuń height
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SettingsText("${widget.user.email}"),
+                        SettingsText("${user.email}"),
                         const SizedBox(height: 6),
-          
-                        // Tego studenta trzeba zmienic w przyszłości aby pobierano dane z api
-                        const SettingsTextInside("Student")
+                        const SettingsTextInside("Student"),
                       ],
                     ),
                     const Spacer(),
-                    StyledButtonSettings(onTap: () {})
+                    StyledButtonSettings(onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditAccount(user: user)));
+                    }),
                   ],
                 ),
               ),
@@ -81,16 +87,15 @@ class _SettingsPageState extends State<SettingsPage> {
                 onTap: () {},
               ),
               const SizedBox(height: 20),
-               SettingSwitch(
+              SettingSwitch(
                 title: "Dark Mode",
                 value: isDarkMode,
                 bgColor: Colors.grey.shade300,
                 iconColor: Colors.grey.shade800,
                 icon: Icons.dark_mode,
                 onTap: (value) {
-                  setState(() {
-                    isDarkMode = value;
-                  });
+                  // Zmiana stanu isDarkMode za pomocą providera
+                  ref.read(darkModeProvider.notifier).state = value;
                 },
               ),
               const SizedBox(height: 20),
