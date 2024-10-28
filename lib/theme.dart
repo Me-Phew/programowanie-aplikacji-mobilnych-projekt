@@ -14,33 +14,39 @@ class AppColors{
 */
 
 class CustomInputBorders {
-  // Black Mode
-  static OutlineInputBorder enabledBorder() {
+  // Common
+  static OutlineInputBorder errorBorder() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
-      borderSide: const BorderSide(color: Colors.white),
-    );
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Colors.red));
   }
 
-  // White Mode
-  static OutlineInputBorder enabledBorderW() {
+  // Dark Mode
+  static OutlineInputBorder enabledBorder() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
-      borderSide: const BorderSide(color: Colors.black),
+      borderRadius: BorderRadius.circular(12),
+      borderSide: const BorderSide(color: Colors.white),
     );
   }
 
   static OutlineInputBorder focusedBorder() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(12),
       borderSide: const BorderSide(color: Colors.white),
     );
   }
 
-  // White Mode
+  // Light Mode
+  static OutlineInputBorder enabledBorderW() {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: const BorderSide(color: Colors.black),
+    );
+  }
+
   static OutlineInputBorder focusedBorderW() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(12),
       borderSide: const BorderSide(color: Colors.black),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
+import 'package:flutter_application/screens/messages/messages_page.dart';
 import 'package:flutter_application/screens/notifications/notifications_page.dart';
 import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
@@ -22,8 +23,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   late final List<Widget> _pages = [
     HomePage(),
     NotificationsPage(),
-    ProfilePage(user: widget.user),
-    SettingsPage(),
+    MessagesPage(),
+    SettingsPage(user: widget.user),
   ];
 
   @override
@@ -44,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             tabs: const [
               GButton(icon: Icons.home, text: "Panel główny"),
               GButton(icon: Icons.notifications, text: "Ogłoszenia"),
-              GButton(icon: Icons.person, text: "Profil"),
+              GButton(icon: Icons.mail, text: "Wiadomości"),
               GButton(icon: Icons.settings, text: "Ustawienia"),
             ],
 

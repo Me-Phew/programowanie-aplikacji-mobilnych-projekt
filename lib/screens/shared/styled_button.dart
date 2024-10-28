@@ -11,10 +11,11 @@ class StyledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
         style: TextButton.styleFrom(
+            padding: EdgeInsets.all(18.0),
             backgroundColor: Colors.black,
             foregroundColor: Colors.white,
             shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20)))),
+                borderRadius: BorderRadius.all(Radius.circular(12)))),
         onPressed: onPressed,
         child: child);
   }
@@ -36,5 +37,28 @@ class StyledButtonText extends StatelessWidget {
             letterSpacing: 0.8,
           ),
         ));
+  }
+}
+
+class StyledButtonSettings extends StatelessWidget {
+  final Function() onTap;
+  const StyledButtonSettings({super.key, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        //color: Colors.black,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: const Icon(Icons.chevron_right_rounded),
+      //child: Icon(Icons.chevron_right_rounded,color: Colors.white),
+      )
+    );
   }
 }
