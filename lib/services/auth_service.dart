@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application/models/app_user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -25,10 +26,14 @@ class AuthService {
   // Logowanie
   static Future<AppUser?> signIn(String email, String password) async {
     try {
+      final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+
       final UserCredential credential = await _firebaseAuth
           .signInWithEmailAndPassword(email: email, password: password);
 
       if (credential.user != null) {
+        await asyncPrefs.setBool('hasLoggedInBefore', true);
+
         return AppUser(
           uid: credential.user!.uid,
           email: credential.user!.email!,

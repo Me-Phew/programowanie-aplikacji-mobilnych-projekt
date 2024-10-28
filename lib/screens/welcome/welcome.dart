@@ -3,6 +3,7 @@ import 'package:flutter_application/screens/shared/styled_text.dart';
 import 'package:flutter_application/screens/welcome/sign_in.dart';
 import 'package:flutter_application/screens/welcome/sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -12,7 +13,26 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  bool isSignUpForm = true;
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _loadAsyncState();
+    });
+  }
+
+  bool isSignUpForm = false;
+
+  _loadAsyncState() async {
+    final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+
+    final bool? hasLoggedInBefore =
+        await asyncPrefs.getBool('hasLoggedInBefore');
+
+    setState(() {
+      isSignUpForm = (hasLoggedInBefore == null) ? true : !hasLoggedInBefore;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
