@@ -1,6 +1,47 @@
-	\newpage
+\newpage
 \section{Projektowanie}		%3
 %Opis przygotowania narzędzi (git, visual studio). Wybór i opis bibliotek, klas. Szkic layoutów. Pseudo kody. Opisy wykorzystanych algorytmów (np. algorytm sortowania). Dokładniejsze określenie założeń i działania aplikacji, (np.: ten przycisk otworzy takie okno a w tym oknie wpisujemy takie dane).
 
+W ramach przygotowania środowiska do implementacji aplikacji wirtualnego dziekanatu oraz zarządzania wersjami kodu, wybrano zestaw narzędzi wspierających proces tworzenia oraz zapewniających automatyzację wielu czynności. W poniższych punktach opisano każde z wykorzystanych narzędzi wraz z ich rolą oraz załączonym linkiem do dokumentacji.
 
+\subsection{Przygotowanie narzędzi}
 
+\begin{itemize}
+  \item \textbf{Git} – system kontroli wersji, umożliwiający śledzenie zmian w kodzie oraz współpracę w zespole. Dokumentacja narzędzia: \url{https://git–scm.com/doc}
+  \item \textbf{VSCode} – edytor kodu źródłowego, który zapewnia wsparcie dla wielu języków programowania i umożliwia instalację rozszerzeń wspierających programowanie. Dokumentacja narzędzia: \url{https://code.visualstudio.com/docs}
+  \item \textbf{Doxygen} – narzędzie do generowania dokumentacji automatycznej na podstawie komentarzy w kodzie źródłowym. Ułatwia utrzymywanie aktualnej dokumentacji technicznej. Dokumentacja narzędzia: \url{https://www.doxygen.nl/}
+  \item \textbf{Doxygen Awesome} – motyw graficzny dostosowujący wygląd strony wygenerowanej przez Doxygen do współczesnych standardów. Motyw jest zainspirowany stroną Nuxt i pomaga poprawić czytelność dokumentacji. Więcej informacji: \url{https://github.com/jothepro/doxygen–awesome–css}
+  \item \textbf{Lefthook} – narzędzie do zarządzania hookami Git, które wspiera automatyczne formatowanie, walidację kodu, generowanie dokumentacji oraz zgodność wiadomości commitów z konwencją. Dokumentacja narzędzia: \url{https://github.com/evilmartians/lefthook}
+  \item \textbf{Commitlint} – narzędzie do sprawdzania zgodności wiadomości commitów z konwencją \textit{Conventional Commits}. Dokumentacja: \url{https://commitlint.js.org/}
+  \item \textbf{GitHub Actions} – platforma do automatyzacji procesów CI/CD. Umożliwia między innymi automatyczną walidację commitów, generowanie dokumentacji oraz wersjonowanie wydań. Dokumentacja: \url{https://docs.github.com/en/actions}
+\end{itemize}
+
+\subsection{Wybór technologii}
+
+\subsection{Framework Flutter}
+
+Flutter to framework stworzony przez Google, umożliwiający tworzenie aplikacji wieloplatformowych z jednego kodu źródłowego, co znacząco skraca czas potrzebny na rozwój aplikacji. W projekcie wirtualnego dziekanatu Flutter został wybrany ze względu na jego elastyczność oraz bogaty ekosystem widgetów. Poniżej przedstawiono kluczowe aspekty wykorzystania Fluttera w projekcie.
+
+\begin{itemize}
+  \item \textbf{Material Design} – Flutter dostarcza szeroką gamę komponentów zgodnych z wytycznymi Material Design, co pozwala na stworzenie nowoczesnego i spójnego interfejsu użytkownika, dostosowanego do standardów Google. Dokumentacja: \url{https://flutter.dev/docs/development/ui/widgets/material}
+  \item \textbf{Hot Reload} – Flutter umożliwia szybkie testowanie zmian w kodzie dzięki funkcji Hot Reload, która natychmiast odświeża widoki aplikacji, co pozwala programistom na szybką iterację i oszczędność czasu w trakcie testowania.
+  \item \textbf{Kompatybilność wieloplatformowa} – Aplikacja wirtualnego dziekanatu została zaprojektowana jako aplikacja mobilna, ale Flutter umożliwia łatwe rozszerzenie wsparcia na inne platformy, takie jak web, desktop (Windows, macOS, Linux) oraz urządzenia IoT.
+  \item \textbf{State Management (Zarządzanie stanem)} – W projekcie zastosowano zarządzanie stanem z użyciem pakietu Provider, co umożliwia łatwe zarządzanie danymi oraz stanami ekranów, szczególnie w dynamicznych sekcjach, takich jak ekran wiadomości czy plan zajęć. Dokumentacja Provider: \url{https://pub.dev/packages/provider}
+  \item \textbf{Bogaty ekosystem pakietów} – Flutter wspiera szeroką gamę pakietów dostępnych w repozytorium \texttt{pub.dev}, co pozwala na szybkie wdrożenie dodatkowych funkcji. Przykłady wykorzystanych pakietów to:
+        \begin{itemize}
+          \item \textbf{firebase\_auth} – zapewnia integrację z Firebase Authentication dla bezpiecznego logowania użytkowników. Dokumentacja: \url{https://pub.dev/packages/firebase_auth}
+          \item \textbf{cloud\_firestore} – pozwala na połączenie z bazą danych Firestore i zarządzanie danymi w czasie rzeczywistym. Dokumentacja: \url{https://pub.dev/packages/cloud_firestore}
+          \item \textbf{firebase\_messaging} – umożliwia wysyłanie powiadomień push do użytkowników. Dokumentacja: \url{https://pub.dev/packages/firebase_messaging}
+          \item \textbf{intl} – używany do formatowania dat i liczb, co wspiera różne lokalizacje i języki. Dokumentacja: \url{https://pub.dev/packages/intl}
+        \end{itemize}
+  \item \textbf{Wysoka wydajność} – Flutter jest bezpośrednio kompilowany do natywnego kodu ARM, co zapewnia wydajność zbliżoną do natywnych aplikacji. Dla płynnego działania aplikacji kluczowe było odpowiednie zarządzanie wydajnością komponentów i optymalizacja ekranów, szczególnie dla list z dużą ilością danych, jak np. plan zajęć.
+  \item \textbf{Testy jednostkowe i widgetowe} – Flutter oferuje rozbudowane wsparcie dla testów, co umożliwia testowanie logiki biznesowej aplikacji (testy jednostkowe) oraz interakcji użytkownika z komponentami UI (testy widgetowe). Dzięki temu można łatwo wykrywać błędy i sprawdzać działanie aplikacji w sposób automatyczny.
+\end{itemize}
+
+\noindent Funkcjonalności backendowe zapewnia platforma Firebase, dostęp do nich umożliwiają moduły:
+
+\begin{itemize}
+  \item \textbf{Firebase Auth} – moduł autoryzacji użytkowników. Dokumentacja: \url{https://firebase.google.com/docs/auth}
+  \item \textbf{Firestore} – baza danych czasu rzeczywistego, umożliwiająca skalowalne przechowywanie danych aplikacji. Dokumentacja: \url{https://firebase.google.com/docs/firestore}
+  \item \textbf{Firebase Messaging} – moduł do wysyłania powiadomień push do użytkowników. Dokumentacja: \url{https://firebase.google.com/docs/cloud–messaging}
+\end{itemize}
