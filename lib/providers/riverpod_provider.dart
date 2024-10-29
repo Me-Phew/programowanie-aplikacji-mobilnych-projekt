@@ -6,8 +6,3 @@ final darkModeProvider = StateProvider<bool>((ref) => false);
 final authServiceProvider = Provider<AuthService>((ref) {
   return AuthService();
 });
-
-final signOutProvider = FutureProvider<void>((ref) async {
-  final authService = ref.read(authServiceProvider);
-  await AuthService.singOut();
-});

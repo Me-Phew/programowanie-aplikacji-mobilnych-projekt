@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_application/screens/shared/haptic_switch.dart';
 import 'package:flutter_application/screens/shared/styled_button.dart';
 import 'package:flutter_application/screens/shared/styled_text.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,7 +90,11 @@ class SettingSwitch extends StatelessWidget {
           const Spacer(),
           SettingsTextInside(value ? "On" : "Off"),
           const SizedBox(width: 20),
-          CupertinoSwitch(value: value, onChanged: onTap),
+          // CupertinoSwitch(value: value, onChanged: onTap),
+          HapticSwitch(
+            value: value,
+            onChanged: onTap,
+          ),
         ],
       ),
     );

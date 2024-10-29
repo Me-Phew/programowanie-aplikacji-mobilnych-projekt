@@ -88,7 +88,7 @@ class SettingsPage extends ConsumerWidget {
               ),
               const SizedBox(height: 20),
               SettingSwitch(
-                title: "Dark Mode",
+                title: "Tryb ciemny",
                 value: isDarkMode,
                 bgColor: Colors.grey.shade300,
                 iconColor: Colors.grey.shade800,
