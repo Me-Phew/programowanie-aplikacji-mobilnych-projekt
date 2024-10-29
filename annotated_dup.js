@@ -8,7 +8,6 @@ var annotated_dup =
     [ "DefaultFirebaseOptions", "classDefaultFirebaseOptions.html", null ],
     [ "Event", "classEvent.html", null ],
     [ "FirebaseApi", "classFirebaseApi.html", null ],
-    [ "State< EditAccount >", "classState_3_01EditAccount_01_4.html", null ],
     [ "StatefulWidget", "classStatefulWidget.html", null ],
     [ "StatelessWidget", "classStatelessWidget.html", null ]
 ];
