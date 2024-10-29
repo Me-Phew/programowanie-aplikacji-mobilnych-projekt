@@ -145,15 +145,6 @@ class _EditAccountState extends State<EditAccount> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const StyledHeading("Profil użytkownika"),
-                  const SizedBox(
-                    height: 16.0,
-                  ),
-
-                  // output email
-                  StyledBodyText("Witaj, ${widget.user.email}"),
-                  const SizedBox(height: 15.0),
-
                   StyledButton(
                       onPressed: () {
                         AuthService.signOut();
