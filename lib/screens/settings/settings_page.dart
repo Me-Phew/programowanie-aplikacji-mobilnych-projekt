@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/profile/profile_page.dart';
-import 'package:flutter_application/screens/shared/styled_button.dart';
-import 'package:flutter_application/screens/shared/styled_text.dart';
-import 'package:flutter_application/screens/shared/styled_widgets.dart';
+import 'package:flutter_application/widgets/shared/styled_button.dart';
+import 'package:flutter_application/widgets/shared/styled_text.dart';
+import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,6 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/screens/shared/styled_text.dart';
+import 'package:flutter_application/widgets/shared/styled_text.dart';
 
 class NotificationsPage extends StatelessWidget {
   const NotificationsPage({super.key});

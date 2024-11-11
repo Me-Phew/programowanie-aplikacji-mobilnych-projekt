@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/screens/shared/styled_text.dart';
+import 'package:flutter_application/widgets/shared/styled_text.dart';
 
 class MessagesPage extends StatelessWidget {
   const MessagesPage({super.key});
