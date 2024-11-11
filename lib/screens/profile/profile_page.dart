@@ -31,6 +31,16 @@ class _EditAccountState extends State<EditAccount> {
     });
   }
 
+  Future<void> saveImage() async {
+    if (_selectedImage != null) {
+      // Tutaj trzeba będzie zaimplementować logikę zapisywania obrazu
+      // Będzie trzeba przesłać obraz na serwer i zapisać w bazie danych itp xd
+      print('Image saved: ${_selectedImage!.path}');
+    } else {
+      print('No image selected');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +54,7 @@ class _EditAccountState extends State<EditAccount> {
         leadingWidth: 80,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: saveImage,
               style: IconButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
