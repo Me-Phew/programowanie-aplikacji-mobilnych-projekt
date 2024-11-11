@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/services/auth_service.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
 class EditAccount extends StatefulWidget {
   final AppUser user;
@@ -15,6 +18,36 @@ class EditAccount extends StatefulWidget {
 }
 
 class _EditAccountState extends State<EditAccount> {
+  Future _pickImageFromGallery() async {
+    final returnedImage =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    // Jeżeli nie wybrano zdjęcia
+    if (returnedImage == null) {
+      return;
+    }
+
+    setState(() {
+      _selectedImage = File(returnedImage!.path);
+    });
+  }
+
+  Future _pickImageFromCamera() async {
+    final returnedImage =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+
+    // Jeżeli nie wybrano zdjęcia
+    if (returnedImage == null) {
+      return;
+    }
+
+    setState(() {
+      _selectedImage = File(returnedImage!.path);
+    });
+  }
+
+  File? _selectedImage;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +84,10 @@ class _EditAccountState extends State<EditAccount> {
                       TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
             ),
             const SizedBox(height: 40),
+            _selectedImage != null
+                ? Image.file(_selectedImage!)
+                : const Text("Proszę wybierz zdjęcie"),
+            const SizedBox(height: 40),
             EditItem(
               title: "Zdjęcie",
               widget: Column(children: [
@@ -66,7 +103,9 @@ class _EditAccountState extends State<EditAccount> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _pickImageFromGallery();
+                      },
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.lightBlueAccent,
                       ),
