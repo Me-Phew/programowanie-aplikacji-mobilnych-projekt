@@ -7,10 +7,6 @@ pre-commit:
     validate_code:
       run: flutter pub run ./git_hooks/pre_commit.dart
 
-    generate-docs:
-      root: /
-      run: doxygen && ./docs/doxygen/latex/make.bat
-
 commit-msg:
   commands:
     validate_commit_message:
