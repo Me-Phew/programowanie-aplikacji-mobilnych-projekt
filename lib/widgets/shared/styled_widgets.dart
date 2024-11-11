@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/screens/shared/haptic_switch.dart';
-import 'package:flutter_application/screens/shared/styled_button.dart';
-import 'package:flutter_application/screens/shared/styled_text.dart';
+import 'package:flutter_application/widgets/shared/haptic_switch.dart';
+import 'package:flutter_application/widgets/shared/styled_button.dart';
+import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SettingItem extends StatelessWidget {

@@ -47,18 +47,17 @@ class StyledButtonSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
-      child: Container(
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        //color: Colors.black,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: const Icon(Icons.chevron_right_rounded),
-      //child: Icon(Icons.chevron_right_rounded,color: Colors.white),
-      )
-    );
+        onTap: onTap,
+        child: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            //color: Colors.black,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: const Icon(Icons.chevron_right_rounded),
+          //child: Icon(Icons.chevron_right_rounded,color: Colors.white),
+        ));
   }
 }

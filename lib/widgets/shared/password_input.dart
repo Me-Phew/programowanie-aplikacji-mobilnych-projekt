@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/screens/shared/styled_form_field.dart';
+import 'package:flutter_application/widgets/shared/styled_form_field.dart';
 
 class PasswordInput extends StatefulWidget {
   const PasswordInput({

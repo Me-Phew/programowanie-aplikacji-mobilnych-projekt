@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/providers/firebase_provider.dart';
-import 'package:flutter_application/screens/notifications/push_notifications.dart';
-import 'package:flutter_application/screens/welcome/profile_screen.dart';
-import 'package:flutter_application/screens/welcome/welcome.dart';
+import 'package:flutter_application/utils/push_notifications.dart';
+import 'package:flutter_application/screens/tabs/tabs_screen.dart';
+import 'package:flutter_application/screens/welcome/welcome_page.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'firebase_options.dart';
+import 'utils/firebase_options.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
 
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
             if (value == null) {
               return const WelcomeScreen();
             }
-            return ProfileScreen(user: value);
+            return TabsScreen(user: value);
           },
           error: (error, _) => const Text("Error loading auth status ..."),
           loading: () => const Text("Loading"));

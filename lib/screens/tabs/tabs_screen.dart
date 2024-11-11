@@ -7,16 +7,16 @@ import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key, required this.user});
+class TabsScreen extends StatefulWidget {
+  const TabsScreen({super.key, required this.user});
 
   final AppUser user;
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<TabsScreen> createState() => _TabsScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _TabsScreenState extends State<TabsScreen> {
   int _selectedIndex = 0;
 
   // Lista ekranów naszej aplikacji

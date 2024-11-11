@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/screens/shared/password_input.dart';
-import 'package:flutter_application/screens/shared/styled_button.dart';
-import 'package:flutter_application/screens/shared/styled_form_field.dart';
-import 'package:flutter_application/screens/shared/styled_text.dart';
+import 'package:flutter_application/widgets/shared/password_input.dart';
+import 'package:flutter_application/widgets/shared/styled_button.dart';
+import 'package:flutter_application/widgets/shared/styled_form_field.dart';
+import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/services/auth_service.dart';
 
 class SignUpForm extends StatefulWidget {
