@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
 
+final ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+  primaryColor: Colors.blue,
+  scaffoldBackgroundColor: Colors.white,
+  // Dodaj inne właściwości motywu
+);
+
+final ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  primaryColor: Colors.blue,
+  scaffoldBackgroundColor: Colors.black12,
+  // Dodaj inne właściwości motywu
+);
+
 /*
 class AppColors{
   static Color primaryColor = const Color.fromRGBO();

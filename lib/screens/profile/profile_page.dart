@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
+import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
@@ -18,40 +19,33 @@ class EditAccount extends StatefulWidget {
 }
 
 class _EditAccountState extends State<EditAccount> {
-  Future _pickImageFromGallery() async {
-    final returnedImage =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    // Jeżeli nie wybrano zdjęcia
-    if (returnedImage == null) {
-      return;
-    }
-
-    setState(() {
-      _selectedImage = File(returnedImage!.path);
-    });
-  }
-
-  Future _pickImageFromCamera() async {
-    final returnedImage =
-        await ImagePicker().pickImage(source: ImageSource.camera);
-
-    // Jeżeli nie wybrano zdjęcia
-    if (returnedImage == null) {
-      return;
-    }
-
-    setState(() {
-      _selectedImage = File(returnedImage!.path);
-    });
-  }
-
   File? _selectedImage;
+
+  void _showImageSourceActionSheet() {
+    ImagePickerService.showImageSourceActionSheet(context, (image) {
+      if (image != null) {
+        setState(() {
+          _selectedImage = image;
+        });
+      }
+    });
+  }
+
+  Future<void> saveImage() async {
+    if (_selectedImage != null) {
+      // Tutaj trzeba będzie zaimplementować logikę zapisywania obrazu
+      // Będzie trzeba przesłać obraz na serwer i zapisać w bazie danych itp xd
+      print('Image saved: ${_selectedImage!.path}');
+    } else {
+      print('No image selected');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -61,7 +55,7 @@ class _EditAccountState extends State<EditAccount> {
         leadingWidth: 80,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: saveImage,
               style: IconButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -84,10 +78,6 @@ class _EditAccountState extends State<EditAccount> {
                       TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
             ),
             const SizedBox(height: 40),
-            _selectedImage != null
-                ? Image.file(_selectedImage!)
-                : const Text("Proszę wybierz zdjęcie"),
-            const SizedBox(height: 40),
             EditItem(
               title: "Zdjęcie",
               widget: Column(children: [
@@ -95,17 +85,22 @@ class _EditAccountState extends State<EditAccount> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(50),
-                      child: Image.asset(
-                        "assets/images/Example.png",
-                        width: 100,
-                        height: 100,
-                        fit: BoxFit.cover,
-                      ),
+                      child: _selectedImage != null
+                          ? Image.file(
+                              _selectedImage!,
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset(
+                              "assets/images/Example.png",
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
                     ),
                     TextButton(
-                      onPressed: () {
-                        _pickImageFromGallery();
-                      },
+                      onPressed: _showImageSourceActionSheet,
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.lightBlueAccent,
                       ),
