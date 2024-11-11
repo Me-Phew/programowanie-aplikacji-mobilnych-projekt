@@ -1072,6 +1072,7 @@ RECURSIVE              = YES
 # run.
 
 EXCLUDE                = lib/config \
+                         build \
                          windows \
                          ios \
                          android \
