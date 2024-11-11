@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/providers/firebase_provider.dart';
+import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/utils/push_notifications.dart';
 import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_application/utils/theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'utils/firebase_options.dart';
 
@@ -25,23 +27,28 @@ void main() async {
       .then((_) => runApp(const ProviderScope(child: MyApp())));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: Consumer(builder: (context, ref, child) {
-      final AsyncValue<AppUser?> user = ref.watch(authProvider);
-      return user.when(
-          data: (value) {
-            if (value == null) {
-              return const WelcomeScreen();
-            }
-            return TabsScreen(user: value);
-          },
-          error: (error, _) => const Text("Error loading auth status ..."),
-          loading: () => const Text("Loading"));
-    }));
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDarkMode = ref.watch(darkModeProvider);
+
+    return MaterialApp(
+      theme: isDarkMode ? darkTheme : lightTheme,
+      home: Consumer(builder: (context, ref, child) {
+        final AsyncValue<AppUser?> user = ref.watch(authProvider);
+        return user.when(
+            data: (value) {
+              if (value == null) {
+                return const WelcomeScreen();
+              }
+              return TabsScreen(user: value);
+            },
+            error: (error, _) => const Text("Error loading auth status ..."),
+            loading: () => const Text("Loading"));
+      }),
+    );
   }
 }
 

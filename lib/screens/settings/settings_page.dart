@@ -95,7 +95,7 @@ class SettingsPage extends ConsumerWidget {
                 icon: Icons.dark_mode,
                 onTap: (value) {
                   // Zmiana stanu isDarkMode za pomocą providera
-                  ref.read(darkModeProvider.notifier).state = value;
+                  ref.read(darkModeProvider.notifier).toggleDarkMode(value);
                 },
               ),
               const SizedBox(height: 20),
