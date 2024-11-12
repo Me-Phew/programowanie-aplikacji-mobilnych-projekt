@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['statefulwidget_0',['StatefulWidget',['../classStatefulWidget.html',1,'']]],
-  ['statelesswidget_1',['StatelessWidget',['../classStatelessWidget.html',1,'']]]
+  ['programowanie_20urządzeń_20mobilnych_20projekt_0',['Programowanie urządzeń mobilnych - projekt',['../md_README.html',1,'']]],
+  ['projekt_1',['Programowanie urządzeń mobilnych - projekt',['../md_README.html',1,'']]]
 ];

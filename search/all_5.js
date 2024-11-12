@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mobilnych_20projekt_0',['Programowanie urządzeń mobilnych - projekt',['../md_README.html',1,'']]]
+  ['imagepickerservice_0',['ImagePickerService',['../classImagePickerService.html',1,'']]]
 ];

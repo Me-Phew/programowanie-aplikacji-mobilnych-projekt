@@ -8,6 +8,8 @@ var annotated_dup =
     [ "DefaultFirebaseOptions", "classDefaultFirebaseOptions.html", null ],
     [ "Event", "classEvent.html", null ],
     [ "FirebaseApi", "classFirebaseApi.html", null ],
+    [ "ImagePickerService", "classImagePickerService.html", null ],
     [ "StatefulWidget", "classStatefulWidget.html", null ],
-    [ "StatelessWidget", "classStatelessWidget.html", null ]
+    [ "StatelessWidget", "classStatelessWidget.html", null ],
+    [ "StateNotifier< bool >", "classStateNotifier_3_01bool_01_4.html", null ]
 ];
