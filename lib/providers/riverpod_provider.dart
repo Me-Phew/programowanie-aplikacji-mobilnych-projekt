@@ -37,13 +37,25 @@ final localeProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
 });
 
 class LocaleNotifier extends StateNotifier<Locale> {
-  LocaleNotifier() : super(const Locale('pl'));
+  LocaleNotifier() : super(const Locale('pl')) {
+    _loadSavedLocale();
+  }
 
-  void changeLocale(String language) {
+  // Ładowanie zapisanego języka przy starcie
+  Future<void> _loadSavedLocale() async {
+    final prefs = await SharedPreferences.getInstance();
+    final language = prefs.getString('selectedLanguage') ?? 'Polish';
+    changeLocale(language);
+  }
+
+  Future<void> changeLocale(String language) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selectedLanguage', language);
+    
     if (language == 'English') {
       state = const Locale('en');
     } else {
-      state = const Locale('pl'); 
+      state = const Locale('pl');
     }
   }
 }

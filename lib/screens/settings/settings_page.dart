@@ -8,10 +8,32 @@ import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // Język do wyboru
-final selectedLanguageProvider = StateProvider<String>((ref) => 'Polish');
 final languages = ['Polish', 'English'];
+
+final selectedLanguageProvider =
+    StateNotifierProvider<SelectedLanguageNotifier, String>((ref) {
+  return SelectedLanguageNotifier();
+});
+
+class SelectedLanguageNotifier extends StateNotifier<String> {
+  SelectedLanguageNotifier() : super('Polish') {
+    _loadSavedLanguage();
+  }
+
+  Future<void> _loadSavedLanguage() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getString('selectedLanguage') ?? 'Polish';
+  }
+
+  Future<void> setLanguage(String language) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selectedLanguage', language);
+    state = language;
+  }
+}
 
 class SettingsPage extends ConsumerWidget {
   final AppUser user;
@@ -22,7 +44,6 @@ class SettingsPage extends ConsumerWidget {
     // Pobieranie wartości isDarkMode z providera
     final isDarkMode = ref.watch(darkModeProvider);
 
-    
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -31,7 +52,7 @@ class SettingsPage extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 120),
-            SettingsHeading(AppLocalizations.of(context)!.account),
+              SettingsHeading(AppLocalizations.of(context)!.account),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -65,7 +86,7 @@ class SettingsPage extends ConsumerWidget {
                   ],
                 ),
               ),
-              
+
               const SizedBox(height: 40),
               SettingsHeading(AppLocalizations.of(context)!.settings),
               const SizedBox(height: 20),
@@ -74,15 +95,15 @@ class SettingsPage extends ConsumerWidget {
                 value: ref.watch(selectedLanguageProvider),
                 bgColor: Colors.orange.shade100,
                 iconColor: Colors.orange,
-                icon: Icons.public
-,
+                icon: Icons.public,
                 // Wybór języka
                 onTap: () {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text(AppLocalizations.of(context)!.selectLanguage),
+                        title:
+                            Text(AppLocalizations.of(context)!.selectLanguage),
                         content: Container(
                           width: double.minPositive,
                           child: ListView.builder(
@@ -94,7 +115,7 @@ class SettingsPage extends ConsumerWidget {
                                 onTap: () {
                                   ref
                                       .read(selectedLanguageProvider.notifier)
-                                      .state = languages[index];
+                                      .setLanguage(languages[index]);
                                   ref
                                       .read(localeProvider.notifier)
                                       .changeLocale(languages[index]);
@@ -117,18 +138,20 @@ class SettingsPage extends ConsumerWidget {
                 bgColor: Colors.blue.shade100,
                 iconColor: Colors.blue,
                 icon: Icons.notifications,
-                onTap:() {
+                onTap: () {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text(AppLocalizations.of(context)!.notificationSettings),
+                        title: Text(
+                            AppLocalizations.of(context)!.notificationSettings),
                         content: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             ListTile(
                               leading: const Icon(Icons.timer),
-                              title: Text(AppLocalizations.of(context)!.pause24h),
+                              title:
+                                  Text(AppLocalizations.of(context)!.pause24h),
                               onTap: () {
                                 // Implement 24h pause logic
                                 Navigator.pop(context);
@@ -136,17 +159,19 @@ class SettingsPage extends ConsumerWidget {
                             ),
                             ListTile(
                               leading: Icon(
-                                ref.watch(notificationsEnabledProvider) 
-                                  ? Icons.notifications_off 
-                                  : Icons.notifications_on
-                              ),
+                                  ref.watch(notificationsEnabledProvider)
+                                      ? Icons.notifications_off
+                                      : Icons.notifications_on),
                               title: Text(
-                                ref.watch(notificationsEnabledProvider)
-                                  ? AppLocalizations.of(context)!.disableNotifications
-                                  : AppLocalizations.of(context)!.enableNotifications
-                              ),
+                                  ref.watch(notificationsEnabledProvider)
+                                      ? AppLocalizations.of(context)!
+                                          .disableNotifications
+                                      : AppLocalizations.of(context)!
+                                          .enableNotifications),
                               onTap: () {
-                                ref.read(notificationsEnabledProvider.notifier).toggle();
+                                ref
+                                    .read(notificationsEnabledProvider.notifier)
+                                    .toggle();
                                 Navigator.pop(context);
                               },
                             ),
