@@ -10,6 +10,7 @@ var NAVTREEINDEX0 =
 "classEvent.html":[1,0,6],
 "classFirebaseApi.html":[1,0,7],
 "classImagePickerService.html":[1,0,8],
+"classStateNotifier_3_01Locale_01_4.html":[1,0,12],
 "classStateNotifier_3_01bool_01_4.html":[1,0,11],
 "classStatefulWidget.html":[1,0,9],
 "classStatelessWidget.html":[1,0,10],
