@@ -7,6 +7,8 @@ import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application/utils/theme.dart';
@@ -39,6 +41,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       locale: ref.watch(localeProvider),
       localizationsDelegates: const [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

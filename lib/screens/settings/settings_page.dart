@@ -7,7 +7,7 @@ import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Język do wyboru
 final selectedLanguageProvider = StateProvider<String>((ref) => 'Polish');
@@ -31,7 +31,7 @@ class SettingsPage extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 120),
-              SettingsHeading("Konto"),
+            SettingsHeading(AppLocalizations.of(context)!.account),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -66,10 +66,10 @@ class SettingsPage extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              SettingsHeading("Ustawienia"),
+              SettingsHeading(AppLocalizations.of(context)!.settings),
               const SizedBox(height: 20),
               SettingItem(
-                title: "Język",
+                title: AppLocalizations.of(context)!.language,
                 value: ref.watch(selectedLanguageProvider),
                 bgColor: Colors.orange.shade100,
                 iconColor: Colors.orange,
@@ -108,7 +108,7 @@ class SettingsPage extends ConsumerWidget {
               ),
               const SizedBox(height: 20),
               SettingItem(
-                title: "Powiadomienia",
+                title: AppLocalizations.of(context)!.notifications,
                 bgColor: Colors.blue.shade100,
                 iconColor: Colors.blue,
                 icon: Icons.notifications,
@@ -116,7 +116,7 @@ class SettingsPage extends ConsumerWidget {
               ),
               const SizedBox(height: 20),
               SettingItem(
-                title: "Pomoc",
+                title: AppLocalizations.of(context)!.help,
                 bgColor: Colors.red.shade100,
                 iconColor: Colors.red,
                 icon: Icons.contact_support,
@@ -124,7 +124,7 @@ class SettingsPage extends ConsumerWidget {
               ),
               const SizedBox(height: 20),
               SettingSwitch(
-                title: "Tryb ciemny",
+                title: AppLocalizations.of(context)!.darkMode,
                 value: isDarkMode,
                 bgColor: Colors.grey.shade300,
                 iconColor: Colors.grey.shade800,
