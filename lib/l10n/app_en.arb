@@ -39,5 +39,7 @@
   "registerAcc": "Sign up to create a new account",
   "anotherEmail": "Please enter another Email!",
   "passwordLenght": "Password must be at least 8 characters long!",
-  "welcome": "Welcome!"
+  "welcome": "Welcome!",
+  "recipient": "Recipient",
+  "selectRecipient": "Select message recipient"
 }

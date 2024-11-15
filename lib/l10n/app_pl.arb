@@ -39,5 +39,7 @@
   "registerAcc": "Zajerestruj się aby utworzyć nowe konto",
   "anotherEmail": "Proszę podać inny Email!",
   "passwordLenght": "Hasło musi mieć przynajmniej 8 znaków!",
-  "welcome": "Witaj!"
+  "welcome": "Witaj!",
+  "recipient": "Odbiorca",
+  "selectRecipient": "Wybierz odbiorcę wiadomości"
 }
