@@ -7,6 +7,11 @@ import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+// Język do wyboru
+final selectedLanguageProvider = StateProvider<String>((ref) => 'Polish');
+final languages = ['Polish', 'English'];
 
 class SettingsPage extends ConsumerWidget {
   final AppUser user;
@@ -17,6 +22,7 @@ class SettingsPage extends ConsumerWidget {
     // Pobieranie wartości isDarkMode z providera
     final isDarkMode = ref.watch(darkModeProvider);
 
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -25,7 +31,7 @@ class SettingsPage extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 120),
-              SettingsHeading("Konto"),
+            SettingsHeading(AppLocalizations.of(context)!.account),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -59,36 +65,114 @@ class SettingsPage extends ConsumerWidget {
                   ],
                 ),
               ),
+              
               const SizedBox(height: 40),
-              SettingsHeading("Ustawienia"),
+              SettingsHeading(AppLocalizations.of(context)!.settings),
               const SizedBox(height: 20),
               SettingItem(
-                title: "Język",
-                value: "Polski",
+                title: AppLocalizations.of(context)!.language,
+                value: ref.watch(selectedLanguageProvider),
                 bgColor: Colors.orange.shade100,
                 iconColor: Colors.orange,
-                icon: Icons.public,
-                onTap: () {},
+                icon: Icons.public
+,
+                // Wybór języka
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(AppLocalizations.of(context)!.selectLanguage),
+                        content: Container(
+                          width: double.minPositive,
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: languages.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return ListTile(
+                                title: Text(languages[index]),
+                                onTap: () {
+                                  ref
+                                      .read(selectedLanguageProvider.notifier)
+                                      .state = languages[index];
+                                  ref
+                                      .read(localeProvider.notifier)
+                                      .changeLocale(languages[index]);
+                                  Navigator.pop(context);
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
               const SizedBox(height: 20),
+
+              // Powiadomienia
               SettingItem(
-                title: "Powiadomienia",
+                title: AppLocalizations.of(context)!.notifications,
                 bgColor: Colors.blue.shade100,
                 iconColor: Colors.blue,
                 icon: Icons.notifications,
-                onTap: () {},
+                onTap:() {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(AppLocalizations.of(context)!.notificationSettings),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: const Icon(Icons.timer),
+                              title: Text(AppLocalizations.of(context)!.pause24h),
+                              onTap: () {
+                                // Implement 24h pause logic
+                                Navigator.pop(context);
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                ref.watch(notificationsEnabledProvider) 
+                                  ? Icons.notifications_off 
+                                  : Icons.notifications_on
+                              ),
+                              title: Text(
+                                ref.watch(notificationsEnabledProvider)
+                                  ? AppLocalizations.of(context)!.disableNotifications
+                                  : AppLocalizations.of(context)!.enableNotifications
+                              ),
+                              onTap: () {
+                                ref.read(notificationsEnabledProvider.notifier).toggle();
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
+
               const SizedBox(height: 20),
+
+              // Pomoc
               SettingItem(
-                title: "Pomoc",
+                title: AppLocalizations.of(context)!.help,
                 bgColor: Colors.red.shade100,
                 iconColor: Colors.red,
                 icon: Icons.contact_support,
                 onTap: () {},
               ),
               const SizedBox(height: 20),
+
+              // DarkMode
               SettingSwitch(
-                title: "Tryb ciemny",
+                title: AppLocalizations.of(context)!.darkMode,
                 value: isDarkMode,
                 bgColor: Colors.grey.shade300,
                 iconColor: Colors.grey.shade800,

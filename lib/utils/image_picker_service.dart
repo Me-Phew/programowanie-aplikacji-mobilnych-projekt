@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ImagePickerService {
   static Future<File?> pickImageFromGallery(BuildContext context) async {
@@ -35,7 +36,7 @@ class ImagePickerService {
             children: [
               ListTile(
                 leading: Icon(Icons.photo_library),
-                title: Text('Wybierz z galerii'),
+                title: Text(AppLocalizations.of(context)!.choseGallery),
                 onTap: () async {
                   Navigator.of(context).pop();
                   final image = await pickImageFromGallery(context);
@@ -44,7 +45,7 @@ class ImagePickerService {
               ),
               ListTile(
                 leading: Icon(Icons.photo_camera),
-                title: Text('Zrób zdjęcie'),
+                title: Text(AppLocalizations.of(context)!.takePhoto),
                 onTap: () async {
                   Navigator.of(context).pop();
                   final image = await pickImageFromCamera(context);
