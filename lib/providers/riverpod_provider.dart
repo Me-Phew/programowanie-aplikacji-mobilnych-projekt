@@ -60,6 +60,27 @@ class LocaleNotifier extends StateNotifier<Locale> {
   }
 }
 
+final selectedLanguageProvider =
+    StateNotifierProvider<SelectedLanguageNotifier, String>((ref) {
+  return SelectedLanguageNotifier();
+});
+
+class SelectedLanguageNotifier extends StateNotifier<String> {
+  SelectedLanguageNotifier() : super('Polish') {
+    _loadSavedLanguage();
+  }
+
+  Future<void> _loadSavedLanguage() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getString('selectedLanguage') ?? 'Polish';
+  }
+
+  Future<void> setLanguage(String language) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selectedLanguage', language);
+    state = language;
+  }
+}
 
 // Powiadomienia
 final notificationsEnabledProvider = StateNotifierProvider<NotificationsNotifier, bool>((ref) {
@@ -67,16 +88,18 @@ final notificationsEnabledProvider = StateNotifierProvider<NotificationsNotifier
 });
 
 class NotificationsNotifier extends StateNotifier<bool> {
-  NotificationsNotifier() : super(true);
-
-  void toggle() {
-    state = !state;
+  NotificationsNotifier() : super(true) {
+    _loadNotificationState();
   }
 
-  void pauseNotifications(Duration duration) {
-    state = false;
-    Future.delayed(duration, () {
-      state = true;
-    });
+  Future<void> _loadNotificationState() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getBool('notificationsEnabled') ?? true;
+  }
+
+  Future<void> toggleNotifications(bool enabled) async {
+    final prefs = await SharedPreferences.getInstance();
+    state = enabled;
+    await prefs.setBool('notificationsEnabled', enabled);
   }
 }

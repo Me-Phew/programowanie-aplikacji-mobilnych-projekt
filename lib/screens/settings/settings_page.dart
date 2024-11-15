@@ -13,28 +13,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 // Język do wyboru
 final languages = ['Polish', 'English'];
 
-final selectedLanguageProvider =
-    StateNotifierProvider<SelectedLanguageNotifier, String>((ref) {
-  return SelectedLanguageNotifier();
-});
-
-class SelectedLanguageNotifier extends StateNotifier<String> {
-  SelectedLanguageNotifier() : super('Polish') {
-    _loadSavedLanguage();
-  }
-
-  Future<void> _loadSavedLanguage() async {
-    final prefs = await SharedPreferences.getInstance();
-    state = prefs.getString('selectedLanguage') ?? 'Polish';
-  }
-
-  Future<void> setLanguage(String language) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('selectedLanguage', language);
-    state = language;
-  }
-}
-
 class SettingsPage extends ConsumerWidget {
   final AppUser user;
   const SettingsPage({super.key, required this.user});
@@ -133,66 +111,19 @@ class SettingsPage extends ConsumerWidget {
               const SizedBox(height: 20),
 
               // Powiadomienia
-              SettingItem(
+              SettingSwitch(
                 title: AppLocalizations.of(context)!.notifications,
+                value: ref.watch(notificationsEnabledProvider),
                 bgColor: Colors.blue.shade100,
                 iconColor: Colors.blue,
                 icon: Icons.notifications,
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Text(
-                            AppLocalizations.of(context)!.notificationSettings),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ListTile(
-                              leading: const Icon(Icons.timer),
-                              title:
-                                  Text(AppLocalizations.of(context)!.pause24h),
-                              onTap: () {
-                                // Implement 24h pause logic
-                                Navigator.pop(context);
-                              },
-                            ),
-                            ListTile(
-                              leading: Icon(
-                                  ref.watch(notificationsEnabledProvider)
-                                      ? Icons.notifications_off
-                                      : Icons.notifications_on),
-                              title: Text(
-                                  ref.watch(notificationsEnabledProvider)
-                                      ? AppLocalizations.of(context)!
-                                          .disableNotifications
-                                      : AppLocalizations.of(context)!
-                                          .enableNotifications),
-                              onTap: () {
-                                ref
-                                    .read(notificationsEnabledProvider.notifier)
-                                    .toggle();
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
+                onTap: (value) {
+                  ref
+                      .read(notificationsEnabledProvider.notifier)
+                      .toggleNotifications(value);
                 },
               ),
 
-              const SizedBox(height: 20),
-
-              // Pomoc
-              SettingItem(
-                title: AppLocalizations.of(context)!.help,
-                bgColor: Colors.red.shade100,
-                iconColor: Colors.red,
-                icon: Icons.contact_support,
-                onTap: () {},
-              ),
               const SizedBox(height: 20),
 
               // DarkMode
@@ -208,6 +139,17 @@ class SettingsPage extends ConsumerWidget {
                 },
               ),
               const SizedBox(height: 20),
+
+              // Pomoc
+              SettingItem(
+                title: AppLocalizations.of(context)!.help,
+                bgColor: Colors.red.shade100,
+                iconColor: Colors.red,
+                icon: Icons.contact_support,
+                onTap: () {},
+              ),
+              const SizedBox(height: 20),
+
             ],
           ),
         ),
