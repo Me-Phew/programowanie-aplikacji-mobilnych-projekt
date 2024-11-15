@@ -8,6 +8,11 @@ import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+// Język do wyboru
+final selectedLanguageProvider = StateProvider<String>((ref) => 'Polish');
+final languages = ['Polish', 'English'];
+
 class SettingsPage extends ConsumerWidget {
   final AppUser user;
   const SettingsPage({super.key, required this.user});
@@ -17,6 +22,7 @@ class SettingsPage extends ConsumerWidget {
     // Pobieranie wartości isDarkMode z providera
     final isDarkMode = ref.watch(darkModeProvider);
 
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -64,11 +70,41 @@ class SettingsPage extends ConsumerWidget {
               const SizedBox(height: 20),
               SettingItem(
                 title: "Język",
-                value: "Polski",
+                value: ref.watch(selectedLanguageProvider),
                 bgColor: Colors.orange.shade100,
                 iconColor: Colors.orange,
                 icon: Icons.public,
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Wybierz język'),
+                        content: Container(
+                          width: double.minPositive,
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: languages.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return ListTile(
+                                title: Text(languages[index]),
+                                onTap: () {
+                                  ref
+                                      .read(selectedLanguageProvider.notifier)
+                                      .state = languages[index];
+                                  ref
+                                      .read(localeProvider.notifier)
+                                      .changeLocale(languages[index]);
+                                  Navigator.pop(context);
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
               const SizedBox(height: 20),
               SettingItem(

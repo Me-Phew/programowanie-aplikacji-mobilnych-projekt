@@ -1,0 +1,11 @@
+{
+  "settings": "Ustawienia", 
+  "darkMode": "Tryb ciemny",
+  "language": "Język",
+  "notifications": "Powiadomienia",
+  "help": "Pomoc",
+  "account": "Konto",
+  "mainPanel": "Panel główny",
+  "messages": "Wiadomości", 
+  "announcements": "Ogłoszenia"
+}
