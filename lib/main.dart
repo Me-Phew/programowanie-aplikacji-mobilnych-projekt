@@ -39,6 +39,8 @@ class MyApp extends ConsumerWidget {
     final isDarkMode = ref.watch(darkModeProvider);
 
     return MaterialApp(
+
+      // Język
       locale: ref.watch(localeProvider),
       localizationsDelegates: const [
         AppLocalizations.delegate,

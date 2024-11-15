@@ -31,6 +31,7 @@ final authServiceProvider = Provider<AuthService>((ref) {
 });
 
 
+// Język
 final localeProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
   return LocaleNotifier();
 });
@@ -44,5 +45,26 @@ class LocaleNotifier extends StateNotifier<Locale> {
     } else {
       state = const Locale('pl'); 
     }
+  }
+}
+
+
+// Powiadomienia
+final notificationsEnabledProvider = StateNotifierProvider<NotificationsNotifier, bool>((ref) {
+  return NotificationsNotifier();
+});
+
+class NotificationsNotifier extends StateNotifier<bool> {
+  NotificationsNotifier() : super(true);
+
+  void toggle() {
+    state = !state;
+  }
+
+  void pauseNotifications(Duration duration) {
+    state = false;
+    Future.delayed(duration, () {
+      state = true;
+    });
   }
 }

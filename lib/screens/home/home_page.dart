@@ -3,6 +3,8 @@ import 'package:flutter_application/screens/home/events.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -55,7 +57,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               children: [
                 const SizedBox(height: 30),
                 Text(
-                  "Plan zajęć",
+                  AppLocalizations.of(context)!.schedule,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       fontSize: 28,
@@ -183,7 +185,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: 'Sala: ',
+                                              text: AppLocalizations.of(context)!.room,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.normal,
                                               ),
@@ -209,7 +211,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: 'Rodzaj: ',
+                                              text: AppLocalizations.of(context)!.type,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.normal,
                                               ),
@@ -229,7 +231,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                               color: Colors.grey[900]),
                                           children: [
                                             TextSpan(
-                                              text: 'Prowadzący: ',
+                                              text: AppLocalizations.of(context)!.lecturer,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.normal,
                                               ),

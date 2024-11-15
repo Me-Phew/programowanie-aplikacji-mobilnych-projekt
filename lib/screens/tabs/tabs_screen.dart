@@ -6,6 +6,7 @@ import 'package:flutter_application/screens/notifications/notifications_page.dar
 import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key, required this.user});
@@ -42,11 +43,11 @@ class _TabsScreenState extends State<TabsScreen> {
             tabBackgroundColor: Colors.black,
             gap: 8,
             padding: EdgeInsets.all(16),
-            tabs: const [
-              GButton(icon: Icons.home, text: "Panel główny"),
-              GButton(icon: Icons.notifications, text: "Ogłoszenia"),
-              GButton(icon: Icons.mail, text: "Wiadomości"),
-              GButton(icon: Icons.settings, text: "Ustawienia"),
+            tabs: [
+              GButton(icon: Icons.home, text: AppLocalizations.of(context)!.mainPanel),
+              GButton(icon: Icons.notifications, text:AppLocalizations.of(context)!.notifications),
+              GButton(icon: Icons.mail, text:AppLocalizations.of(context)!.messages),
+              GButton(icon: Icons.settings, text: AppLocalizations.of(context)!.settings),
             ],
 
             // przypisujemy wartość wybranego indexa

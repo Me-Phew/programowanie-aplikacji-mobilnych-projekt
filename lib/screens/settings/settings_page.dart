@@ -65,6 +65,7 @@ class SettingsPage extends ConsumerWidget {
                   ],
                 ),
               ),
+              
               const SizedBox(height: 40),
               SettingsHeading(AppLocalizations.of(context)!.settings),
               const SizedBox(height: 20),
@@ -73,13 +74,15 @@ class SettingsPage extends ConsumerWidget {
                 value: ref.watch(selectedLanguageProvider),
                 bgColor: Colors.orange.shade100,
                 iconColor: Colors.orange,
-                icon: Icons.public,
+                icon: Icons.public
+,
+                // Wybór języka
                 onTap: () {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: const Text('Wybierz język'),
+                        title: Text(AppLocalizations.of(context)!.selectLanguage),
                         content: Container(
                           width: double.minPositive,
                           child: ListView.builder(
@@ -107,14 +110,57 @@ class SettingsPage extends ConsumerWidget {
                 },
               ),
               const SizedBox(height: 20),
+
+              // Powiadomienia
               SettingItem(
                 title: AppLocalizations.of(context)!.notifications,
                 bgColor: Colors.blue.shade100,
                 iconColor: Colors.blue,
                 icon: Icons.notifications,
-                onTap: () {},
+                onTap:() {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(AppLocalizations.of(context)!.notificationSettings),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              leading: const Icon(Icons.timer),
+                              title: Text(AppLocalizations.of(context)!.pause24h),
+                              onTap: () {
+                                // Implement 24h pause logic
+                                Navigator.pop(context);
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                ref.watch(notificationsEnabledProvider) 
+                                  ? Icons.notifications_off 
+                                  : Icons.notifications_on
+                              ),
+                              title: Text(
+                                ref.watch(notificationsEnabledProvider)
+                                  ? AppLocalizations.of(context)!.disableNotifications
+                                  : AppLocalizations.of(context)!.enableNotifications
+                              ),
+                              onTap: () {
+                                ref.read(notificationsEnabledProvider.notifier).toggle();
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
+
               const SizedBox(height: 20),
+
+              // Pomoc
               SettingItem(
                 title: AppLocalizations.of(context)!.help,
                 bgColor: Colors.red.shade100,
@@ -123,6 +169,8 @@ class SettingsPage extends ConsumerWidget {
                 onTap: () {},
               ),
               const SizedBox(height: 20),
+
+              // DarkMode
               SettingSwitch(
                 title: AppLocalizations.of(context)!.darkMode,
                 value: isDarkMode,

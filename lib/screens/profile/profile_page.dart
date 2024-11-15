@@ -9,6 +9,7 @@ import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/services/auth_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditAccount extends StatefulWidget {
   final AppUser user;
@@ -72,14 +73,14 @@ class _EditAccountState extends State<EditAccount> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Konto",
+              AppLocalizations.of(context)!.account,
               style: GoogleFonts.poppins(
                   textStyle:
                       TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
             ),
             const SizedBox(height: 40),
             EditItem(
-              title: "Zdjęcie",
+              title: AppLocalizations.of(context)!.photo,
               widget: Column(children: [
                 Column(
                   children: [
@@ -104,7 +105,7 @@ class _EditAccountState extends State<EditAccount> {
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.lightBlueAccent,
                       ),
-                      child: const Text("Zaktualizuj zdjęcie"),
+                      child: Text(AppLocalizations.of(context)!.updatePhoto),
                     ),
                   ],
                 ),
@@ -117,7 +118,7 @@ class _EditAccountState extends State<EditAccount> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProfileTextLeft(
-                  "Imię i Nazwisko",
+                  AppLocalizations.of(context)!.name,
                 ),
                 const SizedBox(width: 80),
                 ProfileTextRight(
@@ -147,7 +148,7 @@ class _EditAccountState extends State<EditAccount> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProfileTextLeft(
-                  "Numer Telefonu",
+                  AppLocalizations.of(context)!.phone,
                 ),
                 const SizedBox(width: 60),
                 ProfileTextRight(
@@ -162,7 +163,7 @@ class _EditAccountState extends State<EditAccount> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProfileTextLeft(
-                  "Kierunek",
+                  AppLocalizations.of(context)!.field,
                 ),
                 const SizedBox(width: 100),
                 ProfileTextRight(
@@ -186,7 +187,7 @@ class _EditAccountState extends State<EditAccount> {
                           Navigator.of(context).pop();
                         }
                       },
-                      child: const StyledButtonText("Wyloguj się")),
+                      child: StyledButtonText(AppLocalizations.of(context)!.logout)),
                 ],
               ),
             ),
