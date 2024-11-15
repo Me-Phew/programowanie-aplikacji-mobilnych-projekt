@@ -25,5 +25,19 @@
   "updatePhoto": "Update a photo",
   "logout": "Logout",
   "choseGallery": "Chose from the gallery",
-  "takePhoto": "Take a photo"
+  "takePhoto": "Take a photo",
+  "haveAcc": "Do you already have an account?",
+  "login": "Login",
+  "needAcc": "Need a account?",
+  "register": "Register",
+  "loginAcc": "Login to your account",
+  "emailAddress": "Email Address",
+  "emailAddressIsNeeded": "Email address is required",
+  "passwordIsNeeded": "Please enter your Password",
+  "password": "Password",
+  "invalideLogin": "Invalid Login Details",
+  "registerAcc": "Sign up to create a new account",
+  "anotherEmail": "Please enter another Email!",
+  "passwordLenght": "Password must be at least 8 characters long!",
+  "welcome": "Welcome!"
 }

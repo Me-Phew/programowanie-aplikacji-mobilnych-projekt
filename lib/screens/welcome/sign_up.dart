@@ -4,6 +4,7 @@ import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_form_field.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/services/auth_service.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -30,9 +31,9 @@ class _SignUpFormState extends State<SignUpForm> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Sing up text
-            const Center(
+            Center(
                 child:
-                    StyledBodyText("Zajerestruj się aby utworzyć nowe konto")),
+                    StyledBodyText(AppLocalizations.of(context)!.registerAcc)),
             const SizedBox(height: 16.0),
 
             // email address
@@ -40,11 +41,11 @@ class _SignUpFormState extends State<SignUpForm> {
                 textEditingController: _emailController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Proszę podaj swój Email";
+                    return AppLocalizations.of(context)!.emailAddressIsNeeded;
                   }
                   return null;
                 },
-                label: const Text("Adres e-mail"),
+                label: Text(AppLocalizations.of(context)!.emailAddress),
                 icon: Icons.person),
             const SizedBox(height: 16.0),
 
@@ -53,14 +54,14 @@ class _SignUpFormState extends State<SignUpForm> {
                 textEditingController: _passwordController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Proszę podaj swoje Hasło";
+                    return AppLocalizations.of(context)!.passwordIsNeeded;
                   }
                   if (value.length < 8) {
-                    return "Hasło musi mieć przynajmniej 8 znaków!";
+                    return AppLocalizations.of(context)!.passwordLenght;
                   }
                   return null;
                 },
-                label: const Text("Hasło"),
+                label: Text(AppLocalizations.of(context)!.password),
                 icon: Icons.lock),
             const SizedBox(height: 16.0),
 
@@ -90,12 +91,13 @@ class _SignUpFormState extends State<SignUpForm> {
                     // error feedback
                     if (user == null) {
                       setState(() {
-                        _errorFeedback = "Proszę podać inny Email!";
+                        _errorFeedback =
+                            AppLocalizations.of(context)!.anotherEmail;
                       });
                     }
                   }
                 },
-                child: const StyledButtonText("Zajerestruj się"),
+                child: StyledButtonText(AppLocalizations.of(context)!.register),
               ),
             )
           ],

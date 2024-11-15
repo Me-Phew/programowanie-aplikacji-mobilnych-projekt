@@ -4,6 +4,7 @@ import 'package:flutter_application/screens/welcome/sign_in.dart';
 import 'package:flutter_application/screens/welcome/sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -46,14 +47,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(height: 125.0),
 
                   Image.asset("assets/images/logoWithoutBg.png", width: 250),
-                  const StyledHeading('Witaj'),
+                  StyledHeading(AppLocalizations.of(context)!.welcome),
 
                   // Sign up screen
                   if (isSignUpForm)
                     Column(
                       children: [
                         const SignUpForm(),
-                        const StyledBodyText("Posiadasz już konto?"),
+                        StyledBodyText(AppLocalizations.of(context)!.haveAcc),
                         TextButton(
                           onPressed: () {
                             setState(() {
@@ -62,7 +63,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           },
                           style: TextButton.styleFrom(
                               foregroundColor: Colors.black),
-                          child: Text("Zaloguj się",
+                          child: Text(AppLocalizations.of(context)!.login,
                               style: GoogleFonts.poppins(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold)),
@@ -75,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Column(
                       children: [
                         const SignInForm(),
-                        const StyledBodyText("Potrzebujesz konta?"),
+                        StyledBodyText(AppLocalizations.of(context)!.needAcc),
                         TextButton(
                           onPressed: () {
                             setState(() {
@@ -84,7 +85,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           },
                           style: TextButton.styleFrom(
                               foregroundColor: Colors.black),
-                          child: Text("Zajerestruj się",
+                          child: Text(AppLocalizations.of(context)!.register,
                               style: GoogleFonts.poppins(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold)),
