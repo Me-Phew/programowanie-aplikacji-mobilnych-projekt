@@ -12,5 +12,6 @@ var annotated_dup =
     [ "StatefulWidget", "classStatefulWidget.html", null ],
     [ "StatelessWidget", "classStatelessWidget.html", null ],
     [ "StateNotifier< bool >", "classStateNotifier_3_01bool_01_4.html", null ],
-    [ "StateNotifier< Locale >", "classStateNotifier_3_01Locale_01_4.html", null ]
+    [ "StateNotifier< Locale >", "classStateNotifier_3_01Locale_01_4.html", null ],
+    [ "StateNotifier< String >", "classStateNotifier_3_01String_01_4.html", null ]
 ];
