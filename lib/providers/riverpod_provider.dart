@@ -37,17 +37,50 @@ final localeProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
 });
 
 class LocaleNotifier extends StateNotifier<Locale> {
-  LocaleNotifier() : super(const Locale('pl'));
+  LocaleNotifier() : super(const Locale('pl')) {
+    _loadSavedLocale();
+  }
 
-  void changeLocale(String language) {
+  // Ładowanie zapisanego języka przy starcie
+  Future<void> _loadSavedLocale() async {
+    final prefs = await SharedPreferences.getInstance();
+    final language = prefs.getString('selectedLanguage') ?? 'Polish';
+    changeLocale(language);
+  }
+
+  Future<void> changeLocale(String language) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selectedLanguage', language);
+    
     if (language == 'English') {
       state = const Locale('en');
     } else {
-      state = const Locale('pl'); 
+      state = const Locale('pl');
     }
   }
 }
 
+final selectedLanguageProvider =
+    StateNotifierProvider<SelectedLanguageNotifier, String>((ref) {
+  return SelectedLanguageNotifier();
+});
+
+class SelectedLanguageNotifier extends StateNotifier<String> {
+  SelectedLanguageNotifier() : super('Polish') {
+    _loadSavedLanguage();
+  }
+
+  Future<void> _loadSavedLanguage() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getString('selectedLanguage') ?? 'Polish';
+  }
+
+  Future<void> setLanguage(String language) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selectedLanguage', language);
+    state = language;
+  }
+}
 
 // Powiadomienia
 final notificationsEnabledProvider = StateNotifierProvider<NotificationsNotifier, bool>((ref) {
@@ -55,16 +88,18 @@ final notificationsEnabledProvider = StateNotifierProvider<NotificationsNotifier
 });
 
 class NotificationsNotifier extends StateNotifier<bool> {
-  NotificationsNotifier() : super(true);
-
-  void toggle() {
-    state = !state;
+  NotificationsNotifier() : super(true) {
+    _loadNotificationState();
   }
 
-  void pauseNotifications(Duration duration) {
-    state = false;
-    Future.delayed(duration, () {
-      state = true;
-    });
+  Future<void> _loadNotificationState() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getBool('notificationsEnabled') ?? true;
+  }
+
+  Future<void> toggleNotifications(bool enabled) async {
+    final prefs = await SharedPreferences.getInstance();
+    state = enabled;
+    await prefs.setBool('notificationsEnabled', enabled);
   }
 }

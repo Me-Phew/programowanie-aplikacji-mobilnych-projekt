@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/home/events.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -67,7 +68,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                 ),
                 TableCalendar(
-                  locale: "pl_PL",
+                  locale:  ref.watch(localeProvider).languageCode == 'en' ? 'en_US' : 'pl_PL',
                   rowHeight: 43,
                   headerStyle: HeaderStyle(
                       formatButtonVisible: false, titleCentered: true),

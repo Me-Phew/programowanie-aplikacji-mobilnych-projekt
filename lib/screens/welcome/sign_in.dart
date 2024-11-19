@@ -6,6 +6,7 @@ import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/services/auth_service.dart';
 import 'package:flutter_application/utils/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({super.key});
@@ -32,7 +33,8 @@ class _SignInFormState extends State<SignInForm> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // Sing up text
-            const Center(child: StyledBodyText("Zaloguj się do swojego konta")),
+            Center(
+                child: StyledBodyText(AppLocalizations.of(context)!.loginAcc)),
             const SizedBox(
               height: 16.0,
             ),
@@ -40,11 +42,11 @@ class _SignInFormState extends State<SignInForm> {
             // email address
             StyledFormField(
               textEditingController: _emailController,
-              label: const Text("Adres e-mail"),
+              label: Text(AppLocalizations.of(context)!.emailAddress),
               icon: Icons.person,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return "Adres e-mail jest wymagany";
+                  return AppLocalizations.of(context)!.emailAddressIsNeeded;
                 }
                 return null;
               },
@@ -56,11 +58,11 @@ class _SignInFormState extends State<SignInForm> {
                 textEditingController: _passwordController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Proszę podaj swoje Hasło";
+                    return AppLocalizations.of(context)!.passwordIsNeeded;
                   }
                   return null;
                 },
-                label: const Text("Hasło"),
+                label: Text(AppLocalizations.of(context)!.password),
                 icon: Icons.lock),
             const SizedBox(height: 16.0),
 
@@ -90,12 +92,13 @@ class _SignInFormState extends State<SignInForm> {
                     // error feedback
                     if (user == null) {
                       setState(() {
-                        _errorFeedback = "Nieprawidłowe dane logowania";
+                        _errorFeedback =
+                            AppLocalizations.of(context)!.invalideLogin;
                       });
                     }
                   }
                 },
-                child: const StyledButtonText("Zaloguj się"),
+                child: StyledButtonText(AppLocalizations.of(context)!.login),
               ),
             )
           ],
