@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['event_0',['Event',['../classEvent.html',1,'']]]
+  ['defaultfirebaseoptions_0',['DefaultFirebaseOptions',['../classDefaultFirebaseOptions.html',1,'']]]
 ];

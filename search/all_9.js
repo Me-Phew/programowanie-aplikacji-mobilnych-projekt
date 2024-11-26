@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['statefulwidget_0',['StatefulWidget',['../classStatefulWidget.html',1,'']]],
-  ['statelesswidget_1',['StatelessWidget',['../classStatelessWidget.html',1,'']]],
-  ['statenotifier_3c_20bool_20_3e_2',['StateNotifier&lt; bool &gt;',['../classStateNotifier_3_01bool_01_4.html',1,'']]],
-  ['statenotifier_3c_20locale_20_3e_3',['StateNotifier&lt; Locale &gt;',['../classStateNotifier_3_01Locale_01_4.html',1,'']]],
-  ['statenotifier_3c_20string_20_3e_4',['StateNotifier&lt; String &gt;',['../classStateNotifier_3_01String_01_4.html',1,'']]]
+  ['mateuszbasiaga_20pl_20panel_20administratora_20a_0',['&lt;a href=&quot;https://wd.mateuszbasiaga.pl/&quot; &gt;Panel administratora&lt;/a&gt;',['../md_README.html#autotoc_md1',1,'']]],
+  ['mobilnych_20projekt_1',['Programowanie urządzeń mobilnych - projekt',['../md_README.html',1,'']]]
 ];

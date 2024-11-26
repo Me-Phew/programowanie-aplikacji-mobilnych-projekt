@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['imagepickerservice_0',['ImagePickerService',['../classImagePickerService.html',1,'']]]
+  ['faculty_0',['Faculty',['../classFaculty.html',1,'']]],
+  ['firebaseapi_1',['FirebaseApi',['../classFirebaseApi.html',1,'']]]
 ];
