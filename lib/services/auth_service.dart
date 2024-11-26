@@ -1,44 +1,30 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application/models/app_user.dart';
+import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:flutter_application/wirtualny-sdk/models/request-data/sign_in_data.dart';
+
 class AuthService {
-  static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-
-  // Rejestracja
-  static Future<AppUser?> signUp(String email, String password) async {
-    try {
-      final UserCredential credential = await _firebaseAuth
-          .createUserWithEmailAndPassword(email: email, password: password);
-
-      if (credential.user != null) {
-        return AppUser(
-          uid: credential.user!.uid,
-          email: credential.user!.email!,
-        );
-      }
-      return null;
-    } catch (e) {
-      return null;
-    }
-  }
+  static final WirtualnySdk _wirtualnySdk = WirtualnySdk();
 
   // Logowanie
-  static Future<AppUser?> signIn(String email, String password) async {
+  static Future<AppUser?> studentLogin(StudentLoginData loginData) async {
     try {
       final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
 
-      final UserCredential credential = await _firebaseAuth
-          .signInWithEmailAndPassword(email: email, password: password);
+      // final UserCredential credential = await _firebaseAuth
+      //     .signInWithEmailAndPassword(email: email, password: password);
 
-      if (credential.user != null) {
-        await asyncPrefs.setBool('hasLoggedInBefore', true);
+      await _wirtualnySdk.login(loginData);
 
-        return AppUser(
-          uid: credential.user!.uid,
-          email: credential.user!.email!,
-        );
-      }
+      // if (credential.user != null) {
+      //   await asyncPrefs.setBool('hasLoggedInBefore', true);
+
+      //   return AppUser(
+      //     uid: credential.user!.uid,
+      //     email: credential.user!.email!,
+      //   );
+      // }
       return null;
     } catch (e) {
       return null;
@@ -47,6 +33,6 @@ class AuthService {
 
   // Wylogowanie
   static Future<void> signOut() async {
-    await _firebaseAuth.signOut();
+    // await _firebaseAuth.signOut();
   }
 }

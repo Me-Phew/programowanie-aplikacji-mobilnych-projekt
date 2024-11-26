@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
-import 'package:flutter_application/screens/welcome/sign_in.dart';
-import 'package:flutter_application/screens/welcome/sign_up.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'student_login.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -22,17 +21,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     });
   }
 
-  bool isSignUpForm = false;
-
   _loadAsyncState() async {
     final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
 
     final bool? hasLoggedInBefore =
         await asyncPrefs.getBool('hasLoggedInBefore');
-
-    setState(() {
-      isSignUpForm = (hasLoggedInBefore == null) ? true : !hasLoggedInBefore;
-    });
   }
 
   @override
@@ -48,50 +41,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                   Image.asset("assets/images/logoWithoutBg.png", width: 250),
                   StyledHeading(AppLocalizations.of(context)!.welcome),
-
-                  // Sign up screen
-                  if (isSignUpForm)
-                    Column(
-                      children: [
-                        const SignUpForm(),
-                        StyledBodyText(AppLocalizations.of(context)!.haveAcc),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              isSignUpForm = false;
-                            });
-                          },
-                          style: TextButton.styleFrom(
-                              foregroundColor: Colors.black),
-                          child: Text(AppLocalizations.of(context)!.login,
-                              style: GoogleFonts.poppins(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold)),
-                        )
-                      ],
-                    ),
-
                   // Sign in screen
-                  if (!isSignUpForm)
-                    Column(
-                      children: [
-                        const SignInForm(),
-                        StyledBodyText(AppLocalizations.of(context)!.needAcc),
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              isSignUpForm = true;
-                            });
-                          },
-                          style: TextButton.styleFrom(
-                              foregroundColor: Colors.black),
-                          child: Text(AppLocalizations.of(context)!.register,
-                              style: GoogleFonts.poppins(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold)),
-                        )
-                      ],
-                    ),
+                  const StudentLoginForm()
                 ])),
       ),
     );

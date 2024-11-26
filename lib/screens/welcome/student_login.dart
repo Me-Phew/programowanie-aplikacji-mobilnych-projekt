@@ -5,17 +5,18 @@ import 'package:flutter_application/widgets/shared/styled_form_field.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/services/auth_service.dart';
 import 'package:flutter_application/utils/theme.dart';
+import 'package:flutter_application/wirtualny-sdk/models/request-data/sign_in_data.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class SignInForm extends StatefulWidget {
-  const SignInForm({super.key});
+class StudentLoginForm extends StatefulWidget {
+  const StudentLoginForm({super.key});
 
   @override
-  State<SignInForm> createState() => _SignInFormState();
+  State<StudentLoginForm> createState() => _StudentLoginFormState();
 }
 
-class _SignInFormState extends State<SignInForm> {
+class _StudentLoginFormState extends State<StudentLoginForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();
@@ -87,7 +88,10 @@ class _SignInFormState extends State<SignInForm> {
                     final email = _emailController.text.trim();
                     final password = _passwordController.text.trim();
 
-                    final user = await AuthService.signIn(email, password);
+                    print('object');
+
+                    final user = await AuthService.studentLogin(
+                        StudentLoginData(email: email, password: password));
 
                     // error feedback
                     if (user == null) {
