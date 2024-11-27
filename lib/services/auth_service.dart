@@ -1,31 +1,43 @@
-import 'package:flutter_application/models/app_user.dart';
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter_application/wirtualny-sdk/models/request-data/sign_in_data.dart';
+import 'package:flutter_application/wirtualny-sdk/models/request-data/login_data.dart';
 
 class AuthService {
+  static final _controller =
+      StreamController<StudentLoginResponse?>.broadcast();
   static final WirtualnySdk _wirtualnySdk = WirtualnySdk();
 
+  static StudentLoginResponse? parseLoginResponse(String jsonString) {
+    try {
+      final Map<String, dynamic> json = jsonDecode(jsonString);
+      return StudentLoginResponse.fromJson(json);
+    } catch (e) {
+      print('Error parsing login response: $e');
+      return null;
+    }
+  }
+
+  static Stream<StudentLoginResponse?> authStateChanges() {
+    return _controller.stream;
+  }
+
   // Logowanie
-  static Future<AppUser?> studentLogin(StudentLoginData loginData) async {
+  static Future<StudentLoginResponse?> studentLogin(
+      StudentLoginData loginData) async {
     try {
       final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
 
       // final UserCredential credential = await _firebaseAuth
       //     .signInWithEmailAndPassword(email: email, password: password);
 
-      await _wirtualnySdk.login(loginData);
+      final studentResponse = await _wirtualnySdk.login(loginData);
 
-      // if (credential.user != null) {
-      //   await asyncPrefs.setBool('hasLoggedInBefore', true);
-
-      //   return AppUser(
-      //     uid: credential.user!.uid,
-      //     email: credential.user!.email!,
-      //   );
-      // }
-      return null;
+      return studentResponse;
     } catch (e) {
       return null;
     }

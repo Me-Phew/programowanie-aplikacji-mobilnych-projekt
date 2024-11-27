@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
 import 'package:flutter_application/screens/messages/messages_page.dart';
 import 'package:flutter_application/screens/notifications/notifications_page.dart';
 import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
+import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key, required this.user});
 
-  final AppUser user;
+  final StudentLoginResponse user;
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -44,10 +44,18 @@ class _TabsScreenState extends State<TabsScreen> {
             gap: 8,
             padding: EdgeInsets.all(16),
             tabs: [
-              GButton(icon: Icons.home, text: AppLocalizations.of(context)!.mainPanel),
-              GButton(icon: Icons.notifications, text:AppLocalizations.of(context)!.notifications),
-              GButton(icon: Icons.mail, text:AppLocalizations.of(context)!.messages),
-              GButton(icon: Icons.settings, text: AppLocalizations.of(context)!.settings),
+              GButton(
+                  icon: Icons.home,
+                  text: AppLocalizations.of(context)!.mainPanel),
+              GButton(
+                  icon: Icons.notifications,
+                  text: AppLocalizations.of(context)!.notifications),
+              GButton(
+                  icon: Icons.mail,
+                  text: AppLocalizations.of(context)!.messages),
+              GButton(
+                  icon: Icons.settings,
+                  text: AppLocalizations.of(context)!.settings),
             ],
 
             // przypisujemy wartość wybranego indexa

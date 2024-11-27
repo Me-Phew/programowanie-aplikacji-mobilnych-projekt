@@ -5,7 +5,7 @@ import 'package:flutter_application/widgets/shared/styled_form_field.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/services/auth_service.dart';
 import 'package:flutter_application/utils/theme.dart';
-import 'package:flutter_application/wirtualny-sdk/models/request-data/sign_in_data.dart';
+import 'package:flutter_application/wirtualny-sdk/models/request-data/login_data.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -45,6 +45,8 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
               textEditingController: _emailController,
               label: Text(AppLocalizations.of(context)!.emailAddress),
               icon: Icons.person,
+              keyboardType: TextInputType.emailAddress,
+              autofillHints: const [AutofillHints.email],
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return AppLocalizations.of(context)!.emailAddressIsNeeded;
@@ -74,6 +76,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                       style: const TextStyle(color: Colors.red))),
 
             // sumbit button
+            // Inside _StudentLoginFormState class
             FractionallySizedBox(
               widthFactor: 0.5,
               child: StyledButton(
@@ -82,19 +85,25 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                     _errorFeedback = null;
                   });
 
-                  // Daje ! na końcu bo wiem że formKey nie będzie posiadać wartowści null
                   if (_formKey.currentState!.validate()) {
-                    // trim żeby pozbyć się pustej przestrzeni
-                    final email = _emailController.text.trim();
-                    final password = _passwordController.text.trim();
+                    try {
+                      final email = _emailController.text.trim();
+                      final password = _passwordController.text.trim();
 
-                    print('object');
+                      final user = await AuthService.studentLogin(
+                          StudentLoginData(email: email, password: password));
 
-                    final user = await AuthService.studentLogin(
-                        StudentLoginData(email: email, password: password));
+                      if (user != null) {
+                        // Login successful - navigate to main screen
+                      } else {
+                        setState(() {
+                          _errorFeedback =
+                              AppLocalizations.of(context)!.invalideLogin;
+                        });
+                      }
+                    } catch (e) {
+                      print(e);
 
-                    // error feedback
-                    if (user == null) {
                       setState(() {
                         _errorFeedback =
                             AppLocalizations.of(context)!.invalideLogin;

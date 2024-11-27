@@ -1,18 +1,19 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/services/auth_service.dart';
+import 'package:flutter_application/wirtualny-sdk/models/request-data/login_data.dart';
+import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EditAccount extends StatefulWidget {
-  final AppUser user;
+  final StudentLoginResponse user;
   const EditAccount({super.key, required this.user});
 
   @override
@@ -137,7 +138,7 @@ class _EditAccountState extends State<EditAccount> {
                 ),
                 const SizedBox(width: 160),
                 ProfileTextRight(
-                  widget.user.email,
+                  widget.user.user.firstName,
                 ),
               ],
             ),
@@ -187,7 +188,8 @@ class _EditAccountState extends State<EditAccount> {
                           Navigator.of(context).pop();
                         }
                       },
-                      child: StyledButtonText(AppLocalizations.of(context)!.logout)),
+                      child: StyledButtonText(
+                          AppLocalizations.of(context)!.logout)),
                 ],
               ),
             ),

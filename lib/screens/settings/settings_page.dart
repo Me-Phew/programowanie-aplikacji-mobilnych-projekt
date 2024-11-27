@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
+import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -14,7 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final languages = ['Polish', 'English'];
 
 class SettingsPage extends ConsumerWidget {
-  final AppUser user;
+  final StudentLoginResponse user;
   const SettingsPage({super.key, required this.user});
 
   @override
@@ -49,7 +49,8 @@ class SettingsPage extends ConsumerWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SettingsText("${user.email}"),
+                        SettingsText(
+                            "${user.user.firstName} ${user.user.familyName}"),
                         const SizedBox(height: 6),
                         const SettingsTextInside("Student"),
                       ],
@@ -149,7 +150,6 @@ class SettingsPage extends ConsumerWidget {
                 onTap: () {},
               ),
               const SizedBox(height: 20),
-
             ],
           ),
         ),

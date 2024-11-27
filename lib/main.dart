@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/models/app_user.dart';
 import 'package:flutter_application/providers/firebase_provider.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/utils/push_notifications.dart';
 import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
+import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -52,7 +52,7 @@ class MyApp extends ConsumerWidget {
 
       theme: isDarkMode ? darkTheme : lightTheme,
       home: Consumer(builder: (context, ref, child) {
-        final AsyncValue<AppUser?> user = ref.watch(authProvider);
+        final AsyncValue<StudentLoginResponse?> user = ref.watch(authProvider);
         return user.when(
             data: (value) {
               if (value == null) {
