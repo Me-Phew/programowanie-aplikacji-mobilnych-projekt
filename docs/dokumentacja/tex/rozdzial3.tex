@@ -23,35 +23,35 @@ Aplikacja została zbudowana w oparciu o dwa główne komponenty:
 
 \begin{itemize}
   \item \textbf{Backend - Payload CMS} – główny system zarządzania treścią, odpowiedzialny za:
-    \begin{itemize}
-      \item Autoryzację i uwierzytelnianie użytkowników
-      \item Przechowywanie i zarządzanie danymi aplikacji
-      \item API REST do komunikacji z aplikacją mobilną
-      \item Panel administracyjny dla pracowników uczelni
-    \end{itemize}
-  
+        \begin{itemize}
+          \item Autoryzację i uwierzytelnianie użytkowników
+          \item Przechowywanie i zarządzanie danymi aplikacji
+          \item API REST do komunikacji z aplikacją mobilną
+          \item Panel administracyjny dla pracowników uczelni
+        \end{itemize}
+
   \item \textbf{Firebase Cloud Messaging} – wykorzystywany wyłącznie do obsługi powiadomień push:
-    \begin{itemize}
-      \item Wysyłanie powiadomień o zmianach w planie zajęć
-      \item Informowanie o nowych ogłoszeniach
-      \item Powiadomienia o nowych wiadomościach
-    \end{itemize}
+        \begin{itemize}
+          \item Wysyłanie powiadomień o zmianach w planie zajęć
+          \item Informowanie o nowych ogłoszeniach
+          \item Powiadomienia o nowych wiadomościach
+        \end{itemize}
 \end{itemize}
 
 \subsection{Framework Flutter}
 System składa się z trzech głównych komponentów:
 
 \begin{figure}[h]
-\centering
-\begin{tikzpicture}[node distance=5cm]
+  \centering
+  \begin{tikzpicture}[node distance=5cm]
     \node[draw,rectangle] (app) {Aplikacja mobilna (Flutter)};
     \node[draw,rectangle] (cms) [below left of=app] {Payload CMS};
     \node[draw,rectangle] (fcm) [below right of=app] {Firebase Cloud Messaging};
-    \draw[->] (app) -- (cms) node[midway,above,sloped] {REST API};
+    \draw[->] (app) -- (cms) node[midway,above,sloped] {REST API, GraphQL};
     \draw[->] (fcm) -- (app) node[midway,above,sloped] {Powiadomienia};
-\end{tikzpicture}
-\caption{Architektura systemu}
-\label{fig:architecture}
+  \end{tikzpicture}
+  \caption{Architektura systemu}
+  \label{fig:architecture}
 \end{figure}
 \newpage
 \subsection{Architektura systemu}
@@ -65,16 +65,16 @@ Architektura aplikacji została zaprojektowana w modelu klient-serwer z następu
           \item Przechowywanie danych lokalnych
           \item Obsługa trybu offline
         \end{itemize}
-        
+
   \item \textbf{Backend (Payload CMS)}:
         \begin{itemize}
           \item REST API
           \item System autoryzacji
-          \item Baza danych 
+          \item Baza danych
           \item Panel administracyjny
           \item GraphQL
         \end{itemize}
-        
+
   \item \textbf{Usługi zewnętrzne}:
         \begin{itemize}
           \item Firebase Cloud Messaging (powiadomienia push)
@@ -114,7 +114,7 @@ Architektura aplikacji została zaprojektowana w modelu klient-serwer z następu
           \item Rola (student/wykładowca/admin)
           \item Ustawienia (język, powiadomienia)
         \end{itemize}
-        
+
   \item \textbf{Schedule}:
         \begin{itemize}
           \item Przedmiot
@@ -122,7 +122,7 @@ Architektura aplikacji została zaprojektowana w modelu klient-serwer z następu
           \item Sala
           \item Prowadzący
         \end{itemize}
-        
+
   \item \textbf{Notification}:
         \begin{itemize}
           \item Typ
@@ -141,7 +141,7 @@ Architektura aplikacji została zaprojektowana w modelu klient-serwer z następu
           \item Refresh tokens
           \item Szyfrowanie danych wrażliwych
         \end{itemize}
-        
+
   \item \textbf{Walidacja danych}:
         \begin{itemize}
           \item Walidacja formularzy
@@ -159,7 +159,7 @@ Architektura aplikacji została zaprojektowana w modelu klient-serwer z następu
           \item Buforowanie ogłoszeń
           \item Ustawienia użytkownika
         \end{itemize}
-        
+
   \item \textbf{Strategia synchronizacji}:
         \begin{itemize}
           \item Automatyczna synchronizacja w tle
@@ -170,73 +170,73 @@ Architektura aplikacji została zaprojektowana w modelu klient-serwer z następu
 \subsection{Diagram UML}
 % Klasa Student
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}
+  \centering
+  \begin{tikzpicture}
     \umlclass[x=0, y=0]{Student}{
-        - id: int \\
-        - firstName: String \\
-        - middleName: dynamic \\
-        - familyName: String \\
-        - coursesOfStudy: List<CoursesOfStudy> \\
-        - dateOfBirth: DateTime \\
-        - updatedAt: DateTime \\
-        - createdAt: DateTime \\
-        - collection: String \\
-        - loginAttempts: int
+      - id: int \\
+      - firstName: String \\
+      - middleName: dynamic \\
+      - familyName: String \\
+      - coursesOfStudy: List<CoursesOfStudy> \\
+      - dateOfBirth: DateTime \\
+      - updatedAt: DateTime \\
+      - createdAt: DateTime \\
+      - collection: String \\
+      - loginAttempts: int
     }{
-        + factory Student.fromJson(Map<String, dynamic> json) \\
-        + toJson(): Map<String, dynamic>
+      + factory Student.fromJson(Map<String, dynamic> json) \\
+      + toJson(): Map<String, dynamic>
     }
-\end{tikzpicture}
-\caption{Klasa Student}
-\label{fig:class-student}
+  \end{tikzpicture}
+  \caption{Klasa Student}
+  \label{fig:class-student}
 \end{figure}
 \newpage
 % Klasa Schedule
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}
+  \centering
+  \begin{tikzpicture}
     \umlclass[x=0, y=0]{Schedule}{
-        - id: int \\
-        - courseOfStudy: int \\
-        - weekAfullTimeSchedule: WeekFullTimeSchedule \\
-        - weekAPartTimeSchedule: WeekPartTimeSchedule \\
-        - weekBfullTimeSchedule: WeekFullTimeSchedule \\
-        - weekBPartTimeSchedule: WeekPartTimeSchedule \\
-        - updatedAt: DateTime \\
-        - createdAt: DateTime
+      - id: int \\
+      - courseOfStudy: int \\
+      - weekAfullTimeSchedule: WeekFullTimeSchedule \\
+      - weekAPartTimeSchedule: WeekPartTimeSchedule \\
+      - weekBfullTimeSchedule: WeekFullTimeSchedule \\
+      - weekBPartTimeSchedule: WeekPartTimeSchedule \\
+      - updatedAt: DateTime \\
+      - createdAt: DateTime
     }{
-        + factory Schedule.fromJson(Map<String, dynamic> json) \\
-        + toJson(): Map<String, dynamic>
+      + factory Schedule.fromJson(Map<String, dynamic> json) \\
+      + toJson(): Map<String, dynamic>
     }
-\end{tikzpicture}
-\caption{Klasa Schedule}
-\label{fig:class-schedule}
+  \end{tikzpicture}
+  \caption{Klasa Schedule}
+  \label{fig:class-schedule}
 \end{figure}
 
 % Klasa CoursesOfStudy
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}
+  \centering
+  \begin{tikzpicture}
     \umlclass[x=0, y=0]{CoursesOfStudy}{
-        - id: int \\
-        - fieldOfStudy: String \\
-        - faculty: Faculty \\
-        - schedule: Schedule \\
-        - courseType: String \\
-        - levelOfStudy: String \\
-        - obtainedTitle: String \\
-        - numberOfSemesters: int \\
-        - currentSemester: int \\
-        - startDate: DateTime \\
-        - endDate: DateTime \\
-        - updatedAt: DateTime \\
-        - createdAt: DateTime
+      - id: int \\
+      - fieldOfStudy: String \\
+      - faculty: Faculty \\
+      - schedule: Schedule \\
+      - courseType: String \\
+      - levelOfStudy: String \\
+      - obtainedTitle: String \\
+      - numberOfSemesters: int \\
+      - currentSemester: int \\
+      - startDate: DateTime \\
+      - endDate: DateTime \\
+      - updatedAt: DateTime \\
+      - createdAt: DateTime
     }{
-        + factory CoursesOfStudy.fromJson(Map<String, dynamic> json) \\
-        + toJson(): Map<String, dynamic>
+      + factory CoursesOfStudy.fromJson(Map<String, dynamic> json) \\
+      + toJson(): Map<String, dynamic>
     }
-\end{tikzpicture}
-\caption{Klasa CoursesOfStudy}
-\label{fig:class-coursesofstudy}
+  \end{tikzpicture}
+  \caption{Klasa CoursesOfStudy}
+  \label{fig:class-coursesofstudy}
 \end{figure}
