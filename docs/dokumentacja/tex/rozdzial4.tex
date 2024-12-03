@@ -8,14 +8,14 @@ Projekt został podzielony na następujące główne katalogi:
 
 \begin{itemize}
   \item \textbf{lib/} - główny katalog z kodem źródłowym
-    \begin{itemize}
-      \item \textbf{models/} - modele danych
-      \item \textbf{screens/} - widoki aplikacji
-      \item \textbf{utils/} - narzędzia pomocnicze
-      \item \textbf{providers/} - zarządzanie stanem
-      \item \textbf{services/} - warstwa komunikacji z API
-      \item \textbf{widgets/} - komponenty wielokrotnego użytku
-    \end{itemize}
+        \begin{itemize}
+          \item \textbf{models/} - modele danych
+          \item \textbf{screens/} - widoki aplikacji
+          \item \textbf{utils/} - narzędzia pomocnicze
+          \item \textbf{providers/} - zarządzanie stanem
+          \item \textbf{services/} - warstwa komunikacji z API
+          \item \textbf{widgets/} - komponenty wielokrotnego użytku
+        \end{itemize}
 \end{itemize}
 
 \subsection{Modele danych}
@@ -86,13 +86,11 @@ class FirebaseApi {
   Future<void> initNotifications() async {
     await _firebaseMessaging.requestPermission();
     final token = await _firebaseMessaging.getToken();
-    // Token do identyfikacji urządzenia
     print('Token: $token');
   }
 
   void handleMessage(RemoteMessage? message) {
     if (message == null) return;
-    // Obsługa otrzymanego powiadomienia
   }
 }
 \end{lstlisting}
