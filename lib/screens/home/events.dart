@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,27 +22,27 @@ class Event {
 }
 
 // Pobieranie bazy danych :)
-final eventsProvider = StreamProvider.autoDispose((ref) {
-  return FirebaseFirestore.instance
-      .collection('events')
-      .snapshots()
-      .map((snapshot) {
-    return snapshot.docs.map((doc) {
-      return Event(
-        title: doc['title'],
-        startTime: TimeOfDay(
-          hour: int.parse(doc['startTime'].split(':')[0]),
-          minute: int.parse(doc['startTime'].split(':')[1]),
-        ),
-        endTime: TimeOfDay(
-          hour: int.parse(doc['endTime'].split(':')[0]),
-          minute: int.parse(doc['endTime'].split(':')[1]),
-        ),
-        room: doc['room'],
-        lecturer: doc['lecturer'],
-        type: doc['type'],
-        date: DateTime.parse(doc['date']),
-      );
-    }).toList();
-  });
-});
+// final eventsProvider = StreamProvider.autoDispose((ref) {
+//   return FirebaseFirestore.instance
+//       .collection('events')
+//       .snapshots()
+//       .map((snapshot) {
+//     return snapshot.docs.map((doc) {
+//       return Event(
+//         title: doc['title'],
+//         startTime: TimeOfDay(
+//           hour: int.parse(doc['startTime'].split(':')[0]),
+//           minute: int.parse(doc['startTime'].split(':')[1]),
+//         ),
+//         endTime: TimeOfDay(
+//           hour: int.parse(doc['endTime'].split(':')[0]),
+//           minute: int.parse(doc['endTime'].split(':')[1]),
+//         ),
+//         room: doc['room'],
+//         lecturer: doc['lecturer'],
+//         type: doc['type'],
+//         date: DateTime.parse(doc['date']),
+//       );
+//     }).toList();
+//   });
+// });

@@ -4,18 +4,16 @@ import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
-import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
+import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 // Język do wyboru
 final languages = ['Polish', 'English'];
 
 class SettingsPage extends ConsumerWidget {
-  final StudentLoginResponse user;
-  const SettingsPage({super.key, required this.user});
+  final Student student;
+  const SettingsPage({super.key, required this.student});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,7 +28,7 @@ class SettingsPage extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 120),
-              SettingsHeading(AppLocalizations.of(context)!.account),
+              SettingsHeading(AppLocalizations.of(context)!.profile),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -50,7 +48,7 @@ class SettingsPage extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SettingsText(
-                            "${user.user.firstName} ${user.user.familyName}"),
+                            "${student.firstName} ${student.familyName}"),
                         const SizedBox(height: 6),
                         const SettingsTextInside("Student"),
                       ],
@@ -60,7 +58,8 @@ class SettingsPage extends ConsumerWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EditAccount(user: user)));
+                              builder: (context) =>
+                                  EditAccount(student: student)));
                     }),
                   ],
                 ),

@@ -4,7 +4,7 @@
   "language": "Language",
   "notifications": "Notifications",
   "help": "Help",
-  "account": "Account",
+  "profile": "Profile",
   "mainPanel": "Main Panel",
   "messages": "Messages",
   "announcements": "Announcements",
@@ -35,11 +35,14 @@
   "emailAddressIsNeeded": "Email address is required",
   "passwordIsNeeded": "Please enter your Password",
   "password": "Password",
-  "invalideLogin": "Invalid Login Details",
+  "invalidLoginCredentials": "Invalid login credentials",
+  "generalLoginError": "Login error",
   "registerAcc": "Sign up to create a new account",
   "anotherEmail": "Please enter another Email!",
   "passwordLenght": "Password must be at least 8 characters long!",
   "welcome": "Welcome!",
   "recipient": "Recipient",
-  "selectRecipient": "Select message recipient"
+  "selectRecipient": "Select message recipient",
+  "username": "Username",
+  "indexNumber": "Index number"
 }

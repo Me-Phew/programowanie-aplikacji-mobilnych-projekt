@@ -4,7 +4,7 @@
   "language": "Język",
   "notifications": "Powiadomienia",
   "help": "Pomoc",
-  "account": "Konto",
+  "profile": "Profil",
   "mainPanel": "Panel główny",
   "messages": "Wiadomości", 
   "announcements": "Ogłoszenia",
@@ -35,11 +35,14 @@
   "emailAddressIsNeeded": "Adres e-mail jest wymagany",
   "passwordIsNeeded": "Proszę podaj swoje Hasło",
   "password": "Hasło",
-  "invalideLogin": "Nieprawidłowe dane logowania",
+  "invalidLoginCredentials": "Wprowadzony adres e-mail lub hasło są błędne. Sprawdź jeszcze raz i spróbuj zalogować się ponownie.",
+  "generalLoginError": "Błąd logowania",
   "registerAcc": "Zajerestruj się aby utworzyć nowe konto",
   "anotherEmail": "Proszę podać inny Email!",
   "passwordLenght": "Hasło musi mieć przynajmniej 8 znaków!",
   "welcome": "Witaj!",
   "recipient": "Odbiorca",
-  "selectRecipient": "Wybierz odbiorcę wiadomości"
+  "selectRecipient": "Wybierz odbiorcę wiadomości",
+  "username": "Nazwa użytkownika",
+  "indexNumber": "Numer indeksu"
 }

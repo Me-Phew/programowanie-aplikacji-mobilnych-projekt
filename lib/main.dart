@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/providers/firebase_provider.dart';
+import 'package:flutter_application/providers/auth_state_provider.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
-import 'package:flutter_application/utils/push_notifications.dart';
 import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
-import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
+import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -21,9 +20,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
-  // Powiadomienia
-  await FirebaseApi().initNotifications();
 
   initializeDateFormatting()
       .then((_) => runApp(const ProviderScope(child: MyApp())));
@@ -52,13 +48,13 @@ class MyApp extends ConsumerWidget {
 
       theme: isDarkMode ? darkTheme : lightTheme,
       home: Consumer(builder: (context, ref, child) {
-        final AsyncValue<StudentLoginResponse?> user = ref.watch(authProvider);
-        return user.when(
+        final AsyncValue<Student?> student = ref.watch(authStateProvider);
+        return student.when(
             data: (value) {
               if (value == null) {
                 return const WelcomeScreen();
               }
-              return TabsScreen(user: value);
+              return TabsScreen(student: value);
             },
             error: (error, _) => const Text("Error loading auth status ..."),
             loading: () => const Text("Loading"));

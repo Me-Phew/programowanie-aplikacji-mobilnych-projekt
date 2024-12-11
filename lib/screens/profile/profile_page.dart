@@ -1,20 +1,24 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
-import 'package:flutter_application/services/auth_service.dart';
-import 'package:flutter_application/wirtualny-sdk/models/request-data/login_data.dart';
-import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
+import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'profile_page_data_row.dart';
 
 class EditAccount extends StatefulWidget {
-  final StudentLoginResponse user;
-  const EditAccount({super.key, required this.user});
+  final Student student;
+  late final String formattedNameAndFamilyName;
+
+  EditAccount({super.key, required this.student}) {
+    formattedNameAndFamilyName = student.middleName != null
+        ? "${student.firstName} ${student.middleName} ${student.familyName}"
+        : "${student.firstName} ${student.familyName}";
+  }
 
   @override
   State<EditAccount> createState() => _EditAccountState();
@@ -74,7 +78,7 @@ class _EditAccountState extends State<EditAccount> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.account,
+              AppLocalizations.of(context)!.profile,
               style: GoogleFonts.poppins(
                   textStyle:
                       TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
@@ -113,64 +117,63 @@ class _EditAccountState extends State<EditAccount> {
               ]),
             ),
 
+            // Nazwa użytkownika
+            const SizedBox(height: 20),
+
+            ProfilePageDataRow(
+              textLeft: AppLocalizations.of(context)!.username,
+              textRight: widget.student.username,
+            ),
+
             // Imie i Nazwisko
             const SizedBox(height: 20),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProfileTextLeft(
-                  AppLocalizations.of(context)!.name,
-                ),
-                const SizedBox(width: 80),
-                ProfileTextRight(
-                  "Jan Kowalski",
-                ),
-              ],
+
+            ProfilePageDataRow(
+              textLeft: AppLocalizations.of(context)!.name,
+              textRight: widget.formattedNameAndFamilyName,
             ),
 
-            // Email
             const SizedBox(height: 20),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProfileTextLeft(
-                  "Email",
-                ),
-                const SizedBox(width: 160),
-                ProfileTextRight(
-                  widget.user.user.firstName,
-                ),
-              ],
+
+            ProfilePageDataRow(
+              textLeft: AppLocalizations.of(context)!.indexNumber,
+              textRight: widget.student.indexNumber,
             ),
 
-            // Numer Telefonu
+            // Kieruneki studiów
             const SizedBox(height: 20),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProfileTextLeft(
-                  AppLocalizations.of(context)!.phone,
-                ),
-                const SizedBox(width: 60),
-                ProfileTextRight(
-                  "+48 555 555 555",
-                ),
-              ],
+
+            const Center(
+              child: Text(
+                "Kierunki studiów",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
             ),
 
-            // Kierunek
-            const SizedBox(height: 20),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProfileTextLeft(
-                  AppLocalizations.of(context)!.field,
+            Card(
+              surfaceTintColor: Colors.blueAccent,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ListView.builder(
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return SizedBox(
+                            child: ListTile(
+                              title: Text(widget
+                                  .student.coursesOfStudy[index].fieldOfStudy),
+                              subtitle: Text(widget
+                                  .student.coursesOfStudy[index].obtainedTitle),
+                            ),
+                          );
+                        },
+                        itemCount: widget.student.coursesOfStudy.length),
+                  ],
                 ),
-                const SizedBox(width: 100),
-                ProfileTextRight(
-                  "Informatyka Stosowana",
-                ),
-              ],
+              ),
             ),
 
             const SizedBox(height: 70),
@@ -183,7 +186,8 @@ class _EditAccountState extends State<EditAccount> {
                 children: [
                   StyledButton(
                       onPressed: () {
-                        AuthService.signOut();
+                        // TODO
+                        // AuthService.signOut();
                         if (mounted) {
                           Navigator.of(context).pop();
                         }

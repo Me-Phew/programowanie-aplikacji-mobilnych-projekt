@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/utils/push_notifications.dart';
 import 'package:flutter_application/widgets/shared/password_input.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_form_field.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
-import 'package:flutter_application/services/auth_service.dart';
-import 'package:flutter_application/utils/theme.dart';
-import 'package:flutter_application/wirtualny-sdk/models/request-data/login_data.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application/wirtualny-sdk/models/request-data/student_login_with_username_and_password_data.dart';
+import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class StudentLoginForm extends StatefulWidget {
@@ -22,6 +21,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  bool _isLoading = false;
   String? _errorFeedback;
 
   @override
@@ -69,51 +69,82 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
                 icon: Icons.lock),
             const SizedBox(height: 16.0),
 
+            // sumbit button
+            // Inside _StudentLoginFormState class
+            FractionallySizedBox(
+                widthFactor: 0.5,
+                child: StyledButton(
+                    onPressed: () async {
+                      setState(() {
+                        _isLoading = true;
+                        _errorFeedback = null;
+                      });
+
+                      if (!_formKey.currentState!.validate()) {
+                        return;
+                      }
+
+                      final loginData = StudentLoginWithUsernameAndPasswordData(
+                          email: _emailController.text.trim(),
+                          password: _passwordController.text.trim());
+
+                      final loginResult = await WirtualnySdk.instance.auth
+                          .loginWithUsernameAndPassword(loginData);
+
+                      loginResult.fold(
+                        (l) {
+                          print(l);
+
+                          switch (l.code) {
+                            case 'invalid-credentials':
+                              {
+                                setState(() {
+                                  _errorFeedback = AppLocalizations.of(context)!
+                                      .invalidLoginCredentials;
+                                });
+                                break;
+                              }
+                            default:
+                              {
+                                setState(() {
+                                  _isLoading = false;
+                                  _errorFeedback = AppLocalizations.of(context)!
+                                      .generalLoginError;
+                                });
+                              }
+                          }
+                        },
+                        (r) async {
+                          _isLoading = false;
+                          await FirebaseApi().initNotifications();
+                        },
+                      );
+                    },
+                    child: _isLoading
+                        ? SizedBox(
+                            height: 25,
+                            width: 25,
+                            child: Center(
+                                child: CircularProgressIndicator(
+                              color: Colors.white,
+                            )),
+                          )
+                        : SizedBox(
+                            height: 25,
+                            child: Center(
+                              child: StyledButtonText(
+                                  AppLocalizations.of(context)!.login),
+                            ),
+                          ))),
+
+            SizedBox(height: 16.0),
+
             // error feedback
             if (_errorFeedback != null)
               Center(
                   child: Text(_errorFeedback!,
+                      textAlign: TextAlign.center,
                       style: const TextStyle(color: Colors.red))),
-
-            // sumbit button
-            // Inside _StudentLoginFormState class
-            FractionallySizedBox(
-              widthFactor: 0.5,
-              child: StyledButton(
-                onPressed: () async {
-                  setState(() {
-                    _errorFeedback = null;
-                  });
-
-                  if (_formKey.currentState!.validate()) {
-                    try {
-                      final email = _emailController.text.trim();
-                      final password = _passwordController.text.trim();
-
-                      final user = await AuthService.studentLogin(
-                          StudentLoginData(email: email, password: password));
-
-                      if (user != null) {
-                        // Login successful - navigate to main screen
-                      } else {
-                        setState(() {
-                          _errorFeedback =
-                              AppLocalizations.of(context)!.invalideLogin;
-                        });
-                      }
-                    } catch (e) {
-                      print(e);
-
-                      setState(() {
-                        _errorFeedback =
-                            AppLocalizations.of(context)!.invalideLogin;
-                      });
-                    }
-                  }
-                },
-                child: StyledButtonText(AppLocalizations.of(context)!.login),
-              ),
-            )
           ],
         ),
       ),

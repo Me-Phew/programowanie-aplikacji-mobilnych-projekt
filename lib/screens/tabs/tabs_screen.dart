@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
 import 'package:flutter_application/screens/messages/messages_page.dart';
 import 'package:flutter_application/screens/notifications/notifications_page.dart';
-import 'package:flutter_application/screens/profile/profile_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
-import 'package:flutter_application/wirtualny-sdk/models/responses/student_login_response.dart';
+import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({super.key, required this.user});
+  const TabsScreen({super.key, required this.student});
 
-  final StudentLoginResponse user;
+  final Student student;
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -25,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
     HomePage(),
     NotificationsPage(),
     MessagesPage(),
-    SettingsPage(user: widget.user),
+    SettingsPage(student: widget.student),
   ];
 
   @override
