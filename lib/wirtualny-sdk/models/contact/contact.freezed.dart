@@ -25,7 +25,7 @@ mixin _$PhoneNumber {
   @JsonKey(name: "phoneNumber")
   String get phoneNumber => throw _privateConstructorUsedError;
   @JsonKey(name: "info")
-  String get info => throw _privateConstructorUsedError;
+  String? get info => throw _privateConstructorUsedError;
 
   /// Serializes this PhoneNumber to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ abstract class $PhoneNumberCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") String id,
       @JsonKey(name: "phoneNumber") String phoneNumber,
-      @JsonKey(name: "info") String info});
+      @JsonKey(name: "info") String? info});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$PhoneNumberCopyWithImpl<$Res, $Val extends PhoneNumber>
   $Res call({
     Object? id = null,
     Object? phoneNumber = null,
-    Object? info = null,
+    Object? info = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -77,10 +77,10 @@ class _$PhoneNumberCopyWithImpl<$Res, $Val extends PhoneNumber>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      info: null == info
+      info: freezed == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -96,7 +96,7 @@ abstract class _$$PhoneNumberImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: "id") String id,
       @JsonKey(name: "phoneNumber") String phoneNumber,
-      @JsonKey(name: "info") String info});
+      @JsonKey(name: "info") String? info});
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class __$$PhoneNumberImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? phoneNumber = null,
-    Object? info = null,
+    Object? info = freezed,
   }) {
     return _then(_$PhoneNumberImpl(
       id: null == id
@@ -125,10 +125,10 @@ class __$$PhoneNumberImplCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      info: null == info
+      info: freezed == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -139,7 +139,7 @@ class _$PhoneNumberImpl implements _PhoneNumber {
   const _$PhoneNumberImpl(
       {@JsonKey(name: "id") required this.id,
       @JsonKey(name: "phoneNumber") required this.phoneNumber,
-      @JsonKey(name: "info") required this.info});
+      @JsonKey(name: "info") this.info});
 
   factory _$PhoneNumberImpl.fromJson(Map<String, dynamic> json) =>
       _$$PhoneNumberImplFromJson(json);
@@ -152,7 +152,7 @@ class _$PhoneNumberImpl implements _PhoneNumber {
   final String phoneNumber;
   @override
   @JsonKey(name: "info")
-  final String info;
+  final String? info;
 
   @override
   String toString() {
@@ -194,7 +194,7 @@ abstract class _PhoneNumber implements PhoneNumber {
   const factory _PhoneNumber(
       {@JsonKey(name: "id") required final String id,
       @JsonKey(name: "phoneNumber") required final String phoneNumber,
-      @JsonKey(name: "info") required final String info}) = _$PhoneNumberImpl;
+      @JsonKey(name: "info") final String? info}) = _$PhoneNumberImpl;
 
   factory _PhoneNumber.fromJson(Map<String, dynamic> json) =
       _$PhoneNumberImpl.fromJson;
@@ -207,7 +207,7 @@ abstract class _PhoneNumber implements PhoneNumber {
   String get phoneNumber;
   @override
   @JsonKey(name: "info")
-  String get info;
+  String? get info;
 
   /// Create a copy of PhoneNumber
   /// with the given fields replaced by the non-null parameter values.
