@@ -89,6 +89,11 @@ class WirtualnyAuth {
         loginData: loginData,
         message: errorsResponse.errors.first.message,
       ));
+    } on Exception catch (e) {
+      return left(WirtualnyAuthException(
+        loginData: loginData,
+        message: e.toString(),
+      ));
     }
   }
 }
