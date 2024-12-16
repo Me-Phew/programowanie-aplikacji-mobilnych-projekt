@@ -10,7 +10,7 @@ _$PhoneNumberImpl _$$PhoneNumberImplFromJson(Map<String, dynamic> json) =>
     _$PhoneNumberImpl(
       id: json['id'] as String,
       phoneNumber: json['phoneNumber'] as String,
-      info: json['info'] as String,
+      info: json['info'] as String?,
     );
 
 Map<String, dynamic> _$$PhoneNumberImplToJson(_$PhoneNumberImpl instance) =>

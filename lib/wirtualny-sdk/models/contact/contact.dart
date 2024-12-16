@@ -8,7 +8,7 @@ class PhoneNumber with _$PhoneNumber {
   const factory PhoneNumber({
     @JsonKey(name: "id") required String id,
     @JsonKey(name: "phoneNumber") required String phoneNumber,
-    @JsonKey(name: "info") required String info,
+    @JsonKey(name: "info") String? info,
   }) = _PhoneNumber;
 
   factory PhoneNumber.fromJson(Map<String, dynamic> json) =>
