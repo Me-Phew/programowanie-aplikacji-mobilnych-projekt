@@ -4,6 +4,8 @@ import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
+import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -14,8 +16,12 @@ import 'utils/firebase_options.dart';
 
 import 'package:intl/date_symbol_data_local.dart';
 
+import 'wirtualny-sdk/wirtualny_sdk_config.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -23,6 +29,17 @@ void main() async {
 
   initializeDateFormatting()
       .then((_) => runApp(const ProviderScope(child: MyApp())));
+
+  final restApiBaseUrl = dotenv.env['REST_API_BASE_URL'];
+
+  if (restApiBaseUrl == null) {
+    throw Exception("REST_API_BASE_URL is not set");
+  }
+
+  WirtualnySdk.initialize(
+      config: WirtualnySdkConfig(
+    restApiBaseUrl: restApiBaseUrl,
+  ));
 }
 
 class MyApp extends ConsumerWidget {

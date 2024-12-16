@@ -1,15 +1,36 @@
+import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
+
 import 'modules/auth/wirtualny_auth.dart';
+import 'wirtualny_sdk_config.dart';
 
 class WirtualnySdk {
-  WirtualnySdk._internal();
+  final WirtualnySdkConfig config;
 
-  static final WirtualnySdk _instance = WirtualnySdk._internal();
+  WirtualnySdk._internal(this.config);
 
-  factory WirtualnySdk() {
-    return _instance;
+  static void initialize({required WirtualnySdkConfig config}) {
+    if (_instance != null) {
+      throw Exception('WirtualnySdk has already been initialized.');
+    }
+
+    WirtualnyHttpClient.initialize(baseUrl: config.restApiBaseUrl);
+    _instance = WirtualnySdk._internal(config);
   }
 
-  static WirtualnySdk get instance => _instance;
+  static WirtualnySdk? _instance;
+
+  factory WirtualnySdk() {
+    return instance;
+  }
+
+  static WirtualnySdk get instance {
+    if (_instance == null) {
+      throw Exception(
+          'WirtualnySdk is not initialized. Call initialize() first.');
+    }
+
+    return _instance!;
+  }
 
   final WirtualnyAuth _auth = WirtualnyAuth();
 
