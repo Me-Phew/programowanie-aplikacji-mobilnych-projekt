@@ -93,12 +93,11 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
 
                       loginResult.fold(
                         (l) {
-                          print(l);
-
                           switch (l.code) {
                             case 'invalid-credentials':
                               {
                                 setState(() {
+                                  _isLoading = false;
                                   _errorFeedback = AppLocalizations.of(context)!
                                       .invalidLoginCredentials;
                                 });
