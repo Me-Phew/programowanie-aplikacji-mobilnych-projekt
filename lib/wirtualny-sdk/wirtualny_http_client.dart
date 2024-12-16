@@ -12,6 +12,26 @@ class WirtualnyHttpClient {
       },
       connectTimeout: Duration(seconds: 10),
     ));
+     dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          print('REQUEST[${options.method}] => PATH: ${options.path}');
+          print('Headers: ${options.headers}');
+          print('Data: ${options.data}');
+          return handler.next(options);
+        },
+        onResponse: (response, handler) {
+          print('RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}');
+          print('Data: ${response.data}');
+          return handler.next(response);
+        },
+        onError: (DioError e, handler) {
+          print('ERROR[${e.response?.statusCode}] => PATH: ${e.requestOptions.path}');
+          print('Message: ${e.message}');
+          return handler.next(e);
+        },
+      ),
+    );
   }
 
   static void initialize({required baseUrl}) {

@@ -20,9 +20,11 @@
   "lecturer": "Lecturer: ",
   "photo": "Photo",
   "name": "Full Name         ",
-  "phone": "Phone number",
+  "phoneNumber": "Phone number",
   "field": "Field      ",
+  "fieldOfStudy": "Field of Study",
   "updatePhoto": "Update a photo",
+  "dateOfBirth": "Date of Birth",
   "logout": "Logout",
   "choseGallery": "Chose from the gallery",
   "takePhoto": "Take a photo",
@@ -44,5 +46,12 @@
   "recipient": "Recipient",
   "selectRecipient": "Select message recipient",
   "username": "Username",
-  "indexNumber": "Index number"
+  "indexNumber": "Index number",
+  "courseType": "Type of studies",
+  "levelOfStudy": "Level of study",
+  "obtainedTitle": "Obtained title",
+  "semester": "Semester",
+  "faculty": "Faculty",
+  "email": "Email",
+  "studyPeriod": "Study period"
 }

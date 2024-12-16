@@ -20,8 +20,10 @@
   "lecturer": "Prowadzący: ",
   "photo": "Zdjęcie",
   "name": "Imię i Nazwisko",
-  "phone": "Numer Telefonu",
+  "phoneNumber": "Numer Telefonu",
   "field": "Kierunek",
+  "fieldOfStudy": "Kierunek studiów",
+  "dateOfBirth": "Data urodzenia",
   "updatePhoto": "Zaktualizuj zdjęcie",
   "logout": "Wyloguj się",
   "choseGallery": "Wybierz z galerii",
@@ -44,5 +46,12 @@
   "recipient": "Odbiorca",
   "selectRecipient": "Wybierz odbiorcę wiadomości",
   "username": "Nazwa użytkownika",
-  "indexNumber": "Numer indeksu"
+  "indexNumber": "Numer indeksu",
+  "courseType": "Typ Studiów",
+  "levelOfStudy": "Poziom nauki",
+  "obtainedTitle": "Uzyskany tytuł",
+  "semester": "Semester",
+  "faculty": "Wydział",
+  "email": "Email",
+  "studyPeriod": "Czas studiów"
 }

@@ -19,6 +19,7 @@ class Event {
     required this.type,
     required this.date,
   });
+  
 }
 
 // Pobieranie bazy danych :)
