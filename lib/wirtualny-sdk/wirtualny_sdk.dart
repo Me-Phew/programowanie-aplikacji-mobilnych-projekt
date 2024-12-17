@@ -1,21 +1,38 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 
-import 'http_client.dart';
-import 'models/request-data/sign_in_data.dart';
+import 'modules/auth/wirtualny_auth.dart';
+import 'wirtualny_sdk_config.dart';
 
 class WirtualnySdk {
-  final HTTPClient _httpClient = HTTPClient('Wirtualny SDK', http.Client());
+  final WirtualnySdkConfig config;
 
-  Future<void> login(StudentLoginData loginData) async {
-    final response = await _httpClient
-        .post(Uri.parse('http://localhost:3000/api/students/login'), body: {
-      'email': loginData.email,
-      'password': loginData.password,
-    });
+  WirtualnySdk._internal(this.config);
 
-    final jsonResponse = json.decode(response.body);
+  static void initialize({required WirtualnySdkConfig config}) {
+    if (_instance != null) {
+      throw Exception('WirtualnySdk has already been initialized.');
+    }
 
-    print(jsonResponse);
+    WirtualnyHttpClient.initialize(baseUrl: config.restApiBaseUrl);
+    _instance = WirtualnySdk._internal(config);
   }
+
+  static WirtualnySdk? _instance;
+
+  factory WirtualnySdk() {
+    return instance;
+  }
+
+  static WirtualnySdk get instance {
+    if (_instance == null) {
+      throw Exception(
+          'WirtualnySdk is not initialized. Call initialize() first.');
+    }
+
+    return _instance!;
+  }
+
+  final WirtualnyAuth _auth = WirtualnyAuth();
+
+  WirtualnyAuth get auth => _auth;
 }

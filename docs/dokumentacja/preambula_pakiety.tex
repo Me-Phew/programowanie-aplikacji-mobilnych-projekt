@@ -1,6 +1,11 @@
 % ------------------------------------------------------------------------
 % PAKIETY
 % ------------------------------------------------------------------------
+\usepackage{tikz}
+\usepackage{./tikz-uml/tikz-uml}
+\usepackage{float}
+\PassOptionsToPackage{pdftex,usenames,dvipsnames}{color}
+\PassOptionsToPackage{final}{graphicx}
 
 %różne pakiety matematyczne, warto przejrzeć dokumentację, muszą być powyżej ustawień językowych.
 \usepackage{mathrsfs}   %Różne symbole matematyczne opisane w katalogu ~\doc\latex\comprehensive. Zamienia \mathcal{L} ze zwykłego L na L-transformatę.
@@ -15,7 +20,7 @@
 %\usepackage[cp1250]{inputenc}                       %Strona kodowa polskich znaków.
 
 %obsługa pdf'a
-\usepackage[pdftex,usenames,dvipsnames]{color}      %Obsługa kolorów. Opcje usenames i dvipsnames wprowadzają dodatkowe nazwy kolorow.
+% \usepackage[pdftex,usenames,dvipsnames]{color}      %Obsługa kolorów. Opcje usenames i dvipsnames wprowadzają dodatkowe nazwy kolorow.
 \usepackage[pdftex,pagebackref=false,draft=false,pdfpagelabels=false,colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=green,pdfstartview=FitH,pdfstartpage=1,pdfpagemode=UseOutlines,bookmarks=true,bookmarksopen=true,bookmarksopenlevel=2,bookmarksnumbered=true,pdfauthor={Dawid Kotlarski},pdftitle={Dokumentacja Projektowa},pdfsubject={},pdfkeywords={transient recovery voltage trv},unicode=true]{hyperref}   %Opcja pagebackref=true dotyczy bibliografii: pokazuje w spisie literatury numery stron, na których odwołano się do danej pozycji.
 
 %bibliografia
@@ -30,7 +35,7 @@
 
 %grafika i geometria strony
 \usepackage{extsizes}           %Dostepne inne rozmiary czcionek, np. 14 w poleceniu: \documentclass[14pt]{article}.
-\usepackage[final]{graphicx}
+% \usepackage[final]{graphicx}
 \usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 %strona tytułowa
