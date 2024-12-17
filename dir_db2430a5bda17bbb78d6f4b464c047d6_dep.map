@@ -1,6 +1,13 @@
 <map id="lib/wirtualny&#45;sdk/models" name="lib/wirtualny&#45;sdk/models">
-<area shape="rect" id="node2" href="dir_696f328768e4ffc51b76e7384cf680a5.html" title="request&#45;data" alt="" coords="125,63,219,89"/>
-<area shape="rect" id="node3" href="dir_512180f7303ba61e3169f53324ec0897.html" title="responses" alt="" coords="243,63,325,89"/>
-<area shape="rect" id="clust2" href="dir_db2430a5bda17bbb78d6f4b464c047d6.html" alt="" coords="27,52,336,99"/>
-<area shape="rect" id="clust1" href="dir_e064e805023a0daac8cd0e105276eb7a.html" title="wirtualny&#45;sdk" alt="" coords="16,16,347,110"/>
+<area shape="rect" id="node2" href="dir_1aba242d9fdee2ce289665b39d369d14.html" title="address" alt="" coords="125,63,192,89"/>
+<area shape="rect" id="node3" href="dir_da0f81d539a77ea353db7e7f6acd8233.html" title="contact" alt="" coords="216,63,280,89"/>
+<area shape="rect" id="node4" href="dir_8c327e4eddfaf5afbd643ea1487a24ba.html" title="course_of_study" alt="" coords="304,63,421,89"/>
+<area shape="rect" id="node5" href="dir_69bb96bd3c459183da1ee48895817e32.html" title="faculty" alt="" coords="445,63,504,89"/>
+<area shape="rect" id="node6" href="dir_2a254919ff768cd03577e75e0bf2f30e.html" title="lecture" alt="" coords="528,63,589,89"/>
+<area shape="rect" id="node7" href="dir_696f328768e4ffc51b76e7384cf680a5.html" title="request&#45;data" alt="" coords="613,63,707,89"/>
+<area shape="rect" id="node8" href="dir_512180f7303ba61e3169f53324ec0897.html" title="responses" alt="" coords="731,63,813,89"/>
+<area shape="rect" id="node9" href="dir_930f75758ff8de7d87743e83ee6aeec3.html" title="schedule" alt="" coords="837,63,910,89"/>
+<area shape="rect" id="node10" href="dir_2bf7c6744221057ebc4c8c8435bdd988.html" title="student" alt="" coords="934,63,999,89"/>
+<area shape="rect" id="clust2" href="dir_db2430a5bda17bbb78d6f4b464c047d6.html" alt="" coords="27,52,1009,99"/>
+<area shape="rect" id="clust1" href="dir_e064e805023a0daac8cd0e105276eb7a.html" title="wirtualny&#45;sdk" alt="" coords="16,16,1020,110"/>
 </map>
