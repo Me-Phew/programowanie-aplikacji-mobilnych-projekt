@@ -1,8 +1,5 @@
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_application/services/auth_service.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final darkModeProvider = StateNotifierProvider<DarkModeNotifier, bool>((ref) {
@@ -26,11 +23,6 @@ class DarkModeNotifier extends StateNotifier<bool> {
   }
 }
 
-final authServiceProvider = Provider<AuthService>((ref) {
-  return AuthService();
-});
-
-
 // Język
 final localeProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
   return LocaleNotifier();
@@ -51,7 +43,7 @@ class LocaleNotifier extends StateNotifier<Locale> {
   Future<void> changeLocale(String language) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('selectedLanguage', language);
-    
+
     if (language == 'English') {
       state = const Locale('en');
     } else {
@@ -83,7 +75,8 @@ class SelectedLanguageNotifier extends StateNotifier<String> {
 }
 
 // Powiadomienia
-final notificationsEnabledProvider = StateNotifierProvider<NotificationsNotifier, bool>((ref) {
+final notificationsEnabledProvider =
+    StateNotifierProvider<NotificationsNotifier, bool>((ref) {
   return NotificationsNotifier();
 });
 

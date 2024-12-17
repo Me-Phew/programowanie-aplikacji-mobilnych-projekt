@@ -4,16 +4,15 @@ class FirebaseApi {
   // Stworzenie instancji dla "FirebaseMessaging"
   final _firebaseMessaging = FirebaseMessaging.instance;
 
-  // Funkcja odpowiedzialna za dawanie notyfikacji
   Future<void> initNotifications() async {
     // Zapytania o zgodę użytkownika
     await _firebaseMessaging.requestPermission();
 
-    // FOM token dla urządzenia (Każde urządznie ma osobny token)
-    final fOMToken = await _firebaseMessaging.getToken();
+    // FCM token dla urządzenia (Każde urządznie ma osobny token)
+    final fcmToken = await _firebaseMessaging.getToken();
 
     // dla testu print tego tokenu ale w przysłości trzeba wysłać tokena do serwera
-    print('Token:  $fOMToken');
+    print('Token:  $fcmToken');
   }
 
   void handleMessage(RemoteMessage? message) {
