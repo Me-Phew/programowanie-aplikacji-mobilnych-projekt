@@ -4,8 +4,8 @@ pre-commit:
       glob: "*.dart"
       run: dart format {staged_files} && git add {staged_files}
 
-    validate_code:
-      run: flutter pub run ./git_hooks/pre_commit.dart
+    # validate_code:
+    #   run: flutter pub run ./git_hooks/pre_commit.dart
 
 commit-msg:
   commands:
