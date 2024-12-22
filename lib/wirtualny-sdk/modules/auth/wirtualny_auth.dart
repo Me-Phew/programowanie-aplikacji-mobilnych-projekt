@@ -77,7 +77,8 @@ class WirtualnyAuth {
       if (response.data['user'] == null || response.data['token'] == null) {
         return left(WirtualnyAuthException(
             loginData: loginData,
-            message: 'Invalid response from server: Missing user or token data'));
+            message:
+                'Invalid response from server: Missing user or token data'));
       }
 
       final StudentLoginResponse studentLoginResponse =
@@ -127,7 +128,7 @@ class WirtualnyAuth {
         loginData: loginData,
         message: errorsResponse.errors.first.message,
       ));
-    } on Exception catch (e) {
+    } catch (e) {
       return left(WirtualnyAuthException(
         loginData: loginData,
         message: e.toString(),
@@ -135,4 +136,3 @@ class WirtualnyAuth {
     }
   }
 }
-
