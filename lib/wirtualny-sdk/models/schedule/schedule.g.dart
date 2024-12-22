@@ -57,7 +57,6 @@ Map<String, dynamic> _$$WeekFullTimeScheduleImplToJson(
 _$ScheduleImpl _$$ScheduleImplFromJson(Map<String, dynamic> json) =>
     _$ScheduleImpl(
       id: (json['id'] as num).toInt(),
-      courseOfStudy: (json['courseOfStudy'] as num).toInt(),
       weekAfullTimeSchedule: WeekFullTimeSchedule.fromJson(
           json['weekAfullTimeSchedule'] as Map<String, dynamic>),
       weekAPartTimeSchedule: WeekPartTimeSchedule.fromJson(
@@ -73,7 +72,6 @@ _$ScheduleImpl _$$ScheduleImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ScheduleImplToJson(_$ScheduleImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'courseOfStudy': instance.courseOfStudy,
       'weekAfullTimeSchedule': instance.weekAfullTimeSchedule,
       'weekAPartTimeSchedule': instance.weekAPartTimeSchedule,
       'weekBfullTimeSchedule': instance.weekBfullTimeSchedule,

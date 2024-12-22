@@ -10,7 +10,6 @@ _$FacultyImpl _$$FacultyImplFromJson(Map<String, dynamic> json) =>
     _$FacultyImpl(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      university: (json['university'] as num).toInt(),
       classrooms: (json['classrooms'] as List<dynamic>)
           .map((e) => (e as num).toInt())
           .toList(),
@@ -27,7 +26,6 @@ Map<String, dynamic> _$$FacultyImplToJson(_$FacultyImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'university': instance.university,
       'classrooms': instance.classrooms,
       'coursesOfStudy': instance.coursesOfStudy,
       'address': instance.address,

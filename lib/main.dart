@@ -8,20 +8,33 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application/utils/theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logging/logging.dart';
 import 'utils/firebase_options.dart';
-
 import 'package:intl/date_symbol_data_local.dart';
-
 import 'wirtualny-sdk/wirtualny_sdk_config.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
   await dotenv.load();
+
+  final env = dotenv.env['ENV'];
+
+  if (env == "dev") {
+    Logger.root.level = Level.ALL;
+  }
+
+  Logger.root.onRecord.listen((record) {
+    // ignore: avoid_print
+    print('${record.level.name}: ${record.time}: ${record.message}');
+    // ignore: avoid_print
+    print(record.error);
+    // ignore: avoid_print
+    print(record.stackTrace);
+  });
+
+  WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

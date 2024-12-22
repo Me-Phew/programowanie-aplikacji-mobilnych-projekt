@@ -8,8 +8,11 @@ import 'package:flutter_application/wirtualny-sdk/modules/auth/wirtualny_auth_ex
 import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:logging/logging.dart';
 
 class WirtualnyAuth {
+  final log = Logger('WirtualnyAuth');
+
   StudentLoginResponse? _authData;
   int authStateListenersCount = 0;
   late final StreamController<Student?> _authStateController;
@@ -128,7 +131,9 @@ class WirtualnyAuth {
         loginData: loginData,
         message: errorsResponse.errors.first.message,
       ));
-    } catch (e) {
+    } catch (e, stackTrace) {
+      log.severe('LOGIN FAILED', e, stackTrace);
+
       return left(WirtualnyAuthException(
         loginData: loginData,
         message: e.toString(),

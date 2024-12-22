@@ -33,7 +33,6 @@ class WeekFullTimeSchedule with _$WeekFullTimeSchedule {
 class Schedule with _$Schedule {
   const factory Schedule({
     @JsonKey(name: "id") required int id,
-    @JsonKey(name: "courseOfStudy") required int courseOfStudy,
     @JsonKey(name: "weekAfullTimeSchedule")
     required WeekFullTimeSchedule weekAfullTimeSchedule,
     @JsonKey(name: "weekAPartTimeSchedule")

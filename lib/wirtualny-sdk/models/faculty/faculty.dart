@@ -10,7 +10,6 @@ class Faculty with _$Faculty {
   const factory Faculty({
     @JsonKey(name: "id") required int id,
     @JsonKey(name: "name") required String name,
-    @JsonKey(name: "university") required int university,
     @JsonKey(name: "classrooms") required List<int> classrooms,
     @JsonKey(name: "coursesOfStudy") required List<int> coursesOfStudy,
     @JsonKey(name: "address") required Address address,

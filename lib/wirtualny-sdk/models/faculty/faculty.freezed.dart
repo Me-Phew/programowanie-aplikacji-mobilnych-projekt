@@ -24,8 +24,6 @@ mixin _$Faculty {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: "university")
-  int get university => throw _privateConstructorUsedError;
   @JsonKey(name: "classrooms")
   List<int> get classrooms => throw _privateConstructorUsedError;
   @JsonKey(name: "coursesOfStudy")
@@ -56,7 +54,6 @@ abstract class $FacultyCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") int id,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "university") int university,
       @JsonKey(name: "classrooms") List<int> classrooms,
       @JsonKey(name: "coursesOfStudy") List<int> coursesOfStudy,
       @JsonKey(name: "address") Address address,
@@ -85,7 +82,6 @@ class _$FacultyCopyWithImpl<$Res, $Val extends Faculty>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? university = null,
     Object? classrooms = null,
     Object? coursesOfStudy = null,
     Object? address = null,
@@ -102,10 +98,6 @@ class _$FacultyCopyWithImpl<$Res, $Val extends Faculty>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      university: null == university
-          ? _value.university
-          : university // ignore: cast_nullable_to_non_nullable
-              as int,
       classrooms: null == classrooms
           ? _value.classrooms
           : classrooms // ignore: cast_nullable_to_non_nullable
@@ -164,7 +156,6 @@ abstract class _$$FacultyImplCopyWith<$Res> implements $FacultyCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") int id,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "university") int university,
       @JsonKey(name: "classrooms") List<int> classrooms,
       @JsonKey(name: "coursesOfStudy") List<int> coursesOfStudy,
       @JsonKey(name: "address") Address address,
@@ -193,7 +184,6 @@ class __$$FacultyImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? university = null,
     Object? classrooms = null,
     Object? coursesOfStudy = null,
     Object? address = null,
@@ -210,10 +200,6 @@ class __$$FacultyImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      university: null == university
-          ? _value.university
-          : university // ignore: cast_nullable_to_non_nullable
-              as int,
       classrooms: null == classrooms
           ? _value._classrooms
           : classrooms // ignore: cast_nullable_to_non_nullable
@@ -248,7 +234,6 @@ class _$FacultyImpl implements _Faculty {
   const _$FacultyImpl(
       {@JsonKey(name: "id") required this.id,
       @JsonKey(name: "name") required this.name,
-      @JsonKey(name: "university") required this.university,
       @JsonKey(name: "classrooms") required final List<int> classrooms,
       @JsonKey(name: "coursesOfStudy") required final List<int> coursesOfStudy,
       @JsonKey(name: "address") required this.address,
@@ -267,9 +252,6 @@ class _$FacultyImpl implements _Faculty {
   @override
   @JsonKey(name: "name")
   final String name;
-  @override
-  @JsonKey(name: "university")
-  final int university;
   final List<int> _classrooms;
   @override
   @JsonKey(name: "classrooms")
@@ -303,7 +285,7 @@ class _$FacultyImpl implements _Faculty {
 
   @override
   String toString() {
-    return 'Faculty(id: $id, name: $name, university: $university, classrooms: $classrooms, coursesOfStudy: $coursesOfStudy, address: $address, contact: $contact, updatedAt: $updatedAt, createdAt: $createdAt)';
+    return 'Faculty(id: $id, name: $name, classrooms: $classrooms, coursesOfStudy: $coursesOfStudy, address: $address, contact: $contact, updatedAt: $updatedAt, createdAt: $createdAt)';
   }
 
   @override
@@ -313,8 +295,6 @@ class _$FacultyImpl implements _Faculty {
             other is _$FacultyImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.university, university) ||
-                other.university == university) &&
             const DeepCollectionEquality()
                 .equals(other._classrooms, _classrooms) &&
             const DeepCollectionEquality()
@@ -333,7 +313,6 @@ class _$FacultyImpl implements _Faculty {
       runtimeType,
       id,
       name,
-      university,
       const DeepCollectionEquality().hash(_classrooms),
       const DeepCollectionEquality().hash(_coursesOfStudy),
       address,
@@ -361,7 +340,6 @@ abstract class _Faculty implements Faculty {
   const factory _Faculty(
       {@JsonKey(name: "id") required final int id,
       @JsonKey(name: "name") required final String name,
-      @JsonKey(name: "university") required final int university,
       @JsonKey(name: "classrooms") required final List<int> classrooms,
       @JsonKey(name: "coursesOfStudy") required final List<int> coursesOfStudy,
       @JsonKey(name: "address") required final Address address,
@@ -378,9 +356,6 @@ abstract class _Faculty implements Faculty {
   @override
   @JsonKey(name: "name")
   String get name;
-  @override
-  @JsonKey(name: "university")
-  int get university;
   @override
   @JsonKey(name: "classrooms")
   List<int> get classrooms;
