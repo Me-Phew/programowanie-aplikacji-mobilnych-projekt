@@ -5,6 +5,8 @@ import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
+import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -36,12 +38,23 @@ class SettingsPage extends ConsumerWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(35),
-                      child: Image.asset(
-                        "assets/images/Example.png",
-                        width: 70,
-                        height: 70,
-                        fit: BoxFit.cover,
-                      ),
+                      child: student.profilePicture != null
+                          ? Image.network(
+                              "${dotenv.env['REST_API_BASE_URL']}${student.profilePicture!.url.replaceFirst(RegExp('/api/'), '')}",
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                              headers: {
+                                'Authorization':
+                                    'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                              },
+                            )
+                          : Image.asset(
+                              "assets/images/Example.png",
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
                     ),
                     const SizedBox(width: 20), // Usuń height
                     Column(

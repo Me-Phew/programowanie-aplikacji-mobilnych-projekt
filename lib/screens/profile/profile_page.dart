@@ -11,6 +11,7 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
@@ -97,12 +98,29 @@ class _EditAccountState extends State<EditAccount> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
-                        child: _selectedImage != null
-                            ? Image.file(
-                                _selectedImage!,
+                        // child: _selectedImage != null
+                        //     ? Image.file(
+                        //         _selectedImage!,
+                        //         width: 100,
+                        //         height: 100,
+                        //         fit: BoxFit.cover,
+                        //       )
+                        //     : Image.asset(
+                        //         "assets/images/Example.png",
+                        //         width: 100,
+                        //         height: 100,
+                        //         fit: BoxFit.cover,
+                        //       ),
+                        child: widget.student.profilePicture != null
+                            ? Image.network(
+                                "${dotenv.env['REST_API_BASE_URL']}${widget.student.profilePicture!.url.replaceFirst(RegExp('/api/'), '')}",
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.cover,
+                                headers: {
+                                  'Authorization':
+                                      'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                                },
                               )
                             : Image.asset(
                                 "assets/images/Example.png",
@@ -225,7 +243,7 @@ class _EditAccountState extends State<EditAccount> {
                       onPressed: () async {
                         // Sign out from the SDK
                         await WirtualnySdk.instance.auth.signOut();
-                        
+
                         if (mounted) {
                           Navigator.of(context).pop();
                         }

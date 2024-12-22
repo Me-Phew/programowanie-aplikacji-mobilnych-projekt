@@ -1,4 +1,5 @@
 import 'package:flutter_application/wirtualny-sdk/models/course_of_study/course_of_study.dart';
+import 'package:flutter_application/wirtualny-sdk/models/profilePicture/profile_picture.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'student.freezed.dart';
@@ -14,6 +15,7 @@ class Student with _$Student {
     @JsonKey(name: "familyName") required String familyName,
     @JsonKey(name: "coursesOfStudy")
     required List<CourseOfStudy> coursesOfStudy,
+    @JsonKey(name: "profilePicture") ProfilePicture? profilePicture,
     @JsonKey(name: "dateOfBirth") required DateTime dateOfBirth,
     @JsonKey(name: "indexNumber") required String indexNumber,
     @JsonKey(name: "updatedAt") required DateTime updatedAt,

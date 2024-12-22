@@ -16,6 +16,10 @@ _$StudentImpl _$$StudentImplFromJson(Map<String, dynamic> json) =>
       coursesOfStudy: (json['coursesOfStudy'] as List<dynamic>)
           .map((e) => CourseOfStudy.fromJson(e as Map<String, dynamic>))
           .toList(),
+      profilePicture: json['profilePicture'] == null
+          ? null
+          : ProfilePicture.fromJson(
+              json['profilePicture'] as Map<String, dynamic>),
       dateOfBirth: DateTime.parse(json['dateOfBirth'] as String),
       indexNumber: json['indexNumber'] as String,
       updatedAt: DateTime.parse(json['updatedAt'] as String),
@@ -32,6 +36,7 @@ Map<String, dynamic> _$$StudentImplToJson(_$StudentImpl instance) =>
       'middleName': instance.middleName,
       'familyName': instance.familyName,
       'coursesOfStudy': instance.coursesOfStudy,
+      'profilePicture': instance.profilePicture,
       'dateOfBirth': instance.dateOfBirth.toIso8601String(),
       'indexNumber': instance.indexNumber,
       'updatedAt': instance.updatedAt.toIso8601String(),

@@ -32,6 +32,8 @@ mixin _$Student {
   String get familyName => throw _privateConstructorUsedError;
   @JsonKey(name: "coursesOfStudy")
   List<CourseOfStudy> get coursesOfStudy => throw _privateConstructorUsedError;
+  @JsonKey(name: "profilePicture")
+  ProfilePicture? get profilePicture => throw _privateConstructorUsedError;
   @JsonKey(name: "dateOfBirth")
   DateTime get dateOfBirth => throw _privateConstructorUsedError;
   @JsonKey(name: "indexNumber")
@@ -66,12 +68,15 @@ abstract class $StudentCopyWith<$Res> {
       @JsonKey(name: "middleName") String? middleName,
       @JsonKey(name: "familyName") String familyName,
       @JsonKey(name: "coursesOfStudy") List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "profilePicture") ProfilePicture? profilePicture,
       @JsonKey(name: "dateOfBirth") DateTime dateOfBirth,
       @JsonKey(name: "indexNumber") String indexNumber,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt,
       @JsonKey(name: "collection") String collection,
       @JsonKey(name: "loginAttempts") int loginAttempts});
+
+  $ProfilePictureCopyWith<$Res>? get profilePicture;
 }
 
 /// @nodoc
@@ -95,6 +100,7 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
     Object? middleName = freezed,
     Object? familyName = null,
     Object? coursesOfStudy = null,
+    Object? profilePicture = freezed,
     Object? dateOfBirth = null,
     Object? indexNumber = null,
     Object? updatedAt = null,
@@ -127,6 +133,10 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
           ? _value.coursesOfStudy
           : coursesOfStudy // ignore: cast_nullable_to_non_nullable
               as List<CourseOfStudy>,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as ProfilePicture?,
       dateOfBirth: null == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
@@ -153,6 +163,20 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
               as int,
     ) as $Val);
   }
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfilePictureCopyWith<$Res>? get profilePicture {
+    if (_value.profilePicture == null) {
+      return null;
+    }
+
+    return $ProfilePictureCopyWith<$Res>(_value.profilePicture!, (value) {
+      return _then(_value.copyWith(profilePicture: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -169,12 +193,16 @@ abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
       @JsonKey(name: "middleName") String? middleName,
       @JsonKey(name: "familyName") String familyName,
       @JsonKey(name: "coursesOfStudy") List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "profilePicture") ProfilePicture? profilePicture,
       @JsonKey(name: "dateOfBirth") DateTime dateOfBirth,
       @JsonKey(name: "indexNumber") String indexNumber,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt,
       @JsonKey(name: "collection") String collection,
       @JsonKey(name: "loginAttempts") int loginAttempts});
+
+  @override
+  $ProfilePictureCopyWith<$Res>? get profilePicture;
 }
 
 /// @nodoc
@@ -196,6 +224,7 @@ class __$$StudentImplCopyWithImpl<$Res>
     Object? middleName = freezed,
     Object? familyName = null,
     Object? coursesOfStudy = null,
+    Object? profilePicture = freezed,
     Object? dateOfBirth = null,
     Object? indexNumber = null,
     Object? updatedAt = null,
@@ -228,6 +257,10 @@ class __$$StudentImplCopyWithImpl<$Res>
           ? _value._coursesOfStudy
           : coursesOfStudy // ignore: cast_nullable_to_non_nullable
               as List<CourseOfStudy>,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as ProfilePicture?,
       dateOfBirth: null == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
@@ -267,6 +300,7 @@ class _$StudentImpl implements _Student {
       @JsonKey(name: "familyName") required this.familyName,
       @JsonKey(name: "coursesOfStudy")
       required final List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "profilePicture") this.profilePicture,
       @JsonKey(name: "dateOfBirth") required this.dateOfBirth,
       @JsonKey(name: "indexNumber") required this.indexNumber,
       @JsonKey(name: "updatedAt") required this.updatedAt,
@@ -303,6 +337,9 @@ class _$StudentImpl implements _Student {
   }
 
   @override
+  @JsonKey(name: "profilePicture")
+  final ProfilePicture? profilePicture;
+  @override
   @JsonKey(name: "dateOfBirth")
   final DateTime dateOfBirth;
   @override
@@ -323,7 +360,7 @@ class _$StudentImpl implements _Student {
 
   @override
   String toString() {
-    return 'Student(id: $id, username: $username, firstName: $firstName, middleName: $middleName, familyName: $familyName, coursesOfStudy: $coursesOfStudy, dateOfBirth: $dateOfBirth, indexNumber: $indexNumber, updatedAt: $updatedAt, createdAt: $createdAt, collection: $collection, loginAttempts: $loginAttempts)';
+    return 'Student(id: $id, username: $username, firstName: $firstName, middleName: $middleName, familyName: $familyName, coursesOfStudy: $coursesOfStudy, profilePicture: $profilePicture, dateOfBirth: $dateOfBirth, indexNumber: $indexNumber, updatedAt: $updatedAt, createdAt: $createdAt, collection: $collection, loginAttempts: $loginAttempts)';
   }
 
   @override
@@ -342,6 +379,8 @@ class _$StudentImpl implements _Student {
                 other.familyName == familyName) &&
             const DeepCollectionEquality()
                 .equals(other._coursesOfStudy, _coursesOfStudy) &&
+            (identical(other.profilePicture, profilePicture) ||
+                other.profilePicture == profilePicture) &&
             (identical(other.dateOfBirth, dateOfBirth) ||
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.indexNumber, indexNumber) ||
@@ -366,6 +405,7 @@ class _$StudentImpl implements _Student {
       middleName,
       familyName,
       const DeepCollectionEquality().hash(_coursesOfStudy),
+      profilePicture,
       dateOfBirth,
       indexNumber,
       updatedAt,
@@ -398,6 +438,7 @@ abstract class _Student implements Student {
           @JsonKey(name: "familyName") required final String familyName,
           @JsonKey(name: "coursesOfStudy")
           required final List<CourseOfStudy> coursesOfStudy,
+          @JsonKey(name: "profilePicture") final ProfilePicture? profilePicture,
           @JsonKey(name: "dateOfBirth") required final DateTime dateOfBirth,
           @JsonKey(name: "indexNumber") required final String indexNumber,
           @JsonKey(name: "updatedAt") required final DateTime updatedAt,
@@ -426,6 +467,9 @@ abstract class _Student implements Student {
   @override
   @JsonKey(name: "coursesOfStudy")
   List<CourseOfStudy> get coursesOfStudy;
+  @override
+  @JsonKey(name: "profilePicture")
+  ProfilePicture? get profilePicture;
   @override
   @JsonKey(name: "dateOfBirth")
   DateTime get dateOfBirth;

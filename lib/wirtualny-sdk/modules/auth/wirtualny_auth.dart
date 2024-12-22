@@ -47,6 +47,8 @@ class WirtualnyAuth {
     return _authStateController.stream;
   }
 
+  String? get accessToken => _authData?.token;
+
   Future<void> signOut() async {
     // Clear authentication data
     _authData = null;
