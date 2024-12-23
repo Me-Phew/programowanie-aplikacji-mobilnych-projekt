@@ -53,5 +53,6 @@
   "semester": "Semester",
   "faculty": "Wydział",
   "email": "Email",
-  "studyPeriod": "Czas studiów"
+  "studyPeriod": "Czas studiów",
+  "useBiometrics": "Autoryzacja"
 }

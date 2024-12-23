@@ -96,3 +96,22 @@ class NotificationsNotifier extends StateNotifier<bool> {
     await prefs.setBool('notificationsEnabled', enabled);
   }
 }
+
+final biometricsEnabledProvider = StateNotifierProvider<BiometricsNotifier, bool>((ref) {
+  return BiometricsNotifier();
+});
+
+class BiometricsNotifier extends StateNotifier<bool> {
+  BiometricsNotifier() : super(false) {
+    _loadSavedPreference();
+  }
+
+  Future<void> _loadSavedPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getBool('useBiometrics') ?? false;
+  }
+
+  void toggleBiometrics(bool value) {
+    state = value;
+  }
+}

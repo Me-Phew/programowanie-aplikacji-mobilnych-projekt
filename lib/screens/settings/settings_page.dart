@@ -9,6 +9,8 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:local_auth/local_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // Język do wyboru
 final languages = ['Polish', 'English'];
@@ -138,7 +140,50 @@ class SettingsPage extends ConsumerWidget {
               ),
 
               const SizedBox(height: 20),
+              // Biometric authentication setting
+              SettingSwitch(
+                title: AppLocalizations.of(context)!.useBiometrics,
+                value: ref.watch(biometricsEnabledProvider),
+                bgColor: Colors.purple.shade100,
+                iconColor: Colors.purple,
+                icon: Icons.fingerprint,
+                onTap: (value) async {
+                  if (value) {
+                    final LocalAuthentication localAuth = LocalAuthentication();
+                    final bool canCheckBiometrics =
+                        await localAuth.canCheckBiometrics;
+                    final List<BiometricType> availableBiometrics =
+                        await localAuth.getAvailableBiometrics();
 
+                    print('Can check biometrics: $canCheckBiometrics');
+                    print('Available biometrics: $availableBiometrics');
+
+                    // Check for either strong or weak biometrics
+                    if (!canCheckBiometrics ||
+                        (!availableBiometrics.contains(BiometricType.strong) &&
+                            !availableBiometrics
+                                .contains(BiometricType.weak))) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                              'Urządzenie nie obsługuje uwierzytelniania biometrycznego'),
+                        ),
+                      );
+                      return;
+                    }
+                  }
+
+                  final prefs = await SharedPreferences.getInstance();
+                  await prefs.setBool('useBiometrics', value);
+                  ref
+                      .read(biometricsEnabledProvider.notifier)
+                      .toggleBiometrics(value);
+
+                  print('Biometrics enabled: $value');
+                },
+              ),
+
+              const SizedBox(height: 20),
               // DarkMode
               SettingSwitch(
                 title: AppLocalizations.of(context)!.darkMode,
