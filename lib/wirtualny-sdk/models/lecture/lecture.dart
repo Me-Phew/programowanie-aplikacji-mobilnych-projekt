@@ -12,7 +12,7 @@ class Lecture with _$Lecture {
     @JsonKey(name: "form") required String form,
     @JsonKey(name: "startTime") required DateTime startTime,
     @JsonKey(name: "numberOfHours") required int numberOfHours,
-    @JsonKey(name: "classroom") required dynamic classroom,
+    @JsonKey(name: "classroom") required int classroom,
     @JsonKey(name: "isOnline") required bool isOnline,
     @JsonKey(name: "endTime") required DateTime endTime,
   }) = _Lecture;
