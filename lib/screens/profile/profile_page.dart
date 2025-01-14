@@ -18,6 +18,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
+import 'package:http_parser/http_parser.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
   final Student student;
@@ -52,34 +53,35 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     });
 
     try {
-      // Create form data
+      // Step 1: Upload image
       final formData = FormData.fromMap({
         'file': await MultipartFile.fromFile(
           image.path,
           filename: 'profile_picture.jpg',
+          contentType: MediaType('image', 'jpeg'),
         ),
       });
 
-      // Upload image
       final response = await WirtualnyHttpClient.instance.dio.post(
-        'api/media/upload',
+        '/studentProfilePictures',
         data: formData,
         options: Options(
           headers: {
             'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
-            'Content-Type': 'multipart/form-data',
           },
         ),
       );
 
       if (!mounted) return;
 
-      if (response.statusCode == 200) {
-        // Update student profile with new image
+      if (response.statusCode == 201) {
+        // Step 2: Update student profile
+        final profilePictureId = response.data['doc']['id'];
+        
         final updateResponse = await WirtualnyHttpClient.instance.dio.patch(
-          '/api/students/${_student.id}',
+          '/students/${_student.id}',
           data: {
-            'profilePicture': response.data['id'],
+            'profilePicture': profilePictureId,
           },
           options: Options(
             headers: {
@@ -92,19 +94,20 @@ class _EditAccountState extends ConsumerState<EditAccount> {
         if (!mounted) return;
 
         if (updateResponse.statusCode == 200) {
-          // Create new student object with updated data
-          final updatedStudent = Student.fromJson(updateResponse.data);
+          final updatedStudent = Student.fromJson(updateResponse.data['doc']);
           
           setState(() {
             _student = updatedStudent;
-            _isLoading = false;
+            _selectedImage = image;
           });
 
-          // Update global student state
           ref.read(studentProvider.notifier).updateStudent(updatedStudent);
 
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Zdjęcie profilowe zostało zaktualizowane')),
+            const SnackBar(
+              content: Text('Zdjęcie profilowe zostało zaktualizowane'),
+              backgroundColor: Colors.green,
+            ),
           );
         }
       }
@@ -112,7 +115,10 @@ class _EditAccountState extends ConsumerState<EditAccount> {
       if (!mounted) return;
       print('Error uploading image: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Nie udało się zaktualizować zdjęcia profilowego')),
+        const SnackBar(
+          content: Text('Nie udało się zaktualizować zdjęcia profilowego'),
+          backgroundColor: Colors.red,
+        ),
       );
     } finally {
       if (mounted) {
@@ -121,17 +127,6 @@ class _EditAccountState extends ConsumerState<EditAccount> {
         });
       }
     }
-  }
-
-  void _showImageSourceActionSheet() {
-    ImagePickerService.showImageSourceActionSheet(context, (image) {
-      if (image != null) {
-        setState(() {
-          _selectedImage = image;
-        });
-        _uploadImage(image);
-      }
-    });
   }
 
   @override
@@ -199,7 +194,14 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                       ],
                     ),
                     TextButton(
-                      onPressed: _showImageSourceActionSheet,
+                      onPressed: () => ImagePickerService.showImageSourceActionSheet(
+                        context,
+                        (image) {
+                          if (image != null) {
+                            _uploadImage(image);
+                          }
+                        },
+                      ),
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.lightBlueAccent,
                       ),
