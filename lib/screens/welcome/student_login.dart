@@ -91,7 +91,8 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
       password: _passwordController.text.trim(),
     );
 
-    final loginResult = await WirtualnySdk.instance.auth.loginWithUsernameAndPassword(loginData);
+    final loginResult = await WirtualnySdk.instance.auth
+        .loginWithUsernameAndPassword(loginData);
 
     if (!mounted) return;
 
@@ -101,7 +102,8 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
           case 'invalid-credentials':
             setState(() {
               _isLoading = false;
-              _errorFeedback = AppLocalizations.of(context)!.invalidLoginCredentials;
+              _errorFeedback =
+                  AppLocalizations.of(context)!.invalidLoginCredentials;
             });
             break;
           default:
@@ -115,16 +117,15 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
         setState(() {
           _isLoading = false;
         });
-        
+
         // Navigate to home page on successful login
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage(student: r)),
         );
       },
     );
   }
-
 
   @override
   Widget build(BuildContext context) {

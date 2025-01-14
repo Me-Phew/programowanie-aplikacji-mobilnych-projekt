@@ -33,7 +33,7 @@ mixin _$Lecture {
   @JsonKey(name: "numberOfHours")
   int get numberOfHours => throw _privateConstructorUsedError;
   @JsonKey(name: "classroom")
-  dynamic get classroom => throw _privateConstructorUsedError;
+  int get classroom => throw _privateConstructorUsedError;
   @JsonKey(name: "isOnline")
   bool get isOnline => throw _privateConstructorUsedError;
   @JsonKey(name: "endTime")
@@ -60,7 +60,7 @@ abstract class $LectureCopyWith<$Res> {
       @JsonKey(name: "form") String form,
       @JsonKey(name: "startTime") DateTime startTime,
       @JsonKey(name: "numberOfHours") int numberOfHours,
-      @JsonKey(name: "classroom") dynamic classroom,
+      @JsonKey(name: "classroom") int classroom,
       @JsonKey(name: "isOnline") bool isOnline,
       @JsonKey(name: "endTime") DateTime endTime});
 }
@@ -86,7 +86,7 @@ class _$LectureCopyWithImpl<$Res, $Val extends Lecture>
     Object? form = null,
     Object? startTime = null,
     Object? numberOfHours = null,
-    Object? classroom = freezed,
+    Object? classroom = null,
     Object? isOnline = null,
     Object? endTime = null,
   }) {
@@ -115,10 +115,10 @@ class _$LectureCopyWithImpl<$Res, $Val extends Lecture>
           ? _value.numberOfHours
           : numberOfHours // ignore: cast_nullable_to_non_nullable
               as int,
-      classroom: freezed == classroom
+      classroom: null == classroom
           ? _value.classroom
           : classroom // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as int,
       isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
@@ -145,7 +145,7 @@ abstract class _$$LectureImplCopyWith<$Res> implements $LectureCopyWith<$Res> {
       @JsonKey(name: "form") String form,
       @JsonKey(name: "startTime") DateTime startTime,
       @JsonKey(name: "numberOfHours") int numberOfHours,
-      @JsonKey(name: "classroom") dynamic classroom,
+      @JsonKey(name: "classroom") int classroom,
       @JsonKey(name: "isOnline") bool isOnline,
       @JsonKey(name: "endTime") DateTime endTime});
 }
@@ -169,7 +169,7 @@ class __$$LectureImplCopyWithImpl<$Res>
     Object? form = null,
     Object? startTime = null,
     Object? numberOfHours = null,
-    Object? classroom = freezed,
+    Object? classroom = null,
     Object? isOnline = null,
     Object? endTime = null,
   }) {
@@ -198,10 +198,10 @@ class __$$LectureImplCopyWithImpl<$Res>
           ? _value.numberOfHours
           : numberOfHours // ignore: cast_nullable_to_non_nullable
               as int,
-      classroom: freezed == classroom
+      classroom: null == classroom
           ? _value.classroom
           : classroom // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as int,
       isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
@@ -251,7 +251,7 @@ class _$LectureImpl implements _Lecture {
   final int numberOfHours;
   @override
   @JsonKey(name: "classroom")
-  final dynamic classroom;
+  final int classroom;
   @override
   @JsonKey(name: "isOnline")
   final bool isOnline;
@@ -278,7 +278,8 @@ class _$LectureImpl implements _Lecture {
                 other.startTime == startTime) &&
             (identical(other.numberOfHours, numberOfHours) ||
                 other.numberOfHours == numberOfHours) &&
-            const DeepCollectionEquality().equals(other.classroom, classroom) &&
+            (identical(other.classroom, classroom) ||
+                other.classroom == classroom) &&
             (identical(other.isOnline, isOnline) ||
                 other.isOnline == isOnline) &&
             (identical(other.endTime, endTime) || other.endTime == endTime));
@@ -286,17 +287,8 @@ class _$LectureImpl implements _Lecture {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      lecturer,
-      form,
-      startTime,
-      numberOfHours,
-      const DeepCollectionEquality().hash(classroom),
-      isOnline,
-      endTime);
+  int get hashCode => Object.hash(runtimeType, id, name, lecturer, form,
+      startTime, numberOfHours, classroom, isOnline, endTime);
 
   /// Create a copy of Lecture
   /// with the given fields replaced by the non-null parameter values.
@@ -322,7 +314,7 @@ abstract class _Lecture implements Lecture {
           @JsonKey(name: "form") required final String form,
           @JsonKey(name: "startTime") required final DateTime startTime,
           @JsonKey(name: "numberOfHours") required final int numberOfHours,
-          @JsonKey(name: "classroom") required final dynamic classroom,
+          @JsonKey(name: "classroom") required final int classroom,
           @JsonKey(name: "isOnline") required final bool isOnline,
           @JsonKey(name: "endTime") required final DateTime endTime}) =
       _$LectureImpl;
@@ -349,7 +341,7 @@ abstract class _Lecture implements Lecture {
   int get numberOfHours;
   @override
   @JsonKey(name: "classroom")
-  dynamic get classroom;
+  int get classroom;
   @override
   @JsonKey(name: "isOnline")
   bool get isOnline;

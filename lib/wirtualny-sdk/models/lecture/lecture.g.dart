@@ -14,7 +14,7 @@ _$LectureImpl _$$LectureImplFromJson(Map<String, dynamic> json) =>
       form: json['form'] as String,
       startTime: DateTime.parse(json['startTime'] as String),
       numberOfHours: (json['numberOfHours'] as num).toInt(),
-      classroom: json['classroom'],
+      classroom: (json['classroom'] as num).toInt(),
       isOnline: json['isOnline'] as bool,
       endTime: DateTime.parse(json['endTime'] as String),
     );

@@ -21,7 +21,9 @@ class _TabsScreenState extends State<TabsScreen> {
 
   // Lista ekranów naszej aplikacji
   late final List<Widget> _pages = [
-    HomePage(),
+    HomePage(
+      student: widget.student,
+    ),
     NotificationsPage(),
     MessagesPage(),
     SettingsPage(student: widget.student),
