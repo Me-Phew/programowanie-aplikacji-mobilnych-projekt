@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -113,5 +114,17 @@ class BiometricsNotifier extends StateNotifier<bool> {
 
   void toggleBiometrics(bool value) {
     state = value;
+  }
+}
+
+final studentProvider = StateNotifierProvider<StudentNotifier, Student?>((ref) {
+  return StudentNotifier();
+});
+
+class StudentNotifier extends StateNotifier<Student?> {
+  StudentNotifier() : super(null);
+
+  void updateStudent(Student student) {
+    state = student; 
   }
 }

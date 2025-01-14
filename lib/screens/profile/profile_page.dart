@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/auth_state_provider.dart';
+import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
@@ -18,7 +19,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
 
-class EditAccount extends StatefulWidget {
+class EditAccount extends ConsumerStatefulWidget {
   final Student student;
   late final String formattedNameAndFamilyName;
 
@@ -29,10 +30,10 @@ class EditAccount extends StatefulWidget {
   }
 
   @override
-  State<EditAccount> createState() => _EditAccountState();
+  ConsumerState<EditAccount> createState() => _EditAccountState();
 }
 
-class _EditAccountState extends State<EditAccount> {
+class _EditAccountState extends ConsumerState<EditAccount> {
   File? _selectedImage;
   bool _isLoading = false;
   late Student _student;
@@ -41,6 +42,85 @@ class _EditAccountState extends State<EditAccount> {
   void initState() {
     super.initState();
     _student = widget.student;
+  }
+
+  Future<void> _uploadImage(File image) async {
+    if (!mounted) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      // Create form data
+      final formData = FormData.fromMap({
+        'file': await MultipartFile.fromFile(
+          image.path,
+          filename: 'profile_picture.jpg',
+        ),
+      });
+
+      // Upload image
+      final response = await WirtualnyHttpClient.instance.dio.post(
+        'api/media/upload',
+        data: formData,
+        options: Options(
+          headers: {
+            'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
+            'Content-Type': 'multipart/form-data',
+          },
+        ),
+      );
+
+      if (!mounted) return;
+
+      if (response.statusCode == 200) {
+        // Update student profile with new image
+        final updateResponse = await WirtualnyHttpClient.instance.dio.patch(
+          '/api/students/${_student.id}',
+          data: {
+            'profilePicture': response.data['id'],
+          },
+          options: Options(
+            headers: {
+              'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
+              'Content-Type': 'application/json',
+            },
+          ),
+        );
+
+        if (!mounted) return;
+
+        if (updateResponse.statusCode == 200) {
+          // Create new student object with updated data
+          final updatedStudent = Student.fromJson(updateResponse.data);
+          
+          setState(() {
+            _student = updatedStudent;
+            _isLoading = false;
+          });
+
+          // Update global student state
+          ref.read(studentProvider.notifier).updateStudent(updatedStudent);
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Zdjęcie profilowe zostało zaktualizowane')),
+          );
+        }
+      }
+    } catch (e) {
+      if (!mounted) return;
+      print('Error uploading image: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Nie udało się zaktualizować zdjęcia profilowego')),
+      );
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
   }
 
   void _showImageSourceActionSheet() {
@@ -52,76 +132,6 @@ class _EditAccountState extends State<EditAccount> {
         _uploadImage(image);
       }
     });
-  }
-
-  Future<void> _uploadImage(File image) async {
-    if (!mounted) return;
-
-    setState(() {
-      _isLoading = true;
-    });
-
-    try {
-      final formData = FormData.fromMap({
-        'file': await MultipartFile.fromFile(
-          image.path,
-          filename: 'profile_picture.jpg',
-        ),
-      });
-
-      final response = await WirtualnyHttpClient.instance.dio.post(
-        '/api/media/upload',
-        data: formData,
-        options: Options(
-          headers: {
-            'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
-          },
-        ),
-      );
-
-      if (!mounted) return;
-
-      if (response.statusCode == 200) {
-        final updateResponse = await WirtualnyHttpClient.instance.dio.patch(
-          '/api/students/${_student.id}',
-          data: {
-            'profilePicture': response.data['id'],
-          },
-          options: Options(
-            headers: {
-              'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
-            },
-          ),
-        );
-
-        if (!mounted) return;
-
-        if (updateResponse.statusCode == 200) {
-          setState(() {
-            _student = Student.fromJson(updateResponse.data);
-            _isLoading = false;
-          });
-
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Profile picture updated successfully')),
-            );
-          }
-        }
-      }
-    } catch (e) {
-      if (!mounted) return;
-      print('Error uploading image: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Failed to update profile picture')),
-      );
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-      }
-    }
   }
 
   @override
@@ -145,7 +155,7 @@ class _EditAccountState extends State<EditAccount> {
                 AppLocalizations.of(context)!.profile,
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
-                    fontSize: 36, 
+                    fontSize: 36,
                     fontWeight: FontWeight.bold
                   )
                 ),
@@ -174,8 +184,7 @@ class _EditAccountState extends State<EditAccount> {
                                       height: 100,
                                       fit: BoxFit.cover,
                                       headers: {
-                                        'Authorization':
-                                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                                        'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}'
                                       },
                                     )
                                   : Image.asset(
