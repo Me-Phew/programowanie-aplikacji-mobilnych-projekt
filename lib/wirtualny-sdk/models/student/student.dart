@@ -20,7 +20,6 @@ class Student with _$Student {
     @JsonKey(name: "indexNumber") required String indexNumber,
     @JsonKey(name: "updatedAt") required DateTime updatedAt,
     @JsonKey(name: "createdAt") required DateTime createdAt,
-    @JsonKey(name: "collection") required String collection,
     @JsonKey(name: "loginAttempts") required int loginAttempts,
   }) = _Student;
 

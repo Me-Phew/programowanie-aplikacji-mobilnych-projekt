@@ -24,7 +24,6 @@ _$StudentImpl _$$StudentImplFromJson(Map<String, dynamic> json) =>
       indexNumber: json['indexNumber'] as String,
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       createdAt: DateTime.parse(json['createdAt'] as String),
-      collection: json['collection'] as String,
       loginAttempts: (json['loginAttempts'] as num).toInt(),
     );
 
@@ -41,6 +40,5 @@ Map<String, dynamic> _$$StudentImplToJson(_$StudentImpl instance) =>
       'indexNumber': instance.indexNumber,
       'updatedAt': instance.updatedAt.toIso8601String(),
       'createdAt': instance.createdAt.toIso8601String(),
-      'collection': instance.collection,
       'loginAttempts': instance.loginAttempts,
     };

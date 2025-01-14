@@ -11,12 +11,12 @@ _$FacultyImpl _$$FacultyImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       classrooms: (json['classrooms'] as List<dynamic>)
-          .map((e) => (e as num).toInt())
+          .map((e) => Classroom.fromJson(e as Map<String, dynamic>))
           .toList(),
       coursesOfStudy: (json['coursesOfStudy'] as List<dynamic>)
-          .map((e) => (e as num).toInt())
+          .map((e) => CourseOfStudy.fromJson(e as Map<String, dynamic>))
           .toList(),
-      address: Address.fromJson(json['address'] as Map<String, dynamic>),
+      address: FacultyAddress.fromJson(json['address'] as Map<String, dynamic>),
       contact: Contact.fromJson(json['contact'] as Map<String, dynamic>),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       createdAt: DateTime.parse(json['createdAt'] as String),

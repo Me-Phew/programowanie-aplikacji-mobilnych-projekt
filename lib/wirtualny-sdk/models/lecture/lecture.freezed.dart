@@ -25,7 +25,7 @@ mixin _$Lecture {
   @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: "lecturer")
-  int get lecturer => throw _privateConstructorUsedError;
+  Lecturer get lecturer => throw _privateConstructorUsedError;
   @JsonKey(name: "form")
   String get form => throw _privateConstructorUsedError;
   @JsonKey(name: "startTime")
@@ -33,7 +33,7 @@ mixin _$Lecture {
   @JsonKey(name: "numberOfHours")
   int get numberOfHours => throw _privateConstructorUsedError;
   @JsonKey(name: "classroom")
-  int get classroom => throw _privateConstructorUsedError;
+  Classroom get classroom => throw _privateConstructorUsedError;
   @JsonKey(name: "isOnline")
   bool get isOnline => throw _privateConstructorUsedError;
   @JsonKey(name: "endTime")
@@ -56,13 +56,16 @@ abstract class $LectureCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") String id,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "lecturer") int lecturer,
+      @JsonKey(name: "lecturer") Lecturer lecturer,
       @JsonKey(name: "form") String form,
       @JsonKey(name: "startTime") DateTime startTime,
       @JsonKey(name: "numberOfHours") int numberOfHours,
-      @JsonKey(name: "classroom") int classroom,
+      @JsonKey(name: "classroom") Classroom classroom,
       @JsonKey(name: "isOnline") bool isOnline,
       @JsonKey(name: "endTime") DateTime endTime});
+
+  $LecturerCopyWith<$Res> get lecturer;
+  $ClassroomCopyWith<$Res> get classroom;
 }
 
 /// @nodoc
@@ -102,7 +105,7 @@ class _$LectureCopyWithImpl<$Res, $Val extends Lecture>
       lecturer: null == lecturer
           ? _value.lecturer
           : lecturer // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Lecturer,
       form: null == form
           ? _value.form
           : form // ignore: cast_nullable_to_non_nullable
@@ -118,7 +121,7 @@ class _$LectureCopyWithImpl<$Res, $Val extends Lecture>
       classroom: null == classroom
           ? _value.classroom
           : classroom // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Classroom,
       isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
@@ -128,6 +131,26 @@ class _$LectureCopyWithImpl<$Res, $Val extends Lecture>
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ) as $Val);
+  }
+
+  /// Create a copy of Lecture
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LecturerCopyWith<$Res> get lecturer {
+    return $LecturerCopyWith<$Res>(_value.lecturer, (value) {
+      return _then(_value.copyWith(lecturer: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Lecture
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ClassroomCopyWith<$Res> get classroom {
+    return $ClassroomCopyWith<$Res>(_value.classroom, (value) {
+      return _then(_value.copyWith(classroom: value) as $Val);
+    });
   }
 }
 
@@ -141,13 +164,18 @@ abstract class _$$LectureImplCopyWith<$Res> implements $LectureCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") String id,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "lecturer") int lecturer,
+      @JsonKey(name: "lecturer") Lecturer lecturer,
       @JsonKey(name: "form") String form,
       @JsonKey(name: "startTime") DateTime startTime,
       @JsonKey(name: "numberOfHours") int numberOfHours,
-      @JsonKey(name: "classroom") int classroom,
+      @JsonKey(name: "classroom") Classroom classroom,
       @JsonKey(name: "isOnline") bool isOnline,
       @JsonKey(name: "endTime") DateTime endTime});
+
+  @override
+  $LecturerCopyWith<$Res> get lecturer;
+  @override
+  $ClassroomCopyWith<$Res> get classroom;
 }
 
 /// @nodoc
@@ -185,7 +213,7 @@ class __$$LectureImplCopyWithImpl<$Res>
       lecturer: null == lecturer
           ? _value.lecturer
           : lecturer // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Lecturer,
       form: null == form
           ? _value.form
           : form // ignore: cast_nullable_to_non_nullable
@@ -201,7 +229,7 @@ class __$$LectureImplCopyWithImpl<$Res>
       classroom: null == classroom
           ? _value.classroom
           : classroom // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Classroom,
       isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
@@ -239,7 +267,7 @@ class _$LectureImpl implements _Lecture {
   final String name;
   @override
   @JsonKey(name: "lecturer")
-  final int lecturer;
+  final Lecturer lecturer;
   @override
   @JsonKey(name: "form")
   final String form;
@@ -251,7 +279,7 @@ class _$LectureImpl implements _Lecture {
   final int numberOfHours;
   @override
   @JsonKey(name: "classroom")
-  final int classroom;
+  final Classroom classroom;
   @override
   @JsonKey(name: "isOnline")
   final bool isOnline;
@@ -310,11 +338,11 @@ abstract class _Lecture implements Lecture {
   const factory _Lecture(
           {@JsonKey(name: "id") required final String id,
           @JsonKey(name: "name") required final String name,
-          @JsonKey(name: "lecturer") required final int lecturer,
+          @JsonKey(name: "lecturer") required final Lecturer lecturer,
           @JsonKey(name: "form") required final String form,
           @JsonKey(name: "startTime") required final DateTime startTime,
           @JsonKey(name: "numberOfHours") required final int numberOfHours,
-          @JsonKey(name: "classroom") required final int classroom,
+          @JsonKey(name: "classroom") required final Classroom classroom,
           @JsonKey(name: "isOnline") required final bool isOnline,
           @JsonKey(name: "endTime") required final DateTime endTime}) =
       _$LectureImpl;
@@ -329,7 +357,7 @@ abstract class _Lecture implements Lecture {
   String get name;
   @override
   @JsonKey(name: "lecturer")
-  int get lecturer;
+  Lecturer get lecturer;
   @override
   @JsonKey(name: "form")
   String get form;
@@ -341,7 +369,7 @@ abstract class _Lecture implements Lecture {
   int get numberOfHours;
   @override
   @JsonKey(name: "classroom")
-  int get classroom;
+  Classroom get classroom;
   @override
   @JsonKey(name: "isOnline")
   bool get isOnline;

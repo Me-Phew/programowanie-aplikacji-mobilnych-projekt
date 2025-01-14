@@ -42,8 +42,6 @@ mixin _$Student {
   DateTime get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: "collection")
-  String get collection => throw _privateConstructorUsedError;
   @JsonKey(name: "loginAttempts")
   int get loginAttempts => throw _privateConstructorUsedError;
 
@@ -73,7 +71,6 @@ abstract class $StudentCopyWith<$Res> {
       @JsonKey(name: "indexNumber") String indexNumber,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt,
-      @JsonKey(name: "collection") String collection,
       @JsonKey(name: "loginAttempts") int loginAttempts});
 
   $ProfilePictureCopyWith<$Res>? get profilePicture;
@@ -105,7 +102,6 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
     Object? indexNumber = null,
     Object? updatedAt = null,
     Object? createdAt = null,
-    Object? collection = null,
     Object? loginAttempts = null,
   }) {
     return _then(_value.copyWith(
@@ -153,10 +149,6 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      collection: null == collection
-          ? _value.collection
-          : collection // ignore: cast_nullable_to_non_nullable
-              as String,
       loginAttempts: null == loginAttempts
           ? _value.loginAttempts
           : loginAttempts // ignore: cast_nullable_to_non_nullable
@@ -198,7 +190,6 @@ abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
       @JsonKey(name: "indexNumber") String indexNumber,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt,
-      @JsonKey(name: "collection") String collection,
       @JsonKey(name: "loginAttempts") int loginAttempts});
 
   @override
@@ -229,7 +220,6 @@ class __$$StudentImplCopyWithImpl<$Res>
     Object? indexNumber = null,
     Object? updatedAt = null,
     Object? createdAt = null,
-    Object? collection = null,
     Object? loginAttempts = null,
   }) {
     return _then(_$StudentImpl(
@@ -277,10 +267,6 @@ class __$$StudentImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      collection: null == collection
-          ? _value.collection
-          : collection // ignore: cast_nullable_to_non_nullable
-              as String,
       loginAttempts: null == loginAttempts
           ? _value.loginAttempts
           : loginAttempts // ignore: cast_nullable_to_non_nullable
@@ -305,7 +291,6 @@ class _$StudentImpl implements _Student {
       @JsonKey(name: "indexNumber") required this.indexNumber,
       @JsonKey(name: "updatedAt") required this.updatedAt,
       @JsonKey(name: "createdAt") required this.createdAt,
-      @JsonKey(name: "collection") required this.collection,
       @JsonKey(name: "loginAttempts") required this.loginAttempts})
       : _coursesOfStudy = coursesOfStudy;
 
@@ -352,15 +337,12 @@ class _$StudentImpl implements _Student {
   @JsonKey(name: "createdAt")
   final DateTime createdAt;
   @override
-  @JsonKey(name: "collection")
-  final String collection;
-  @override
   @JsonKey(name: "loginAttempts")
   final int loginAttempts;
 
   @override
   String toString() {
-    return 'Student(id: $id, username: $username, firstName: $firstName, middleName: $middleName, familyName: $familyName, coursesOfStudy: $coursesOfStudy, profilePicture: $profilePicture, dateOfBirth: $dateOfBirth, indexNumber: $indexNumber, updatedAt: $updatedAt, createdAt: $createdAt, collection: $collection, loginAttempts: $loginAttempts)';
+    return 'Student(id: $id, username: $username, firstName: $firstName, middleName: $middleName, familyName: $familyName, coursesOfStudy: $coursesOfStudy, profilePicture: $profilePicture, dateOfBirth: $dateOfBirth, indexNumber: $indexNumber, updatedAt: $updatedAt, createdAt: $createdAt, loginAttempts: $loginAttempts)';
   }
 
   @override
@@ -389,8 +371,6 @@ class _$StudentImpl implements _Student {
                 other.updatedAt == updatedAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.collection, collection) ||
-                other.collection == collection) &&
             (identical(other.loginAttempts, loginAttempts) ||
                 other.loginAttempts == loginAttempts));
   }
@@ -410,7 +390,6 @@ class _$StudentImpl implements _Student {
       indexNumber,
       updatedAt,
       createdAt,
-      collection,
       loginAttempts);
 
   /// Create a copy of Student
@@ -443,7 +422,6 @@ abstract class _Student implements Student {
           @JsonKey(name: "indexNumber") required final String indexNumber,
           @JsonKey(name: "updatedAt") required final DateTime updatedAt,
           @JsonKey(name: "createdAt") required final DateTime createdAt,
-          @JsonKey(name: "collection") required final String collection,
           @JsonKey(name: "loginAttempts") required final int loginAttempts}) =
       _$StudentImpl;
 
@@ -482,9 +460,6 @@ abstract class _Student implements Student {
   @override
   @JsonKey(name: "createdAt")
   DateTime get createdAt;
-  @override
-  @JsonKey(name: "collection")
-  String get collection;
   @override
   @JsonKey(name: "loginAttempts")
   int get loginAttempts;

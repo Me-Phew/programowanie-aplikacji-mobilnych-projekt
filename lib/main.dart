@@ -53,6 +53,8 @@ void main() async {
       config: WirtualnySdkConfig(
     restApiBaseUrl: restApiBaseUrl,
   ));
+
+  WirtualnySdk.instance.auth.loadToken();
 }
 
 class MyApp extends ConsumerWidget {

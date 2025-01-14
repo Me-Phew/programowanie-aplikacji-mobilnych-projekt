@@ -18,6 +18,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
+import 'package:http_parser/http_parser.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
   final Student student;
@@ -51,86 +52,42 @@ class _EditAccountState extends ConsumerState<EditAccount> {
       _isLoading = true;
     });
 
-    try {
-      // Create form data
-      final formData = FormData.fromMap({
-        'file': await MultipartFile.fromFile(
-          image.path,
-          filename: 'profile_picture.jpg',
+    final imageUpdateResult =
+        await WirtualnySdk.instance.auth.changeUserImage(newImage: image);
+
+    if (!mounted) return;
+
+    imageUpdateResult.fold((l) {
+      if (!mounted) return;
+
+      print('Error uploading image: ${l.message}');
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Nie udało się zaktualizować zdjęcia profilowego'),
+          backgroundColor: Colors.red,
         ),
+      );
+    }, (r) {
+      setState(() {
+        _student = WirtualnySdk.instance.auth.student!;
+        _selectedImage = image;
       });
 
-      // Upload image
-      final response = await WirtualnyHttpClient.instance.dio.post(
-        'api/media/upload',
-        data: formData,
-        options: Options(
-          headers: {
-            'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
-            'Content-Type': 'multipart/form-data',
-          },
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Zdjęcie profilowe zostało zaktualizowane'),
+          backgroundColor: Colors.green,
         ),
       );
+    });
 
-      if (!mounted) return;
+    if (!mounted) return;
 
-      if (response.statusCode == 200) {
-        // Update student profile with new image
-        final updateResponse = await WirtualnyHttpClient.instance.dio.patch(
-          '/api/students/${_student.id}',
-          data: {
-            'profilePicture': response.data['id'],
-          },
-          options: Options(
-            headers: {
-              'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}',
-              'Content-Type': 'application/json',
-            },
-          ),
-        );
-
-        if (!mounted) return;
-
-        if (updateResponse.statusCode == 200) {
-          // Create new student object with updated data
-          final updatedStudent = Student.fromJson(updateResponse.data);
-          
-          setState(() {
-            _student = updatedStudent;
-            _isLoading = false;
-          });
-
-          // Update global student state
-          ref.read(studentProvider.notifier).updateStudent(updatedStudent);
-
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Zdjęcie profilowe zostało zaktualizowane')),
-          );
-        }
-      }
-    } catch (e) {
-      if (!mounted) return;
-      print('Error uploading image: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Nie udało się zaktualizować zdjęcia profilowego')),
-      );
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-      }
-    }
-  }
-
-  void _showImageSourceActionSheet() {
-    ImagePickerService.showImageSourceActionSheet(context, (image) {
-      if (image != null) {
-        setState(() {
-          _selectedImage = image;
-        });
-        _uploadImage(image);
-      }
+    setState(() {
+      _isLoading = false;
     });
   }
 
@@ -154,11 +111,8 @@ class _EditAccountState extends ConsumerState<EditAccount> {
               Text(
                 AppLocalizations.of(context)!.profile,
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold
-                  )
-                ),
+                    textStyle: const TextStyle(
+                        fontSize: 36, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 40),
               EditItem(
@@ -179,12 +133,13 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                                 )
                               : _student.profilePicture != null
                                   ? Image.network(
-                                      "${dotenv.env['REST_API_BASE_URL']}${_student.profilePicture!.url.replaceFirst(RegExp('/api/'), '')}",
+                                      "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(_student.profilePicture!.url).path.replaceFirst('/api', '')}",
                                       width: 100,
                                       height: 100,
                                       fit: BoxFit.cover,
                                       headers: {
-                                        'Authorization': 'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                                        'Authorization':
+                                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
                                       },
                                     )
                                   : Image.asset(
@@ -194,12 +149,19 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                                       fit: BoxFit.cover,
                                     ),
                         ),
-                        if (_isLoading)
-                          const CircularProgressIndicator(),
+                        if (_isLoading) const CircularProgressIndicator(),
                       ],
                     ),
                     TextButton(
-                      onPressed: _showImageSourceActionSheet,
+                      onPressed: () =>
+                          ImagePickerService.showImageSourceActionSheet(
+                        context,
+                        (image) {
+                          if (image != null) {
+                            _uploadImage(image);
+                          }
+                        },
+                      ),
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.lightBlueAccent,
                       ),

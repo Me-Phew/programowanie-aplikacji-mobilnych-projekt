@@ -42,7 +42,7 @@ class SettingsPage extends ConsumerWidget {
                       borderRadius: BorderRadius.circular(35),
                       child: student.profilePicture != null
                           ? Image.network(
-                              "${dotenv.env['REST_API_BASE_URL']}${student.profilePicture!.url.replaceFirst(RegExp('/api/'), '')}",
+                              "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(student.profilePicture!.url).path.replaceFirst('/api', '')}",
                               width: 100,
                               height: 100,
                               fit: BoxFit.cover,

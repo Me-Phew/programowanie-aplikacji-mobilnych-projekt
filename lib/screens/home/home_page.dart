@@ -250,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: lecture.classroom.toString(),
+                                        text: lecture.classroom.title,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -297,7 +297,7 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       TextSpan(
-                                        text: lecture.lecturer.toString(),
+                                        text: lecture.lecturer.title,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),

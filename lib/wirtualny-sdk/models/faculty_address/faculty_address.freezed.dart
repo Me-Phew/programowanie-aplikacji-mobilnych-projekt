@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'address.dart';
+part of 'faculty_address.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Address _$AddressFromJson(Map<String, dynamic> json) {
+FacultyAddress _$FacultyAddressFromJson(Map<String, dynamic> json) {
   return _Address.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Address {
+mixin _$FacultyAddress {
   @JsonKey(name: "country")
   String get country => throw _privateConstructorUsedError;
   @JsonKey(name: "zipCode")
@@ -31,19 +31,21 @@ mixin _$Address {
   @JsonKey(name: "buildingNumber")
   String get buildingNumber => throw _privateConstructorUsedError;
 
-  /// Serializes this Address to a JSON map.
+  /// Serializes this FacultyAddress to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of Address
+  /// Create a copy of FacultyAddress
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AddressCopyWith<Address> get copyWith => throw _privateConstructorUsedError;
+  $FacultyAddressCopyWith<FacultyAddress> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddressCopyWith<$Res> {
-  factory $AddressCopyWith(Address value, $Res Function(Address) then) =
-      _$AddressCopyWithImpl<$Res, Address>;
+abstract class $FacultyAddressCopyWith<$Res> {
+  factory $FacultyAddressCopyWith(
+          FacultyAddress value, $Res Function(FacultyAddress) then) =
+      _$FacultyAddressCopyWithImpl<$Res, FacultyAddress>;
   @useResult
   $Res call(
       {@JsonKey(name: "country") String country,
@@ -54,16 +56,16 @@ abstract class $AddressCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddressCopyWithImpl<$Res, $Val extends Address>
-    implements $AddressCopyWith<$Res> {
-  _$AddressCopyWithImpl(this._value, this._then);
+class _$FacultyAddressCopyWithImpl<$Res, $Val extends FacultyAddress>
+    implements $FacultyAddressCopyWith<$Res> {
+  _$FacultyAddressCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Address
+  /// Create a copy of FacultyAddress
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -100,7 +102,8 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
 }
 
 /// @nodoc
-abstract class _$$AddressImplCopyWith<$Res> implements $AddressCopyWith<$Res> {
+abstract class _$$AddressImplCopyWith<$Res>
+    implements $FacultyAddressCopyWith<$Res> {
   factory _$$AddressImplCopyWith(
           _$AddressImpl value, $Res Function(_$AddressImpl) then) =
       __$$AddressImplCopyWithImpl<$Res>;
@@ -116,13 +119,13 @@ abstract class _$$AddressImplCopyWith<$Res> implements $AddressCopyWith<$Res> {
 
 /// @nodoc
 class __$$AddressImplCopyWithImpl<$Res>
-    extends _$AddressCopyWithImpl<$Res, _$AddressImpl>
+    extends _$FacultyAddressCopyWithImpl<$Res, _$AddressImpl>
     implements _$$AddressImplCopyWith<$Res> {
   __$$AddressImplCopyWithImpl(
       _$AddressImpl _value, $Res Function(_$AddressImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Address
+  /// Create a copy of FacultyAddress
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -189,7 +192,7 @@ class _$AddressImpl implements _Address {
 
   @override
   String toString() {
-    return 'Address(country: $country, zipCode: $zipCode, city: $city, street: $street, buildingNumber: $buildingNumber)';
+    return 'FacultyAddress(country: $country, zipCode: $zipCode, city: $city, street: $street, buildingNumber: $buildingNumber)';
   }
 
   @override
@@ -210,7 +213,7 @@ class _$AddressImpl implements _Address {
   int get hashCode =>
       Object.hash(runtimeType, country, zipCode, city, street, buildingNumber);
 
-  /// Create a copy of Address
+  /// Create a copy of FacultyAddress
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -226,7 +229,7 @@ class _$AddressImpl implements _Address {
   }
 }
 
-abstract class _Address implements Address {
+abstract class _Address implements FacultyAddress {
   const factory _Address(
       {@JsonKey(name: "country") required final String country,
       @JsonKey(name: "zipCode") required final String zipCode,
@@ -253,7 +256,7 @@ abstract class _Address implements Address {
   @JsonKey(name: "buildingNumber")
   String get buildingNumber;
 
-  /// Create a copy of Address
+  /// Create a copy of FacultyAddress
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
