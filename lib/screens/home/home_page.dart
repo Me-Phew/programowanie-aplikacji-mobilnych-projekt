@@ -81,6 +81,28 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  List<Lecture> _getDaySchedule(int weekday) {
+    switch (weekday) {
+      case DateTime.monday:
+        return widget
+            .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.monday;
+      case DateTime.tuesday:
+        return widget
+            .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.tuesday;
+      case DateTime.wednesday:
+        return widget
+            .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.wednesday;
+      case DateTime.thursday:
+        return widget
+            .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.thursday;
+      case DateTime.friday:
+        return widget
+            .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.friday;
+      default:
+        return [];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // Do obsługi błedów, przekazywania danych jako lista itp
@@ -137,8 +159,9 @@ class _HomePageState extends State<HomePage> {
             // Kropki Pod datami
             calendarBuilders: CalendarBuilders(
               defaultBuilder: (context, date, focusedDay) {
-                // final eventCount =
-                //     events.where((event) => isSameDay(event.date, date)).length;
+                final bool isSelectedDay = isSameDay(date, selectedDay);
+                final lectures = _getDaySchedule(date.weekday);
+                final lectureCount = lectures.length;
 
                 return Stack(
                   children: [
@@ -146,33 +169,31 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         '${date.day}',
                         style: TextStyle(
-                          color: isSameDay(date, selectedDay)
-                              ? Colors.white
-                              : Colors.black,
-                        ),
+                            color: isSelectedDay ? Colors.white : Colors.black),
                       ),
                     ),
-                    // if (selectedDaySchedule!.isNotEmpty)
-                    //   Positioned(
-                    //     top: 30,
-                    //     left: 0,
-                    //     right: 0,
-                    //     child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.center,
-                    //       children: List.generate(
-                    //           selectedDaySchedule!.length,
-                    //           (index) => Container(
-                    //                 width: 6,
-                    //                 height: 6,
-                    //                 margin: const EdgeInsets.symmetric(
-                    //                     horizontal: 1.5),
-                    //                 decoration: BoxDecoration(
-                    //                   shape: BoxShape.circle,
-                    //                   color: Colors.black,
-                    //                 ),
-                    //               )),
-                    //     ),
-                    //   ),
+                    if (lectureCount > 0)
+                      Positioned(
+                        top: 30,
+                        left: 0,
+                        right: 0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(
+                            lectureCount,
+                            (index) => Container(
+                              width: 6,
+                              height: 6,
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 1.5),
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                   ],
                 );
               },
