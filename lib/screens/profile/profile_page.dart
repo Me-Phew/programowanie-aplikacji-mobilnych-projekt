@@ -19,6 +19,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
 import 'package:http_parser/http_parser.dart';
+import 'package:http_parser/http_parser.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
   final Student student;
