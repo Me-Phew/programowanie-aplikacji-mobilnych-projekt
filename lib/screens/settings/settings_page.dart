@@ -19,8 +19,51 @@ class SettingsPage extends ConsumerWidget {
   final Student student;
   const SettingsPage({super.key, required this.student});
 
+  Widget _buildProfileImage() {
+    return Consumer(
+      builder: (context, ref, child) {
+        final timestamp = DateTime.now().millisecondsSinceEpoch;
+        final imageKey = ref.watch(profileImageKeyProvider);
+        final currentStudent = ref.watch(studentProvider) ?? student;
+
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(35),
+          child: currentStudent.profilePicture != null
+              ? Image.network(
+                  "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(currentStudent.profilePicture!.url).path.replaceFirst('/api', '')}?t=$timestamp",
+                  key: imageKey,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                  headers: {
+                    'Authorization':
+                        'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                  },
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      "assets/images/Example.png",
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    );
+                  },
+                )
+              : Image.asset(
+                  "assets/images/Example.png",
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Watch for student updates
+    final currentStudent = ref.watch(studentProvider);
+    final accessToken = WirtualnySdk.instance.auth.accessToken ?? '';
     // Pobieranie wartości isDarkMode z providera
     final isDarkMode = ref.watch(darkModeProvider);
 
@@ -38,26 +81,7 @@ class SettingsPage extends ConsumerWidget {
                 width: double.infinity,
                 child: Row(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(35),
-                      child: student.profilePicture != null
-                          ? Image.network(
-                              "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(student.profilePicture!.url).path.replaceFirst('/api', '')}",
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                              headers: {
-                                'Authorization':
-                                    'Bearer ${WirtualnySdk.instance.auth.accessToken}'
-                              },
-                            )
-                          : Image.asset(
-                              "assets/images/Example.png",
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
-                            ),
-                    ),
+                    _buildProfileImage(), // Use extracted method
                     const SizedBox(width: 20), // Usuń height
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

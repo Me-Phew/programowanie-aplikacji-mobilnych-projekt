@@ -125,6 +125,10 @@ class StudentNotifier extends StateNotifier<Student?> {
   StudentNotifier() : super(null);
 
   void updateStudent(Student student) {
-    state = student; 
+    state = student;
   }
 }
+
+final profileImageKeyProvider = StateProvider.autoDispose<ValueKey>((ref) => const ValueKey(0));
+
+final profilePictureProvider = StateProvider<String?>((ref) => null);

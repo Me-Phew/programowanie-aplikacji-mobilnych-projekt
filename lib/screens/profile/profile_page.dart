@@ -19,7 +19,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
 import 'package:http_parser/http_parser.dart';
-import 'package:http_parser/http_parser.dart';
+import 'package:flutter_application/providers/riverpod_provider.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
   final Student student;
@@ -56,8 +56,6 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     final imageUpdateResult =
         await WirtualnySdk.instance.auth.changeUserImage(newImage: image);
 
-    if (!mounted) return;
-
     imageUpdateResult.fold((l) {
       if (!mounted) return;
 
@@ -75,6 +73,11 @@ class _EditAccountState extends ConsumerState<EditAccount> {
         _selectedImage = image;
       });
 
+      // Update both providers
+      ref.read(studentProvider.notifier).updateStudent(_student);
+      ref.read(profileImageKeyProvider.notifier).state =
+          ValueKey(DateTime.now().millisecondsSinceEpoch);
+
       if (!mounted) return;
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -90,6 +93,53 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     setState(() {
       _isLoading = false;
     });
+  }
+
+  Widget _buildProfileImage() {
+    return Consumer(
+      builder: (context, ref, child) {
+        final timestamp = DateTime.now().millisecondsSinceEpoch;
+        final imageKey = ref.watch(profileImageKeyProvider);
+        final currentStudent = ref.watch(studentProvider) ?? _student;
+
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: _selectedImage != null
+              ? Image.file(
+                  _selectedImage!,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                )
+              : currentStudent.profilePicture != null
+                  ? Image.network(
+                      "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(currentStudent.profilePicture!.url).path.replaceFirst('/api', '')}?t=$timestamp",
+                      key: imageKey,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                      headers: {
+                        'Authorization':
+                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                      },
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          "assets/images/Example.png",
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        );
+                      },
+                    )
+                  : Image.asset(
+                      "assets/images/Example.png",
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+        );
+      },
+    );
   }
 
   @override
@@ -123,33 +173,7 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                     Stack(
                       alignment: Alignment.center,
                       children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: _selectedImage != null
-                              ? Image.file(
-                                  _selectedImage!,
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                )
-                              : _student.profilePicture != null
-                                  ? Image.network(
-                                      "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(_student.profilePicture!.url).path.replaceFirst('/api', '')}",
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                      headers: {
-                                        'Authorization':
-                                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
-                                      },
-                                    )
-                                  : Image.asset(
-                                      "assets/images/Example.png",
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                    ),
-                        ),
+                        _buildProfileImage(), // Use the extracted widget
                         if (_isLoading) const CircularProgressIndicator(),
                       ],
                     ),
