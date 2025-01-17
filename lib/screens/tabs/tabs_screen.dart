@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
-import 'package:flutter_application/screens/messages/messages_page.dart';
+import 'package:flutter_application/screens/subjects/subject_page.dart';
 import 'package:flutter_application/screens/notifications/notifications_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
@@ -24,8 +24,8 @@ class _TabsScreenState extends State<TabsScreen> {
     HomePage(
       student: widget.student,
     ),
+    GradesPage(),
     NotificationsPage(),
-    MessagesPage(),
     SettingsPage(student: widget.student),
   ];
 
@@ -49,11 +49,11 @@ class _TabsScreenState extends State<TabsScreen> {
                   icon: Icons.home,
                   text: AppLocalizations.of(context)!.mainPanel),
               GButton(
+                  icon: Icons.history_edu,
+                  text: AppLocalizations.of(context)!.subjects),
+              GButton(
                   icon: Icons.notifications,
                   text: AppLocalizations.of(context)!.notifications),
-              GButton(
-                  icon: Icons.mail,
-                  text: AppLocalizations.of(context)!.messages),
               GButton(
                   icon: Icons.settings,
                   text: AppLocalizations.of(context)!.settings),

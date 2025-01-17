@@ -54,5 +54,12 @@
   "faculty": "Wydział",
   "email": "Email",
   "studyPeriod": "Czas studiów",
-  "useBiometrics": "Autoryzacja"
+  "useBiometrics": "Autoryzacja",
+  "grades": "Oceny",
+  "subject": "Przedmiot", 
+  "subjects": "Przedmioty", 
+  "lecturer": "Wykładowca: ",
+  "type": "Typ: ",
+  "date": "Data",
+  "exams": "Egzaminy"
 }
