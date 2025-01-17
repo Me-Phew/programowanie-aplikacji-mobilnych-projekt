@@ -30,13 +30,17 @@ Wirtualny Dziekanat to aplikacja mobilna stworzona w technologii Flutter, mając
     ```
 2. Przejdź do katalogu projektu:
     ```sh
-    cd wirtualny-dziekanat
+    cd wirtualny-dziekanat-mobile
     ```
 3. Zainstaluj zależności:
     ```sh
     flutter pub get
     ```
-4. Uruchom aplikację:
+4. Wygeneruj języki:
+    ```sh
+    flutter gen-l10n
+    ```
+5. Uruchom aplikację:
     ```sh
     flutter run
     ```
