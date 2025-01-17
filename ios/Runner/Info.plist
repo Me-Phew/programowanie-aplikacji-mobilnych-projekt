@@ -53,5 +53,7 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSFaceIDUsageDescription</key>
+		<string>Please authenticate to login to your account</string>
 	</dict>
 </plist>

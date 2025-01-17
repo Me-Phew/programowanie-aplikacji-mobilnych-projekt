@@ -514,8 +514,6 @@ Schedule _$ScheduleFromJson(Map<String, dynamic> json) {
 mixin _$Schedule {
   @JsonKey(name: "id")
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "courseOfStudy")
-  int get courseOfStudy => throw _privateConstructorUsedError;
   @JsonKey(name: "weekAfullTimeSchedule")
   WeekFullTimeSchedule get weekAfullTimeSchedule =>
       throw _privateConstructorUsedError;
@@ -550,7 +548,6 @@ abstract class $ScheduleCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "id") int id,
-      @JsonKey(name: "courseOfStudy") int courseOfStudy,
       @JsonKey(name: "weekAfullTimeSchedule")
       WeekFullTimeSchedule weekAfullTimeSchedule,
       @JsonKey(name: "weekAPartTimeSchedule")
@@ -584,7 +581,6 @@ class _$ScheduleCopyWithImpl<$Res, $Val extends Schedule>
   @override
   $Res call({
     Object? id = null,
-    Object? courseOfStudy = null,
     Object? weekAfullTimeSchedule = null,
     Object? weekAPartTimeSchedule = null,
     Object? weekBfullTimeSchedule = null,
@@ -596,10 +592,6 @@ class _$ScheduleCopyWithImpl<$Res, $Val extends Schedule>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      courseOfStudy: null == courseOfStudy
-          ? _value.courseOfStudy
-          : courseOfStudy // ignore: cast_nullable_to_non_nullable
               as int,
       weekAfullTimeSchedule: null == weekAfullTimeSchedule
           ? _value.weekAfullTimeSchedule
@@ -683,7 +675,6 @@ abstract class _$$ScheduleImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "id") int id,
-      @JsonKey(name: "courseOfStudy") int courseOfStudy,
       @JsonKey(name: "weekAfullTimeSchedule")
       WeekFullTimeSchedule weekAfullTimeSchedule,
       @JsonKey(name: "weekAPartTimeSchedule")
@@ -719,7 +710,6 @@ class __$$ScheduleImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? courseOfStudy = null,
     Object? weekAfullTimeSchedule = null,
     Object? weekAPartTimeSchedule = null,
     Object? weekBfullTimeSchedule = null,
@@ -731,10 +721,6 @@ class __$$ScheduleImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      courseOfStudy: null == courseOfStudy
-          ? _value.courseOfStudy
-          : courseOfStudy // ignore: cast_nullable_to_non_nullable
               as int,
       weekAfullTimeSchedule: null == weekAfullTimeSchedule
           ? _value.weekAfullTimeSchedule
@@ -769,7 +755,6 @@ class __$$ScheduleImplCopyWithImpl<$Res>
 class _$ScheduleImpl implements _Schedule {
   const _$ScheduleImpl(
       {@JsonKey(name: "id") required this.id,
-      @JsonKey(name: "courseOfStudy") required this.courseOfStudy,
       @JsonKey(name: "weekAfullTimeSchedule")
       required this.weekAfullTimeSchedule,
       @JsonKey(name: "weekAPartTimeSchedule")
@@ -787,9 +772,6 @@ class _$ScheduleImpl implements _Schedule {
   @override
   @JsonKey(name: "id")
   final int id;
-  @override
-  @JsonKey(name: "courseOfStudy")
-  final int courseOfStudy;
   @override
   @JsonKey(name: "weekAfullTimeSchedule")
   final WeekFullTimeSchedule weekAfullTimeSchedule;
@@ -811,7 +793,7 @@ class _$ScheduleImpl implements _Schedule {
 
   @override
   String toString() {
-    return 'Schedule(id: $id, courseOfStudy: $courseOfStudy, weekAfullTimeSchedule: $weekAfullTimeSchedule, weekAPartTimeSchedule: $weekAPartTimeSchedule, weekBfullTimeSchedule: $weekBfullTimeSchedule, weekBPartTimeSchedule: $weekBPartTimeSchedule, updatedAt: $updatedAt, createdAt: $createdAt)';
+    return 'Schedule(id: $id, weekAfullTimeSchedule: $weekAfullTimeSchedule, weekAPartTimeSchedule: $weekAPartTimeSchedule, weekBfullTimeSchedule: $weekBfullTimeSchedule, weekBPartTimeSchedule: $weekBPartTimeSchedule, updatedAt: $updatedAt, createdAt: $createdAt)';
   }
 
   @override
@@ -820,8 +802,6 @@ class _$ScheduleImpl implements _Schedule {
         (other.runtimeType == runtimeType &&
             other is _$ScheduleImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.courseOfStudy, courseOfStudy) ||
-                other.courseOfStudy == courseOfStudy) &&
             (identical(other.weekAfullTimeSchedule, weekAfullTimeSchedule) ||
                 other.weekAfullTimeSchedule == weekAfullTimeSchedule) &&
             (identical(other.weekAPartTimeSchedule, weekAPartTimeSchedule) ||
@@ -841,7 +821,6 @@ class _$ScheduleImpl implements _Schedule {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      courseOfStudy,
       weekAfullTimeSchedule,
       weekAPartTimeSchedule,
       weekBfullTimeSchedule,
@@ -868,7 +847,6 @@ class _$ScheduleImpl implements _Schedule {
 abstract class _Schedule implements Schedule {
   const factory _Schedule(
           {@JsonKey(name: "id") required final int id,
-          @JsonKey(name: "courseOfStudy") required final int courseOfStudy,
           @JsonKey(name: "weekAfullTimeSchedule")
           required final WeekFullTimeSchedule weekAfullTimeSchedule,
           @JsonKey(name: "weekAPartTimeSchedule")
@@ -887,9 +865,6 @@ abstract class _Schedule implements Schedule {
   @override
   @JsonKey(name: "id")
   int get id;
-  @override
-  @JsonKey(name: "courseOfStudy")
-  int get courseOfStudy;
   @override
   @JsonKey(name: "weekAfullTimeSchedule")
   WeekFullTimeSchedule get weekAfullTimeSchedule;

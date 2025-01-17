@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:logging/logging.dart';
 
 class WirtualnyHttpClient {
+  final log = Logger('WirtualnyHttpClient');
+
   final String baseUrl;
 
   WirtualnyHttpClient._internal({required this.baseUrl}) {
@@ -12,22 +15,24 @@ class WirtualnyHttpClient {
       },
       connectTimeout: Duration(seconds: 10),
     ));
-     dio.interceptors.add(
+    dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
-          print('REQUEST[${options.method}] => PATH: ${options.path}');
-          print('Headers: ${options.headers}');
-          print('Data: ${options.data}');
+          log.info('REQUEST[${options.method}] => PATH: ${options.path}');
+          log.info('Headers: ${options.headers}');
+          log.info('Data: ${options.data}');
           return handler.next(options);
         },
         onResponse: (response, handler) {
-          print('RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}');
-          print('Data: ${response.data}');
+          log.info(
+              'RESPONSE[${response.statusCode}] => PATH: ${response.requestOptions.path}');
+          log.info('Data: ${response.data}');
           return handler.next(response);
         },
-        onError: (DioError e, handler) {
-          print('ERROR[${e.response?.statusCode}] => PATH: ${e.requestOptions.path}');
-          print('Message: ${e.message}');
+        onError: (DioException e, handler) {
+          log.info(
+              'ERROR[${e.response?.statusCode}] => PATH: ${e.requestOptions.path}');
+          log.info('Message: ${e.message}');
           return handler.next(e);
         },
       ),

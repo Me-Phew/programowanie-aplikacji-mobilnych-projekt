@@ -1,21 +1,27 @@
 import 'dart:io';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/auth_state_provider.dart';
+import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
+import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
+import 'package:http_parser/http_parser.dart';
+import 'package:http_parser/http_parser.dart';
 
-class EditAccount extends StatefulWidget {
+class EditAccount extends ConsumerStatefulWidget {
   final Student student;
   late final String formattedNameAndFamilyName;
 
@@ -26,30 +32,64 @@ class EditAccount extends StatefulWidget {
   }
 
   @override
-  State<EditAccount> createState() => _EditAccountState();
+  ConsumerState<EditAccount> createState() => _EditAccountState();
 }
 
-class _EditAccountState extends State<EditAccount> {
+class _EditAccountState extends ConsumerState<EditAccount> {
   File? _selectedImage;
+  bool _isLoading = false;
+  late Student _student;
 
-  void _showImageSourceActionSheet() {
-    ImagePickerService.showImageSourceActionSheet(context, (image) {
-      if (image != null) {
-        setState(() {
-          _selectedImage = image;
-        });
-      }
-    });
+  @override
+  void initState() {
+    super.initState();
+    _student = widget.student;
   }
 
-  Future<void> saveImage() async {
-    if (_selectedImage != null) {
-      // Tutaj trzeba będzie zaimplementować logikę zapisywania obrazu
-      // Będzie trzeba przesłać obraz na serwer i zapisać w bazie danych itp xd
-      print('Image saved: ${_selectedImage!.path}');
-    } else {
-      print('No image selected');
-    }
+  Future<void> _uploadImage(File image) async {
+    if (!mounted) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    final imageUpdateResult =
+        await WirtualnySdk.instance.auth.changeUserImage(newImage: image);
+
+    if (!mounted) return;
+
+    imageUpdateResult.fold((l) {
+      if (!mounted) return;
+
+      print('Error uploading image: ${l.message}');
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Nie udało się zaktualizować zdjęcia profilowego'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }, (r) {
+      setState(() {
+        _student = WirtualnySdk.instance.auth.student!;
+        _selectedImage = image;
+      });
+
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Zdjęcie profilowe zostało zaktualizowane'),
+          backgroundColor: Colors.green,
+        ),
+      );
+    });
+
+    if (!mounted) return;
+
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   @override
@@ -58,24 +98,10 @@ class _EditAccountState extends State<EditAccount> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.chevron_left),
         ),
         leadingWidth: 80,
-        actions: [
-          IconButton(
-              onPressed: saveImage,
-              style: IconButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                fixedSize: Size(60, 50),
-                elevation: 3,
-              ),
-              icon: Icon(Icons.check, color: Colors.black))
-        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -86,41 +112,64 @@ class _EditAccountState extends State<EditAccount> {
               Text(
                 AppLocalizations.of(context)!.profile,
                 style: GoogleFonts.poppins(
-                    textStyle:
-                        TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
+                    textStyle: const TextStyle(
+                        fontSize: 36, fontWeight: FontWeight.bold)),
               ),
               const SizedBox(height: 40),
               EditItem(
                 title: AppLocalizations.of(context)!.photo,
-                widget: Column(children: [
-                  Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: _selectedImage != null
-                            ? Image.file(
-                                _selectedImage!,
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              )
-                            : Image.asset(
-                                "assets/images/Example.png",
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              ),
-                      ),
-                      TextButton(
-                        onPressed: _showImageSourceActionSheet,
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.lightBlueAccent,
+                widget: Column(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: _selectedImage != null
+                              ? Image.file(
+                                  _selectedImage!,
+                                  width: 100,
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                )
+                              : _student.profilePicture != null
+                                  ? Image.network(
+                                      "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(_student.profilePicture!.url).path.replaceFirst('/api', '')}",
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.cover,
+                                      headers: {
+                                        'Authorization':
+                                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                                      },
+                                    )
+                                  : Image.asset(
+                                      "assets/images/Example.png",
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.cover,
+                                    ),
                         ),
-                        child: Text(AppLocalizations.of(context)!.updatePhoto),
+                        if (_isLoading) const CircularProgressIndicator(),
+                      ],
+                    ),
+                    TextButton(
+                      onPressed: () =>
+                          ImagePickerService.showImageSourceActionSheet(
+                        context,
+                        (image) {
+                          if (image != null) {
+                            _uploadImage(image);
+                          }
+                        },
                       ),
-                    ],
-                  ),
-                ]),
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.lightBlueAccent,
+                      ),
+                      child: Text(AppLocalizations.of(context)!.updatePhoto),
+                    ),
+                  ],
+                ),
               ),
 
               // Nazwa użytkownika
@@ -225,7 +274,7 @@ class _EditAccountState extends State<EditAccount> {
                       onPressed: () async {
                         // Sign out from the SDK
                         await WirtualnySdk.instance.auth.signOut();
-                        
+
                         if (mounted) {
                           Navigator.of(context).pop();
                         }

@@ -32,6 +32,8 @@ mixin _$Student {
   String get familyName => throw _privateConstructorUsedError;
   @JsonKey(name: "coursesOfStudy")
   List<CourseOfStudy> get coursesOfStudy => throw _privateConstructorUsedError;
+  @JsonKey(name: "profilePicture")
+  ProfilePicture? get profilePicture => throw _privateConstructorUsedError;
   @JsonKey(name: "dateOfBirth")
   DateTime get dateOfBirth => throw _privateConstructorUsedError;
   @JsonKey(name: "indexNumber")
@@ -40,8 +42,6 @@ mixin _$Student {
   DateTime get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: "createdAt")
   DateTime get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: "collection")
-  String get collection => throw _privateConstructorUsedError;
   @JsonKey(name: "loginAttempts")
   int get loginAttempts => throw _privateConstructorUsedError;
 
@@ -66,12 +66,14 @@ abstract class $StudentCopyWith<$Res> {
       @JsonKey(name: "middleName") String? middleName,
       @JsonKey(name: "familyName") String familyName,
       @JsonKey(name: "coursesOfStudy") List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "profilePicture") ProfilePicture? profilePicture,
       @JsonKey(name: "dateOfBirth") DateTime dateOfBirth,
       @JsonKey(name: "indexNumber") String indexNumber,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt,
-      @JsonKey(name: "collection") String collection,
       @JsonKey(name: "loginAttempts") int loginAttempts});
+
+  $ProfilePictureCopyWith<$Res>? get profilePicture;
 }
 
 /// @nodoc
@@ -95,11 +97,11 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
     Object? middleName = freezed,
     Object? familyName = null,
     Object? coursesOfStudy = null,
+    Object? profilePicture = freezed,
     Object? dateOfBirth = null,
     Object? indexNumber = null,
     Object? updatedAt = null,
     Object? createdAt = null,
-    Object? collection = null,
     Object? loginAttempts = null,
   }) {
     return _then(_value.copyWith(
@@ -127,6 +129,10 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
           ? _value.coursesOfStudy
           : coursesOfStudy // ignore: cast_nullable_to_non_nullable
               as List<CourseOfStudy>,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as ProfilePicture?,
       dateOfBirth: null == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
@@ -143,15 +149,25 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      collection: null == collection
-          ? _value.collection
-          : collection // ignore: cast_nullable_to_non_nullable
-              as String,
       loginAttempts: null == loginAttempts
           ? _value.loginAttempts
           : loginAttempts // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
+  }
+
+  /// Create a copy of Student
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfilePictureCopyWith<$Res>? get profilePicture {
+    if (_value.profilePicture == null) {
+      return null;
+    }
+
+    return $ProfilePictureCopyWith<$Res>(_value.profilePicture!, (value) {
+      return _then(_value.copyWith(profilePicture: value) as $Val);
+    });
   }
 }
 
@@ -169,12 +185,15 @@ abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
       @JsonKey(name: "middleName") String? middleName,
       @JsonKey(name: "familyName") String familyName,
       @JsonKey(name: "coursesOfStudy") List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "profilePicture") ProfilePicture? profilePicture,
       @JsonKey(name: "dateOfBirth") DateTime dateOfBirth,
       @JsonKey(name: "indexNumber") String indexNumber,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt,
-      @JsonKey(name: "collection") String collection,
       @JsonKey(name: "loginAttempts") int loginAttempts});
+
+  @override
+  $ProfilePictureCopyWith<$Res>? get profilePicture;
 }
 
 /// @nodoc
@@ -196,11 +215,11 @@ class __$$StudentImplCopyWithImpl<$Res>
     Object? middleName = freezed,
     Object? familyName = null,
     Object? coursesOfStudy = null,
+    Object? profilePicture = freezed,
     Object? dateOfBirth = null,
     Object? indexNumber = null,
     Object? updatedAt = null,
     Object? createdAt = null,
-    Object? collection = null,
     Object? loginAttempts = null,
   }) {
     return _then(_$StudentImpl(
@@ -228,6 +247,10 @@ class __$$StudentImplCopyWithImpl<$Res>
           ? _value._coursesOfStudy
           : coursesOfStudy // ignore: cast_nullable_to_non_nullable
               as List<CourseOfStudy>,
+      profilePicture: freezed == profilePicture
+          ? _value.profilePicture
+          : profilePicture // ignore: cast_nullable_to_non_nullable
+              as ProfilePicture?,
       dateOfBirth: null == dateOfBirth
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
@@ -244,10 +267,6 @@ class __$$StudentImplCopyWithImpl<$Res>
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      collection: null == collection
-          ? _value.collection
-          : collection // ignore: cast_nullable_to_non_nullable
-              as String,
       loginAttempts: null == loginAttempts
           ? _value.loginAttempts
           : loginAttempts // ignore: cast_nullable_to_non_nullable
@@ -267,11 +286,11 @@ class _$StudentImpl implements _Student {
       @JsonKey(name: "familyName") required this.familyName,
       @JsonKey(name: "coursesOfStudy")
       required final List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "profilePicture") this.profilePicture,
       @JsonKey(name: "dateOfBirth") required this.dateOfBirth,
       @JsonKey(name: "indexNumber") required this.indexNumber,
       @JsonKey(name: "updatedAt") required this.updatedAt,
       @JsonKey(name: "createdAt") required this.createdAt,
-      @JsonKey(name: "collection") required this.collection,
       @JsonKey(name: "loginAttempts") required this.loginAttempts})
       : _coursesOfStudy = coursesOfStudy;
 
@@ -303,6 +322,9 @@ class _$StudentImpl implements _Student {
   }
 
   @override
+  @JsonKey(name: "profilePicture")
+  final ProfilePicture? profilePicture;
+  @override
   @JsonKey(name: "dateOfBirth")
   final DateTime dateOfBirth;
   @override
@@ -315,15 +337,12 @@ class _$StudentImpl implements _Student {
   @JsonKey(name: "createdAt")
   final DateTime createdAt;
   @override
-  @JsonKey(name: "collection")
-  final String collection;
-  @override
   @JsonKey(name: "loginAttempts")
   final int loginAttempts;
 
   @override
   String toString() {
-    return 'Student(id: $id, username: $username, firstName: $firstName, middleName: $middleName, familyName: $familyName, coursesOfStudy: $coursesOfStudy, dateOfBirth: $dateOfBirth, indexNumber: $indexNumber, updatedAt: $updatedAt, createdAt: $createdAt, collection: $collection, loginAttempts: $loginAttempts)';
+    return 'Student(id: $id, username: $username, firstName: $firstName, middleName: $middleName, familyName: $familyName, coursesOfStudy: $coursesOfStudy, profilePicture: $profilePicture, dateOfBirth: $dateOfBirth, indexNumber: $indexNumber, updatedAt: $updatedAt, createdAt: $createdAt, loginAttempts: $loginAttempts)';
   }
 
   @override
@@ -342,6 +361,8 @@ class _$StudentImpl implements _Student {
                 other.familyName == familyName) &&
             const DeepCollectionEquality()
                 .equals(other._coursesOfStudy, _coursesOfStudy) &&
+            (identical(other.profilePicture, profilePicture) ||
+                other.profilePicture == profilePicture) &&
             (identical(other.dateOfBirth, dateOfBirth) ||
                 other.dateOfBirth == dateOfBirth) &&
             (identical(other.indexNumber, indexNumber) ||
@@ -350,8 +371,6 @@ class _$StudentImpl implements _Student {
                 other.updatedAt == updatedAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
-            (identical(other.collection, collection) ||
-                other.collection == collection) &&
             (identical(other.loginAttempts, loginAttempts) ||
                 other.loginAttempts == loginAttempts));
   }
@@ -366,11 +385,11 @@ class _$StudentImpl implements _Student {
       middleName,
       familyName,
       const DeepCollectionEquality().hash(_coursesOfStudy),
+      profilePicture,
       dateOfBirth,
       indexNumber,
       updatedAt,
       createdAt,
-      collection,
       loginAttempts);
 
   /// Create a copy of Student
@@ -398,11 +417,11 @@ abstract class _Student implements Student {
           @JsonKey(name: "familyName") required final String familyName,
           @JsonKey(name: "coursesOfStudy")
           required final List<CourseOfStudy> coursesOfStudy,
+          @JsonKey(name: "profilePicture") final ProfilePicture? profilePicture,
           @JsonKey(name: "dateOfBirth") required final DateTime dateOfBirth,
           @JsonKey(name: "indexNumber") required final String indexNumber,
           @JsonKey(name: "updatedAt") required final DateTime updatedAt,
           @JsonKey(name: "createdAt") required final DateTime createdAt,
-          @JsonKey(name: "collection") required final String collection,
           @JsonKey(name: "loginAttempts") required final int loginAttempts}) =
       _$StudentImpl;
 
@@ -427,6 +446,9 @@ abstract class _Student implements Student {
   @JsonKey(name: "coursesOfStudy")
   List<CourseOfStudy> get coursesOfStudy;
   @override
+  @JsonKey(name: "profilePicture")
+  ProfilePicture? get profilePicture;
+  @override
   @JsonKey(name: "dateOfBirth")
   DateTime get dateOfBirth;
   @override
@@ -438,9 +460,6 @@ abstract class _Student implements Student {
   @override
   @JsonKey(name: "createdAt")
   DateTime get createdAt;
-  @override
-  @JsonKey(name: "collection")
-  String get collection;
   @override
   @JsonKey(name: "loginAttempts")
   int get loginAttempts;

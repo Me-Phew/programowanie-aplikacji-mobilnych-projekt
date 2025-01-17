@@ -24,14 +24,12 @@ mixin _$Faculty {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: "university")
-  int get university => throw _privateConstructorUsedError;
   @JsonKey(name: "classrooms")
-  List<int> get classrooms => throw _privateConstructorUsedError;
+  List<Classroom> get classrooms => throw _privateConstructorUsedError;
   @JsonKey(name: "coursesOfStudy")
-  List<int> get coursesOfStudy => throw _privateConstructorUsedError;
+  List<CourseOfStudy> get coursesOfStudy => throw _privateConstructorUsedError;
   @JsonKey(name: "address")
-  Address get address => throw _privateConstructorUsedError;
+  FacultyAddress get address => throw _privateConstructorUsedError;
   @JsonKey(name: "contact")
   Contact get contact => throw _privateConstructorUsedError;
   @JsonKey(name: "updatedAt")
@@ -56,15 +54,14 @@ abstract class $FacultyCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") int id,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "university") int university,
-      @JsonKey(name: "classrooms") List<int> classrooms,
-      @JsonKey(name: "coursesOfStudy") List<int> coursesOfStudy,
-      @JsonKey(name: "address") Address address,
+      @JsonKey(name: "classrooms") List<Classroom> classrooms,
+      @JsonKey(name: "coursesOfStudy") List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "address") FacultyAddress address,
       @JsonKey(name: "contact") Contact contact,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt});
 
-  $AddressCopyWith<$Res> get address;
+  $FacultyAddressCopyWith<$Res> get address;
   $ContactCopyWith<$Res> get contact;
 }
 
@@ -85,7 +82,6 @@ class _$FacultyCopyWithImpl<$Res, $Val extends Faculty>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? university = null,
     Object? classrooms = null,
     Object? coursesOfStudy = null,
     Object? address = null,
@@ -102,22 +98,18 @@ class _$FacultyCopyWithImpl<$Res, $Val extends Faculty>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      university: null == university
-          ? _value.university
-          : university // ignore: cast_nullable_to_non_nullable
-              as int,
       classrooms: null == classrooms
           ? _value.classrooms
           : classrooms // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<Classroom>,
       coursesOfStudy: null == coursesOfStudy
           ? _value.coursesOfStudy
           : coursesOfStudy // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<CourseOfStudy>,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address,
+              as FacultyAddress,
       contact: null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
@@ -137,8 +129,8 @@ class _$FacultyCopyWithImpl<$Res, $Val extends Faculty>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AddressCopyWith<$Res> get address {
-    return $AddressCopyWith<$Res>(_value.address, (value) {
+  $FacultyAddressCopyWith<$Res> get address {
+    return $FacultyAddressCopyWith<$Res>(_value.address, (value) {
       return _then(_value.copyWith(address: value) as $Val);
     });
   }
@@ -164,16 +156,15 @@ abstract class _$$FacultyImplCopyWith<$Res> implements $FacultyCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: "id") int id,
       @JsonKey(name: "name") String name,
-      @JsonKey(name: "university") int university,
-      @JsonKey(name: "classrooms") List<int> classrooms,
-      @JsonKey(name: "coursesOfStudy") List<int> coursesOfStudy,
-      @JsonKey(name: "address") Address address,
+      @JsonKey(name: "classrooms") List<Classroom> classrooms,
+      @JsonKey(name: "coursesOfStudy") List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "address") FacultyAddress address,
       @JsonKey(name: "contact") Contact contact,
       @JsonKey(name: "updatedAt") DateTime updatedAt,
       @JsonKey(name: "createdAt") DateTime createdAt});
 
   @override
-  $AddressCopyWith<$Res> get address;
+  $FacultyAddressCopyWith<$Res> get address;
   @override
   $ContactCopyWith<$Res> get contact;
 }
@@ -193,7 +184,6 @@ class __$$FacultyImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? university = null,
     Object? classrooms = null,
     Object? coursesOfStudy = null,
     Object? address = null,
@@ -210,22 +200,18 @@ class __$$FacultyImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      university: null == university
-          ? _value.university
-          : university // ignore: cast_nullable_to_non_nullable
-              as int,
       classrooms: null == classrooms
           ? _value._classrooms
           : classrooms // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<Classroom>,
       coursesOfStudy: null == coursesOfStudy
           ? _value._coursesOfStudy
           : coursesOfStudy // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<CourseOfStudy>,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address,
+              as FacultyAddress,
       contact: null == contact
           ? _value.contact
           : contact // ignore: cast_nullable_to_non_nullable
@@ -248,9 +234,9 @@ class _$FacultyImpl implements _Faculty {
   const _$FacultyImpl(
       {@JsonKey(name: "id") required this.id,
       @JsonKey(name: "name") required this.name,
-      @JsonKey(name: "university") required this.university,
-      @JsonKey(name: "classrooms") required final List<int> classrooms,
-      @JsonKey(name: "coursesOfStudy") required final List<int> coursesOfStudy,
+      @JsonKey(name: "classrooms") required final List<Classroom> classrooms,
+      @JsonKey(name: "coursesOfStudy")
+      required final List<CourseOfStudy> coursesOfStudy,
       @JsonKey(name: "address") required this.address,
       @JsonKey(name: "contact") required this.contact,
       @JsonKey(name: "updatedAt") required this.updatedAt,
@@ -267,22 +253,19 @@ class _$FacultyImpl implements _Faculty {
   @override
   @JsonKey(name: "name")
   final String name;
-  @override
-  @JsonKey(name: "university")
-  final int university;
-  final List<int> _classrooms;
+  final List<Classroom> _classrooms;
   @override
   @JsonKey(name: "classrooms")
-  List<int> get classrooms {
+  List<Classroom> get classrooms {
     if (_classrooms is EqualUnmodifiableListView) return _classrooms;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_classrooms);
   }
 
-  final List<int> _coursesOfStudy;
+  final List<CourseOfStudy> _coursesOfStudy;
   @override
   @JsonKey(name: "coursesOfStudy")
-  List<int> get coursesOfStudy {
+  List<CourseOfStudy> get coursesOfStudy {
     if (_coursesOfStudy is EqualUnmodifiableListView) return _coursesOfStudy;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_coursesOfStudy);
@@ -290,7 +273,7 @@ class _$FacultyImpl implements _Faculty {
 
   @override
   @JsonKey(name: "address")
-  final Address address;
+  final FacultyAddress address;
   @override
   @JsonKey(name: "contact")
   final Contact contact;
@@ -303,7 +286,7 @@ class _$FacultyImpl implements _Faculty {
 
   @override
   String toString() {
-    return 'Faculty(id: $id, name: $name, university: $university, classrooms: $classrooms, coursesOfStudy: $coursesOfStudy, address: $address, contact: $contact, updatedAt: $updatedAt, createdAt: $createdAt)';
+    return 'Faculty(id: $id, name: $name, classrooms: $classrooms, coursesOfStudy: $coursesOfStudy, address: $address, contact: $contact, updatedAt: $updatedAt, createdAt: $createdAt)';
   }
 
   @override
@@ -313,8 +296,6 @@ class _$FacultyImpl implements _Faculty {
             other is _$FacultyImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.university, university) ||
-                other.university == university) &&
             const DeepCollectionEquality()
                 .equals(other._classrooms, _classrooms) &&
             const DeepCollectionEquality()
@@ -333,7 +314,6 @@ class _$FacultyImpl implements _Faculty {
       runtimeType,
       id,
       name,
-      university,
       const DeepCollectionEquality().hash(_classrooms),
       const DeepCollectionEquality().hash(_coursesOfStudy),
       address,
@@ -361,10 +341,10 @@ abstract class _Faculty implements Faculty {
   const factory _Faculty(
       {@JsonKey(name: "id") required final int id,
       @JsonKey(name: "name") required final String name,
-      @JsonKey(name: "university") required final int university,
-      @JsonKey(name: "classrooms") required final List<int> classrooms,
-      @JsonKey(name: "coursesOfStudy") required final List<int> coursesOfStudy,
-      @JsonKey(name: "address") required final Address address,
+      @JsonKey(name: "classrooms") required final List<Classroom> classrooms,
+      @JsonKey(name: "coursesOfStudy")
+      required final List<CourseOfStudy> coursesOfStudy,
+      @JsonKey(name: "address") required final FacultyAddress address,
       @JsonKey(name: "contact") required final Contact contact,
       @JsonKey(name: "updatedAt") required final DateTime updatedAt,
       @JsonKey(name: "createdAt")
@@ -379,17 +359,14 @@ abstract class _Faculty implements Faculty {
   @JsonKey(name: "name")
   String get name;
   @override
-  @JsonKey(name: "university")
-  int get university;
-  @override
   @JsonKey(name: "classrooms")
-  List<int> get classrooms;
+  List<Classroom> get classrooms;
   @override
   @JsonKey(name: "coursesOfStudy")
-  List<int> get coursesOfStudy;
+  List<CourseOfStudy> get coursesOfStudy;
   @override
   @JsonKey(name: "address")
-  Address get address;
+  FacultyAddress get address;
   @override
   @JsonKey(name: "contact")
   Contact get contact;

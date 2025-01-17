@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -94,5 +95,36 @@ class NotificationsNotifier extends StateNotifier<bool> {
     final prefs = await SharedPreferences.getInstance();
     state = enabled;
     await prefs.setBool('notificationsEnabled', enabled);
+  }
+}
+
+final biometricsEnabledProvider = StateNotifierProvider<BiometricsNotifier, bool>((ref) {
+  return BiometricsNotifier();
+});
+
+class BiometricsNotifier extends StateNotifier<bool> {
+  BiometricsNotifier() : super(false) {
+    _loadSavedPreference();
+  }
+
+  Future<void> _loadSavedPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    state = prefs.getBool('useBiometrics') ?? false;
+  }
+
+  void toggleBiometrics(bool value) {
+    state = value;
+  }
+}
+
+final studentProvider = StateNotifierProvider<StudentNotifier, Student?>((ref) {
+  return StudentNotifier();
+});
+
+class StudentNotifier extends StateNotifier<Student?> {
+  StudentNotifier() : super(null);
+
+  void updateStudent(Student student) {
+    state = student; 
   }
 }

@@ -42,7 +42,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   Image.asset("assets/images/logoWithoutBg.png", width: 250),
                   StyledHeading(AppLocalizations.of(context)!.welcome),
                   // Sign in screen
-                  const StudentLoginForm()
+                   StudentLoginForm()
                 ])),
       ),
     );

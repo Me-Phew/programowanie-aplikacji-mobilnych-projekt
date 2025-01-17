@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'address.freezed.dart';
-part 'address.g.dart';
+part 'faculty_address.freezed.dart';
+part 'faculty_address.g.dart';
 
 @freezed
-class Address with _$Address {
-  const factory Address({
+class FacultyAddress with _$FacultyAddress {
+  const factory FacultyAddress({
     @JsonKey(name: "country") required String country,
     @JsonKey(name: "zipCode") required String zipCode,
     @JsonKey(name: "city") required String city,
@@ -13,6 +13,6 @@ class Address with _$Address {
     @JsonKey(name: "buildingNumber") required String buildingNumber,
   }) = _Address;
 
-  factory Address.fromJson(Map<String, dynamic> json) =>
-      _$AddressFromJson(json);
+  factory FacultyAddress.fromJson(Map<String, dynamic> json) =>
+      _$FacultyAddressFromJson(json);
 }

@@ -10,11 +10,11 @@ _$LectureImpl _$$LectureImplFromJson(Map<String, dynamic> json) =>
     _$LectureImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      lecturer: (json['lecturer'] as num).toInt(),
+      lecturer: Lecturer.fromJson(json['lecturer'] as Map<String, dynamic>),
       form: json['form'] as String,
       startTime: DateTime.parse(json['startTime'] as String),
       numberOfHours: (json['numberOfHours'] as num).toInt(),
-      classroom: json['classroom'],
+      classroom: Classroom.fromJson(json['classroom'] as Map<String, dynamic>),
       isOnline: json['isOnline'] as bool,
       endTime: DateTime.parse(json['endTime'] as String),
     );
