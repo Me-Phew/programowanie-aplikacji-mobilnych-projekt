@@ -57,7 +57,7 @@
   "useBiometrics": "Authentication",
   "grades": "Grades",
   "subject": "Subject",
-  "subjects": "Przedmioty", 
+  "subjects": "Subjects", 
   "lecturer": "Lecturer: ",
   "type": "Type: ",
   "date": "Date",
