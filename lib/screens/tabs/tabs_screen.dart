@@ -53,7 +53,7 @@ class _TabsScreenState extends State<TabsScreen> {
                   text: AppLocalizations.of(context)!.subjects),
               GButton(
                   icon: Icons.notifications,
-                  text: AppLocalizations.of(context)!.notifications),
+                  text: AppLocalizations.of(context)!.announcements),
               GButton(
                   icon: Icons.settings,
                   text: AppLocalizations.of(context)!.settings),

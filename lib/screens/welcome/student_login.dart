@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
+import 'package:flutter_application/utils/push_notifications.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_form_field.dart';
@@ -94,7 +95,11 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
     final loginResult = await WirtualnySdk.instance.auth
         .loginWithUsernameAndPassword(loginData);
 
-    if (!mounted) return;
+    if (!mounted) {
+      FirebaseApi.initNotifications();
+
+      return;
+    }
 
     loginResult.fold(
       (l) {
@@ -117,6 +122,8 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
         setState(() {
           _isLoading = false;
         });
+
+        FirebaseApi.initNotifications();
 
         // Navigate to home page on successful login
         Navigator.pushReplacement(

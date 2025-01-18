@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/wirtualny-sdk/models/lecture/lecture.dart';
-import 'package:flutter_application/wirtualny-sdk/models/schedule/schedule.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
-import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 
 class HomePage extends StatefulWidget {
   final Student student;
@@ -49,6 +46,9 @@ class _HomePageState extends State<HomePage> {
         selectedDaySchedule = widget
             .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.friday;
         break;
+      default:
+        selectedDaySchedule = [];
+        break;
     }
   }
 
@@ -77,6 +77,8 @@ class _HomePageState extends State<HomePage> {
           selectedDaySchedule = widget
               .student.coursesOfStudy[0].schedule.weekAfullTimeSchedule.friday;
           break;
+        default:
+          selectedDaySchedule = [];
       }
     });
   }
@@ -202,120 +204,123 @@ class _HomePageState extends State<HomePage> {
 
           const SizedBox(height: 20),
           // Karta wyświetlająca szczegóły dnia
-          Expanded(
-            child: ListView.builder(
-              itemCount: selectedDaySchedule!.length,
-              itemBuilder: (context, index) {
-                final lecture = selectedDaySchedule![index];
+          if (selectedDaySchedule!.isNotEmpty)
+            Expanded(
+              child: ListView.builder(
+                itemCount: selectedDaySchedule!.length,
+                itemBuilder: (context, index) {
+                  final lecture = selectedDaySchedule![index];
 
-                return Card(
-                  margin: const EdgeInsets.symmetric(vertical: 8),
-                  color: Colors.grey[50],
-                  child: ListTile(
-                    title: Text(
-                      lecture.name,
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(color: Colors.black),
-                        fontWeight: FontWeight.bold,
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 8),
+                    color: Colors.grey[50],
+                    child: ListTile(
+                      title: Text(
+                        lecture.name,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(color: Colors.black),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '${lecture.startTime.hour}:${lecture.startTime.minute.toString().padLeft(2, '0')} - ${lecture.endTime.hour}:${lecture.endTime.minute.toString().padLeft(2, '0')}',
+                                    style: GoogleFonts.poppins(
+                                      textStyle:
+                                          TextStyle(color: Colors.grey[900]),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  RichText(
+                                    text: TextSpan(
+                                      style: GoogleFonts.poppins(
+                                        color: Colors.grey[900],
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: AppLocalizations.of(context)!
+                                              .room,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: lecture.classroom.title,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  RichText(
+                                    text: TextSpan(
+                                      style: GoogleFonts.poppins(
+                                        color: Colors.grey[900],
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: AppLocalizations.of(context)!
+                                              .type,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: lecture.form,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  RichText(
+                                    text: TextSpan(
+                                      style: TextStyle(color: Colors.grey[900]),
+                                      children: [
+                                        TextSpan(
+                                          text: AppLocalizations.of(context)!
+                                              .lecturer,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: lecture.lecturer.title,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  '${lecture.startTime.hour}:${lecture.startTime.minute.toString().padLeft(2, '0')} - ${lecture.endTime.hour}:${lecture.endTime.minute.toString().padLeft(2, '0')}',
-                                  style: GoogleFonts.poppins(
-                                    textStyle:
-                                        TextStyle(color: Colors.grey[900]),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                RichText(
-                                  text: TextSpan(
-                                    style: GoogleFonts.poppins(
-                                      color: Colors.grey[900],
-                                    ),
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            AppLocalizations.of(context)!.room,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: lecture.classroom.title,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    style: GoogleFonts.poppins(
-                                      color: Colors.grey[900],
-                                    ),
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            AppLocalizations.of(context)!.type,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: lecture.form,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                RichText(
-                                  text: TextSpan(
-                                    style: TextStyle(color: Colors.grey[900]),
-                                    children: [
-                                      TextSpan(
-                                        text: AppLocalizations.of(context)!
-                                            .lecturer,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: lecture.lecturer.title,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
-          ),
+          if (selectedDaySchedule!.isEmpty)
+            const Expanded(child: Center(child: Text("Brak zajęć w tym dniu"))),
         ],
       ),
     ));
