@@ -38,5 +38,5 @@ class WirtualnySdk {
       WirtualnyNotifications();
 
   WirtualnyAuth get auth => _auth;
-  WirtualnyNotifications get wirtualnyNotifications => _wirtualnyNotifications;
+  WirtualnyNotifications get notifications => _wirtualnyNotifications;
 }
