@@ -1,6 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:fpdart/fpdart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:logging/logging.dart';
+import 'package:http_parser/http_parser.dart';
+
 import 'package:flutter_application/wirtualny-sdk/models/profilePicture/profile_picture.dart';
 import 'package:flutter_application/wirtualny-sdk/models/request-data/student_login_with_username_and_password_data.dart';
 import 'package:flutter_application/wirtualny-sdk/models/responses/errors_response/errors_response.dart';
@@ -9,10 +14,7 @@ import 'package:flutter_application/wirtualny-sdk/models/responses/student_profi
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/modules/auth/wirtualny_auth_exception.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
-import 'package:fpdart/fpdart.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:logging/logging.dart';
-import 'package:http_parser/http_parser.dart';
+import 'package:flutter_application/utils/biometrics.dart';
 
 class WirtualnyAuth {
   final log = Logger('WirtualnyAuth');
@@ -36,7 +38,14 @@ class WirtualnyAuth {
   Future<void> loadToken() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
+
     if (token != null) {
+      // Authenticate with biometrics before proceeding with relogin
+      final authenticated = await authenticateWithBiometrics();
+      if (!authenticated) {
+        return;
+      }
+
       WirtualnyHttpClient.instance.dio.options.headers['Authorization'] =
           'Bearer $token';
 

@@ -1,3 +1,4 @@
+import 'package:flutter_application/wirtualny-sdk/modules/notifications/wirtualny_notifications.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 
 import 'modules/auth/wirtualny_auth.dart';
@@ -33,6 +34,9 @@ class WirtualnySdk {
   }
 
   final WirtualnyAuth _auth = WirtualnyAuth();
+  final WirtualnyNotifications _wirtualnyNotifications =
+      WirtualnyNotifications();
 
   WirtualnyAuth get auth => _auth;
+  WirtualnyNotifications get notifications => _wirtualnyNotifications;
 }

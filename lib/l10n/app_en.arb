@@ -54,5 +54,12 @@
   "faculty": "Faculty",
   "email": "Email",
   "studyPeriod": "Study period",
-  "useBiometrics": "Authentication"
+  "useBiometrics": "Authentication",
+  "grades": "Grades",
+  "subject": "Subject",
+  "subjects": "Subjects", 
+  "lecturer": "Lecturer: ",
+  "type": "Type: ",
+  "date": "Date",
+  "exams": "Exams"
 }

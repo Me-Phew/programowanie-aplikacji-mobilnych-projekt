@@ -1,16 +1,31 @@
+/**
+ * @file tabs_screen.dart
+ * @brief Ekran z zakładkami nawigacyjnymi aplikacji.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
-import 'package:flutter_application/screens/messages/messages_page.dart';
-import 'package:flutter_application/screens/notifications/notifications_page.dart';
+import 'package:flutter_application/screens/subjects/subject_page.dart';
+import 'package:flutter_application/screens/announcements/announcements_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({super.key, required this.student});
-
   final Student student;
+
+  /**
+   * @brief Konstruktor widgetu TabsScreen.
+   * @param student Obiekt studenta zawierający dane do wyświetlenia.
+   */
+  const TabsScreen({super.key, required this.student});
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -24,8 +39,8 @@ class _TabsScreenState extends State<TabsScreen> {
     HomePage(
       student: widget.student,
     ),
-    NotificationsPage(),
-    MessagesPage(),
+    GradesPage(),
+    AnnouncementsPage(),
     SettingsPage(student: widget.student),
   ];
 
@@ -49,11 +64,11 @@ class _TabsScreenState extends State<TabsScreen> {
                   icon: Icons.home,
                   text: AppLocalizations.of(context)!.mainPanel),
               GButton(
-                  icon: Icons.notifications,
-                  text: AppLocalizations.of(context)!.notifications),
+                  icon: Icons.history_edu,
+                  text: AppLocalizations.of(context)!.subjects),
               GButton(
-                  icon: Icons.mail,
-                  text: AppLocalizations.of(context)!.messages),
+                  icon: Icons.notifications,
+                  text: AppLocalizations.of(context)!.announcements),
               GButton(
                   icon: Icons.settings,
                   text: AppLocalizations.of(context)!.settings),

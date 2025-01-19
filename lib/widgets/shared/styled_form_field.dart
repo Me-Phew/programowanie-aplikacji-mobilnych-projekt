@@ -1,8 +1,39 @@
+/**
+ * @file styled_form_field.dart
+ * @brief Stylizowane pole formularza używane w aplikacji.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application/utils/theme.dart';
 
 class StyledFormField extends StatelessWidget {
+  final TextEditingController textEditingController;
+  final FormFieldValidator<String?> validator;
+  final Widget label;
+  final IconData icon;
+  final bool obscureText;
+  final Widget? suffixIcon;
+  final TextInputType? keyboardType;
+  final Iterable<String>? autofillHints;
+
+  /**
+   * @brief Konstruktor widgetu StyledFormField.
+   * @param textEditingController Kontroler tekstu dla pola formularza.
+   * @param validator Funkcja walidująca dla pola formularza.
+   * @param label Etykieta pola formularza.
+   * @param icon Ikona dla pola formularza.
+   * @param obscureText Flaga określająca, czy tekst ma być ukryty.
+   * @param suffixIcon Ikona wyświetlana po prawej stronie pola formularza.
+   * @param keyboardType Typ klawiatury dla pola formularza.
+   * @param autofillHints Wskazówki do automatycznego wypełniania.
+   */
   const StyledFormField({
     super.key,
     required this.textEditingController,
@@ -14,15 +45,6 @@ class StyledFormField extends StatelessWidget {
     this.keyboardType,
     this.autofillHints,
   });
-
-  final TextEditingController textEditingController;
-  final FormFieldValidator<String?> validator;
-  final Widget label;
-  final IconData icon;
-  final bool obscureText;
-  final Widget? suffixIcon;
-  final TextInputType? keyboardType;
-  final Iterable<String>? autofillHints;
 
   @override
   Widget build(BuildContext context) {

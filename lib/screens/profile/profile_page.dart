@@ -1,30 +1,37 @@
+/**
+ * @file profile_page.dart
+ * @brief Ekran profilu użytkownika z możliwością edycji danych.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'dart:io';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/providers/auth_state_provider.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
-import 'package:flutter_application/screens/welcome/welcome_page.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_button.dart';
-import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
-import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
-import 'package:http_parser/http_parser.dart';
-import 'package:http_parser/http_parser.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
   final Student student;
   late final String formattedNameAndFamilyName;
 
+  /**
+   * @brief Konstruktor widgetu EditAccount.
+   * @param student Obiekt studenta zawierający dane do wyświetlenia.
+   */
   EditAccount({super.key, required this.student}) {
     formattedNameAndFamilyName = student.middleName != null
         ? "${student.firstName} ${student.middleName} ${student.familyName}"
@@ -46,6 +53,10 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     _student = widget.student;
   }
 
+  /**
+   * @brief Przesyła nowe zdjęcie profilowe na serwer.
+   * @param image Plik obrazu do przesłania.
+   */
   Future<void> _uploadImage(File image) async {
     if (!mounted) return;
 
@@ -55,8 +66,6 @@ class _EditAccountState extends ConsumerState<EditAccount> {
 
     final imageUpdateResult =
         await WirtualnySdk.instance.auth.changeUserImage(newImage: image);
-
-    if (!mounted) return;
 
     imageUpdateResult.fold((l) {
       if (!mounted) return;
@@ -75,6 +84,11 @@ class _EditAccountState extends ConsumerState<EditAccount> {
         _selectedImage = image;
       });
 
+      // Update both providers
+      ref.read(studentProvider.notifier).updateStudent(_student);
+      ref.read(profileImageKeyProvider.notifier).state =
+          ValueKey(DateTime.now().millisecondsSinceEpoch);
+
       if (!mounted) return;
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -90,6 +104,57 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     setState(() {
       _isLoading = false;
     });
+  }
+
+  /**
+   * @brief Buduje widget wyświetlający zdjęcie profilowe.
+   * @return Widget wyświetlający zdjęcie profilowe.
+   */
+  Widget _buildProfileImage() {
+    return Consumer(
+      builder: (context, ref, child) {
+        final timestamp = DateTime.now().millisecondsSinceEpoch;
+        final imageKey = ref.watch(profileImageKeyProvider);
+        final currentStudent = ref.watch(studentProvider) ?? _student;
+
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: _selectedImage != null
+              ? Image.file(
+                  _selectedImage!,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                )
+              : currentStudent.profilePicture != null
+                  ? Image.network(
+                      "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(currentStudent.profilePicture!.url).path.replaceFirst('/api', '')}?t=$timestamp",
+                      key: imageKey,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                      headers: {
+                        'Authorization':
+                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
+                      },
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          "assets/images/Example.png",
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        );
+                      },
+                    )
+                  : Image.asset(
+                      "assets/images/Example.png",
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+        );
+      },
+    );
   }
 
   @override
@@ -123,33 +188,7 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                     Stack(
                       alignment: Alignment.center,
                       children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: _selectedImage != null
-                              ? Image.file(
-                                  _selectedImage!,
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                )
-                              : _student.profilePicture != null
-                                  ? Image.network(
-                                      "${dotenv.env['REST_API_BASE_URL']}${Uri.parse(_student.profilePicture!.url).path.replaceFirst('/api', '')}",
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                      headers: {
-                                        'Authorization':
-                                            'Bearer ${WirtualnySdk.instance.auth.accessToken}'
-                                      },
-                                    )
-                                  : Image.asset(
-                                      "assets/images/Example.png",
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                    ),
-                        ),
+                        _buildProfileImage(), // Użycie wyodrębnionego widgetu
                         if (_isLoading) const CircularProgressIndicator(),
                       ],
                     ),
@@ -272,10 +311,10 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                   children: [
                     StyledButton(
                       onPressed: () async {
-                        // Sign out from the SDK
+                        // Wylogowanie z SDK
                         await WirtualnySdk.instance.auth.signOut();
 
-                        if (mounted) {
+                        if (context.mounted) {
                           Navigator.of(context).pop();
                         }
                       },

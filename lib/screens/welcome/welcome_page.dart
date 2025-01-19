@@ -1,3 +1,14 @@
+/**
+ * @file welcome_page.dart
+ * @brief Ekran powitalny aplikacji z formularzem logowania.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -21,6 +32,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     });
   }
 
+  /**
+   * @brief Ładuje asynchroniczny stan aplikacji.
+   */
   _loadAsyncState() async {
     final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
 
@@ -41,8 +55,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                   Image.asset("assets/images/logoWithoutBg.png", width: 250),
                   StyledHeading(AppLocalizations.of(context)!.welcome),
-                  // Sign in screen
-                   StudentLoginForm()
+                  // Ekran logowania
+                  StudentLoginForm()
                 ])),
       ),
     );

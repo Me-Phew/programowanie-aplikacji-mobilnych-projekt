@@ -3,6 +3,7 @@
   "darkMode": "Tryb ciemny",
   "language": "Język",
   "notifications": "Powiadomienia",
+  "announcements": "Ogłoszenia",
   "help": "Pomoc",
   "profile": "Profil",
   "mainPanel": "Panel główny",
@@ -54,5 +55,12 @@
   "faculty": "Wydział",
   "email": "Email",
   "studyPeriod": "Czas studiów",
-  "useBiometrics": "Autoryzacja"
+  "useBiometrics": "Autoryzacja",
+  "grades": "Oceny",
+  "subject": "Przedmiot", 
+  "subjects": "Przedmioty", 
+  "lecturer": "Wykładowca: ",
+  "type": "Typ: ",
+  "date": "Data",
+  "exams": "Egzaminy"
 }

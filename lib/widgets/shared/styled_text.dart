@@ -1,10 +1,25 @@
+/**
+ * @file styled_text.dart
+ * @brief Stylizowane teksty używane w aplikacji.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StyledBodyText extends StatelessWidget {
-  const StyledBodyText(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu StyledBodyText.
+   * @param text Tekst do wyświetlenia.
+   */
+  const StyledBodyText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +31,13 @@ class StyledBodyText extends StatelessWidget {
 }
 
 class StyledHeading extends StatelessWidget {
-  const StyledHeading(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu StyledHeading.
+   * @param text Tekst do wyświetlenia.
+   */
+  const StyledHeading(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +49,13 @@ class StyledHeading extends StatelessWidget {
 }
 
 class StyledAppBarText extends StatelessWidget {
-  const StyledAppBarText(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu StyledAppBarText.
+   * @param text Tekst do wyświetlenia.
+   */
+  const StyledAppBarText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +68,13 @@ class StyledAppBarText extends StatelessWidget {
 }
 
 class StyledErrorText extends StatelessWidget {
-  const StyledErrorText(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu StyledErrorText.
+   * @param text Tekst do wyświetlenia.
+   */
+  const StyledErrorText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +86,13 @@ class StyledErrorText extends StatelessWidget {
 }
 
 class SettingsHeading extends StatelessWidget {
-  const SettingsHeading(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu SettingsHeading.
+   * @param text Tekst do wyświetlenia.
+   */
+  const SettingsHeading(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +107,13 @@ class SettingsHeading extends StatelessWidget {
 }
 
 class SettingsText extends StatelessWidget {
-  const SettingsText(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu SettingsText.
+   * @param text Tekst do wyświetlenia.
+   */
+  const SettingsText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,9 +128,13 @@ class SettingsText extends StatelessWidget {
 }
 
 class SettingsTextInside extends StatelessWidget {
-  const SettingsTextInside(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu SettingsTextInside.
+   * @param text Tekst do wyświetlenia.
+   */
+  const SettingsTextInside(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -107,9 +146,13 @@ class SettingsTextInside extends StatelessWidget {
 }
 
 class ProfileTextLeft extends StatelessWidget {
-  const ProfileTextLeft(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu ProfileTextLeft.
+   * @param text Tekst do wyświetlenia.
+   */
+  const ProfileTextLeft(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -123,9 +166,13 @@ class ProfileTextLeft extends StatelessWidget {
 }
 
 class ProfileTextRight extends StatelessWidget {
-  const ProfileTextRight(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu ProfileTextRight.
+   * @param text Tekst do wyświetlenia.
+   */
+  const ProfileTextRight(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
