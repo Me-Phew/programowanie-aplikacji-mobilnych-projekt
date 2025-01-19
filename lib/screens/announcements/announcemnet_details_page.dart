@@ -1,3 +1,14 @@
+/**
+ * @file announcemnet_details_page.dart
+ * @brief Plik dostarczający stronę szczegółów ogłoszenia
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -5,11 +16,29 @@ import 'package:flutter_html/flutter_html.dart';
 
 import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
 
+/**
+ * @class AnnouncementDetailsPage
+ * @brief Klasa dostarczająca stronę szczegółów ogłoszenia
+ * 
+ * Odpowiada za wyświetlanie szczegółów wybranego ogłoszenia.
+ */
 class AnnouncementDetailsPage extends ConsumerWidget {
   final Announcement announcement;
 
+  /**
+   * @brief Konstruktor klasy AnnouncementDetailsPage
+   * 
+   * @param announcement Ogłoszenie do wyświetlenia
+   */
   const AnnouncementDetailsPage({super.key, required this.announcement});
 
+  /**
+   * @brief Buduje widget strony szczegółów ogłoszenia
+   * 
+   * @param context Kontekst budowania widgetu
+   * @param ref Referencja do providerów Riverpod
+   * @return Widget strony szczegółów ogłoszenia
+   */
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final createdAt =

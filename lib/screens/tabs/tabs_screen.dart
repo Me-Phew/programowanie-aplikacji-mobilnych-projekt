@@ -1,3 +1,14 @@
+/**
+ * @file tabs_screen.dart
+ * @brief Ekran z zakładkami nawigacyjnymi aplikacji.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
 import 'package:flutter_application/screens/subjects/subject_page.dart';
@@ -8,9 +19,13 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({super.key, required this.student});
-
   final Student student;
+
+  /**
+   * @brief Konstruktor widgetu TabsScreen.
+   * @param student Obiekt studenta zawierający dane do wyświetlenia.
+   */
+  const TabsScreen({super.key, required this.student});
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
