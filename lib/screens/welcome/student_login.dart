@@ -9,75 +9,26 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_application/wirtualny-sdk/models/request-data/student_login_with_username_and_password_data.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class StudentLoginForm extends StatefulWidget {
+  const StudentLoginForm({super.key});
+
   @override
-  _StudentLoginFormState createState() => _StudentLoginFormState();
+  State<StudentLoginForm> createState() => _StudentLoginFormState();
 }
 
 class _StudentLoginFormState extends State<StudentLoginForm> {
-  final LocalAuthentication _localAuth = LocalAuthentication();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isLoading = false;
   String? _errorFeedback;
 
-  Future<bool> _authenticateWithBiometrics() async {
-    try {
-      final bool canAuthenticateWithBiometrics =
-          await _localAuth.canCheckBiometrics;
-      final bool canAuthenticate =
-          canAuthenticateWithBiometrics || await _localAuth.isDeviceSupported();
-
-      if (!canAuthenticate) {
-        return true; // If device doesn't support biometrics, proceed anyway
-      }
-
-      final prefs = await SharedPreferences.getInstance();
-      final useBiometrics = prefs.getBool('useBiometrics') ?? false;
-
-      if (!useBiometrics) {
-        return true; // If biometrics not enabled, proceed anyway
-      }
-
-      // Explicitly check for biometric support
-      final List<BiometricType> availableBiometrics =
-          await _localAuth.getAvailableBiometrics();
-      if (!availableBiometrics.contains(BiometricType.strong) &&
-          !availableBiometrics.contains(BiometricType.weak)) {
-        return true;
-      }
-      return await _localAuth.authenticate(
-        localizedReason: 'Proszę zweryfikować swoją tożsamość',
-        options: const AuthenticationOptions(
-          biometricOnly: true,
-          stickyAuth: true,
-          useErrorDialogs: true,
-        ),
-      );
-    } catch (e) {
-      print('Error using biometrics: $e');
-      return false;
-    }
-  }
-
   void _handleLogin() async {
     if (!mounted) return;
 
     // Check form validation first
     if (!_formKey.currentState!.validate()) {
-      return;
-    }
-
-    // Authenticate with biometrics before proceeding with login
-    final authenticated = await _authenticateWithBiometrics();
-    if (!authenticated) {
-      if (!mounted) return;
-      setState(() {
-        _errorFeedback = AppLocalizations.of(context)!.generalLoginError;
-      });
       return;
     }
 
