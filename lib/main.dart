@@ -13,6 +13,7 @@ import 'package:flutter_application/providers/auth_state_provider.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
+import 'package:flutter_application/widgets/message_handler.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -108,7 +109,8 @@ class MyApp extends ConsumerWidget {
               if (value == null) {
                 return const WelcomeScreen();
               }
-              return TabsScreen(student: value);
+
+              return MessageHandler(child: TabsScreen(student: value));
             },
             error: (error, _) => const Text("Error loading auth status ..."),
             loading: () => const Text("Loading"));
