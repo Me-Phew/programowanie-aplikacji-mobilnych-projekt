@@ -231,6 +231,26 @@ class SettingsPage extends ConsumerWidget {
                 onTap: () {},
               ),
               const SizedBox(height: 20),
+
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    StyledButton(
+                      onPressed: () async {
+                        // Sign out from the SDK
+                        await WirtualnySdk.instance.auth.signOut();
+
+                        if (context.mounted) {
+                          Navigator.of(context).pop();
+                        }
+                      },
+                      child: StyledButtonText(
+                          AppLocalizations.of(context)!.logout),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

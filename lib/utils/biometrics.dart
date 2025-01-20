@@ -31,7 +31,6 @@ Future<bool> authenticateWithBiometrics() async {
     return await localAuth.authenticate(
       localizedReason: 'Proszę zweryfikować swoją tożsamość',
       options: const AuthenticationOptions(
-        biometricOnly: true,
         stickyAuth: true,
         useErrorDialogs: true,
       ),

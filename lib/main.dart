@@ -104,7 +104,8 @@ class SandBox extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("SandBox"),
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
         ),
         body: const Text("SandBox"));
   }

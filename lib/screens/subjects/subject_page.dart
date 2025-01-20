@@ -262,7 +262,8 @@ class SubjectCard extends ConsumerWidget {
                     if (subject.upcomingExams.isNotEmpty)
                       Container(
                         margin: EdgeInsets.only(top: 8),
-                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: Colors.red[100],
                           borderRadius: BorderRadius.circular(12),
@@ -303,15 +304,18 @@ class SubjectDetailsPage extends ConsumerWidget {
 
   const SubjectDetailsPage({super.key, required this.subject});
 
-    Widget build(BuildContext context, WidgetRef ref) {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
     final isDarkMode = ref.watch(darkModeProvider);
-    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: isDarkMode ? Colors.white : Colors.black),
+          icon: Icon(Icons.arrow_back,
+              color: isDarkMode ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -382,193 +386,200 @@ class SubjectDetailsPage extends ConsumerWidget {
     );
   }
 
-
-Widget _buildGradesTab(bool isDarkMode) {
-  return ListView.builder(
-    padding: EdgeInsets.all(16),
-    itemCount: subject.grades.length,
-    itemBuilder: (context, index) {
-      final grade = subject.grades[index];
-      return Container(
-        margin: EdgeInsets.only(bottom: 16),
-        decoration: BoxDecoration(
-          color: isDarkMode ? Colors.grey[900] : Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Container(
-              margin: EdgeInsets.all(16),
-              width: 60,
-              height: 60,
-              decoration: BoxDecoration(
-                color: _getGradeColor(grade.value),
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    color: _getGradeColor(grade.value).withOpacity(0.3),
-                    blurRadius: 6,
-                    offset: Offset(0, 2),
-                  ),
-                ],
+  Widget _buildGradesTab(bool isDarkMode) {
+    return ListView.builder(
+      padding: EdgeInsets.all(16),
+      itemCount: subject.grades.length,
+      itemBuilder: (context, index) {
+        final grade = subject.grades[index];
+        return Container(
+          margin: EdgeInsets.only(bottom: 16),
+          decoration: BoxDecoration(
+            color: isDarkMode ? Colors.grey[900] : Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: .1),
+                blurRadius: 10,
+                offset: Offset(0, 2),
               ),
-              child: Center(
-                child: Text(
-                  grade.value.toString(),
-                  style: GoogleFonts.poppins(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      grade.type,
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: isDarkMode ? Colors.white : Colors.black,
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      grade.description,
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: isDarkMode ? Colors.grey[300] : Colors.grey[800],
-                      ),
-                    ),
-                    Text(
-                      DateFormat('dd.MM.yyyy').format(grade.date),
-                      style: GoogleFonts.poppins(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
-                      ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.all(16),
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: _getGradeColor(grade.value),
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: _getGradeColor(grade.value).withValues(alpha: .3),
+                      blurRadius: 6,
+                      offset: Offset(0, 2),
                     ),
                   ],
                 ),
-              ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
-
-Widget _buildExamsTab(bool isDarkMode) {
-  return ListView.builder(
-    padding: EdgeInsets.all(16),
-    itemCount: subject.upcomingExams.length,
-    itemBuilder: (context, index) {
-      final exam = subject.upcomingExams[index];
-      return Container(
-        margin: EdgeInsets.only(bottom: 16),
-        decoration: BoxDecoration(
-          color: isDarkMode ? Colors.grey[900] : Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Container(
-              margin: EdgeInsets.all(16),
-              width: 60,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.orange[400],
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.orange.withOpacity(0.3),
-                    blurRadius: 6,
-                    offset: Offset(0, 2),
+                child: Center(
+                  child: Text(
+                    grade.value.toString(),
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ],
+                ),
               ),
-              child: Icon(Icons.event_note, color: Colors.white, size: 30),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      exam.title,
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: isDarkMode ? Colors.white : Colors.black,
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      exam.description,
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: isDarkMode ? Colors.grey[300] : Colors.grey[800],
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_on,
-                          size: 16,
-                          color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        grade.type,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: isDarkMode ? Colors.white : Colors.black,
                         ),
-                        SizedBox(width: 4),
-                        Text(
-                          exam.location,
-                          style: GoogleFonts.poppins(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                            color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        grade.description,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[300] : Colors.grey[800],
+                        ),
+                      ),
+                      Text(
+                        DateFormat('dd.MM.yyyy').format(grade.date),
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildExamsTab(bool isDarkMode) {
+    return ListView.builder(
+      padding: EdgeInsets.all(16),
+      itemCount: subject.upcomingExams.length,
+      itemBuilder: (context, index) {
+        final exam = subject.upcomingExams[index];
+        return Container(
+          margin: EdgeInsets.only(bottom: 16),
+          decoration: BoxDecoration(
+            color: isDarkMode ? Colors.grey[900] : Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: .1),
+                blurRadius: 10,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.all(16),
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.orange[400],
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.orange.withValues(alpha: .3),
+                      blurRadius: 6,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Icon(Icons.event_note, color: Colors.white, size: 30),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        exam.title,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: isDarkMode ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        exam.description,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[300] : Colors.grey[800],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 16,
+                            color: isDarkMode
+                                ? Colors.grey[400]
+                                : Colors.grey[700],
                           ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      DateFormat('dd.MM.yyyy').format(exam.date),
-                      style: GoogleFonts.poppins(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                          SizedBox(width: 4),
+                          Text(
+                            exam.location,
+                            style: GoogleFonts.poppins(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500,
+                              color: isDarkMode
+                                  ? Colors.grey[400]
+                                  : Colors.grey[700],
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
+                      Text(
+                        DateFormat('dd.MM.yyyy').format(exam.date),
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   Color _getGradeColor(double grade) {
     if (grade >= 4.5) return Colors.green;

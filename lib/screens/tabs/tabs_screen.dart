@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
 import 'package:flutter_application/screens/subjects/subject_page.dart';
-import 'package:flutter_application/screens/notifications/notifications_page.dart';
+import 'package:flutter_application/screens/announcements/announcements_page.dart';
 import 'package:flutter_application/screens/settings/settings_page.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -25,7 +25,7 @@ class _TabsScreenState extends State<TabsScreen> {
       student: widget.student,
     ),
     GradesPage(),
-    NotificationsPage(),
+    AnnouncementsPage(),
     SettingsPage(student: widget.student),
   ];
 

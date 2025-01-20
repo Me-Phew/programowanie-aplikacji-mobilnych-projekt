@@ -16,8 +16,7 @@ class FirebaseApi {
 
     if (fcmToken == null) return;
 
-    WirtualnySdk.instance.wirtualnyNotifications
-        .addFCMToken(fcmToken: fcmToken);
+    WirtualnySdk.instance.notifications.addFCMToken(fcmToken: fcmToken);
   }
 
   static void handleMessage(RemoteMessage? message) {

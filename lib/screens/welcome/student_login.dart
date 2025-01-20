@@ -8,7 +8,6 @@ import 'package:flutter_application/widgets/shared/password_input.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_application/wirtualny-sdk/models/request-data/student_login_with_username_and_password_data.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:local_auth/local_auth.dart';
 
 class StudentLoginForm extends StatefulWidget {
   const StudentLoginForm({super.key});
