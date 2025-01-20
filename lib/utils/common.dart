@@ -1,13 +1,12 @@
-/**
- * @file common.dart
- * @brief Funkcje pomocnicze używane w aplikacji.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @author Marcin Dudek
- * @author Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file common.dart
+/// @brief Funkcje pomocnicze używane w aplikacji.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:intl/intl.dart';
@@ -68,6 +67,88 @@ String getLectureFormDisplayName(String lang, String name) {
         return name;
     }
   }
+}
+
+String getCourseTypeDisplayName(String lang, String name) {
+  if (lang == "pl") {
+    switch (name) {
+      case 'fullTime':
+        return 'Stacjonarne';
+      case 'partTime':
+        return 'Niestacjonarne';
+      default:
+        return name;
+    }
+  } else {
+    switch (name) {
+      case 'fullTime':
+        return 'Full-time';
+      case 'partTime':
+        return 'Part-time';
+      default:
+        return name;
+    }
+  }
+}
+
+String getLevelOfStudyDisplayName(String lang, String name) {
+  if (lang == "pl") {
+    switch (name) {
+      case 'firstDegree':
+        return 'I stopnia';
+      case 'secondDegree':
+        return 'II stopnia';
+      case 'uniformMaster':
+        return 'Jednolite magisterskie';
+      case 'postgraduate':
+        return 'Podyplomowe';
+      default:
+        return name;
+    }
+  } else {
+    switch (name) {
+      case 'firstDegree':
+        return 'First Degree';
+      case 'secondDegree':
+        return 'Second Degree';
+      case 'uniformMaster':
+        return 'Uniform Master';
+      case 'postgraduate':
+        return 'Postgraduate';
+      default:
+        return name;
+    }
+  }
+}
+
+String getObtainedTitleDisplayName(String lang, String name) {
+  if (lang == "pl") {
+    switch (name) {
+      case 'engineer':
+        return 'Inżynier';
+      case 'master':
+        return 'Magister';
+      case 'doctor':
+        return 'Doktor';
+      default:
+        return name;
+    }
+  } else {
+    switch (name) {
+      case 'engineer':
+        return 'Engineer';
+      case 'master':
+        return 'Master';
+      case 'doctor':
+        return 'Doctor';
+      default:
+        return name;
+    }
+  }
+}
+
+String getFormattedDate(DateTime date) {
+  return DateFormat('dd.MM.yyyy').format(date);
 }
 
 String getFormattedDateTime(DateTime date) {

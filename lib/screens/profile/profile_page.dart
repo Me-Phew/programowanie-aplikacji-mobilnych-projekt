@@ -11,6 +11,7 @@ library;
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
@@ -19,7 +20,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
@@ -221,10 +221,7 @@ class _EditAccountState extends ConsumerState<EditAccount> {
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.dateOfBirth,
-                textRight: widget.student.dateOfBirth
-                    .toLocal()
-                    .toString()
-                    .split(' ')[0],
+                textRight: getFormattedDate(widget.student.dateOfBirth),
               ),
 
               const SizedBox(height: 20),
@@ -266,27 +263,29 @@ class _EditAccountState extends ConsumerState<EditAccount> {
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
-                textLeft: AppLocalizations.of(context)!.studyPeriod,
-                textRight:
-                    "${DateFormat('MM/yyyy').format(widget.student.coursesOfStudy[0].startDate)} - ${DateFormat('MM/yyyy').format(widget.student.coursesOfStudy[0].endDate)}",
-              ),
+                  textLeft: AppLocalizations.of(context)!.studyPeriod,
+                  textRight:
+                      "${getFormattedDate(widget.student.coursesOfStudy[0].startDate)} - ${getFormattedDate(widget.student.coursesOfStudy[0].endDate)}"),
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.courseType,
-                textRight: widget.student.coursesOfStudy[0].courseType,
+                textRight: getCourseTypeDisplayName(
+                    'pl', widget.student.coursesOfStudy[0].courseType),
               ),
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.levelOfStudy,
-                textRight: widget.student.coursesOfStudy[0].levelOfStudy,
+                textRight: getLevelOfStudyDisplayName(
+                    'pl', widget.student.coursesOfStudy[0].levelOfStudy),
               ),
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.obtainedTitle,
-                textRight: widget.student.coursesOfStudy[0].obtainedTitle,
+                textRight: getObtainedTitleDisplayName(
+                    'pl', widget.student.coursesOfStudy[0].obtainedTitle),
               ),
 
               const SizedBox(height: 20),

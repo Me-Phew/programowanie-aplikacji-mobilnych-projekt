@@ -17,7 +17,6 @@ import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/modules/auth/wirtualny_auth_exception.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 import 'package:flutter_application/utils/biometrics.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 class WirtualnyAuth {
   final log = Logger('WirtualnyAuth');
