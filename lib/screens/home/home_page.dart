@@ -14,6 +14,7 @@ import 'package:flutter_application/wirtualny-sdk/models/lecture/lecture.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -34,11 +35,31 @@ class _HomePageState extends State<HomePage> {
   DateTime today = DateTime.now();
   DateTime? selectedDay;
   List<Lecture>? selectedDaySchedule;
-  DateTime? _lastUpdate = DateTime.now();
+  DateTime? _lastUpdate;
+
+  Future<void> initLastUpdate() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    String? serializedAnnouncementsLastUpdate =
+        prefs.getString('announcementsLastUpdate');
+
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _lastUpdate = serializedAnnouncementsLastUpdate != null
+          ? DateTime.parse(serializedAnnouncementsLastUpdate)
+          : DateTime.now();
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+
+    initLastUpdate();
+
     selectedDay = DateTime.utc(today.year, today.month, today.day);
 
     switch (selectedDay!.weekday) {
@@ -136,7 +157,7 @@ class _HomePageState extends State<HomePage> {
 
     fetchStudentResult.fold(
       (l) {
-        _refreshController.refreshFailed();
+        _refreshController.refreshCompleted();
 
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -198,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 12,
                     color: Colors.grey[600],
                   ),
-                )
+                ),
               ],
             ),
             TableCalendar(

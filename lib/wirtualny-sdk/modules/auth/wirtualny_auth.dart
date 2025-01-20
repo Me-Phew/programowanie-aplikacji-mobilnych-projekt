@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logging/logging.dart';
@@ -15,6 +17,7 @@ import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/modules/auth/wirtualny_auth_exception.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 import 'package:flutter_application/utils/biometrics.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 class WirtualnyAuth {
   final log = Logger('WirtualnyAuth');
@@ -49,6 +52,9 @@ class WirtualnyAuth {
           .get('students/$studentId?depth=5');
       final student = Student.fromJson(response.data);
 
+      prefs.setString('student', jsonEncode(student.toJson()));
+      prefs.setString('studentLastUpdate', DateTime.now().toString());
+
       _authData = StudentLoginResponse(
         exp: 0,
         message: null.toString(),
@@ -82,6 +88,29 @@ class WirtualnyAuth {
     // Authenticate with biometrics before proceeding with relogin
     final authenticated = await authenticateWithBiometrics();
     if (!authenticated) {
+      return;
+    }
+
+    if (!(await hasNetworkAccess())) {
+      final savedSerializedStudent = prefs.getString('student');
+
+      if (savedSerializedStudent == null) {
+        return;
+      }
+
+      final student = Student.fromJson(jsonDecode(savedSerializedStudent));
+
+      _authData = StudentLoginResponse(
+        exp: 0,
+        message: null.toString(),
+        token: token,
+        user: student,
+      );
+
+      if (_authStateHasListeners) {
+        _authStateController.add(student);
+      }
+
       return;
     }
 

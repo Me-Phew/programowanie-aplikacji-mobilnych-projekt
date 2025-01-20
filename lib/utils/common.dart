@@ -9,6 +9,7 @@
  * @copyright Copyright (c) 2025
  */
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:intl/intl.dart';
 
 /// @brief Pobiera nazwę wykładu do wyświetlenia w zależności od języka.
@@ -71,4 +72,11 @@ String getLectureFormDisplayName(String lang, String name) {
 
 String getFormattedDateTime(DateTime date) {
   return DateFormat('dd.MM.yyyy HH:mm').format(date);
+}
+
+Future<bool> hasNetworkAccess() async {
+  final List<ConnectivityResult> connectivityResult =
+      await (Connectivity().checkConnectivity());
+
+  return !connectivityResult.contains(ConnectivityResult.none);
 }

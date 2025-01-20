@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
 import 'package:flutter_application/wirtualny-sdk/models/responses/announcements_response/announcements_response.dart';
 import 'package:flutter_application/wirtualny-sdk/models/responses/errors_response/errors_response.dart';
@@ -8,6 +10,7 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:logging/logging.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'wirtualny_notifications_exception.dart';
 
@@ -59,6 +62,23 @@ class WirtualnyNotifications {
 
   Future<Either<WirtualnyNotificationsException, AnnouncementsResponse>>
       getAnnouncements() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    if (!(await hasNetworkAccess())) {
+      final savedSerializedAnnouncements = prefs.getString('announcements');
+
+      if (savedSerializedAnnouncements == null) {
+        return left(WirtualnyNotificationsException(
+          message: 'No network access and no saved announcements',
+        ));
+      }
+
+      final announcements = AnnouncementsResponse.fromJson(
+          jsonDecode(savedSerializedAnnouncements));
+
+      return right(announcements);
+    }
+
     try {
       final response = await WirtualnyHttpClient.instance.dio.get(
         '/announcements?limit=100',
@@ -71,6 +91,10 @@ class WirtualnyNotifications {
 
       AnnouncementsResponse getAnnouncementsResponse =
           AnnouncementsResponse.fromJson(response.data);
+
+      prefs.setString(
+          'announcements', jsonEncode(getAnnouncementsResponse.toJson()));
+      prefs.setString('announcementsLastUpdate', DateTime.now().toString());
 
       return right(getAnnouncementsResponse);
     } on DioException catch (e) {

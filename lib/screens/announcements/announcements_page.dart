@@ -16,6 +16,7 @@ import 'package:intl/intl.dart';
 
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'announcement_details_page.dart';
 
 /// @class AnnouncementsPage
@@ -64,10 +65,33 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
     _isLoading = false;
   }
 
+  Future<void> initLastUpdate() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    String? serializedAnnouncementsLastUpdate =
+        prefs.getString('announcementsLastUpdate');
+
+    if (serializedAnnouncementsLastUpdate == null) {
+      return;
+    }
+
+    if (!mounted) {
+      return;
+    }
+
+    setState(() {
+      _lastUpdate = serializedAnnouncementsLastUpdate.isNotEmpty
+          ? DateTime.parse(serializedAnnouncementsLastUpdate)
+          : null;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     loadAnnouncements();
+
+    initLastUpdate();
   }
 
   final RefreshController _refreshController =
@@ -79,7 +103,7 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
 
     getAnnouncementsResult.fold(
       (l) {
-        _refreshController.refreshFailed();
+        _refreshController.refreshCompleted();
 
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

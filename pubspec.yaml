@@ -65,6 +65,7 @@ dependencies:
   http_parser: ^4.0.2
   flutter_html: ^3.0.0-beta.2
   pull_to_refresh_flutter3: ^2.0.2
+  flutter_offline: ^4.0.0
 
 dev_dependencies:
   flutter_test:
