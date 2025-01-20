@@ -1,13 +1,12 @@
-/**
- * @file styled_text.dart
- * @brief Stylizowane teksty używane w aplikacji.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file styled_text.dart
+/// @brief Stylizowane teksty używane w aplikacji.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,10 +14,8 @@ import 'package:google_fonts/google_fonts.dart';
 class StyledBodyText extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu StyledBodyText.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu StyledBodyText.
+  /// @param text Tekst do wyświetlenia.
   const StyledBodyText(this.text, {super.key});
 
   @override
@@ -33,10 +30,8 @@ class StyledBodyText extends StatelessWidget {
 class StyledHeading extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu StyledHeading.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu StyledHeading.
+  /// @param text Tekst do wyświetlenia.
   const StyledHeading(this.text, {super.key});
 
   @override
@@ -51,10 +46,8 @@ class StyledHeading extends StatelessWidget {
 class StyledAppBarText extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu StyledAppBarText.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu StyledAppBarText.
+  /// @param text Tekst do wyświetlenia.
   const StyledAppBarText(this.text, {super.key});
 
   @override
@@ -70,10 +63,8 @@ class StyledAppBarText extends StatelessWidget {
 class StyledErrorText extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu StyledErrorText.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu StyledErrorText.
+  /// @param text Tekst do wyświetlenia.
   const StyledErrorText(this.text, {super.key});
 
   @override
@@ -88,10 +79,8 @@ class StyledErrorText extends StatelessWidget {
 class SettingsHeading extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu SettingsHeading.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SettingsHeading.
+  /// @param text Tekst do wyświetlenia.
   const SettingsHeading(this.text, {super.key});
 
   @override
@@ -109,10 +98,8 @@ class SettingsHeading extends StatelessWidget {
 class SettingsText extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu SettingsText.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SettingsText.
+  /// @param text Tekst do wyświetlenia.
   const SettingsText(this.text, {super.key});
 
   @override
@@ -130,10 +117,8 @@ class SettingsText extends StatelessWidget {
 class SettingsTextInside extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu SettingsTextInside.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SettingsTextInside.
+  /// @param text Tekst do wyświetlenia.
   const SettingsTextInside(this.text, {super.key});
 
   @override
@@ -148,10 +133,8 @@ class SettingsTextInside extends StatelessWidget {
 class ProfileTextLeft extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu ProfileTextLeft.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu ProfileTextLeft.
+  /// @param text Tekst do wyświetlenia.
   const ProfileTextLeft(this.text, {super.key});
 
   @override
@@ -168,10 +151,8 @@ class ProfileTextLeft extends StatelessWidget {
 class ProfileTextRight extends StatelessWidget {
   final String text;
 
-  /**
-   * @brief Konstruktor widgetu ProfileTextRight.
-   * @param text Tekst do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu ProfileTextRight.
+  /// @param text Tekst do wyświetlenia.
   const ProfileTextRight(this.text, {super.key});
 
   @override

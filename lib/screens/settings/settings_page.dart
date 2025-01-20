@@ -1,13 +1,12 @@
-/**
- * @file settings_page.dart
- * @brief Ekran ustawień użytkownika.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file settings_page.dart
+/// @brief Ekran ustawień użytkownika.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
@@ -20,6 +19,7 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -29,16 +29,12 @@ final languages = ['Polish', 'English'];
 class SettingsPage extends ConsumerWidget {
   final Student student;
 
-  /**
-   * @brief Konstruktor widgetu SettingsPage.
-   * @param student Obiekt studenta zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SettingsPage.
+  /// @param student Obiekt studenta zawierający dane do wyświetlenia.
   const SettingsPage({super.key, required this.student});
 
-  /**
-   * @brief Buduje widget wyświetlający zdjęcie profilowe.
-   * @return Widget wyświetlający zdjęcie profilowe.
-   */
+  /// @brief Buduje widget wyświetlający zdjęcie profilowe.
+  /// @return Widget wyświetlający zdjęcie profilowe.
   Widget _buildProfileImage() {
     return Consumer(
       builder: (context, ref, child) {
@@ -81,21 +77,25 @@ class SettingsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Watch for student updates
-    final currentStudent = ref.watch(studentProvider);
-    final accessToken = WirtualnySdk.instance.auth.accessToken ?? '';
     // Pobieranie wartości isDarkMode z providera
     final isDarkMode = ref.watch(darkModeProvider);
 
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(32.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 120),
-              SettingsHeading(AppLocalizations.of(context)!.profile),
+              const SizedBox(height: 30),
+              Text(
+                AppLocalizations.of(context)!.profile,
+                style: GoogleFonts.poppins(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -125,7 +125,12 @@ class SettingsPage extends ConsumerWidget {
               ),
 
               const SizedBox(height: 40),
-              SettingsHeading(AppLocalizations.of(context)!.settings),
+              Text(AppLocalizations.of(context)!.settings,
+                  style: GoogleFonts.poppins(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  )),
               const SizedBox(height: 20),
               SettingItem(
                 title: AppLocalizations.of(context)!.language,
@@ -141,7 +146,7 @@ class SettingsPage extends ConsumerWidget {
                       return AlertDialog(
                         title:
                             Text(AppLocalizations.of(context)!.selectLanguage),
-                        content: Container(
+                        content: SizedBox(
                           width: double.minPositive,
                           child: ListView.builder(
                             shrinkWrap: true,
@@ -251,6 +256,26 @@ class SettingsPage extends ConsumerWidget {
                 onTap: () {},
               ),
               const SizedBox(height: 20),
+
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    StyledButton(
+                      onPressed: () async {
+                        // Sign out from the SDK
+                        await WirtualnySdk.instance.auth.signOut();
+
+                        if (context.mounted) {
+                          Navigator.of(context).pop();
+                        }
+                      },
+                      child: StyledButtonText(
+                          AppLocalizations.of(context)!.logout),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

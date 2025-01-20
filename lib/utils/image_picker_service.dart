@@ -1,13 +1,12 @@
-/**
- * @file image_picker_service.dart
- * @brief Usługa do wybierania obrazów z galerii lub aparatu.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file image_picker_service.dart
+/// @brief Usługa do wybierania obrazów z galerii lub aparatu.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -15,11 +14,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ImagePickerService {
-  /**
-   * @brief Wybiera obraz z galerii.
-   * @param context Kontekst aplikacji.
-   * @return Plik obrazu lub null, jeśli nie wybrano obrazu.
-   */
+  /// @brief Wybiera obraz z galerii.
+  /// @param context Kontekst aplikacji.
+  /// @return Plik obrazu lub null, jeśli nie wybrano obrazu.
   static Future<File?> pickImageFromGallery(BuildContext context) async {
     final returnedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -31,11 +28,9 @@ class ImagePickerService {
     return File(returnedImage.path);
   }
 
-  /**
-   * @brief Wybiera obraz z aparatu.
-   * @param context Kontekst aplikacji.
-   * @return Plik obrazu lub null, jeśli nie wybrano obrazu.
-   */
+  /// @brief Wybiera obraz z aparatu.
+  /// @param context Kontekst aplikacji.
+  /// @return Plik obrazu lub null, jeśli nie wybrano obrazu.
   static Future<File?> pickImageFromCamera(BuildContext context) async {
     final returnedImage =
         await ImagePicker().pickImage(source: ImageSource.camera);
@@ -47,11 +42,9 @@ class ImagePickerService {
     return File(returnedImage.path);
   }
 
-  /**
-   * @brief Wyświetla arkusz akcji do wyboru źródła obrazu.
-   * @param context Kontekst aplikacji.
-   * @param onImageSelected Funkcja wywoływana po wybraniu obrazu.
-   */
+  /// @brief Wyświetla arkusz akcji do wyboru źródła obrazu.
+  /// @param context Kontekst aplikacji.
+  /// @param onImageSelected Funkcja wywoływana po wybraniu obrazu.
   static void showImageSourceActionSheet(
       BuildContext context, Function(File?) onImageSelected) {
     showModalBottomSheet(

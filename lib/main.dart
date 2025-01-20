@@ -1,19 +1,19 @@
-/**
- * @file main.dart
- * @brief Główny plik 
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file main.dart
+/// @brief Główny plik
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/auth_state_provider.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/screens/tabs/tabs_screen.dart';
 import 'package:flutter_application/screens/welcome/welcome_page.dart';
+import 'package:flutter_application/widgets/message_handler.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -27,11 +27,9 @@ import 'utils/firebase_options.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'wirtualny-sdk/wirtualny_sdk_config.dart';
 
-/**
- * @brief Główna funkcja aplikacji
- * 
- * Inicjalizuje środowisko, ładuje konfigurację i uruchamia aplikację.
- */
+/// @brief Główna funkcja aplikacji
+///
+/// Inicjalizuje środowisko, ładuje konfigurację i uruchamia aplikację.
 void main() async {
   await dotenv.load();
 
@@ -70,25 +68,21 @@ void main() async {
     restApiBaseUrl: restApiBaseUrl,
   ));
 
-  WirtualnySdk.instance.auth.loadToken();
+  WirtualnySdk.instance.auth.relogin();
 }
 
-/**
- * @class MyApp
- * @brief Główna klasa aplikacji
- * 
- * Odpowiada za budowanie głównej struktury aplikacji.
- */
+/// @class MyApp
+/// @brief Główna klasa aplikacji
+///
+/// Odpowiada za budowanie głównej struktury aplikacji.
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
-  /**
-   * @brief Buduje widget aplikacji
-   * 
-   * @param context Kontekst budowania widgetu
-   * @param ref Referencja do providerów Riverpod
-   * @return Widget aplikacji
-   */
+  /// @brief Buduje widget aplikacji
+  ///
+  /// @param context Kontekst budowania widgetu
+  /// @param ref Referencja do providerów Riverpod
+  /// @return Widget aplikacji
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDarkMode = ref.watch(darkModeProvider);
@@ -115,7 +109,8 @@ class MyApp extends ConsumerWidget {
               if (value == null) {
                 return const WelcomeScreen();
               }
-              return TabsScreen(student: value);
+
+              return MessageHandler(child: TabsScreen(student: value));
             },
             error: (error, _) => const Text("Error loading auth status ..."),
             loading: () => const Text("Loading"));
@@ -124,27 +119,24 @@ class MyApp extends ConsumerWidget {
   }
 }
 
-/**
- * @class SandBox
- * @brief Klasa do testowania
- * 
- * Służy do testowania funkcji bez wpływu na główną aplikację.
- */
+/// @class SandBox
+/// @brief Klasa do testowania
+///
+/// Służy do testowania funkcji bez wpływu na główną aplikację.
 class SandBox extends StatelessWidget {
   const SandBox({super.key});
 
-  /**
-   * @brief Buduje widget SandBox
-   * 
-   * @param context Kontekst budowania widgetu
-   * @return Widget SandBox
-   */
+  /// @brief Buduje widget SandBox
+  ///
+  /// @param context Kontekst budowania widgetu
+  /// @return Widget SandBox
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text("SandBox"),
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
         ),
         body: const Text("SandBox"));
   }

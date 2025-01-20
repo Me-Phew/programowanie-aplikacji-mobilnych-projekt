@@ -1,13 +1,12 @@
-/**
- * @file password_input.dart
- * @brief Widget pola tekstowego do wprowadzania hasła z możliwością pokazania/ukrycia hasła.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file password_input.dart
+/// @brief Widget pola tekstowego do wprowadzania hasła z możliwością pokazania/ukrycia hasła.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/widgets/shared/styled_form_field.dart';
@@ -18,13 +17,11 @@ class PasswordInput extends StatefulWidget {
   final Widget label;
   final IconData icon;
 
-  /**
-   * @brief Konstruktor widgetu PasswordInput.
-   * @param textEditingController Kontroler tekstu dla pola hasła.
-   * @param validator Funkcja walidująca dla pola hasła.
-   * @param label Etykieta pola hasła.
-   * @param icon Ikona dla pola hasła.
-   */
+  /// @brief Konstruktor widgetu PasswordInput.
+  /// @param textEditingController Kontroler tekstu dla pola hasła.
+  /// @param validator Funkcja walidująca dla pola hasła.
+  /// @param label Etykieta pola hasła.
+  /// @param icon Ikona dla pola hasła.
   const PasswordInput({
     super.key,
     required this.textEditingController,

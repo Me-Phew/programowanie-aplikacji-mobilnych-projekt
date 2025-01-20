@@ -1,19 +1,18 @@
-/**
- * @file profile_page.dart
- * @brief Ekran profilu użytkownika z możliwością edycji danych.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file profile_page.dart
+/// @brief Ekran profilu użytkownika z możliwością edycji danych.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
-import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
@@ -21,17 +20,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:intl/intl.dart';
 import 'profile_page_data_row.dart';
 
 class EditAccount extends ConsumerStatefulWidget {
   final Student student;
   late final String formattedNameAndFamilyName;
 
-  /**
-   * @brief Konstruktor widgetu EditAccount.
-   * @param student Obiekt studenta zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu EditAccount.
+  /// @param student Obiekt studenta zawierający dane do wyświetlenia.
   EditAccount({super.key, required this.student}) {
     formattedNameAndFamilyName = student.middleName != null
         ? "${student.firstName} ${student.middleName} ${student.familyName}"
@@ -53,10 +49,8 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     _student = widget.student;
   }
 
-  /**
-   * @brief Przesyła nowe zdjęcie profilowe na serwer.
-   * @param image Plik obrazu do przesłania.
-   */
+  /// @brief Przesyła nowe zdjęcie profilowe na serwer.
+  /// @param image Plik obrazu do przesłania.
   Future<void> _uploadImage(File image) async {
     if (!mounted) return;
 
@@ -106,10 +100,8 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     });
   }
 
-  /**
-   * @brief Buduje widget wyświetlający zdjęcie profilowe.
-   * @return Widget wyświetlający zdjęcie profilowe.
-   */
+  /// @brief Buduje widget wyświetlający zdjęcie profilowe.
+  /// @return Widget wyświetlający zdjęcie profilowe.
   Widget _buildProfileImage() {
     return Consumer(
       builder: (context, ref, child) {
@@ -162,6 +154,7 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.chevron_left),
@@ -170,7 +163,7 @@ class _EditAccountState extends ConsumerState<EditAccount> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(32.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -228,10 +221,7 @@ class _EditAccountState extends ConsumerState<EditAccount> {
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.dateOfBirth,
-                textRight: widget.student.dateOfBirth
-                    .toLocal()
-                    .toString()
-                    .split(' ')[0],
+                textRight: getFormattedDate(widget.student.dateOfBirth),
               ),
 
               const SizedBox(height: 20),
@@ -273,27 +263,29 @@ class _EditAccountState extends ConsumerState<EditAccount> {
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
-                textLeft: AppLocalizations.of(context)!.studyPeriod,
-                textRight:
-                    "${DateFormat('MM/yyyy').format(widget.student.coursesOfStudy[0].startDate)} - ${DateFormat('MM/yyyy').format(widget.student.coursesOfStudy[0].endDate)}",
-              ),
+                  textLeft: AppLocalizations.of(context)!.studyPeriod,
+                  textRight:
+                      "${getFormattedDate(widget.student.coursesOfStudy[0].startDate)} - ${getFormattedDate(widget.student.coursesOfStudy[0].endDate)}"),
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.courseType,
-                textRight: widget.student.coursesOfStudy[0].courseType,
+                textRight: getCourseTypeDisplayName(
+                    'pl', widget.student.coursesOfStudy[0].courseType),
               ),
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.levelOfStudy,
-                textRight: widget.student.coursesOfStudy[0].levelOfStudy,
+                textRight: getLevelOfStudyDisplayName(
+                    'pl', widget.student.coursesOfStudy[0].levelOfStudy),
               ),
 
               const SizedBox(height: 20),
               ProfilePageDataRow(
                 textLeft: AppLocalizations.of(context)!.obtainedTitle,
-                textRight: widget.student.coursesOfStudy[0].obtainedTitle,
+                textRight: getObtainedTitleDisplayName(
+                    'pl', widget.student.coursesOfStudy[0].obtainedTitle),
               ),
 
               const SizedBox(height: 20),
@@ -301,28 +293,6 @@ class _EditAccountState extends ConsumerState<EditAccount> {
                 textLeft: AppLocalizations.of(context)!.semester,
                 textRight:
                     "${widget.student.coursesOfStudy[0].currentSemester}/${widget.student.coursesOfStudy[0].numberOfSemesters}",
-              ),
-
-              const SizedBox(height: 70),
-
-              Align(
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    StyledButton(
-                      onPressed: () async {
-                        // Wylogowanie z SDK
-                        await WirtualnySdk.instance.auth.signOut();
-
-                        if (context.mounted) {
-                          Navigator.of(context).pop();
-                        }
-                      },
-                      child: StyledButtonText(
-                          AppLocalizations.of(context)!.logout),
-                    ),
-                  ],
-                ),
               ),
             ],
           ),

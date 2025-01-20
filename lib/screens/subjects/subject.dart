@@ -1,13 +1,12 @@
-/**
- * @file subject.dart
- * @brief Definicje klas reprezentujących przedmioty, oceny i egzaminy.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file subject.dart
+/// @brief Definicje klas reprezentujących przedmioty, oceny i egzaminy.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 class Subject {
   final String name;
@@ -15,24 +14,22 @@ class Subject {
   final List<Grade> grades;
   final List<Exam> upcomingExams;
   final double averageGrade;
-  final String type;  
+  final String type;
 
-  /**
-   * @brief Konstruktor klasy Subject.
-   * @param name Nazwa przedmiotu.
-   * @param lecturer Wykładowca prowadzący przedmiot.
-   * @param grades Lista ocen z przedmiotu.
-   * @param upcomingExams Lista nadchodzących egzaminów z przedmiotu.
-   * @param averageGrade Średnia ocena z przedmiotu.
-   * @param type Typ przedmiotu (np. wykład, laboratorium).
-   */
+  /// @brief Konstruktor klasy Subject.
+  /// @param name Nazwa przedmiotu.
+  /// @param lecturer Wykładowca prowadzący przedmiot.
+  /// @param grades Lista ocen z przedmiotu.
+  /// @param upcomingExams Lista nadchodzących egzaminów z przedmiotu.
+  /// @param averageGrade Średnia ocena z przedmiotu.
+  /// @param type Typ przedmiotu (np. wykład, laboratorium).
   Subject({
     required this.name,
     required this.lecturer,
     required this.grades,
     required this.upcomingExams,
     required this.averageGrade,
-    required this.type,  
+    required this.type,
   });
 }
 
@@ -42,13 +39,11 @@ class Grade {
   final DateTime date;
   final String description;
 
-  /**
-   * @brief Konstruktor klasy Grade.
-   * @param value Wartość oceny.
-   * @param type Typ oceny (np. egzamin, kolokwium).
-   * @param date Data uzyskania oceny.
-   * @param description Opis oceny.
-   */
+  /// @brief Konstruktor klasy Grade.
+  /// @param value Wartość oceny.
+  /// @param type Typ oceny (np. egzamin, kolokwium).
+  /// @param date Data uzyskania oceny.
+  /// @param description Opis oceny.
   Grade({
     required this.value,
     required this.type,
@@ -63,13 +58,11 @@ class Exam {
   final String description;
   final String location;
 
-  /**
-   * @brief Konstruktor klasy Exam.
-   * @param title Tytuł egzaminu.
-   * @param date Data egzaminu.
-   * @param description Opis egzaminu.
-   * @param location Lokalizacja egzaminu.
-   */
+  /// @brief Konstruktor klasy Exam.
+  /// @param title Tytuł egzaminu.
+  /// @param date Data egzaminu.
+  /// @param description Opis egzaminu.
+  /// @param location Lokalizacja egzaminu.
   Exam({
     required this.title,
     required this.date,
@@ -77,4 +70,3 @@ class Exam {
     required this.location,
   });
 }
-

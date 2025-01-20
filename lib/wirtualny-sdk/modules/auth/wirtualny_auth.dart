@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logging/logging.dart';
@@ -35,41 +37,83 @@ class WirtualnyAuth {
     );
   }
 
-  Future<void> loadToken() async {
+  Future<Either<WirtualnyAuthException, Student>> fetchStudent(
+      String token) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    WirtualnyHttpClient.instance.dio.options.headers['Authorization'] =
+        'Bearer $token';
+
+    int? studentId = prefs.getInt('studentId');
+
+    try {
+      final response = await WirtualnyHttpClient.instance.dio
+          .get('students/$studentId?depth=5');
+      final student = Student.fromJson(response.data);
+
+      prefs.setString('student', jsonEncode(student.toJson()));
+      prefs.setString('studentLastUpdate', DateTime.now().toString());
+
+      _authData = StudentLoginResponse(
+        exp: 0,
+        message: null.toString(),
+        token: token,
+        user: student,
+      );
+
+      if (_authStateHasListeners) {
+        _authStateController.add(student);
+      }
+
+      return right(student);
+    } on DioException catch (e) {
+      log.severe('Failed to fetch user data', e);
+
+      return left(WirtualnyAuthException(
+        dioException: e,
+        message: e.response?.data['message'],
+      ));
+    }
+  }
+
+  Future<void> relogin() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
 
-    if (token != null) {
-      // Authenticate with biometrics before proceeding with relogin
-      final authenticated = await authenticateWithBiometrics();
-      if (!authenticated) {
+    if (token == null) {
+      return;
+    }
+
+    // Authenticate with biometrics before proceeding with relogin
+    final authenticated = await authenticateWithBiometrics();
+    if (!authenticated) {
+      return;
+    }
+
+    if (!(await hasNetworkAccess())) {
+      final savedSerializedStudent = prefs.getString('student');
+
+      if (savedSerializedStudent == null) {
         return;
       }
 
-      WirtualnyHttpClient.instance.dio.options.headers['Authorization'] =
-          'Bearer $token';
+      final student = Student.fromJson(jsonDecode(savedSerializedStudent));
 
-      int? studentId = prefs.getInt('studentId');
+      _authData = StudentLoginResponse(
+        exp: 0,
+        message: null.toString(),
+        token: token,
+        user: student,
+      );
 
-      try {
-        final response = await WirtualnyHttpClient.instance.dio
-            .get('students/$studentId?depth=5');
-        final student = Student.fromJson(response.data);
-
-        _authData = StudentLoginResponse(
-          exp: 0,
-          message: null.toString(),
-          token: token,
-          user: student,
-        );
-
-        if (_authStateHasListeners) {
-          _authStateController.add(student);
-        }
-      } on DioException catch (e) {
-        log.severe('Failed to fetch user data', e);
+      if (_authStateHasListeners) {
+        _authStateController.add(student);
       }
+
+      return;
     }
+
+    fetchStudent(token);
   }
 
   bool get _authStateHasListeners => authStateListenersCount > 0;

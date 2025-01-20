@@ -1,13 +1,12 @@
-/**
- * @file subject_page.dart
- * @brief Ekran wyświetlający przedmioty i oceny studenta.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file subject_page.dart
+/// @brief Ekran wyświetlający przedmioty i oceny studenta.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
@@ -18,9 +17,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 class GradesPage extends ConsumerWidget {
-  /**
-   * @brief Konstruktor widgetu GradesPage.
-   */
+  /// @brief Konstruktor widgetu GradesPage.
   GradesPage({super.key});
 
   final List<Subject> subjects = [
@@ -179,9 +176,9 @@ class GradesPage extends ConsumerWidget {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(height: 80),
+          const SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: Text(
               AppLocalizations.of(context)!.subjects,
               style: GoogleFonts.poppins(
@@ -210,10 +207,8 @@ class GradesPage extends ConsumerWidget {
 class SubjectCard extends ConsumerWidget {
   final Subject subject;
 
-  /**
-   * @brief Konstruktor widgetu SubjectCard.
-   * @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SubjectCard.
+  /// @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
   const SubjectCard({super.key, required this.subject});
 
   @override
@@ -280,7 +275,8 @@ class SubjectCard extends ConsumerWidget {
                     if (subject.upcomingExams.isNotEmpty)
                       Container(
                         margin: EdgeInsets.only(top: 8),
-                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: Colors.red[100],
                           borderRadius: BorderRadius.circular(12),
@@ -308,11 +304,9 @@ class SubjectCard extends ConsumerWidget {
     );
   }
 
-  /**
-   * @brief Pobiera kolor oceny na podstawie jej wartości.
-   * @param grade Wartość oceny.
-   * @return Kolor odpowiadający ocenie.
-   */
+  /// @brief Pobiera kolor oceny na podstawie jej wartości.
+  /// @param grade Wartość oceny.
+  /// @return Kolor odpowiadający ocenie.
   Color _getGradeColor(double grade) {
     if (grade >= 4.5) return Colors.green;
     if (grade >= 3.5) return Colors.blue;
@@ -324,28 +318,27 @@ class SubjectCard extends ConsumerWidget {
 class SubjectDetailsPage extends ConsumerWidget {
   final Subject subject;
 
-  /**
-   * @brief Konstruktor widgetu SubjectDetailsPage.
-   * @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SubjectDetailsPage.
+  /// @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
   const SubjectDetailsPage({super.key, required this.subject});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDarkMode = ref.watch(darkModeProvider);
-    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: isDarkMode ? Colors.white : Colors.black),
+          icon: Icon(Icons.arrow_back,
+              color: isDarkMode ? Colors.white : Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
       ),
       body: Column(
         children: [
-          const SizedBox(height: 20),
           Center(
             child: Text(
               subject.name,
@@ -410,11 +403,6 @@ class SubjectDetailsPage extends ConsumerWidget {
     );
   }
 
-  /**
-   * @brief Buduje zakładkę z ocenami.
-   * @param isDarkMode Flaga określająca, czy tryb ciemny jest włączony.
-   * @return Widget zakładki z ocenami.
-   */
   Widget _buildGradesTab(bool isDarkMode) {
     return ListView.builder(
       padding: EdgeInsets.all(16),
@@ -428,7 +416,7 @@ class SubjectDetailsPage extends ConsumerWidget {
             borderRadius: BorderRadius.circular(15),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: .1),
                 blurRadius: 10,
                 offset: Offset(0, 2),
               ),
@@ -445,7 +433,7 @@ class SubjectDetailsPage extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
-                      color: _getGradeColor(grade.value).withOpacity(0.3),
+                      color: _getGradeColor(grade.value).withValues(alpha: .3),
                       blurRadius: 6,
                       offset: Offset(0, 2),
                     ),
@@ -482,7 +470,8 @@ class SubjectDetailsPage extends ConsumerWidget {
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
-                          color: isDarkMode ? Colors.grey[300] : Colors.grey[800],
+                          color:
+                              isDarkMode ? Colors.grey[300] : Colors.grey[800],
                         ),
                       ),
                       Text(
@@ -490,7 +479,8 @@ class SubjectDetailsPage extends ConsumerWidget {
                         style: GoogleFonts.poppins(
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
-                          color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                          color:
+                              isDarkMode ? Colors.grey[400] : Colors.grey[700],
                         ),
                       ),
                     ],
@@ -504,11 +494,6 @@ class SubjectDetailsPage extends ConsumerWidget {
     );
   }
 
-  /**
-   * @brief Buduje zakładkę z egzaminami.
-   * @param isDarkMode Flaga określająca, czy tryb ciemny jest włączony.
-   * @return Widget zakładki z egzaminami.
-   */
   Widget _buildExamsTab(bool isDarkMode) {
     return ListView.builder(
       padding: EdgeInsets.all(16),
@@ -522,7 +507,7 @@ class SubjectDetailsPage extends ConsumerWidget {
             borderRadius: BorderRadius.circular(15),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: .1),
                 blurRadius: 10,
                 offset: Offset(0, 2),
               ),
@@ -539,7 +524,7 @@ class SubjectDetailsPage extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.orange.withOpacity(0.3),
+                      color: Colors.orange.withValues(alpha: .3),
                       blurRadius: 6,
                       offset: Offset(0, 2),
                     ),
@@ -567,7 +552,8 @@ class SubjectDetailsPage extends ConsumerWidget {
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
-                          color: isDarkMode ? Colors.grey[300] : Colors.grey[800],
+                          color:
+                              isDarkMode ? Colors.grey[300] : Colors.grey[800],
                         ),
                       ),
                       Row(
@@ -575,7 +561,9 @@ class SubjectDetailsPage extends ConsumerWidget {
                           Icon(
                             Icons.location_on,
                             size: 16,
-                            color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                            color: isDarkMode
+                                ? Colors.grey[400]
+                                : Colors.grey[700],
                           ),
                           SizedBox(width: 4),
                           Text(
@@ -583,7 +571,9 @@ class SubjectDetailsPage extends ConsumerWidget {
                             style: GoogleFonts.poppins(
                               fontSize: 13,
                               fontWeight: FontWeight.w500,
-                              color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                              color: isDarkMode
+                                  ? Colors.grey[400]
+                                  : Colors.grey[700],
                             ),
                           ),
                         ],
@@ -593,7 +583,8 @@ class SubjectDetailsPage extends ConsumerWidget {
                         style: GoogleFonts.poppins(
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
-                          color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                          color:
+                              isDarkMode ? Colors.grey[400] : Colors.grey[700],
                         ),
                       ),
                     ],
@@ -607,11 +598,9 @@ class SubjectDetailsPage extends ConsumerWidget {
     );
   }
 
-  /**
-   * @brief Pobiera kolor oceny na podstawie jej wartości.
-   * @param grade Wartość oceny.
-   * @return Kolor odpowiadający ocenie.
-   */
+  /// @brief Pobiera kolor oceny na podstawie jej wartości.
+  /// @param grade Wartość oceny.
+  /// @return Kolor odpowiadający ocenie.
   Color _getGradeColor(double grade) {
     if (grade >= 4.5) return Colors.green;
     if (grade >= 3.5) return Colors.blue;

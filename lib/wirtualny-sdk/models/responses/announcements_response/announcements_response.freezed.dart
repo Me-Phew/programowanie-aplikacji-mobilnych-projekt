@@ -24,23 +24,23 @@ mixin _$AnnouncementsResponse {
   @JsonKey(name: "docs")
   List<Announcement> get docs => throw _privateConstructorUsedError;
   @JsonKey(name: "hasNextPage")
-  bool get hasNextPage => throw _privateConstructorUsedError;
+  bool? get hasNextPage => throw _privateConstructorUsedError;
   @JsonKey(name: "hasPrevPage")
-  bool get hasPrevPage => throw _privateConstructorUsedError;
+  bool? get hasPrevPage => throw _privateConstructorUsedError;
   @JsonKey(name: "limit")
-  int get limit => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
   @JsonKey(name: "nextPage")
-  int get nextPage => throw _privateConstructorUsedError;
+  int? get nextPage => throw _privateConstructorUsedError;
   @JsonKey(name: "page")
-  int get page => throw _privateConstructorUsedError;
+  int? get page => throw _privateConstructorUsedError;
   @JsonKey(name: "pagingCounter")
-  int get pagingCounter => throw _privateConstructorUsedError;
+  int? get pagingCounter => throw _privateConstructorUsedError;
   @JsonKey(name: "prevPage")
-  dynamic get prevPage => throw _privateConstructorUsedError;
+  int? get prevPage => throw _privateConstructorUsedError;
   @JsonKey(name: "totalDocs")
-  int get totalDocs => throw _privateConstructorUsedError;
+  int? get totalDocs => throw _privateConstructorUsedError;
   @JsonKey(name: "totalPages")
-  int get totalPages => throw _privateConstructorUsedError;
+  int? get totalPages => throw _privateConstructorUsedError;
 
   /// Serializes this AnnouncementsResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -60,15 +60,15 @@ abstract class $AnnouncementsResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "docs") List<Announcement> docs,
-      @JsonKey(name: "hasNextPage") bool hasNextPage,
-      @JsonKey(name: "hasPrevPage") bool hasPrevPage,
-      @JsonKey(name: "limit") int limit,
-      @JsonKey(name: "nextPage") int nextPage,
-      @JsonKey(name: "page") int page,
-      @JsonKey(name: "pagingCounter") int pagingCounter,
-      @JsonKey(name: "prevPage") dynamic prevPage,
-      @JsonKey(name: "totalDocs") int totalDocs,
-      @JsonKey(name: "totalPages") int totalPages});
+      @JsonKey(name: "hasNextPage") bool? hasNextPage,
+      @JsonKey(name: "hasPrevPage") bool? hasPrevPage,
+      @JsonKey(name: "limit") int? limit,
+      @JsonKey(name: "nextPage") int? nextPage,
+      @JsonKey(name: "page") int? page,
+      @JsonKey(name: "pagingCounter") int? pagingCounter,
+      @JsonKey(name: "prevPage") int? prevPage,
+      @JsonKey(name: "totalDocs") int? totalDocs,
+      @JsonKey(name: "totalPages") int? totalPages});
 }
 
 /// @nodoc
@@ -88,57 +88,57 @@ class _$AnnouncementsResponseCopyWithImpl<$Res,
   @override
   $Res call({
     Object? docs = null,
-    Object? hasNextPage = null,
-    Object? hasPrevPage = null,
-    Object? limit = null,
-    Object? nextPage = null,
-    Object? page = null,
-    Object? pagingCounter = null,
+    Object? hasNextPage = freezed,
+    Object? hasPrevPage = freezed,
+    Object? limit = freezed,
+    Object? nextPage = freezed,
+    Object? page = freezed,
+    Object? pagingCounter = freezed,
     Object? prevPage = freezed,
-    Object? totalDocs = null,
-    Object? totalPages = null,
+    Object? totalDocs = freezed,
+    Object? totalPages = freezed,
   }) {
     return _then(_value.copyWith(
       docs: null == docs
           ? _value.docs
           : docs // ignore: cast_nullable_to_non_nullable
               as List<Announcement>,
-      hasNextPage: null == hasNextPage
+      hasNextPage: freezed == hasNextPage
           ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPrevPage: null == hasPrevPage
+              as bool?,
+      hasPrevPage: freezed == hasPrevPage
           ? _value.hasPrevPage
           : hasPrevPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      limit: null == limit
+              as bool?,
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      nextPage: null == nextPage
+              as int?,
+      nextPage: freezed == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
-              as int,
-      page: null == page
+              as int?,
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      pagingCounter: null == pagingCounter
+              as int?,
+      pagingCounter: freezed == pagingCounter
           ? _value.pagingCounter
           : pagingCounter // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       prevPage: freezed == prevPage
           ? _value.prevPage
           : prevPage // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      totalDocs: null == totalDocs
+              as int?,
+      totalDocs: freezed == totalDocs
           ? _value.totalDocs
           : totalDocs // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalPages: null == totalPages
+              as int?,
+      totalPages: freezed == totalPages
           ? _value.totalPages
           : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -154,15 +154,15 @@ abstract class _$$AnnouncementsResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: "docs") List<Announcement> docs,
-      @JsonKey(name: "hasNextPage") bool hasNextPage,
-      @JsonKey(name: "hasPrevPage") bool hasPrevPage,
-      @JsonKey(name: "limit") int limit,
-      @JsonKey(name: "nextPage") int nextPage,
-      @JsonKey(name: "page") int page,
-      @JsonKey(name: "pagingCounter") int pagingCounter,
-      @JsonKey(name: "prevPage") dynamic prevPage,
-      @JsonKey(name: "totalDocs") int totalDocs,
-      @JsonKey(name: "totalPages") int totalPages});
+      @JsonKey(name: "hasNextPage") bool? hasNextPage,
+      @JsonKey(name: "hasPrevPage") bool? hasPrevPage,
+      @JsonKey(name: "limit") int? limit,
+      @JsonKey(name: "nextPage") int? nextPage,
+      @JsonKey(name: "page") int? page,
+      @JsonKey(name: "pagingCounter") int? pagingCounter,
+      @JsonKey(name: "prevPage") int? prevPage,
+      @JsonKey(name: "totalDocs") int? totalDocs,
+      @JsonKey(name: "totalPages") int? totalPages});
 }
 
 /// @nodoc
@@ -180,57 +180,57 @@ class __$$AnnouncementsResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? docs = null,
-    Object? hasNextPage = null,
-    Object? hasPrevPage = null,
-    Object? limit = null,
-    Object? nextPage = null,
-    Object? page = null,
-    Object? pagingCounter = null,
+    Object? hasNextPage = freezed,
+    Object? hasPrevPage = freezed,
+    Object? limit = freezed,
+    Object? nextPage = freezed,
+    Object? page = freezed,
+    Object? pagingCounter = freezed,
     Object? prevPage = freezed,
-    Object? totalDocs = null,
-    Object? totalPages = null,
+    Object? totalDocs = freezed,
+    Object? totalPages = freezed,
   }) {
     return _then(_$AnnouncementsResponseImpl(
       docs: null == docs
           ? _value._docs
           : docs // ignore: cast_nullable_to_non_nullable
               as List<Announcement>,
-      hasNextPage: null == hasNextPage
+      hasNextPage: freezed == hasNextPage
           ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPrevPage: null == hasPrevPage
+              as bool?,
+      hasPrevPage: freezed == hasPrevPage
           ? _value.hasPrevPage
           : hasPrevPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      limit: null == limit
+              as bool?,
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      nextPage: null == nextPage
+              as int?,
+      nextPage: freezed == nextPage
           ? _value.nextPage
           : nextPage // ignore: cast_nullable_to_non_nullable
-              as int,
-      page: null == page
+              as int?,
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      pagingCounter: null == pagingCounter
+              as int?,
+      pagingCounter: freezed == pagingCounter
           ? _value.pagingCounter
           : pagingCounter // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       prevPage: freezed == prevPage
           ? _value.prevPage
           : prevPage // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      totalDocs: null == totalDocs
+              as int?,
+      totalDocs: freezed == totalDocs
           ? _value.totalDocs
           : totalDocs // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalPages: null == totalPages
+              as int?,
+      totalPages: freezed == totalPages
           ? _value.totalPages
           : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -265,31 +265,31 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
 
   @override
   @JsonKey(name: "hasNextPage")
-  final bool hasNextPage;
+  final bool? hasNextPage;
   @override
   @JsonKey(name: "hasPrevPage")
-  final bool hasPrevPage;
+  final bool? hasPrevPage;
   @override
   @JsonKey(name: "limit")
-  final int limit;
+  final int? limit;
   @override
   @JsonKey(name: "nextPage")
-  final int nextPage;
+  final int? nextPage;
   @override
   @JsonKey(name: "page")
-  final int page;
+  final int? page;
   @override
   @JsonKey(name: "pagingCounter")
-  final int pagingCounter;
+  final int? pagingCounter;
   @override
   @JsonKey(name: "prevPage")
-  final dynamic prevPage;
+  final int? prevPage;
   @override
   @JsonKey(name: "totalDocs")
-  final int totalDocs;
+  final int? totalDocs;
   @override
   @JsonKey(name: "totalPages")
-  final int totalPages;
+  final int? totalPages;
 
   @override
   String toString() {
@@ -312,7 +312,8 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
             (identical(other.page, page) || other.page == page) &&
             (identical(other.pagingCounter, pagingCounter) ||
                 other.pagingCounter == pagingCounter) &&
-            const DeepCollectionEquality().equals(other.prevPage, prevPage) &&
+            (identical(other.prevPage, prevPage) ||
+                other.prevPage == prevPage) &&
             (identical(other.totalDocs, totalDocs) ||
                 other.totalDocs == totalDocs) &&
             (identical(other.totalPages, totalPages) ||
@@ -330,7 +331,7 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
       nextPage,
       page,
       pagingCounter,
-      const DeepCollectionEquality().hash(prevPage),
+      prevPage,
       totalDocs,
       totalPages);
 
@@ -354,15 +355,15 @@ class _$AnnouncementsResponseImpl implements _AnnouncementsResponse {
 abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   const factory _AnnouncementsResponse(
           {@JsonKey(name: "docs") required final List<Announcement> docs,
-          @JsonKey(name: "hasNextPage") required final bool hasNextPage,
-          @JsonKey(name: "hasPrevPage") required final bool hasPrevPage,
-          @JsonKey(name: "limit") required final int limit,
-          @JsonKey(name: "nextPage") required final int nextPage,
-          @JsonKey(name: "page") required final int page,
-          @JsonKey(name: "pagingCounter") required final int pagingCounter,
-          @JsonKey(name: "prevPage") required final dynamic prevPage,
-          @JsonKey(name: "totalDocs") required final int totalDocs,
-          @JsonKey(name: "totalPages") required final int totalPages}) =
+          @JsonKey(name: "hasNextPage") required final bool? hasNextPage,
+          @JsonKey(name: "hasPrevPage") required final bool? hasPrevPage,
+          @JsonKey(name: "limit") required final int? limit,
+          @JsonKey(name: "nextPage") required final int? nextPage,
+          @JsonKey(name: "page") required final int? page,
+          @JsonKey(name: "pagingCounter") required final int? pagingCounter,
+          @JsonKey(name: "prevPage") required final int? prevPage,
+          @JsonKey(name: "totalDocs") required final int? totalDocs,
+          @JsonKey(name: "totalPages") required final int? totalPages}) =
       _$AnnouncementsResponseImpl;
 
   factory _AnnouncementsResponse.fromJson(Map<String, dynamic> json) =
@@ -373,31 +374,31 @@ abstract class _AnnouncementsResponse implements AnnouncementsResponse {
   List<Announcement> get docs;
   @override
   @JsonKey(name: "hasNextPage")
-  bool get hasNextPage;
+  bool? get hasNextPage;
   @override
   @JsonKey(name: "hasPrevPage")
-  bool get hasPrevPage;
+  bool? get hasPrevPage;
   @override
   @JsonKey(name: "limit")
-  int get limit;
+  int? get limit;
   @override
   @JsonKey(name: "nextPage")
-  int get nextPage;
+  int? get nextPage;
   @override
   @JsonKey(name: "page")
-  int get page;
+  int? get page;
   @override
   @JsonKey(name: "pagingCounter")
-  int get pagingCounter;
+  int? get pagingCounter;
   @override
   @JsonKey(name: "prevPage")
-  dynamic get prevPage;
+  int? get prevPage;
   @override
   @JsonKey(name: "totalDocs")
-  int get totalDocs;
+  int? get totalDocs;
   @override
   @JsonKey(name: "totalPages")
-  int get totalPages;
+  int? get totalPages;
 
   /// Create a copy of AnnouncementsResponse
   /// with the given fields replaced by the non-null parameter values.
