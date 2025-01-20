@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
+import 'package:flutter_application/wirtualny-sdk/models/responses/announcements_response/announcements_response.dart';
 import 'package:flutter_application/wirtualny-sdk/models/responses/errors_response/errors_response.dart';
 import 'package:flutter_application/wirtualny-sdk/models/responses/message_response/message_response.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_http_client.dart';

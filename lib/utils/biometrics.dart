@@ -1,21 +1,18 @@
-/**
- * @file biometrics.dart
- * @brief Obsługa uwierzytelniania biometrycznego.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file biometrics.dart
+/// @brief Obsługa uwierzytelniania biometrycznego.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:local_auth/local_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/**
- * @brief Uwierzytelnia użytkownika za pomocą biometrii.
- * @return Zwraca true, jeśli uwierzytelnianie zakończyło się sukcesem, w przeciwnym razie false.
- */
+/// @brief Uwierzytelnia użytkownika za pomocą biometrii.
+/// @return Zwraca true, jeśli uwierzytelnianie zakończyło się sukcesem, w przeciwnym razie false.
 Future<bool> authenticateWithBiometrics() async {
   final LocalAuthentication localAuth = LocalAuthentication();
 

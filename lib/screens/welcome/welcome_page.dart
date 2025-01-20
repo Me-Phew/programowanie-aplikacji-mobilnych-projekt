@@ -1,13 +1,12 @@
-/**
- * @file welcome_page.dart
- * @brief Ekran powitalny aplikacji z formularzem logowania.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file welcome_page.dart
+/// @brief Ekran powitalny aplikacji z formularzem logowania.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
@@ -32,9 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     });
   }
 
-  /**
-   * @brief Ładuje asynchroniczny stan aplikacji.
-   */
+  /// @brief Ładuje asynchroniczny stan aplikacji.
   _loadAsyncState() async {
     final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
 

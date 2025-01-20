@@ -1,13 +1,12 @@
-/**
- * @file home_page.dart
- * @brief Ekran główny wyświetlający plan zajęć studenta.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file home_page.dart
+/// @brief Ekran główny wyświetlający plan zajęć studenta.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/wirtualny-sdk/models/lecture/lecture.dart';
@@ -20,10 +19,8 @@ import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 class HomePage extends StatefulWidget {
   final Student student;
 
-  /**
-   * @brief Konstruktor widgetu HomePage.
-   * @param student Student, którego plan zajęć będzie wyświetlany.
-   */
+  /// @brief Konstruktor widgetu HomePage.
+  /// @param student Student, którego plan zajęć będzie wyświetlany.
   const HomePage({super.key, required this.student});
 
   @override
@@ -67,11 +64,9 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  /**
-   * @brief Obsługuje wybór dnia w kalendarzu.
-   * @param selectedDay Wybrany dzień.
-   * @param focusedDay Aktualnie skupiony dzień.
-   */
+  /// @brief Obsługuje wybór dnia w kalendarzu.
+  /// @param selectedDay Wybrany dzień.
+  /// @param focusedDay Aktualnie skupiony dzień.
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     setState(() {
       this.selectedDay = selectedDay;
@@ -103,11 +98,9 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  /**
-   * @brief Pobiera plan zajęć na określony dzień tygodnia.
-   * @param weekday Dzień tygodnia.
-   * @return Lista wykładów zaplanowanych na dany dzień.
-   */
+  /// @brief Pobiera plan zajęć na określony dzień tygodnia.
+  /// @param weekday Dzień tygodnia.
+  /// @return Lista wykładów zaplanowanych na dany dzień.
   List<Lecture> _getDaySchedule(int weekday) {
     switch (weekday) {
       case DateTime.monday:

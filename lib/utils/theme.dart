@@ -1,13 +1,12 @@
-/**
- * @file theme.dart
- * @brief Definicje motywów aplikacji oraz niestandardowych obramowań pól tekstowych.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file theme.dart
+/// @brief Definicje motywów aplikacji oraz niestandardowych obramowań pól tekstowych.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 
@@ -35,10 +34,8 @@ class AppColors{
 */
 
 class CustomInputBorders {
-  /**
-   * @brief Zwraca obramowanie pola tekstowego dla błędów.
-   * @return Obramowanie pola tekstowego.
-   */
+  /// @brief Zwraca obramowanie pola tekstowego dla błędów.
+  /// @return Obramowanie pola tekstowego.
   static OutlineInputBorder errorBorder() {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
@@ -46,10 +43,8 @@ class CustomInputBorders {
   }
 
   // Dark Mode
-  /**
-   * @brief Zwraca obramowanie pola tekstowego dla trybu ciemnego, gdy pole jest aktywne.
-   * @return Obramowanie pola tekstowego.
-   */
+  /// @brief Zwraca obramowanie pola tekstowego dla trybu ciemnego, gdy pole jest aktywne.
+  /// @return Obramowanie pola tekstowego.
   static OutlineInputBorder enabledBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -57,10 +52,8 @@ class CustomInputBorders {
     );
   }
 
-  /**
-   * @brief Zwraca obramowanie pola tekstowego dla trybu ciemnego, gdy pole jest w fokusie.
-   * @return Obramowanie pola tekstowego.
-   */
+  /// @brief Zwraca obramowanie pola tekstowego dla trybu ciemnego, gdy pole jest w fokusie.
+  /// @return Obramowanie pola tekstowego.
   static OutlineInputBorder focusedBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -69,10 +62,8 @@ class CustomInputBorders {
   }
 
   // Light Mode
-  /**
-   * @brief Zwraca obramowanie pola tekstowego dla trybu jasnego, gdy pole jest aktywne.
-   * @return Obramowanie pola tekstowego.
-   */
+  /// @brief Zwraca obramowanie pola tekstowego dla trybu jasnego, gdy pole jest aktywne.
+  /// @return Obramowanie pola tekstowego.
   static OutlineInputBorder enabledBorderW() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -80,10 +71,8 @@ class CustomInputBorders {
     );
   }
 
-  /**
-   * @brief Zwraca obramowanie pola tekstowego dla trybu jasnego, gdy pole jest w fokusie.
-   * @return Obramowanie pola tekstowego.
-   */
+  /// @brief Zwraca obramowanie pola tekstowego dla trybu jasnego, gdy pole jest w fokusie.
+  /// @return Obramowanie pola tekstowego.
   static OutlineInputBorder focusedBorderW() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),

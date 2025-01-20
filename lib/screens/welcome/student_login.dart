@@ -1,13 +1,12 @@
-/**
- * @file student_login.dart
- * @brief Formularz logowania dla studentów.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file student_login.dart
+/// @brief Formularz logowania dla studentów.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
@@ -34,9 +33,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
   bool _isLoading = false;
   String? _errorFeedback;
 
-  /**
-   * @brief Obsługuje proces logowania studenta.
-   */
+  /// @brief Obsługuje proces logowania studenta.
   void _handleLogin() async {
     if (!mounted) return;
 

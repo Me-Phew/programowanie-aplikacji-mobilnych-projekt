@@ -1,13 +1,12 @@
-/**
- * @file settings_page.dart
- * @brief Ekran ustawień użytkownika.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file settings_page.dart
+/// @brief Ekran ustawień użytkownika.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
@@ -29,16 +28,12 @@ final languages = ['Polish', 'English'];
 class SettingsPage extends ConsumerWidget {
   final Student student;
 
-  /**
-   * @brief Konstruktor widgetu SettingsPage.
-   * @param student Obiekt studenta zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SettingsPage.
+  /// @param student Obiekt studenta zawierający dane do wyświetlenia.
   const SettingsPage({super.key, required this.student});
 
-  /**
-   * @brief Buduje widget wyświetlający zdjęcie profilowe.
-   * @return Widget wyświetlający zdjęcie profilowe.
-   */
+  /// @brief Buduje widget wyświetlający zdjęcie profilowe.
+  /// @return Widget wyświetlający zdjęcie profilowe.
   Widget _buildProfileImage() {
     return Consumer(
       builder: (context, ref, child) {
@@ -141,7 +136,7 @@ class SettingsPage extends ConsumerWidget {
                       return AlertDialog(
                         title:
                             Text(AppLocalizations.of(context)!.selectLanguage),
-                        content: Container(
+                        content: SizedBox(
                           width: double.minPositive,
                           child: ListView.builder(
                             shrinkWrap: true,

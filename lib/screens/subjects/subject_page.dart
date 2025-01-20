@@ -1,13 +1,12 @@
-/**
- * @file subject_page.dart
- * @brief Ekran wyświetlający przedmioty i oceny studenta.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file subject_page.dart
+/// @brief Ekran wyświetlający przedmioty i oceny studenta.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
@@ -18,9 +17,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 class GradesPage extends ConsumerWidget {
-  /**
-   * @brief Konstruktor widgetu GradesPage.
-   */
+  /// @brief Konstruktor widgetu GradesPage.
   GradesPage({super.key});
 
   final List<Subject> subjects = [
@@ -210,10 +207,8 @@ class GradesPage extends ConsumerWidget {
 class SubjectCard extends ConsumerWidget {
   final Subject subject;
 
-  /**
-   * @brief Konstruktor widgetu SubjectCard.
-   * @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SubjectCard.
+  /// @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
   const SubjectCard({super.key, required this.subject});
 
   @override
@@ -309,11 +304,9 @@ class SubjectCard extends ConsumerWidget {
     );
   }
 
-  /**
-   * @brief Pobiera kolor oceny na podstawie jej wartości.
-   * @param grade Wartość oceny.
-   * @return Kolor odpowiadający ocenie.
-   */
+  /// @brief Pobiera kolor oceny na podstawie jej wartości.
+  /// @param grade Wartość oceny.
+  /// @return Kolor odpowiadający ocenie.
   Color _getGradeColor(double grade) {
     if (grade >= 4.5) return Colors.green;
     if (grade >= 3.5) return Colors.blue;
@@ -325,306 +318,294 @@ class SubjectCard extends ConsumerWidget {
 class SubjectDetailsPage extends ConsumerWidget {
   final Subject subject;
 
-  /**
-   * @brief Konstruktor widgetu SubjectDetailsPage.
-   * @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu SubjectDetailsPage.
+  /// @param subject Obiekt przedmiotu zawierający dane do wyświetlenia.
   const SubjectDetailsPage({super.key, required this.subject});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    @override
-    Widget build(BuildContext context, WidgetRef ref) {
-      final isDarkMode = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeProvider);
 
-      return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          surfaceTintColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back,
-                color: isDarkMode ? Colors.white : Colors.black),
-            onPressed: () => Navigator.pop(context),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back,
+              color: isDarkMode ? Colors.white : Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: Column(
+        children: [
+          const SizedBox(height: 20),
+          Center(
+            child: Text(
+              subject.name,
+              style: GoogleFonts.poppins(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: isDarkMode ? Colors.white : Colors.black,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
-        ),
-        body: Column(
-          children: [
-            const SizedBox(height: 20),
-            Center(
-              child: Text(
-                subject.name,
-                style: GoogleFonts.poppins(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: isDarkMode ? Colors.white : Colors.black,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Expanded(
-              child: DefaultTabController(
-                length: 2,
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    // Updated TabBar without background container
-                    TabBar(
-                      indicator: ShapeDecoration(
-                        color: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      splashBorderRadius: BorderRadius.circular(12),
-                      labelColor: Colors.white,
-                      unselectedLabelColor: Colors.grey[600],
-                      labelStyle: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      dividerColor: Colors.transparent,
-                      tabs: [
-                        Container(
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: Text(AppLocalizations.of(context)!.grades),
-                        ),
-                        Container(
-                          height: 50,
-                          alignment: Alignment.center,
-                          child: Text(AppLocalizations.of(context)!.exams),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    Expanded(
-                      child: TabBarView(
-                        children: [
-                          _buildGradesTab(isDarkMode),
-                          _buildExamsTab(isDarkMode),
-                        ],
+          Expanded(
+            child: DefaultTabController(
+              length: 2,
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  // Updated TabBar without background container
+                  TabBar(
+                    indicator: ShapeDecoration(
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-
-    Widget _buildGradesTab(bool isDarkMode) {
-      return ListView.builder(
-        padding: EdgeInsets.all(16),
-        itemCount: subject.grades.length,
-        itemBuilder: (context, index) {
-          final grade = subject.grades[index];
-          return Container(
-            margin: EdgeInsets.only(bottom: 16),
-            decoration: BoxDecoration(
-              color: isDarkMode ? Colors.grey[900] : Colors.white,
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: .1),
-                  blurRadius: 10,
-                  offset: Offset(0, 2),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(16),
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: _getGradeColor(grade.value),
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color:
-                            _getGradeColor(grade.value).withValues(alpha: .3),
-                        blurRadius: 6,
-                        offset: Offset(0, 2),
+                    splashBorderRadius: BorderRadius.circular(12),
+                    labelColor: Colors.white,
+                    unselectedLabelColor: Colors.grey[600],
+                    labelStyle: GoogleFonts.poppins(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    dividerColor: Colors.transparent,
+                    tabs: [
+                      Container(
+                        height: 50,
+                        alignment: Alignment.center,
+                        child: Text(AppLocalizations.of(context)!.grades),
+                      ),
+                      Container(
+                        height: 50,
+                        alignment: Alignment.center,
+                        child: Text(AppLocalizations.of(context)!.exams),
                       ),
                     ],
                   ),
-                  child: Center(
-                    child: Text(
-                      grade.value.toString(),
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  const SizedBox(height: 20),
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        _buildGradesTab(isDarkMode),
+                        _buildExamsTab(isDarkMode),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGradesTab(bool isDarkMode) {
+    return ListView.builder(
+      padding: EdgeInsets.all(16),
+      itemCount: subject.grades.length,
+      itemBuilder: (context, index) {
+        final grade = subject.grades[index];
+        return Container(
+          margin: EdgeInsets.only(bottom: 16),
+          decoration: BoxDecoration(
+            color: isDarkMode ? Colors.grey[900] : Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: .1),
+                blurRadius: 10,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.all(16),
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: _getGradeColor(grade.value),
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: _getGradeColor(grade.value).withValues(alpha: .3),
+                      blurRadius: 6,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    grade.value.toString(),
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          grade.type,
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: isDarkMode ? Colors.white : Colors.black,
-                          ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        grade.type,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: isDarkMode ? Colors.white : Colors.black,
                         ),
-                        SizedBox(height: 4),
-                        Text(
-                          grade.description,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: isDarkMode
-                                ? Colors.grey[300]
-                                : Colors.grey[800],
-                          ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        grade.description,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[300] : Colors.grey[800],
                         ),
-                        Text(
-                          DateFormat('dd.MM.yyyy').format(grade.date),
-                          style: GoogleFonts.poppins(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
+                      ),
+                      Text(
+                        DateFormat('dd.MM.yyyy').format(grade.date),
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[400] : Colors.grey[700],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildExamsTab(bool isDarkMode) {
+    return ListView.builder(
+      padding: EdgeInsets.all(16),
+      itemCount: subject.upcomingExams.length,
+      itemBuilder: (context, index) {
+        final exam = subject.upcomingExams[index];
+        return Container(
+          margin: EdgeInsets.only(bottom: 16),
+          decoration: BoxDecoration(
+            color: isDarkMode ? Colors.grey[900] : Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: .1),
+                blurRadius: 10,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.all(16),
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.orange[400],
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.orange.withValues(alpha: .3),
+                      blurRadius: 6,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Icon(Icons.event_note, color: Colors.white, size: 30),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        exam.title,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: isDarkMode ? Colors.white : Colors.black,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        exam.description,
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[300] : Colors.grey[800],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            size: 16,
                             color: isDarkMode
                                 ? Colors.grey[400]
                                 : Colors.grey[700],
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      );
-    }
-
-    Widget _buildExamsTab(bool isDarkMode) {
-      return ListView.builder(
-        padding: EdgeInsets.all(16),
-        itemCount: subject.upcomingExams.length,
-        itemBuilder: (context, index) {
-          final exam = subject.upcomingExams[index];
-          return Container(
-            margin: EdgeInsets.only(bottom: 16),
-            decoration: BoxDecoration(
-              color: isDarkMode ? Colors.grey[900] : Colors.white,
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: .1),
-                  blurRadius: 10,
-                  offset: Offset(0, 2),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(16),
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Colors.orange[400],
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.orange.withValues(alpha: .3),
-                        blurRadius: 6,
-                        offset: Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Icon(Icons.event_note, color: Colors.white, size: 30),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          exam.title,
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: isDarkMode ? Colors.white : Colors.black,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          exam.description,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: isDarkMode
-                                ? Colors.grey[300]
-                                : Colors.grey[800],
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.location_on,
-                              size: 16,
+                          SizedBox(width: 4),
+                          Text(
+                            exam.location,
+                            style: GoogleFonts.poppins(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500,
                               color: isDarkMode
                                   ? Colors.grey[400]
                                   : Colors.grey[700],
                             ),
-                            SizedBox(width: 4),
-                            Text(
-                              exam.location,
-                              style: GoogleFonts.poppins(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500,
-                                color: isDarkMode
-                                    ? Colors.grey[400]
-                                    : Colors.grey[700],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          DateFormat('dd.MM.yyyy').format(exam.date),
-                          style: GoogleFonts.poppins(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                            color: isDarkMode
-                                ? Colors.grey[400]
-                                : Colors.grey[700],
                           ),
+                        ],
+                      ),
+                      Text(
+                        DateFormat('dd.MM.yyyy').format(exam.date),
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              isDarkMode ? Colors.grey[400] : Colors.grey[700],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          );
-        },
-      );
-    }
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
-    /**
-   * @brief Pobiera kolor oceny na podstawie jej wartości.
-   * @param grade Wartość oceny.
-   * @return Kolor odpowiadający ocenie.
-   */
-    Color _getGradeColor(double grade) {
-      if (grade >= 4.5) return Colors.green;
-      if (grade >= 3.5) return Colors.blue;
-      if (grade >= 3.0) return Colors.orange;
-      return Colors.red;
-    }
+  /// @brief Pobiera kolor oceny na podstawie jej wartości.
+  /// @param grade Wartość oceny.
+  /// @return Kolor odpowiadający ocenie.
+  Color _getGradeColor(double grade) {
+    if (grade >= 4.5) return Colors.green;
+    if (grade >= 3.5) return Colors.blue;
+    if (grade >= 3.0) return Colors.orange;
+    return Colors.red;
   }
 }

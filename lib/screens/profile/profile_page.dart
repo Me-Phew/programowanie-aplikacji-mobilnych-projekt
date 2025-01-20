@@ -1,19 +1,17 @@
-/**
- * @file profile_page.dart
- * @brief Ekran profilu użytkownika z możliwością edycji danych.
- * @version 1.0
- * @date 2025-01-11
- * 
- * @autor Marcin Dudek
- * @autor Mateusz Basiaga
- * @copyright Copyright (c) 2025
- */
+/// @file profile_page.dart
+/// @brief Ekran profilu użytkownika z możliwością edycji danych.
+/// @version 1.0
+/// @date 2025-01-11
+///
+/// @autor Marcin Dudek
+/// @autor Mateusz Basiaga
+/// @copyright Copyright (c) 2025
+library;
 
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
 import 'package:flutter_application/utils/image_picker_service.dart';
-import 'package:flutter_application/widgets/shared/styled_button.dart';
 import 'package:flutter_application/widgets/shared/styled_widgets.dart';
 import 'package:flutter_application/wirtualny-sdk/models/student/student.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
@@ -28,10 +26,8 @@ class EditAccount extends ConsumerStatefulWidget {
   final Student student;
   late final String formattedNameAndFamilyName;
 
-  /**
-   * @brief Konstruktor widgetu EditAccount.
-   * @param student Obiekt studenta zawierający dane do wyświetlenia.
-   */
+  /// @brief Konstruktor widgetu EditAccount.
+  /// @param student Obiekt studenta zawierający dane do wyświetlenia.
   EditAccount({super.key, required this.student}) {
     formattedNameAndFamilyName = student.middleName != null
         ? "${student.firstName} ${student.middleName} ${student.familyName}"
@@ -53,10 +49,8 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     _student = widget.student;
   }
 
-  /**
-   * @brief Przesyła nowe zdjęcie profilowe na serwer.
-   * @param image Plik obrazu do przesłania.
-   */
+  /// @brief Przesyła nowe zdjęcie profilowe na serwer.
+  /// @param image Plik obrazu do przesłania.
   Future<void> _uploadImage(File image) async {
     if (!mounted) return;
 
@@ -106,10 +100,8 @@ class _EditAccountState extends ConsumerState<EditAccount> {
     });
   }
 
-  /**
-   * @brief Buduje widget wyświetlający zdjęcie profilowe.
-   * @return Widget wyświetlający zdjęcie profilowe.
-   */
+  /// @brief Buduje widget wyświetlający zdjęcie profilowe.
+  /// @return Widget wyświetlający zdjęcie profilowe.
   Widget _buildProfileImage() {
     return Consumer(
       builder: (context, ref, child) {
