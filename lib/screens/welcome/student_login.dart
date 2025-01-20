@@ -1,3 +1,14 @@
+/**
+ * @file student_login.dart
+ * @brief Formularz logowania dla studentów.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home/home_page.dart';
 import 'package:flutter_application/utils/push_notifications.dart';
@@ -23,15 +34,18 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
   bool _isLoading = false;
   String? _errorFeedback;
 
+  /**
+   * @brief Obsługuje proces logowania studenta.
+   */
   void _handleLogin() async {
     if (!mounted) return;
 
-    // Check form validation first
+    // Sprawdź najpierw walidację formularza
     if (!_formKey.currentState!.validate()) {
       return;
     }
 
-    // Only proceed with login if biometric authentication was successful
+    // Kontynuuj logowanie tylko, jeśli uwierzytelnianie biometryczne zakończyło się sukcesem
     setState(() {
       _isLoading = true;
       _errorFeedback = null;
@@ -75,7 +89,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
 
         FirebaseApi.initNotifications();
 
-        // Navigate to home page on successful login
+        // Przejdź do strony głównej po udanym logowaniu
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => HomePage(student: r)),
@@ -93,12 +107,12 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Sign up text
+            // Tekst logowania
             Center(
                 child: StyledBodyText(AppLocalizations.of(context)!.loginAcc)),
             const SizedBox(height: 16.0),
 
-            // Email address
+            // Adres email
             StyledFormField(
               textEditingController: _emailController,
               label: Text(AppLocalizations.of(context)!.emailAddress),
@@ -114,7 +128,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
             ),
             const SizedBox(height: 16.0),
 
-            // Password
+            // Hasło
             PasswordInput(
               textEditingController: _passwordController,
               validator: (value) {
@@ -128,7 +142,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
             ),
             const SizedBox(height: 16.0),
 
-            // Submit button
+            // Przycisk logowania
             FractionallySizedBox(
               widthFactor: 0.5,
               child: StyledButton(
@@ -154,7 +168,7 @@ class _StudentLoginFormState extends State<StudentLoginForm> {
             ),
             const SizedBox(height: 16.0),
 
-            // Error feedback
+            // Informacja o błędzie
             if (_errorFeedback != null)
               Center(
                 child: Text(

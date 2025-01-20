@@ -1,3 +1,14 @@
+/**
+ * @file announcements_page.dart
+ * @brief Plik dostarczający stronę ogłoszeń
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
 import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
@@ -6,6 +17,12 @@ import 'package:intl/intl.dart';
 
 import 'announcement_details_page.dart';
 
+/**
+ * @class AnnouncementsPage
+ * @brief Klasa dostarczająca stronę ogłoszeń
+ * 
+ * Odpowiada za wyświetlanie listy ogłoszeń.
+ */
 class AnnouncementsPage extends StatefulWidget {
   const AnnouncementsPage({super.key});
 
@@ -13,12 +30,23 @@ class AnnouncementsPage extends StatefulWidget {
   State<AnnouncementsPage> createState() => _AnnouncementsPageState();
 }
 
+/**
+ * @class _AnnouncementsPageState
+ * @brief Stan dla klasy AnnouncementsPage
+ * 
+ * Zarządza stanem strony ogłoszeń.
+ */
 class _AnnouncementsPageState extends State<AnnouncementsPage> {
   List<Announcement> _announcements = [];
 
   bool _isLoading = true;
   String? _errorFeedback;
 
+  /**
+   * @brief Ładuje ogłoszenia
+   * 
+   * Pobiera ogłoszenia z serwera i aktualizuje stan.
+   */
   Future<void> loadAnnouncements() async {
     final getAnnouncementsResult =
         await WirtualnySdk.instance.notifications.getAnnouncements();
@@ -115,6 +143,11 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
     );
   }
 
+  /**
+   * @brief Buduje listę odebranych ogłoszeń
+   * 
+   * @return Widget listy odebranych ogłoszeń
+   */
   Widget _buildInboxList() {
     if (_isLoading) {
       return const Center(
@@ -170,6 +203,11 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
         });
   }
 
+  /**
+   * @brief Buduje listę ogłoszeń w koszu
+   * 
+   * @return Widget listy ogłoszeń w koszu
+   */
   Widget _buildTrashBinList() {
     if (_isLoading) {
       return const Center(

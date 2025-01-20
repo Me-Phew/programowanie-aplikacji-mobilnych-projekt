@@ -1,11 +1,27 @@
+/**
+ * @file styled_button.dart
+ * @brief Definicje stylizowanych przycisków używanych w aplikacji.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StyledButton extends StatelessWidget {
-  const StyledButton({super.key, required this.onPressed, required this.child});
-
   final void Function() onPressed;
   final Widget child;
+
+  /**
+   * @brief Konstruktor widgetu StyledButton.
+   * @param onPressed Funkcja wywoływana po naciśnięciu przycisku.
+   * @param child Widget dziecka wyświetlany wewnątrz przycisku.
+   */
+  const StyledButton({super.key, required this.onPressed, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +38,13 @@ class StyledButton extends StatelessWidget {
 }
 
 class StyledButtonText extends StatelessWidget {
-  const StyledButtonText(this.text, {super.key});
-
   final String text;
+
+  /**
+   * @brief Konstruktor widgetu StyledButtonText.
+   * @param text Tekst wyświetlany wewnątrz przycisku.
+   */
+  const StyledButtonText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +62,11 @@ class StyledButtonText extends StatelessWidget {
 
 class StyledButtonSettings extends StatelessWidget {
   final Function() onTap;
+
+  /**
+   * @brief Konstruktor widgetu StyledButtonSettings.
+   * @param onTap Funkcja wywoływana po naciśnięciu przycisku.
+   */
   const StyledButtonSettings({super.key, required this.onTap});
 
   @override

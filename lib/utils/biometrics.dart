@@ -1,6 +1,21 @@
+/**
+ * @file biometrics.dart
+ * @brief Obsługa uwierzytelniania biometrycznego.
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:local_auth/local_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/**
+ * @brief Uwierzytelnia użytkownika za pomocą biometrii.
+ * @return Zwraca true, jeśli uwierzytelnianie zakończyło się sukcesem, w przeciwnym razie false.
+ */
 Future<bool> authenticateWithBiometrics() async {
   final LocalAuthentication localAuth = LocalAuthentication();
 
@@ -11,17 +26,17 @@ Future<bool> authenticateWithBiometrics() async {
         canAuthenticateWithBiometrics || await localAuth.isDeviceSupported();
 
     if (!canAuthenticate) {
-      return true; // If device doesn't support biometrics, proceed anyway
+      return true; // Jeśli urządzenie nie obsługuje biometrii, kontynuuj mimo to
     }
 
     final prefs = await SharedPreferences.getInstance();
     final useBiometrics = prefs.getBool('useBiometrics') ?? false;
 
     if (!useBiometrics) {
-      return true; // If biometrics not enabled, proceed anyway
+      return true; // Jeśli biometryka nie jest włączona, kontynuuj mimo to
     }
 
-    // Explicitly check for biometric support
+    // Wyraźnie sprawdź wsparcie dla biometrii
     final List<BiometricType> availableBiometrics =
         await localAuth.getAvailableBiometrics();
     if (!availableBiometrics.contains(BiometricType.strong) &&

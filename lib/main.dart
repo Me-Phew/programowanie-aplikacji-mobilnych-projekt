@@ -1,3 +1,14 @@
+/**
+ * @file main.dart
+ * @brief Główny plik 
+ * @version 1.0
+ * @date 2025-01-11
+ * 
+ * @autor Marcin Dudek
+ * @autor Mateusz Basiaga
+ * @copyright Copyright (c) 2025
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/providers/auth_state_provider.dart';
 import 'package:flutter_application/providers/riverpod_provider.dart';
@@ -16,6 +27,11 @@ import 'utils/firebase_options.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'wirtualny-sdk/wirtualny_sdk_config.dart';
 
+/**
+ * @brief Główna funkcja aplikacji
+ * 
+ * Inicjalizuje środowisko, ładuje konfigurację i uruchamia aplikację.
+ */
 void main() async {
   await dotenv.load();
 
@@ -57,9 +73,22 @@ void main() async {
   WirtualnySdk.instance.auth.loadToken();
 }
 
+/**
+ * @class MyApp
+ * @brief Główna klasa aplikacji
+ * 
+ * Odpowiada za budowanie głównej struktury aplikacji.
+ */
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
+  /**
+   * @brief Buduje widget aplikacji
+   * 
+   * @param context Kontekst budowania widgetu
+   * @param ref Referencja do providerów Riverpod
+   * @return Widget aplikacji
+   */
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDarkMode = ref.watch(darkModeProvider);
@@ -95,10 +124,21 @@ class MyApp extends ConsumerWidget {
   }
 }
 
-// Sandbox do testowania żeby nie rozwalać kody już w apce itp.
+/**
+ * @class SandBox
+ * @brief Klasa do testowania
+ * 
+ * Służy do testowania funkcji bez wpływu na główną aplikację.
+ */
 class SandBox extends StatelessWidget {
   const SandBox({super.key});
 
+  /**
+   * @brief Buduje widget SandBox
+   * 
+   * @param context Kontekst budowania widgetu
+   * @return Widget SandBox
+   */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
