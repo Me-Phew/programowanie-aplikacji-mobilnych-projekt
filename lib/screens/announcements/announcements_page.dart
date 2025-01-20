@@ -9,6 +9,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -34,6 +35,7 @@ class AnnouncementsPage extends StatefulWidget {
 /// Zarządza stanem strony ogłoszeń.
 class _AnnouncementsPageState extends State<AnnouncementsPage> {
   List<Announcement> _announcements = [];
+  DateTime? _lastUpdate;
 
   bool _isLoading = true;
   String? _errorFeedback;
@@ -54,6 +56,7 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
       (r) {
         setState(() {
           _announcements = r.docs;
+          _lastUpdate = DateTime.now();
         });
       },
     );
@@ -71,17 +74,29 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
       RefreshController(initialRefresh: false);
 
   void _onRefresh() async {
-    // monitor network fetch
-    await Future.delayed(Duration(milliseconds: 1000));
-    // if failed,use refreshFailed()
-    _refreshController.refreshCompleted();
-  }
+    final getAnnouncementsResult =
+        await WirtualnySdk.instance.notifications.getAnnouncements();
 
-  void _onLoading() async {
-    await loadAnnouncements();
+    getAnnouncementsResult.fold(
+      (l) {
+        _refreshController.refreshFailed();
 
-    if (mounted) setState(() {});
-    _refreshController.loadComplete();
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Nie udało się odświeżyć'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      },
+      (r) {
+        setState(() {
+          _announcements = r.docs;
+          _lastUpdate = DateTime.now();
+        });
+
+        _refreshController.refreshCompleted();
+      },
+    );
   }
 
   @override
@@ -90,29 +105,40 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
       body: SmartRefresher(
         enablePullDown: true,
         enablePullUp: false,
-        // header: const MaterialClassicHeader(
-        //   color: Colors.black,
-        // ),
-        header: const WaterDropMaterialHeader(
+        header: const MaterialClassicHeader(
           color: Colors.white,
           backgroundColor: Colors.black,
+          distance: 82,
+          height: 100,
         ),
         controller: _refreshController,
         onRefresh: _onRefresh,
-        onLoading: _onLoading,
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            const SizedBox(height: 80),
+            const SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Text(
-                "Ogłoszenia",
-                style: GoogleFonts.poppins(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Column(
+                children: [
+                  Text(
+                    "Ogłoszenia",
+                    style: GoogleFonts.poppins(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    _lastUpdate != null
+                        ? "Aktualizacja: ${getFormattedDateTime(_lastUpdate!)}"
+                        : "",
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      color: Colors.grey[600],
+                    ),
+                  )
+                ],
               ),
             ),
             Expanded(

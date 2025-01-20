@@ -35,41 +35,57 @@ class WirtualnyAuth {
     );
   }
 
-  Future<void> loadToken() async {
+  Future<Either<WirtualnyAuthException, Student>> fetchStudent(
+      String token) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    WirtualnyHttpClient.instance.dio.options.headers['Authorization'] =
+        'Bearer $token';
+
+    int? studentId = prefs.getInt('studentId');
+
+    try {
+      final response = await WirtualnyHttpClient.instance.dio
+          .get('students/$studentId?depth=5');
+      final student = Student.fromJson(response.data);
+
+      _authData = StudentLoginResponse(
+        exp: 0,
+        message: null.toString(),
+        token: token,
+        user: student,
+      );
+
+      if (_authStateHasListeners) {
+        _authStateController.add(student);
+      }
+
+      return right(student);
+    } on DioException catch (e) {
+      log.severe('Failed to fetch user data', e);
+
+      return left(WirtualnyAuthException(
+        dioException: e,
+        message: e.response?.data['message'],
+      ));
+    }
+  }
+
+  Future<void> relogin() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
 
-    if (token != null) {
-      // Authenticate with biometrics before proceeding with relogin
-      final authenticated = await authenticateWithBiometrics();
-      if (!authenticated) {
-        return;
-      }
-
-      WirtualnyHttpClient.instance.dio.options.headers['Authorization'] =
-          'Bearer $token';
-
-      int? studentId = prefs.getInt('studentId');
-
-      try {
-        final response = await WirtualnyHttpClient.instance.dio
-            .get('students/$studentId?depth=5');
-        final student = Student.fromJson(response.data);
-
-        _authData = StudentLoginResponse(
-          exp: 0,
-          message: null.toString(),
-          token: token,
-          user: student,
-        );
-
-        if (_authStateHasListeners) {
-          _authStateController.add(student);
-        }
-      } on DioException catch (e) {
-        log.severe('Failed to fetch user data', e);
-      }
+    if (token == null) {
+      return;
     }
+
+    // Authenticate with biometrics before proceeding with relogin
+    final authenticated = await authenticateWithBiometrics();
+    if (!authenticated) {
+      return;
+    }
+
+    fetchStudent(token);
   }
 
   bool get _authStateHasListeners => authStateListenersCount > 0;

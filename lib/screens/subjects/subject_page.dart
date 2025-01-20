@@ -176,9 +176,9 @@ class GradesPage extends ConsumerWidget {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(height: 80),
+          const SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 16),
             child: Text(
               AppLocalizations.of(context)!.subjects,
               style: GoogleFonts.poppins(
@@ -339,7 +339,6 @@ class SubjectDetailsPage extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 20),
           Center(
             child: Text(
               subject.name,

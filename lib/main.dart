@@ -68,7 +68,7 @@ void main() async {
     restApiBaseUrl: restApiBaseUrl,
   ));
 
-  WirtualnySdk.instance.auth.loadToken();
+  WirtualnySdk.instance.auth.relogin();
 }
 
 /// @class MyApp

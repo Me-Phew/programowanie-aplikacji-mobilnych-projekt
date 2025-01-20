@@ -29,6 +29,7 @@ class ProfilePageDataRow extends StatelessWidget {
             child: ProfileTextLeft(
           textLeft,
         )),
+        SizedBox(width: 40),
         Expanded(
           child: ProfileTextRight(textRight),
         )

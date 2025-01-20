@@ -9,6 +9,8 @@
  * @copyright Copyright (c) 2025
  */
 
+import 'package:intl/intl.dart';
+
 /// @brief Pobiera nazwę wykładu do wyświetlenia w zależności od języka.
 /// @param lang Kod języka (np. "pl" dla polskiego).
 /// @param name Nazwa wykładu.
@@ -65,4 +67,8 @@ String getLectureFormDisplayName(String lang, String name) {
         return name;
     }
   }
+}
+
+String getFormattedDateTime(DateTime date) {
+  return DateFormat('dd.MM.yyyy HH:mm').format(date);
 }

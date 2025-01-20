@@ -19,6 +19,7 @@ import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -82,12 +83,19 @@ class SettingsPage extends ConsumerWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(32.0),
+          padding: const EdgeInsets.all(16),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 120),
-              SettingsHeading(AppLocalizations.of(context)!.profile),
+              const SizedBox(height: 30),
+              Text(
+                AppLocalizations.of(context)!.profile,
+                style: GoogleFonts.poppins(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
@@ -117,7 +125,12 @@ class SettingsPage extends ConsumerWidget {
               ),
 
               const SizedBox(height: 40),
-              SettingsHeading(AppLocalizations.of(context)!.settings),
+              Text(AppLocalizations.of(context)!.settings,
+                  style: GoogleFonts.poppins(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  )),
               const SizedBox(height: 20),
               SettingItem(
                 title: AppLocalizations.of(context)!.language,

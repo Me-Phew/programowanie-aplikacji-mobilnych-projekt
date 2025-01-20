@@ -141,16 +141,21 @@ class EditItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          flex: 2,
-          child: Text(
-            title,
-            style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 16, color: Colors.grey)),
-          ),
+          child: SizedBox(
+              height: 100,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(fontSize: 16, color: Colors.grey)),
+                  ),
+                ],
+              )),
         ),
-        const SizedBox(width: 30),
         Expanded(
-          flex: 3,
           child: widget,
         ),
       ],
