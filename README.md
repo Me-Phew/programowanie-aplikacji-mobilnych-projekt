@@ -1,6 +1,6 @@
 # 📱 Wirtualny Dziekanat
 
-![Project Logo](/assets/images/logoWithoutBg.png)
+![Project Logo](/assets/images/logo1.PNG)
 
 ## 📖 Opis projektu
 
