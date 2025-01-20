@@ -3,14 +3,13 @@
 /// @version 1.0
 /// @date 2025-01-11
 ///
-/// @autor Marcin Dudek
-/// @autor Mateusz Basiaga
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
 /// @copyright Copyright (c) 2025
 library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application/widgets/shared/styled_text.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'student_login.dart';
@@ -23,22 +22,6 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _loadAsyncState();
-    });
-  }
-
-  /// @brief Ładuje asynchroniczny stan aplikacji.
-  _loadAsyncState() async {
-    final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
-
-    final bool? hasLoggedInBefore =
-        await asyncPrefs.getBool('hasLoggedInBefore');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

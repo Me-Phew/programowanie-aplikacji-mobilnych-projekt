@@ -3,8 +3,8 @@
 /// @version 1.0
 /// @date 2025-01-11
 ///
-/// @autor Marcin Dudek
-/// @autor Mateusz Basiaga
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
 /// @copyright Copyright (c) 2025
 library;
 
@@ -76,9 +76,6 @@ class SettingsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Watch for student updates
-    final currentStudent = ref.watch(studentProvider);
-    final accessToken = WirtualnySdk.instance.auth.accessToken ?? '';
     // Pobieranie wartości isDarkMode z providera
     final isDarkMode = ref.watch(darkModeProvider);
 

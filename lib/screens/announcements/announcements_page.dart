@@ -3,17 +3,18 @@
 /// @version 1.0
 /// @date 2025-01-11
 ///
-/// @autor Marcin Dudek
-/// @autor Mateusz Basiaga
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
 /// @copyright Copyright (c) 2025
 library;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
-import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
+import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
 import 'announcement_details_page.dart';
 
 /// @class AnnouncementsPage
@@ -66,72 +67,104 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
     loadAnnouncements();
   }
 
+  final RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
+
+  void _onRefresh() async {
+    // monitor network fetch
+    await Future.delayed(Duration(milliseconds: 1000));
+    // if failed,use refreshFailed()
+    _refreshController.refreshCompleted();
+  }
+
+  void _onLoading() async {
+    await loadAnnouncements();
+
+    if (mounted) setState(() {});
+    _refreshController.loadComplete();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(height: 80),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Text(
-              "Ogłoszenia",
-              style: GoogleFonts.poppins(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+      body: SmartRefresher(
+        enablePullDown: true,
+        enablePullUp: false,
+        // header: const MaterialClassicHeader(
+        //   color: Colors.black,
+        // ),
+        header: const WaterDropMaterialHeader(
+          color: Colors.white,
+          backgroundColor: Colors.black,
+        ),
+        controller: _refreshController,
+        onRefresh: _onRefresh,
+        onLoading: _onLoading,
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            const SizedBox(height: 80),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Text(
+                "Ogłoszenia",
+                style: GoogleFonts.poppins(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            child: DefaultTabController(
-              length: 2,
-              child: Column(
-                children: [
-                  const SizedBox(height: 20),
-                  // Updated TabBar without background container
-                  TabBar(
-                    indicator: ShapeDecoration(
-                      color: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+            Expanded(
+              child: DefaultTabController(
+                length: 2,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    // Updated TabBar without background container
+                    TabBar(
+                      indicator: ShapeDecoration(
+                        color: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                       ),
-                    ),
-                    splashBorderRadius: BorderRadius.circular(12),
-                    labelColor: Colors.white,
-                    unselectedLabelColor: Colors.grey[600],
-                    labelStyle: GoogleFonts.poppins(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    dividerColor: Colors.transparent,
-                    tabs: [
-                      Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        child: Text("ODBERANE"),
+                      splashBorderRadius: BorderRadius.circular(12),
+                      labelColor: Colors.white,
+                      unselectedLabelColor: Colors.grey[600],
+                      labelStyle: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                       ),
-                      Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        child: Text("KOSZ"),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        _buildInboxList(),
-                        _buildTrashBinList(),
+                      dividerColor: Colors.transparent,
+                      tabs: [
+                        Container(
+                          height: 50,
+                          alignment: Alignment.center,
+                          child: Text("ODBERANE"),
+                        ),
+                        Container(
+                          height: 50,
+                          alignment: Alignment.center,
+                          child: Text("KOSZ"),
+                        ),
                       ],
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 20),
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          _buildInboxList(),
+                          _buildTrashBinList(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

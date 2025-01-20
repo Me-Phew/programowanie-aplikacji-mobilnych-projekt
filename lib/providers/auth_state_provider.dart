@@ -3,8 +3,8 @@
 /// @version 1.0
 /// @date 2025-01-11
 ///
-/// @autor Marcin Dudek
-/// @autor Mateusz Basiaga
+/// @author Marcin Dudek
+/// @author Mateusz Basiaga
 /// @copyright Copyright (c) 2025
 library;
 
