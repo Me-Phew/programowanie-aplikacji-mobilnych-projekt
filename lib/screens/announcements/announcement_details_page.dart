@@ -47,11 +47,59 @@ class AnnouncementDetailsPage extends ConsumerWidget {
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const SizedBox(height: 8),
+              announcement.priority == 'low'
+                  ? Container(
+                      padding: const EdgeInsets.all(8),
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: .1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Zwykłe",
+                            style: TextStyle(
+                              color: Colors.black.withValues(alpha: .8),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  : Container(
+                      padding: const EdgeInsets.all(8),
+                      width: 80,
+                      decoration: BoxDecoration(
+                        color: announcement.priority == 'medium'
+                            ? Colors.orange.shade100
+                            : Colors.red.shade100,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            announcement.priority == 'medium'
+                                ? 'Ważne'
+                                : 'Pilne',
+                            style: TextStyle(
+                              color: announcement.priority == 'medium'
+                                  ? Colors.orange
+                                  : Colors.red,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+              const SizedBox(height: 8),
               Text("Od: Dziekanat"),
               Text("Do: 2(IS)"),
               Text("Data: $formattedDate"),
               Text("Przeczytana: Tak"),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               Html(
                   style: {
                     "body": Style(margin: Margins.zero),

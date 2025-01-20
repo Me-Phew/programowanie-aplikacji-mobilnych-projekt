@@ -1,5 +1,8 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/screens/announcements/announcement_details_page.dart';
+import 'package:flutter_application/wirtualny-sdk/models/announcemnet/announcement.dart';
+import 'package:flutter_application/wirtualny-sdk/wirtualny_sdk.dart';
 
 class MessageHandler extends StatefulWidget {
   final Widget child;
@@ -10,23 +13,47 @@ class MessageHandler extends StatefulWidget {
   State createState() => MessageHandlerState();
 }
 
-void _onData(RemoteMessage? message) {
-  if (message == null) return;
-
-  print("onMessage: ${message.data}");
-
-  // String screen = message['data']['screen'];
-  // if (screen == "secondScreen") {
-  //   Navigator.of(context).pushNamed("secondScreen");
-  // } else if (screen == "thirdScreen") {
-  //   Navigator.of(context).pushNamed("thirdScreen");
-  // } else {
-  //   //do nothing
-  // }
-}
-
 class MessageHandlerState extends State<MessageHandler> {
   late Widget child;
+
+  void _onData(RemoteMessage? message) async {
+    if (message == null) {
+      print("onMessage: message is null");
+      return;
+    }
+
+    print("onMessage: ${message.data}");
+
+    String? messageType = message.data['type'];
+
+    switch (messageType) {
+      case 'announcement':
+        final String announcementId = message.data['id'];
+
+        final getAnnouncementResult = await WirtualnySdk.instance.notifications
+            .getAnnouncement(announcementId);
+
+        getAnnouncementResult.fold(
+          (l) {
+            print(l.message);
+          },
+          (r) {
+            print("Mam announcement");
+            print("Changing page to announcement details");
+
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => AnnouncementDetailsPage(
+                          announcement: r,
+                        )));
+          },
+        );
+
+      default:
+        return;
+    }
+  }
 
   @override
   void initState() {

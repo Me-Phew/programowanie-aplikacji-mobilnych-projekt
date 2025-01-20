@@ -9,6 +9,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application/utils/common.dart';
 import 'package:flutter_application/wirtualny-sdk/models/lecture/lecture.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -100,7 +101,7 @@ class _HomePageState extends State<HomePage> {
 
   /// @brief Pobiera plan zajęć na określony dzień tygodnia.
   /// @param weekday Dzień tygodnia.
-  /// @return Lista wykładów zaplanowanych na dany dzień.
+  /// @return Lista fów zaplanowanych na dany dzień.
   List<Lecture> _getDaySchedule(int weekday) {
     switch (weekday) {
       case DateTime.monday:
@@ -291,14 +292,8 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: AppLocalizations.of(context)!
-                                              .type,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.normal,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: lecture.form,
+                                          text: getLectureFormDisplayName(
+                                              'pl', lecture.form),
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -310,13 +305,6 @@ class _HomePageState extends State<HomePage> {
                                     text: TextSpan(
                                       style: TextStyle(color: Colors.grey[900]),
                                       children: [
-                                        TextSpan(
-                                          text: AppLocalizations.of(context)!
-                                              .lecturer,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.normal,
-                                          ),
-                                        ),
                                         TextSpan(
                                           text: lecture.lecturer.title,
                                           style: TextStyle(

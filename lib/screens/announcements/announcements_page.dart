@@ -173,14 +173,56 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
                 Text(_announcements[index].subject.length > 22
                     ? '${_announcements[index].subject.substring(0, 22)}...'
                     : _announcements[index].subject),
-                const Spacer(),
-                Text(
-                  formattedDate,
-                  style: TextStyle(color: Colors.black.withAlpha(200)),
-                ),
               ],
             ),
-            subtitle: Text(_announcements[index].subject),
+            subtitle: Text(formattedDate),
+            leading: _announcements[index].priority == 'low'
+                ? Container(
+                    padding: const EdgeInsets.all(8),
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: .1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Zwykłe",
+                          style: TextStyle(
+                            color: Colors.black.withValues(alpha: .8),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Container(
+                    padding: const EdgeInsets.all(8),
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: _announcements[index].priority == 'medium'
+                          ? Colors.orange.shade100
+                          : Colors.red.shade100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _announcements[index].priority == 'medium'
+                              ? 'Ważne'
+                              : 'Pilne',
+                          style: TextStyle(
+                            color: _announcements[index].priority == 'medium'
+                                ? Colors.orange
+                                : Colors.red,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
             trailing: IconButton(
               color: Colors.red.shade500,
               icon: const Icon(Icons.delete),
@@ -231,14 +273,60 @@ class _AnnouncementsPageState extends State<AnnouncementsPage> {
                 Text(_announcements[index].subject.length > 22
                     ? '${_announcements[index].subject.substring(0, 22)}...'
                     : _announcements[index].subject),
-                const Spacer(),
-                Text(
-                  formattedDate,
-                  style: TextStyle(color: Colors.black.withAlpha(200)),
-                ),
               ],
             ),
-            subtitle: Text(_announcements[index].subject),
+            subtitle: Text(formattedDate),
+            leading: _announcements[index].priority == 'low'
+                ? Container(
+                    padding: const EdgeInsets.all(8),
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: .1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Zwykłe",
+                          style: TextStyle(
+                            color: Colors.black.withValues(alpha: .8),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Container(
+                    padding: const EdgeInsets.all(8),
+                    width: 55,
+                    decoration: BoxDecoration(
+                      color: _announcements[index].priority == 'medium'
+                          ? Colors.orange.shade100
+                          : Colors.red.shade100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _announcements[index].priority == 'medium'
+                              ? 'Ważne'
+                              : 'Pilne',
+                          style: TextStyle(
+                            color: _announcements[index].priority == 'medium'
+                                ? Colors.orange
+                                : Colors.red,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+            trailing: Icon(
+              Icons.delete,
+              color: Colors.black38,
+            ),
           );
         });
   }

@@ -13,10 +13,56 @@
 /// @param lang Kod języka (np. "pl" dla polskiego).
 /// @param name Nazwa wykładu.
 /// @return Nazwa wykładu do wyświetlenia.
-String getLectureDisplayName(String lang, String name) {
+String getLectureFormDisplayName(String lang, String name) {
   if (lang == "pl") {
-    return name;
+    switch (name) {
+      case 'lecture':
+        return 'Wykład';
+      case 'exercises':
+        return 'Ćwiczenia';
+      case 'lab':
+        return 'Laboratorium';
+      case 'project':
+        return 'Projekt';
+      case 'language':
+        return 'Lektorat';
+      case 'practice':
+        return 'Praktyka';
+      case 'seminar':
+        return 'Seminarium';
+      case 'consultation':
+        return 'Konsultacje';
+      case 'exam':
+        return 'Egzamin';
+      case 'other':
+        return 'Inne';
+      default:
+        return name;
+    }
   } else {
-    return name;
+    switch (name) {
+      case 'lecture':
+        return 'Wykład';
+      case 'exercises':
+        return 'Ćwiczenia';
+      case 'lab':
+        return 'Laboratorium';
+      case 'project':
+        return 'Projekt';
+      case 'language':
+        return 'Lektorat';
+      case 'practice':
+        return 'Praktyka';
+      case 'seminar':
+        return 'Seminarium';
+      case 'consultation':
+        return 'Konsultacje';
+      case 'exam':
+        return 'Egzamin';
+      case 'other':
+        return 'Inne';
+      default:
+        return name;
+    }
   }
 }
