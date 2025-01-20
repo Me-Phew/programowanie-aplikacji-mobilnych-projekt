@@ -1,6 +1,6 @@
 # 📱 Wirtualny Dziekanat
 
-![Project Logo](/assets/images/logoWithoutBg.png)
+![Project Logo](/assets/images/logo1.PNG)
 
 ## 📖 Opis projektu
 
@@ -48,12 +48,6 @@ Wirtualny Dziekanat to aplikacja mobilna stworzona w technologii Flutter, mając
 ## 📄 Licencja
 
 Ten projekt jest licencjonowany na warunkach licencji MIT. Zobacz plik **LICENSE** aby uzyskać więcej informacji.
-
-## 📷 Zrzuty ekranu
-
-![Ekran logowania](assets/screenshots/login_screen.png)
-![Ekran główny](assets/screenshots/main_screen.png)
-![Ekran ocen](assets/screenshots/grades_screen.png)
 
 ## 🛡️ Bezpieczeństwo
 
