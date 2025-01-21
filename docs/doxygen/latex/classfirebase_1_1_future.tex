@@ -1,0 +1,186 @@
+\doxysection{firebase\+::Future\texorpdfstring{$<$}{<} Result\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classfirebase_1_1_future}{}\label{classfirebase_1_1_future}\index{firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}}
+
+
+Type-\/specific version of \doxylink{classfirebase_1_1_future_base}{Future\+Base}.  
+
+
+
+
+{\ttfamily \#include $<$future.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::Future\texorpdfstring{$<$}{<} Result\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classfirebase_1_1_future__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::Future\texorpdfstring{$<$}{<} Result\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classfirebase_1_1_future__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{classfirebase_1_1_future_aebcf97a0194df9bfd4275ba3586ce5d7}{Typed\+Completion\+Callback}}(const \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ Result\+Type $>$ \&result\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classfirebase_1_1_future_base}{firebase\+::\+Future\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{classfirebase_1_1_future_base_aefa1c5d05667967dab58b284cf7f9d47}{Completion\+Callback}}(const \mbox{\hyperlink{classfirebase_1_1_future_base}{Future\+Base}} \&result\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_future_a3b44ecf20054fee31c757d48f4abd47b}\label{classfirebase_1_1_future_a3b44ecf20054fee31c757d48f4abd47b} 
+{\bfseries Future} ()
+\begin{DoxyCompactList}\small\item\em Construct a future. \end{DoxyCompactList}\item 
+const Result\+Type \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_future_a929c5e38f16e07c531ba0641d0139262}{result}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{On\+Completion}} (\mbox{\hyperlink{classfirebase_1_1_future_aebcf97a0194df9bfd4275ba3586ce5d7}{Typed\+Completion\+Callback}} callback, void \texorpdfstring{$\ast$}{*}user\+\_\+data) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1_future_base}{firebase\+::\+Future\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Future\+Base} ()
+\begin{DoxyCompactList}\small\item\em Construct an untyped future. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future_base_a51a2b6f8648a193e0139c740a37abcb9}{Future\+Base}} (const \mbox{\hyperlink{classfirebase_1_1_future_base}{Future\+Base}} \&rhs)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future_base}{Future\+Base}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfirebase_1_1_future_base}{Future\+Base}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy an untyped future. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_future_base_a195aacd8c035957b705cff98daa1920f}{Release}} ()
+\item 
+\mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fba}{Future\+Status}} {\bfseries status} () const
+\begin{DoxyCompactList}\small\item\em Completion status of the asynchronous call. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfirebase_1_1_future_base_a6762e3b7bbf2dc22dfe070a436cc4369}{error}} () const
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_future_base_a94c375e20042a208832cf59cc3edbbf7}{error\+\_\+message}} () const
+\item 
+const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_future_base_ae3e12d66de98c433c44268b93d6726d7}{result\+\_\+void}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1_future_base_a6815dec3b1f3648b01c01f0447560fe6}{On\+Completion}} (\mbox{\hyperlink{classfirebase_1_1_future_base_aefa1c5d05667967dab58b284cf7f9d47}{Completion\+Callback}} callback, void \texorpdfstring{$\ast$}{*}user\+\_\+data) const
+\item 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classfirebase_1_1_future_base}{Future\+Base}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if the two Futures reference the same result. \end{DoxyCompactList}\item 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classfirebase_1_1_future_base}{Future\+Base}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if the two Futures reference different results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Result\+Type$>$\newline
+class firebase\+::\+Future$<$ Result\+Type $>$}
+Type-\/specific version of \doxylink{classfirebase_1_1_future_base}{Future\+Base}. 
+
+The Firebase C++ SDK uses this class to return results from asynchronous operations. All Firebase C++ functions and method calls that operate asynchronously return a \doxylink{classfirebase_1_1_future}{Future}, and provide a "{}\+Last\+Result"{} function to retrieve the most recent \doxylink{classfirebase_1_1_future}{Future} result.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ You\ can\ retrieve\ the\ Future\ from\ the\ function\ call\ directly,\ like\ this:}}
+\DoxyCodeLine{\mbox{\hyperlink{classfirebase_1_1_future_a3b44ecf20054fee31c757d48f4abd47b}{Future<\ SampleResultType\ >}}\ future\ =\ firebase::SampleAsyncOperation();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Or\ you\ can\ retrieve\ it\ later,\ like\ this:}}
+\DoxyCodeLine{firebase::SampleAsyncOperation();}
+\DoxyCodeLine{\textcolor{comment}{//\ [...]}}
+\DoxyCodeLine{\mbox{\hyperlink{classfirebase_1_1_future_a3b44ecf20054fee31c757d48f4abd47b}{Future<\ SampleResultType\ >}}\ future\ =}
+\DoxyCodeLine{\ \ \ \ firebase::SampleAsyncOperationLastResult();}
+
+\end{DoxyCode}
+
+
+When you have a \doxylink{classfirebase_1_1_future}{Future} from an asynchronous operation, it will eventually complete. Once it is complete, you can check for errors (a nonzero \doxylink{classfirebase_1_1_future_base_a6762e3b7bbf2dc22dfe070a436cc4369}{error()} means an error occurred) and get the result data if no error occurred by calling \doxylink{classfirebase_1_1_future_a929c5e38f16e07c531ba0641d0139262}{result()}.
+
+There are two ways to find out that a \doxylink{classfirebase_1_1_future}{Future} has completed. You can poll its \doxylink{classfirebase_1_1_future_base_aef8df922b8331b82aacb0b483f571064}{status()}, or set an \doxylink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{On\+Completion()} callback\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Check\ whether\ the\ status\ is\ kFutureStatusComplete.}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (future.status()\ ==\ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa33e40478e42949d7dc59951089f56921}{firebase::kFutureStatusComplete}})\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (future.error()\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ DoSomethingWithResultData(future.result());}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ LogMessage(\textcolor{stringliteral}{"{}Error\ \%d:\ \%s"{}},\ future.error(),\ future.error\_message());}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Or,\ set\ an\ OnCompletion\ callback,\ which\ accepts\ a\ C++11\ lambda\ or}}
+\DoxyCodeLine{\textcolor{comment}{//\ function\ pointer.\ You\ can\ pass\ your\ own\ user\ data\ to\ the\ callback.\ In}}
+\DoxyCodeLine{\textcolor{comment}{//\ most\ cases,\ the\ callback\ will\ be\ running\ in\ a\ different\ thread,\ so\ take}}
+\DoxyCodeLine{\textcolor{comment}{//\ care\ to\ make\ sure\ your\ code\ is\ thread-\/safe.}}
+\DoxyCodeLine{future.OnCompletion([](\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_future_a3b44ecf20054fee31c757d48f4abd47b}{Future<\ SampleResultType\ >}}\&\ completed\_future,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\ \{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ We\ are\ probably\ in\ a\ different\ thread\ right\ now.}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (completed\_future.error()\ ==\ 0)\ \{}
+\DoxyCodeLine{\ \ \ \ DoSomethingWithResultData(completed\_future.result());}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ LogMessage(\textcolor{stringliteral}{"{}Error\ \%d:\ \%s"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ completed\_future.error(),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ completed\_future.error\_message());}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\},\ user\_data);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Result\+Type} & The type of this \doxylink{classfirebase_1_1_future}{Future}\textquotesingle{}s result. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classfirebase_1_1_future_aebcf97a0194df9bfd4275ba3586ce5d7}\index{firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}!TypedCompletionCallback@{TypedCompletionCallback}}
+\index{TypedCompletionCallback@{TypedCompletionCallback}!firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}}
+\doxysubsubsection{\texorpdfstring{TypedCompletionCallback}{TypedCompletionCallback}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_future_aebcf97a0194df9bfd4275ba3586ce5d7} 
+template$<$typename Result\+Type $>$ \\
+void(\texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{classfirebase_1_1_future}{firebase\+::\+Future}}$<$ Result\+Type $>$\+::\+Typed\+Completion\+Callback(const \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ Result\+Type $>$ \&result\+\_\+data, void \texorpdfstring{$\ast$}{*}user\+\_\+data)}
+
+Function pointer for a completion callback. When we call this, we will send the completed future, along with the user data that you specified when you set up the callback. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}\index{firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}!OnCompletion@{OnCompletion}}
+\index{OnCompletion@{OnCompletion}!firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}}
+\doxysubsubsection{\texorpdfstring{OnCompletion()}{OnCompletion()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d} 
+template$<$typename Result\+Type $>$ \\
+void \mbox{\hyperlink{classfirebase_1_1_future}{firebase\+::\+Future}}$<$ Result\+Type $>$\+::\+On\+Completion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_future_aebcf97a0194df9bfd4275ba3586ce5d7}{Typed\+Completion\+Callback}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{user\+\_\+data}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Register a single callback that will be called at most once, when the future is completed.
+
+If you call any \doxylink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{On\+Completion()} method more than once on the same future, only the most recent callback you registered will be called.
+
+When your callback is called, the user\+\_\+data that you supplied here will be passed back as the second parameter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & Function pointer to your callback. \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+data} & Optional user data. We will pass this back to your callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This is the same callback as \doxylink{classfirebase_1_1_future_base_a6815dec3b1f3648b01c01f0447560fe6}{Future\+Base\+::\+On\+Completion()}, so you can\textquotesingle{}t expect to set both and have both run; again, only the most recently registered one will run. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_future_a929c5e38f16e07c531ba0641d0139262}\index{firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}!result@{result}}
+\index{result@{result}!firebase::Future$<$ ResultType $>$@{firebase::Future$<$ ResultType $>$}}
+\doxysubsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_future_a929c5e38f16e07c531ba0641d0139262} 
+template$<$typename Result\+Type $>$ \\
+const Result\+Type \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_future}{firebase\+::\+Future}}$<$ Result\+Type $>$\+::result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Result of the asynchronous call, or nullptr if the result is still pending. Allows the API to provide a type-\/specific interface. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/future.\+h\end{DoxyCompactItemize}

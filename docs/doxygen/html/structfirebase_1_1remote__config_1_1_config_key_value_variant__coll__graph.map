@@ -1,0 +1,5 @@
+<map id="firebase::remote_config::ConfigKeyValueVariant" name="firebase::remote_config::ConfigKeyValueVariant">
+<area shape="rect" id="Node000001" title="Describes a mapping of a key to a value of any type. Used to set default values." alt="" coords="5,96,168,139"/>
+<area shape="rect" id="Node000002" href="$classfirebase_1_1_variant.html" title="Variant data type used by Firebase libraries." alt="" coords="29,5,144,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,48,89,95,84,95,84,48"/>
+</map>

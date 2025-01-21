@@ -1,0 +1,63 @@
+\doxysection{standard\+\_\+message\+\_\+codec.\+h}
+\hypertarget{standard__message__codec_8h_source}{}\label{standard__message__codec_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/standard\_message\_codec.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/standard\_message\_codec.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_MESSAGE\_CODEC\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_MESSAGE\_CODEC\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}encodable\_value.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}message\_codec.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}standard\_codec\_serializer.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ A\ binary\ message\ encoding/decoding\ mechanism\ for\ communications\ to/from\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Flutter\ engine\ via\ message\ channels.}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec}}<EncodableValue>\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Returns\ an\ instance\ of\ the\ codec,\ optionally\ using\ a\ custom\ serializer\ to}}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ add\ support\ for\ more\ types.}}
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ If\ provided,\ |serializer|\ must\ be\ long-\/lived.\ If\ no\ serializer\ is\ provided,}}
+\DoxyCodeLine{00024\ \ \ \textcolor{comment}{//\ the\ default\ will\ be\ used.}}
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ The\ instance\ returned\ for\ a\ given\ |serializer|\ will\ be\ shared,\ and}}
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ any\ instance\ returned\ from\ this\ will\ be\ long-\/lived,\ and\ can\ be\ safely}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ passed\ to,\ e.g.,\ channel\ constructors.}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}\&\ GetInstance(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}*\ serializer\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_message_codec}{\string~StandardMessageCodec}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}(\mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ |flutter::MessageCodec|}}
+\DoxyCodeLine{00040\ \ \ std::unique\_ptr<EncodableValue>\ DecodeMessageInternal(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ binary\_message,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ message\_size)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ |flutter::MessageCodec|}}
+\DoxyCodeLine{00045\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeMessageInternal(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}\&\ message)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Instances\ should\ be\ obtained\ via\ GetInstance.}}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_standard_message_codec}{StandardMessageCodec}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}*\ serializer);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}*\ serializer\_;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_MESSAGE\_CODEC\_H\_}}
+
+\end{DoxyCode}

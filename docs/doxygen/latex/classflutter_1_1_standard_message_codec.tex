@@ -1,0 +1,85 @@
+\doxysection{flutter\+::Standard\+Message\+Codec Class Reference}
+\hypertarget{classflutter_1_1_standard_message_codec}{}\label{classflutter_1_1_standard_message_codec}\index{flutter::StandardMessageCodec@{flutter::StandardMessageCodec}}
+
+
+Inheritance diagram for flutter\+::Standard\+Message\+Codec\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classflutter_1_1_standard_message_codec__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Standard\+Message\+Codec\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classflutter_1_1_standard_message_codec__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_standard_message_codec_addc0228dd81114487b08224c035612c6}\label{classflutter_1_1_standard_message_codec_addc0228dd81114487b08224c035612c6} 
+{\bfseries Standard\+Message\+Codec} (\mbox{\hyperlink{classflutter_1_1_standard_message_codec}{Standard\+Message\+Codec}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_standard_message_codec_aa7d32f53de8a340825ac29dde96af980}\label{classflutter_1_1_standard_message_codec_aa7d32f53de8a340825ac29dde96af980} 
+\mbox{\hyperlink{classflutter_1_1_standard_message_codec}{Standard\+Message\+Codec}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_standard_message_codec}{Standard\+Message\+Codec}} const \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_message_codec}{flutter\+::\+Message\+Codec$<$ Encodable\+Value $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Message\+Codec} (\mbox{\hyperlink{classflutter_1_1_message_codec}{Message\+Codec}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ const \&)=delete
+\item 
+\mbox{\hyperlink{classflutter_1_1_message_codec}{Message\+Codec}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_message_codec}{Message\+Codec}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ const \&)=delete
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ {\bfseries Decode\+Message} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}binary\+\_\+message, const size\+\_\+t message\+\_\+size) const
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ {\bfseries Decode\+Message} (const std\+::vector$<$ uint8\+\_\+t $>$ \&binary\+\_\+message) const
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Message} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \&message) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_standard_message_codec_a823d304fb0b4b9789e28085cf01bac59}\label{classflutter_1_1_standard_message_codec_a823d304fb0b4b9789e28085cf01bac59} 
+static const \mbox{\hyperlink{classflutter_1_1_standard_message_codec}{Standard\+Message\+Codec}} \& {\bfseries Get\+Instance} (const \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{Standard\+Codec\+Serializer}} \texorpdfstring{$\ast$}{*}serializer=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \mbox{\hyperlink{classflutter_1_1_standard_message_codec_ad3070f61ad66f8febe96c386934ef48b}{Decode\+Message\+Internal}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}binary\+\_\+message, const size\+\_\+t message\+\_\+size) const override
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classflutter_1_1_standard_message_codec_ade30bb7e4343a56caf7383dd69c79009}{Encode\+Message\+Internal}} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \&message) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_message_codec}{flutter\+::\+Message\+Codec$<$ Encodable\+Value $>$}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflutter_1_1_standard_message_codec_ad3070f61ad66f8febe96c386934ef48b}\index{flutter::StandardMessageCodec@{flutter::StandardMessageCodec}!DecodeMessageInternal@{DecodeMessageInternal}}
+\index{DecodeMessageInternal@{DecodeMessageInternal}!flutter::StandardMessageCodec@{flutter::StandardMessageCodec}}
+\doxysubsubsection{\texorpdfstring{DecodeMessageInternal()}{DecodeMessageInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_message_codec_ad3070f61ad66f8febe96c386934ef48b} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ flutter\+::\+Standard\+Message\+Codec\+::\+Decode\+Message\+Internal (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{binary\+\_\+message}{, }\item[{const size\+\_\+t}]{message\+\_\+size}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_message_codec}{flutter\+::\+Message\+Codec$<$ Encodable\+Value $>$}}.
+
+\Hypertarget{classflutter_1_1_standard_message_codec_ade30bb7e4343a56caf7383dd69c79009}\index{flutter::StandardMessageCodec@{flutter::StandardMessageCodec}!EncodeMessageInternal@{EncodeMessageInternal}}
+\index{EncodeMessageInternal@{EncodeMessageInternal}!flutter::StandardMessageCodec@{flutter::StandardMessageCodec}}
+\doxysubsubsection{\texorpdfstring{EncodeMessageInternal()}{EncodeMessageInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_message_codec_ade30bb7e4343a56caf7383dd69c79009} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ flutter\+::\+Standard\+Message\+Codec\+::\+Encode\+Message\+Internal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \&}]{message}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_message_codec}{flutter\+::\+Message\+Codec$<$ Encodable\+Value $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/standard\+\_\+message\+\_\+codec.\+h\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/standard\+\_\+codec.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,203 @@
+\doxysection{common.\+h}
+\hypertarget{functions_2common_8h_source}{}\label{functions_2common_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/functions/common.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/functions/common.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2017\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FUNCTIONS\_SRC\_INCLUDE\_FIREBASE\_FUNCTIONS\_COMMON\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_FUNCTIONS\_SRC\_INCLUDE\_FIREBASE\_FUNCTIONS\_COMMON\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }functions\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1functions_a8cbb832337f47849db19b2d5e0cba4f0}{Error}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ LINT.IfChange}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ Not\ an\ error;\ returned\ on\ success}}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 200\ OK}}
+\DoxyCodeLine{00034\ \ \ kErrorNone\ =\ 0,}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ The\ operation\ was\ cancelled,\ typically\ by\ the\ caller.}}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 499\ Client\ Closed\ Request}}
+\DoxyCodeLine{00039\ \ \ kErrorCancelled\ =\ 1,}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ Unknown\ error.\ \ For\ example,\ this\ error\ may\ be\ returned\ when}}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ a\ \`{}Status`\ value\ received\ from\ another\ address\ space\ belongs\ to}}
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ an\ error\ space\ that\ is\ not\ known\ in\ this\ address\ space.\ \ Also}}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ errors\ raised\ by\ APIs\ that\ do\ not\ return\ enough\ error\ information}}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ may\ be\ converted\ to\ this\ error.}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 500\ Internal\ Server\ Error}}
+\DoxyCodeLine{00048\ \ \ kErrorUnknown\ =\ 2,}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ The\ client\ specified\ an\ invalid\ argument.\ \ Note\ that\ this\ differs}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ from\ \`{}FAILED\_PRECONDITION`.\ \ \`{}INVALID\_ARGUMENT`\ indicates\ arguments}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ that\ are\ problematic\ regardless\ of\ the\ state\ of\ the\ system}}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ (e.g.,\ a\ malformed\ file\ name).}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 400\ Bad\ Request}}
+\DoxyCodeLine{00056\ \ \ kErrorInvalidArgument\ =\ 3,}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ The\ deadline\ expired\ before\ the\ operation\ could\ complete.\ For\ operations}}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ that\ change\ the\ state\ of\ the\ system,\ this\ error\ may\ be\ returned}}
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ even\ if\ the\ operation\ has\ completed\ successfully.\ \ For\ example,\ a}}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ successful\ response\ from\ a\ server\ could\ have\ been\ delayed\ long}}
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ enough\ for\ the\ deadline\ to\ expire.}}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 504\ Gateway\ Timeout}}
+\DoxyCodeLine{00065\ \ \ kErrorDeadlineExceeded\ =\ 4,}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Some\ requested\ entity\ (e.g.,\ file\ or\ directory)\ was\ not\ found.}}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ Note\ to\ server\ developers:\ if\ a\ request\ is\ denied\ for\ an\ entire\ class}}
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ of\ users,\ such\ as\ gradual\ feature\ rollout\ or\ undocumented\ whitelist,}}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ \`{}NOT\_FOUND`\ may\ be\ used.\ If\ a\ request\ is\ denied\ for\ some\ users\ within}}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ a\ class\ of\ users,\ such\ as\ user-\/based\ access\ control,\ \`{}PERMISSION\_DENIED`}}
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ must\ be\ used.}}
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 404\ Not\ Found}}
+\DoxyCodeLine{00076\ \ \ kErrorNotFound\ =\ 5,}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ The\ entity\ that\ a\ client\ attempted\ to\ create\ (e.g.,\ file\ or\ directory)}}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ already\ exists.}}
+\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 409\ Conflict}}
+\DoxyCodeLine{00082\ \ \ kErrorAlreadyExists\ =\ 6,}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ The\ caller\ does\ not\ have\ permission\ to\ execute\ the\ specified}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ operation.\ \`{}PERMISSION\_DENIED`\ must\ not\ be\ used\ for\ rejections}}
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ caused\ by\ exhausting\ some\ resource\ (use\ \`{}RESOURCE\_EXHAUSTED`}}
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ instead\ for\ those\ errors).\ \`{}PERMISSION\_DENIED`\ must\ not\ be}}
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ used\ if\ the\ caller\ can\ not\ be\ identified\ (use\ \`{}UNAUTHENTICATED`}}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ instead\ for\ those\ errors).\ This\ error\ code\ does\ not\ imply\ the}}
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ request\ is\ valid\ or\ the\ requested\ entity\ exists\ or\ satisfies}}
+\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ other\ pre-\/conditions.}}
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00093\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 403\ Forbidden}}
+\DoxyCodeLine{00094\ \ \ kErrorPermissionDenied\ =\ 7,}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ The\ request\ does\ not\ have\ valid\ authentication\ credentials\ for\ the}}
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ operation.}}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 401\ Unauthorized}}
+\DoxyCodeLine{00100\ \ \ kErrorUnauthenticated\ =\ 16,}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//\ Some\ resource\ has\ been\ exhausted,\ perhaps\ a\ per-\/user\ quota,\ or}}
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ perhaps\ the\ entire\ file\ system\ is\ out\ of\ space.}}
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 429\ Too\ Many\ Requests}}
+\DoxyCodeLine{00106\ \ \ kErrorResourceExhausted\ =\ 8,}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ The\ operation\ was\ rejected\ because\ the\ system\ is\ not\ in\ a\ state}}
+\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ required\ for\ the\ operation's\ execution.\ \ For\ example,\ the\ directory}}
+\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ to\ be\ deleted\ is\ non-\/empty,\ an\ rmdir\ operation\ is\ applied\ to}}
+\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ a\ non-\/directory,\ etc.}}
+\DoxyCodeLine{00112\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00113\ \ \ \textcolor{comment}{//\ Service\ implementors\ can\ use\ the\ following\ guidelines\ to\ decide}}
+\DoxyCodeLine{00114\ \ \ \textcolor{comment}{//\ between\ \`{}FAILED\_PRECONDITION`,\ \`{}ABORTED`,\ and\ \`{}UNAVAILABLE`:}}
+\DoxyCodeLine{00115\ \ \ \textcolor{comment}{//\ \ (a)\ Use\ \`{}UNAVAILABLE`\ if\ the\ client\ can\ retry\ just\ the\ failing\ call.}}
+\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ \ (b)\ Use\ \`{}ABORTED`\ if\ the\ client\ should\ retry\ at\ a\ higher\ level}}
+\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//\ \ \ \ \ \ (e.g.,\ when\ a\ client-\/specified\ test-\/and-\/set\ fails,\ indicating\ the}}
+\DoxyCodeLine{00118\ \ \ \textcolor{comment}{//\ \ \ \ \ \ client\ should\ restart\ a\ read-\/modify-\/write\ sequence).}}
+\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ \ (c)\ Use\ \`{}FAILED\_PRECONDITION`\ if\ the\ client\ should\ not\ retry\ until}}
+\DoxyCodeLine{00120\ \ \ \textcolor{comment}{//\ \ \ \ \ \ the\ system\ state\ has\ been\ explicitly\ fixed.\ \ E.g.,\ if\ an\ "{}rmdir"{}}}
+\DoxyCodeLine{00121\ \ \ \textcolor{comment}{//\ \ \ \ \ \ fails\ because\ the\ directory\ is\ non-\/empty,\ \`{}FAILED\_PRECONDITION`}}
+\DoxyCodeLine{00122\ \ \ \textcolor{comment}{//\ \ \ \ \ \ should\ be\ returned\ since\ the\ client\ should\ not\ retry\ unless}}
+\DoxyCodeLine{00123\ \ \ \textcolor{comment}{//\ \ \ \ \ \ the\ files\ are\ deleted\ from\ the\ directory.}}
+\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00125\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 400\ Bad\ Request}}
+\DoxyCodeLine{00126\ \ \ kErrorFailedPrecondition\ =\ 9,}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{comment}{//\ The\ operation\ was\ aborted,\ typically\ due\ to\ a\ concurrency\ issue\ such\ as}}
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ a\ sequencer\ check\ failure\ or\ transaction\ abort.}}
+\DoxyCodeLine{00130\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ See\ the\ guidelines\ above\ for\ deciding\ between\ \`{}FAILED\_PRECONDITION`,}}
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ \`{}ABORTED`,\ and\ \`{}UNAVAILABLE`.}}
+\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 409\ Conflict}}
+\DoxyCodeLine{00135\ \ \ kErrorAborted\ =\ 10,}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \textcolor{comment}{//\ The\ operation\ was\ attempted\ past\ the\ valid\ range.\ \ E.g.,\ seeking\ or}}
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//\ reading\ past\ end-\/of-\/file.}}
+\DoxyCodeLine{00139\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{//\ Unlike\ \`{}INVALID\_ARGUMENT`,\ this\ error\ indicates\ a\ problem\ that\ may}}
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ be\ fixed\ if\ the\ system\ state\ changes.\ For\ example,\ a\ 32-\/bit\ file}}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ system\ will\ generate\ \`{}INVALID\_ARGUMENT`\ if\ asked\ to\ read\ at\ an}}
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ offset\ that\ is\ not\ in\ the\ range\ [0,2\string^32-\/1],\ but\ it\ will\ generate}}
+\DoxyCodeLine{00144\ \ \ \textcolor{comment}{//\ \`{}OUT\_OF\_RANGE`\ if\ asked\ to\ read\ from\ an\ offset\ past\ the\ current}}
+\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ file\ size.}}
+\DoxyCodeLine{00146\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ There\ is\ a\ fair\ bit\ of\ overlap\ between\ \`{}FAILED\_PRECONDITION`\ and}}
+\DoxyCodeLine{00148\ \ \ \textcolor{comment}{//\ \`{}OUT\_OF\_RANGE`.\ \ We\ recommend\ using\ \`{}OUT\_OF\_RANGE`\ (the\ more\ specific}}
+\DoxyCodeLine{00149\ \ \ \textcolor{comment}{//\ error)\ when\ it\ applies\ so\ that\ callers\ who\ are\ iterating\ through}}
+\DoxyCodeLine{00150\ \ \ \textcolor{comment}{//\ a\ space\ can\ easily\ look\ for\ an\ \`{}OUT\_OF\_RANGE`\ error\ to\ detect\ when}}
+\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//\ they\ are\ done.}}
+\DoxyCodeLine{00152\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00153\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 400\ Bad\ Request}}
+\DoxyCodeLine{00154\ \ \ kErrorOutOfRange\ =\ 11,}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{comment}{//\ The\ operation\ is\ not\ implemented\ or\ is\ not\ supported/enabled\ in\ this}}
+\DoxyCodeLine{00157\ \ \ \textcolor{comment}{//\ service.}}
+\DoxyCodeLine{00158\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00159\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 501\ Not\ Implemented}}
+\DoxyCodeLine{00160\ \ \ kErrorUnimplemented\ =\ 12,}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{comment}{//\ Internal\ errors.\ \ This\ means\ that\ some\ invariants\ expected\ by\ the}}
+\DoxyCodeLine{00163\ \ \ \textcolor{comment}{//\ underlying\ system\ have\ been\ broken.\ \ This\ error\ code\ is\ reserved}}
+\DoxyCodeLine{00164\ \ \ \textcolor{comment}{//\ for\ serious\ errors.}}
+\DoxyCodeLine{00165\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00166\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 500\ Internal\ Server\ Error}}
+\DoxyCodeLine{00167\ \ \ kErrorInternal\ =\ 13,}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{comment}{//\ The\ service\ is\ currently\ unavailable.\ \ This\ is\ most\ likely\ a}}
+\DoxyCodeLine{00170\ \ \ \textcolor{comment}{//\ transient\ condition,\ which\ can\ be\ corrected\ by\ retrying\ with}}
+\DoxyCodeLine{00171\ \ \ \textcolor{comment}{//\ a\ backoff.}}
+\DoxyCodeLine{00172\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00173\ \ \ \textcolor{comment}{//\ See\ the\ guidelines\ above\ for\ deciding\ between\ \`{}FAILED\_PRECONDITION`,}}
+\DoxyCodeLine{00174\ \ \ \textcolor{comment}{//\ \`{}ABORTED`,\ and\ \`{}UNAVAILABLE`.}}
+\DoxyCodeLine{00175\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00176\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 503\ Service\ Unavailable}}
+\DoxyCodeLine{00177\ \ \ kErrorUnavailable\ =\ 14,}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \textcolor{comment}{//\ Unrecoverable\ data\ loss\ or\ corruption.}}
+\DoxyCodeLine{00180\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00181\ \ \ \textcolor{comment}{//\ HTTP\ Mapping:\ 500\ Internal\ Server\ Error}}
+\DoxyCodeLine{00182\ \ \ kErrorDataLoss\ =\ 15,}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#ifdef\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00188\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ Get\ the\ human-\/readable\ error\ message\ corresponding\ to\ an\ error\ code.}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ Returns\ a\ statically-\/allocated\ string\ describing\ the\ error\ code\ you\ pass\ in.}}
+\DoxyCodeLine{00193\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetErrorMessage(Error\ error);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \}\ \ \textcolor{comment}{//\ namespace\ functions}}
+\DoxyCodeLine{00200\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FUNCTIONS\_SRC\_INCLUDE\_FIREBASE\_FUNCTIONS\_COMMON\_H\_}}
+
+\end{DoxyCode}

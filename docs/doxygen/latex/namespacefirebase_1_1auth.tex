@@ -1,0 +1,592 @@
+\doxysection{firebase\+::auth Namespace Reference}
+\hypertarget{namespacefirebase_1_1auth}{}\label{namespacefirebase_1_1auth}\index{firebase::auth@{firebase::auth}}
+
+
+Firebase Authentication API.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info}{Additional\+User\+Info}}
+\begin{DoxyCompactList}\small\item\em Additional user data returned from an identity provider. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}}
+\begin{DoxyCompactList}\small\item\em Firebase authentication object. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of operations that can affect authentication state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_auth_state_listener}{Auth\+State\+Listener}}
+\begin{DoxyCompactList}\small\item\em Listener called when there is a change in the authentication state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}}
+\begin{DoxyCompactList}\small\item\em Authentication credentials for an authentication provider. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_email_auth_provider}{Email\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use email and password to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_facebook_auth_provider}{Facebook\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use an access token provided by Facebook to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{Federated\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Used to authenticate with Federated \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} Providers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_o_auth_provider}{Federated\+OAuth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Authenticates with Federated OAuth Providers via the \doxylink{classfirebase_1_1auth_1_1_auth}{firebase\+::auth\+::\+Auth} and \doxylink{classfirebase_1_1auth_1_1_user}{firebase\+::auth\+::\+User} classes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{Federated\+OAuth\+Provider\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains information to identify an OAuth povider. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data}{Federated\+Provider\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains information required to authenticate with a third party provider. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_game_center_auth_provider}{Game\+Center\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Game\+Center (Apple) auth provider. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_git_hub_auth_provider}{Git\+Hub\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use an access token provided by Git\+Hub to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_google_auth_provider}{Google\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use an ID token and access token provided by Google to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_id_token_listener}{Id\+Token\+Listener}}
+\begin{DoxyCompactList}\small\item\em Listener called when there is a change in the ID token. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_microsoft_auth_provider}{Microsoft\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use an access token provided by Microsoft to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_o_auth_provider}{OAuth\+Provider}}
+\begin{DoxyCompactList}\small\item\em OAuth2.\+0+User\+Info auth provider (OIDC compliant and non-\/compliant). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}}
+\begin{DoxyCompactList}\small\item\em Wraps phone number and verification information for authentication purposes. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_phone_auth_options}{Phone\+Auth\+Options}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use phone number text messages to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_play_games_auth_provider}{Play\+Games\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use a server auth code provided by Google Play Games to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_twitter_auth_provider}{Twitter\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use a token and secret provided by Twitter to authenticate. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}
+\begin{DoxyCompactList}\small\item\em Firebase user account object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{User\+Info\+Interface}}
+\begin{DoxyCompactList}\small\item\em Interface implemented by each identity provider. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata}{User\+Metadata}}
+\begin{DoxyCompactList}\small\item\em Metadata corresponding to a Firebase user. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_yahoo_auth_provider}{Yahoo\+Auth\+Provider}}
+\begin{DoxyCompactList}\small\item\em Use an access token provided by Yahoo to authenticate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacefirebase_1_1auth_a9b38b42e47035c229760f293282a5664}\label{namespacefirebase_1_1auth_a9b38b42e47035c229760f293282a5664} 
+typedef void \texorpdfstring{$\ast$}{*} {\bfseries UIParent}
+\begin{DoxyCompactList}\small\item\em A void pointer for stub classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209}{Auth\+Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac77c1c9da510b8948b7d957daf25f9cb}{k\+Auth\+Error\+None}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209abde429faece81ae26b8bd422d0ae660e}{k\+Auth\+Error\+Unimplemented}} = -\/1
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4b782cb43abed1bfbacee12c933cba48}{k\+Auth\+Error\+Failure}} = 1
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0fa75771e138ec22bd303c8f9270c763}{k\+Auth\+Error\+Invalid\+Custom\+Token}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad0fea05349f4f6b33a786eeba8ceef30}{k\+Auth\+Error\+Custom\+Token\+Mismatch}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1a9585629f4d0b023b407f205744aa11}{k\+Auth\+Error\+Invalid\+Credential}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa3184632433c01f9a03ada25922600e2}{k\+Auth\+Error\+User\+Disabled}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aded75a1fe4ec02772c4fdd92adb6f6ed}{k\+Auth\+Error\+Account\+Exists\+With\+Different\+Credentials}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a24cba13534fe10b0885996016841f749}{k\+Auth\+Error\+Operation\+Not\+Allowed}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae2f14751f864ebb5c82a0968a8ddbdf3}{k\+Auth\+Error\+Email\+Already\+In\+Use}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a65aea9f6e3c992391d7f1f9ea0786fbf}{k\+Auth\+Error\+Requires\+Recent\+Login}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1a2b7d234b5acc2dca55d1061edfb68f}{k\+Auth\+Error\+Credential\+Already\+In\+Use}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9da4384adbfbee95abd887ae4b721790}{k\+Auth\+Error\+Invalid\+Email}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a295df9a8a78d03f0a5057ee22454461a}{k\+Auth\+Error\+Wrong\+Password}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae111405ead13ea3ae37782445f31e250}{k\+Auth\+Error\+Too\+Many\+Requests}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba42d546585df64ffed8be857f4e1fa8}{k\+Auth\+Error\+User\+Not\+Found}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa388c4f59c21e6ff28a5fbe6c32e9e1a}{k\+Auth\+Error\+Provider\+Already\+Linked}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a5cbc57b8221b6af50b99e092c4c5b3d7}{k\+Auth\+Error\+No\+Such\+Provider}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a54586f39a02f5f0880876b2de44b3e03}{k\+Auth\+Error\+Invalid\+User\+Token}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0e3f846ccebc25cd41a6d90b4e3c5d5a}{k\+Auth\+Error\+User\+Token\+Expired}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa021ca8790784f27135e87f9f2f080d6}{k\+Auth\+Error\+Network\+Request\+Failed}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0a9da05ae06149cc5258bec3eeba1e54}{k\+Auth\+Error\+Invalid\+Api\+Key}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a93c0a6044b448542958de7501c158e93}{k\+Auth\+Error\+App\+Not\+Authorized}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209af5ac8d0cf7d0d28f9add4d7adfc43a22}{k\+Auth\+Error\+User\+Mismatch}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a056bb1c727b98f9649493c650faacb33}{k\+Auth\+Error\+Weak\+Password}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a851f594b0cadcfaf989b0423556ababd}{k\+Auth\+Error\+No\+Signed\+In\+User}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a2231568bd06a573836dddfa51db442d2}{k\+Auth\+Error\+Api\+Not\+Available}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a914a15a72bd6c412769bab05293c1e26}{k\+Auth\+Error\+Expired\+Action\+Code}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aaf6042bfc9278101d64b5b513756b8b3}{k\+Auth\+Error\+Invalid\+Action\+Code}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a3fc1a873b787f82aedbb8c9c655c9d7e}{k\+Auth\+Error\+Invalid\+Message\+Payload}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba8dadab3e8f6a6e6e9b9a4e4d255cde}{k\+Auth\+Error\+Invalid\+Phone\+Number}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a09cece828147c74426e866af4cc9b81f}{k\+Auth\+Error\+Missing\+Phone\+Number}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba6bb51435cbc786f68607f67cd2abe3}{k\+Auth\+Error\+Invalid\+Recipient\+Email}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aeec600a0d13daaa6bcde3e5b4ce30aff}{k\+Auth\+Error\+Invalid\+Sender}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a136dce28a38e2cf9d54bba69de915380}{k\+Auth\+Error\+Invalid\+Verification\+Code}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aacb4f7fb14206544f4c4a6265cf499d9}{k\+Auth\+Error\+Invalid\+Verification\+Id}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac5c097ff80d51c0f9e29a338a3cdb5e9}{k\+Auth\+Error\+Missing\+Verification\+Code}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a53f230eb30d37fd3ceacb3a57c40fb77}{k\+Auth\+Error\+Missing\+Verification\+Id}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4e3d6a76f624c8dddb3cc420df20930a}{k\+Auth\+Error\+Missing\+Email}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a60b2d04e680dceb10a1ac7f365e02654}{k\+Auth\+Error\+Missing\+Password}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a059c1463e0bd2198ec69a4ebeea30b51}{k\+Auth\+Error\+Quota\+Exceeded}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae0343393fc62fa5c23512512b411a140}{k\+Auth\+Error\+Retry\+Phone\+Auth}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac56e94ec0d5c1daf7866ccfa9a0097a9}{k\+Auth\+Error\+Session\+Expired}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0f875b8e9b150f72f0d91cb0e57548e5}{k\+Auth\+Error\+App\+Not\+Verified}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a19e6e66d9082d3a283d316c2af426570}{k\+Auth\+Error\+App\+Verification\+Failed}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ab55e451ad437644ef04efe0baeaccef3}{k\+Auth\+Error\+Captcha\+Check\+Failed}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a041283d4295c7f2ec117a118a9d5cde5}{k\+Auth\+Error\+Invalid\+App\+Credential}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209afd45ab2a753125dd6292e8883ea42c64}{k\+Auth\+Error\+Missing\+App\+Credential}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a6787c9c279563033ef6a776ec82d4c4b}{k\+Auth\+Error\+Invalid\+Client\+Id}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1affb6751704856a86578119cf4ddc5a}{k\+Auth\+Error\+Invalid\+Continue\+Uri}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aac538586c8732846441479039b5b0469}{k\+Auth\+Error\+Missing\+Continue\+Uri}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9d08b83e2622b827795f88d5360d74c9}{k\+Auth\+Error\+Keychain\+Error}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a8900d0709062a378070d32a8086d6a05}{k\+Auth\+Error\+Missing\+App\+Token}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9e1057211536efe5c7f0abaf0652daeb}{k\+Auth\+Error\+Missing\+Ios\+Bundle\+Id}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209abc88140e85eb0d742519d731ee84f1e7}{k\+Auth\+Error\+Notification\+Not\+Forwarded}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209acba84e729721bb45feef22a92eb059c3}{k\+Auth\+Error\+Unauthorized\+Domain}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a203ae13b4ff3b586ac1004721872a062}{k\+Auth\+Error\+Web\+Context\+Already\+Presented}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a202c80b683ab1f3cdb110bc88a7c51ae}{k\+Auth\+Error\+Web\+Context\+Cancelled}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae2a105a3ee3f6f89df9d640248f34b58}{k\+Auth\+Error\+Dynamic\+Link\+Not\+Activated}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0995e1b27cf9465ab00cacd955218e61}{k\+Auth\+Error\+Cancelled}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a8fea051b6cf6616430238bffd664d83e}{k\+Auth\+Error\+Invalid\+Provider\+Id}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a20dafc97000f5b43e304543967886884}{k\+Auth\+Error\+Web\+Internal\+Error}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a7030452b176d0447c00f522552646772}{k\+Auth\+Error\+Web\+Storate\+Unsupported}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209af518b4a0fc63506bfa2cba2775faecbf}{k\+Auth\+Error\+Tenant\+Id\+Mismatch}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a7972f6a84cb9c6671ec8c7677ee555b1}{k\+Auth\+Error\+Unsupported\+Tenant\+Operation}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4b3ea4a479ec62db7089a1679db5dea7}{k\+Auth\+Error\+Invalid\+Link\+Domain}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a96edd9849c89f2c90970309271085f65}{k\+Auth\+Error\+Rejected\+Credential}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209adcaa76bb4a1c536e32bd836f94d244da}{k\+Auth\+Error\+Phone\+Number\+Not\+Found}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a84a35f30b45c323c240dda6a0a36a427}{k\+Auth\+Error\+Invalid\+Tenant\+Id}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a869f8dd57ac4d783c7c279a69c835530}{k\+Auth\+Error\+Missing\+Client\+Identifier}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad3b20d19b2ec4aaeb10433a8e7107497}{k\+Auth\+Error\+Missing\+Multi\+Factor\+Session}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209acc6c4550fe0d47fe137699a57e07c3a7}{k\+Auth\+Error\+Missing\+Multi\+Factor\+Info}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a205d15406bf5d0e45ee4dc8355601335}{k\+Auth\+Error\+Invalid\+Multi\+Factor\+Session}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac39a0da2da47daee7318e600cb2d2d6a}{k\+Auth\+Error\+Multi\+Factor\+Info\+Not\+Found}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad85a6ff834625a56ac705cd7981f035a}{k\+Auth\+Error\+Admin\+Restricted\+Operation}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aead8acdca29c280daeb1b4a1a732b1cf}{k\+Auth\+Error\+Unverified\+Email}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a36d6952ca8ed38c4e9c7c081e463917a}{k\+Auth\+Error\+Second\+Factor\+Already\+Enrolled}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a30dca098f11052386db59bbcee8f6466}{k\+Auth\+Error\+Maximum\+Second\+Factor\+Count\+Exceeded}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ada31496c9c1208ae265ae1f7b967c123}{k\+Auth\+Error\+Unsupported\+First\+Factor}}
+, \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a16e0424fc7a491dc92ff3df203fd8b4b}{k\+Auth\+Error\+Email\+Change\+Needs\+Verification}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase Authentication API. 
+
+Firebase Authentication provides backend services to securely authenticate users. It can authenticate users using passwords and federated identity provider credentials, and it can integrate with a custom auth backend. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209}\index{firebase::auth@{firebase::auth}!AuthError@{AuthError}}
+\index{AuthError@{AuthError}!firebase::auth@{firebase::auth}}
+\doxysubsubsection{\texorpdfstring{AuthError}{AuthError}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+enum \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209}{firebase\+::auth\+::\+Auth\+Error}}}
+
+All possible error codes from asynchronous calls. For error details,  $<$\+SWIG$>$  $<$/\+SWIG$>$ \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorNone@{kAuthErrorNone}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorNone@{kAuthErrorNone}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac77c1c9da510b8948b7d957daf25f9cb}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+None&Success. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUnimplemented@{kAuthErrorUnimplemented}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUnimplemented@{kAuthErrorUnimplemented}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209abde429faece81ae26b8bd422d0ae660e}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Unimplemented&Function will be implemented in a later revision of the API. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorFailure@{kAuthErrorFailure}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorFailure@{kAuthErrorFailure}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4b782cb43abed1bfbacee12c933cba48}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Failure&This indicates an internal error. Common error code for all API Methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidCustomToken@{kAuthErrorInvalidCustomToken}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidCustomToken@{kAuthErrorInvalidCustomToken}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0fa75771e138ec22bd303c8f9270c763}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Custom\+Token&Indicates a validation error with the custom token. This error originates from "{}bring your own auth"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorCustomTokenMismatch@{kAuthErrorCustomTokenMismatch}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorCustomTokenMismatch@{kAuthErrorCustomTokenMismatch}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad0fea05349f4f6b33a786eeba8ceef30}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Custom\+Token\+Mismatch&Indicates the service account and the API key belong to different projects. Caused by "{}\+Bring your own auth"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidCredential@{kAuthErrorInvalidCredential}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidCredential@{kAuthErrorInvalidCredential}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1a9585629f4d0b023b407f205744aa11}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Credential&Indicates the IDP token or request\+Uri is invalid. Caused by "{}\+Sign in with credential"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUserDisabled@{kAuthErrorUserDisabled}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUserDisabled@{kAuthErrorUserDisabled}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa3184632433c01f9a03ada25922600e2}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+User\+Disabled&Indicates the user’s account is disabled on the server. Caused by "{}\+Sign in with credential"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorAccountExistsWithDifferentCredentials@{kAuthErrorAccountExistsWithDifferentCredentials}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorAccountExistsWithDifferentCredentials@{kAuthErrorAccountExistsWithDifferentCredentials}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aded75a1fe4ec02772c4fdd92adb6f6ed}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Account\+Exists\+With\+Different\+Credentials&Indicates an account already exists with the same email address but using different sign-\/in credentials. Account linking is required. Caused by "{}\+Sign in with credential"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorOperationNotAllowed@{kAuthErrorOperationNotAllowed}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorOperationNotAllowed@{kAuthErrorOperationNotAllowed}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a24cba13534fe10b0885996016841f749}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Operation\+Not\+Allowed&Indicates the administrator disabled sign in with the specified identity provider. Caused by "{}\+Set account info"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorEmailAlreadyInUse@{kAuthErrorEmailAlreadyInUse}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorEmailAlreadyInUse@{kAuthErrorEmailAlreadyInUse}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae2f14751f864ebb5c82a0968a8ddbdf3}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Email\+Already\+In\+Use&Indicates the email used to attempt a sign up is already in use. Caused by "{}\+Set account info"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorRequiresRecentLogin@{kAuthErrorRequiresRecentLogin}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorRequiresRecentLogin@{kAuthErrorRequiresRecentLogin}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a65aea9f6e3c992391d7f1f9ea0786fbf}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Requires\+Recent\+Login&Indicates the user has attemped to change email or password more than 5 minutes after signing in, and will need to refresh the credentials. Caused by "{}\+Set account info"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorCredentialAlreadyInUse@{kAuthErrorCredentialAlreadyInUse}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorCredentialAlreadyInUse@{kAuthErrorCredentialAlreadyInUse}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1a2b7d234b5acc2dca55d1061edfb68f}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Credential\+Already\+In\+Use&Indicates an attempt to link with a credential that has already been linked with a different Firebase account. Caused by "{}\+Set account info"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidEmail@{kAuthErrorInvalidEmail}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidEmail@{kAuthErrorInvalidEmail}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9da4384adbfbee95abd887ae4b721790}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Email&Indicates an invalid email address. Caused by "{}\+Sign in with password"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorWrongPassword@{kAuthErrorWrongPassword}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorWrongPassword@{kAuthErrorWrongPassword}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a295df9a8a78d03f0a5057ee22454461a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Wrong\+Password&Indicates the user attempted sign in with a wrong password. Caused by "{}\+Sign in with password"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorTooManyRequests@{kAuthErrorTooManyRequests}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorTooManyRequests@{kAuthErrorTooManyRequests}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae111405ead13ea3ae37782445f31e250}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Too\+Many\+Requests&Indicates that too many requests were made to a server method. Common error code for all API methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUserNotFound@{kAuthErrorUserNotFound}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUserNotFound@{kAuthErrorUserNotFound}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba42d546585df64ffed8be857f4e1fa8}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+User\+Not\+Found&Indicates the user account was not found. Send password request email error code. Common error code for all API methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorProviderAlreadyLinked@{kAuthErrorProviderAlreadyLinked}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorProviderAlreadyLinked@{kAuthErrorProviderAlreadyLinked}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa388c4f59c21e6ff28a5fbe6c32e9e1a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Provider\+Already\+Linked&Indicates an attempt to link a provider to which the account is already linked. Caused by "{}\+Link credential"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorNoSuchProvider@{kAuthErrorNoSuchProvider}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorNoSuchProvider@{kAuthErrorNoSuchProvider}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a5cbc57b8221b6af50b99e092c4c5b3d7}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+No\+Such\+Provider&Indicates an attempt to unlink a provider that is not linked. Caused by "{}\+Link credential"{} methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidUserToken@{kAuthErrorInvalidUserToken}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidUserToken@{kAuthErrorInvalidUserToken}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a54586f39a02f5f0880876b2de44b3e03}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+User\+Token&Indicates user\textquotesingle{}s saved auth credential is invalid, the user needs to sign in again. Caused by requests with an STS id token. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUserTokenExpired@{kAuthErrorUserTokenExpired}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUserTokenExpired@{kAuthErrorUserTokenExpired}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0e3f846ccebc25cd41a6d90b4e3c5d5a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+User\+Token\+Expired&Indicates the saved token has expired. For example, the user may have changed account password on another device. The user needs to sign in again on the device that made this request. Caused by requests with an STS id token. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorNetworkRequestFailed@{kAuthErrorNetworkRequestFailed}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorNetworkRequestFailed@{kAuthErrorNetworkRequestFailed}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa021ca8790784f27135e87f9f2f080d6}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Network\+Request\+Failed&Indicates a network error occurred (such as a timeout, interrupted connection, or unreachable host). These types of errors are often recoverable with a retry. Common error code for all API Methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidApiKey@{kAuthErrorInvalidApiKey}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidApiKey@{kAuthErrorInvalidApiKey}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0a9da05ae06149cc5258bec3eeba1e54}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Api\+Key&Indicates an invalid API key was supplied in the request. For Android these should no longer occur (as of 2016 v3). Common error code for all API Methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorAppNotAuthorized@{kAuthErrorAppNotAuthorized}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorAppNotAuthorized@{kAuthErrorAppNotAuthorized}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a93c0a6044b448542958de7501c158e93}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+App\+Not\+Authorized&Indicates the \doxylink{classfirebase_1_1_app}{App} is not authorized to use Firebase Authentication with the provided API Key. Common error code for all API Methods. On Android this error should no longer occur (as of 2016 v3). Common error code for all API Methods. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUserMismatch@{kAuthErrorUserMismatch}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUserMismatch@{kAuthErrorUserMismatch}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209af5ac8d0cf7d0d28f9add4d7adfc43a22}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+User\+Mismatch&Indicates that an attempt was made to reauthenticate with a user which is not the current user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorWeakPassword@{kAuthErrorWeakPassword}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorWeakPassword@{kAuthErrorWeakPassword}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a056bb1c727b98f9649493c650faacb33}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Weak\+Password&Indicates an attempt to set a password that is considered too weak. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorNoSignedInUser@{kAuthErrorNoSignedInUser}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorNoSignedInUser@{kAuthErrorNoSignedInUser}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a851f594b0cadcfaf989b0423556ababd}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+No\+Signed\+In\+User&Internal api usage error code when there is no signed-\/in user and get\+Access\+Token is called.
+
+\begin{DoxyNote}{Note}
+This error is only reported on Android. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorApiNotAvailable@{kAuthErrorApiNotAvailable}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorApiNotAvailable@{kAuthErrorApiNotAvailable}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a2231568bd06a573836dddfa51db442d2}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Api\+Not\+Available&This can happen when certain methods on \doxylink{classfirebase_1_1_app}{App} are performed, when the auth API is not loaded.
+
+\begin{DoxyNote}{Note}
+This error is only reported on Android. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorExpiredActionCode@{kAuthErrorExpiredActionCode}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorExpiredActionCode@{kAuthErrorExpiredActionCode}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a914a15a72bd6c412769bab05293c1e26}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Expired\+Action\+Code&Indicates the out-\/of-\/band authentication code is expired. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidActionCode@{kAuthErrorInvalidActionCode}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidActionCode@{kAuthErrorInvalidActionCode}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aaf6042bfc9278101d64b5b513756b8b3}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Action\+Code&Indicates the out-\/of-\/band authentication code is invalid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidMessagePayload@{kAuthErrorInvalidMessagePayload}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidMessagePayload@{kAuthErrorInvalidMessagePayload}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a3fc1a873b787f82aedbb8c9c655c9d7e}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Message\+Payload&Indicates that there are invalid parameters in the payload during a "{}send password reset email"{} attempt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidPhoneNumber@{kAuthErrorInvalidPhoneNumber}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidPhoneNumber@{kAuthErrorInvalidPhoneNumber}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba8dadab3e8f6a6e6e9b9a4e4d255cde}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Phone\+Number&Indicates that an invalid phone number was provided. This is caused when the user is entering a phone number for verification. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingPhoneNumber@{kAuthErrorMissingPhoneNumber}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingPhoneNumber@{kAuthErrorMissingPhoneNumber}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a09cece828147c74426e866af4cc9b81f}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Phone\+Number&Indicates that a phone number was not provided during phone number verification.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidRecipientEmail@{kAuthErrorInvalidRecipientEmail}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidRecipientEmail@{kAuthErrorInvalidRecipientEmail}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba6bb51435cbc786f68607f67cd2abe3}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Recipient\+Email&Indicates that the recipient email is invalid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidSender@{kAuthErrorInvalidSender}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidSender@{kAuthErrorInvalidSender}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aeec600a0d13daaa6bcde3e5b4ce30aff}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Sender&Indicates that the sender email is invalid during a "{}send password reset email"{} attempt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidVerificationCode@{kAuthErrorInvalidVerificationCode}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidVerificationCode@{kAuthErrorInvalidVerificationCode}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a136dce28a38e2cf9d54bba69de915380}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Verification\+Code&Indicates that an invalid verification code was used in the verify\+Phone\+Number request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidVerificationId@{kAuthErrorInvalidVerificationId}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidVerificationId@{kAuthErrorInvalidVerificationId}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aacb4f7fb14206544f4c4a6265cf499d9}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Verification\+Id&Indicates that an invalid verification ID was used in the verify\+Phone\+Number request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingVerificationCode@{kAuthErrorMissingVerificationCode}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingVerificationCode@{kAuthErrorMissingVerificationCode}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac5c097ff80d51c0f9e29a338a3cdb5e9}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Verification\+Code&Indicates that the phone auth credential was created with an empty verification code. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingVerificationId@{kAuthErrorMissingVerificationId}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingVerificationId@{kAuthErrorMissingVerificationId}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a53f230eb30d37fd3ceacb3a57c40fb77}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Verification\+Id&Indicates that the phone auth credential was created with an empty verification ID. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingEmail@{kAuthErrorMissingEmail}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingEmail@{kAuthErrorMissingEmail}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4e3d6a76f624c8dddb3cc420df20930a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Email&Indicates that an email address was expected but one was not provided. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingPassword@{kAuthErrorMissingPassword}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingPassword@{kAuthErrorMissingPassword}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a60b2d04e680dceb10a1ac7f365e02654}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Password&Represents the error code for when an application attempts to create an email/password account with an empty/null password field.
+
+\begin{DoxyNote}{Note}
+This error is only reported on Android. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorQuotaExceeded@{kAuthErrorQuotaExceeded}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorQuotaExceeded@{kAuthErrorQuotaExceeded}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a059c1463e0bd2198ec69a4ebeea30b51}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Quota\+Exceeded&Indicates that the project\textquotesingle{}s quota for this operation (SMS messages, sign-\/ins, account creation) has been exceeded. Try again later. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorRetryPhoneAuth@{kAuthErrorRetryPhoneAuth}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorRetryPhoneAuth@{kAuthErrorRetryPhoneAuth}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae0343393fc62fa5c23512512b411a140}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Retry\+Phone\+Auth&Thrown when one or more of the credentials passed to a method fail to identify and/or authenticate the user subject of that operation. Inspect the error message to find out the specific cause. \begin{DoxyNote}{Note}
+This error is only reported on Android. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorSessionExpired@{kAuthErrorSessionExpired}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorSessionExpired@{kAuthErrorSessionExpired}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac56e94ec0d5c1daf7866ccfa9a0097a9}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Session\+Expired&Indicates that the SMS code has expired. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorAppNotVerified@{kAuthErrorAppNotVerified}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorAppNotVerified@{kAuthErrorAppNotVerified}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0f875b8e9b150f72f0d91cb0e57548e5}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+App\+Not\+Verified&Indicates that the app could not be verified by Firebase during phone number authentication.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorAppVerificationFailed@{kAuthErrorAppVerificationFailed}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorAppVerificationFailed@{kAuthErrorAppVerificationFailed}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a19e6e66d9082d3a283d316c2af426570}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+App\+Verification\+Failed&Indicates a general failure during the app verification flow.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorCaptchaCheckFailed@{kAuthErrorCaptchaCheckFailed}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorCaptchaCheckFailed@{kAuthErrorCaptchaCheckFailed}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ab55e451ad437644ef04efe0baeaccef3}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Captcha\+Check\+Failed&Indicates that the re\+CAPTCHA token is not valid.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidAppCredential@{kAuthErrorInvalidAppCredential}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidAppCredential@{kAuthErrorInvalidAppCredential}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a041283d4295c7f2ec117a118a9d5cde5}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+App\+Credential&Indicates that an invalid APNS device token was used in the verify\+Client request.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingAppCredential@{kAuthErrorMissingAppCredential}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingAppCredential@{kAuthErrorMissingAppCredential}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209afd45ab2a753125dd6292e8883ea42c64}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+App\+Credential&Indicates that the APNS device token is missing in the verify\+Client request.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidClientId@{kAuthErrorInvalidClientId}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidClientId@{kAuthErrorInvalidClientId}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a6787c9c279563033ef6a776ec82d4c4b}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Client\+Id&Indicates that the client\+ID used to invoke a web flow is invalid.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidContinueUri@{kAuthErrorInvalidContinueUri}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidContinueUri@{kAuthErrorInvalidContinueUri}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1affb6751704856a86578119cf4ddc5a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Continue\+Uri&Indicates that the domain specified in the continue URI is not valid.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingContinueUri@{kAuthErrorMissingContinueUri}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingContinueUri@{kAuthErrorMissingContinueUri}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aac538586c8732846441479039b5b0469}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Continue\+Uri&Indicates that a continue URI was not provided in a request to the backend which requires one. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorKeychainError@{kAuthErrorKeychainError}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorKeychainError@{kAuthErrorKeychainError}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9d08b83e2622b827795f88d5360d74c9}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Keychain\+Error&Indicates an error occurred while attempting to access the keychain. Common error code for all API Methods.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingAppToken@{kAuthErrorMissingAppToken}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingAppToken@{kAuthErrorMissingAppToken}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a8900d0709062a378070d32a8086d6a05}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+App\+Token&Indicates that the APNs device token could not be obtained. The app may not have set up remote notification correctly, or may have failed to forward the APNs device token to FIRAuth if app delegate swizzling is disabled.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingIosBundleId@{kAuthErrorMissingIosBundleId}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingIosBundleId@{kAuthErrorMissingIosBundleId}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9e1057211536efe5c7f0abaf0652daeb}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Ios\+Bundle\+Id&Indicates that the i\+OS bundle ID is missing when an i\+OS \doxylink{classfirebase_1_1_app}{App} Store ID is provided.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorNotificationNotForwarded@{kAuthErrorNotificationNotForwarded}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorNotificationNotForwarded@{kAuthErrorNotificationNotForwarded}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209abc88140e85eb0d742519d731ee84f1e7}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Notification\+Not\+Forwarded&Indicates that the app fails to forward remote notification to FIRAuth.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUnauthorizedDomain@{kAuthErrorUnauthorizedDomain}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUnauthorizedDomain@{kAuthErrorUnauthorizedDomain}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209acba84e729721bb45feef22a92eb059c3}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Unauthorized\+Domain&Indicates that the domain specified in the continue URL is not white-\/ listed in the Firebase console.
+
+\begin{DoxyNote}{Note}
+This error is i\+OS and tv\+OS-\/specific. 
+\end{DoxyNote}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorWebContextAlreadyPresented@{kAuthErrorWebContextAlreadyPresented}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorWebContextAlreadyPresented@{kAuthErrorWebContextAlreadyPresented}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a203ae13b4ff3b586ac1004721872a062}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Web\+Context\+Already\+Presented&Indicates that an attempt was made to present a new web context while one was already being presented. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorWebContextCancelled@{kAuthErrorWebContextCancelled}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorWebContextCancelled@{kAuthErrorWebContextCancelled}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a202c80b683ab1f3cdb110bc88a7c51ae}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Web\+Context\+Cancelled&Indicates that the URL presentation was cancelled prematurely by the user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorDynamicLinkNotActivated@{kAuthErrorDynamicLinkNotActivated}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorDynamicLinkNotActivated@{kAuthErrorDynamicLinkNotActivated}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae2a105a3ee3f6f89df9d640248f34b58}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Dynamic\+Link\+Not\+Activated&Indicates that Dynamic Links in the Firebase Console is not activated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorCancelled@{kAuthErrorCancelled}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorCancelled@{kAuthErrorCancelled}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0995e1b27cf9465ab00cacd955218e61}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Cancelled&Indicates that the operation was cancelled. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidProviderId@{kAuthErrorInvalidProviderId}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidProviderId@{kAuthErrorInvalidProviderId}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a8fea051b6cf6616430238bffd664d83e}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Provider\+Id&Indicates that the provider id given for the web operation is invalid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorWebInternalError@{kAuthErrorWebInternalError}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorWebInternalError@{kAuthErrorWebInternalError}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a20dafc97000f5b43e304543967886884}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Web\+Internal\+Error&Indicates that an internal error occurred during a web operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorWebStorateUnsupported@{kAuthErrorWebStorateUnsupported}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorWebStorateUnsupported@{kAuthErrorWebStorateUnsupported}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a7030452b176d0447c00f522552646772}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Web\+Storate\+Unsupported&Indicates that 3rd party cookies or data are disabled, or that there was a problem with the browser. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorTenantIdMismatch@{kAuthErrorTenantIdMismatch}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorTenantIdMismatch@{kAuthErrorTenantIdMismatch}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209af518b4a0fc63506bfa2cba2775faecbf}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Tenant\+Id\+Mismatch&Indicates that the provided tenant ID does not match the \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} instance\textquotesingle{}s tenant ID. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUnsupportedTenantOperation@{kAuthErrorUnsupportedTenantOperation}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUnsupportedTenantOperation@{kAuthErrorUnsupportedTenantOperation}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a7972f6a84cb9c6671ec8c7677ee555b1}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Unsupported\+Tenant\+Operation&Indicates that a request was made to the backend with an associated tenant ID for an operation that does not support multi-\/tenancy. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidLinkDomain@{kAuthErrorInvalidLinkDomain}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidLinkDomain@{kAuthErrorInvalidLinkDomain}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4b3ea4a479ec62db7089a1679db5dea7}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Link\+Domain&Indicates that an FDL domain used for an out of band code flow is either not configured or is unauthorized for the current project. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorRejectedCredential@{kAuthErrorRejectedCredential}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorRejectedCredential@{kAuthErrorRejectedCredential}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a96edd9849c89f2c90970309271085f65}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Rejected\+Credential&Indicates that credential related request data is invalid. This can occur when there is a project number mismatch (session\+Info, spatula header, temporary proof), an incorrect temporary proof phone number, or during game center sign in when the user is already signed into a different game center account. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorPhoneNumberNotFound@{kAuthErrorPhoneNumberNotFound}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorPhoneNumberNotFound@{kAuthErrorPhoneNumberNotFound}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209adcaa76bb4a1c536e32bd836f94d244da}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Phone\+Number\+Not\+Found&Indicates that the phone number provided in the MFA sign in flow to be verified does not correspond to a phone second factor for the user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidTenantId@{kAuthErrorInvalidTenantId}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidTenantId@{kAuthErrorInvalidTenantId}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a84a35f30b45c323c240dda6a0a36a427}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Tenant\+Id&Indicates that a request was made to the backend with an invalid tenant ID. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingClientIdentifier@{kAuthErrorMissingClientIdentifier}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingClientIdentifier@{kAuthErrorMissingClientIdentifier}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a869f8dd57ac4d783c7c279a69c835530}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Client\+Identifier&Indicates that a request was made to the backend without a valid client identifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingMultiFactorSession@{kAuthErrorMissingMultiFactorSession}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingMultiFactorSession@{kAuthErrorMissingMultiFactorSession}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad3b20d19b2ec4aaeb10433a8e7107497}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Multi\+Factor\+Session&Indicates that a second factor challenge request was made without proof of a successful first factor sign-\/in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMissingMultiFactorInfo@{kAuthErrorMissingMultiFactorInfo}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMissingMultiFactorInfo@{kAuthErrorMissingMultiFactorInfo}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209acc6c4550fe0d47fe137699a57e07c3a7}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Missing\+Multi\+Factor\+Info&Indicates that a second factor challenge request was made where a second factor identifier was not provided. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorInvalidMultiFactorSession@{kAuthErrorInvalidMultiFactorSession}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorInvalidMultiFactorSession@{kAuthErrorInvalidMultiFactorSession}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a205d15406bf5d0e45ee4dc8355601335}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Invalid\+Multi\+Factor\+Session&Indicates that a second factor challenge request was made containing an invalid proof of first factor sign-\/in. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMultiFactorInfoNotFound@{kAuthErrorMultiFactorInfoNotFound}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMultiFactorInfoNotFound@{kAuthErrorMultiFactorInfoNotFound}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac39a0da2da47daee7318e600cb2d2d6a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Multi\+Factor\+Info\+Not\+Found&Indicates that the user does not have a second factor matching the provided identifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorAdminRestrictedOperation@{kAuthErrorAdminRestrictedOperation}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorAdminRestrictedOperation@{kAuthErrorAdminRestrictedOperation}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad85a6ff834625a56ac705cd7981f035a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Admin\+Restricted\+Operation&Indicates that a request was made that is restricted to administrators only. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUnverifiedEmail@{kAuthErrorUnverifiedEmail}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUnverifiedEmail@{kAuthErrorUnverifiedEmail}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aead8acdca29c280daeb1b4a1a732b1cf}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Unverified\+Email&Indicates that the user\textquotesingle{}s email must be verified to perform that request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorSecondFactorAlreadyEnrolled@{kAuthErrorSecondFactorAlreadyEnrolled}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorSecondFactorAlreadyEnrolled@{kAuthErrorSecondFactorAlreadyEnrolled}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a36d6952ca8ed38c4e9c7c081e463917a}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Second\+Factor\+Already\+Enrolled&Indicates that the user is trying to enroll a second factor that already exists on their account. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorMaximumSecondFactorCountExceeded@{kAuthErrorMaximumSecondFactorCountExceeded}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorMaximumSecondFactorCountExceeded@{kAuthErrorMaximumSecondFactorCountExceeded}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a30dca098f11052386db59bbcee8f6466}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Maximum\+Second\+Factor\+Count\+Exceeded&Indicates that the user has reached the maximum number of allowed second factors and is attempting to enroll another one. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorUnsupportedFirstFactor@{kAuthErrorUnsupportedFirstFactor}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorUnsupportedFirstFactor@{kAuthErrorUnsupportedFirstFactor}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ada31496c9c1208ae265ae1f7b967c123}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Unsupported\+First\+Factor&Indicates that a user either attempted to enroll in 2FA with an unsupported first factor or is enrolled and attempts a first factor sign in that is not supported for 2FA users. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAuthErrorEmailChangeNeedsVerification@{kAuthErrorEmailChangeNeedsVerification}!firebase::auth@{firebase::auth}}\index{firebase::auth@{firebase::auth}!kAuthErrorEmailChangeNeedsVerification@{kAuthErrorEmailChangeNeedsVerification}}}\Hypertarget{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a16e0424fc7a491dc92ff3df203fd8b4b}\label{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209} 
+k\+Auth\+Error\+Email\+Change\+Needs\+Verification&Indicates that a second factor users attempted to change their email with update\+Email instead of verify\+Before\+Update\+Email. \\
+\hline
+
+\end{DoxyEnumFields}

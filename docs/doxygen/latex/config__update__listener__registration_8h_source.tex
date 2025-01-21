@@ -1,0 +1,71 @@
+\doxysection{config\+\_\+update\+\_\+listener\+\_\+registration.\+h}
+\hypertarget{config__update__listener__registration_8h_source}{}\label{config__update__listener__registration_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/remote\_config/config\_update\_listener\_registration.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/remote\_config/config\_update\_listener\_registration.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2023\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_REMOTE\_CONFIG\_SRC\_INCLUDE\_FIREBASE\_REMOTE\_CONFIG\_CONFIG\_UPDATE\_LISTENER\_REGISTRATION\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_REMOTE\_CONFIG\_SRC\_INCLUDE\_FIREBASE\_REMOTE\_CONFIG\_CONFIG\_UPDATE\_LISTENER\_REGISTRATION\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }remote\_config\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }RemoteConfigInternal;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }ConfigUpdateListenerRegistrationInternal;}
+\DoxyCodeLine{00026\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\ \{}
+\DoxyCodeLine{00034\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_ad54e752cc19a68e0b302e136a8e9ef3f}{ConfigUpdateListenerRegistration}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a46960f3a5b28abaacbc375ac75c9413b}{ConfigUpdateListenerRegistration}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\&\ other);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a0b124e32b90f1e9310f1dafac083c4bb}{ConfigUpdateListenerRegistration}}(\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\&\&\ other);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{\string~ConfigUpdateListenerRegistration}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\&\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a5f6d172bad969849f25c6d4e68ec8eef}{operator=}}(}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\&\ other);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\&\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a54f8f8ca6e3a9dea6d23f722659314e8}{operator=}}(}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\&\&\ other);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a6ed0677a470faaa276d224566b28248f}{Remove}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::RemoteConfigInternal;}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ R>}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }CleanupFn;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_ad54e752cc19a68e0b302e136a8e9ef3f}{ConfigUpdateListenerRegistration}}(}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ internal::ConfigUpdateListenerRegistrationInternal*\ internal);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordtype}{void}\ Cleanup();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ internal::RemoteConfigInternal*\ remote\_config\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{mutable}\ internal::ConfigUpdateListenerRegistrationInternal*\ internal\_\ =}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \}\ \ \textcolor{comment}{//\ namespace\ remote\_config}}
+\DoxyCodeLine{00124\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_REMOTE\_CONFIG\_SRC\_INCLUDE\_FIREBASE\_REMOTE\_CONFIG\_CONFIG\_UPDATE\_LISTENER\_REGISTRATION\_H\_}}
+
+\end{DoxyCode}

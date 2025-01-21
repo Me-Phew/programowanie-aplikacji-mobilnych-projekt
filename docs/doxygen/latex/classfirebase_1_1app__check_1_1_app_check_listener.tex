@@ -1,0 +1,33 @@
+\doxysection{firebase\+::app\+\_\+check\+::App\+Check\+Listener Class Reference}
+\hypertarget{classfirebase_1_1app__check_1_1_app_check_listener}{}\label{classfirebase_1_1app__check_1_1_app_check_listener}\index{firebase::app\_check::AppCheckListener@{firebase::app\_check::AppCheckListener}}
+
+
+Base class used to receive messages when \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} token changes.  
+
+
+
+
+{\ttfamily \#include $<$app\+\_\+check.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener_a9d0e527da64f1cf418559bee0b20622e}{On\+App\+Check\+Token\+Changed}} (const \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}} \&token)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class used to receive messages when \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} token changes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_listener_a9d0e527da64f1cf418559bee0b20622e}\index{firebase::app\_check::AppCheckListener@{firebase::app\_check::AppCheckListener}!OnAppCheckTokenChanged@{OnAppCheckTokenChanged}}
+\index{OnAppCheckTokenChanged@{OnAppCheckTokenChanged}!firebase::app\_check::AppCheckListener@{firebase::app\_check::AppCheckListener}}
+\doxysubsubsection{\texorpdfstring{OnAppCheckTokenChanged()}{OnAppCheckTokenChanged()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_listener_a9d0e527da64f1cf418559bee0b20622e} 
+virtual void firebase\+::app\+\_\+check\+::\+App\+Check\+Listener\+::\+On\+App\+Check\+Token\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}} \&}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This method gets invoked on the UI thread on changes to the token state. Does not trigger on token expiry. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app\+\_\+check.\+h\end{DoxyCompactItemize}

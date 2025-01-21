@@ -1,0 +1,5 @@
+<map id="firebase::auth::FederatedOAuthProviderData" name="firebase::auth::FederatedOAuthProviderData">
+<area shape="rect" id="Node000001" title="Contains information to identify an OAuth povider." alt="" coords="5,96,172,139"/>
+<area shape="rect" id="Node000002" href="$structfirebase_1_1auth_1_1_federated_provider_data.html" title="Contains information required to authenticate with a third party provider." alt="" coords="5,5,172,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,64,91,96,86,96,86,64"/>
+</map>

@@ -1,0 +1,176 @@
+\doxysection{lib/screens/home/home\+\_\+page.dart File Reference}
+\hypertarget{home__page_8dart}{}\label{home__page_8dart}\index{lib/screens/home/home\_page.dart@{lib/screens/home/home\_page.dart}}
+
+
+Ekran główny wyświetlający plan zajęć studenta.  
+
+
+{\ttfamily import package;}\newline
+Include dependency graph for home\+\_\+page.\+dart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{home__page_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{home__page_8dart_a1f9dec6272eade55d634e888b9050887}{init\+Last\+Update}} () async
+\item 
+override void \mbox{\hyperlink{home__page_8dart_ab339d53d3945a16dfdd20004616a8ddc}{init\+State}} ()
+\item 
+void \mbox{\hyperlink{home__page_8dart_a18fb100fe069e9e7cdd46babcd17eeb4}{\+\_\+on\+Day\+Selected}} (Date\+Time \mbox{\hyperlink{home__page_8dart_a41790a52f4b4cd7d87fc98d811e19319}{selected\+Day}}, Date\+Time focused\+Day)
+\begin{DoxyCompactList}\small\item\em Obsługuje wybór dnia w kalendarzu. \end{DoxyCompactList}\item 
+List$<$ Lecture $>$ \mbox{\hyperlink{home__page_8dart_a3f84b8bd684ca96346c7730494e9a411}{\+\_\+get\+Day\+Schedule}} (int weekday)
+\begin{DoxyCompactList}\small\item\em Pobiera plan zajęć na określony dzień tygodnia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{home__page_8dart_aafe829fd0bcf24a22311113bdb5f927b}{\+\_\+on\+Refresh}} () async
+\item 
+override Widget \mbox{\hyperlink{home__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}{build}} (Build\+Context context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{home__page_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\item 
+class Home\+Page extends \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}} \mbox{\hyperlink{home__page_8dart_a4dda8c31f938cf2f75c48ee661f8fd58}{today}} = Date\+Time.\+now()
+\item 
+Date\+Time \mbox{\hyperlink{home__page_8dart_a41790a52f4b4cd7d87fc98d811e19319}{selected\+Day}}
+\item 
+List$<$ Lecture $>$ \mbox{\hyperlink{home__page_8dart_a8e80cadb9f66744b34ace4478d973099}{selected\+Day\+Schedule}}
+\item 
+Date\+Time \mbox{\hyperlink{home__page_8dart_a7a8c344bed9b956316bf18c3671da202}{\+\_\+last\+Update}}
+\item 
+final Refresh\+Controller \mbox{\hyperlink{home__page_8dart_a323f0f59b6635db2252b18ea531b4353}{\+\_\+refresh\+Controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ekran główny wyświetlający plan zajęć studenta. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{home__page_8dart_a3f84b8bd684ca96346c7730494e9a411}\index{home\_page.dart@{home\_page.dart}!\_getDaySchedule@{\_getDaySchedule}}
+\index{\_getDaySchedule@{\_getDaySchedule}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_getDaySchedule()}{\_getDaySchedule()}}
+{\footnotesize\ttfamily \label{home__page_8dart_a3f84b8bd684ca96346c7730494e9a411} 
+List$<$ Lecture $>$ \+\_\+get\+Day\+Schedule (\begin{DoxyParamCaption}\item[{int}]{weekday}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera plan zajęć na określony dzień tygodnia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weekday} & Dzień tygodnia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista fów zaplanowanych na dany dzień. 
+\end{DoxyReturn}
+\Hypertarget{home__page_8dart_a18fb100fe069e9e7cdd46babcd17eeb4}\index{home\_page.dart@{home\_page.dart}!\_onDaySelected@{\_onDaySelected}}
+\index{\_onDaySelected@{\_onDaySelected}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_onDaySelected()}{\_onDaySelected()}}
+{\footnotesize\ttfamily \label{home__page_8dart_a18fb100fe069e9e7cdd46babcd17eeb4} 
+void \+\_\+on\+Day\+Selected (\begin{DoxyParamCaption}\item[{Date\+Time}]{selected\+Day}{, }\item[{Date\+Time}]{focused\+Day}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje wybór dnia w kalendarzu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Day} & Wybrany dzień. \\
+\hline
+{\em focused\+Day} & Aktualnie skupiony dzień. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{home__page_8dart_aafe829fd0bcf24a22311113bdb5f927b}\index{home\_page.dart@{home\_page.dart}!\_onRefresh@{\_onRefresh}}
+\index{\_onRefresh@{\_onRefresh}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_onRefresh()}{\_onRefresh()}}
+{\footnotesize\ttfamily \label{home__page_8dart_aafe829fd0bcf24a22311113bdb5f927b} 
+void \+\_\+on\+Refresh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{home__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}\index{home\_page.dart@{home\_page.dart}!build@{build}}
+\index{build@{build}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{home__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a} 
+override Widget build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})}
+
+\Hypertarget{home__page_8dart_a1f9dec6272eade55d634e888b9050887}\index{home\_page.dart@{home\_page.dart}!initLastUpdate@{initLastUpdate}}
+\index{initLastUpdate@{initLastUpdate}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{initLastUpdate()}{initLastUpdate()}}
+{\footnotesize\ttfamily \label{home__page_8dart_a1f9dec6272eade55d634e888b9050887} 
+Future$<$ void $>$ init\+Last\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{home__page_8dart_ab339d53d3945a16dfdd20004616a8ddc}\index{home\_page.dart@{home\_page.dart}!initState@{initState}}
+\index{initState@{initState}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{initState()}{initState()}}
+{\footnotesize\ttfamily \label{home__page_8dart_ab339d53d3945a16dfdd20004616a8ddc} 
+override void init\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{home__page_8dart_a7a8c344bed9b956316bf18c3671da202}\index{home\_page.dart@{home\_page.dart}!\_lastUpdate@{\_lastUpdate}}
+\index{\_lastUpdate@{\_lastUpdate}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_lastUpdate}{\_lastUpdate}}
+{\footnotesize\ttfamily \label{home__page_8dart_a7a8c344bed9b956316bf18c3671da202} 
+Date\+Time \+\_\+last\+Update}
+
+\Hypertarget{home__page_8dart_a323f0f59b6635db2252b18ea531b4353}\index{home\_page.dart@{home\_page.dart}!\_refreshController@{\_refreshController}}
+\index{\_refreshController@{\_refreshController}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_refreshController}{\_refreshController}}
+{\footnotesize\ttfamily \label{home__page_8dart_a323f0f59b6635db2252b18ea531b4353} 
+final Refresh\+Controller \+\_\+refresh\+Controller}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ RefreshController(initialRefresh:\ \textcolor{keyword}{false})}
+
+\end{DoxyCode}
+\Hypertarget{home__page_8dart_a2276f26ae4897992f6da960ea88601e9}\index{home\_page.dart@{home\_page.dart}!library@{library}}
+\index{library@{library}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{home__page_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+
+\Hypertarget{home__page_8dart_a41790a52f4b4cd7d87fc98d811e19319}\index{home\_page.dart@{home\_page.dart}!selectedDay@{selectedDay}}
+\index{selectedDay@{selectedDay}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{selectedDay}{selectedDay}}
+{\footnotesize\ttfamily \label{home__page_8dart_a41790a52f4b4cd7d87fc98d811e19319} 
+Date\+Time selected\+Day}
+
+\Hypertarget{home__page_8dart_a8e80cadb9f66744b34ace4478d973099}\index{home\_page.dart@{home\_page.dart}!selectedDaySchedule@{selectedDaySchedule}}
+\index{selectedDaySchedule@{selectedDaySchedule}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{selectedDaySchedule}{selectedDaySchedule}}
+{\footnotesize\ttfamily \label{home__page_8dart_a8e80cadb9f66744b34ace4478d973099} 
+List$<$Lecture$>$ selected\+Day\+Schedule}
+
+\Hypertarget{home__page_8dart_a4dda8c31f938cf2f75c48ee661f8fd58}\index{home\_page.dart@{home\_page.dart}!today@{today}}
+\index{today@{today}!home\_page.dart@{home\_page.dart}}
+\doxysubsubsection{\texorpdfstring{today}{today}}
+{\footnotesize\ttfamily \label{home__page_8dart_a4dda8c31f938cf2f75c48ee661f8fd58} 
+class Home\+Page extends \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}} today = Date\+Time.\+now()}
+

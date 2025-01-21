@@ -1,0 +1,125 @@
+\doxysection{firebase\+::auth\+::Phone\+Auth\+Provider\+::Listener Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener}{}\label{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener}\index{firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}}
+
+
+Receive callbacks from \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number} events.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a85770051624295e82b97a424bfe2efea}{On\+Verification\+Completed}} (\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}} credential)=0
+\begin{DoxyCompactList}\small\item\em Phone number auto-\/verification succeeded. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_ae94577c2b30cbd9518145d13769301a7}{On\+Verification\+Failed}} (const std\+::string \&error)=0
+\begin{DoxyCompactList}\small\item\em Phone number verification failed with an error. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a65f3a2abf007af3dfb1f8d2136bf4c29}{On\+Code\+Sent}} (const std\+::string \&verification\+\_\+id, const \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Force\+Resending\+Token}} \&force\+\_\+resending\+\_\+token)
+\begin{DoxyCompactList}\small\item\em SMS message with verification code sent to phone number. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a3ea7ebac04e74de3ff76996ce4090193}{On\+Code\+Auto\+Retrieval\+Time\+Out}} (const std\+::string \&verification\+\_\+id)
+\begin{DoxyCompactList}\small\item\em The timeout specified in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number} has expired. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a9c079aece6f62ca250f00933eb4688e7}\label{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a9c079aece6f62ca250f00933eb4688e7} 
+class {\bfseries Phone\+Auth\+Provider}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Receive callbacks from \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number} events. 
+
+Please see \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider} for a sample implementation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a3ea7ebac04e74de3ff76996ce4090193}\index{firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}!OnCodeAutoRetrievalTimeOut@{OnCodeAutoRetrievalTimeOut}}
+\index{OnCodeAutoRetrievalTimeOut@{OnCodeAutoRetrievalTimeOut}!firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}}
+\doxysubsubsection{\texorpdfstring{OnCodeAutoRetrievalTimeOut()}{OnCodeAutoRetrievalTimeOut()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a3ea7ebac04e74de3ff76996ce4090193} 
+virtual void firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Listener\+::\+On\+Code\+Auto\+Retrieval\+Time\+Out (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{verification\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The timeout specified in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number} has expired. 
+
+Called once {\ttfamily auto\+\_\+verify\+\_\+time\+\_\+out\+\_\+ms} has passed. If using auto SMS retrieval, you can choose to block the UI (do not allow manual input of the verification code) until timeout is hit.
+
+\begin{DoxyNote}{Note}
+This callback is called immediately on i\+OS, since i\+OS does not have auto-\/validation.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em verification\+\_\+id} & Identify the transaction that has timed out. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a65f3a2abf007af3dfb1f8d2136bf4c29}\index{firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}!OnCodeSent@{OnCodeSent}}
+\index{OnCodeSent@{OnCodeSent}!firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}}
+\doxysubsubsection{\texorpdfstring{OnCodeSent()}{OnCodeSent()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a65f3a2abf007af3dfb1f8d2136bf4c29} 
+virtual void firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Listener\+::\+On\+Code\+Sent (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{verification\+\_\+id}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Force\+Resending\+Token}} \&}]{force\+\_\+resending\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+SMS message with verification code sent to phone number. 
+
+Called immediately after \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} server sends a verification SMS. Once receiving this, you can allow users to manually input the verification code (even if you\textquotesingle{}re also performing auto-\/verification). For user manual input case, get the SMS verification code from the user and then call \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_a149b7a3daa4161cd754cdeeff2779437}{Get\+Credential} with the user\textquotesingle{}s code.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em verification\+\_\+id} & Pass to \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_a149b7a3daa4161cd754cdeeff2779437}{Get\+Credential} along with the user-\/input verification code to complete the phone number verification flow. \\
+\hline
+\mbox{\texttt{ in}}  & {\em force\+\_\+resending\+\_\+token} & If the user requests that another SMS message be sent, use this when you recall \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a85770051624295e82b97a424bfe2efea}\index{firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}!OnVerificationCompleted@{OnVerificationCompleted}}
+\index{OnVerificationCompleted@{OnVerificationCompleted}!firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}}
+\doxysubsubsection{\texorpdfstring{OnVerificationCompleted()}{OnVerificationCompleted()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a85770051624295e82b97a424bfe2efea} 
+virtual void firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Listener\+::\+On\+Verification\+Completed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}}}]{credential}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Phone number auto-\/verification succeeded. 
+
+Called when,
+\begin{DoxyItemize}
+\item auto-\/sms-\/retrieval has succeeded--flow (2) in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}
+\item instant validation has succeeded--flow (3) in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This callback is never called on i\+OS, since i\+OS does not have auto-\/validation. It is always called immediately in the stub desktop implementation, however, since it fakes immediate success.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em credential} & The completed credential from the phone number verification flow. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_ae94577c2b30cbd9518145d13769301a7}\index{firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}!OnVerificationFailed@{OnVerificationFailed}}
+\index{OnVerificationFailed@{OnVerificationFailed}!firebase::auth::PhoneAuthProvider::Listener@{firebase::auth::PhoneAuthProvider::Listener}}
+\doxysubsubsection{\texorpdfstring{OnVerificationFailed()}{OnVerificationFailed()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_ae94577c2b30cbd9518145d13769301a7} 
+virtual void firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Listener\+::\+On\+Verification\+Failed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Phone number verification failed with an error. 
+
+Called when and error occurred doing phone number authentication. For example,
+\begin{DoxyItemize}
+\item quota exceeded
+\item unknown phone number format
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error} & A description of the failure. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

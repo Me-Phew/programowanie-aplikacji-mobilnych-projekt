@@ -1,0 +1,168 @@
+\doxysection{firebase\+::firestore\+::Listener\+Registration Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_listener_registration}{}\label{classfirebase_1_1firestore_1_1_listener_registration}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+
+
+{\ttfamily \#include $<$listener\+\_\+registration.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a360e7b9ea3df89dca7163594f5ef0966}{Listener\+Registration}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a9572ff9ec2fd95ad637799b9fb29bf01}{Listener\+Registration}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a1aef70877ce764cecfbb212977aa9758}{Listener\+Registration}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a24a0c3594efb674074cef75f3bfa516d}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_ab18aa33c46f11b3c7ff34853aa5ad976}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_acb1a46cf74c63cd376252babe8dcc018}{Remove}} ()
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a19929fc0178324ae9a426f3ffdb1b40a}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} could be the result of\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_acb1ddb4297a2a4ac901e09804c1bf74d}\label{classfirebase_1_1firestore_1_1_listener_registration_acb1ddb4297a2a4ac901e09804c1bf74d} 
+class {\bfseries Document\+Reference\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_listener_registration_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_aa23eaae2ee63303801a698dfc8677800}\label{classfirebase_1_1firestore_1_1_listener_registration_aa23eaae2ee63303801a698dfc8677800} 
+class {\bfseries Listener\+Registration\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_af6cb3d6b6c0e0eca68e1f4cbc42db8bb}\label{classfirebase_1_1firestore_1_1_listener_registration_af6cb3d6b6c0e0eca68e1f4cbc42db8bb} 
+class {\bfseries Query\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_listener_registration_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_listener_registration_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a listener that can be removed by calling \doxylink{classfirebase_1_1firestore_1_1_listener_registration_acb1a46cf74c63cd376252babe8dcc018}{Remove()}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a360e7b9ea3df89dca7163594f5ef0966}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!ListenerRegistration@{ListenerRegistration}}
+\index{ListenerRegistration@{ListenerRegistration}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{ListenerRegistration()}{ListenerRegistration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_a360e7b9ea3df89dca7163594f5ef0966} 
+firebase\+::firestore\+::\+Listener\+Registration\+::\+Listener\+Registration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration} that has to be reassigned before it can be used. 
+
+Calling \doxylink{classfirebase_1_1firestore_1_1_listener_registration_acb1a46cf74c63cd376252babe8dcc018}{Remove()} on an invalid \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration} is a no-\/op. \Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a9572ff9ec2fd95ad637799b9fb29bf01}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!ListenerRegistration@{ListenerRegistration}}
+\index{ListenerRegistration@{ListenerRegistration}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{ListenerRegistration()}{ListenerRegistration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_a9572ff9ec2fd95ad637799b9fb29bf01} 
+firebase\+::firestore\+::\+Listener\+Registration\+::\+Listener\+Registration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} can be efficiently copied because it simply refers to the same underlying listener. If there is more than one copy of a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}, after calling {\ttfamily Remove} on one of them, the listener is removed, and calling {\ttfamily Remove} on any other copies will be a no-\/op.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a1aef70877ce764cecfbb212977aa9758}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!ListenerRegistration@{ListenerRegistration}}
+\index{ListenerRegistration@{ListenerRegistration}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{ListenerRegistration()}{ListenerRegistration()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_a1aef70877ce764cecfbb212977aa9758} 
+firebase\+::firestore\+::\+Listener\+Registration\+::\+Listener\+Registration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a19929fc0178324ae9a426f3ffdb1b40a}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_a19929fc0178324ae9a426f3ffdb1b40a} 
+bool firebase\+::firestore\+::\+Listener\+Registration\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}.
+\item Deleting your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance, which will invalidate all the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} instances associated with it.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_a24a0c3594efb674074cef75f3bfa516d}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_a24a0c3594efb674074cef75f3bfa516d} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \& firebase\+::firestore\+::\+Listener\+Registration\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} can be efficiently copied because it simply refers to the same underlying listener. If there is more than one copy of a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}, after calling {\ttfamily Remove} on one of them, the listener is removed, and calling {\ttfamily Remove} on any other copies will be a no-\/op.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_ab18aa33c46f11b3c7ff34853aa5ad976}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_ab18aa33c46f11b3c7ff34853aa5ad976} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \& firebase\+::firestore\+::\+Listener\+Registration\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_listener_registration_acb1a46cf74c63cd376252babe8dcc018}\index{firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}!Remove@{Remove}}
+\index{Remove@{Remove}!firebase::firestore::ListenerRegistration@{firebase::firestore::ListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_listener_registration_acb1a46cf74c63cd376252babe8dcc018} 
+virtual void firebase\+::firestore\+::\+Listener\+Registration\+::\+Remove (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Removes the listener being tracked by this \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}. After the initial call, subsequent calls have no effect. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/listener\+\_\+registration.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\doxysection{flutter\+\_\+plugin\+\_\+registrar.\+h}
+\hypertarget{flutter__plugin__registrar_8h_source}{}\label{flutter__plugin__registrar_8h_source}\index{windows/flutter/ephemeral/flutter\_plugin\_registrar.h@{windows/flutter/ephemeral/flutter\_plugin\_registrar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_PLUGIN\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_PLUGIN\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}flutter\_export.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}flutter\_messenger.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}flutter\_texture\_registrar.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Opaque\ reference\ to\ a\ plugin\ registrar.}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }FlutterDesktopPluginRegistrar*\ FlutterDesktopPluginRegistrarRef;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Function\ pointer\ type\ for\ registrar\ destruction\ callback.}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ void\ (*FlutterDesktopOnPluginRegistrarDestroyed)(}
+\DoxyCodeLine{00024\ \ \ \ \ FlutterDesktopPluginRegistrarRef);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Returns\ the\ engine\ messenger\ associated\ with\ this\ registrar.}}
+\DoxyCodeLine{00027\ FLUTTER\_EXPORT\ FlutterDesktopMessengerRef}
+\DoxyCodeLine{00028\ FlutterDesktopPluginRegistrarGetMessenger(}
+\DoxyCodeLine{00029\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Returns\ the\ texture\ registrar\ associated\ with\ this\ registrar.}}
+\DoxyCodeLine{00032\ FLUTTER\_EXPORT\ FlutterDesktopTextureRegistrarRef}
+\DoxyCodeLine{00033\ FlutterDesktopRegistrarGetTextureRegistrar(}
+\DoxyCodeLine{00034\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Registers\ a\ callback\ to\ be\ called\ when\ the\ plugin\ registrar\ is\ destroyed.}}
+\DoxyCodeLine{00037\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopPluginRegistrarSetDestructionHandler(}
+\DoxyCodeLine{00038\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar,}
+\DoxyCodeLine{00039\ \ \ \ \ FlutterDesktopOnPluginRegistrarDestroyed\ callback);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00042\ \}\ \ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_PLUGIN\_REGISTRAR\_H\_}}
+
+\end{DoxyCode}

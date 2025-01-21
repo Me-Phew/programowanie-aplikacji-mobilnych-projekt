@@ -1,0 +1,36 @@
+\doxysection{firebase\+::Mutex\+Lock Class Reference}
+\hypertarget{classfirebase_1_1_mutex_lock}{}\label{classfirebase_1_1_mutex_lock}\index{firebase::MutexLock@{firebase::MutexLock}}
+
+
+Acquire and hold a /ref \doxylink{classfirebase_1_1_mutex}{Mutex}, while in scope.  
+
+
+
+
+{\ttfamily \#include $<$mutex.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_mutex_lock_aaa6f5218bcb9b9291411117a75343053}\label{classfirebase_1_1_mutex_lock_aaa6f5218bcb9b9291411117a75343053} 
+{\bfseries Mutex\+Lock} (\mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}} \&mutex)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Acquire and hold a /ref \doxylink{classfirebase_1_1_mutex}{Mutex}, while in scope. 
+
+Example usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Mutex\ syncronization\_mutex;}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ MyFunctionThatRequiresSynchronization()\ \{}
+\DoxyCodeLine{\ \ MutexLock\ lock(syncronization\_mutex);}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ ...\ logic\ ...}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/internal/mutex.\+h\end{DoxyCompactItemize}

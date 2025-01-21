@@ -1,0 +1,116 @@
+\doxysection{field\+\_\+path.\+h}
+\hypertarget{field__path_8h_source}{}\label{field__path_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/field\_path.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/field\_path.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_FIELD\_PATH\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_FIELD\_PATH\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <initializer\_list>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iosfwd>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#if\ !defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }model\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }FieldPath;}
+\DoxyCodeLine{00032\ \}\ \ \textcolor{comment}{//\ namespace\ model}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }FieldPathPortable;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\ final\ \{}
+\DoxyCodeLine{00048\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a1bfb61ea96153e870611dfeca9ca5768}{FieldPath}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a90bbfc3b4b5bb5b55141d82132731e02}{FieldPath}}(std::initializer\_list<std::string>\ field\_names);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a8dab4ca0013815114265c7511610de84}{FieldPath}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ field\_names);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_aa617f978bee4f464d276fc1a0215f099}{FieldPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ other);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a43f69c580d47778b38bb5983a5bcfb64}{FieldPath}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{\string~FieldPath}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a3afc9dbf6fc9042984dfe079994df347}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ other);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a6c5803340ae7b76ac19e3ba11a2e2af3}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a0d5805f5220f6229494c6461e527d7d9}{DocumentId}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a8a942c5292362e1dc4bda947e9c4ed54}{is\_valid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ internal\_\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a7642cbb8576872dbac385459ad3740d5}{ToString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a958bf77e75bdc0c9883cabdd7803c5d2}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ path);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00154\ \ \ \textcolor{comment}{//\ The\ type\ of\ the\ internal\ object\ that\ implements\ the\ public\ interface.}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#if\ !defined(SWIG)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#if\ !defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{using\ }FieldPathInternal\ =\ ::firebase::firestore::model::FieldPath;}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00159\ \ \ \textcolor{keyword}{using\ }FieldPathInternal\ =\ ::firebase::firestore::FieldPathPortable;}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(SWIG)}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ rhs);}
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ rhs);}
+\DoxyCodeLine{00165\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }std::hash<\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}>;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}};}
+\DoxyCodeLine{00168\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{DocumentSnapshot}};\ \ \textcolor{comment}{//\ For\ access\ to\ \`{}FromDotSeparatedString`}}
+\DoxyCodeLine{00169\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}};}
+\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }QueryInternal;}
+\DoxyCodeLine{00171\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}};\ \ \textcolor{comment}{//\ For\ access\ to\ \`{}FromDotSeparatedString`}}
+\DoxyCodeLine{00172\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FieldPathConverter;}
+\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a1bfb61ea96153e870611dfeca9ca5768}{FieldPath}}(FieldPathInternal*\ internal);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \textcolor{keyword}{static}\ FieldPathInternal*\ InternalFromSegments(}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ std::vector<std::string>\ field\_names);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\ FromDotSeparatedString(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ FieldPathInternal*\ internal\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00186\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#if\ !defined(SWIG)}}
+\DoxyCodeLine{00189\ \textcolor{keyword}{namespace\ }std\ \{}
+\DoxyCodeLine{00193\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00194\ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespacefirebase}{firebase}}::firestore::FieldPath>\ \{}
+\DoxyCodeLine{00201\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structstd_1_1hash_3_01firebase_1_1firestore_1_1_field_path_01_4_ae164feb78943677ea2d936ee428ddd29}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{firebase::firestore::FieldPath}}\&\ field\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00202\ \};}
+\DoxyCodeLine{00203\ \}\ \ \textcolor{comment}{//\ namespace\ std}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(SWIG)}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_FIELD\_PATH\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,78 @@
+\doxysection{lib/providers/auth\+\_\+state\+\_\+provider.dart File Reference}
+\hypertarget{auth__state__provider_8dart}{}\label{auth__state__provider_8dart}\index{lib/providers/auth\_state\_provider.dart@{lib/providers/auth\_state\_provider.dart}}
+
+
+Plik dostarczający providera stanu autoryzacji.  
+
+
+{\ttfamily import package;}\newline
+Include dependency graph for auth\+\_\+state\+\_\+provider.\+dart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{auth__state__provider_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{auth__state__provider_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\item 
+final \mbox{\hyperlink{auth__state__provider_8dart_a14c3a89c85b3f6502ef24926ca3b5c1e}{auth\+State\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider stanu autoryzacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plik dostarczający providera stanu autoryzacji. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{auth__state__provider_8dart_a14c3a89c85b3f6502ef24926ca3b5c1e}\index{auth\_state\_provider.dart@{auth\_state\_provider.dart}!authStateProvider@{authStateProvider}}
+\index{authStateProvider@{authStateProvider}!auth\_state\_provider.dart@{auth\_state\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{authStateProvider}{authStateProvider}}
+{\footnotesize\ttfamily \label{auth__state__provider_8dart_a14c3a89c85b3f6502ef24926ca3b5c1e} 
+final auth\+State\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ StreamProvider.autoDispose<Student?>((ref)\ async*\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{final}\ Stream<Student?>\ studentStream\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{class_wirtualny_sdk}{WirtualnySdk}}.\mbox{\hyperlink{class_wirtualny_sdk_ab6b339c9ac98b85215a7d9f29d65724f}{instance}}.\mbox{\hyperlink{class_wirtualny_sdk_a8f13d0689c2c3d0830281abdc7770a38}{auth}}.\mbox{\hyperlink{class_wirtualny_auth_a485a0bddbade94fb7bbc6931ba2c3460}{authStateChanges}}().map((student)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (student\ !=\ null)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ student;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ null;}
+\DoxyCodeLine{\ \ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ await\ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{final}\ student\ in\ studentStream)\ \{}
+\DoxyCodeLine{\ \ \ \ yield\ student;}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider stanu autoryzacji. 
+
+Dostarcza strumień zmian stanu autoryzacji użytkownika. \Hypertarget{auth__state__provider_8dart_a2276f26ae4897992f6da960ea88601e9}\index{auth\_state\_provider.dart@{auth\_state\_provider.dart}!library@{library}}
+\index{library@{library}!auth\_state\_provider.dart@{auth\_state\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{auth__state__provider_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+

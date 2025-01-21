@@ -1,0 +1,235 @@
+\doxysection{firebase\+::database\+::Mutable\+Data Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_mutable_data}{}\label{classfirebase_1_1database_1_1_mutable_data}\index{firebase::database::MutableData@{firebase::database::MutableData}}
+
+
+{\ttfamily \#include $<$mutable\+\_\+data.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a53c623589a6d99a21d2801c987091ff5}\label{classfirebase_1_1database_1_1_mutable_data_a53c623589a6d99a21d2801c987091ff5} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Mutable\+Data} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a195fd2c2b8a8c8e8b8186afd4f41a437}{Child}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Used to obtain a \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} instance that encapsulates the data and priority at the given relative path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a2ca694b89725d586d2bdb341efdc26c7}{Child}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Used to obtain a \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} instance that encapsulates the data and priority at the given relative path. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a6f17f7a9fea77abbc5399d67cc1597f0}{children}} ()
+\begin{DoxyCompactList}\small\item\em Get all the immediate children of this location. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_aee49dfdb4f4cc0741dd2329727a8610f}{children\+\_\+count}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of children of this location. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_acde0c224286948465923e4863d97cc9b}{key}} () const
+\begin{DoxyCompactList}\small\item\em Get the key name of the source location of this data. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_aeac90d563cbec789fc5e379bf216f3a1}{key\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Get the key name of the source location of this data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a2715173f17315aab262e3ee2b3ec1370}{value}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of the data contained at this location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a6cd529e1a816e423146fa80652b104cc}{priority}} ()
+\begin{DoxyCompactList}\small\item\em Get the priority of the data contained at this snapshot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_ad47612edcfdf4edd835a0815a39a5e74}{Has\+Child}} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Does this \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} have data at a particular location? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_aa24b52fdf04e36ccb79d69e33ec4ed52}{Has\+Child}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Does this \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} have data at a particular location? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a53a6a2bf6a0ecce0fa06537060320c9b}{set\+\_\+value}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a2715173f17315aab262e3ee2b3ec1370}{value}})
+\begin{DoxyCompactList}\small\item\em Sets the data at this location to the given value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a9f72e95b1db5fac02e7e682ebbb2d5e6}{set\+\_\+priority}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a6cd529e1a816e423146fa80652b104cc}{priority}})
+\begin{DoxyCompactList}\small\item\em Sets the priority of this field, which controls its sort order relative to its siblings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Instances of this class encapsulate the data and priority at a location. It is used in transactions, and it is intended to be inspected and then updated to the desired data at that location. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a195fd2c2b8a8c8e8b8186afd4f41a437}\index{firebase::database::MutableData@{firebase::database::MutableData}!Child@{Child}}
+\index{Child@{Child}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a195fd2c2b8a8c8e8b8186afd4f41a437} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} firebase\+::database\+::\+Mutable\+Data\+::\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Used to obtain a \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} instance that encapsulates the data and priority at the given relative path. 
+
+Note that changes made to a child \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} instance will be visible to the parent and vice versa.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location. The pointer only needs to be valid during this call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} for the Child relative to this location. The memory will be freed when the Transaction is finished. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a2ca694b89725d586d2bdb341efdc26c7}\index{firebase::database::MutableData@{firebase::database::MutableData}!Child@{Child}}
+\index{Child@{Child}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a2ca694b89725d586d2bdb341efdc26c7} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} firebase\+::database\+::\+Mutable\+Data\+::\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Used to obtain a \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} instance that encapsulates the data and priority at the given relative path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} for the Child relative to this location. The memory will be freed when the Transaction is finished. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a6f17f7a9fea77abbc5399d67cc1597f0}\index{firebase::database::MutableData@{firebase::database::MutableData}!children@{children}}
+\index{children@{children}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{children()}{children()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a6f17f7a9fea77abbc5399d67cc1597f0} 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} $>$ firebase\+::database\+::\+Mutable\+Data\+::children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get all the immediate children of this location. 
+
+\begin{DoxyReturn}{Returns}
+The immediate children of this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_aee49dfdb4f4cc0741dd2329727a8610f}\index{firebase::database::MutableData@{firebase::database::MutableData}!children\_count@{children\_count}}
+\index{children\_count@{children\_count}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{children\_count()}{children\_count()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_aee49dfdb4f4cc0741dd2329727a8610f} 
+size\+\_\+t firebase\+::database\+::\+Mutable\+Data\+::children\+\_\+count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the number of children of this location. 
+
+\begin{DoxyReturn}{Returns}
+The number of immediate children of this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_ad47612edcfdf4edd835a0815a39a5e74}\index{firebase::database::MutableData@{firebase::database::MutableData}!HasChild@{HasChild}}
+\index{HasChild@{HasChild}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{HasChild()}{HasChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_ad47612edcfdf4edd835a0815a39a5e74} 
+bool firebase\+::database\+::\+Mutable\+Data\+::\+Has\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Does this \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} have data at a particular location? 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this data\textquotesingle{}s location. The pointer only needs to be valid during this call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is data at the specified location, false if not. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_aa24b52fdf04e36ccb79d69e33ec4ed52}\index{firebase::database::MutableData@{firebase::database::MutableData}!HasChild@{HasChild}}
+\index{HasChild@{HasChild}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{HasChild()}{HasChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_aa24b52fdf04e36ccb79d69e33ec4ed52} 
+bool firebase\+::database\+::\+Mutable\+Data\+::\+Has\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Does this \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} have data at a particular location? 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this data\textquotesingle{}s location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is data at the specified location, false if not. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_acde0c224286948465923e4863d97cc9b}\index{firebase::database::MutableData@{firebase::database::MutableData}!key@{key}}
+\index{key@{key}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_acde0c224286948465923e4863d97cc9b} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Mutable\+Data\+::key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the key name of the source location of this data. 
+
+\begin{DoxyNote}{Note}
+The returned pointer is only guaranteed to be valid during the transaction.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Key name of the source location of this data. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_aeac90d563cbec789fc5e379bf216f3a1}\index{firebase::database::MutableData@{firebase::database::MutableData}!key\_string@{key\_string}}
+\index{key\_string@{key\_string}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{key\_string()}{key\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_aeac90d563cbec789fc5e379bf216f3a1} 
+std\+::string firebase\+::database\+::\+Mutable\+Data\+::key\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the key name of the source location of this data. 
+
+\begin{DoxyReturn}{Returns}
+Key name of the source location of this data. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a6cd529e1a816e423146fa80652b104cc}\index{firebase::database::MutableData@{firebase::database::MutableData}!priority@{priority}}
+\index{priority@{priority}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{priority()}{priority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a6cd529e1a816e423146fa80652b104cc} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::database\+::\+Mutable\+Data\+::priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the priority of the data contained at this snapshot. 
+
+\begin{DoxyReturn}{Returns}
+The value of this location\textquotesingle{}s Priority relative to its siblings. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a9f72e95b1db5fac02e7e682ebbb2d5e6}\index{firebase::database::MutableData@{firebase::database::MutableData}!set\_priority@{set\_priority}}
+\index{set\_priority@{set\_priority}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{set\_priority()}{set\_priority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a9f72e95b1db5fac02e7e682ebbb2d5e6} 
+void firebase\+::database\+::\+Mutable\+Data\+::set\+\_\+priority (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{priority}{}\end{DoxyParamCaption})}
+
+
+
+Sets the priority of this field, which controls its sort order relative to its siblings. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{firebase\+::database\+::\+Database\+Reference\+::\+Set\+Priority()} for information on how Priority affects the ordering of a node\textquotesingle{}s \doxylink{classfirebase_1_1database_1_1_mutable_data_a6f17f7a9fea77abbc5399d67cc1597f0}{children}.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em priority} & Sort priority for this child relative to its siblings. The \doxylink{classfirebase_1_1_variant}{Variant} types accepted are Null, Int64, Double, and String. Other types will return k\+Error\+Invalid\+Variant\+Type. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a53a6a2bf6a0ecce0fa06537060320c9b}\index{firebase::database::MutableData@{firebase::database::MutableData}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a53a6a2bf6a0ecce0fa06537060320c9b} 
+void firebase\+::database\+::\+Mutable\+Data\+::set\+\_\+value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the data at this location to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to set this location to. The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type corresponds to the types accepted by the database JSON\+: Null\+: Deletes this location from the database. Int64\+: Inserts an integer value into this location. Double\+: Inserts a floating point value into this location. String\+: Inserts a string into this location. (Accepts both Mutable and Static strings) Vector\+: Inserts a JSON array into this location. The elements can be any \doxylink{classfirebase_1_1_variant}{Variant} type, including Vector and Map. Map\+: Inserts a JSON associative array into this location. The keys must be of type String (or Int64/\+Double which are converted to String). The values can be any \doxylink{classfirebase_1_1_variant}{Variant} type, including Vector and Map. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_mutable_data_a2715173f17315aab262e3ee2b3ec1370}\index{firebase::database::MutableData@{firebase::database::MutableData}!value@{value}}
+\index{value@{value}!firebase::database::MutableData@{firebase::database::MutableData}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_mutable_data_a2715173f17315aab262e3ee2b3ec1370} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::database\+::\+Mutable\+Data\+::value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the value of the data contained at this location. 
+
+\begin{DoxyReturn}{Returns}
+The value of the data contained at this location. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/mutable\+\_\+data.\+h\end{DoxyCompactItemize}

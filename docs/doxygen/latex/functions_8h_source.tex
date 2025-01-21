@@ -1,0 +1,75 @@
+\doxysection{functions.\+h}
+\hypertarget{functions_8h_source}{}\label{functions_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/functions.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/functions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2017\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FUNCTIONS\_SRC\_INCLUDE\_FIREBASE\_FUNCTIONS\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_FUNCTIONS\_SRC\_INCLUDE\_FIREBASE\_FUNCTIONS\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/functions/callable\_reference.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/functions/callable\_result.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/functions/common.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }functions\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }FunctionsInternal;}
+\DoxyCodeLine{00033\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }FunctionsReference;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}\ \{}
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_adde9ba027532915b736c31ebf6fed2e4}{\string~Functions}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}*\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a7890209290654e12353dc67b1dc31a96}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}*\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_ace6ed84b70b7ac499ec787ff0626a8e9}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ region,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{HttpsCallableReference}}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_afae54655466b14c27e3d6da35c81bace}{GetHttpsCallable}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{HttpsCallableReference}}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a32597ce1245022d7c8dbadf7b31a4eaa}{GetHttpsCallableFromURL}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ url)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a39a4008ae9c511dff0145c2b7187d151}{UseFunctionsEmulator}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ origin);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ region);}
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}\&\ src);}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}}\&\ src);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ Delete\ the\ internal\_\ data.}}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{void}\ DeleteInternal();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ internal::FunctionsInternal*\ internal\_;}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \}\ \ \textcolor{comment}{//\ namespace\ functions}}
+\DoxyCodeLine{00113\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FUNCTIONS\_SRC\_INCLUDE\_FIREBASE\_FUNCTIONS\_H\_}}
+
+\end{DoxyCode}

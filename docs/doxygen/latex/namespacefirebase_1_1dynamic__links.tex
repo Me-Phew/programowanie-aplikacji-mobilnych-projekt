@@ -1,0 +1,262 @@
+\doxysection{firebase\+::dynamic\+\_\+links Namespace Reference}
+\hypertarget{namespacefirebase_1_1dynamic__links}{}\label{namespacefirebase_1_1dynamic__links}\index{firebase::dynamic\_links@{firebase::dynamic\_links}}
+
+
+Firebase Dynamic Links API.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters}{Android\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Android Parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link}{Dynamic\+Link}}
+\begin{DoxyCompactList}\small\item\em The received Dynamic Link. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components}}
+\begin{DoxyCompactList}\small\item\em The information needed to generate a Dynamic Link. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{Dynamic\+Link\+Options}}
+\begin{DoxyCompactList}\small\item\em Additional options for Dynamic Link creation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}}
+\begin{DoxyCompactList}\small\item\em The returned value from creating a Dynamic Link. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters}{Google\+Analytics\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Google Analytics Parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters}{IOSParameters}}
+\begin{DoxyCompactList}\small\item\em i\+OS Parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters}{ITunes\+Connect\+Analytics\+Parameters}}
+\begin{DoxyCompactList}\small\item\em i\+Tunes Connect \doxylink{classfirebase_1_1_app}{App} Analytics Parameters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}}
+\begin{DoxyCompactList}\small\item\em Base class used to receive Dynamic Links. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters}{Social\+Meta\+Tag\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Social meta-\/tag Parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacefirebase_1_1dynamic__links_aba39571ebf5bede8be04cd3a9d8d8a33}\label{namespacefirebase_1_1dynamic__links_aba39571ebf5bede8be04cd3a9d8d8a33} 
+enum \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_aba39571ebf5bede8be04cd3a9d8d8a33}{Error\+Code}} \{ {\bfseries k\+Error\+Code\+Success} = 0
+, {\bfseries k\+Error\+Code\+Failed}
+ \}
+\begin{DoxyCompactList}\small\item\em Error code used by Futures returned by this API. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea}{Link\+Match\+Strength}} \{ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaac545484d81c909204156288a9e522d9b}{k\+Link\+Match\+Strength\+No\+Match}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaa606f362793dc980bb37dd1dbe0222c54}{k\+Link\+Match\+Strength\+Weak\+Match}}
+, \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaa15d494504f1d296e3ebdc368218db1a9}{k\+Link\+Match\+Strength\+Strong\+Match}}
+, \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaa1e8afd0d42896e143d447d0784de5b5e}{k\+Link\+Match\+Strength\+Perfect\+Match}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum describing the strength of a dynamic links match. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d}{Path\+Length}} \{ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da58182381e5bec857a06197ed71f3df76}{k\+Path\+Length\+Default}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da8743723bcfb92dae0e6bd99cda3b665f}{k\+Path\+Length\+Short}}
+, \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da165fe9656c1182d14c8359f21adf7545}{k\+Path\+Length\+Unguessable}}
+ \}
+\begin{DoxyCompactList}\small\item\em The desired path length for shortened Dynamic Link URLs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a659bae907517913b293c0758eabf4af4}{Initialize}} (const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&app, \mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Initialize Firebase Dynamic Links. \end{DoxyCompactList}\item 
+FIREBASE\+\_\+\+DEPRECATED void \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a08c69d38191e1a9fa69a0ef4340c969e}{Terminate}} ()
+\begin{DoxyCompactList}\small\item\em Terminate Firebase Dynamic Links. \end{DoxyCompactList}\item 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_af1d4453e5b174fa63fa3fa97d3f2dbb5}{Set\+Listener}} (\mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Set the listener for receiving Dynamic Links. \end{DoxyCompactList}\item 
+FIREBASE\+\_\+\+DEPRECATED void \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a9ec54dc0937bd87c95af2608fe55cb49}{Fetch}} ()
+\item 
+\Hypertarget{namespacefirebase_1_1dynamic__links_a3873a27cf06854e0a3121622ab56dfe7}\label{namespacefirebase_1_1dynamic__links_a3873a27cf06854e0a3121622ab56dfe7} 
+\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} {\bfseries Get\+Long\+Link} (const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components}} \&components)
+\begin{DoxyCompactList}\small\item\em Creates a long Dynamic Link from the given parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531}{Get\+Short\+Link}} (const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components}} \&components)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a27f6f79d33e3388e2fec3f1685d63ed8}{Get\+Short\+Link}} (const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components}} \&components, const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{Dynamic\+Link\+Options}} \&options)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_abbd14e5ff7979b3db37646439953ffe6}{Get\+Short\+Link}} (const char \texorpdfstring{$\ast$}{*}long\+\_\+dynamic\+\_\+link)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a8c421190be85796c0fb82d26dacbc6bd}{Get\+Short\+Link}} (const char \texorpdfstring{$\ast$}{*}long\+\_\+dynamic\+\_\+link, const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{Dynamic\+Link\+Options}} \&options)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a59ec333a7537efb1b4829620176992f8}{Get\+Short\+Link\+Last\+Result}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase Dynamic Links API. 
+
+Firebase Dynamic Links is a cross-\/platform solution for generating and receiving links, whether or not the app is already installed.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Dynamic Links is now deprecated. Please see the support documentation at \href{https://firebase.google.com/support/dynamic-links-faq}{\texttt{ https\+://firebase.\+google.\+com/support/dynamic-\/links-\/faq}} for more information. \end{DoxyRefDesc}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!LinkMatchStrength@{LinkMatchStrength}}
+\index{LinkMatchStrength@{LinkMatchStrength}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{LinkMatchStrength}{LinkMatchStrength}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea} 
+enum \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea}{firebase\+::dynamic\+\_\+links\+::\+Link\+Match\+Strength}}}
+
+
+
+Enum describing the strength of a dynamic links match. 
+
+This version is local to dynamic links; there is a similar enum in invites and another internal version in app. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLinkMatchStrengthNoMatch@{kLinkMatchStrengthNoMatch}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kLinkMatchStrengthNoMatch@{kLinkMatchStrengthNoMatch}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaac545484d81c909204156288a9e522d9b}\label{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea} 
+k\+Link\+Match\+Strength\+No\+Match&No match has been achieved. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLinkMatchStrengthWeakMatch@{kLinkMatchStrengthWeakMatch}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kLinkMatchStrengthWeakMatch@{kLinkMatchStrengthWeakMatch}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaa606f362793dc980bb37dd1dbe0222c54}\label{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea} 
+k\+Link\+Match\+Strength\+Weak\+Match&The match between the Dynamic Link and device is not perfect. You should not reveal any personal information related to the Dynamic Link. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLinkMatchStrengthStrongMatch@{kLinkMatchStrengthStrongMatch}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kLinkMatchStrengthStrongMatch@{kLinkMatchStrengthStrongMatch}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaa15d494504f1d296e3ebdc368218db1a9}\label{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea} 
+k\+Link\+Match\+Strength\+Strong\+Match&The match between the Dynamic Link and this device has a high confidence, but there is a small possibility of error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLinkMatchStrengthPerfectMatch@{kLinkMatchStrengthPerfectMatch}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kLinkMatchStrengthPerfectMatch@{kLinkMatchStrengthPerfectMatch}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18eaa1e8afd0d42896e143d447d0784de5b5e}\label{namespacefirebase_1_1dynamic__links_a5195a8f3ebf4b8a97caad9f514af18ea} 
+k\+Link\+Match\+Strength\+Perfect\+Match&The match between the Dynamic Link and the device is exact. You may safely reveal any personal information related to this Dynamic Link. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!PathLength@{PathLength}}
+\index{PathLength@{PathLength}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{PathLength}{PathLength}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d} 
+enum \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d}{firebase\+::dynamic\+\_\+links\+::\+Path\+Length}}}
+
+
+
+The desired path length for shortened Dynamic Link URLs. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPathLengthDefault@{kPathLengthDefault}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kPathLengthDefault@{kPathLengthDefault}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da58182381e5bec857a06197ed71f3df76}\label{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d} 
+k\+Path\+Length\+Default&Uses the server-\/default for the path length. See \href{https://goo.gl/8yDAqC}{\texttt{ https\+://goo.\+gl/8y\+DAqC}} for more information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPathLengthShort@{kPathLengthShort}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kPathLengthShort@{kPathLengthShort}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da8743723bcfb92dae0e6bd99cda3b665f}\label{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d} 
+k\+Path\+Length\+Short&Typical short link for non-\/sensitive links. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPathLengthUnguessable@{kPathLengthUnguessable}!firebase::dynamic\_links@{firebase::dynamic\_links}}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!kPathLengthUnguessable@{kPathLengthUnguessable}}}\Hypertarget{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da165fe9656c1182d14c8359f21adf7545}\label{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d} 
+k\+Path\+Length\+Unguessable&Short link that uses a very long path to make it more difficult to guess. Useful for sensitive links. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a9ec54dc0937bd87c95af2608fe55cb49}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a9ec54dc0937bd87c95af2608fe55cb49} 
+FIREBASE\+\_\+\+DEPRECATED void firebase\+::dynamic\+\_\+links\+::\+Fetch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Fetch any pending dynamic links. Each pending link will trigger a call to the registered \doxylink{classfirebase_1_1dynamic__links_1_1_listener}{Listener} class.
+
+This function is implicitly called on initialization. On i\+OS this is called automatically when the app gains focus, but on Android this needs to be called manually.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000007}{Deprecated}}]Dynamic Links is now deprecated. Please see the support documentation at \href{https://firebase.google.com/support/dynamic-links-faq}{\texttt{ https\+://firebase.\+google.\+com/support/dynamic-\/links-\/faq}} for more information. \end{DoxyRefDesc}
+\Hypertarget{namespacefirebase_1_1dynamic__links_abbd14e5ff7979b3db37646439953ffe6}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!GetShortLink@{GetShortLink}}
+\index{GetShortLink@{GetShortLink}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{GetShortLink()}{GetShortLink()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_abbd14e5ff7979b3db37646439953ffe6} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ firebase\+::dynamic\+\_\+links\+::\+Get\+Short\+Link (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{long\+\_\+dynamic\+\_\+link}{}\end{DoxyParamCaption})}
+
+Creates a shortened Dynamic Link from a given long Dynamic Link. 
+\begin{DoxyParams}{Parameters}
+{\em long\+\_\+dynamic\+\_\+link} & A link previously generated from Get\+Long\+Link. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a8c421190be85796c0fb82d26dacbc6bd}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!GetShortLink@{GetShortLink}}
+\index{GetShortLink@{GetShortLink}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{GetShortLink()}{GetShortLink()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a8c421190be85796c0fb82d26dacbc6bd} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ firebase\+::dynamic\+\_\+links\+::\+Get\+Short\+Link (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{long\+\_\+dynamic\+\_\+link}{, }\item[{const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{Dynamic\+Link\+Options}} \&}]{options}{}\end{DoxyParamCaption})}
+
+Creates a shortened Dynamic Link from a given long Dynamic Link. 
+\begin{DoxyParams}{Parameters}
+{\em long\+\_\+dynamic\+\_\+link} & A link previously generated from Get\+Long\+Link. \\
+\hline
+{\em options} & Additional options for Dynamic Link shortening, indicating whether or not to produce an unguessable or shortest possible link. No references to the options object will be retained after the call. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!GetShortLink@{GetShortLink}}
+\index{GetShortLink@{GetShortLink}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{GetShortLink()}{GetShortLink()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ firebase\+::dynamic\+\_\+links\+::\+Get\+Short\+Link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components}} \&}]{components}{}\end{DoxyParamCaption})}
+
+Creates a shortened Dynamic Link from the given parameters. 
+\begin{DoxyParams}{Parameters}
+{\em components} & Settings used to configure the behavior for the link. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a27f6f79d33e3388e2fec3f1685d63ed8}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!GetShortLink@{GetShortLink}}
+\index{GetShortLink@{GetShortLink}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{GetShortLink()}{GetShortLink()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a27f6f79d33e3388e2fec3f1685d63ed8} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ firebase\+::dynamic\+\_\+links\+::\+Get\+Short\+Link (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components}} \&}]{components}{, }\item[{const \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{Dynamic\+Link\+Options}} \&}]{options}{}\end{DoxyParamCaption})}
+
+Creates a shortened Dynamic Link from the given parameters. 
+\begin{DoxyParams}{Parameters}
+{\em components} & Settings used to configure the behavior for the link. \\
+\hline
+{\em options} & Additional options for Dynamic Link shortening, indicating whether or not to produce an unguessable or shortest possible link. No references to the options object will be retained after the call. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a59ec333a7537efb1b4829620176992f8}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!GetShortLinkLastResult@{GetShortLinkLastResult}}
+\index{GetShortLinkLastResult@{GetShortLinkLastResult}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{GetShortLinkLastResult()}{GetShortLinkLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a59ec333a7537efb1b4829620176992f8} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{Generated\+Dynamic\+Link}} $>$ firebase\+::dynamic\+\_\+links\+::\+Get\+Short\+Link\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get the (possibly still pending) results of the most recent Get\+Short\+Url call. \Hypertarget{namespacefirebase_1_1dynamic__links_a659bae907517913b293c0758eabf4af4}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a659bae907517913b293c0758eabf4af4} 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} firebase\+::dynamic\+\_\+links\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&}]{app}{, }\item[{\mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Initialize Firebase Dynamic Links. 
+
+After Initialize is called, the implementation may call functions on the \doxylink{classfirebase_1_1dynamic__links_1_1_listener}{Listener} provided at any time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & The Firebase \doxylink{classfirebase_1_1_app}{App} object for this application. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1dynamic__links_1_1_listener}{Listener} object that receives Dynamic Links.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]Dynamic Links is now deprecated. Please see the support documentation at \href{https://firebase.google.com/support/dynamic-links-faq}{\texttt{ https\+://firebase.\+google.\+com/support/dynamic-\/links-\/faq}} for more information. \end{DoxyRefDesc}
+\Hypertarget{namespacefirebase_1_1dynamic__links_af1d4453e5b174fa63fa3fa97d3f2dbb5}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!SetListener@{SetListener}}
+\index{SetListener@{SetListener}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{SetListener()}{SetListener()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_af1d4453e5b174fa63fa3fa97d3f2dbb5} 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*} firebase\+::dynamic\+\_\+links\+::\+Set\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1dynamic__links_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Set the listener for receiving Dynamic Links. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1dynamic__links_1_1_listener}{Listener} object that receives Dynamic Links.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the previously set listener.
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000006}{Deprecated}}]Dynamic Links is now deprecated. Please see the support documentation at \href{https://firebase.google.com/support/dynamic-links-faq}{\texttt{ https\+://firebase.\+google.\+com/support/dynamic-\/links-\/faq}} for more information. \end{DoxyRefDesc}
+\Hypertarget{namespacefirebase_1_1dynamic__links_a08c69d38191e1a9fa69a0ef4340c969e}\index{firebase::dynamic\_links@{firebase::dynamic\_links}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!firebase::dynamic\_links@{firebase::dynamic\_links}}
+\doxysubsubsection{\texorpdfstring{Terminate()}{Terminate()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1dynamic__links_a08c69d38191e1a9fa69a0ef4340c969e} 
+FIREBASE\+\_\+\+DEPRECATED void firebase\+::dynamic\+\_\+links\+::\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Terminate Firebase Dynamic Links. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000005}{Deprecated}}]Dynamic Links is now deprecated. Please see the support documentation at \href{https://firebase.google.com/support/dynamic-links-faq}{\texttt{ https\+://firebase.\+google.\+com/support/dynamic-\/links-\/faq}} for more information. \end{DoxyRefDesc}

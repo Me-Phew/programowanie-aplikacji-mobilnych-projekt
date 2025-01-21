@@ -1,0 +1,284 @@
+\doxysection{firebase\+::gma\+::ump Namespace Reference}
+\hypertarget{namespacefirebase_1_1gma_1_1ump}{}\label{namespacefirebase_1_1gma_1_1ump}\index{firebase::gma::ump@{firebase::gma::ump}}
+
+
+API for User Messaging Platform.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings}{Consent\+Debug\+Settings}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{Consent\+Info}}
+\begin{DoxyCompactList}\small\item\em Consent Information class for the User Messaging Platform SDK. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters}{Consent\+Request\+Parameters}}
+\begin{DoxyCompactList}\small\item\em Parameters for the {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab922f0c3c58a08af9f1bd2c7581ba8b5}{Consent\+Info\+::\+Request\+Consent\+Info\+Update()}} operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{Form\+Parent}}
+\begin{DoxyCompactList}\small\item\em A void pointer for stub classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f}{Consent\+Debug\+Geography}} \{ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae989846ffeb964b6dd0aa00f2c62c76a}{k\+Consent\+Debug\+Geography\+Disabled}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae22e21b1a97c684406d413cd3a1218af}{k\+Consent\+Debug\+Geography\+EEA}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fad38d46763fbd2c76418d2c43c034d40c}{k\+Consent\+Debug\+Geography\+Non\+EEA}}
+ \}
+\begin{DoxyCompactList}\small\item\em Debug values for testing geography. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf}{Consent\+Status}} \{ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa4925be3d87bfc1d5bac8edc96161f1f4}{k\+Consent\+Status\+Unknown}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa0642ccb2affc60fa3da5aaf83a284061}{k\+Consent\+Status\+Required}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfaf058796c48341e133eb1396c929e8b9a}{k\+Consent\+Status\+Not\+Required}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa9e5c8d0f7935690e6eacc95838159507}{k\+Consent\+Status\+Obtained}}
+ \}
+\begin{DoxyCompactList}\small\item\em Consent status values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f}{Consent\+Request\+Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa3a7bb7fb2f30cac7a02ebfa6c88ab45a}{k\+Consent\+Request\+Success}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fac874294b362466bac99ebbb84f843478}{k\+Consent\+Request\+Error\+Invalid\+App\+Id}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa59a2421dde5278658142adeb0a59f49a}{k\+Consent\+Request\+Error\+Network}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa94a1c781cee8a486ccd80aa6388873cd}{k\+Consent\+Request\+Error\+Internal}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fad12615ce5e00bfccd504252afeb90adf}{k\+Consent\+Request\+Error\+Misconfiguration}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa8d65aaf89e7b8ba6c7b084c7ec79a3bb}{k\+Consent\+Request\+Error\+Unknown}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45faa84ae03bdbdfce003b79236108f857fb}{k\+Consent\+Request\+Error\+Invalid\+Operation}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa0bdd1e8a2e5b4fba7104a33059413eff}{k\+Consent\+Request\+Error\+Operation\+In\+Progress}}
+ \}
+\begin{DoxyCompactList}\small\item\em Errors that can occur during a Request\+Consent\+Info\+Update operation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d}{Consent\+Form\+Status}} \{ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233da237d1f16704094de356cdb274df47630}{k\+Consent\+Form\+Status\+Unknown}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233dac5579ed8ffe224280d0192ee37cb43b7}{k\+Consent\+Form\+Status\+Unavailable}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233da375d6a4623ae1818aa5b3ebf27b8a53e}{k\+Consent\+Form\+Status\+Available}}
+ \}
+\begin{DoxyCompactList}\small\item\em Status of the consent form, whether it is available to show or not. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983}{Consent\+Form\+Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a56ae829f6b68adcc5c5db48947d1f1c7}{k\+Consent\+Form\+Success}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a2a5f9a57761a115bba8e5b6a96e0d6bb}{k\+Consent\+Form\+Error\+Timeout}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a02fcae9b629866f1b621908ca1be2623}{k\+Consent\+Form\+Error\+Internal}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a1d06a7a383f55a7a6b14ad56ae6b3a79}{k\+Consent\+Form\+Error\+Unknown}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a5d425ea25c34781c3ea9282d7e0e1488}{k\+Consent\+Form\+Error\+Unavailable}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a52ee1332960f4c69d09054f7082bf1af}{k\+Consent\+Form\+Error\+Already\+Used}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a146f75b03f50c79f1808fad5e7dd4c28}{k\+Consent\+Form\+Error\+Invalid\+Operation}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a3c1a3cb36d20b43a4266043b7470c6f2}{k\+Consent\+Form\+Error\+Operation\+In\+Progress}}
+ \}
+\begin{DoxyCompactList}\small\item\em Errors when loading or showing the consent form. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64}{Privacy\+Options\+Requirement\+Status}} \{ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64ad3f9cfadbaf9e8de43e150b65f5c8537}{k\+Privacy\+Options\+Requirement\+Status\+Unknown}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64a0ff46cde0b025df30439eeacdf3046f3}{k\+Privacy\+Options\+Requirement\+Status\+Not\+Required}}
+, \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64a52d7bb8a5ffffefdebd2d4d61d5cad23}{k\+Privacy\+Options\+Requirement\+Status\+Required}}
+ \}
+\begin{DoxyCompactList}\small\item\em Whether the privacy options need to be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API for User Messaging Platform. 
+
+The User Messaging Platform (UMP) SDK is Google’s option to handle user privacy and consent in mobile apps. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}\index{firebase::gma::ump@{firebase::gma::ump}!FormParent@{FormParent}}
+\index{FormParent@{FormParent}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{FormParent}{FormParent}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e} 
+typedef void\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{firebase\+::gma\+::ump\+::\+Form\+Parent}}}
+
+
+
+A void pointer for stub classes. 
+
+This is a platform specific datatype that is required to show a consent form on screen.
+
+The following defines the datatype on each platform\+: 
+\begin{DoxyItemize}
+\item Android\+: A {\ttfamily jobject} which references an Android Activity. 
+\item i\+OS\+: An {\ttfamily id} which references an i\+OS UIView\+Controller. 
+\end{DoxyItemize}
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f}\index{firebase::gma::ump@{firebase::gma::ump}!ConsentDebugGeography@{ConsentDebugGeography}}
+\index{ConsentDebugGeography@{ConsentDebugGeography}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{ConsentDebugGeography}{ConsentDebugGeography}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f} 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f}{firebase\+::gma\+::ump\+::\+Consent\+Debug\+Geography}}}
+
+
+
+Debug values for testing geography. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentDebugGeographyDisabled@{kConsentDebugGeographyDisabled}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentDebugGeographyDisabled@{kConsentDebugGeographyDisabled}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae989846ffeb964b6dd0aa00f2c62c76a}\label{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f} 
+k\+Consent\+Debug\+Geography\+Disabled&Disable geography debugging. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentDebugGeographyEEA@{kConsentDebugGeographyEEA}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentDebugGeographyEEA@{kConsentDebugGeographyEEA}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae22e21b1a97c684406d413cd3a1218af}\label{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f} 
+k\+Consent\+Debug\+Geography\+EEA&Geography appears as in EEA (European Economic Area) for debug devices. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentDebugGeographyNonEEA@{kConsentDebugGeographyNonEEA}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentDebugGeographyNonEEA@{kConsentDebugGeographyNonEEA}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fad38d46763fbd2c76418d2c43c034d40c}\label{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f} 
+k\+Consent\+Debug\+Geography\+Non\+EEA&Geography appears as not in EEA for debug devices. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983}\index{firebase::gma::ump@{firebase::gma::ump}!ConsentFormError@{ConsentFormError}}
+\index{ConsentFormError@{ConsentFormError}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{ConsentFormError}{ConsentFormError}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983}{firebase\+::gma\+::ump\+::\+Consent\+Form\+Error}}}
+
+
+
+Errors when loading or showing the consent form. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormSuccess@{kConsentFormSuccess}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormSuccess@{kConsentFormSuccess}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a56ae829f6b68adcc5c5db48947d1f1c7}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Success&The operation succeeded. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorTimeout@{kConsentFormErrorTimeout}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorTimeout@{kConsentFormErrorTimeout}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a2a5f9a57761a115bba8e5b6a96e0d6bb}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Timeout&The load request timed out. Try again. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorInternal@{kConsentFormErrorInternal}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorInternal@{kConsentFormErrorInternal}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a02fcae9b629866f1b621908ca1be2623}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Internal&An internal error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorUnknown@{kConsentFormErrorUnknown}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorUnknown@{kConsentFormErrorUnknown}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a1d06a7a383f55a7a6b14ad56ae6b3a79}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Unknown&An unknown error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorUnavailable@{kConsentFormErrorUnavailable}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorUnavailable@{kConsentFormErrorUnavailable}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a5d425ea25c34781c3ea9282d7e0e1488}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Unavailable&The form is unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorAlreadyUsed@{kConsentFormErrorAlreadyUsed}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorAlreadyUsed@{kConsentFormErrorAlreadyUsed}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a52ee1332960f4c69d09054f7082bf1af}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Already\+Used&This form was already used. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorInvalidOperation@{kConsentFormErrorInvalidOperation}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorInvalidOperation@{kConsentFormErrorInvalidOperation}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a146f75b03f50c79f1808fad5e7dd4c28}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Invalid\+Operation&An invalid operation occurred. Try again. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormErrorOperationInProgress@{kConsentFormErrorOperationInProgress}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormErrorOperationInProgress@{kConsentFormErrorOperationInProgress}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a3c1a3cb36d20b43a4266043b7470c6f2}\label{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983} 
+k\+Consent\+Form\+Error\+Operation\+In\+Progress&The operation is already in progress. Call {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_abf20eefdf6dda5ff017707553396dc5d}{Consent\+Info\+::\+Load\+Consent\+Form\+Last\+Result()}} or {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_af5880ae4154ccf06d1dbc7c7f507d6c5}{Consent\+Info\+::\+Show\+Consent\+Form\+Last\+Result()}} to get the status. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d}\index{firebase::gma::ump@{firebase::gma::ump}!ConsentFormStatus@{ConsentFormStatus}}
+\index{ConsentFormStatus@{ConsentFormStatus}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{ConsentFormStatus}{ConsentFormStatus}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d} 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d}{firebase\+::gma\+::ump\+::\+Consent\+Form\+Status}}}
+
+
+
+Status of the consent form, whether it is available to show or not. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormStatusUnknown@{kConsentFormStatusUnknown}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormStatusUnknown@{kConsentFormStatusUnknown}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233da237d1f16704094de356cdb274df47630}\label{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d} 
+k\+Consent\+Form\+Status\+Unknown&Status is unknown. Call {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab922f0c3c58a08af9f1bd2c7581ba8b5}{Consent\+Info\+::\+Request\+Consent\+Info\+Update()}} to update this. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormStatusUnavailable@{kConsentFormStatusUnavailable}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormStatusUnavailable@{kConsentFormStatusUnavailable}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233dac5579ed8ffe224280d0192ee37cb43b7}\label{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d} 
+k\+Consent\+Form\+Status\+Unavailable&The consent form is unavailable. Call {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_aec6c344b0a7bc79f6b533e92589a52e8}{Consent\+Info\+::\+Load\+Consent\+Form()}} to load it. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentFormStatusAvailable@{kConsentFormStatusAvailable}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentFormStatusAvailable@{kConsentFormStatusAvailable}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233da375d6a4623ae1818aa5b3ebf27b8a53e}\label{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d} 
+k\+Consent\+Form\+Status\+Available&The consent form is available. Call {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a1037f203e3bd10881340c935a9490f28}{Consent\+Info\+::\+Show\+Consent\+Form()}} to display it. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f}\index{firebase::gma::ump@{firebase::gma::ump}!ConsentRequestError@{ConsentRequestError}}
+\index{ConsentRequestError@{ConsentRequestError}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{ConsentRequestError}{ConsentRequestError}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f}{firebase\+::gma\+::ump\+::\+Consent\+Request\+Error}}}
+
+
+
+Errors that can occur during a Request\+Consent\+Info\+Update operation. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestSuccess@{kConsentRequestSuccess}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestSuccess@{kConsentRequestSuccess}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa3a7bb7fb2f30cac7a02ebfa6c88ab45a}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Success&The operation succeeded. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorInvalidAppId@{kConsentRequestErrorInvalidAppId}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorInvalidAppId@{kConsentRequestErrorInvalidAppId}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fac874294b362466bac99ebbb84f843478}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Invalid\+App\+Id&Invalid GMA \doxylink{classfirebase_1_1_app}{App} ID specified in Android\+Manifest.\+xml or Info.\+plist. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorNetwork@{kConsentRequestErrorNetwork}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorNetwork@{kConsentRequestErrorNetwork}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa59a2421dde5278658142adeb0a59f49a}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Network&A network error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorInternal@{kConsentRequestErrorInternal}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorInternal@{kConsentRequestErrorInternal}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa94a1c781cee8a486ccd80aa6388873cd}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Internal&An internal error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorMisconfiguration@{kConsentRequestErrorMisconfiguration}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorMisconfiguration@{kConsentRequestErrorMisconfiguration}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fad12615ce5e00bfccd504252afeb90adf}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Misconfiguration&A misconfiguration exists in the UI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorUnknown@{kConsentRequestErrorUnknown}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorUnknown@{kConsentRequestErrorUnknown}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa8d65aaf89e7b8ba6c7b084c7ec79a3bb}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Unknown&An unknown error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorInvalidOperation@{kConsentRequestErrorInvalidOperation}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorInvalidOperation@{kConsentRequestErrorInvalidOperation}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45faa84ae03bdbdfce003b79236108f857fb}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Invalid\+Operation&An invalid operation occurred. Try again. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentRequestErrorOperationInProgress@{kConsentRequestErrorOperationInProgress}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentRequestErrorOperationInProgress@{kConsentRequestErrorOperationInProgress}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa0bdd1e8a2e5b4fba7104a33059413eff}\label{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f} 
+k\+Consent\+Request\+Error\+Operation\+In\+Progress&The operation is already in progress. Use {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_aed9b36af7ff6771ef0fc184463a13e3e}{Consent\+Info\+::\+Request\+Consent\+Info\+Update\+Last\+Result()}} to get the status. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf}\index{firebase::gma::ump@{firebase::gma::ump}!ConsentStatus@{ConsentStatus}}
+\index{ConsentStatus@{ConsentStatus}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{ConsentStatus}{ConsentStatus}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf} 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf}{firebase\+::gma\+::ump\+::\+Consent\+Status}}}
+
+
+
+Consent status values. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentStatusUnknown@{kConsentStatusUnknown}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentStatusUnknown@{kConsentStatusUnknown}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa4925be3d87bfc1d5bac8edc96161f1f4}\label{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf} 
+k\+Consent\+Status\+Unknown&Unknown status, e.\+g. prior to calling Request, or if the request fails. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentStatusRequired@{kConsentStatusRequired}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentStatusRequired@{kConsentStatusRequired}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa0642ccb2affc60fa3da5aaf83a284061}\label{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf} 
+k\+Consent\+Status\+Required&Consent is required, but not obtained. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentStatusNotRequired@{kConsentStatusNotRequired}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentStatusNotRequired@{kConsentStatusNotRequired}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfaf058796c48341e133eb1396c929e8b9a}\label{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf} 
+k\+Consent\+Status\+Not\+Required&Consent is not required. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConsentStatusObtained@{kConsentStatusObtained}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kConsentStatusObtained@{kConsentStatusObtained}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa9e5c8d0f7935690e6eacc95838159507}\label{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf} 
+k\+Consent\+Status\+Obtained&Consent was required, and has been obtained. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64}\index{firebase::gma::ump@{firebase::gma::ump}!PrivacyOptionsRequirementStatus@{PrivacyOptionsRequirementStatus}}
+\index{PrivacyOptionsRequirementStatus@{PrivacyOptionsRequirementStatus}!firebase::gma::ump@{firebase::gma::ump}}
+\doxysubsubsection{\texorpdfstring{PrivacyOptionsRequirementStatus}{PrivacyOptionsRequirementStatus}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64} 
+enum \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64}{firebase\+::gma\+::ump\+::\+Privacy\+Options\+Requirement\+Status}}}
+
+
+
+Whether the privacy options need to be displayed. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPrivacyOptionsRequirementStatusUnknown@{kPrivacyOptionsRequirementStatusUnknown}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kPrivacyOptionsRequirementStatusUnknown@{kPrivacyOptionsRequirementStatusUnknown}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64ad3f9cfadbaf9e8de43e150b65f5c8537}\label{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64} 
+k\+Privacy\+Options\+Requirement\+Status\+Unknown&Privacy options requirement status is unknown. Call {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab922f0c3c58a08af9f1bd2c7581ba8b5}{Consent\+Info\+::\+Request\+Consent\+Info\+Update()}} to update. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPrivacyOptionsRequirementStatusNotRequired@{kPrivacyOptionsRequirementStatusNotRequired}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kPrivacyOptionsRequirementStatusNotRequired@{kPrivacyOptionsRequirementStatusNotRequired}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64a0ff46cde0b025df30439eeacdf3046f3}\label{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64} 
+k\+Privacy\+Options\+Requirement\+Status\+Not\+Required&Privacy options are not required to be shown. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPrivacyOptionsRequirementStatusRequired@{kPrivacyOptionsRequirementStatusRequired}!firebase::gma::ump@{firebase::gma::ump}}\index{firebase::gma::ump@{firebase::gma::ump}!kPrivacyOptionsRequirementStatusRequired@{kPrivacyOptionsRequirementStatusRequired}}}\Hypertarget{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64a52d7bb8a5ffffefdebd2d4d61d5cad23}\label{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64} 
+k\+Privacy\+Options\+Requirement\+Status\+Required&Privacy options must be shown. Call {\ttfamily \doxylink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a6e5d87d9cc27805bf0b24300938f5a2b}{Consent\+Info\+::\+Show\+Privacy\+Options\+Form()}} to fulfil this requirement. \\
+\hline
+
+\end{DoxyEnumFields}

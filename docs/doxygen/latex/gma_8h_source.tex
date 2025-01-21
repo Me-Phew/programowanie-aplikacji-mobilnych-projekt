@@ -1,0 +1,91 @@
+\doxysection{gma.\+h}
+\hypertarget{gma_8h_source}{}\label{gma_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/platform.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <jni.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/ad\_view.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/internal/native\_ad.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/interstitial\_ad.h"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/rewarded\_ad.h"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/types.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00037\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE(gma)}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ In\ the\ GMA\ docs,\ link\ to\ firebase::Future\ in\ the\ Firebase\ C++\ docs.}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#if\ defined(DOXYGEN\_ADMOB)}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ ResultType>}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }Future\ \{}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ Empty\ class\ (used\ for\ documentation\ only).}}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(DOXYGEN\_ADMOB)}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00080\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdapterInitializationStatus>}}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a1fefc328ce907fdf2b0ef7e316ce54df}{Initialize}}(}
+\DoxyCodeLine{00081\ \ \ \ \ const\ ::firebase::App\&\ app,\ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00109\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdapterInitializationStatus>}}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a1fefc328ce907fdf2b0ef7e316ce54df}{Initialize}}(}
+\DoxyCodeLine{00110\ \ \ \ \ JNIEnv*\ jni\_env,\ jobject\ activity,\ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(\_\_ANDROID\_\_)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#if\ !FIREBASE\_PLATFORM\_ANDROID\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00128\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdapterInitializationStatus>}}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a1fefc328ce907fdf2b0ef7e316ce54df}{Initialize}}(}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_\_ANDROID\_\_)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00134\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdapterInitializationStatus>}}\ \mbox{\hyperlink{namespacefirebase_1_1gma_afbddd4c52c53e83284caaeaceefbe0d1}{InitializeLastResult}}();}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00138\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_initialization_status}{AdapterInitializationStatus}}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a4c0dcbd90f0cb5510570e573efb71339}{GetInitializationStatus}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a7ad7ebfc8a0b1dfb5f0ffce4fe3a496b}{DisableSDKCrashReporting}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00156\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1gma_ae6cf4b463938ccfd3a7e924f15f14e36}{DisableMediationInitialization}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1gma_add5fc03e6d996ce57faeeabd16d86d6f}{SetRequestConfiguration}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration}{RequestConfiguration}}\&\ request\_configuration);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00174\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration}{RequestConfiguration}}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a72ef8ede39f74145327a02c4fd56a0d1}{GetRequestConfiguration}}();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a2421a15a8f6e072312c6362413f1a799}{OpenAdInspector}}(\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}}\ parent,\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_inspector_closed_listener}{AdInspectorClosedListener}}*\ listener);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1gma_ab2354558afd680d5a30d80ad9ab52760}{SetIsSameAppKeyEnabled}}(\textcolor{keywordtype}{bool}\ is\_enabled);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a6380ae0bed055cbf130a8c40dda5d91e}{Terminate}}();}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00206\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_H\_}}
+
+\end{DoxyCode}

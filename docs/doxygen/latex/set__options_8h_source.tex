@@ -1,0 +1,84 @@
+\doxysection{set\+\_\+options.\+h}
+\hypertarget{set__options_8h_source}{}\label{set__options_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/set\_options.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/set\_options.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_SET\_OPTIONS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_SET\_OPTIONS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/field\_path.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\ final\ \{}
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205}{Type}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205abfd4483cecc9ffd36f88de2c9f53b8dc}{kOverwrite}},}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205a95704621f6cc655bcd2a198b33be9bcf}{kMergeAll}},}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205afa73c9a632b76599acd400459861bcbf}{kMergeSpecific}},}
+\DoxyCodeLine{00055\ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_ab655936516fa63ebe64e2cb6a278c136}{SetOptions}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_ac4b2e1b8fdf115d6fc4e1d317fe0d83f}{SetOptions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a8464c5185ad38b43f8a45c26b03cf588}{SetOptions}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{\string~SetOptions}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a07fcbdf16b59c4e2f2cecadb7d0f29d6}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a5adab1c3f3f7e53730134b20e70c9cc5}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a64fc825a4de04509f392f3947075cc14}{Merge}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_aa304a67776e89b98c385eb8929e64a98}{MergeFields}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ fields);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00136\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_aeaa962277a4419b7dd2f8e1044e9fccf}{MergeFieldPaths}}(\textcolor{keyword}{const}\ std::vector<FieldPath>\&\ fields);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00139\ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a447d37176e4e9df629f3b8736e32cb46}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ rhs);}
+\DoxyCodeLine{00140\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }SetOptionsInternal;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_ab655936516fa63ebe64e2cb6a278c136}{SetOptions}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205}{Type}}\ type,\ std::unordered\_set<FieldPath>\ fields);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205}{Type}}\ type\_\ =\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205abfd4483cecc9ffd36f88de2c9f53b8dc}{Type::kOverwrite}};}
+\DoxyCodeLine{00145\ \ \ std::unordered\_set<FieldPath>\ fields\_;}
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ rhs)\ \{}
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordflow}{return}\ lhs.type\_\ ==\ rhs.type\_\ \&\&\ lhs.fields\_\ ==\ rhs.fields\_;}
+\DoxyCodeLine{00151\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ rhs)\ \{}
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00159\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_SET\_OPTIONS\_H\_}}
+
+\end{DoxyCode}

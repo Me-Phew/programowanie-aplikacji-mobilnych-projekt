@@ -1,0 +1,91 @@
+\doxysection{byte\+\_\+streams.\+h}
+\hypertarget{byte__streams_8h_source}{}\label{byte__streams_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/byte\_streams.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/byte\_streams.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_BYTE\_STREAMS\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_BYTE\_STREAMS\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Interfaces\ for\ interacting\ with\ a\ stream\ of\ bytes,\ for\ use\ in\ codecs.}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ An\ interface\ for\ a\ class\ that\ reads\ from\ a\ byte\ stream.}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{ByteStreamReader}}\ \{}
+\DoxyCodeLine{00014\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{ByteStreamReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{\string~ByteStreamReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{comment}{//\ Reads\ and\ returns\ the\ next\ byte\ from\ the\ stream.}}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ ReadByte()\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ Reads\ the\ next\ |length|\ bytes\ from\ the\ stream\ into\ |buffer|.\ The\ caller}}
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ is\ responsible\ for\ ensuring\ that\ |buffer|\ is\ large\ enough.}}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ReadBytes(uint8\_t*\ buffer,\ \textcolor{keywordtype}{size\_t}\ length)\ =\ 0;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//\ Advances\ the\ read\ cursor\ to\ the\ next\ multiple\ of\ |alignment|\ relative\ to}}
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ the\ start\ of\ the\ stream,\ unless\ it\ is\ already\ aligned.}}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ReadAlignment(uint8\_t\ alignment)\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ Reads\ and\ returns\ the\ next\ 32-\/bit\ integer\ from\ the\ stream.}}
+\DoxyCodeLine{00030\ \ \ int32\_t\ ReadInt32()\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ int32\_t\ value\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ ReadBytes(\textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(\&value),\ 4);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00034\ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ Reads\ and\ returns\ the\ next\ 64-\/bit\ integer\ from\ the\ stream.}}
+\DoxyCodeLine{00037\ \ \ int64\_t\ ReadInt64()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ int64\_t\ value\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ ReadBytes(\textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(\&value),\ 8);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Reads\ and\ returns\ the\ next\ 64-\/bit\ floating\ point\ number\ from\ the\ stream.}}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{double}\ ReadDouble()\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ value\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ ReadBytes(\textcolor{keyword}{reinterpret\_cast<}uint8\_t*\textcolor{keyword}{>}(\&value),\ 8);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00048\ \ \ \}}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ An\ interface\ for\ a\ class\ that\ writes\ to\ a\ byte\ stream.}}
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_byte_stream_writer}{ByteStreamWriter}}\ \{}
+\DoxyCodeLine{00053\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_byte_stream_writer}{ByteStreamWriter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_byte_stream_writer}{\string~ByteStreamWriter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ Writes\ |byte|\ to\ the\ stream.}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ WriteByte(uint8\_t\ \textcolor{keywordtype}{byte})\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ Writes\ the\ next\ |length|\ bytes\ from\ |bytes|\ to\ the\ stream}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ WriteBytes(\textcolor{keyword}{const}\ uint8\_t*\ bytes,\ \textcolor{keywordtype}{size\_t}\ length)\ =\ 0;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ Writes\ 0s\ until\ the\ next\ multiple\ of\ |alignment|\ relative\ to\ the\ start}}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ of\ the\ stream,\ unless\ the\ write\ positition\ is\ already\ aligned.}}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ WriteAlignment(uint8\_t\ alignment)\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Writes\ the\ given\ 32-\/bit\ int\ to\ the\ stream.}}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ WriteInt32(int32\_t\ value)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ WriteBytes(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&value),\ 4);}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ Writes\ the\ given\ 64-\/bit\ int\ to\ the\ stream.}}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ WriteInt64(int64\_t\ value)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ WriteBytes(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&value),\ 8);}
+\DoxyCodeLine{00075\ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ Writes\ the\ given\ 36-\/bit\ double\ to\ the\ stream.}}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ WriteDouble(\textcolor{keywordtype}{double}\ value)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ WriteBytes(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(\&value),\ 8);}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_BYTE\_STREAMS\_H\_}}
+
+\end{DoxyCode}

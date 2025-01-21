@@ -1,0 +1,116 @@
+\doxysection{firebase\+::installations\+::Installations Class Reference}
+\hypertarget{classfirebase_1_1installations_1_1_installations}{}\label{classfirebase_1_1installations_1_1_installations}\index{firebase::installations::Installations@{firebase::installations::Installations}}
+
+
+\doxylink{classfirebase_1_1installations_1_1_installations}{Installations} provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (for example, sending an FCM message).  
+
+
+
+
+{\ttfamily \#include $<$installations.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}{app}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classfirebase_1_1_app}{App} this object is connected to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a52fc64f9dff544d0c386f357e7a5b331}{Get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns a stable identifier that uniquely identifies the app installation. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1installations_1_1_installations_af698eea1ed99a6780a0c236fd4e35dee}\label{classfirebase_1_1installations_1_1_installations_af698eea1ed99a6780a0c236fd4e35dee} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ {\bfseries Get\+Id\+Last\+Result} ()
+\begin{DoxyCompactList}\small\item\em Get the results of the most recent call to \doxylink{classfirebase_1_1installations_1_1_installations_a52fc64f9dff544d0c386f357e7a5b331}{Get\+Id}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1installations_1_1_installations_aef7348a481a79778ee096c4254339a9e}\label{classfirebase_1_1installations_1_1_installations_aef7348a481a79778ee096c4254339a9e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em Call to delete this Firebase app installation from the Firebase backend. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1installations_1_1_installations_a01af4d36a7e004654310278f2fc7e370}\label{classfirebase_1_1installations_1_1_installations_a01af4d36a7e004654310278f2fc7e370} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Delete\+Last\+Result} ()
+\begin{DoxyCompactList}\small\item\em Get the results of the most recent call to \doxylink{classfirebase_1_1installations_1_1_installations_aef7348a481a79778ee096c4254339a9e}{Delete}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_aded92e1065ecbb884ac16f9272d3c03a}{Get\+Token}} (bool force\+Refresh)
+\begin{DoxyCompactList}\small\item\em Returns a token that authorizes an Entity to perform an action on behalf of the application identified by installations. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1installations_1_1_installations_ad9cb7f93dab61520ea67ca7125adb083}\label{classfirebase_1_1installations_1_1_installations_ad9cb7f93dab61520ea67ca7125adb083} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ {\bfseries Get\+Token\+Last\+Result} ()
+\begin{DoxyCompactList}\small\item\em Get the results of the most recent call to \doxylink{classfirebase_1_1installations_1_1_installations_aded92e1065ecbb884ac16f9272d3c03a}{Get\+Token}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{Installations}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_ae20e64d3287f3f92b87df2ded046b400}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}{app}})
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classfirebase_1_1installations_1_1_installations}{Installations} object for an \doxylink{classfirebase_1_1_app}{App} creating the \doxylink{classfirebase_1_1installations_1_1_installations}{Installations} if required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfirebase_1_1installations_1_1_installations}{Installations} provides a unique identifier for each app instance and a mechanism to authenticate and authorize actions (for example, sending an FCM message). 
+
+Provides a unique identifier for a Firebase installation. Provides an auth token for a Firebase installation. Provides a API to perform data deletion for a Firebase installation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}\index{firebase::installations::Installations@{firebase::installations::Installations}!app@{app}}
+\index{app@{app}!firebase::installations::Installations@{firebase::installations::Installations}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b} 
+\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::installations\+::\+Installations\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{classfirebase_1_1_app}{App} this object is connected to. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classfirebase_1_1_app}{App} this object is connected to. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1installations_1_1_installations_a52fc64f9dff544d0c386f357e7a5b331}\index{firebase::installations::Installations@{firebase::installations::Installations}!GetId@{GetId}}
+\index{GetId@{GetId}!firebase::installations::Installations@{firebase::installations::Installations}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1installations_1_1_installations_a52fc64f9dff544d0c386f357e7a5b331} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::installations\+::\+Installations\+::\+Get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a stable identifier that uniquely identifies the app installation. 
+
+\begin{DoxyReturn}{Returns}
+Unique identifier for the app installation. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1installations_1_1_installations_ae20e64d3287f3f92b87df2ded046b400}\index{firebase::installations::Installations@{firebase::installations::Installations}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::installations::Installations@{firebase::installations::Installations}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1installations_1_1_installations_ae20e64d3287f3f92b87df2ded046b400} 
+static \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{Installations}} \texorpdfstring{$\ast$}{*} firebase\+::installations\+::\+Installations\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the \doxylink{classfirebase_1_1installations_1_1_installations}{Installations} object for an \doxylink{classfirebase_1_1_app}{App} creating the \doxylink{classfirebase_1_1installations_1_1_installations}{Installations} if required. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & The \doxylink{classfirebase_1_1_app}{App} to create an \doxylink{classfirebase_1_1installations_1_1_installations}{Installations} object from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classfirebase_1_1installations_1_1_installations}{Installations} object if successful, nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1installations_1_1_installations_aded92e1065ecbb884ac16f9272d3c03a}\index{firebase::installations::Installations@{firebase::installations::Installations}!GetToken@{GetToken}}
+\index{GetToken@{GetToken}!firebase::installations::Installations@{firebase::installations::Installations}}
+\doxysubsubsection{\texorpdfstring{GetToken()}{GetToken()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1installations_1_1_installations_aded92e1065ecbb884ac16f9272d3c03a} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::installations\+::\+Installations\+::\+Get\+Token (\begin{DoxyParamCaption}\item[{bool}]{force\+Refresh}{}\end{DoxyParamCaption})}
+
+
+
+Returns a token that authorizes an Entity to perform an action on behalf of the application identified by installations. 
+
+This is similar to an OAuth2 token except it applies to the application instance instead of a user.
+
+For example, to get a token that can be used to send messages to an application via Firebase Cloud Messaging, set entity to the sender ID, and set scope to "{}\+FCM"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\+Refresh} & If set true, will always return a new token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a valid authentication token for the Firebase installation. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/installations.\+h\end{DoxyCompactItemize}

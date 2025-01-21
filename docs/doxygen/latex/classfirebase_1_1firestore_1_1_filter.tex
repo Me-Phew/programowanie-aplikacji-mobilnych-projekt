@@ -1,0 +1,665 @@
+\doxysection{firebase\+::firestore\+::Filter Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_filter}{}\label{classfirebase_1_1firestore_1_1_filter}\index{firebase::firestore::Filter@{firebase::firestore::Filter}}
+
+
+A \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter} represents a restriction on one or more field values and can be used to refine the results of a \doxylink{classfirebase_1_1firestore_1_1_query}{Query}.  
+
+
+
+
+{\ttfamily \#include $<$filter.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a749f045a229851c7a95ed95fcea6a8a3}{Filter}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_aa89b5699198c1b32c2ea7723a0573203}{Filter}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_afa776151ca9fa5c7a262d24860a27b79}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_adabeff2849043629f8fdf15f81c281c1}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a4110aba92017e62c88e334161802c518}{Array\+Contains}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given array field contains the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a91cdc5665676336200629323cc6c51ba}{Array\+Contains\+Any}} (const std\+::string \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given array field contains any of the given values. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_ad537dd719a9d1671670e5aaadeb49f1d}{Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_abad32e0497352ba008e5d004a46ce1a3}{Not\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is not equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a5ae74b8e0c2f4b6227f778f4fe657fdf}{Greater\+Than}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is greater than the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a9b9d5f4ba3f5e597a59fac13fb7809d9}{Greater\+Than\+Or\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is greater than or equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a4b7d69d07fdc5ccd6222d2aa00b886a4}{Less\+Than}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is less than the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a1951bcae8d2af80743f9bb5040fcb9b7}{Less\+Than\+Or\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is less than or equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a6095aae52da06aaab3310a0e04ba8e78}{In}} (const std\+::string \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field equals any of the given values. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a175b391e163b438f6d2abb728d851d59}{Not\+In}} (const std\+::string \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field does not equal any of the given values. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a583d666b515eb2963a317500059f7800}{Array\+Contains}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given array field contains the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a8e9def09aabf3dd23a89bdc6353dc890}{Array\+Contains\+Any}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given array field contains any of the given values. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_aea6e367a6f641d0db952a645334b9997}{Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_ac8e7ae393a6fa088e318415a3a84ba75}{Not\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is not equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_ad81b48934ad126ce84b9b74e0a57074a}{Greater\+Than}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is greater than the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a49b40ebc3c84c1a310a3447125a10f4f}{Greater\+Than\+Or\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is greater than or equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a68c6605ada4c2273cc02365f79068357}{Less\+Than}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is less than the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_adc8d2677463c8a6d2b84428d49343518}{Less\+Than\+Or\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field is less than or equal to the given value. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_aaf1131e1a4481799e90c868774e71e21}{In}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field equals any of the given values. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_aac9cefb733817e2e31f91042c5a6716c}{Not\+In}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Creates a new filter for checking that the given field does not equal any of the given values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Filters$>$ }\\static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_ab4ebd8a427ce4497e9109079c1fee9ee}{And}} (const Filters \&... filters)
+\begin{DoxyCompactList}\small\item\em Creates a new filter that is a conjunction of the given filters. A conjunction filter includes a document if it satisfies all of the given filters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a3927cbe95f1e42c13c4277645a5f17cd}{And}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} $>$ \&filters)
+\begin{DoxyCompactList}\small\item\em Creates a new filter that is a conjunction of the given filters. A conjunction filter includes a document if it satisfies all of the given filters. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Filters$>$ }\\static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a8f3d0e87c8642f7bfebfd57ee4c8b263}{Or}} (const Filters \&... filters)
+\begin{DoxyCompactList}\small\item\em Creates a new filter that is a disjunction of the given filters. A disjunction filter includes a document if it satisfies {\itshape any} of the given filters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a86aaad2b14fdcdadee3d92f9371c35d3}{Or}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} $>$ \&filters)
+\begin{DoxyCompactList}\small\item\em Creates a new filter that is a disjunction of the given filters. A disjunction filter includes a document if it satisfies {\itshape any} of the given filters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a0de80064a367adf51ab09f7a9b6de05a}\label{classfirebase_1_1firestore_1_1_filter_a0de80064a367adf51ab09f7a9b6de05a} 
+class {\bfseries Query}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_af6cb3d6b6c0e0eca68e1f4cbc42db8bb}\label{classfirebase_1_1firestore_1_1_filter_af6cb3d6b6c0e0eca68e1f4cbc42db8bb} 
+class {\bfseries Query\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_aeb7b81d632047b3c24a4cdfab2b99033}\label{classfirebase_1_1firestore_1_1_filter_aeb7b81d632047b3c24a4cdfab2b99033} 
+class {\bfseries Filter\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_filter_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter_a9fca99a620fa3b97972b9791de768376}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter} represents a restriction on one or more field values and can be used to refine the results of a \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a749f045a229851c7a95ed95fcea6a8a3}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{Filter()}{Filter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a749f045a229851c7a95ed95fcea6a8a3} 
+firebase\+::firestore\+::\+Filter\+::\+Filter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}} is immutable and can be efficiently copied.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_aa89b5699198c1b32c2ea7723a0573203}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{Filter()}{Filter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_aa89b5699198c1b32c2ea7723a0573203} 
+firebase\+::firestore\+::\+Filter\+::\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_ab4ebd8a427ce4497e9109079c1fee9ee}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!And@{And}}
+\index{And@{And}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{And()}{And()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_ab4ebd8a427ce4497e9109079c1fee9ee} 
+template$<$typename... Filters$>$ \\
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+And (\begin{DoxyParamCaption}\item[{const Filters \&...}]{filters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a new filter that is a conjunction of the given filters. A conjunction filter includes a document if it satisfies all of the given filters. 
+
+If no filter is given, the composite filter is a no-\/op, and if only one filter is given, the composite filter has the same behavior as the underlying filter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filters} & The filters to perform a conjunction for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a3927cbe95f1e42c13c4277645a5f17cd}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!And@{And}}
+\index{And@{And}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{And()}{And()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a3927cbe95f1e42c13c4277645a5f17cd} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+And (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} $>$ \&}]{filters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter that is a conjunction of the given filters. A conjunction filter includes a document if it satisfies all of the given filters. 
+
+If no filter is given, the composite filter is a no-\/op, and if only one filter is given, the composite filter has the same behavior as the underlying filter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filters} & The list that contains filters to perform a conjunction for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a583d666b515eb2963a317500059f7800}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!ArrayContains@{ArrayContains}}
+\index{ArrayContains@{ArrayContains}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{ArrayContains()}{ArrayContains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a583d666b515eb2963a317500059f7800} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Array\+Contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given array field contains the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value that must be contained in the array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a4110aba92017e62c88e334161802c518}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!ArrayContains@{ArrayContains}}
+\index{ArrayContains@{ArrayContains}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{ArrayContains()}{ArrayContains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a4110aba92017e62c88e334161802c518} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Array\+Contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given array field contains the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value that must be contained in the array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a8e9def09aabf3dd23a89bdc6353dc890}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!ArrayContainsAny@{ArrayContainsAny}}
+\index{ArrayContainsAny@{ArrayContainsAny}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{ArrayContainsAny()}{ArrayContainsAny()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a8e9def09aabf3dd23a89bdc6353dc890} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Array\+Contains\+Any (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given array field contains any of the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list of values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a91cdc5665676336200629323cc6c51ba}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!ArrayContainsAny@{ArrayContainsAny}}
+\index{ArrayContainsAny@{ArrayContainsAny}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{ArrayContainsAny()}{ArrayContainsAny()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a91cdc5665676336200629323cc6c51ba} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Array\+Contains\+Any (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given array field contains any of the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list of values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_aea6e367a6f641d0db952a645334b9997}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!EqualTo@{EqualTo}}
+\index{EqualTo@{EqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{EqualTo()}{EqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_aea6e367a6f641d0db952a645334b9997} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_ad537dd719a9d1671670e5aaadeb49f1d}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!EqualTo@{EqualTo}}
+\index{EqualTo@{EqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{EqualTo()}{EqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_ad537dd719a9d1671670e5aaadeb49f1d} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_ad81b48934ad126ce84b9b74e0a57074a}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!GreaterThan@{GreaterThan}}
+\index{GreaterThan@{GreaterThan}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{GreaterThan()}{GreaterThan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_ad81b48934ad126ce84b9b74e0a57074a} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Greater\+Than (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is greater than the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a5ae74b8e0c2f4b6227f778f4fe657fdf}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!GreaterThan@{GreaterThan}}
+\index{GreaterThan@{GreaterThan}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{GreaterThan()}{GreaterThan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a5ae74b8e0c2f4b6227f778f4fe657fdf} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Greater\+Than (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is greater than the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a49b40ebc3c84c1a310a3447125a10f4f}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!GreaterThanOrEqualTo@{GreaterThanOrEqualTo}}
+\index{GreaterThanOrEqualTo@{GreaterThanOrEqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{GreaterThanOrEqualTo()}{GreaterThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a49b40ebc3c84c1a310a3447125a10f4f} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Greater\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is greater than or equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a9b9d5f4ba3f5e597a59fac13fb7809d9}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!GreaterThanOrEqualTo@{GreaterThanOrEqualTo}}
+\index{GreaterThanOrEqualTo@{GreaterThanOrEqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{GreaterThanOrEqualTo()}{GreaterThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a9b9d5f4ba3f5e597a59fac13fb7809d9} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Greater\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is greater than or equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_aaf1131e1a4481799e90c868774e71e21}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!In@{In}}
+\index{In@{In}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{In()}{In()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_aaf1131e1a4481799e90c868774e71e21} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field equals any of the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list of values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a6095aae52da06aaab3310a0e04ba8e78}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!In@{In}}
+\index{In@{In}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{In()}{In()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a6095aae52da06aaab3310a0e04ba8e78} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+In (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field equals any of the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list of values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a68c6605ada4c2273cc02365f79068357}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!LessThan@{LessThan}}
+\index{LessThan@{LessThan}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{LessThan()}{LessThan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a68c6605ada4c2273cc02365f79068357} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Less\+Than (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is less than the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a4b7d69d07fdc5ccd6222d2aa00b886a4}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!LessThan@{LessThan}}
+\index{LessThan@{LessThan}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{LessThan()}{LessThan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a4b7d69d07fdc5ccd6222d2aa00b886a4} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Less\+Than (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is less than the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_adc8d2677463c8a6d2b84428d49343518}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!LessThanOrEqualTo@{LessThanOrEqualTo}}
+\index{LessThanOrEqualTo@{LessThanOrEqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{LessThanOrEqualTo()}{LessThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_adc8d2677463c8a6d2b84428d49343518} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Less\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is less than or equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a1951bcae8d2af80743f9bb5040fcb9b7}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!LessThanOrEqualTo@{LessThanOrEqualTo}}
+\index{LessThanOrEqualTo@{LessThanOrEqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{LessThanOrEqualTo()}{LessThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a1951bcae8d2af80743f9bb5040fcb9b7} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Less\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is less than or equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_ac8e7ae393a6fa088e318415a3a84ba75}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!NotEqualTo@{NotEqualTo}}
+\index{NotEqualTo@{NotEqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{NotEqualTo()}{NotEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_ac8e7ae393a6fa088e318415a3a84ba75} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Not\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is not equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_abad32e0497352ba008e5d004a46ce1a3}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!NotEqualTo@{NotEqualTo}}
+\index{NotEqualTo@{NotEqualTo}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{NotEqualTo()}{NotEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_abad32e0497352ba008e5d004a46ce1a3} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Not\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field is not equal to the given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_aac9cefb733817e2e31f91042c5a6716c}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!NotIn@{NotIn}}
+\index{NotIn@{NotIn}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{NotIn()}{NotIn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_aac9cefb733817e2e31f91042c5a6716c} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Not\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field does not equal any of the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list of values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a175b391e163b438f6d2abb728d851d59}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!NotIn@{NotIn}}
+\index{NotIn@{NotIn}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{NotIn()}{NotIn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a175b391e163b438f6d2abb728d851d59} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Not\+In (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter for checking that the given field does not equal any of the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list of values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_afa776151ca9fa5c7a262d24860a27b79}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_afa776151ca9fa5c7a262d24860a27b79} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \& firebase\+::firestore\+::\+Filter\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}} is immutable and can be efficiently copied.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_adabeff2849043629f8fdf15f81c281c1}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_adabeff2849043629f8fdf15f81c281c1} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \& firebase\+::firestore\+::\+Filter\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a8f3d0e87c8642f7bfebfd57ee4c8b263}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!Or@{Or}}
+\index{Or@{Or}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{Or()}{Or()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a8f3d0e87c8642f7bfebfd57ee4c8b263} 
+template$<$typename... Filters$>$ \\
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Or (\begin{DoxyParamCaption}\item[{const Filters \&...}]{filters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a new filter that is a disjunction of the given filters. A disjunction filter includes a document if it satisfies {\itshape any} of the given filters. 
+
+If no filter is given, the composite filter is a no-\/op, and if only one filter is given, the composite filter has the same behavior as the underlying filter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filters} & The filters to perform a disjunction for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a86aaad2b14fdcdadee3d92f9371c35d3}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!Or@{Or}}
+\index{Or@{Or}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{Or()}{Or()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a86aaad2b14fdcdadee3d92f9371c35d3} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} firebase\+::firestore\+::\+Filter\+::\+Or (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} $>$ \&}]{filters}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new filter that is a disjunction of the given filters. A disjunction filter includes a document if it satisfies {\itshape any} of the given filters. 
+
+If no filter is given, the composite filter is a no-\/op, and if only one filter is given, the composite filter has the same behavior as the underlying filter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em filters} & The list that contains filters to perform a disjunction for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created filter. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_filter_a9fca99a620fa3b97972b9791de768376}\index{firebase::firestore::Filter@{firebase::firestore::Filter}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::Filter@{firebase::firestore::Filter}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_filter_a9fca99a620fa3b97972b9791de768376} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/filter.\+h\end{DoxyCompactItemize}

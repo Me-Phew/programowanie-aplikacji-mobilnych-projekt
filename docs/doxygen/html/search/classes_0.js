@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['_5f_24announcement_0',['_$Announcement',['../class___0b_announcement.html',1,'']]],
+  ['_5f_24announcementsresponse_1',['_$AnnouncementsResponse',['../class___0b_announcements_response.html',1,'']]],
+  ['_5f_24classroom_2',['_$Classroom',['../class___0b_classroom.html',1,'']]],
+  ['_5f_24courseofstudy_3',['_$CourseOfStudy',['../class___0b_course_of_study.html',1,'']]],
+  ['_5f_24errorsresponse_4',['_$ErrorsResponse',['../class___0b_errors_response.html',1,'']]],
+  ['_5f_24faculty_5',['_$Faculty',['../class___0b_faculty.html',1,'']]],
+  ['_5f_24facultyaddress_6',['_$FacultyAddress',['../class___0b_faculty_address.html',1,'']]],
+  ['_5f_24lecture_7',['_$Lecture',['../class___0b_lecture.html',1,'']]],
+  ['_5f_24lecturer_8',['_$Lecturer',['../class___0b_lecturer.html',1,'']]],
+  ['_5f_24lectureraddress_9',['_$LecturerAddress',['../class___0b_lecturer_address.html',1,'']]],
+  ['_5f_24messageresponse_10',['_$MessageResponse',['../class___0b_message_response.html',1,'']]],
+  ['_5f_24phonenumber_11',['_$PhoneNumber',['../class___0b_phone_number.html',1,'']]],
+  ['_5f_24profilepicture_12',['_$ProfilePicture',['../class___0b_profile_picture.html',1,'']]],
+  ['_5f_24schedule_13',['_$Schedule',['../class___0b_schedule.html',1,'']]],
+  ['_5f_24student_14',['_$Student',['../class___0b_student.html',1,'']]],
+  ['_5f_24studentloginresponse_15',['_$StudentLoginResponse',['../class___0b_student_login_response.html',1,'']]],
+  ['_5f_24studentloginwithusernameandpassworddata_16',['_$StudentLoginWithUsernameAndPasswordData',['../class___0b_student_login_with_username_and_password_data.html',1,'']]],
+  ['_5f_24studentprofilepictureupdatedresponse_17',['_$StudentProfilePictureUpdatedResponse',['../class___0b_student_profile_picture_updated_response.html',1,'']]],
+  ['_5f_24weekparttimeschedule_18',['_$WeekPartTimeSchedule',['../class___0b_week_part_time_schedule.html',1,'']]],
+  ['_5fannouncementspagestate_19',['_AnnouncementsPageState',['../class___announcements_page_state.html',1,'']]]
+];

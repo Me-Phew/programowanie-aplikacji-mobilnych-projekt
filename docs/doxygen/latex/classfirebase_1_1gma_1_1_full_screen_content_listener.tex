@@ -1,0 +1,52 @@
+\doxysection{firebase\+::gma\+::Full\+Screen\+Content\+Listener Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_full_screen_content_listener}{}\label{classfirebase_1_1gma_1_1_full_screen_content_listener}\index{firebase::gma::FullScreenContentListener@{firebase::gma::FullScreenContentListener}}
+
+
+Listener to be invoked when ads show and dismiss full screen content, such as a fullscreen ad experience or an in-\/app browser.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_full_screen_content_listener_a168f000bd84a0f9400e43b01860ce804}\label{classfirebase_1_1gma_1_1_full_screen_content_listener_a168f000bd84a0f9400e43b01860ce804} 
+virtual void {\bfseries On\+Ad\+Clicked} ()
+\begin{DoxyCompactList}\small\item\em Called when the user clicked the ad. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_full_screen_content_listener_a17da8203476b7316f35ae588bc2663c5}\label{classfirebase_1_1gma_1_1_full_screen_content_listener_a17da8203476b7316f35ae588bc2663c5} 
+virtual void {\bfseries On\+Ad\+Dismissed\+Full\+Screen\+Content} ()
+\begin{DoxyCompactList}\small\item\em Called when the ad dismissed full screen content. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener_af5524228ad9f16df0aa7a8cd794beef6}{On\+Ad\+Failed\+To\+Show\+Full\+Screen\+Content}} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \&ad\+\_\+error)
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_full_screen_content_listener_af8dd70af758f246622fdfaec7d7aa6fa}\label{classfirebase_1_1gma_1_1_full_screen_content_listener_af8dd70af758f246622fdfaec7d7aa6fa} 
+virtual void {\bfseries On\+Ad\+Impression} ()
+\begin{DoxyCompactList}\small\item\em Called when an impression is recorded for an ad. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_full_screen_content_listener_a4b3cbb3207dd53c46603c25d911346e9}\label{classfirebase_1_1gma_1_1_full_screen_content_listener_a4b3cbb3207dd53c46603c25d911346e9} 
+virtual void {\bfseries On\+Ad\+Showed\+Full\+Screen\+Content} ()
+\begin{DoxyCompactList}\small\item\em Called when the ad showed the full screen content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listener to be invoked when ads show and dismiss full screen content, such as a fullscreen ad experience or an in-\/app browser. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_full_screen_content_listener_af5524228ad9f16df0aa7a8cd794beef6}\index{firebase::gma::FullScreenContentListener@{firebase::gma::FullScreenContentListener}!OnAdFailedToShowFullScreenContent@{OnAdFailedToShowFullScreenContent}}
+\index{OnAdFailedToShowFullScreenContent@{OnAdFailedToShowFullScreenContent}!firebase::gma::FullScreenContentListener@{firebase::gma::FullScreenContentListener}}
+\doxysubsubsection{\texorpdfstring{OnAdFailedToShowFullScreenContent()}{OnAdFailedToShowFullScreenContent()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_full_screen_content_listener_af5524228ad9f16df0aa7a8cd794beef6} 
+virtual void firebase\+::gma\+::\+Full\+Screen\+Content\+Listener\+::\+On\+Ad\+Failed\+To\+Show\+Full\+Screen\+Content (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \&}]{ad\+\_\+error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called when the ad failed to show full screen content.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ad\+\_\+error} & An object containing detailed information about the error. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

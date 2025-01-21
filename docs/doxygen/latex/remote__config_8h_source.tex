@@ -1,0 +1,233 @@
+\doxysection{remote\+\_\+config.\+h}
+\hypertarget{remote__config_8h_source}{}\label{remote__config_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/remote\_config.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/remote\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_REMOTE\_CONFIG\_SRC\_INCLUDE\_FIREBASE\_REMOTE\_CONFIG\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_REMOTE\_CONFIG\_SRC\_INCLUDE\_FIREBASE\_REMOTE\_CONFIG\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/platform.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}remote\_config/config\_update\_listener\_registration.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00032\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE(remote\_config)}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }remote\_config\ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a}{LastFetchStatus}}\ \{}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa080d33dfe8997c552f749f87867a54b9}{kLastFetchStatusSuccess}},}
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa481fd8f4bb99abefc6d0bf4c00502bc6}{kLastFetchStatusFailure}},}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa242ce52eda369bb1b0f1411de469689b}{kLastFetchStatusPending}},}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968}{FetchFailureReason}}\ \{}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968a4d5611568fe6fbb8fe2b8939bad625c3}{kFetchFailureReasonInvalid}},}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968af3d06dd83cdc950ffe07be7f4890e57c}{kFetchFailureReasonThrottled}},}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968a254de71033d93c33d32d20d9de5cc666}{kFetchFailureReasonError}},}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2}{RemoteConfigError}}\ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ Unimplemented\ error\ found.}}
+\DoxyCodeLine{00072\ \ \ kRemoteConfigErrorUnimplemented\ =\ -\/1,}
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ No\ error.}}
+\DoxyCodeLine{00074\ \ \ kRemoteConfigErrorNone\ =\ 0,}
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ Unable\ to\ make\ a\ connection\ to\ the\ Remote\ Config\ backend.}}
+\DoxyCodeLine{00076\ \ \ kRemoteConfigErrorConfigUpdateStreamError,}
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ The\ ConfigUpdate\ message\ was\ unparsable.}}
+\DoxyCodeLine{00078\ \ \ kRemoteConfigErrorConfigUpdateMessageInvalid,}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ Unable\ to\ fetch\ the\ latest\ version\ of\ the\ config.}}
+\DoxyCodeLine{00080\ \ \ kRemoteConfigErrorConfigUpdateNotFetched,}
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ The\ Remote\ Config\ real-\/time\ config\ update\ service\ is\ unavailable.}}
+\DoxyCodeLine{00082\ \ \ kRemoteConfigErrorConfigUpdateUnavailable,}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_update}{ConfigUpdate}}\ \{}
+\DoxyCodeLine{00090\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_update_aeae7e1d0e6797a9bf79ff9151fd469c0}{updated\_keys}};}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{ConfigInfo}}\ \{}
+\DoxyCodeLine{00098\ \ \ uint64\_t\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info_a353be5e95447fb67de0cf34dc65a7013}{fetch\_time}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a}{LastFetchStatus}}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info_a023e7d12118c479ce06c8c07d3d5a1c7}{last\_fetch\_status}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968}{FetchFailureReason}}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info_aa353fb3a873feeed0c8cee9d57217f7b}{last\_fetch\_failure\_reason}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00108\ \ \ uint64\_t\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info_a9d6def15a09e0f0f2aa38c61c3e9e513}{throttled\_end\_time}};}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f}{ValueSource}}\ \{}
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192fa2bd211253ca0dd3d85215892c9ff8242}{kValueSourceStaticValue}},}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192fa13c00a32bc4cd3b5f6902dca6e0a2144}{kValueSourceRemoteValue}},}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192faa4ee15f9df9c19aa79ea2a0dfb1b480f}{kValueSourceDefaultValue}},}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{ValueInfo}}\ \{}
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f}{ValueSource}}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info_a472cb3d7f57af12fae1449f43c86e48a}{source}};}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info_a928a62cf1928dd8cfc1d4175e9570324}{conversion\_successful}};}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434}{ConfigSetting}}\ \{}
+\DoxyCodeLine{00141\ \ \ \mbox{\hyperlink{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434abece739c9d1b23d8b0138f3cf2e69c92}{kConfigSettingDeveloperMode}},}
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint64\_t\ kDefaultCacheExpiration\ =\ 60\ *\ 60\ *\ 12\ *\ 1000;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint64\_t\ kDefaultTimeoutInMilliseconds\ =\ 30\ *\ 1000;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value}{ConfigKeyValue}}\ \{}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_ac90271d5a3631a664a3dd8da201a783f}{key}};}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00168\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_a350e15f4e483d5273a46650f4731e12e}{value}};}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00174\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant}{ConfigKeyValueVariant}}\ \{}
+\DoxyCodeLine{00179\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant_adf662c70b581975139c77964dabe7073}{key}};}
+\DoxyCodeLine{00185\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant_a706397e732b5f14be5927b01c7b2092e}{value}};}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{ConfigSettings}}\ \{}
+\DoxyCodeLine{00196\ \ \ uint64\_t\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings_a35d2883e062576bc80a2292400a79a22}{fetch\_timeout\_in\_milliseconds}}\ =\ kDefaultTimeoutInMilliseconds;}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00203\ \ \ uint64\_t\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings_ae5e78aa019e31ded1e35ae57137b94f8}{minimum\_fetch\_interval\_in\_milliseconds}}\ =\ kDefaultCacheExpiration;}
+\DoxyCodeLine{00204\ \};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00207\ \textcolor{keyword}{class\ }RemoteConfigInternal;}
+\DoxyCodeLine{00208\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00219\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{RemoteConfig}}\ \{}
+\DoxyCodeLine{00220\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00221\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{\string~RemoteConfig}}();}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00226\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<ConfigInfo>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a56d2fef803ee1a6e8a36ae922a1ab0da}{EnsureInitialized}}();}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00232\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<ConfigInfo>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aee034de4bf7aff0f025353e1dca0dd76}{EnsureInitializedLastResult}}();}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00240\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<bool>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate}}();}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<bool>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a7c2d60b397628e6b37030c428f15efab}{ActivateLastResult}}();}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00261\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<bool>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc}{FetchAndActivate}}();}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00267\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<bool>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aa1d115c715af9fa9931e43c97ee492b7}{FetchAndActivateLastResult}}();}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00280\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db}{Fetch}}();}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00298\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a84153103f3ab1c33ebd57f1df6a104ab}{Fetch}}(uint64\_t\ cache\_expiration\_in\_seconds);}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00304\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a8fe3ca5331772d698124decb9e705d04}{FetchLastResult}}();}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#if\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00318\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{SetDefaults}}(\textcolor{keywordtype}{int}\ defaults\_resource\_id);}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_\_ANDROID\_\_}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00344\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{SetDefaults}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant}{ConfigKeyValueVariant}}*\ defaults,}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_defaults);}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00359\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a8ec6870ed5e4f7e3025e3b2abb11691e}{SetDefaults}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value}{ConfigKeyValue}}*\ defaults,}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_defaults);}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00366\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a3dbe0c4db44bb7d2f8e5335d2a27f863}{SetDefaultsLastResult}}();}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00375\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad}{SetConfigSettings}}(\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{ConfigSettings}}\ settings);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00380\ \ \ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{ConfigSettings}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ac66398c152730b884483a68e8a1272aa}{GetConfigSettings}}();}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00386\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_af59823e7be1166787fb435c6c3f0e4fb}{SetConfigSettingsLastResult}}();}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00399\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a740b3902a7296a2f430240f020b4c545}{GetBoolean}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key);}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00414\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a5b0d6c6c2e045aa8cbed949748dcdc83}{GetBoolean}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key,\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{ValueInfo}}*\ info);}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00423\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a1b376e125df82c8bc61b6e4686896122}{GetLong}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key);}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00434\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ab42f1de76b688ba0dd19a33c7fc41b92}{GetLong}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key,\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{ValueInfo}}*\ info);}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00441\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aeb6dc379aef6243e944e6592b4a34ffc}{GetDouble}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key);}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00450\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ad384d427fae94006781a190820171a75}{GetDouble}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key,\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{ValueInfo}}*\ info);}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00457\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a2a0912229bc6bede3dd11cfe381f7886}{GetString}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key);}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00466\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ae485c87013d322c5d322288a9de7b843}{GetString}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key,\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{ValueInfo}}*\ info);}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00474\ \ \ std::vector<unsigned\ char>\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_af544c66efdec38ad1d4c5f5870476e85}{GetData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key);}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00484\ \ \ std::vector<unsigned\ char>\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a5b0c4af52500e8efd8b4a0780b9b8dde}{GetData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key,\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{ValueInfo}}*\ info);}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00494\ \ \ std::vector<std::string>\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aae5d89bc283cd241271a4095217c599d}{GetKeysByPrefix}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ prefix);}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00499\ \ \ std::vector<std::string>\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_afd40c81b26fcfdfc2d39a794e0a59548}{GetKeys}}();}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00506\ \ \ std::map<std::string,\ Variant>\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a7c4340f577c5e05f9b08f3cebd89eda3}{GetAll}}();}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00513\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{ConfigInfo}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a4be8dbac74bc25422c0619c0d219d398}{GetInfo}}();}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00516\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9}{app}}()\ \{\ \textcolor{keywordflow}{return}\ app\_;\ \}}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00528\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{RemoteConfig}}*\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ae09919cd51bac22b4bf5fb91e4b07505}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9}{app}});}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00537\ \ \ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{ConfigUpdateListenerRegistration}}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a3377907581f92851adfc5a2bd25d23b3}{AddOnConfigUpdateListener}}(}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_update}{ConfigUpdate}}\&\&,\ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2}{RemoteConfigError}})>}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ config\_update\_listener);}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00542\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{RemoteConfig}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9}{app}});}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00544\ \ \ \textcolor{comment}{//\ Find\ RemoteConfig\ instance\ using\ App.\ \ Return\ null\ if\ the\ instance\ does\ not}}
+\DoxyCodeLine{00545\ \ \ \textcolor{comment}{//\ exist.}}
+\DoxyCodeLine{00546\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{RemoteConfig}}*\ FindRemoteConfig(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9}{app}});}
+\DoxyCodeLine{00547\ }
+\DoxyCodeLine{00548\ \ \ \textcolor{comment}{//\ Clean\ up\ RemoteConfig\ instance.}}
+\DoxyCodeLine{00549\ \ \ \textcolor{keywordtype}{void}\ DeleteInternal();}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00552\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app\_;}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \ \ \textcolor{keywordtype}{bool}\ InitInternal();}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ internal::RemoteConfigInternal*\ internal\_;}
+\DoxyCodeLine{00557\ \};}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \}\ \ \textcolor{comment}{//\ namespace\ remote\_config}}
+\DoxyCodeLine{00560\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_REMOTE\_CONFIG\_SRC\_INCLUDE\_FIREBASE\_REMOTE\_CONFIG\_H\_}}
+
+\end{DoxyCode}

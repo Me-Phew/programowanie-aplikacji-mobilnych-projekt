@@ -1,0 +1,132 @@
+\doxysection{firebase\+::storage Namespace Reference}
+\hypertarget{namespacefirebase_1_1storage}{}\label{namespacefirebase_1_1storage}\index{firebase::storage@{firebase::storage}}
+
+
+Namespace for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}}
+\begin{DoxyCompactList}\small\item\em Controls an ongoing operation, allowing the caller to Pause, Resume or Cancel an ongoing download or upload. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}}
+\begin{DoxyCompactList}\small\item\em Base class used to receive pause and progress events on a running read or write operation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} stores default attributes such as size and content type. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}
+\begin{DoxyCompactList}\small\item\em Entry point for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61}{Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a1c235f338bcbe295bbc4e92d25af8e92}{k\+Error\+None}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61ab66f0a397a2387e47b46414aa52f5b4f}{k\+Error\+Unknown}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a14c1f4601b4fd9b015da177fea8ffb0d}{k\+Error\+Object\+Not\+Found}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a53a5db7169926e0cef803abc0e0a0b1b}{k\+Error\+Bucket\+Not\+Found}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a1ae047e54284beae18860427d480cb41}{k\+Error\+Project\+Not\+Found}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a3f269c9f973358ae9f76e10ebf0d398e}{k\+Error\+Quota\+Exceeded}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a02598f7c508bf23242685051bfcb85f8}{k\+Error\+Unauthenticated}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a2fb1db59927e9cf2ff2ce89985e88da5}{k\+Error\+Unauthorized}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a21b135004e6824e74fa97ec7bc7e4106}{k\+Error\+Retry\+Limit\+Exceeded}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a716920b8d2f154e92d959fa263f929f7}{k\+Error\+Non\+Matching\+Checksum}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61ad033053c7d9cc62bfb3d2bd4430e8a31}{k\+Error\+Download\+Size\+Exceeded}}
+, \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61ae24b79ad4bc3b69ab1e85b5008671457}{k\+Error\+Cancelled}}
+ \}
+\begin{DoxyCompactList}\small\item\em Error code returned by Cloud Storage C++ functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1storage_a2d6bc9ed0584e3a5e944611bceb1248c}{Get\+Error\+Message}} (\mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61}{Error}} error)
+\begin{DoxyCompactList}\small\item\em Get the human-\/readable error message corresponding to an error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61}\index{firebase::storage@{firebase::storage}!Error@{Error}}
+\index{Error@{Error}!firebase::storage@{firebase::storage}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+enum \mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61}{firebase\+::storage\+::\+Error}}}
+
+
+
+Error code returned by Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} C++ functions. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNone@{kErrorNone}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorNone@{kErrorNone}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a1c235f338bcbe295bbc4e92d25af8e92}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+None&The operation was a success, no error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnknown@{kErrorUnknown}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorUnknown@{kErrorUnknown}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61ab66f0a397a2387e47b46414aa52f5b4f}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Unknown&An unknown error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorObjectNotFound@{kErrorObjectNotFound}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorObjectNotFound@{kErrorObjectNotFound}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a14c1f4601b4fd9b015da177fea8ffb0d}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Object\+Not\+Found&No object exists at the desired reference. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorBucketNotFound@{kErrorBucketNotFound}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorBucketNotFound@{kErrorBucketNotFound}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a53a5db7169926e0cef803abc0e0a0b1b}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Bucket\+Not\+Found&No bucket is configured for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorProjectNotFound@{kErrorProjectNotFound}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorProjectNotFound@{kErrorProjectNotFound}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a1ae047e54284beae18860427d480cb41}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Project\+Not\+Found&No project is configured for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorQuotaExceeded@{kErrorQuotaExceeded}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorQuotaExceeded@{kErrorQuotaExceeded}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a3f269c9f973358ae9f76e10ebf0d398e}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Quota\+Exceeded&Quota on your Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket has been exceeded. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnauthenticated@{kErrorUnauthenticated}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorUnauthenticated@{kErrorUnauthenticated}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a02598f7c508bf23242685051bfcb85f8}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Unauthenticated&User is unauthenticated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnauthorized@{kErrorUnauthorized}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorUnauthorized@{kErrorUnauthorized}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a2fb1db59927e9cf2ff2ce89985e88da5}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Unauthorized&User is not authorized to perform the desired action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorRetryLimitExceeded@{kErrorRetryLimitExceeded}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorRetryLimitExceeded@{kErrorRetryLimitExceeded}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a21b135004e6824e74fa97ec7bc7e4106}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Retry\+Limit\+Exceeded&The maximum time limit on an operation (upload, download, delete, etc.) has been exceeded. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNonMatchingChecksum@{kErrorNonMatchingChecksum}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorNonMatchingChecksum@{kErrorNonMatchingChecksum}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61a716920b8d2f154e92d959fa263f929f7}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Non\+Matching\+Checksum&File on the client does not match the checksum of the file received by the server. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorDownloadSizeExceeded@{kErrorDownloadSizeExceeded}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorDownloadSizeExceeded@{kErrorDownloadSizeExceeded}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61ad033053c7d9cc62bfb3d2bd4430e8a31}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Download\+Size\+Exceeded&Size of the downloaded file exceeds the amount of memory allocated for the download. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorCancelled@{kErrorCancelled}!firebase::storage@{firebase::storage}}\index{firebase::storage@{firebase::storage}!kErrorCancelled@{kErrorCancelled}}}\Hypertarget{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61ae24b79ad4bc3b69ab1e85b5008671457}\label{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61} 
+k\+Error\+Cancelled&User cancelled the operation. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefirebase_1_1storage_a2d6bc9ed0584e3a5e944611bceb1248c}\index{firebase::storage@{firebase::storage}!GetErrorMessage@{GetErrorMessage}}
+\index{GetErrorMessage@{GetErrorMessage}!firebase::storage@{firebase::storage}}
+\doxysubsubsection{\texorpdfstring{GetErrorMessage()}{GetErrorMessage()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1storage_a2d6bc9ed0584e3a5e944611bceb1248c} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Get\+Error\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1storage_a6afadb76bb776c1ac82bb1b154e2dc61}{Error}}}]{error}{}\end{DoxyParamCaption})}
+
+
+
+Get the human-\/readable error message corresponding to an error code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error} & Error code to get the error message for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Statically-\/allocated string describing the error. 
+\end{DoxyReturn}

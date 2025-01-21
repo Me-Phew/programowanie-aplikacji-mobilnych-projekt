@@ -1,0 +1,82 @@
+\doxysection{method\+\_\+result.\+h}
+\hypertarget{method__result_8h_source}{}\label{method__result_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_result.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_result.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_RESULT\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_RESULT\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Encapsulates\ a\ result\ returned\ from\ a\ MethodCall.\ Only\ one\ method\ should\ be}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ called\ on\ any\ given\ instance.}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}\ \{}
+\DoxyCodeLine{00018\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_method_result}{\string~MethodResult}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}(\mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Sends\ a\ success\ response,\ indicating\ that\ the\ call\ completed\ successfully}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ with\ the\ given\ result.}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ Success(\textcolor{keyword}{const}\ T\&\ result)\ \{\ SuccessInternal(\&result);\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ Sends\ a\ success\ response,\ indicating\ that\ the\ call\ completed\ successfully}}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ with\ no\ result.}}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ Success()\ \{\ SuccessInternal(\textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Sends\ an\ error\ response,\ indicating\ that\ the\ call\ was\ understood\ but}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ handling\ failed\ in\ some\ way.}}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ error\_code:\ A\ string\ error\ code\ describing\ the\ error.}}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ error\_message:\ A\ user-\/readable\ error\ message.}}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ error\_details:\ Arbitrary\ extra\ details\ about\ the\ error.}}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ Error(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ error\_details)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ ErrorInternal(error\_code,\ error\_message,\ \&error\_details);}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Sends\ an\ error\ response,\ indicating\ that\ the\ call\ was\ understood\ but}}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ handling\ failed\ in\ some\ way.}}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ error\_code:\ A\ string\ error\ code\ describing\ the\ error.}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ error\_message:\ A\ user-\/readable\ error\ message\ (optional).}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ Error(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ ErrorInternal(error\_code,\ error\_message,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ Sends\ a\ not-\/implemented\ response,\ indicating\ that\ the\ method\ either\ was\ not}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ recognized,\ or\ has\ not\ been\ implemented.}}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ NotImplemented()\ \{\ NotImplementedInternal();\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SuccessInternal(\textcolor{keyword}{const}\ T*\ result)\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ErrorInternal(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details)\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ NotImplementedInternal()\ =\ 0;}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_RESULT\_H\_}}
+
+\end{DoxyCode}

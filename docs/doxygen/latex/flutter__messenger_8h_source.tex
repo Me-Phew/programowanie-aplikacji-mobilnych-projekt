@@ -1,0 +1,150 @@
+\doxysection{flutter\+\_\+messenger.\+h}
+\hypertarget{flutter__messenger_8h_source}{}\label{flutter__messenger_8h_source}\index{windows/flutter/ephemeral/flutter\_messenger.h@{windows/flutter/ephemeral/flutter\_messenger.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_MESSENGER\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_MESSENGER\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}flutter\_export.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Opaque\ reference\ to\ a\ Flutter\ engine\ messenger.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }FlutterDesktopMessenger*\ FlutterDesktopMessengerRef;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ Opaque\ handle\ for\ tracking\ responses\ to\ messages.}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\_FlutterPlatformMessageResponseHandle}
+\DoxyCodeLine{00023\ \ \ \ \ FlutterDesktopMessageResponseHandle;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ The\ callback\ expected\ as\ a\ response\ of\ a\ binary\ message.}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ void\ (*FlutterDesktopBinaryReply)(\textcolor{keyword}{const}\ uint8\_t*\ data,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ data\_size,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ A\ message\ received\ from\ Flutter.}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Size\ of\ this\ struct\ as\ created\ by\ Flutter.}}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{size\_t}\ struct\_size;}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ The\ name\ of\ the\ channel\ used\ for\ this\ message.}}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ channel;}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ The\ raw\ message\ data.}}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message;}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ The\ length\ of\ |message|.}}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{size\_t}\ message\_size;}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ The\ response\ handle.\ If\ non-\/null,\ the\ receiver\ of\ this\ message\ must\ call}}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ FlutterDesktopSendMessageResponse\ exactly\ once\ with\ this\ handle.}}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{const}\ FlutterDesktopMessageResponseHandle*\ response\_handle;}
+\DoxyCodeLine{00043\ \}\ \mbox{\hyperlink{struct_flutter_desktop_message}{FlutterDesktopMessage}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ Function\ pointer\ type\ for\ message\ handler\ callback\ registration.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ The\ user\ data\ will\ be\ whatever\ was\ passed\ to\ FlutterDesktopSetMessageHandler}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ for\ the\ channel\ the\ message\ is\ received\ on.}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ void\ (*FlutterDesktopMessageCallback)(}
+\DoxyCodeLine{00050\ \ \ \ \ FlutterDesktopMessengerRef\ \textcolor{comment}{/*\ messenger\ */},}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_message}{FlutterDesktopMessage}}*\ \textcolor{comment}{/*\ message*/},}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}*\ \textcolor{comment}{/*\ user\ data\ */});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Sends\ a\ binary\ message\ to\ the\ Flutter\ side\ on\ the\ specified\ channel.}}
+\DoxyCodeLine{00055\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopMessengerSend(}
+\DoxyCodeLine{00056\ \ \ \ \ FlutterDesktopMessengerRef\ messenger,}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ channel,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ message\_size);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ Sends\ a\ binary\ message\ to\ the\ Flutter\ side\ on\ the\ specified\ channel.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ The\ |reply|\ callback\ will\ be\ executed\ when\ a\ response\ is\ received.}}
+\DoxyCodeLine{00063\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopMessengerSendWithReply(}
+\DoxyCodeLine{00064\ \ \ \ \ FlutterDesktopMessengerRef\ messenger,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ channel,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ message\_size,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ FlutterDesktopBinaryReply\ reply,}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ Sends\ a\ reply\ to\ a\ FlutterDesktopMessage\ for\ the\ given\ response\ handle.}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ Once\ this\ has\ been\ called,\ |handle|\ is\ invalid\ and\ must\ not\ be\ used\ again.}}
+\DoxyCodeLine{00074\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopMessengerSendResponse(}
+\DoxyCodeLine{00075\ \ \ \ \ FlutterDesktopMessengerRef\ messenger,}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ FlutterDesktopMessageResponseHandle*\ handle,}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ data,}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ data\_length);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ Registers\ a\ callback\ function\ for\ incoming\ binary\ messages\ from\ the\ Flutter}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ side\ on\ the\ specified\ channel.}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Replaces\ any\ existing\ callback.\ Provide\ a\ null\ handler\ to\ unregister\ the}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ existing\ callback.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ If\ |user\_data|\ is\ provided,\ it\ will\ be\ passed\ in\ |callback|\ calls.}}
+\DoxyCodeLine{00087\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopMessengerSetCallback(}
+\DoxyCodeLine{00088\ \ \ \ \ FlutterDesktopMessengerRef\ messenger,}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ channel,}
+\DoxyCodeLine{00090\ \ \ \ \ FlutterDesktopMessageCallback\ callback,}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ Increments\ the\ reference\ count\ for\ the\ |messenger|.}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ Operation\ is\ thread-\/safe.}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ See\ also:\ |FlutterDesktopMessengerRelease|}}
+\DoxyCodeLine{00098\ FLUTTER\_EXPORT\ FlutterDesktopMessengerRef\ FlutterDesktopMessengerAddRef(}
+\DoxyCodeLine{00099\ \ \ \ \ FlutterDesktopMessengerRef\ messenger);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ Decrements\ the\ reference\ count\ for\ the\ |messenger|.}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ Operation\ is\ thread-\/safe.}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ See\ also:\ |FlutterDesktopMessengerAddRef|}}
+\DoxyCodeLine{00106\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopMessengerRelease(}
+\DoxyCodeLine{00107\ \ \ \ \ FlutterDesktopMessengerRef\ messenger);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ Returns\ \`{}true`\ if\ the\ |FlutterDesktopMessengerRef|\ still\ references\ a\ running}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ engine.}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ This\ check\ should\ be\ made\ inside\ of\ a\ |FlutterDesktopMessengerLock|\ and}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ before\ any\ other\ calls\ are\ made\ to\ the\ FlutterDesktopMessengerRef\ when\ using}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ it\ from\ a\ thread\ other\ than\ the\ platform\ thread.}}
+\DoxyCodeLine{00115\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopMessengerIsAvailable(}
+\DoxyCodeLine{00116\ \ \ \ \ FlutterDesktopMessengerRef\ messenger);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ Locks\ the\ \`{}FlutterDesktopMessengerRef`\ ensuring\ that}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ |FlutterDesktopMessengerIsAvailable|\ does\ not\ change\ while\ locked.}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ All\ calls\ to\ the\ FlutterDesktopMessengerRef\ from\ threads\ other\ than\ the}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ platform\ thread\ should\ happen\ inside\ of\ a\ lock.}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ Operation\ is\ thread-\/safe.}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ Returns\ the\ |messenger|\ value.}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ See\ also:\ |FlutterDesktopMessengerUnlock|}}
+\DoxyCodeLine{00129\ FLUTTER\_EXPORT\ FlutterDesktopMessengerRef\ FlutterDesktopMessengerLock(}
+\DoxyCodeLine{00130\ \ \ \ \ FlutterDesktopMessengerRef\ messenger);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ Unlocks\ the\ \`{}FlutterDesktopMessengerRef`.}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ Operation\ is\ thread-\/safe.}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ See\ also:\ |FlutterDesktopMessengerLock|}}
+\DoxyCodeLine{00137\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopMessengerUnlock(}
+\DoxyCodeLine{00138\ \ \ \ \ FlutterDesktopMessengerRef\ messenger);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00141\ \}\ \ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_MESSENGER\_H\_}}
+
+\end{DoxyCode}

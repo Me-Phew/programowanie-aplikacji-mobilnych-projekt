@@ -1,0 +1,147 @@
+\doxysection{metadata.\+h}
+\hypertarget{metadata_8h_source}{}\label{metadata_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/storage/metadata.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/storage/metadata.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_METADATA\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_METADATA\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }storage\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }MetadataInternal;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }MetadataInternalCommon;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }StorageInternal;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }StorageReferenceInternal;}
+\DoxyCodeLine{00033\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }Storage;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }StorageReference;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\ \{}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ace7d2bf647dc01f7700dc5d5e9b2274f}{Metadata}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ace7d2bf647dc01f7700dc5d5e9b2274f}{Metadata}}(internal::MetadataInternal*\ internal);}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9c42ec15427bbb24418700d9fab83990}{Metadata}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\&\ other);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\&\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a06db7aa344f2dd3d1473b36e1a4074c7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\&\ other);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ace7d2bf647dc01f7700dc5d5e9b2274f}{Metadata}}(\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\&\&\ other);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\&\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a06db7aa344f2dd3d1473b36e1a4074c7}{operator=}}(\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}}\&\&\ other);}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{\string~Metadata}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af455652707a3d848dbdcde1890aa63d8}{bucket}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2179e837f2d03e2d6555d1342c7834f3}{set\_cache\_control}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\_control}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_abff9cbcd914196e5fe9d2a5577a76b78}{set\_cache\_control}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\_control}})\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2179e837f2d03e2d6555d1342c7834f3}{set\_cache\_control}}(\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\_control}}.c\_str());}
+\DoxyCodeLine{00097\ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\_control}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2a8642236a6d82e3cdd48d438e13eb6b}{set\_content\_disposition}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ disposition);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_adf667a05bbe421755dcd427d756056df}{set\_content\_disposition}}(\textcolor{keyword}{const}\ std::string\&\ disposition)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2a8642236a6d82e3cdd48d438e13eb6b}{set\_content\_disposition}}(disposition.c\_str());}
+\DoxyCodeLine{00116\ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ad072dffbe04ea125856046a08386c444}{content\_disposition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af891c3d461d633bfcc88bff60ee1d31c}{set\_content\_encoding}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ encoding);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9ccdabbe6a896e0e5fbc8ed39ee3e865}{set\_content\_encoding}}(\textcolor{keyword}{const}\ std::string\&\ encoding)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af891c3d461d633bfcc88bff60ee1d31c}{set\_content\_encoding}}(encoding.c\_str());}
+\DoxyCodeLine{00135\ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_aa7197fa087b9e9ea0e2b90e3a4156b73}{content\_encoding}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9ac2901ec8afb0894d4d8a82378ced44}{set\_content\_language}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ language);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_acf13debd3ac1478fee8c58b19c82c645}{set\_content\_language}}(\textcolor{keyword}{const}\ std::string\&\ language)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9ac2901ec8afb0894d4d8a82378ced44}{set\_content\_language}}(language.c\_str());}
+\DoxyCodeLine{00157\ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a25a290def1e3498754099ec7915cfa6d}{content\_language}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_affded2c5e3cd42b4f324aed8e6bb80fe}{set\_content\_type}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ type);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a0a6e97bc82d682756e402a074e91292b}{set\_content\_type}}(\textcolor{keyword}{const}\ std::string\&\ type)\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_affded2c5e3cd42b4f324aed8e6bb80fe}{set\_content\_type}}(type.c\_str());}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00183\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ab6c8b27fe0e3e91ca954d43f0fd5e936}{content\_type}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00190\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a45af4059691d591d42e54a3242bd85fc}{creation\_time}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00198\ \ \ std::map<std::string,\ std::string>*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ac1ab6c57b473d2b3eaef8554498ef6b4}{custom\_metadata}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \textcolor{comment}{//\ download\_url()\ and\ download\_urls()\ are\ deprecated\ and\ removed.}}
+\DoxyCodeLine{00201\ \ \ \textcolor{comment}{//\ Please\ use\ StorageReference::GetDownloadUrl()\ instead.}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00207\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a57384b5bb0e86fb7bc4ce92d85026be9}{generation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00213\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_aac882174ca155c905f43304ad230e2b9}{metadata\_generation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a16fe6ed35b022305780bd52b3e90de70}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00223\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2e91b1e94a22914c44d5fc9afcf248ad}{path}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00231\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ac3f8d4604b4289696dd587a278249ae9}{GetReference}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00236\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af7979f8cbbf2cd0dbfc8b285a5834563}{size\_bytes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00243\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2f995937bdc40c2cefc764365f9edcba}{updated\_time}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00251\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a35701a7f4384f75c940323bf5f8bad8a}{is\_valid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00256\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a7f8efe59c7e2ff49e8b8c0d5eb65e326}{md5\_hash}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00260\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}};}
+\DoxyCodeLine{00261\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::MetadataInternal;}
+\DoxyCodeLine{00262\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::MetadataInternalCommon;}
+\DoxyCodeLine{00263\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::StorageReferenceInternal;}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#ifndef\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00266\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ace7d2bf647dc01f7700dc5d5e9b2274f}{Metadata}}(internal::MetadataInternal*\ internal);}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ internal::MetadataInternal*\ internal\_;}
+\DoxyCodeLine{00271\ \};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \}\ \ \textcolor{comment}{//\ namespace\ storage}}
+\DoxyCodeLine{00274\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_METADATA\_H\_}}
+
+\end{DoxyCode}

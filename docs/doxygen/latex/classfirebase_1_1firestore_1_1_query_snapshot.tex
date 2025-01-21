@@ -1,0 +1,265 @@
+\doxysection{firebase\+::firestore\+::Query\+Snapshot Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_query_snapshot}{}\label{classfirebase_1_1firestore_1_1_query_snapshot}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+
+
+A \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} contains zero or more \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} objects.  
+
+
+
+
+{\ttfamily \#include $<$query\+\_\+snapshot.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_aadb1451783edc6a6585ba255fe8d70af}{Query\+Snapshot}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a5fcec63cda426898ed071b0669dbe3b0}{Query\+Snapshot}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a092feef2ecf7942404beaf56fe7b7b00}{Query\+Snapshot}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a37eb59b1b179bb09f165a930ddac4f8e}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_aa99f16da215be1bb773b6a5a6cd08e5b}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a8d3bc84bd9f31c9aff955dc4f897855e}\label{classfirebase_1_1firestore_1_1_query_snapshot_a8d3bc84bd9f31c9aff955dc4f897855e} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} {\bfseries query} () const
+\begin{DoxyCompactList}\small\item\em The query from which you got this \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a21dd9f2bf5ea092d668962e86091d4e7}{metadata}} () const
+\begin{DoxyCompactList}\small\item\em Metadata about this snapshot, concerning its source and if it has local modifications. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_aff22bda36e3af4d5b16ccca7fe8b839f}{Document\+Changes}} (\mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{Metadata\+Changes}} metadata\+\_\+changes=\mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54af8c2c92c856283e1c9ef91e8380edf40}{Metadata\+Changes\+::k\+Exclude}}) const
+\begin{DoxyCompactList}\small\item\em The list of documents that changed since the last snapshot. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a6bfa4f076d2ffa34fde1af89cfb513df}{documents}} () const
+\begin{DoxyCompactList}\small\item\em The list of documents in this \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} in order of the query. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a3a3b240b93242a2284f8da9aa26e77d5}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks the emptiness of the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a5bd0280822097d4b461171c244d11318}{size}} () const
+\begin{DoxyCompactList}\small\item\em Checks the size of the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a2786c1195c900947e2f51b826609ab8a}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} could be the result of\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a8445936f260363ac505cb1fb30fd6558}\label{classfirebase_1_1firestore_1_1_query_snapshot_a8445936f260363ac505cb1fb30fd6558} 
+class {\bfseries Event\+Listener\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_query_snapshot_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_query_snapshot_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_query_snapshot_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot_a95603809e980cf0024c89c556bd4e558}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&rhs)
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a0912e0f41986cbb4479f5bd3b0228dd8}\label{classfirebase_1_1firestore_1_1_query_snapshot_a0912e0f41986cbb4479f5bd3b0228dd8} 
+std\+::size\+\_\+t {\bfseries Query\+Snapshot\+Hash} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&snapshot)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} contains zero or more \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} objects. 
+
+\doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} can be iterated using a range-\/based for loop, and its size can be inspected with \doxylink{classfirebase_1_1firestore_1_1_query_snapshot_a3a3b240b93242a2284f8da9aa26e77d5}{empty()} and \doxylink{classfirebase_1_1firestore_1_1_query_snapshot_a5bd0280822097d4b461171c244d11318}{size()}.
+
+\begin{DoxyNote}{Note}
+\doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} classes are not meant to be subclassed except for use in test mocks. Subclassing is not supported in production code and new SDK releases may break code that does so. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_aadb1451783edc6a6585ba255fe8d70af}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!QuerySnapshot@{QuerySnapshot}}
+\index{QuerySnapshot@{QuerySnapshot}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{QuerySnapshot()}{QuerySnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_aadb1451783edc6a6585ba255fe8d70af} 
+firebase\+::firestore\+::\+Query\+Snapshot\+::\+Query\+Snapshot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a5fcec63cda426898ed071b0669dbe3b0}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!QuerySnapshot@{QuerySnapshot}}
+\index{QuerySnapshot@{QuerySnapshot}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{QuerySnapshot()}{QuerySnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a5fcec63cda426898ed071b0669dbe3b0} 
+firebase\+::firestore\+::\+Query\+Snapshot\+::\+Query\+Snapshot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a092feef2ecf7942404beaf56fe7b7b00}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!QuerySnapshot@{QuerySnapshot}}
+\index{QuerySnapshot@{QuerySnapshot}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{QuerySnapshot()}{QuerySnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a092feef2ecf7942404beaf56fe7b7b00} 
+firebase\+::firestore\+::\+Query\+Snapshot\+::\+Query\+Snapshot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_aff22bda36e3af4d5b16ccca7fe8b839f}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!DocumentChanges@{DocumentChanges}}
+\index{DocumentChanges@{DocumentChanges}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{DocumentChanges()}{DocumentChanges()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_aff22bda36e3af4d5b16ccca7fe8b839f} 
+virtual std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} $>$ firebase\+::firestore\+::\+Query\+Snapshot\+::\+Document\+Changes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{Metadata\+Changes}}}]{metadata\+\_\+changes}{ = {\ttfamily \mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54af8c2c92c856283e1c9ef91e8380edf40}{Metadata\+Changes\+::k\+Exclude}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The list of documents that changed since the last snapshot. 
+
+If it\textquotesingle{}s the first snapshot, all documents will be in the list as added changes. Documents with changes only to their metadata will not be included.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metadata\+\_\+changes} & Indicates whether metadata-\/only changes (that is, only \doxylink{classfirebase_1_1firestore_1_1_query_snapshot_a21dd9f2bf5ea092d668962e86091d4e7}{Query\+Snapshot\+::metadata()} changed) should be included.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of document changes since the last snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a6bfa4f076d2ffa34fde1af89cfb513df}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!documents@{documents}}
+\index{documents@{documents}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{documents()}{documents()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a6bfa4f076d2ffa34fde1af89cfb513df} 
+virtual std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} $>$ firebase\+::firestore\+::\+Query\+Snapshot\+::documents (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The list of documents in this \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} in order of the query. 
+
+\begin{DoxyReturn}{Returns}
+The list of documents. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a3a3b240b93242a2284f8da9aa26e77d5}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!empty@{empty}}
+\index{empty@{empty}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a3a3b240b93242a2284f8da9aa26e77d5} 
+bool firebase\+::firestore\+::\+Query\+Snapshot\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks the emptiness of the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. 
+
+\begin{DoxyReturn}{Returns}
+True if there are no documents in the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a2786c1195c900947e2f51b826609ab8a}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a2786c1195c900947e2f51b826609ab8a} 
+bool firebase\+::firestore\+::\+Query\+Snapshot\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}}.
+\item Deleting your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance, which will invalidate all the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} instances associated with it.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a21dd9f2bf5ea092d668962e86091d4e7}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!metadata@{metadata}}
+\index{metadata@{metadata}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{metadata()}{metadata()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a21dd9f2bf5ea092d668962e86091d4e7} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} firebase\+::firestore\+::\+Query\+Snapshot\+::metadata (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Metadata about this snapshot, concerning its source and if it has local modifications. 
+
+\begin{DoxyReturn}{Returns}
+The metadata for this document snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a37eb59b1b179bb09f165a930ddac4f8e}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a37eb59b1b179bb09f165a930ddac4f8e} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \& firebase\+::firestore\+::\+Query\+Snapshot\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_aa99f16da215be1bb773b6a5a6cd08e5b}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_aa99f16da215be1bb773b6a5a6cd08e5b} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \& firebase\+::firestore\+::\+Query\+Snapshot\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a5bd0280822097d4b461171c244d11318}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!size@{size}}
+\index{size@{size}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a5bd0280822097d4b461171c244d11318} 
+virtual std\+::size\+\_\+t firebase\+::firestore\+::\+Query\+Snapshot\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Checks the size of the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. 
+
+\begin{DoxyReturn}{Returns}
+The number of documents in the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_snapshot_a95603809e980cf0024c89c556bd4e558}\index{firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::QuerySnapshot@{firebase::firestore::QuerySnapshot}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_snapshot_a95603809e980cf0024c89c556bd4e558} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/query\+\_\+snapshot.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,244 @@
+\doxysection{firebase\+::firestore\+::Settings Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_settings}{}\label{classfirebase_1_1firestore_1_1_settings}\index{firebase::firestore::Settings@{firebase::firestore::Settings}}
+
+
+{\ttfamily \#include $<$settings.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a6783528c414f5ee131f65da987fa76c2}\label{classfirebase_1_1firestore_1_1_settings_a6783528c414f5ee131f65da987fa76c2} 
+{\bfseries Settings} ()
+\begin{DoxyCompactList}\small\item\em Creates the default settings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a457de53694bf882185ed00b0a2f886b5}{Settings}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_acf543745405fb99b0cd497bf3471da87}{Settings}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a9427ff0f15502bfc06845b335d304037}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a57a50db88365b35edc0159f44fb474e5}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a4f0091337981265cfc58b15efe50742f}{host}} () const
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_ab90ba9cb40dc79b51078389a42a7841e}{is\+\_\+ssl\+\_\+enabled}} () const
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a0f7579bceaff00d5ef770abcc2af3cc1}{is\+\_\+persistence\+\_\+enabled}} () const
+\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a95381bf3dc94da45167783bed1c7e179}{cache\+\_\+size\+\_\+bytes}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_ae495d07cec1fb143858f571d6cd1528f}{set\+\_\+host}} (std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a4f0091337981265cfc58b15efe50742f}{host}})
+\item 
+void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a7ef112a5c1ae38084aeb15960d370a1e}{set\+\_\+ssl\+\_\+enabled}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_af2f49d96cb60235ea43820fe5a13427b}{set\+\_\+persistence\+\_\+enabled}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a465d081f63dbf2451925dd8fda198c58}{set\+\_\+cache\+\_\+size\+\_\+bytes}} (int64\+\_\+t value)
+\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_ab2e35e75d72b78ba888431067427204e}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_ad6f41b6023bf01f01c9c85351f8e4250}{k\+Cache\+Size\+Unlimited}} = -\/1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_settings_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings_a70bfd55551007f260cecc8a586e751d0}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&settings)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfirebase_1_1firestore_1_1_settings}{Settings} used to configure a \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a457de53694bf882185ed00b0a2f886b5}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{Settings()}{Settings()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a457de53694bf882185ed00b0a2f886b5} 
+firebase\+::firestore\+::\+Settings\+::\+Settings (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_acf543745405fb99b0cd497bf3471da87}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{Settings()}{Settings()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_acf543745405fb99b0cd497bf3471da87} 
+firebase\+::firestore\+::\+Settings\+::\+Settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}}. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a95381bf3dc94da45167783bed1c7e179}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!cache\_size\_bytes@{cache\_size\_bytes}}
+\index{cache\_size\_bytes@{cache\_size\_bytes}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{cache\_size\_bytes()}{cache\_size\_bytes()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a95381bf3dc94da45167783bed1c7e179} 
+int64\+\_\+t firebase\+::firestore\+::\+Settings\+::cache\+\_\+size\+\_\+bytes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns cache size for on-\/disk data. \Hypertarget{classfirebase_1_1firestore_1_1_settings_a4f0091337981265cfc58b15efe50742f}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!host@{host}}
+\index{host@{host}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{host()}{host()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a4f0091337981265cfc58b15efe50742f} 
+const std\+::string \& firebase\+::firestore\+::\+Settings\+::host (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the host of the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} backend to connect to. \Hypertarget{classfirebase_1_1firestore_1_1_settings_a0f7579bceaff00d5ef770abcc2af3cc1}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!is\_persistence\_enabled@{is\_persistence\_enabled}}
+\index{is\_persistence\_enabled@{is\_persistence\_enabled}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{is\_persistence\_enabled()}{is\_persistence\_enabled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a0f7579bceaff00d5ef770abcc2af3cc1} 
+bool firebase\+::firestore\+::\+Settings\+::is\+\_\+persistence\+\_\+enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether to enable local persistent storage. \Hypertarget{classfirebase_1_1firestore_1_1_settings_ab90ba9cb40dc79b51078389a42a7841e}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!is\_ssl\_enabled@{is\_ssl\_enabled}}
+\index{is\_ssl\_enabled@{is\_ssl\_enabled}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{is\_ssl\_enabled()}{is\_ssl\_enabled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_ab90ba9cb40dc79b51078389a42a7841e} 
+bool firebase\+::firestore\+::\+Settings\+::is\+\_\+ssl\+\_\+enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether to use SSL when communicating. \Hypertarget{classfirebase_1_1firestore_1_1_settings_a9427ff0f15502bfc06845b335d304037}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a9427ff0f15502bfc06845b335d304037} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \& firebase\+::firestore\+::\+Settings\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy assignment operator. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a57a50db88365b35edc0159f44fb474e5}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a57a50db88365b35edc0159f44fb474e5} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \& firebase\+::firestore\+::\+Settings\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}}. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a465d081f63dbf2451925dd8fda198c58}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!set\_cache\_size\_bytes@{set\_cache\_size\_bytes}}
+\index{set\_cache\_size\_bytes@{set\_cache\_size\_bytes}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{set\_cache\_size\_bytes()}{set\_cache\_size\_bytes()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a465d081f63dbf2451925dd8fda198c58} 
+void firebase\+::firestore\+::\+Settings\+::set\+\_\+cache\+\_\+size\+\_\+bytes (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+
+Sets an approximate cache size threshold for the on-\/disk data. If the cache grows beyond this size, Cloud \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} will start removing data that hasn\textquotesingle{}t been recently used. The size is not a guarantee that the cache will stay below that size, only that if the cache exceeds the given size, cleanup will be attempted.
+
+By default, collection is enabled with a cache size of 100 MB. The minimum value is 1 MB. \Hypertarget{classfirebase_1_1firestore_1_1_settings_ae495d07cec1fb143858f571d6cd1528f}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!set\_host@{set\_host}}
+\index{set\_host@{set\_host}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{set\_host()}{set\_host()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_ae495d07cec1fb143858f571d6cd1528f} 
+void firebase\+::firestore\+::\+Settings\+::set\+\_\+host (\begin{DoxyParamCaption}\item[{std\+::string}]{host}{}\end{DoxyParamCaption})}
+
+Sets the host of the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} backend. The default is "{}firestore.\+googleapis.\+com"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & The host string. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_af2f49d96cb60235ea43820fe5a13427b}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!set\_persistence\_enabled@{set\_persistence\_enabled}}
+\index{set\_persistence\_enabled@{set\_persistence\_enabled}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{set\_persistence\_enabled()}{set\_persistence\_enabled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_af2f49d96cb60235ea43820fe5a13427b} 
+void firebase\+::firestore\+::\+Settings\+::set\+\_\+persistence\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Enables or disables local persistent storage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & Set true to enable local persistent storage. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a7ef112a5c1ae38084aeb15960d370a1e}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!set\_ssl\_enabled@{set\_ssl\_enabled}}
+\index{set\_ssl\_enabled@{set\_ssl\_enabled}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{set\_ssl\_enabled()}{set\_ssl\_enabled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a7ef112a5c1ae38084aeb15960d370a1e} 
+void firebase\+::firestore\+::\+Settings\+::set\+\_\+ssl\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Enables or disables SSL for communication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & Set true to enable SSL for communication. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_ab2e35e75d72b78ba888431067427204e}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_ab2e35e75d72b78ba888431067427204e} 
+std\+::string firebase\+::firestore\+::\+Settings\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of these {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_a70bfd55551007f260cecc8a586e751d0}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_a70bfd55551007f260cecc8a586e751d0} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{settings}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of these {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings}{Settings}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_settings_ab2e35e75d72b78ba888431067427204e}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_settings_ad6f41b6023bf01f01c9c85351f8e4250}\index{firebase::firestore::Settings@{firebase::firestore::Settings}!kCacheSizeUnlimited@{kCacheSizeUnlimited}}
+\index{kCacheSizeUnlimited@{kCacheSizeUnlimited}!firebase::firestore::Settings@{firebase::firestore::Settings}}
+\doxysubsubsection{\texorpdfstring{kCacheSizeUnlimited}{kCacheSizeUnlimited}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_settings_ad6f41b6023bf01f01c9c85351f8e4250} 
+int64\+\_\+t firebase\+::firestore\+::\+Settings\+::k\+Cache\+Size\+Unlimited = -\/1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+Constant to use with {\ttfamily set\+\_\+cache\+\_\+size\+\_\+bytes} to disable garbage collection. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/settings.\+h\end{DoxyCompactItemize}

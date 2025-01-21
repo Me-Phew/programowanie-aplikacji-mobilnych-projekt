@@ -1,0 +1,251 @@
+\doxysection{firebase\+::database\+::Database Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_database}{}\label{classfirebase_1_1database_1_1_database}\index{firebase::database::Database@{firebase::database::Database}}
+
+
+Entry point for the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} C++ SDK.  
+
+
+
+
+{\ttfamily \#include $<$database.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a4d704d84e11475a9ef0dd188346ab982}{\texorpdfstring{$\sim$}{\string~}\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classfirebase_1_1database_1_1_database}{Database} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a501974a1f6782b0c351a07364fc97d9e}{app}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a8d0cb111738ce5baa3c910692214bf64}{url}} () const
+\begin{DoxyCompactList}\small\item\em Get the URL that this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_ab743b8bcd8cab7f0886521cd0ee91910}{Get\+Reference}} () const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the root of the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a249cae402db7e9e57a687f98edf8b7ed}{Get\+Reference}} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} for the specified path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_ab8773d7a5c568bcd3b7d9755f8b106f6}{Get\+Reference\+From\+Url}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a8d0cb111738ce5baa3c910692214bf64}{url}}) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} for the provided URL, which must belong to the database URL this instance is already connected to. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_aa2cf08220af5ce6c8d1d51416fce2fc1}\label{classfirebase_1_1database_1_1_database_aa2cf08220af5ce6c8d1d51416fce2fc1} 
+void {\bfseries Go\+Offline} ()
+\begin{DoxyCompactList}\small\item\em Shuts down the connection to the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} backend until \doxylink{classfirebase_1_1database_1_1_database_a683f584177a99d4288988f6870d57f19}{Go\+Online()} is called. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_a683f584177a99d4288988f6870d57f19}\label{classfirebase_1_1database_1_1_database_a683f584177a99d4288988f6870d57f19} 
+void {\bfseries Go\+Online} ()
+\begin{DoxyCompactList}\small\item\em Resumes the connection to the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} backend after a previous \doxylink{classfirebase_1_1database_1_1_database_aa2cf08220af5ce6c8d1d51416fce2fc1}{Go\+Offline()} call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a3e7d319ea9e0797f990e22ce4f8d3f63}{Purge\+Outstanding\+Writes}} ()
+\begin{DoxyCompactList}\small\item\em Purge all pending writes to the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a80516f5ad9bed9465098b07224fe4eda}{set\+\_\+persistence\+\_\+enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Sets whether pending write data will persist between application exits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a572cf0e0327c87e7a6a36f270dfec16b}{set\+\_\+log\+\_\+level}} (\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{Log\+Level}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_abf0265fdb834c73606c1bfc09dc6c005}{log\+\_\+level}})
+\item 
+\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{Log\+Level}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_abf0265fdb834c73606c1bfc09dc6c005}{log\+\_\+level}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a501974a1f6782b0c351a07364fc97d9e}{app}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Get an instance of \doxylink{classfirebase_1_1database_1_1_database}{Database} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_a7dbbd2ebcbfc41fa7161ea7591f18a65}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a501974a1f6782b0c351a07364fc97d9e}{app}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a8d0cb111738ce5baa3c910692214bf64}{url}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Gets an instance of Firebase\+Database for the specified URL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_a95a41e1cca84a72684bdc8f7238e3238}\label{classfirebase_1_1database_1_1_database_a95a41e1cca84a72684bdc8f7238e3238} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Database\+Instance} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a501974a1f6782b0c351a07364fc97d9e}{app}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1database_1_1_database_a8d0cb111738ce5baa3c910692214bf64}{url}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} C++ SDK. 
+
+To use the SDK, call \doxylink{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9}{firebase\+::database\+::\+Database\+::\+Get\+Instance()} to obtain an instance of \doxylink{classfirebase_1_1database_1_1_database}{Database}, then use \doxylink{classfirebase_1_1database_1_1_database_ab743b8bcd8cab7f0886521cd0ee91910}{Get\+Reference()} to obtain references to child paths within the database. From there you can set data via Query\+::\+Set\+Value(), get data via \doxylink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Query\+::\+Get\+Value()}, attach listeners, and more. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_database_a4d704d84e11475a9ef0dd188346ab982}\index{firebase::database::Database@{firebase::database::Database}!````~Database@{\texorpdfstring{$\sim$}{\string~}Database}}
+\index{````~Database@{\texorpdfstring{$\sim$}{\string~}Database}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Database()}{\string~Database()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a4d704d84e11475a9ef0dd188346ab982} 
+firebase\+::database\+::\+Database\+::\texorpdfstring{$\sim$}{\string~}\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{classfirebase_1_1database_1_1_database}{Database} object. 
+
+When deleted, this instance will be removed from the cache of \doxylink{classfirebase_1_1database_1_1_database}{Database} objects. If you call \doxylink{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9}{Get\+Instance()} in the future with the same \doxylink{classfirebase_1_1_app}{App}, a new \doxylink{classfirebase_1_1database_1_1_database}{Database} instance will be created. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_database_a501974a1f6782b0c351a07364fc97d9e}\index{firebase::database::Database@{firebase::database::Database}!app@{app}}
+\index{app@{app}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a501974a1f6782b0c351a07364fc97d9e} 
+\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_a7dbbd2ebcbfc41fa7161ea7591f18a65}\index{firebase::database::Database@{firebase::database::Database}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a7dbbd2ebcbfc41fa7161ea7591f18a65} 
+static \mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{url}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets an instance of Firebase\+Database for the specified URL. 
+
+If you call \doxylink{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9}{Get\+Instance()} multiple times with the same \doxylink{classfirebase_1_1_app}{App} and URL, you will get the same instance of \doxylink{classfirebase_1_1database_1_1_database}{Database}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & Your instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ in}}  & {\em url} & The URL of your Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database}. This overrides any url specified in the \doxylink{classfirebase_1_1_app}{App} options. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & Optional\+: If provided, write the init result here. Will be set to k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1database_1_1_database}{Database} corresponding to the given \doxylink{classfirebase_1_1_app}{App} and URL. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9}\index{firebase::database::Database@{firebase::database::Database}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9} 
+static \mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get an instance of \doxylink{classfirebase_1_1database_1_1_database}{Database} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+
+Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the \doxylink{classfirebase_1_1database_1_1_database}{Database} server backend.
+
+If you call \doxylink{classfirebase_1_1database_1_1_database_ae0166b53fd0ec5a33e9d29981a8704c9}{Get\+Instance()} multiple times with the same \doxylink{classfirebase_1_1_app}{App}, you will get the same instance of \doxylink{classfirebase_1_1database_1_1_database}{Database}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & Your instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & Optional\+: If provided, write the init result here. Will be set to k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1database_1_1_database}{Database} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_ab743b8bcd8cab7f0886521cd0ee91910}\index{firebase::database::Database@{firebase::database::Database}!GetReference@{GetReference}}
+\index{GetReference@{GetReference}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{GetReference()}{GetReference()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_ab743b8bcd8cab7f0886521cd0ee91910} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+::\+Get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the root of the database. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the root of the database. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_a249cae402db7e9e57a687f98edf8b7ed}\index{firebase::database::Database@{firebase::database::Database}!GetReference@{GetReference}}
+\index{GetReference@{GetReference}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{GetReference()}{GetReference()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a249cae402db7e9e57a687f98edf8b7ed} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+::\+Get\+Reference (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} for the specified path. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the specified path in the database. If you specified an invalid path, the reference\textquotesingle{}s Database\+Reference\+::\+Is\+Valid() will return false. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_ab8773d7a5c568bcd3b7d9755f8b106f6}\index{firebase::database::Database@{firebase::database::Database}!GetReferenceFromUrl@{GetReferenceFromUrl}}
+\index{GetReferenceFromUrl@{GetReferenceFromUrl}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{GetReferenceFromUrl()}{GetReferenceFromUrl()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_ab8773d7a5c568bcd3b7d9755f8b106f6} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+::\+Get\+Reference\+From\+Url (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{url}{}\end{DoxyParamCaption}) const}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} for the provided URL, which must belong to the database URL this instance is already connected to. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the specified path in the database. If you specified an invalid path, the reference\textquotesingle{}s Database\+Reference\+::\+Is\+Valid() will return false. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_abf0265fdb834c73606c1bfc09dc6c005}\index{firebase::database::Database@{firebase::database::Database}!log\_level@{log\_level}}
+\index{log\_level@{log\_level}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{log\_level()}{log\_level()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_abf0265fdb834c73606c1bfc09dc6c005} 
+\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{Log\+Level}} firebase\+::database\+::\+Database\+::log\+\_\+level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Get the log verbosity of this \doxylink{classfirebase_1_1database_1_1_database}{Database} instance.
+
+\begin{DoxyReturn}{Returns}
+Get the currently configured logging verbosity. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_a3e7d319ea9e0797f990e22ce4f8d3f63}\index{firebase::database::Database@{firebase::database::Database}!PurgeOutstandingWrites@{PurgeOutstandingWrites}}
+\index{PurgeOutstandingWrites@{PurgeOutstandingWrites}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{PurgeOutstandingWrites()}{PurgeOutstandingWrites()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a3e7d319ea9e0797f990e22ce4f8d3f63} 
+void firebase\+::database\+::\+Database\+::\+Purge\+Outstanding\+Writes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Purge all pending writes to the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} server. 
+
+The Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} client automatically queues writes and sends them to the server at the earliest opportunity, depending on network connectivity. In some cases (e.\+g. offline usage) there may be a large number of writes waiting to be sent. Calling this method will purge all outstanding writes so they are abandoned. All writes will be purged, including transactions and on\+Disconnect() writes. The writes will be rolled back locally, perhaps triggering events for affected event listeners, and the client will not (re-\/)send them to the Firebase backend. \Hypertarget{classfirebase_1_1database_1_1_database_a572cf0e0327c87e7a6a36f270dfec16b}\index{firebase::database::Database@{firebase::database::Database}!set\_log\_level@{set\_log\_level}}
+\index{set\_log\_level@{set\_log\_level}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{set\_log\_level()}{set\_log\_level()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a572cf0e0327c87e7a6a36f270dfec16b} 
+void firebase\+::database\+::\+Database\+::set\+\_\+log\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{Log\+Level}}}]{log\+\_\+level}{}\end{DoxyParamCaption})}
+
+Set the log verbosity of this \doxylink{classfirebase_1_1database_1_1_database}{Database} instance.
+
+The log filtering is cumulative with Firebase \doxylink{classfirebase_1_1_app}{App}. That is, this library\textquotesingle{}s log messages will only be displayed if they are not filtered out by this library\textquotesingle{}s log level setting and by Firebase \doxylink{classfirebase_1_1_app}{App}\textquotesingle{}s log level setting.
+
+\begin{DoxyNote}{Note}
+On Android this can only be set before any operations have been performed with the object.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+\_\+level} & Log level, by default this is set to k\+Log\+Level\+Info. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_database_a80516f5ad9bed9465098b07224fe4eda}\index{firebase::database::Database@{firebase::database::Database}!set\_persistence\_enabled@{set\_persistence\_enabled}}
+\index{set\_persistence\_enabled@{set\_persistence\_enabled}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{set\_persistence\_enabled()}{set\_persistence\_enabled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a80516f5ad9bed9465098b07224fe4eda} 
+void firebase\+::database\+::\+Database\+::set\+\_\+persistence\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+
+
+Sets whether pending write data will persist between application exits. 
+
+The Firebase \doxylink{classfirebase_1_1database_1_1_database}{Database} client will cache synchronized data and keep track of all writes you\textquotesingle{}ve initiated while your application is running. It seamlessly handles intermittent network connections and re-\/sends write operations when the network connection is restored. However by default your write operations and cached data are only stored in-\/memory and will be lost when your app restarts. By setting this value to {\ttfamily true}, the data will be persisted to on-\/device (disk) storage and will thus be available again when the app is restarted (even when there is no network connectivity at that time).
+
+\begin{DoxyNote}{Note}
+Set\+Persistence\+Enabled should be called before creating any instances of \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}, and only needs to be called once per application.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enabled} & Set this to true to persist write data to on-\/device (disk) storage, or false to discard pending writes when the app exists. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_database_a8d0cb111738ce5baa3c910692214bf64}\index{firebase::database::Database@{firebase::database::Database}!url@{url}}
+\index{url@{url}!firebase::database::Database@{firebase::database::Database}}
+\doxysubsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_a8d0cb111738ce5baa3c910692214bf64} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+::url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the URL that this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The URL this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with, or an empty string if this \doxylink{classfirebase_1_1database_1_1_database}{Database} was created with default parameters. This string will remain valid in memory for the lifetime of this \doxylink{classfirebase_1_1database_1_1_database}{Database}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database.\+h\end{DoxyCompactItemize}

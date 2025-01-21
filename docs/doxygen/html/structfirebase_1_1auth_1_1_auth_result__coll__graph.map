@@ -1,0 +1,12 @@
+<map id="firebase::auth::AuthResult" name="firebase::auth::AuthResult">
+<area shape="rect" id="Node000001" title="The result of operations that can affect authentication state." alt="" coords="92,219,265,245"/>
+<area shape="rect" id="Node000002" href="$structfirebase_1_1auth_1_1_additional_user_info.html" title="Additional user data returned from an identity provider." alt="" coords="96,112,261,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,170,181,218,176,218,176,170"/>
+<area shape="rect" id="Node000003" href="$classfirebase_1_1auth_1_1_credential.html" title="Authentication credentials for an authentication provider." alt="" coords="5,13,173,40"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="65,53,44,75,27,100,19,128,21,141,26,153,44,175,68,193,120,216,118,220,65,197,41,179,21,156,15,142,14,127,23,98,40,71,61,49"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,50,163,110,159,113,107,53"/>
+<area shape="rect" id="Node000004" href="$classfirebase_1_1auth_1_1_user.html" title="Firebase user account object." alt="" coords="285,120,421,147"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="339,161,323,180,304,197,277,211,249,221,247,216,275,206,301,192,320,177,335,158"/>
+<area shape="rect" id="Node000005" href="$classfirebase_1_1auth_1_1_user_info_interface.html" title="Interface implemented by each identity provider." alt="" coords="274,5,432,48"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="356,64,356,119,350,119,350,64"/>
+</map>

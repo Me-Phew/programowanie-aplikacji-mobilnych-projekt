@@ -1,0 +1,400 @@
+\doxysection{firebase\+::firestore\+::Document\+Snapshot Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_document_snapshot}{}\label{classfirebase_1_1firestore_1_1_document_snapshot}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+
+
+A \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data read from a document in your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} database.  
+
+
+
+
+{\ttfamily \#include $<$document\+\_\+snapshot.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}} \{ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a35c3ace1970663a16e5c65baa5941b13}{k\+None}} = 0
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a41d151799285ce4bb188edddd6bbec21}{k\+Estimate}}
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6af8592f8ed8f28974b275c9c396700a85}{k\+Previous}}
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{k\+Default}} = 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a67630ae23e5a868ddfe5ba7338127d9d}{Document\+Snapshot}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a6905edc91cac986a38efc35773c097e8}{Document\+Snapshot}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_ae5d569f37c9722be9cf1f645970e5d48}{Document\+Snapshot}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a07ebc81a936f5341e7897ad314d997c0}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_ae25b0e179ef35f8adf90f633c56b8ab2}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+virtual const std\+::string \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a913932344fc7f826d5aa1e3c3cc2e782}{id}} () const
+\begin{DoxyCompactList}\small\item\em Returns the string ID of the document for which this \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a5ca66e25fb8d3086c169b8989345d40b}{reference}} () const
+\begin{DoxyCompactList}\small\item\em Returns the document location for which this \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a5210e6e363d2814cecdf262cc7d85462}{metadata}} () const
+\begin{DoxyCompactList}\small\item\em Returns the metadata about this snapshot concerning its source and if it has local modifications. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a0e3485a381ed63afa91a712b3b5015a9}{exists}} () const
+\begin{DoxyCompactList}\small\item\em Explicitly verify a document\textquotesingle{}s existence. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a27c719118b16ca67f96634015863baa9}{Get\+Data}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}} stb=\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}) const
+\begin{DoxyCompactList}\small\item\em Retrieves all fields in the document as a map of Field\+Values. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a726989caf1c55d7d355af3d5bfa3f518}{Get}} (const char \texorpdfstring{$\ast$}{*}field, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}} stb=\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}) const
+\begin{DoxyCompactList}\small\item\em Retrieves a specific field from the document. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a70cf89f35984655dd97f2b62c9578baa}{Get}} (const std\+::string \&field, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}} stb=\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}) const
+\begin{DoxyCompactList}\small\item\em Retrieves a specific field from the document. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a3964c249fa73e7d5ab18b81683399008}{Get}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}} stb=\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}) const
+\begin{DoxyCompactList}\small\item\em Retrieves a specific field from the document. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a88df10e44eda7955744b484e495bec03}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} could be the result of\+: \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a58d547d48ca97d65346be6f1b43bb715}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a181895ad1f3441fd6a2c7d8ce9b3896f}\label{classfirebase_1_1firestore_1_1_document_snapshot_a181895ad1f3441fd6a2c7d8ce9b3896f} 
+class {\bfseries Document\+Change\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a8445936f260363ac505cb1fb30fd6558}\label{classfirebase_1_1firestore_1_1_document_snapshot_a8445936f260363ac505cb1fb30fd6558} 
+class {\bfseries Event\+Listener\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_document_snapshot_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_af6cb3d6b6c0e0eca68e1f4cbc42db8bb}\label{classfirebase_1_1firestore_1_1_document_snapshot_af6cb3d6b6c0e0eca68e1f4cbc42db8bb} 
+class {\bfseries Query\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_add208beb107d99e8616c7e73e580f5ba}\label{classfirebase_1_1firestore_1_1_document_snapshot_add208beb107d99e8616c7e73e580f5ba} 
+class {\bfseries Transaction\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a78fe9810384af4049d4b19b00be1f646}\label{classfirebase_1_1firestore_1_1_document_snapshot_a78fe9810384af4049d4b19b00be1f646} 
+class {\bfseries Wrapper}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_document_snapshot_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_document_snapshot_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_ab0351a83834b53cf8efa5e6143e9e26b}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&document)
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_aebfbe11d447449693040a260b20068d2}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&rhs)
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a9b11d3d426286e38afc85f24411a6367}\label{classfirebase_1_1firestore_1_1_document_snapshot_a9b11d3d426286e38afc85f24411a6367} 
+std\+::size\+\_\+t {\bfseries Document\+Snapshot\+Hash} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&snapshot)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data read from a document in your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} database. 
+
+The data can be extracted with the \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a27c719118b16ca67f96634015863baa9}{Get\+Data()} method, or by using \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a726989caf1c55d7d355af3d5bfa3f518}{Get()} to access a specific field. For a \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} that points to a non-\/existing document, any data access will cause a failed assertion. You can use the \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a0e3485a381ed63afa91a712b3b5015a9}{exists()} method to explicitly verify a document\textquotesingle{}s existence.
+
+\begin{DoxyNote}{Note}
+\doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} classes are not meant to be subclassed except for use in test mocks. Subclassing is not supported in production code and new SDK releases may break code that does so. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!ServerTimestampBehavior@{ServerTimestampBehavior}}
+\index{ServerTimestampBehavior@{ServerTimestampBehavior}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{ServerTimestampBehavior}{ServerTimestampBehavior}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6} 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{firebase\+::firestore\+::\+Document\+Snapshot\+::\+Server\+Timestamp\+Behavior}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Controls the return value for server timestamps that have not yet been set to their final value. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNone@{kNone}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!kNone@{kNone}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a35c3ace1970663a16e5c65baa5941b13}\label{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6} 
+k\+None&Return Null for server timestamps that have not yet been set to their final value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEstimate@{kEstimate}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!kEstimate@{kEstimate}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a41d151799285ce4bb188edddd6bbec21}\label{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6} 
+k\+Estimate&Return local estimates for server timestamps that have not yet been set to their final value. This estimate will likely differ from the final value and may cause these pending values to change once the server result becomes available. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPrevious@{kPrevious}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!kPrevious@{kPrevious}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6af8592f8ed8f28974b275c9c396700a85}\label{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6} 
+k\+Previous&Return the previous value for server timestamps that have not yet been set to their final value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDefault@{kDefault}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!kDefault@{kDefault}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}\label{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6} 
+k\+Default&The default behavior, which is equivalent to specifying k\+None. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a67630ae23e5a868ddfe5ba7338127d9d}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!DocumentSnapshot@{DocumentSnapshot}}
+\index{DocumentSnapshot@{DocumentSnapshot}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{DocumentSnapshot()}{DocumentSnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a67630ae23e5a868ddfe5ba7338127d9d} 
+firebase\+::firestore\+::\+Document\+Snapshot\+::\+Document\+Snapshot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a6905edc91cac986a38efc35773c097e8}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!DocumentSnapshot@{DocumentSnapshot}}
+\index{DocumentSnapshot@{DocumentSnapshot}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{DocumentSnapshot()}{DocumentSnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a6905edc91cac986a38efc35773c097e8} 
+firebase\+::firestore\+::\+Document\+Snapshot\+::\+Document\+Snapshot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_ae5d569f37c9722be9cf1f645970e5d48}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!DocumentSnapshot@{DocumentSnapshot}}
+\index{DocumentSnapshot@{DocumentSnapshot}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{DocumentSnapshot()}{DocumentSnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_ae5d569f37c9722be9cf1f645970e5d48} 
+firebase\+::firestore\+::\+Document\+Snapshot\+::\+Document\+Snapshot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a0e3485a381ed63afa91a712b3b5015a9}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!exists@{exists}}
+\index{exists@{exists}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a0e3485a381ed63afa91a712b3b5015a9} 
+virtual bool firebase\+::firestore\+::\+Document\+Snapshot\+::exists (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Explicitly verify a document\textquotesingle{}s existence. 
+
+\begin{DoxyReturn}{Returns}
+True if the document exists in this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a726989caf1c55d7d355af3d5bfa3f518}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!Get@{Get}}
+\index{Get@{Get}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a726989caf1c55d7d355af3d5bfa3f518} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Document\+Snapshot\+::\+Get (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{field}{, }\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}}}]{stb}{ = {\ttfamily \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves a specific field from the document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & String ID of the field to retrieve. The pointer only needs to be valid during this call. \\
+\hline
+{\em stb} & Configures how server timestamps that have not yet been set to their final value are returned from the snapshot (optional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value contained in the field. If the field does not exist in the document, then a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} instance with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a88df10e44eda7955744b484e495bec03}{is\+\_\+valid()} == false} will be returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a3964c249fa73e7d5ab18b81683399008}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!Get@{Get}}
+\index{Get@{Get}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a3964c249fa73e7d5ab18b81683399008} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Document\+Snapshot\+::\+Get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}}}]{stb}{ = {\ttfamily \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves a specific field from the document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Path of the field to retrieve. \\
+\hline
+{\em stb} & Configures how server timestamps that have not yet been set to their final value are returned from the snapshot (optional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value contained in the field. If the field does not exist in the document, then a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} instance with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a88df10e44eda7955744b484e495bec03}{is\+\_\+valid()} == false} will be returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a70cf89f35984655dd97f2b62c9578baa}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!Get@{Get}}
+\index{Get@{Get}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a70cf89f35984655dd97f2b62c9578baa} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Document\+Snapshot\+::\+Get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}}}]{stb}{ = {\ttfamily \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves a specific field from the document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & String ID of the field to retrieve. \\
+\hline
+{\em stb} & Configures how server timestamps that have not yet been set to their final value are returned from the snapshot (optional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value contained in the field. If the field does not exist in the document, then a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} instance with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a88df10e44eda7955744b484e495bec03}{is\+\_\+valid()} == false} will be returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a27c719118b16ca67f96634015863baa9}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!GetData@{GetData}}
+\index{GetData@{GetData}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a27c719118b16ca67f96634015863baa9} 
+virtual \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} firebase\+::firestore\+::\+Document\+Snapshot\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6}{Server\+Timestamp\+Behavior}}}]{stb}{ = {\ttfamily \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot_a970e228d506154b17acb6e4de23b74a6a6867faeaa475fda467e48267db2bb8a8}{Server\+Timestamp\+Behavior\+::k\+Default}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves all fields in the document as a map of Field\+Values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stb} & Configures how server timestamps that have not yet been set to their final value are returned from the snapshot (optional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map containing all fields in the document, or an empty map if the document doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a913932344fc7f826d5aa1e3c3cc2e782}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!id@{id}}
+\index{id@{id}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a913932344fc7f826d5aa1e3c3cc2e782} 
+virtual const std\+::string \& firebase\+::firestore\+::\+Document\+Snapshot\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the string ID of the document for which this \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data. 
+
+\begin{DoxyReturn}{Returns}
+String ID of this document location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a88df10e44eda7955744b484e495bec03}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a88df10e44eda7955744b484e495bec03} 
+bool firebase\+::firestore\+::\+Document\+Snapshot\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} with the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}}.
+\item Deleting your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance, which will invalidate all the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} instances associated with it.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a5210e6e363d2814cecdf262cc7d85462}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!metadata@{metadata}}
+\index{metadata@{metadata}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{metadata()}{metadata()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a5210e6e363d2814cecdf262cc7d85462} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} firebase\+::firestore\+::\+Document\+Snapshot\+::metadata (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the metadata about this snapshot concerning its source and if it has local modifications. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata} about this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a07ebc81a936f5341e7897ad314d997c0}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a07ebc81a936f5341e7897ad314d997c0} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \& firebase\+::firestore\+::\+Document\+Snapshot\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_ae25b0e179ef35f8adf90f633c56b8ab2}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_ae25b0e179ef35f8adf90f633c56b8ab2} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \& firebase\+::firestore\+::\+Document\+Snapshot\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a5ca66e25fb8d3086c169b8989345d40b}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!reference@{reference}}
+\index{reference@{reference}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{reference()}{reference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a5ca66e25fb8d3086c169b8989345d40b} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} firebase\+::firestore\+::\+Document\+Snapshot\+::reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the document location for which this \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} of this document location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_a58d547d48ca97d65346be6f1b43bb715}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_a58d547d48ca97d65346be6f1b43bb715} 
+std\+::string firebase\+::firestore\+::\+Document\+Snapshot\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_ab0351a83834b53cf8efa5e6143e9e26b}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_ab0351a83834b53cf8efa5e6143e9e26b} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{document}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a58d547d48ca97d65346be6f1b43bb715}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_snapshot_aebfbe11d447449693040a260b20068d2}\index{firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::DocumentSnapshot@{firebase::firestore::DocumentSnapshot}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_snapshot_aebfbe11d447449693040a260b20068d2} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/document\+\_\+snapshot.\+h\end{DoxyCompactItemize}

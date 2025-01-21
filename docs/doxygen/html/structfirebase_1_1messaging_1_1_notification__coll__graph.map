@@ -1,0 +1,5 @@
+<map id="firebase::messaging::Notification" name="firebase::messaging::Notification">
+<area shape="rect" id="Node000001" title=" " alt="" coords="28,112,167,155"/>
+<area shape="rect" id="Node000002" href="$structfirebase_1_1messaging_1_1_android_notification_params.html" title="Data structure for parameters that are unique to the Android implementation." alt="" coords="5,5,190,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,64,100,111,95,111,95,64"/>
+</map>

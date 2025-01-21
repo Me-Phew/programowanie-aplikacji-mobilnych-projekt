@@ -1,0 +1,198 @@
+\doxysection{firebase\+::gma\+::Rewarded\+Ad Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_rewarded_ad}{}\label{classfirebase_1_1gma_1_1_rewarded_ad}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+
+
+Loads and displays Google Mobile Ads rewarded ads.  
+
+
+
+
+{\ttfamily \#include $<$rewarded\+\_\+ad.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options}{Server\+Side\+Verification\+Options}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a05f77f91a0cd6d05e6995830cbaf8dde}{Rewarded\+Ad}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7}{Initialize}} (\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}} parent)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a24150b81945507685f7569be73f40975}{Initialize\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a98e50ae8b1d85ec1fc65a2a8452fc1ab}{Load\+Ad}} (const char \texorpdfstring{$\ast$}{*}ad\+\_\+unit\+\_\+id, const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&request)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a075ac9b07859b9353080b03b018e2218}{Load\+Ad\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_aa90ca5f8c99ee3b9d368d20417c97695}{Show}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_user_earned_reward_listener}{User\+Earned\+Reward\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_aa8042cdae5a37f467c3d708d272bd6c5}{Show\+Last\+Result}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a46d9d98a411697d994d4252a5e4e6049}{Set\+Full\+Screen\+Content\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_aec0f68217cec31d8a57013faf08a3455}{Set\+Paid\+Event\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_adf51013c5c2a54f1e69c781b3809175e}{Set\+Server\+Side\+Verification\+Options}} (const \mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options}{Server\+Side\+Verification\+Options}} \&server\+Side\+Verification\+Options)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads and displays Google Mobile Ads rewarded ads. 
+
+\doxylink{classfirebase_1_1gma_1_1_rewarded_ad}{Rewarded\+Ad} is a single-\/use object that can load and show a single GMA rewarded ad.
+
+\doxylink{classfirebase_1_1gma_1_1_rewarded_ad}{Rewarded\+Ad} objects provide information about their current state through Futures. \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7}{Initialize}, \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_a98e50ae8b1d85ec1fc65a2a8452fc1ab}{Load\+Ad}, and \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_aa90ca5f8c99ee3b9d368d20417c97695}{Show} each have a corresponding \doxylink{classfirebase_1_1_future}{Future} from which you can determine result of the previous call.
+
+Here\textquotesingle{}s how one might initialize, load, and show an rewarded ad while checking against the result of the previous action at each step\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }gma\ =\ ::firebase::gma;}
+\DoxyCodeLine{gma::RewardedAd*\ rewarded\ =\ \textcolor{keyword}{new}\ gma::RewardedAd();}
+\DoxyCodeLine{rewarded-\/>Initialize(ad\_parent);}
+
+\end{DoxyCode}
+
+
+Then, later\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (rewarded-\/>InitializeLastResult().status()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa33e40478e42949d7dc59951089f56921}{::firebase::kFutureStatusComplete}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ rewarded-\/>InitializeLastResult().error()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0ba0e33d712bb2a75f829d5f3df1706b}{firebase::gma::kAdErrorCodeNone}})\ \{}
+\DoxyCodeLine{\ \ rewarded-\/>LoadAd(\ \textcolor{stringliteral}{"{}YOUR\_AD\_UNIT\_ID"{}},\ my\_ad\_request);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+And after that\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (rewarded-\/>LoadAdLastResult().status()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa33e40478e42949d7dc59951089f56921}{::firebase::kFutureStatusComplete}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ rewarded-\/>LoadAdLastResult().error()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0ba0e33d712bb2a75f829d5f3df1706b}{firebase::gma::kAdErrorCodeNone}}))\ \{}
+\DoxyCodeLine{\ \ rewarded-\/>Show(\&my\_user\_earned\_reward\_listener);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_a05f77f91a0cd6d05e6995830cbaf8dde}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!RewardedAd@{RewardedAd}}
+\index{RewardedAd@{RewardedAd}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{RewardedAd()}{RewardedAd()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_a05f77f91a0cd6d05e6995830cbaf8dde} 
+firebase\+::gma\+::\+Rewarded\+Ad\+::\+Rewarded\+Ad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Creates an uninitialized \doxylink{classfirebase_1_1gma_1_1_rewarded_ad}{Rewarded\+Ad} object. \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7}{Initialize} must be called before the object is used. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Rewarded\+Ad\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}}}]{parent}{}\end{DoxyParamCaption})}
+
+Initialize the \doxylink{classfirebase_1_1gma_1_1_rewarded_ad}{Rewarded\+Ad} object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parent} & The platform-\/specific UI element that will host the ad. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_a24150b81945507685f7569be73f40975}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!InitializeLastResult@{InitializeLastResult}}
+\index{InitializeLastResult@{InitializeLastResult}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{InitializeLastResult()}{InitializeLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_a24150b81945507685f7569be73f40975} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Rewarded\+Ad\+::\+Initialize\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7}{Initialize}. \Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_a98e50ae8b1d85ec1fc65a2a8452fc1ab}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!LoadAd@{LoadAd}}
+\index{LoadAd@{LoadAd}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{LoadAd()}{LoadAd()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_a98e50ae8b1d85ec1fc65a2a8452fc1ab} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Rewarded\+Ad\+::\+Load\+Ad (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ad\+\_\+unit\+\_\+id}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&}]{request}{}\end{DoxyParamCaption})}
+
+Begins an asynchronous request for an ad.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ad\+\_\+unit\+\_\+id} & The ad unit ID to use in loading the ad. \\
+\hline
+\mbox{\texttt{ in}}  & {\em request} & An \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request} struct with information about the request to be made (such as targeting info). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_a075ac9b07859b9353080b03b018e2218}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!LoadAdLastResult@{LoadAdLastResult}}
+\index{LoadAdLastResult@{LoadAdLastResult}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{LoadAdLastResult()}{LoadAdLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_a075ac9b07859b9353080b03b018e2218} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Rewarded\+Ad\+::\+Load\+Ad\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_a98e50ae8b1d85ec1fc65a2a8452fc1ab}{Load\+Ad}. \Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_a46d9d98a411697d994d4252a5e4e6049}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!SetFullScreenContentListener@{SetFullScreenContentListener}}
+\index{SetFullScreenContentListener@{SetFullScreenContentListener}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{SetFullScreenContentListener()}{SetFullScreenContentListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_a46d9d98a411697d994d4252a5e4e6049} 
+void firebase\+::gma\+::\+Rewarded\+Ad\+::\+Set\+Full\+Screen\+Content\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Sets the \doxylink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener} for this \doxylink{classfirebase_1_1gma_1_1_rewarded_ad}{Rewarded\+Ad}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A valid \doxylink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener} to receive callbacks. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_aec0f68217cec31d8a57013faf08a3455}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!SetPaidEventListener@{SetPaidEventListener}}
+\index{SetPaidEventListener@{SetPaidEventListener}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{SetPaidEventListener()}{SetPaidEventListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_aec0f68217cec31d8a57013faf08a3455} 
+void firebase\+::gma\+::\+Rewarded\+Ad\+::\+Set\+Paid\+Event\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Registers a callback to be invoked when this ad is estimated to have earned money
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A valid \doxylink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener} to receive callbacks. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_adf51013c5c2a54f1e69c781b3809175e}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!SetServerSideVerificationOptions@{SetServerSideVerificationOptions}}
+\index{SetServerSideVerificationOptions@{SetServerSideVerificationOptions}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{SetServerSideVerificationOptions()}{SetServerSideVerificationOptions()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_adf51013c5c2a54f1e69c781b3809175e} 
+void firebase\+::gma\+::\+Rewarded\+Ad\+::\+Set\+Server\+Side\+Verification\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options}{Server\+Side\+Verification\+Options}} \&}]{server\+Side\+Verification\+Options}{}\end{DoxyParamCaption})}
+
+Sets the server side verification options.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em server\+Side\+Verification\+Options} & A \doxylink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options}{Server\+Side\+Verification\+Options} object containing custom data and a user Id. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_aa90ca5f8c99ee3b9d368d20417c97695}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!Show@{Show}}
+\index{Show@{Show}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_aa90ca5f8c99ee3b9d368d20417c97695} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Rewarded\+Ad\+::\+Show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_user_earned_reward_listener}{User\+Earned\+Reward\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Shows the \doxylink{classfirebase_1_1gma_1_1_rewarded_ad}{Rewarded\+Ad}. This should not be called unless an ad has already been loaded.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & The \doxylink{classfirebase_1_1gma_1_1_user_earned_reward_listener}{User\+Earned\+Reward\+Listener} to be notified when user earns a reward. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_rewarded_ad_aa8042cdae5a37f467c3d708d272bd6c5}\index{firebase::gma::RewardedAd@{firebase::gma::RewardedAd}!ShowLastResult@{ShowLastResult}}
+\index{ShowLastResult@{ShowLastResult}!firebase::gma::RewardedAd@{firebase::gma::RewardedAd}}
+\doxysubsubsection{\texorpdfstring{ShowLastResult()}{ShowLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_rewarded_ad_aa8042cdae5a37f467c3d708d272bd6c5} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Rewarded\+Ad\+::\+Show\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_rewarded_ad_aa90ca5f8c99ee3b9d368d20417c97695}{Show}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/rewarded\+\_\+ad.\+h\end{DoxyCompactItemize}

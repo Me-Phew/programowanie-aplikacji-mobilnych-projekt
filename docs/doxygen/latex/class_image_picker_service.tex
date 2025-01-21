@@ -1,0 +1,72 @@
+\doxysection{Image\+Picker\+Service Class Reference}
+\hypertarget{class_image_picker_service}{}\label{class_image_picker_service}\index{ImagePickerService@{ImagePickerService}}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Future$<$ File?$>$ \mbox{\hyperlink{class_image_picker_service_afe014e5aa7b2c648403f44ef1e904002}{pick\+Image\+From\+Gallery}} (Build\+Context context) async
+\begin{DoxyCompactList}\small\item\em Wybiera obraz z galerii. \end{DoxyCompactList}\item 
+static Future$<$ File?$>$ \mbox{\hyperlink{class_image_picker_service_aa82f9d67da6beb5e35ac2883e957ea80}{pick\+Image\+From\+Camera}} (Build\+Context context) async
+\begin{DoxyCompactList}\small\item\em Wybiera obraz z aparatu. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_image_picker_service_abeb632cc9f24484b415c798b32e4a7a9}{show\+Image\+Source\+Action\+Sheet}} (Build\+Context context, \mbox{\hyperlink{styled__widgets_8dart_ada680bcb75fb61666a3e30b073703e96}{Function}}(File?) on\+Image\+Selected)
+\begin{DoxyCompactList}\small\item\em Wyświetla arkusz akcji do wyboru źródła obrazu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_picker_service_aa82f9d67da6beb5e35ac2883e957ea80}\index{ImagePickerService@{ImagePickerService}!pickImageFromCamera@{pickImageFromCamera}}
+\index{pickImageFromCamera@{pickImageFromCamera}!ImagePickerService@{ImagePickerService}}
+\doxysubsubsection{\texorpdfstring{pickImageFromCamera()}{pickImageFromCamera()}}
+{\footnotesize\ttfamily \label{class_image_picker_service_aa82f9d67da6beb5e35ac2883e957ea80} 
+static Future$<$ File?$>$ Image\+Picker\+Service\+::pick\+Image\+From\+Camera (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Wybiera obraz z aparatu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Kontekst aplikacji. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plik obrazu lub null, jeśli nie wybrano obrazu. 
+\end{DoxyReturn}
+\Hypertarget{class_image_picker_service_afe014e5aa7b2c648403f44ef1e904002}\index{ImagePickerService@{ImagePickerService}!pickImageFromGallery@{pickImageFromGallery}}
+\index{pickImageFromGallery@{pickImageFromGallery}!ImagePickerService@{ImagePickerService}}
+\doxysubsubsection{\texorpdfstring{pickImageFromGallery()}{pickImageFromGallery()}}
+{\footnotesize\ttfamily \label{class_image_picker_service_afe014e5aa7b2c648403f44ef1e904002} 
+static Future$<$ File?$>$ Image\+Picker\+Service\+::pick\+Image\+From\+Gallery (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Wybiera obraz z galerii. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Kontekst aplikacji. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Plik obrazu lub null, jeśli nie wybrano obrazu. 
+\end{DoxyReturn}
+\Hypertarget{class_image_picker_service_abeb632cc9f24484b415c798b32e4a7a9}\index{ImagePickerService@{ImagePickerService}!showImageSourceActionSheet@{showImageSourceActionSheet}}
+\index{showImageSourceActionSheet@{showImageSourceActionSheet}!ImagePickerService@{ImagePickerService}}
+\doxysubsubsection{\texorpdfstring{showImageSourceActionSheet()}{showImageSourceActionSheet()}}
+{\footnotesize\ttfamily \label{class_image_picker_service_abeb632cc9f24484b415c798b32e4a7a9} 
+static void Image\+Picker\+Service\+::show\+Image\+Source\+Action\+Sheet (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{, }\item[{\mbox{\hyperlink{styled__widgets_8dart_ada680bcb75fb61666a3e30b073703e96}{Function}}(File?)}]{on\+Image\+Selected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Wyświetla arkusz akcji do wyboru źródła obrazu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Kontekst aplikacji. \\
+\hline
+{\em on\+Image\+Selected} & Funkcja wywoływana po wybraniu obrazu. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/utils/\mbox{\hyperlink{image__picker__service_8dart}{image\+\_\+picker\+\_\+service.\+dart}}\end{DoxyCompactItemize}

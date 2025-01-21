@@ -1,0 +1,197 @@
+\newpage
+\section{Testowanie}	%5
+%Opisujemy testy, sprawdzamy czy nie generuje błędów.
+
+\subsection{Logowanie do aplikacji}
+W tabeli nr. \ref{tab:tabelka001} (s. \pageref{tab:tabelka001}) możemy zobaczyć że logowanie przebiega pomyślnie, jeśli dane wprowadzone przez użytkownika są poprawne, w przypadku podania niepoprawnego adresu e-mailu, hasła lub błędu składowego, logowanie zostanie odrzucone.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja} & \textbf{Typ Danych}               & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Logowanie        & Poprawne dane                     & Działa            & Poprawnie          \\ \hline
+		                 & Poprawny email, błędne hasło      & Błąd              & Poprawnie          \\ \hline
+		                 & Błędny email, poprawne hasło      & Błąd              & Poprawnie          \\ \hline
+		                 & Błędne dane                       & Błąd              & Poprawnie          \\ \hline
+		                 & Hasło, które ma mniej niż 6 liter & Błąd              & Poprawnie          \\ \hline
+		                 & Błędny format adresu email        & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Logowanie}
+	\label{tab:tabelka001}
+\end{table}
+
+\subsection{Powiadomienia push}
+W tabeli nr. \ref{tab:tabelka007} (s. \pageref{tab:tabelka007}) możemy zobaczyć, że powiadomienia push są wysyłane i odbierane poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}   & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Powiadomienia push & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                   & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                   & Błędne dane                  & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Powiadomienia push}
+	\label{tab:tabelka007}
+\end{table}
+\newpage
+\subsection{Biometria}
+W tabeli nr. \ref{tab:tabelka008} (s. \pageref{tab:tabelka008}) możemy zobaczyć, że funkcja biometrii działa poprawnie, jeśli użytkownik udzielił odpowiednich uprawnień.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja} & \textbf{Typ Danych}      & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Biometria        & Udzielone uprawnienia    & Działa            & Poprawnie          \\ \hline
+		                 & Brak uprawnień           & Błąd              & Poprawnie          \\ \hline
+		                 & Błędne dane biometryczne & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Biometria}
+	\label{tab:tabelka008}
+\end{table}
+
+\subsection{Synchronizacja danych}
+W tabeli nr. \ref{tab:tabelka009} (s. \pageref{tab:tabelka009}) możemy zobaczyć, że synchronizacja danych działa poprawnie, zarówno w trybie online, jak i offline.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}      & \textbf{Typ Danych}          & \textbf{Rezultat}     & \textbf{Działanie} \\ \hline
+		Synchronizacja danych & Połączenie z internetem      & Działa                & Poprawnie          \\ \hline
+		                      & Brak połączenia z internetem & Działa (tryb offline) & Poprawnie          \\ \hline
+		                      & Błędne dane                  & Błąd                  & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Synchronizacja danych}
+	\label{tab:tabelka009}
+\end{table}
+
+\subsection{Autoryzacja i uprawnienia}
+W tabeli nr. \ref{tab:tabelka010} (s. \pageref{tab:tabelka010}) możemy zobaczyć, że autoryzacja i zarządzanie uprawnieniami działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja} & \textbf{Typ Danych} & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Autoryzacja      & Poprawne dane       & Działa            & Poprawnie          \\ \hline
+		                 & Błędne dane         & Błąd              & Poprawnie          \\ \hline
+		                 & Brak uprawnień      & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Autoryzacja i uprawnienia}
+	\label{tab:tabelka010}
+\end{table}
+\newpage
+\subsection{Robienie zdjęcia i wysyłanie do serwera}
+W tabeli nr. \ref{tab:tabelka011} (s. \pageref{tab:tabelka011}) możemy zobaczyć, że funkcja robienia zdjęcia i wysyłania go do serwera działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}  & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Robienie zdjęcia  & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                  & Brak uprawnień do kamery     & Błąd              & Poprawnie          \\ \hline
+		                  & Błąd kamery                  & Błąd              & Poprawnie          \\ \hline
+		Wysyłanie zdjęcia & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                  & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                  & Błąd serwera                 & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Robienie zdjęcia i wysyłanie do serwera}
+	\label{tab:tabelka011}
+\end{table}
+
+\subsection{Pobieranie danych z serwera}
+W tabeli nr. \ref{tab:tabelka012} (s. \pageref{tab:tabelka012}) możemy zobaczyć, że funkcja pobierania danych z serwera działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}  & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Pobieranie danych & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                  & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                  & Błąd serwera                 & Błąd              & Poprawnie          \\ \hline
+		                  & Błędne dane                  & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Pobieranie danych z serwera}
+	\label{tab:tabelka012}
+\end{table}
+\newpage
+\subsection{Integracja z zewnętrznymi API}
+W tabeli nr. \ref{tab:tabelka014} (s. \pageref{tab:tabelka014}) możemy zobaczyć, że integracja z zewnętrznymi API działa poprawnie, umożliwiając pobieranie i wysyłanie danych.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}  & \textbf{Typ Danych} & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Pobieranie danych & Poprawne dane       & Działa            & Poprawnie          \\ \hline
+		                  & Brak danych         & Błąd              & Poprawnie          \\ \hline
+		                  & Błędne dane         & Błąd              & Poprawnie          \\ \hline
+		Wysyłanie danych  & Poprawne dane       & Działa            & Poprawnie          \\ \hline
+		                  & Błędne dane         & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Integracja z zewnętrznymi API}
+	\label{tab:tabelka014}
+\end{table}
+\newpage
+\subsection{Pobieranie danych do kalendarza (planu zajęć)}
+W tabeli nr. \ref{tab:tabelka013} (s. \pageref{tab:tabelka013}) możemy zobaczyć, że funkcja pobierania danych do kalendarza działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}                & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Pobieranie danych do kalendarza & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                                & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                                & Błąd serwera                 & Błąd              & Poprawnie          \\ \hline
+		                                & Błędne dane                  & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Pobieranie danych do kalendarza (planu zajęć)}
+	\label{tab:tabelka013}
+\end{table}
+
+\subsection{Pobieranie przedmiotów}
+W tabeli nr. \ref{tab:tabelka014} (s. \pageref{tab:tabelka014}) możemy zobaczyć, że funkcja pobierania przedmiotów działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}       & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Pobieranie przedmiotów & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                       & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                       & Błąd serwera                 & Błąd              & Poprawnie          \\ \hline
+		                       & Błędne dane                  & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Pobieranie przedmiotów}
+	\label{tab:tabelka014}
+\end{table}
+
+\newpage
+\subsection{Pobieranie ocen}
+W tabeli nr. \ref{tab:tabelka015} (s. \pageref{tab:tabelka015}) możemy zobaczyć, że funkcja pobierania ocen działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja} & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Pobieranie ocen  & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                 & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                 & Błąd serwera                 & Błąd              & Poprawnie          \\ \hline
+		                 & Błędne dane                  & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Pobieranie ocen}
+	\label{tab:tabelka015}
+\end{table}
+
+\subsection{Pobieranie dat egzaminów}
+W tabeli nr. \ref{tab:tabelka016} (s. \pageref{tab:tabelka016}) możemy zobaczyć, że funkcja pobierania dat egzaminów działa poprawnie.
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|X|>{\arraybackslash}m{0.45\textwidth}|X|X|}
+		\hline
+		\textbf{Funkcja}         & \textbf{Typ Danych}          & \textbf{Rezultat} & \textbf{Działanie} \\ \hline
+		Pobieranie dat egzaminów & Poprawne dane                & Działa            & Poprawnie          \\ \hline
+		                         & Brak połączenia z internetem & Błąd              & Poprawnie          \\ \hline
+		                         & Błąd serwera                 & Błąd              & Poprawnie          \\ \hline
+		                         & Błędne dane                  & Błąd              & Poprawnie          \\ \hline
+	\end{tabularx}
+	\caption{Pobieranie dat egzaminów}
+	\label{tab:tabelka016}
+\end{table}

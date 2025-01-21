@@ -1,0 +1,60 @@
+\doxysection{firebase\+::remote\+\_\+config\+::Config\+Key\+Value\+Variant Struct Reference}
+\hypertarget{structfirebase_1_1remote__config_1_1_config_key_value_variant}{}\label{structfirebase_1_1remote__config_1_1_config_key_value_variant}\index{firebase::remote\_config::ConfigKeyValueVariant@{firebase::remote\_config::ConfigKeyValueVariant}}
+
+
+Describes a mapping of a key to a value of any type. Used to set default values.  
+
+
+
+
+{\ttfamily \#include $<$remote\+\_\+config.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::remote\+\_\+config\+::Config\+Key\+Value\+Variant\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{structfirebase_1_1remote__config_1_1_config_key_value_variant__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant_adf662c70b581975139c77964dabe7073}{key}}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant_a706397e732b5f14be5927b01c7b2092e}{value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes a mapping of a key to a value of any type. Used to set default values. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_key_value_variant_adf662c70b581975139c77964dabe7073}\index{firebase::remote\_config::ConfigKeyValueVariant@{firebase::remote\_config::ConfigKeyValueVariant}!key@{key}}
+\index{key@{key}!firebase::remote\_config::ConfigKeyValueVariant@{firebase::remote\_config::ConfigKeyValueVariant}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{structfirebase_1_1remote__config_1_1_config_key_value_variant_adf662c70b581975139c77964dabe7073} 
+const char\texorpdfstring{$\ast$}{*} firebase\+::remote\+\_\+config\+::\+Config\+Key\+Value\+Variant\+::key}
+
+The lookup key string.
+
+\begin{DoxyNote}{Note}
+Ensure this string stays valid for the duration of the call to Set\+Defaults. 
+\end{DoxyNote}
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_key_value_variant_a706397e732b5f14be5927b01c7b2092e}\index{firebase::remote\_config::ConfigKeyValueVariant@{firebase::remote\_config::ConfigKeyValueVariant}!value@{value}}
+\index{value@{value}!firebase::remote\_config::ConfigKeyValueVariant@{firebase::remote\_config::ConfigKeyValueVariant}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{structfirebase_1_1remote__config_1_1_config_key_value_variant_a706397e732b5f14be5927b01c7b2092e} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::remote\+\_\+config\+::\+Config\+Key\+Value\+Variant\+::value}
+
+The value to be stored. The type of the \doxylink{classfirebase_1_1_variant}{Variant} determines the type of default data for the given key.
+
+\begin{DoxyNote}{Note}
+If you use a \doxylink{classfirebase_1_1_variant}{Variant} of type Static\+String, ensure it stays valid for the duration of the call to Set\+Defaults. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/remote\+\_\+config.\+h\end{DoxyCompactItemize}

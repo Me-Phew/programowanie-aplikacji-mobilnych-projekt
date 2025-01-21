@@ -1,0 +1,296 @@
+\doxysection{firebase\+::database\+::Data\+Snapshot Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_data_snapshot}{}\label{classfirebase_1_1database_1_1_data_snapshot}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+
+
+{\ttfamily \#include $<$data\+\_\+snapshot.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a46297f17dfd896d932a765e9c3a54b38}{Data\+Snapshot}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a3a12c7ce620cd5d9d310e4c40aec2418}{Data\+Snapshot}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot)
+\begin{DoxyCompactList}\small\item\em Copy constructor. Data\+Snapshots are immutable, so they can be efficiently copied. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \& \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a25eb77f7a7a23ae5702cbbadea892d90}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. Data\+Snapshots are immutable, so they can be efficiently copied. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a6bab651dd5633268708bfb7be336b9ed}\label{classfirebase_1_1database_1_1_data_snapshot_a6bab651dd5633268708bfb7be336b9ed} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Data\+Snapshot} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a63c10de0fcf4d4db6c543501239486e0}\label{classfirebase_1_1database_1_1_data_snapshot_a63c10de0fcf4d4db6c543501239486e0} 
+bool {\bfseries exists} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the data is non-\/empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_aeb2cc6b9ba5d4f106b85636b6383057d}{Child}} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} for the location at the specified relative path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a7f71bde88f540e022151d4eeb8a0ef33}{Child}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} for the location at the specified relative path. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_ae595dbeaaf083448775861e5ea091704}{children}} () const
+\begin{DoxyCompactList}\small\item\em Get all the immediate children of this location. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_acc0c1d1bf70e3f9e06a4ada24eed4ca3}{children\+\_\+count}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of children of this location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a9ffe86cdfa31ee2ed23af183e42607a7}{has\+\_\+children}} () const
+\begin{DoxyCompactList}\small\item\em Does this \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} have any children at all? \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_aecca4253bbe1b5c4e8a8e8fe0f6e51c8}{key}} () const
+\begin{DoxyCompactList}\small\item\em Get the key name of the source location of this snapshot. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a96faf8b91afb7a02892518f716d754f1}{key\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Get the key name of the source location of this snapshot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a6504112a5ad21c7c611194bbdd959b4e}{value}} () const
+\begin{DoxyCompactList}\small\item\em Get the value of the data contained in this snapshot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a3309cc2663871b513057ee0965dd378a}{priority}} () const
+\begin{DoxyCompactList}\small\item\em Get the priority of the data contained in this snapshot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_ac108d9a18253603e589173f2dd5bde9c}{Get\+Reference}} () const
+\begin{DoxyCompactList}\small\item\em Obtain a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the source location for this snapshot. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a82c024389835a53ab382639b2229d275}{Has\+Child}} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Does this \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} have data at a particular location? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a419fdf840c1fefc0c3be1dcc124ed48b}{Has\+Child}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Does this \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} have data at a particular location? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot_a12242fb0ba72da7539700b6841fe1a04}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this snapshot is valid, false if it is not valid. An invalid snapshot could be returned by a transaction where an error has occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} instance contains data from a Firebase \doxylink{classfirebase_1_1database_1_1_database}{Database} location. Any time you read \doxylink{classfirebase_1_1database_1_1_database}{Database} data, you receive the data as a \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}. These are efficiently-\/generated and cannot be changed. To modify data, use \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Database\+Reference\+::\+Set\+Value()} or \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Database\+Reference\+::\+Run\+Transaction()}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a46297f17dfd896d932a765e9c3a54b38}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!DataSnapshot@{DataSnapshot}}
+\index{DataSnapshot@{DataSnapshot}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{DataSnapshot()}{DataSnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a46297f17dfd896d932a765e9c3a54b38} 
+firebase\+::database\+::\+Data\+Snapshot\+::\+Data\+Snapshot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+This \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} contains nothing and is considered invalid (i.\+e. \doxylink{classfirebase_1_1database_1_1_data_snapshot_a12242fb0ba72da7539700b6841fe1a04}{is\+\_\+valid()} == false). Use this to construct an empty \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} that you will later populate with data from a database callback. \Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a3a12c7ce620cd5d9d310e4c40aec2418}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!DataSnapshot@{DataSnapshot}}
+\index{DataSnapshot@{DataSnapshot}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{DataSnapshot()}{DataSnapshot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a3a12c7ce620cd5d9d310e4c40aec2418} 
+firebase\+::database\+::\+Data\+Snapshot\+::\+Data\+Snapshot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. Data\+Snapshots are immutable, so they can be efficiently copied. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_aeb2cc6b9ba5d4f106b85636b6383057d}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!Child@{Child}}
+\index{Child@{Child}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_aeb2cc6b9ba5d4f106b85636b6383057d} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} firebase\+::database\+::\+Data\+Snapshot\+::\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} for the location at the specified relative path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location. It only needs to be valid during this call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} corresponding to specified child location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a7f71bde88f540e022151d4eeb8a0ef33}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!Child@{Child}}
+\index{Child@{Child}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a7f71bde88f540e022151d4eeb8a0ef33} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} firebase\+::database\+::\+Data\+Snapshot\+::\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} for the location at the specified relative path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} corresponding to specified child location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_ae595dbeaaf083448775861e5ea091704}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!children@{children}}
+\index{children@{children}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{children()}{children()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_ae595dbeaaf083448775861e5ea091704} 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ firebase\+::database\+::\+Data\+Snapshot\+::children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get all the immediate children of this location. 
+
+\begin{DoxyReturn}{Returns}
+The immediate children of this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_acc0c1d1bf70e3f9e06a4ada24eed4ca3}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!children\_count@{children\_count}}
+\index{children\_count@{children\_count}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{children\_count()}{children\_count()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_acc0c1d1bf70e3f9e06a4ada24eed4ca3} 
+size\+\_\+t firebase\+::database\+::\+Data\+Snapshot\+::children\+\_\+count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the number of children of this location. 
+
+\begin{DoxyReturn}{Returns}
+The number of immediate children of this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_ac108d9a18253603e589173f2dd5bde9c}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!GetReference@{GetReference}}
+\index{GetReference@{GetReference}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{GetReference()}{GetReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_ac108d9a18253603e589173f2dd5bde9c} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Data\+Snapshot\+::\+Get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtain a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to the source location for this snapshot. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} corresponding to same location as this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a9ffe86cdfa31ee2ed23af183e42607a7}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!has\_children@{has\_children}}
+\index{has\_children@{has\_children}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{has\_children()}{has\_children()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a9ffe86cdfa31ee2ed23af183e42607a7} 
+bool firebase\+::database\+::\+Data\+Snapshot\+::has\+\_\+children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Does this \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} have any children at all? 
+
+\begin{DoxyReturn}{Returns}
+True if the snapshot has any children, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a82c024389835a53ab382639b2229d275}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!HasChild@{HasChild}}
+\index{HasChild@{HasChild}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{HasChild()}{HasChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a82c024389835a53ab382639b2229d275} 
+bool firebase\+::database\+::\+Data\+Snapshot\+::\+Has\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Does this \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} have data at a particular location? 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location. The pointer only needs to be valid during this call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the snapshot has data at the specified location, false if not. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a419fdf840c1fefc0c3be1dcc124ed48b}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!HasChild@{HasChild}}
+\index{HasChild@{HasChild}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{HasChild()}{HasChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a419fdf840c1fefc0c3be1dcc124ed48b} 
+bool firebase\+::database\+::\+Data\+Snapshot\+::\+Has\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Does this \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} have data at a particular location? 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the snapshot has data at the specified location, false if not. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a12242fb0ba72da7539700b6841fe1a04}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a12242fb0ba72da7539700b6841fe1a04} 
+bool firebase\+::database\+::\+Data\+Snapshot\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this snapshot is valid, false if it is not valid. An invalid snapshot could be returned by a transaction where an error has occurred. 
+
+\begin{DoxyReturn}{Returns}
+true if this snapshot is valid, false if this snapshot is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_aecca4253bbe1b5c4e8a8e8fe0f6e51c8}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!key@{key}}
+\index{key@{key}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_aecca4253bbe1b5c4e8a8e8fe0f6e51c8} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Data\+Snapshot\+::key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the key name of the source location of this snapshot. 
+
+\begin{DoxyNote}{Note}
+The returned pointer is only guaranteed to be valid while the \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} is still in memory.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Key name of the source location of this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a96faf8b91afb7a02892518f716d754f1}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!key\_string@{key\_string}}
+\index{key\_string@{key\_string}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{key\_string()}{key\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a96faf8b91afb7a02892518f716d754f1} 
+std\+::string firebase\+::database\+::\+Data\+Snapshot\+::key\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the key name of the source location of this snapshot. 
+
+\begin{DoxyReturn}{Returns}
+Key name of the source location of this snapshot. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a25eb77f7a7a23ae5702cbbadea892d90}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a25eb77f7a7a23ae5702cbbadea892d90} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \& firebase\+::database\+::\+Data\+Snapshot\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. Data\+Snapshots are immutable, so they can be efficiently copied. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a3309cc2663871b513057ee0965dd378a}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!priority@{priority}}
+\index{priority@{priority}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{priority()}{priority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a3309cc2663871b513057ee0965dd378a} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::database\+::\+Data\+Snapshot\+::priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the priority of the data contained in this snapshot. 
+
+\begin{DoxyReturn}{Returns}
+The value of this location\textquotesingle{}s Priority relative to its siblings. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_data_snapshot_a6504112a5ad21c7c611194bbdd959b4e}\index{firebase::database::DataSnapshot@{firebase::database::DataSnapshot}!value@{value}}
+\index{value@{value}!firebase::database::DataSnapshot@{firebase::database::DataSnapshot}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_data_snapshot_a6504112a5ad21c7c611194bbdd959b4e} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::database\+::\+Data\+Snapshot\+::value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the value of the data contained in this snapshot. 
+
+\begin{DoxyReturn}{Returns}
+The value of the data contained in this location. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/data\+\_\+snapshot.\+h\end{DoxyCompactItemize}

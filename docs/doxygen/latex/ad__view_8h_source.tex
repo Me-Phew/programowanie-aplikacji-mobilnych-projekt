@@ -1,0 +1,137 @@
+\doxysection{ad\+\_\+view.\+h}
+\hypertarget{ad__view_8h_source}{}\label{ad__view_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/ad\_view.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/ad\_view.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_AD\_VIEW\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_AD\_VIEW\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/types.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Forward\ declaration\ for\ platform-\/specific\ data,\ implemented\ in\ each\ library.}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }AdViewInternal;}
+\DoxyCodeLine{00030\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }AdViewBoundingBoxListener;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }BoundingBox;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view}{AdView}}\ \{}
+\DoxyCodeLine{00067\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{Position}}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baedf48fe4f19515ba8d0b4fb38b053dfe}{kPositionUndefined}}\ =\ -\/1,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba92b1f34107c910b3f5d7095d3a7a231e}{kPositionTop}}\ =\ 0,}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba68094cd46ee314997899d5b4d1f69760}{kPositionBottom}},}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba39fca6160c5771e239d67c12e4f9d2be}{kPositionTopLeft}},}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba8b476ee59671bad46bbb63371ad4f997}{kPositionTopRight}},}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baa50f38d9b6a82b155f203d8423e0d734}{kPositionBottomLeft}},}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baf81eefb070d9471e961e7053502730fa}{kPositionBottomRight}},}
+\DoxyCodeLine{00085\ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a42f58debec2e7442a43ebfa1569ab7df}{AdView}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view}{\string~AdView}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe}{Initialize}}(\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}}\ parent,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ad\_unit\_id,}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\&\ size);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a4383e098eca41ba4901149ca47b42e7e}{InitializeLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_aad082060ac538b3e5073765749e8e843}{LoadAd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{AdRequest}}\&\ request);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a9424eb925f504c923196310c44bddaf7}{LoadAdLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box}{BoundingBox}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a28efa64f8028236ce9f3bda7bdf0d5d2}{bounding\_box}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab337140147edf4d430a7139840f4663e}{SetAdListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{AdListener}}*\ listener);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_acb82158262dd0edd340383ba184c1a94}{SetBoundingBoxListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{AdViewBoundingBoxListener}}*\ listener);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_af8e60309387dfb0d6f296cb0369551ba}{SetPaidEventListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{PaidEventListener}}*\ listener);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00152\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073}{SetPosition}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00162\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a1d83b58317b3a4e6d91cc1adbbe045b4}{SetPosition}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{Position}}\ position);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00166\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a0a4a74b3e6687e0c66682e94ffecf5e1}{SetPositionLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_aa1f18f94b19a06cf7eb2822e71fd8379}{Hide}}();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00173\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a3d8c5844f511585ebf58d4fe14b9606a}{HideLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ada11c46d71b26de6795e4b18efe219ec}{Show}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_af713bfb896593061b098cc01fb957279}{ShowLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_aaaa9615112e859950ce04f6a8f2fa281}{Pause}}();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a8c73fa0d3fb8feb9b63278e90a916754}{PauseLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a73fe38df8151dd8743e7e27f96a97e30}{Resume}}();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a6493893f240e5a4bfbc24107f3312818}{ResumeLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00200\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a1b0f712d7011bf0e8c85d0f3c1aec342}{Destroy}}();}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00204\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab0c466b0a6d036a8e1dbaccc2b33e43e}{DestroyLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00210\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{ad\_size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00214\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{AdListener}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a37d6332dc983b01e5f37c8c9f04fd8c1}{ad\_listener\_}};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{AdViewBoundingBoxListener}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a57f5070ad26a266ea072e62f133685be}{ad\_view\_bounding\_box\_listener\_}};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00220\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{PaidEventListener}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a7d1e7a2674a5d30a8b077388e57ff26b}{paid\_event\_listener\_}};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00223\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00224\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ Google\ Mobile\ Ads\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00225\ \ \ internal::AdViewInternal*\ internal\_;}
+\DoxyCodeLine{00226\ \};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00231\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{AdViewBoundingBoxListener}}\ \{}
+\DoxyCodeLine{00232\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00233\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{\string~AdViewBoundingBoxListener}}();}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00240\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener_ad266ecfb7f0d8e1a9014264204a7a408}{OnBoundingBoxChanged}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view}{AdView}}*\ ad\_view,\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box}{BoundingBox}}\ box)\ =\ 0;}
+\DoxyCodeLine{00241\ \};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box}{BoundingBox}}\ \{}
+\DoxyCodeLine{00247\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a6c84435b00b1f613028272e872a3e994}{BoundingBox}}()}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_ad28866fcbd391bce0a95d1bd501f869f}{height}}(0),\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a62b11b9ed821a3db369366fecea0deaa}{width}}(0),\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a911150ed29cf552f3230fe355c17f55f}{x}}(0),\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a8ea754120e05fa4ab812ec7c1f503aa5}{y}}(0),\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_aec550ed66ccbe658901e3bf19e177d59}{position}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view}{AdView}}::kPositionUndefined)\ \{\}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00251\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_ad28866fcbd391bce0a95d1bd501f869f}{height}};}
+\DoxyCodeLine{00253\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a62b11b9ed821a3db369366fecea0deaa}{width}};}
+\DoxyCodeLine{00255\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a911150ed29cf552f3230fe355c17f55f}{x}};}
+\DoxyCodeLine{00257\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_a8ea754120e05fa4ab812ec7c1f503aa5}{y}};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00261\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{AdView::Position}}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box_aec550ed66ccbe658901e3bf19e177d59}{position}};}
+\DoxyCodeLine{00262\ \};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00265\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_AD\_VIEW\_H\_}}
+
+\end{DoxyCode}

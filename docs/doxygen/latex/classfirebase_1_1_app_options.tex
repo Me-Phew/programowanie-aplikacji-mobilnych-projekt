@@ -1,0 +1,180 @@
+\doxysection{firebase\+::App\+Options Class Reference}
+\hypertarget{classfirebase_1_1_app_options}{}\label{classfirebase_1_1_app_options}\index{firebase::AppOptions@{firebase::AppOptions}}
+
+
+Options that control the creation of a Firebase \doxylink{classfirebase_1_1_app}{App}.  $<$\+SWIG$>$  $<$/\+SWIG$>$  
+
+
+
+
+{\ttfamily \#include $<$app.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_app_options_a5e50b35c610e27f7f2b4f0318055dd47}{App\+Options}} ()
+\begin{DoxyCompactList}\small\item\em Create \doxylink{classfirebase_1_1_app_options}{App\+Options}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_app_options_a67573953fe43ce9b8cff6b0602409140}{set\+\_\+app\+\_\+id}} (const char \texorpdfstring{$\ast$}{*}id)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_a17156f36dd168cf6ce65584168fc8955}{app\+\_\+id}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1_app_options_ac8ed231504a8c11838ed53f9b2ebf253}{set\+\_\+api\+\_\+key}} (const char \texorpdfstring{$\ast$}{*}key)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_ab5e690eec967034b643ea31a223efbd4}{api\+\_\+key}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1_app_options_a6f0824a31d908b059316af8b3c595506}{set\+\_\+messaging\+\_\+sender\+\_\+id}} (const char \texorpdfstring{$\ast$}{*}sender\+\_\+id)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_aaf1dc9113acf4aec7f3bebb414a8b234}{messaging\+\_\+sender\+\_\+id}} () const
+\item 
+\Hypertarget{classfirebase_1_1_app_options_a171ef782c65c4deb5d8a109f985cef09}\label{classfirebase_1_1_app_options_a171ef782c65c4deb5d8a109f985cef09} 
+void {\bfseries set\+\_\+database\+\_\+url} (const char \texorpdfstring{$\ast$}{*}url)
+\begin{DoxyCompactList}\small\item\em Set the database root URL, e.\+g. "{}\href{http://abc-xyz-123.firebaseio.com}{\texttt{ http\+://abc-\/xyz-\/123.\+firebaseio.\+com}}"{}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_ad3ccb21741bdaa96decc9b287cbbee34}{database\+\_\+url}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1_app_options_a9c651c380ee603d7028c5c03ee5c5307}{set\+\_\+storage\+\_\+bucket}} (const char \texorpdfstring{$\ast$}{*}bucket)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_a0949ca71b99f7b39b4372cf03ad19574}{storage\+\_\+bucket}} () const
+\item 
+\Hypertarget{classfirebase_1_1_app_options_af2f9f576035e5eb289817cf2c0dd525c}\label{classfirebase_1_1_app_options_af2f9f576035e5eb289817cf2c0dd525c} 
+void {\bfseries set\+\_\+project\+\_\+id} (const char \texorpdfstring{$\ast$}{*}project)
+\begin{DoxyCompactList}\small\item\em Set the Google Cloud project ID. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_afd6d7351b8a73df952611abf4aaf09e2}{project\+\_\+id}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_options_ac59d9243f48a6598e7c9a5df1119e82d}{Load\+From\+Json\+Config}} (const char \texorpdfstring{$\ast$}{*}config, \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \texorpdfstring{$\ast$}{*}options=nullptr)
+\begin{DoxyCompactList}\small\item\em Load options from a config string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_app_options_a4097b3e04a4f8ece21f5abe1b10e6323}\label{classfirebase_1_1_app_options_a4097b3e04a4f8ece21f5abe1b10e6323} 
+class {\bfseries App}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Options that control the creation of a Firebase \doxylink{classfirebase_1_1_app}{App}.  $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1_app_options_a5e50b35c610e27f7f2b4f0318055dd47}\index{firebase::AppOptions@{firebase::AppOptions}!AppOptions@{AppOptions}}
+\index{AppOptions@{AppOptions}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{AppOptions()}{AppOptions()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_a5e50b35c610e27f7f2b4f0318055dd47} 
+firebase\+::\+App\+Options\+::\+App\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create \doxylink{classfirebase_1_1_app_options}{App\+Options}. 
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1_app_options_ab5e690eec967034b643ea31a223efbd4}\index{firebase::AppOptions@{firebase::AppOptions}!api\_key@{api\_key}}
+\index{api\_key@{api\_key}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{api\_key()}{api\_key()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_ab5e690eec967034b643ea31a223efbd4} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::api\+\_\+key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the API key.
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1_app_options_a17156f36dd168cf6ce65584168fc8955}\index{firebase::AppOptions@{firebase::AppOptions}!app\_id@{app\_id}}
+\index{app\_id@{app\_id}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{app\_id()}{app\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_a17156f36dd168cf6ce65584168fc8955} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::app\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the app ID.
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1_app_options_ad3ccb21741bdaa96decc9b287cbbee34}\index{firebase::AppOptions@{firebase::AppOptions}!database\_url@{database\_url}}
+\index{database\_url@{database\_url}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{database\_url()}{database\_url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_ad3ccb21741bdaa96decc9b287cbbee34} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::database\+\_\+url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get database root URL, e.\+g. "{}\href{http://abc-xyz-123.firebaseio.com}{\texttt{ http\+://abc-\/xyz-\/123.\+firebaseio.\+com}}"{}.      $<$\+SWIG$>$     @xmlonly  /// $<$csproperty name="{}Database\+Url"{}$>$ /// Gets or sets the database root URL, e.\+g. /// @\textbackslash{}"{}http\+://abc-\/xyz-\/123.\+firebaseio.\+com\textbackslash{}"{}. /// $<$/csproperty$>$ ///  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1_app_options_ac59d9243f48a6598e7c9a5df1119e82d}\index{firebase::AppOptions@{firebase::AppOptions}!LoadFromJsonConfig@{LoadFromJsonConfig}}
+\index{LoadFromJsonConfig@{LoadFromJsonConfig}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{LoadFromJsonConfig()}{LoadFromJsonConfig()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_ac59d9243f48a6598e7c9a5df1119e82d} 
+static \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::\+Load\+From\+Json\+Config (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{config}{, }\item[{\mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \texorpdfstring{$\ast$}{*}}]{options}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load options from a config string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em config} & A JSON string that contains Firebase configuration i.\+e. the content of the downloaded google-\/services.\+json file. \\
+\hline
+\mbox{\texttt{ out}}  & {\em options} & Optional\+: If provided, load options into it.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance containing the loaded options if successful. If the options argument to this function is null, this method returns an \doxylink{classfirebase_1_1_app_options}{App\+Options} instance allocated from the heap. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_app_options_aaf1dc9113acf4aec7f3bebb414a8b234}\index{firebase::AppOptions@{firebase::AppOptions}!messaging\_sender\_id@{messaging\_sender\_id}}
+\index{messaging\_sender\_id@{messaging\_sender\_id}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{messaging\_sender\_id()}{messaging\_sender\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_aaf1dc9113acf4aec7f3bebb414a8b234} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::messaging\+\_\+sender\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the Firebase Cloud Messaging sender ID.
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1_app_options_afd6d7351b8a73df952611abf4aaf09e2}\index{firebase::AppOptions@{firebase::AppOptions}!project\_id@{project\_id}}
+\index{project\_id@{project\_id}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{project\_id()}{project\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_afd6d7351b8a73df952611abf4aaf09e2} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::project\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the Google Cloud project ID.
+
+This is the project\+\_\+id in the Android google-\/services.\+json config file or PROJECT\+\_\+\+ID in the Google\+Service-\/\+Info.\+plist. $<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1_app_options_ac8ed231504a8c11838ed53f9b2ebf253}\index{firebase::AppOptions@{firebase::AppOptions}!set\_api\_key@{set\_api\_key}}
+\index{set\_api\_key@{set\_api\_key}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{set\_api\_key()}{set\_api\_key()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_ac8ed231504a8c11838ed53f9b2ebf253} 
+void firebase\+::\+App\+Options\+::set\+\_\+api\+\_\+key (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+API key used to authenticate requests from your app.
+
+For example, "{}\+AIza\+Sy\+Dd\+Vg\+Kwh\+Zl0s\+TTTLZ7i\+Tmt1r3\+N2c\+JLna\+Dk"{} used to identify your app to Google servers.
+
+This only needs to be specified if your application does not include google-\/services.\+json or Google\+Service-\/\+Info.\+plist in its resources. \Hypertarget{classfirebase_1_1_app_options_a67573953fe43ce9b8cff6b0602409140}\index{firebase::AppOptions@{firebase::AppOptions}!set\_app\_id@{set\_app\_id}}
+\index{set\_app\_id@{set\_app\_id}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{set\_app\_id()}{set\_app\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_a67573953fe43ce9b8cff6b0602409140} 
+void firebase\+::\+App\+Options\+::set\+\_\+app\+\_\+id (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the Firebase app ID used to uniquely identify an instance of an app.
+
+This is the mobilesdk\+\_\+app\+\_\+id in the Android google-\/services.\+json config file or GOOGLE\+\_\+\+APP\+\_\+\+ID in the Google\+Service-\/\+Info.\+plist.
+
+This only needs to be specified if your application does not include google-\/services.\+json or Google\+Service-\/\+Info.\+plist in its resources. \Hypertarget{classfirebase_1_1_app_options_a6f0824a31d908b059316af8b3c595506}\index{firebase::AppOptions@{firebase::AppOptions}!set\_messaging\_sender\_id@{set\_messaging\_sender\_id}}
+\index{set\_messaging\_sender\_id@{set\_messaging\_sender\_id}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{set\_messaging\_sender\_id()}{set\_messaging\_sender\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_a6f0824a31d908b059316af8b3c595506} 
+void firebase\+::\+App\+Options\+::set\+\_\+messaging\+\_\+sender\+\_\+id (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sender\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the Firebase Cloud Messaging sender ID.
+
+For example "{}012345678901"{}, used to configure Firebase Cloud Messaging.
+
+This only needs to be specified if your application does not include google-\/services.\+json or Google\+Service-\/\+Info.\+plist in its resources. \Hypertarget{classfirebase_1_1_app_options_a9c651c380ee603d7028c5c03ee5c5307}\index{firebase::AppOptions@{firebase::AppOptions}!set\_storage\_bucket@{set\_storage\_bucket}}
+\index{set\_storage\_bucket@{set\_storage\_bucket}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{set\_storage\_bucket()}{set\_storage\_bucket()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_a9c651c380ee603d7028c5c03ee5c5307} 
+void firebase\+::\+App\+Options\+::set\+\_\+storage\+\_\+bucket (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{bucket}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the Google Cloud Storage bucket name, e.\+g. \textbackslash{}"{}abc-\/xyz-\/123.\+storage.\+firebase.\+com\textbackslash{}"{}. \Hypertarget{classfirebase_1_1_app_options_a0949ca71b99f7b39b4372cf03ad19574}\index{firebase::AppOptions@{firebase::AppOptions}!storage\_bucket@{storage\_bucket}}
+\index{storage\_bucket@{storage\_bucket}!firebase::AppOptions@{firebase::AppOptions}}
+\doxysubsubsection{\texorpdfstring{storage\_bucket()}{storage\_bucket()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_options_a0949ca71b99f7b39b4372cf03ad19574} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+Options\+::storage\+\_\+bucket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the Google Cloud Storage bucket name, \begin{DoxySeeAlso}{See also}
+\doxylink{classfirebase_1_1_app_options_a9c651c380ee603d7028c5c03ee5c5307}{set\+\_\+storage\+\_\+bucket()}. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app.\+h\end{DoxyCompactItemize}

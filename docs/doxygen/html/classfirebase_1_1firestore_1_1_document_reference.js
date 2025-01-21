@@ -1,0 +1,26 @@
+var classfirebase_1_1firestore_1_1_document_reference =
+[
+    [ "DocumentReference", "classfirebase_1_1firestore_1_1_document_reference.html#afe92a224cd813909d20e7290917cc8f4", null ],
+    [ "DocumentReference", "classfirebase_1_1firestore_1_1_document_reference.html#a2db2c2b9f3d21c3711864ad7d08cdd2d", null ],
+    [ "DocumentReference", "classfirebase_1_1firestore_1_1_document_reference.html#a7cf74014f365e98409a7e6b004242f49", null ],
+    [ "AddSnapshotListener", "classfirebase_1_1firestore_1_1_document_reference.html#ac8317928a827cac59f7c51e66f8a517b", null ],
+    [ "AddSnapshotListener", "classfirebase_1_1firestore_1_1_document_reference.html#a3e145c34e25474ff912aba9b18d6517e", null ],
+    [ "Collection", "classfirebase_1_1firestore_1_1_document_reference.html#a28b6a46a93be50223e8aa61b049377d5", null ],
+    [ "Collection", "classfirebase_1_1firestore_1_1_document_reference.html#ab5a3972ff29df430d224a09a49341ad9", null ],
+    [ "Delete", "classfirebase_1_1firestore_1_1_document_reference.html#ab0f93c3c15581e582b81d308539227b1", null ],
+    [ "firestore", "classfirebase_1_1firestore_1_1_document_reference.html#a13bfec6ea56430c490eaa737f8d1af8e", null ],
+    [ "firestore", "classfirebase_1_1firestore_1_1_document_reference.html#a28eb5d59ca0b13f56be907dd5b12c8fa", null ],
+    [ "Get", "classfirebase_1_1firestore_1_1_document_reference.html#a1b665ad5f842a184222c14fde179a252", null ],
+    [ "id", "classfirebase_1_1firestore_1_1_document_reference.html#a69c5d5fdc86003a72b90f59a955eda87", null ],
+    [ "is_valid", "classfirebase_1_1firestore_1_1_document_reference.html#aa173243e8864949bb96363b0b4e08ed7", null ],
+    [ "operator=", "classfirebase_1_1firestore_1_1_document_reference.html#ac14beab99d838553020b045f7120ca5e", null ],
+    [ "operator=", "classfirebase_1_1firestore_1_1_document_reference.html#a09814f09992c92c9e4e37d14711a41d6", null ],
+    [ "Parent", "classfirebase_1_1firestore_1_1_document_reference.html#aa6a6de7302f5b8042d74172e423dfe1b", null ],
+    [ "path", "classfirebase_1_1firestore_1_1_document_reference.html#a07714b81382ee2a93989c4a8073a4433", null ],
+    [ "Set", "classfirebase_1_1firestore_1_1_document_reference.html#ad4a7cf6a1e9a51cafd99d3f9aeaeaeb7", null ],
+    [ "ToString", "classfirebase_1_1firestore_1_1_document_reference.html#a846f19765ed5c702232f391f18c083ea", null ],
+    [ "Update", "classfirebase_1_1firestore_1_1_document_reference.html#ac7200dff11de924feffe9b981b32b0cc", null ],
+    [ "Update", "classfirebase_1_1firestore_1_1_document_reference.html#a0d8d5bd4ffe02567e582d0c09d56387c", null ],
+    [ "operator<<", "classfirebase_1_1firestore_1_1_document_reference.html#af79b0790025c960f5f2bd5736945ee09", null ],
+    [ "operator==", "classfirebase_1_1firestore_1_1_document_reference.html#ae4004d0157a2695a3efd6327f33798dd", null ]
+];

@@ -1,0 +1,107 @@
+\doxysection{firebase\+::functions\+::Functions Class Reference}
+\hypertarget{classfirebase_1_1functions_1_1_functions}{}\label{classfirebase_1_1functions_1_1_functions}\index{firebase::functions::Functions@{firebase::functions::Functions}}
+
+
+Entry point for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions}.  
+
+
+
+
+{\ttfamily \#include $<$functions.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1functions_1_1_functions_adde9ba027532915b736c31ebf6fed2e4}\label{classfirebase_1_1functions_1_1_functions_adde9ba027532915b736c31ebf6fed2e4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Functions} ()
+\begin{DoxyCompactList}\small\item\em Destructor. You may delete an instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} when you are finished using it, to shut down the \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} library. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} was created with. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1functions_1_1_functions_afae54655466b14c27e3d6da35c81bace}\label{classfirebase_1_1functions_1_1_functions_afae54655466b14c27e3d6da35c81bace} 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} {\bfseries Get\+Https\+Callable} (const char \texorpdfstring{$\ast$}{*}name) const
+\begin{DoxyCompactList}\small\item\em Get a Functions\+Reference for the specified path. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1functions_1_1_functions_a32597ce1245022d7c8dbadf7b31a4eaa}\label{classfirebase_1_1functions_1_1_functions_a32597ce1245022d7c8dbadf7b31a4eaa} 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} {\bfseries Get\+Https\+Callable\+From\+URL} (const char \texorpdfstring{$\ast$}{*}url) const
+\begin{DoxyCompactList}\small\item\em Get a Functions\+Reference for the specified URL. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1functions_1_1_functions_a39a4008ae9c511dff0145c2b7187d151}\label{classfirebase_1_1functions_1_1_functions_a39a4008ae9c511dff0145c2b7187d151} 
+void {\bfseries Use\+Functions\+Emulator} (const char \texorpdfstring{$\ast$}{*}origin)
+\begin{DoxyCompactList}\small\item\em Sets an origin for a Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} emulator to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a7890209290654e12353dc67b1dc31a96}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Get an instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_ace6ed84b70b7ac499ec787ff0626a8e9}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}{app}}, const char \texorpdfstring{$\ast$}{*}region, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Get an instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions}. 
+
+To use the SDK, call \doxylink{classfirebase_1_1functions_1_1_functions_a7890209290654e12353dc67b1dc31a96}{firebase\+::functions\+::\+Functions\+::\+Get\+Instance()} to obtain an instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions}, then use \doxylink{classfirebase_1_1functions_1_1_functions_afae54655466b14c27e3d6da35c81bace}{Get\+Https\+Callable()} to obtain references to callable functions. From there you can call them with Callable\+Reference\+::\+Call(). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb}\index{firebase::functions::Functions@{firebase::functions::Functions}!app@{app}}
+\index{app@{app}!firebase::functions::Functions@{firebase::functions::Functions}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_functions_a9423c3024e08390660ee1152404d1ddb} 
+\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*} firebase\+::functions\+::\+Functions\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} this \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} was created with. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1functions_1_1_functions_ace6ed84b70b7ac499ec787ff0626a8e9}\index{firebase::functions::Functions@{firebase::functions::Functions}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::functions::Functions@{firebase::functions::Functions}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_functions_ace6ed84b70b7ac499ec787ff0626a8e9} 
+static \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}} \texorpdfstring{$\ast$}{*} firebase\+::functions\+::\+Functions\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{region}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get an instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+
+Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the server backend.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & An instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ in}}  & {\em region} & The region to call functions in. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & Optional\+: If provided, write the init result here. Will be set to k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1functions_1_1_functions_a7890209290654e12353dc67b1dc31a96}\index{firebase::functions::Functions@{firebase::functions::Functions}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::functions::Functions@{firebase::functions::Functions}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_functions_a7890209290654e12353dc67b1dc31a96} 
+static \mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}} \texorpdfstring{$\ast$}{*} firebase\+::functions\+::\+Functions\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get an instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+
+Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the server backend.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & An instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & Optional\+: If provided, write the init result here. Will be set to k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/functions.\+h\end{DoxyCompactItemize}

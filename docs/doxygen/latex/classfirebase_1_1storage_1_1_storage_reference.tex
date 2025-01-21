@@ -1,0 +1,535 @@
+\doxysection{firebase\+::storage\+::Storage\+Reference Class Reference}
+\hypertarget{classfirebase_1_1storage_1_1_storage_reference}{}\label{classfirebase_1_1storage_1_1_storage_reference}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+
+
+{\ttfamily \#include $<$storage\+\_\+reference.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a28b814fdcfbe819673ca79c503cae071}\label{classfirebase_1_1storage_1_1_storage_reference_a28b814fdcfbe819673ca79c503cae071} 
+{\bfseries Storage\+Reference} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. This creates an invalid \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. Attempting to perform any operations on this reference will fail unless a valid \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} has been assigned to it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a9378edb9a672361c0bc1fcb2818703fa}{Storage\+Reference}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \&reference)
+\begin{DoxyCompactList}\small\item\em Copy constructor. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} instances, as they simply point to the same location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \& \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a8a30ee18f86f1e6dac792c972358218a}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \&reference)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} instances, as they simply point to the same location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_aebaf13876292d1f51a5d483e626ddabe}{storage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classfirebase_1_1storage_1_1_storage}{firebase\+::storage\+::\+Storage} instance to which we refer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_aa96bfdbda65cdb44ed424df197a5a0a5}{Child}} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Gets a reference to a location relative to this one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a1eee09a5c66e6fbe69f0effa187359c8}{Child}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Gets a reference to a location relative to this one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_abca4c4cd7e69ea6594dca10e2d266b27}{Delete}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the object at the current path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a2c04b7a95f6f131cfe40f397cdcf69fb}{Delete\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to Remove\+Value();. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_aba53e573fcd6fdcfcf04868d4accabda}{bucket}} ()
+\begin{DoxyCompactList}\small\item\em Return the Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket that holds this object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a9f88346a5dc431a8fa496be6f39cc0cb}{full\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Return the full path of the storage reference, not including the Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}{Get\+File}} (const char \texorpdfstring{$\ast$}{*}path, \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener=nullptr, \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Asynchronously downloads the object from this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a31c1b858ac6babb94fb1e30c0236493f}{Get\+File\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}{Get\+File()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}{Get\+Bytes}} (void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+\_\+size, \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener=nullptr, \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Asynchronously downloads the object from this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_aca6083b44447cff347a8ef9fd7fd0943}{Get\+Bytes\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}{Get\+Bytes()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a611135f1f1c360cef74b1407a030dbe1}{Get\+Download\+Url}} ()
+\begin{DoxyCompactList}\small\item\em Asynchronously retrieves a long lived download URL with a revokable token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a732c21237153503df77bd3478ac88490}{Get\+Download\+Url\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a611135f1f1c360cef74b1407a030dbe1}{Get\+Download\+Url()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}{Get\+Metadata}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves metadata associated with an object at this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_ae38a708010d8ab673906cbd141baa051}{Get\+Metadata\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}{Get\+Metadata()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_aeaf50349bf1f410954f590341a896288}{Update\+Metadata}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&metadata)
+\begin{DoxyCompactList}\small\item\em Updates the metadata associated with this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a28a2e0558251d51d881838aa44a658eb}{Update\+Metadata\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_aeaf50349bf1f410954f590341a896288}{Update\+Metadata()};. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a6f295a65b77a4109885219537508ab15}{name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the short name of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a47fedaa553ccd95ded10321b4e688fc6}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Returns a new instance of \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} pointing to the parent location or null if this instance references the root location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}{Put\+Bytes}} (const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+\_\+size, \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener=nullptr, \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a57da892337231ccf4816306967c07596}{Put\+Bytes}} (const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t buffer\+\_\+size, const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&metadata, \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener=nullptr, \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_ae15de366b2ff9412beb56ce431fdba85}{Put\+Bytes\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}{Put\+Bytes()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}{Put\+File}} (const char \texorpdfstring{$\ast$}{*}path, \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener=nullptr, \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a7433f293c9ecf628fc50a244c444480e}{Put\+File}} (const char \texorpdfstring{$\ast$}{*}path, const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&metadata, \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener=nullptr, \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_ac8283018e61803eeed4a4503661cd5e5}{Put\+File\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}{Put\+File()};. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference_a3b6a4a5e8cfdcaddb71fcd125c80d6a1}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} indicates that the reference is uninitialized (created with the default constructor) or that there was an error retrieving the reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a reference to a Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} object. Developers can upload and download objects, get/set object metadata, and delete an object at a specified path. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a9378edb9a672361c0bc1fcb2818703fa}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!StorageReference@{StorageReference}}
+\index{StorageReference@{StorageReference}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{StorageReference()}{StorageReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a9378edb9a672361c0bc1fcb2818703fa} 
+firebase\+::storage\+::\+Storage\+Reference\+::\+Storage\+Reference (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \&}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} instances, as they simply point to the same location. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference} & \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_aba53e573fcd6fdcfcf04868d4accabda}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!bucket@{bucket}}
+\index{bucket@{bucket}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{bucket()}{bucket()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_aba53e573fcd6fdcfcf04868d4accabda} 
+std\+::string firebase\+::storage\+::\+Storage\+Reference\+::bucket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket that holds this object. 
+
+\begin{DoxyReturn}{Returns}
+The bucket. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_aa96bfdbda65cdb44ed424df197a5a0a5}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!Child@{Child}}
+\index{Child@{Child}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_aa96bfdbda65cdb44ed424df197a5a0a5} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} firebase\+::storage\+::\+Storage\+Reference\+::\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets a reference to a location relative to this one. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this reference\textquotesingle{}s location. The pointer only needs to be valid during this call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Child relative to this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a1eee09a5c66e6fbe69f0effa187359c8}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!Child@{Child}}
+\index{Child@{Child}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a1eee09a5c66e6fbe69f0effa187359c8} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} firebase\+::storage\+::\+Storage\+Reference\+::\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a reference to a location relative to this one. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this reference\textquotesingle{}s location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Child relative to this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_abca4c4cd7e69ea6594dca10e2d266b27}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!Delete@{Delete}}
+\index{Delete@{Delete}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_abca4c4cd7e69ea6594dca10e2d266b27} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes the object at the current path. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a2c04b7a95f6f131cfe40f397cdcf69fb}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!DeleteLastResult@{DeleteLastResult}}
+\index{DeleteLastResult@{DeleteLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{DeleteLastResult()}{DeleteLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a2c04b7a95f6f131cfe40f397cdcf69fb} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Delete\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to Remove\+Value();. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to Remove\+Value(); 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a9f88346a5dc431a8fa496be6f39cc0cb}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!full\_path@{full\_path}}
+\index{full\_path@{full\_path}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{full\_path()}{full\_path()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a9f88346a5dc431a8fa496be6f39cc0cb} 
+std\+::string firebase\+::storage\+::\+Storage\+Reference\+::full\+\_\+path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the full path of the storage reference, not including the Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket. 
+
+\begin{DoxyReturn}{Returns}
+Full path to the storage reference, not including GCS bucket. For example, for the reference "{}gs\+://bucket/path/to/object.\+txt"{}, the full path would be "{}path/to/object.\+txt"{}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetBytes@{GetBytes}}
+\index{GetBytes@{GetBytes}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetBytes()}{GetBytes()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Bytes (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{buffer\+\_\+size}{, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Asynchronously downloads the object from this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+A byte array will be allocated large enough to hold the entire file in memory. Therefore, using this method will impact memory usage of your process.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & A byte buffer to read the data into. This buffer must be valid for the duration of the transfer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+size} & The size of the byte buffer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A listener that will respond to events on this read operation. If not nullptr, a listener that will respond to events on this read operation. The caller is responsible for allocating and deallocating the listener. The same listener can be used for multiple operations. \\
+\hline
+\mbox{\texttt{ out}}  & {\em controller\+\_\+out} & Controls the write operation, providing the ability to pause, resume or cancel an ongoing write operation. If not nullptr, this method will output a \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} here that you can use to control the write operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A future that returns the number of bytes read. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_aca6083b44447cff347a8ef9fd7fd0943}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetBytesLastResult@{GetBytesLastResult}}
+\index{GetBytesLastResult@{GetBytesLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetBytesLastResult()}{GetBytesLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_aca6083b44447cff347a8ef9fd7fd0943} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Bytes\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}{Get\+Bytes()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}{Get\+Bytes()}; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a611135f1f1c360cef74b1407a030dbe1}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetDownloadUrl@{GetDownloadUrl}}
+\index{GetDownloadUrl@{GetDownloadUrl}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetDownloadUrl()}{GetDownloadUrl()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a611135f1f1c360cef74b1407a030dbe1} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Download\+Url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Asynchronously retrieves a long lived download URL with a revokable token. 
+
+This can be used to share the file with others, but can be revoked by a developer in the Firebase Console if desired.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded and the URL is returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a732c21237153503df77bd3478ac88490}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetDownloadUrlLastResult@{GetDownloadUrlLastResult}}
+\index{GetDownloadUrlLastResult@{GetDownloadUrlLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetDownloadUrlLastResult()}{GetDownloadUrlLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a732c21237153503df77bd3478ac88490} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Download\+Url\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a611135f1f1c360cef74b1407a030dbe1}{Get\+Download\+Url()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a611135f1f1c360cef74b1407a030dbe1}{Get\+Download\+Url()}; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetFile@{GetFile}}
+\index{GetFile@{GetFile}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetFile()}{GetFile()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Asynchronously downloads the object from this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+A byte array will be allocated large enough to hold the entire file in memory. Therefore, using this method will impact memory usage of your process.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path to local file on device to download into. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A listener that will respond to events on this read operation. If not nullptr, a listener that will respond to events on this read operation. The caller is responsible for allocating and deallocating the listener. The same listener can be used for multiple operations. \\
+\hline
+\mbox{\texttt{ out}}  & {\em controller\+\_\+out} & Controls the write operation, providing the ability to pause, resume or cancel an ongoing write operation. If not nullptr, this method will output a \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} here that you can use to control the write operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A future that returns the number of bytes read. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a31c1b858ac6babb94fb1e30c0236493f}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetFileLastResult@{GetFileLastResult}}
+\index{GetFileLastResult@{GetFileLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetFileLastResult()}{GetFileLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a31c1b858ac6babb94fb1e30c0236493f} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ size\+\_\+t $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+File\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}{Get\+File()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}{Get\+File()}; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetMetadata@{GetMetadata}}
+\index{GetMetadata@{GetMetadata}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetMetadata()}{GetMetadata()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Metadata (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves metadata associated with an object at this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded and the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_ae38a708010d8ab673906cbd141baa051}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetMetadataLastResult@{GetMetadataLastResult}}
+\index{GetMetadataLastResult@{GetMetadataLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetMetadataLastResult()}{GetMetadataLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_ae38a708010d8ab673906cbd141baa051} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Metadata\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}{Get\+Metadata()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}{Get\+Metadata()}; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a47fedaa553ccd95ded10321b4e688fc6}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a47fedaa553ccd95ded10321b4e688fc6} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} firebase\+::storage\+::\+Storage\+Reference\+::\+Get\+Parent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a new instance of \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} pointing to the parent location or null if this instance references the root location. 
+
+\begin{DoxyReturn}{Returns}
+The parent \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a3b6a4a5e8cfdcaddb71fcd125c80d6a1}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a3b6a4a5e8cfdcaddb71fcd125c80d6a1} 
+bool firebase\+::storage\+::\+Storage\+Reference\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} indicates that the reference is uninitialized (created with the default constructor) or that there was an error retrieving the reference. 
+
+\begin{DoxyReturn}{Returns}
+true if this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} is valid, false if this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a6f295a65b77a4109885219537508ab15}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!name@{name}}
+\index{name@{name}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a6f295a65b77a4109885219537508ab15} 
+std\+::string firebase\+::storage\+::\+Storage\+Reference\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the short name of this object. 
+
+\begin{DoxyReturn}{Returns}
+the short name of this object. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a8a30ee18f86f1e6dac792c972358218a}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a8a30ee18f86f1e6dac792c972358218a} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \& firebase\+::storage\+::\+Storage\+Reference\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \&}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} instances, as they simply point to the same location. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference} & \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a57da892337231ccf4816306967c07596}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!PutBytes@{PutBytes}}
+\index{PutBytes@{PutBytes}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{PutBytes()}{PutBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a57da892337231ccf4816306967c07596} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Put\+Bytes (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{buffer\+\_\+size}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&}]{metadata}{, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & A byte buffer to write data from. This buffer must be valid for the duration of the transfer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+size} & The number of bytes to write. \\
+\hline
+\mbox{\texttt{ in}}  & {\em metadata} & \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} containing additional information (MIME type, etc.) about the object being uploaded. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A listener that will respond to events on this read operation. If not nullptr, a listener that will respond to events on this write operation. The caller is responsible for allocating and deallocating the listener. The same listener can be used for multiple operations. \\
+\hline
+\mbox{\texttt{ out}}  & {\em controller\+\_\+out} & Controls the write operation, providing the ability to pause, resume or cancel an ongoing write operation. If not nullptr, this method will output a \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} here that you can use to control the write operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A future that returns the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!PutBytes@{PutBytes}}
+\index{PutBytes@{PutBytes}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{PutBytes()}{PutBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Put\+Bytes (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{buffer\+\_\+size}{, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buffer} & A byte buffer to write data from. This buffer must be valid for the duration of the transfer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+size} & The size of the byte buffer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A listener that will respond to events on this read operation. If not nullptr, a listener that will respond to events on this write operation. The caller is responsible for allocating and deallocating the listener. The same listener can be used for multiple operations. \\
+\hline
+\mbox{\texttt{ out}}  & {\em controller\+\_\+out} & Controls the write operation, providing the ability to pause, resume or cancel an ongoing write operation. If not nullptr, this method will output a \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} here that you can use to control the write operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A future that returns the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_ae15de366b2ff9412beb56ce431fdba85}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!PutBytesLastResult@{PutBytesLastResult}}
+\index{PutBytesLastResult@{PutBytesLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{PutBytesLastResult()}{PutBytesLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_ae15de366b2ff9412beb56ce431fdba85} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Put\+Bytes\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}{Put\+Bytes()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}{Put\+Bytes()}; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a7433f293c9ecf628fc50a244c444480e}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!PutFile@{PutFile}}
+\index{PutFile@{PutFile}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{PutFile()}{PutFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a7433f293c9ecf628fc50a244c444480e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Put\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&}]{metadata}{, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path to local file on device to upload to Firebase \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em metadata} & \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} containing additional information (MIME type, etc.) about the object being uploaded. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A listener that will respond to events on this read operation. If not nullptr, a listener that will respond to events on this write operation. The caller is responsible for allocating and deallocating the listener. The same listener can be used for multiple operations. \\
+\hline
+\mbox{\texttt{ out}}  & {\em controller\+\_\+out} & Controls the write operation, providing the ability to pause, resume or cancel an ongoing write operation. If not nullptr, this method will output a \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} here that you can use to control the write operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A future that returns the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!PutFile@{PutFile}}
+\index{PutFile@{PutFile}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{PutFile()}{PutFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Put\+File (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{ = {\ttfamily nullptr}, }\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Asynchronously uploads data to the currently specified \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}, without additional metadata. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path to local file on device to upload to Firebase \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A listener that will respond to events on this read operation. If not nullptr, a listener that will respond to events on this write operation. The caller is responsible for allocating and deallocating the listener. The same listener can be used for multiple operations. \\
+\hline
+\mbox{\texttt{ out}}  & {\em controller\+\_\+out} & Controls the write operation, providing the ability to pause, resume or cancel an ongoing write operation. If not nullptr, this method will output a \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} here that you can use to control the write operation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A future that returns the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_ac8283018e61803eeed4a4503661cd5e5}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!PutFileLastResult@{PutFileLastResult}}
+\index{PutFileLastResult@{PutFileLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{PutFileLastResult()}{PutFileLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_ac8283018e61803eeed4a4503661cd5e5} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Put\+File\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}{Put\+File()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}{Put\+File()}; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_aebaf13876292d1f51a5d483e626ddabe}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!storage@{storage}}
+\index{storage@{storage}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{storage()}{storage()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_aebaf13876292d1f51a5d483e626ddabe} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}} \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Storage\+Reference\+::storage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the \doxylink{classfirebase_1_1storage_1_1_storage}{firebase\+::storage\+::\+Storage} instance to which we refer. 
+
+The pointer will remain valid indefinitely.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1storage_1_1_storage}{firebase\+::storage\+::\+Storage} instance that this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} refers to. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_aeaf50349bf1f410954f590341a896288}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!UpdateMetadata@{UpdateMetadata}}
+\index{UpdateMetadata@{UpdateMetadata}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{UpdateMetadata()}{UpdateMetadata()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_aeaf50349bf1f410954f590341a896288} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Update\+Metadata (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&}]{metadata}{}\end{DoxyParamCaption})}
+
+
+
+Updates the metadata associated with this \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded and the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_reference_a28a2e0558251d51d881838aa44a658eb}\index{firebase::storage::StorageReference@{firebase::storage::StorageReference}!UpdateMetadataLastResult@{UpdateMetadataLastResult}}
+\index{UpdateMetadataLastResult@{UpdateMetadataLastResult}!firebase::storage::StorageReference@{firebase::storage::StorageReference}}
+\doxysubsubsection{\texorpdfstring{UpdateMetadataLastResult()}{UpdateMetadataLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_reference_a28a2e0558251d51d881838aa44a658eb} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} $>$ firebase\+::storage\+::\+Storage\+Reference\+::\+Update\+Metadata\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_aeaf50349bf1f410954f590341a896288}{Update\+Metadata()};. 
+
+\begin{DoxyReturn}{Returns}
+The result of the most recent call to \doxylink{classfirebase_1_1storage_1_1_storage_reference_aeaf50349bf1f410954f590341a896288}{Update\+Metadata()}; 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/storage/storage\+\_\+reference.\+h\end{DoxyCompactItemize}

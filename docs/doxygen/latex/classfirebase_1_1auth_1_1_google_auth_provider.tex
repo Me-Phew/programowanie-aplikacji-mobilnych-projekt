@@ -1,0 +1,51 @@
+\doxysection{firebase\+::auth\+::Google\+Auth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_google_auth_provider}{}\label{classfirebase_1_1auth_1_1_google_auth_provider}\index{firebase::auth::GoogleAuthProvider@{firebase::auth::GoogleAuthProvider}}
+
+
+Use an ID token and access token provided by Google to authenticate.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_google_auth_provider_ae8e704941c24348f4d04f5d77a059d95}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}id\+\_\+token, const char \texorpdfstring{$\ast$}{*}access\+\_\+token)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_google_auth_provider_af27fc68b0be005bf9a1035d6eac9f6a5}\label{classfirebase_1_1auth_1_1_google_auth_provider_af27fc68b0be005bf9a1035d6eac9f6a5} 
+static const char \texorpdfstring{$\ast$}{*}const {\bfseries k\+Provider\+Id}
+\begin{DoxyCompactList}\small\item\em The string used to identify this provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use an ID token and access token provided by Google to authenticate. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_google_auth_provider_ae8e704941c24348f4d04f5d77a059d95}\index{firebase::auth::GoogleAuthProvider@{firebase::auth::GoogleAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::GoogleAuthProvider@{firebase::auth::GoogleAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_google_auth_provider_ae8e704941c24348f4d04f5d77a059d95} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+Google\+Auth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{id\+\_\+token}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{access\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential from the given Google ID token and/or access token.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+token} & Google Sign-\/\+In ID token. \\
+\hline
+{\em access\+\_\+token} & Google Sign-\/\+In access token.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

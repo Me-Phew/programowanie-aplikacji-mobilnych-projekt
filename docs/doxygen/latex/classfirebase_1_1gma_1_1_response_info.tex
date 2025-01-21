@@ -1,0 +1,69 @@
+\doxysection{firebase\+::gma\+::Response\+Info Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_response_info}{}\label{classfirebase_1_1gma_1_1_response_info}\index{firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}}
+
+
+Information about an ad response.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_response_info_ab8e095948d2c39e1afabbac46eb0447d}\label{classfirebase_1_1gma_1_1_response_info_ab8e095948d2c39e1afabbac46eb0447d} 
+{\bfseries Response\+Info} ()
+\begin{DoxyCompactList}\small\item\em Constructor creates an uninitialized \doxylink{classfirebase_1_1gma_1_1_response_info}{Response\+Info}. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info}{Adapter\+Response\+Info}} $>$ \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_a643b5c72232647da66df08a2e9ed9e97}{adapter\+\_\+responses}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_af11fb9270a28a1d018c71ce8dcc9b45f}{mediation\+\_\+adapter\+\_\+class\+\_\+name}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_a1d213c001c554bd2eff75316058bc25e}{response\+\_\+id}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_response_info_a84b8259e0739078c6e481bc47a91e5b4}\label{classfirebase_1_1gma_1_1_response_info_a84b8259e0739078c6e481bc47a91e5b4} 
+const std\+::string \& {\bfseries To\+String} () const
+\begin{DoxyCompactList}\small\item\em Gets a log friendly string version of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_response_info_a823501322787a41bd10009ffabb96047}\label{classfirebase_1_1gma_1_1_response_info_a823501322787a41bd10009ffabb96047} 
+class {\bfseries Ad\+Error}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_response_info_aa5b423678a12251e5caa8b1c0d0958eb}\label{classfirebase_1_1gma_1_1_response_info_aa5b423678a12251e5caa8b1c0d0958eb} 
+class {\bfseries Gma\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about an ad response. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_response_info_a643b5c72232647da66df08a2e9ed9e97}\index{firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}!adapter\_responses@{adapter\_responses}}
+\index{adapter\_responses@{adapter\_responses}!firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}}
+\doxysubsubsection{\texorpdfstring{adapter\_responses()}{adapter\_responses()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_response_info_a643b5c72232647da66df08a2e9ed9e97} 
+const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info}{Adapter\+Response\+Info}} $>$ \& firebase\+::gma\+::\+Response\+Info\+::adapter\+\_\+responses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \doxylink{classfirebase_1_1gma_1_1_adapter_response_info}{Adapter\+Response\+Info} objects for the ad response.
+
+\begin{DoxyReturn}{Returns}
+a vector of \doxylink{classfirebase_1_1gma_1_1_adapter_response_info}{Adapter\+Response\+Info} objects containing metadata for each adapter included in the ad response. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_response_info_af11fb9270a28a1d018c71ce8dcc9b45f}\index{firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}!mediation\_adapter\_class\_name@{mediation\_adapter\_class\_name}}
+\index{mediation\_adapter\_class\_name@{mediation\_adapter\_class\_name}!firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}}
+\doxysubsubsection{\texorpdfstring{mediation\_adapter\_class\_name()}{mediation\_adapter\_class\_name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_response_info_af11fb9270a28a1d018c71ce8dcc9b45f} 
+const std\+::string \& firebase\+::gma\+::\+Response\+Info\+::mediation\+\_\+adapter\+\_\+class\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A class name that identifies the ad network that returned the ad. Returns an empty string if the ad failed to load. \Hypertarget{classfirebase_1_1gma_1_1_response_info_a1d213c001c554bd2eff75316058bc25e}\index{firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}!response\_id@{response\_id}}
+\index{response\_id@{response\_id}!firebase::gma::ResponseInfo@{firebase::gma::ResponseInfo}}
+\doxysubsubsection{\texorpdfstring{response\_id()}{response\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_response_info_a1d213c001c554bd2eff75316058bc25e} 
+const std\+::string \& firebase\+::gma\+::\+Response\+Info\+::response\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the response ID string for the loaded ad. Returns an empty string if the ad fails to load. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

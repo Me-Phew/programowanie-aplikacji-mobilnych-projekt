@@ -1,0 +1,191 @@
+\doxysection{components.\+h}
+\hypertarget{components_8h_source}{}\label{components_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/dynamic\_links/components.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/dynamic\_links/components.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2017\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_DYNAMIC\_LINKS\_SRC\_INCLUDE\_FIREBASE\_DYNAMIC\_LINKS\_COMPONENTS\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_DYNAMIC\_LINKS\_SRC\_INCLUDE\_FIREBASE\_DYNAMIC\_LINKS\_COMPONENTS\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }dynamic\_links\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters}{GoogleAnalyticsParameters}}\ \{}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_ab92a555e0313ad1d45bb5db7013df51b}{GoogleAnalyticsParameters}}()}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_a02fdd041a4008f22d9609fb268947b48}{source}}(nullptr),}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_a91a2d6fac9d84da4b0f1651d30d203ec}{medium}}(nullptr),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_ac7ebf793efbea5b5e65b8f89cacd9c9a}{campaign}}(nullptr),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_a2fdb8eaeb75b34358bfc4a86e0ec42ba}{term}}(nullptr),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_aca9ec60d7116b70d604b11f447338959}{content}}(nullptr)\ \{\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_a02fdd041a4008f22d9609fb268947b48}{source}};}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_a91a2d6fac9d84da4b0f1651d30d203ec}{medium}};}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_ac7ebf793efbea5b5e65b8f89cacd9c9a}{campaign}};}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_a2fdb8eaeb75b34358bfc4a86e0ec42ba}{term}};}
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters_aca9ec60d7116b70d604b11f447338959}{content}};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters}{IOSParameters}}\ \{}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a23cfa2d66b5949acd656e49c160f46f4}{IOSParameters}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ bundle\_id\_)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a9ed0b56ab153baad4d0f4aec6352da6f}{bundle\_id}}(bundle\_id\_),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_af6d53c500b0c433da446f22aa1381bde}{fallback\_url}}(nullptr),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_afb3949067a5791e1874e066819ea99b5}{custom\_scheme}}(nullptr),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_abeef839cb34be38c9c43af93531530b8}{ipad\_fallback\_url}}(nullptr),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a5f36066ac3a687608ec4af460ce3aeca}{ipad\_bundle\_id}}(nullptr),}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_aa5e548970179fae733afaebc157a30a0}{app\_store\_id}}(nullptr),}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_ae18438262b739ecc21754fae46f94906}{minimum\_version}}(nullptr)\ \{\}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a01ecb46f3c4917c4dc7cd7e9728758f6}{IOSParameters}}()}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a9ed0b56ab153baad4d0f4aec6352da6f}{bundle\_id}}(nullptr),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_af6d53c500b0c433da446f22aa1381bde}{fallback\_url}}(nullptr),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_afb3949067a5791e1874e066819ea99b5}{custom\_scheme}}(nullptr),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_abeef839cb34be38c9c43af93531530b8}{ipad\_fallback\_url}}(nullptr),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a5f36066ac3a687608ec4af460ce3aeca}{ipad\_bundle\_id}}(nullptr),}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_aa5e548970179fae733afaebc157a30a0}{app\_store\_id}}(nullptr),}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_ae18438262b739ecc21754fae46f94906}{minimum\_version}}(nullptr)\ \{\}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a9ed0b56ab153baad4d0f4aec6352da6f}{bundle\_id}};}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_af6d53c500b0c433da446f22aa1381bde}{fallback\_url}};}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_afb3949067a5791e1874e066819ea99b5}{custom\_scheme}};}
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_abeef839cb34be38c9c43af93531530b8}{ipad\_fallback\_url}};}
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_a5f36066ac3a687608ec4af460ce3aeca}{ipad\_bundle\_id}};}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_aa5e548970179fae733afaebc157a30a0}{app\_store\_id}};}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters_ae18438262b739ecc21754fae46f94906}{minimum\_version}};}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters}{ITunesConnectAnalyticsParameters}}\ \{}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_ab10f4cfd398de8494e7caff80dfc75be}{ITunesConnectAnalyticsParameters}}()}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_a2a67debacdf4661e99f65e501ef08188}{provider\_token}}(nullptr),}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_ad7fe9c2d60dd214d753fa6ea5395ae8e}{affiliate\_token}}(nullptr),}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_a1c2203bcff5deb9998b0030c2cf4c80d}{campaign\_token}}(nullptr)\ \{\}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_a2a67debacdf4661e99f65e501ef08188}{provider\_token}};}
+\DoxyCodeLine{00129\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_ad7fe9c2d60dd214d753fa6ea5395ae8e}{affiliate\_token}};}
+\DoxyCodeLine{00132\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters_a1c2203bcff5deb9998b0030c2cf4c80d}{campaign\_token}};}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters}{AndroidParameters}}\ \{}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a86fca1890fcf4c33af4124a3f6fac63b}{AndroidParameters}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ package\_name\_)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a6127ac13320320d463ef558f9ffcc959}{package\_name}}(package\_name\_),}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a665ddb1f61716c62609291eb1ad09957}{fallback\_url}}(nullptr),}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a644c0dee53db8a6eb72e582a37e94751}{minimum\_version}}(0)\ \{\}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a970ddaa02a582b1d2100f9f067f8d343}{AndroidParameters}}()}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a6127ac13320320d463ef558f9ffcc959}{package\_name}}(nullptr),\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a665ddb1f61716c62609291eb1ad09957}{fallback\_url}}(nullptr),\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a644c0dee53db8a6eb72e582a37e94751}{minimum\_version}}(0)\ \{\}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a6127ac13320320d463ef558f9ffcc959}{package\_name}};}
+\DoxyCodeLine{00163\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a665ddb1f61716c62609291eb1ad09957}{fallback\_url}};}
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a644c0dee53db8a6eb72e582a37e94751}{minimum\_version}};}
+\DoxyCodeLine{00166\ \};}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters}{SocialMetaTagParameters}}\ \{}
+\DoxyCodeLine{00175\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a6ebcf0ffac11908b576694fa24393bfc}{SocialMetaTagParameters}}()}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a8e74c61e39e74c1e9f2e327b3e600586}{title}}(nullptr),\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a84c3b0b023da8fed9d91260656ec31f3}{description}}(nullptr),\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a1ed0fe0c482811f972f281cfc4e040cd}{image\_url}}(nullptr)\ \{\}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a8e74c61e39e74c1e9f2e327b3e600586}{title}};}
+\DoxyCodeLine{00181\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a84c3b0b023da8fed9d91260656ec31f3}{description}};}
+\DoxyCodeLine{00183\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters_a1ed0fe0c482811f972f281cfc4e040cd}{image\_url}};}
+\DoxyCodeLine{00184\ \};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00187\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d}{PathLength}}\ \{}
+\DoxyCodeLine{00190\ \ \ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da58182381e5bec857a06197ed71f3df76}{kPathLengthDefault}}\ =\ 0,}
+\DoxyCodeLine{00192\ \ \ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da8743723bcfb92dae0e6bd99cda3b665f}{kPathLengthShort}},}
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da165fe9656c1182d14c8359f21adf7545}{kPathLengthUnguessable}},}
+\DoxyCodeLine{00196\ \};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{DynamicLinkOptions}}\ \{}
+\DoxyCodeLine{00201\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options_a865fb3c74b79901225bd9f7796124a5c}{DynamicLinkOptions}}()\ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options_ae336822180fb1c59d45f78470e23dc7a}{path\_length}}(\mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377da58182381e5bec857a06197ed71f3df76}{kPathLengthDefault}})\ \{\}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00204\ \ \ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a4e24e6373e0d66f55c4e61f8cd07377d}{PathLength}}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options_ae336822180fb1c59d45f78470e23dc7a}{path\_length}};}
+\DoxyCodeLine{00205\ \};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{GeneratedDynamicLink}}\ \{}
+\DoxyCodeLine{00210\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link_a53305bb2b5ba72fd0ee06713fb8a251c}{url}};}
+\DoxyCodeLine{00215\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link_a954161d03034b05ae4afc5607c10d54a}{warnings}};}
+\DoxyCodeLine{00217\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link_a9b5e5772c22d0b05bcc5579d70d96beb}{error}};}
+\DoxyCodeLine{00218\ \};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{DynamicLinkComponents}}\ \{}
+\DoxyCodeLine{00233\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ab682e4e85421e056cb398f97034cf47b}{link}};}
+\DoxyCodeLine{00244\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8f4e3c1d28e55bcb99ae079e1295b397}{domain\_uri\_prefix}};}
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_google_analytics_parameters}{GoogleAnalyticsParameters}}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a9f5e298759851a8f757b924cad60b7dd}{google\_analytics\_parameters}};}
+\DoxyCodeLine{00248\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_o_s_parameters}{IOSParameters}}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a52e9be1b9450f474765a64f6691ea613}{ios\_parameters}};}
+\DoxyCodeLine{00250\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters}{ITunesConnectAnalyticsParameters}}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8df16785f73664aa579c3c805e403fb8}{itunes\_connect\_analytics\_parameters}};}
+\DoxyCodeLine{00252\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters}{AndroidParameters}}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ac38f3197589b6ec26ecf2556f7e5f131}{android\_parameters}};}
+\DoxyCodeLine{00254\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters}{SocialMetaTagParameters}}*\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ac9e9efb621bc33de31a3e09d31ef5cd6}{social\_meta\_tag\_parameters}};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00257\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a57853300c547dd1e038c3e64fe893a5a}{DynamicLinkComponents}}()}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ab682e4e85421e056cb398f97034cf47b}{link}}(nullptr),}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8f4e3c1d28e55bcb99ae079e1295b397}{domain\_uri\_prefix}}(nullptr),}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a9f5e298759851a8f757b924cad60b7dd}{google\_analytics\_parameters}}(nullptr),}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a52e9be1b9450f474765a64f6691ea613}{ios\_parameters}}(nullptr),}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8df16785f73664aa579c3c805e403fb8}{itunes\_connect\_analytics\_parameters}}(nullptr),}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ac38f3197589b6ec26ecf2556f7e5f131}{android\_parameters}}(nullptr),}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ac9e9efb621bc33de31a3e09d31ef5cd6}{social\_meta\_tag\_parameters}}(nullptr)\ \{\}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00275\ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_aeb95f943ebd7b9dfb61dee61deb30edd}{DynamicLinkComponents}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ link\_,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ domain\_uri\_prefix\_)}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ab682e4e85421e056cb398f97034cf47b}{link}}(link\_),}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8f4e3c1d28e55bcb99ae079e1295b397}{domain\_uri\_prefix}}(domain\_uri\_prefix\_),}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a9f5e298759851a8f757b924cad60b7dd}{google\_analytics\_parameters}}(nullptr),}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a52e9be1b9450f474765a64f6691ea613}{ios\_parameters}}(nullptr),}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8df16785f73664aa579c3c805e403fb8}{itunes\_connect\_analytics\_parameters}}(nullptr),}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ac38f3197589b6ec26ecf2556f7e5f131}{android\_parameters}}(nullptr),}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_ac9e9efb621bc33de31a3e09d31ef5cd6}{social\_meta\_tag\_parameters}}(nullptr)\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{comment}{//\ For\ backwards\ compatibility\ with\ dynamic\_link\_domain,\ if}}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{comment}{//\ domain\_uri\_prefix\ doesn't\ start\ with\ "{}https://"{},\ add\ it.}}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ kHttpsPrefix[]\ =\ \textcolor{stringliteral}{"{}https://"{}};}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ kHttpsPrefixLength\ =\ \textcolor{keyword}{sizeof}(kHttpsPrefix)\ -\/\ 1;}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{if}\ (strncmp(\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8f4e3c1d28e55bcb99ae079e1295b397}{domain\_uri\_prefix}},\ kHttpsPrefix,\ kHttpsPrefixLength)\ !=\ 0)\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ domain\_uri\_prefix\_with\_scheme\ =}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ std::string(kHttpsPrefix)\ +\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8f4e3c1d28e55bcb99ae079e1295b397}{domain\_uri\_prefix}};}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components_a8f4e3c1d28e55bcb99ae079e1295b397}{domain\_uri\_prefix}}\ =\ domain\_uri\_prefix\_with\_scheme.c\_str();}
+\DoxyCodeLine{00291\ \ \ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#ifndef\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00298\ \ \ std::string\ domain\_uri\_prefix\_with\_scheme;}
+\DoxyCodeLine{00299\ \};}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00302\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_generated_dynamic_link}{GeneratedDynamicLink}}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a3873a27cf06854e0a3121622ab56dfe7}{GetLongLink}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{DynamicLinkComponents}}\&\ components);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00306\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<GeneratedDynamicLink>}}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531}{GetShortLink}}(}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{DynamicLinkComponents}}\&\ components);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00314\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<GeneratedDynamicLink>}}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531}{GetShortLink}}(}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{DynamicLinkComponents}}\&\ components,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{DynamicLinkOptions}}\&\ options);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00319\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<GeneratedDynamicLink>}}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531}{GetShortLink}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ long\_dynamic\_link);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00326\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<GeneratedDynamicLink>}}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_ad783cfac0ed7e4160aee9437a6647531}{GetShortLink}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ long\_dynamic\_link,}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_dynamic_link_options}{DynamicLinkOptions}}\&\ options);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00331\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<GeneratedDynamicLink>}}\ \mbox{\hyperlink{namespacefirebase_1_1dynamic__links_a59ec333a7537efb1b4829620176992f8}{GetShortLinkLastResult}}();}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \}\ \ \textcolor{comment}{//\ namespace\ dynamic\_links}}
+\DoxyCodeLine{00334\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_DYNAMIC\_LINKS\_SRC\_INCLUDE\_FIREBASE\_DYNAMIC\_LINKS\_COMPONENTS\_H\_}}
+
+\end{DoxyCode}

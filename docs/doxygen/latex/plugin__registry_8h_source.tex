@@ -1,0 +1,43 @@
+\doxysection{plugin\+\_\+registry.\+h}
+\hypertarget{plugin__registry_8h_source}{}\label{plugin__registry_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/plugin\_registry.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/plugin\_registry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRY\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRY\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <flutter\_plugin\_registrar.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Vends\ PluginRegistrars\ for\ named\ plugins.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ Plugins\ are\ identified\ by\ unique\ string\ keys,\ typically\ the\ name\ of\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ plugin's\ main\ class.}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_plugin_registry}{\string~PluginRegistry}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}(\mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Returns\ the\ FlutterDesktopPluginRegistrarRef\ to\ register\ a\ plugin\ with\ the}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ given\ name.}}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ The\ name\ must\ be\ unique\ across\ the\ application.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ FlutterDesktopPluginRegistrarRef\ GetRegistrarForPlugin(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ plugin\_name)\ =\ 0;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRY\_H\_}}
+
+\end{DoxyCode}

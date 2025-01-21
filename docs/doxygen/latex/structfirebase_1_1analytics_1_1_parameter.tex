@@ -1,0 +1,176 @@
+\doxysection{firebase\+::analytics\+::Parameter Struct Reference}
+\hypertarget{structfirebase_1_1analytics_1_1_parameter}{}\label{structfirebase_1_1analytics_1_1_parameter}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+
+
+\doxylink{class_event}{Event} parameter.  
+
+
+
+
+{\ttfamily \#include $<$analytics.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::analytics\+::Parameter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structfirebase_1_1analytics_1_1_parameter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aada5505c002bf36f1e35d484f6261087}{Parameter}} ()
+\item 
+\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a88757052ac9bed32235a505e52e8cf7a}{Parameter}} (const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} parameter\+\_\+value)
+\item 
+\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a80d12a6d4e25636270c574561468e515}{Parameter}} (const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, int parameter\+\_\+value)
+\item 
+\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a0e3da2af18d007e67eb540efa9ed344c}{Parameter}} (const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, int64\+\_\+t parameter\+\_\+value)
+\item 
+\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a79042aa646c0fec8b77981c5ce6e9157}{Parameter}} (const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, double parameter\+\_\+value)
+\item 
+\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_abfb180cbd208825145e45f0e0576c4bc}{Parameter}} (const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, const char \texorpdfstring{$\ast$}{*}parameter\+\_\+value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}}
+\begin{DoxyCompactList}\small\item\em Value of the parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_event}{Event} parameter. 
+
+Parameters supply information that contextualize events (see \doxylink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{Log\+Event}). You can associate up to 25 unique Parameters with each event type (name).
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+\doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter} names must be a combination of letters and digits (matching the regular expression \mbox{[}a-\/z\+A-\/\+Z0-\/9\mbox{]}) between 1 and 40 characters long starting with a letter \mbox{[}a-\/z\+A-\/Z\mbox{]} character. The "{}firebase\+\_\+"{}, "{}google\+\_\+"{} and "{}ga\+\_\+"{} prefixes are reserved and should not be used.
+
+\doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter} string values can be up to 100 characters long.
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+For example, a game may log an achievement event along with the character the player is using and the level they\textquotesingle{}re currently on\+:
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structfirebase_1_1analytics_1_1_parameter_aada5505c002bf36f1e35d484f6261087}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_aada5505c002bf36f1e35d484f6261087} 
+firebase\+::analytics\+::\+Parameter\+::\+Parameter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct an empty parameter.
+
+This is provided to allow initialization after construction. \Hypertarget{structfirebase_1_1analytics_1_1_parameter_a88757052ac9bed32235a505e52e8cf7a}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_a88757052ac9bed32235a505e52e8cf7a} 
+firebase\+::analytics\+::\+Parameter\+::\+Parameter (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{parameter\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter\+\_\+name} & Name of the parameter (see \doxylink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{Parameter\+::name}). \\
+\hline
+{\em parameter\+\_\+value} & Value for the parameter. Variants can hold numbers and strings. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structfirebase_1_1analytics_1_1_parameter_a80d12a6d4e25636270c574561468e515}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_a80d12a6d4e25636270c574561468e515} 
+firebase\+::analytics\+::\+Parameter\+::\+Parameter (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{int}]{parameter\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a 64-\/bit integer parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter\+\_\+name} & Name of the parameter.  $<$\+SWIG$>$  $<$/\+SWIG$>$ \\
+\hline
+{\em parameter\+\_\+value} & Integer value for the parameter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structfirebase_1_1analytics_1_1_parameter_a0e3da2af18d007e67eb540efa9ed344c}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_a0e3da2af18d007e67eb540efa9ed344c} 
+firebase\+::analytics\+::\+Parameter\+::\+Parameter (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{int64\+\_\+t}]{parameter\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a 64-\/bit integer parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter\+\_\+name} & Name of the parameter.  $<$\+SWIG$>$  $<$/\+SWIG$>$ \\
+\hline
+{\em parameter\+\_\+value} & Integer value for the parameter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structfirebase_1_1analytics_1_1_parameter_a79042aa646c0fec8b77981c5ce6e9157}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_a79042aa646c0fec8b77981c5ce6e9157} 
+firebase\+::analytics\+::\+Parameter\+::\+Parameter (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{double}]{parameter\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a floating point parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter\+\_\+name} & Name of the parameter.  $<$\+SWIG$>$  $<$/\+SWIG$>$ \\
+\hline
+{\em parameter\+\_\+value} & Floating point value for the parameter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structfirebase_1_1analytics_1_1_parameter_abfb180cbd208825145e45f0e0576c4bc}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_abfb180cbd208825145e45f0e0576c4bc} 
+firebase\+::analytics\+::\+Parameter\+::\+Parameter (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a string parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter\+\_\+name} & Name of the parameter.  $<$\+SWIG$>$  $<$/\+SWIG$>$ \\
+\hline
+{\em parameter\+\_\+value} & String value for the parameter, can be up to 100 characters long. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!name@{name}}
+\index{name@{name}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7} 
+const char\texorpdfstring{$\ast$}{*} firebase\+::analytics\+::\+Parameter\+::name}
+
+
+
+Name of the parameter. 
+
+\doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter} names must be a combination of letters and digits (matching the regular expression \mbox{[}a-\/z\+A-\/\+Z0-\/9\mbox{]}) between 1 and 40 characters long starting with a letter \mbox{[}a-\/z\+A-\/Z\mbox{]} character. The "{}firebase\+\_\+"{}, "{}google\+\_\+"{} and "{}ga\+\_\+"{} prefixes are reserved and should not be used. \Hypertarget{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}\index{firebase::analytics::Parameter@{firebase::analytics::Parameter}!value@{value}}
+\index{value@{value}!firebase::analytics::Parameter@{firebase::analytics::Parameter}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::analytics\+::\+Parameter\+::value}
+
+
+
+Value of the parameter. 
+
+See \doxylink{classfirebase_1_1_variant}{firebase\+::\+Variant} for usage information. \begin{DoxyNote}{Note}
+String values can be up to 100 characters long. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/analytics.\+h\end{DoxyCompactItemize}

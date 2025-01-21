@@ -1,0 +1,134 @@
+\doxysection{firebase\+::remote\+\_\+config\+::Config\+Update\+Listener\+Registration Class Reference}
+\hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{}\label{classfirebase_1_1remote__config_1_1_config_update_listener_registration}\index{firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}}
+
+
+Calling Remove stops the listener from receiving config updates and unregisters itself. If remove is called and no other listener registrations remain, the connection to the Remote Config backend is closed. Subsequently calling Add\+On\+Config\+Update will re-\/open the connection.  
+
+
+
+
+{\ttfamily \#include $<$config\+\_\+update\+\_\+listener\+\_\+registration.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_ad54e752cc19a68e0b302e136a8e9ef3f}{Config\+Update\+Listener\+Registration}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a46960f3a5b28abaacbc375ac75c9413b}{Config\+Update\+Listener\+Registration}} (const \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a0b124e32b90f1e9310f1dafac083c4bb}{Config\+Update\+Listener\+Registration}} (\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \& \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a5f6d172bad969849f25c6d4e68ec8eef}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \& \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a54f8f8ca6e3a9dea6d23f722659314e8}{operator=}} (\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a6ed0677a470faaa276d224566b28248f}\label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a6ed0677a470faaa276d224566b28248f} 
+void {\bfseries Remove} ()
+\begin{DoxyCompactList}\small\item\em Remove the listener being tracked by this \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}. After the initial call, subsequent calls to Remove have no effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a92e54dc9db5f0367aba2114c81ad405e}\label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a92e54dc9db5f0367aba2114c81ad405e} 
+class {\bfseries internal\+::\+Remote\+Config\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a532dcfdbe2a5c1aa52e0755c3d2cc386}\label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a532dcfdbe2a5c1aa52e0755c3d2cc386} 
+{\footnotesize template$<$typename T , typename R $>$ }\\struct {\bfseries Cleanup\+Fn}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Calling Remove stops the listener from receiving config updates and unregisters itself. If remove is called and no other listener registrations remain, the connection to the Remote Config backend is closed. Subsequently calling Add\+On\+Config\+Update will re-\/open the connection. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_ad54e752cc19a68e0b302e136a8e9ef3f}\index{firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}!ConfigUpdateListenerRegistration@{ConfigUpdateListenerRegistration}}
+\index{ConfigUpdateListenerRegistration@{ConfigUpdateListenerRegistration}!firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{ConfigUpdateListenerRegistration()}{ConfigUpdateListenerRegistration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_ad54e752cc19a68e0b302e136a8e9ef3f} 
+firebase\+::remote\+\_\+config\+::\+Config\+Update\+Listener\+Registration\+::\+Config\+Update\+Listener\+Registration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration} that has to be reassigned before it can be used. 
+
+Calling \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a6ed0677a470faaa276d224566b28248f}{Remove()} on an invalid \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration} is a no-\/op. \Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a46960f3a5b28abaacbc375ac75c9413b}\index{firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}!ConfigUpdateListenerRegistration@{ConfigUpdateListenerRegistration}}
+\index{ConfigUpdateListenerRegistration@{ConfigUpdateListenerRegistration}!firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{ConfigUpdateListenerRegistration()}{ConfigUpdateListenerRegistration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a46960f3a5b28abaacbc375ac75c9413b} 
+firebase\+::remote\+\_\+config\+::\+Config\+Update\+Listener\+Registration\+::\+Config\+Update\+Listener\+Registration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} can be efficiently copied because it simply refers to the same underlying listener. If there is more than one copy of a {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}, after calling {\ttfamily Remove} on one of them, the listener is removed, and calling {\ttfamily Remove} on any other copies will be a no-\/op.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a0b124e32b90f1e9310f1dafac083c4bb}\index{firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}!ConfigUpdateListenerRegistration@{ConfigUpdateListenerRegistration}}
+\index{ConfigUpdateListenerRegistration@{ConfigUpdateListenerRegistration}!firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{ConfigUpdateListenerRegistration()}{ConfigUpdateListenerRegistration()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a0b124e32b90f1e9310f1dafac083c4bb} 
+firebase\+::remote\+\_\+config\+::\+Config\+Update\+Listener\+Registration\+::\+Config\+Update\+Listener\+Registration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a54f8f8ca6e3a9dea6d23f722659314e8}\index{firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a54f8f8ca6e3a9dea6d23f722659314e8} 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \& firebase\+::remote\+\_\+config\+::\+Config\+Update\+Listener\+Registration\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a5f6d172bad969849f25c6d4e68ec8eef}\index{firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::remote\_config::ConfigUpdateListenerRegistration@{firebase::remote\_config::ConfigUpdateListenerRegistration}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_config_update_listener_registration_a5f6d172bad969849f25c6d4e68ec8eef} 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \& firebase\+::remote\+\_\+config\+::\+Config\+Update\+Listener\+Registration\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} can be efficiently copied because it simply refers to the same underlying listener. If there is more than one copy of a {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}, after calling {\ttfamily Remove} on one of them, the listener is removed, and calling {\ttfamily Remove} on any other copies will be a no-\/op.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/remote\+\_\+config/config\+\_\+update\+\_\+listener\+\_\+registration.\+h\end{DoxyCompactItemize}

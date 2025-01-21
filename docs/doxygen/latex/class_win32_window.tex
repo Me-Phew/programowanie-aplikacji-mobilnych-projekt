@@ -1,0 +1,66 @@
+\doxysection{Win32\+Window Class Reference}
+\hypertarget{class_win32_window}{}\label{class_win32_window}\index{Win32Window@{Win32Window}}
+
+
+Inheritance diagram for Win32\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{class_win32_window__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_win32_window_1_1_point}{Point}}
+\item 
+struct \mbox{\hyperlink{struct_win32_window_1_1_size}{Size}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_win32_window_a6c102372e565aeafe3045fa066df3a92}\label{class_win32_window_a6c102372e565aeafe3045fa066df3a92} 
+bool {\bfseries Create} (const std\+::wstring \&title, const \mbox{\hyperlink{struct_win32_window_1_1_point}{Point}} \&origin, const \mbox{\hyperlink{struct_win32_window_1_1_size}{Size}} \&size)
+\item 
+\Hypertarget{class_win32_window_a079de4f5c5d61571ed3ef4660c8386c9}\label{class_win32_window_a079de4f5c5d61571ed3ef4660c8386c9} 
+bool {\bfseries Show} ()
+\item 
+\Hypertarget{class_win32_window_a6545dfce322862ad6318eb6102d59e06}\label{class_win32_window_a6545dfce322862ad6318eb6102d59e06} 
+void {\bfseries Destroy} ()
+\item 
+\Hypertarget{class_win32_window_aaefe8ad05d18d4841a01f51e1785ff0c}\label{class_win32_window_aaefe8ad05d18d4841a01f51e1785ff0c} 
+void {\bfseries Set\+Child\+Content} (HWND content)
+\item 
+\Hypertarget{class_win32_window_a8d075ed439f8ace23c9c70e6f60f7081}\label{class_win32_window_a8d075ed439f8ace23c9c70e6f60f7081} 
+HWND {\bfseries Get\+Handle} ()
+\item 
+\Hypertarget{class_win32_window_abb55283812244d63f99517bdbdde4c5a}\label{class_win32_window_abb55283812244d63f99517bdbdde4c5a} 
+void {\bfseries Set\+Quit\+On\+Close} (bool quit\+\_\+on\+\_\+close)
+\item 
+\Hypertarget{class_win32_window_aab1722c8d02d1e224f953260b6c64d70}\label{class_win32_window_aab1722c8d02d1e224f953260b6c64d70} 
+RECT {\bfseries Get\+Client\+Area} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_win32_window_a9821d29a52a05f5ed9b49b89d7110cf7}\label{class_win32_window_a9821d29a52a05f5ed9b49b89d7110cf7} 
+virtual LRESULT {\bfseries Message\+Handler} (HWND window, UINT const message, WPARAM const wparam, LPARAM const lparam) noexcept
+\item 
+\Hypertarget{class_win32_window_a13999e0fd51a9b5c66239c6ecc201d5c}\label{class_win32_window_a13999e0fd51a9b5c66239c6ecc201d5c} 
+virtual bool {\bfseries On\+Create} ()
+\item 
+\Hypertarget{class_win32_window_a78f04e4f7a473145711e65ebb8040185}\label{class_win32_window_a78f04e4f7a473145711e65ebb8040185} 
+virtual void {\bfseries On\+Destroy} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_win32_window_a2165038b6b2c1445abc8e50b4dd18768}\label{class_win32_window_a2165038b6b2c1445abc8e50b4dd18768} 
+class {\bfseries Window\+Class\+Registrar}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+windows/runner/win32\+\_\+window.\+h\item 
+windows/runner/win32\+\_\+window.\+cpp\end{DoxyCompactItemize}

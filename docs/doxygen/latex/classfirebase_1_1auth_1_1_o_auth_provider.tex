@@ -1,0 +1,65 @@
+\doxysection{firebase\+::auth\+::OAuth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_o_auth_provider}{}\label{classfirebase_1_1auth_1_1_o_auth_provider}\index{firebase::auth::OAuthProvider@{firebase::auth::OAuthProvider}}
+
+
+OAuth2.\+0+User\+Info auth provider (OIDC compliant and non-\/compliant).  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_o_auth_provider_ae55846af54eb69df3f8af05bd583d003}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}provider\+\_\+id, const char \texorpdfstring{$\ast$}{*}id\+\_\+token, const char \texorpdfstring{$\ast$}{*}access\+\_\+token)
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_o_auth_provider_a0689664c5877e71f3ba9a6949a848d53}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}provider\+\_\+id, const char \texorpdfstring{$\ast$}{*}id\+\_\+token, const char \texorpdfstring{$\ast$}{*}raw\+\_\+nonce, const char \texorpdfstring{$\ast$}{*}access\+\_\+token)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+OAuth2.\+0+User\+Info auth provider (OIDC compliant and non-\/compliant). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_o_auth_provider_ae55846af54eb69df3f8af05bd583d003}\index{firebase::auth::OAuthProvider@{firebase::auth::OAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::OAuthProvider@{firebase::auth::OAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_o_auth_provider_ae55846af54eb69df3f8af05bd583d003} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+OAuth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{provider\+\_\+id}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{id\+\_\+token}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{access\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential for an OAuth2 provider.
+
+
+\begin{DoxyParams}{Parameters}
+{\em provider\+\_\+id} & Name of the OAuth2 provider TODO(jsanmiya) add examples. \\
+\hline
+{\em id\+\_\+token} & The authentication token (OIDC only). \\
+\hline
+{\em access\+\_\+token} & TODO(jsanmiya) add explanation (currently missing from Android and i\+OS implementations). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1auth_1_1_o_auth_provider_a0689664c5877e71f3ba9a6949a848d53}\index{firebase::auth::OAuthProvider@{firebase::auth::OAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::OAuthProvider@{firebase::auth::OAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_o_auth_provider_a0689664c5877e71f3ba9a6949a848d53} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+OAuth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{provider\+\_\+id}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{id\+\_\+token}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{raw\+\_\+nonce}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{access\+\_\+token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential for an OAuth2 provider.
+
+
+\begin{DoxyParams}{Parameters}
+{\em provider\+\_\+id} & Name of the OAuth2 provider. \\
+\hline
+{\em id\+\_\+token} & The authentication token (OIDC only). \\
+\hline
+{\em raw\+\_\+nonce} & The raw nonce associated with the \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} credential being created. \\
+\hline
+{\em access\+\_\+token} & The access token associated with the \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} credential to be created, if available. This value may be null. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

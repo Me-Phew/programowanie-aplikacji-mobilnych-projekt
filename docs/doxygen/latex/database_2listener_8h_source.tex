@@ -1,0 +1,58 @@
+\doxysection{listener.\+h}
+\hypertarget{database_2listener_8h_source}{}\label{database_2listener_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/listener.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/listener.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_LISTENER\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_LISTENER\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/database/common.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }database\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }DataSnapshot;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{ValueListener}}\ \{}
+\DoxyCodeLine{00032\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{\string~ValueListener}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener_a02ce2f03e20564a124b5d290158494a8}{OnValueChanged}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{DataSnapshot}}\&\ snapshot)\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener_a8f97aa3b6378c57d0d4b8cf853a95538}{OnCancelled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}}\&\ error,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ error\_message)\ =\ 0;}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{ChildListener}}\ \{}
+\DoxyCodeLine{00058\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{\string~ChildListener}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_a85903f8c0785c8acf41be3097b489f93}{OnChildAdded}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{DataSnapshot}}\&\ snapshot,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ previous\_sibling\_key)\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_a48d5e76e56d5e426a38073e875321edd}{OnChildChanged}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{DataSnapshot}}\&\ snapshot,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ previous\_sibling\_key)\ =\ 0;}
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_a5e3e042aca509c8963f9f8337ccf1d7a}{OnChildMoved}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{DataSnapshot}}\&\ snapshot,}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ previous\_sibling\_key)\ =\ 0;}
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_aa93f2703105e48959081e5c18d7a6df8}{OnChildRemoved}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{DataSnapshot}}\&\ snapshot)\ =\ 0;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_ab63ac7fbf9b270f8454393dee0621d58}{OnCancelled}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}}\&\ error,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ error\_message)\ =\ 0;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \}\ \ \textcolor{comment}{//\ namespace\ database}}
+\DoxyCodeLine{00110\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_LISTENER\_H\_}}
+
+\end{DoxyCode}

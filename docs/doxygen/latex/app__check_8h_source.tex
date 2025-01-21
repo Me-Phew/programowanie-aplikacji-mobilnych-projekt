@@ -1,0 +1,104 @@
+\doxysection{app\+\_\+check.\+h}
+\hypertarget{app__check_8h_source}{}\label{app__check_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/app\_check.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/app\_check.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2022\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }app\_check\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ AppCheckError\ \{}
+\DoxyCodeLine{00029\ \ \ kAppCheckErrorNone\ =\ 0,}
+\DoxyCodeLine{00031\ \ \ kAppCheckErrorServerUnreachable\ =\ 1,}
+\DoxyCodeLine{00035\ \ \ kAppCheckErrorInvalidConfiguration\ =\ 2,}
+\DoxyCodeLine{00038\ \ \ kAppCheckErrorSystemKeychain\ =\ 3,}
+\DoxyCodeLine{00042\ \ \ kAppCheckErrorUnsupportedProvider\ =\ 4,}
+\DoxyCodeLine{00044\ \ \ kAppCheckErrorUnknown\ =\ 5,}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{AppCheckToken}}\ \{}
+\DoxyCodeLine{00053\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token_ac4ee2756ace2d1839b0fec62c073666a}{token}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ int64\_t\ \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token_af4972408826c651f23fdd56bc631e789}{expire\_time\_millis}};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{AppCheckListener}}\ \{}
+\DoxyCodeLine{00061\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{\string~AppCheckListener}}()\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener_a9d0e527da64f1cf418559bee0b20622e}{OnAppCheckTokenChanged}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{AppCheckToken}}\&\ token)\ =\ 0;}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{AppCheckProvider}}\ \{}
+\DoxyCodeLine{00074\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{\string~AppCheckProvider}}()\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_a1bfe8c92a50c664c35063f14c31a5647}{GetToken}}(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{AppCheckToken}},\ \textcolor{keywordtype}{int},\ \textcolor{keyword}{const}\ std::string\&)>}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ completion\_callback)\ =\ 0;}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{AppCheckProviderFactory}}\ \{}
+\DoxyCodeLine{00085\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{\string~AppCheckProviderFactory}}()\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{AppCheckProvider}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory_a0e7914f6261fd65e53b5b2aa25b4ed9e}{CreateProvider}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app)\ =\ 0;}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00094\ \textcolor{keyword}{class\ }AppCheckInternal;}
+\DoxyCodeLine{00095\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check}{AppCheck}}\ \{}
+\DoxyCodeLine{00107\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3e45a64dc4abe307b6fe2d5582a667b6}{\string~AppCheck}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check}{AppCheck}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a37b594e136491b45e4dbaf4abf5265c9}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc}{app}});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a4fcaddd90087f702ce90de7c6734c6ef}{SetAppCheckProviderFactory}}(\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{AppCheckProviderFactory}}*\ factory);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc}{app}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a8550e8e32e26c53d4d793a3135125fa9}{SetTokenAutoRefreshEnabled}}(\textcolor{keywordtype}{bool}\ is\_token\_auto\_refresh\_enabled);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00141\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AppCheckToken>}}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_ae612f250510dde43931981e4ce88becf}{GetAppCheckToken}}(\textcolor{keywordtype}{bool}\ force\_refresh);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AppCheckToken>}}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a6bc68dd8f8206fb0d1f1c79cea4cf2b6}{GetAppCheckTokenLastResult}}();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3e7439d63ade51c66456b695face3936}{AddAppCheckListener}}(\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{AppCheckListener}}*\ listener);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_aeda964041317b387a343c02379961c52}{RemoveAppCheckListener}}(\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{AppCheckListener}}*\ listener);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check}{AppCheck}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc}{app}});}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \textcolor{keywordtype}{void}\ DeleteInternal();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \textcolor{comment}{//\ Make\ the\ Internal\ version\ a\ friend\ class,\ so\ that\ it\ can\ access\ itself.}}
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::AppCheckInternal;}
+\DoxyCodeLine{00162\ \ \ internal::AppCheckInternal*\ internal\_;}
+\DoxyCodeLine{00163\ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \}\ \ \textcolor{comment}{//\ namespace\ app\_check}}
+\DoxyCodeLine{00166\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_H\_}}
+
+\end{DoxyCode}

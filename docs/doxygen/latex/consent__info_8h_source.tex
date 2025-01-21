@@ -1,0 +1,123 @@
+\doxysection{consent\+\_\+info.\+h}
+\hypertarget{consent__info_8h_source}{}\label{consent__info_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/ump/consent\_info.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/ump/consent\_info.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2023\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_UMP\_CONSENT\_INFO\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_UMP\_CONSENT\_INFO\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/ump/types.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/platform.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <jni.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }ump\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ Forward\ declaration\ for\ platform-\/specific\ data,\ implemented\ in\ each\ library.}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }ConsentInfoInternal;}
+\DoxyCodeLine{00040\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}\ \{}
+\DoxyCodeLine{00050\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ac8a3ab8553ff46d76ff884f58774368b}{\string~ConsentInfo}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab2f89e1c8328d60dc99f3bd5da9a147e}{GetInstance}}(const\ ::firebase::App\&\ app,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab2f89e1c8328d60dc99f3bd5da9a147e}{GetInstance}}(JNIEnv*\ jni\_env,\ jobject\ activity,}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ On\ Android,\ this\ convenience\ function\ exists\ so\ you\ can\ easily\ get\ the}}
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ existing\ ConsentInfo\ instance\ after\ it's\ first\ initialized.\ Returns\ nullptr}}
+\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//\ if\ no\ instance\ has\ been\ created\ yet;\ make\ sure\ you\ have\ called}}
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ GetInstance(JNIEnv*,\ jobject)\ first.}}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab2f89e1c8328d60dc99f3bd5da9a147e}{GetInstance}}();}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(DOXYGEN)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#if\ !FIREBASE\_PLATFORM\_ANDROID\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a1698e1a18627821dfb7ef2bb90e9afde}{GetInstance}}(\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_\_ANDROID\_\_)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf}{ConsentStatus}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a3644424528bd933f28043ce8c1af772a}{GetConsentStatus}}();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ab922f0c3c58a08af9f1bd2c7581ba8b5}{RequestConsentInfoUpdate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters}{ConsentRequestParameters}}\&\ params);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_aed9b36af7ff6771ef0fc184463a13e3e}{RequestConsentInfoUpdateLastResult}}();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d}{ConsentFormStatus}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a7c81b3660a04a250c9854f5132105587}{GetConsentFormStatus}}();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_aec6c344b0a7bc79f6b533e92589a52e8}{LoadConsentForm}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_abf20eefdf6dda5ff017707553396dc5d}{LoadConsentFormLastResult}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00166\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a1037f203e3bd10881340c935a9490f28}{ShowConsentForm}}(\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{FormParent}}\ parent);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_af5880ae4154ccf06d1dbc7c7f507d6c5}{ShowConsentFormLastResult}}();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a5fb54f1204979c166723d5ec77220ac9}{LoadAndShowConsentFormIfRequired}}(\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{FormParent}}\ parent);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00187\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a78b72ce9a9791c220673eea53d7659fb}{LoadAndShowConsentFormIfRequiredLastResult}}();}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00191\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64}{PrivacyOptionsRequirementStatus}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a0b4adb1cc65f3854b3b7473234f7ac36}{GetPrivacyOptionsRequirementStatus}}();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00209\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_a6e5d87d9cc27805bf0b24300938f5a2b}{ShowPrivacyOptionsForm}}(\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{FormParent}}\ parent);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_af672fc08afa17af60be66ae4efc076ca}{ShowPrivacyOptionsFormLastResult}}();}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ac93b00b1a72fe833cdeb2dc62762d8f2}{CanRequestAds}}();}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00222\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info_ae8fe349b0e355bf26b324312b8bb9ac5}{Reset}}();}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00225\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}();}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00227\ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}\ Initialize(JNIEnv*\ jni\_env,\ jobject\ activity);}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00229\ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}\ Initialize();}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00231\ \ \ \textcolor{keywordtype}{void}\ Terminate();}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1ump_1_1_consent_info}{ConsentInfo}}*\ s\_instance\_;}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00236\ \ \ JavaVM*\ java\_vm()\ \{\ \textcolor{keywordflow}{return}\ java\_vm\_;\ \}}
+\DoxyCodeLine{00237\ \ \ JavaVM*\ java\_vm\_;}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00241\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ User\ Messaging\ Platform\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00242\ \ \ internal::ConsentInfoInternal*\ internal\_;}
+\DoxyCodeLine{00243\ \};}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \}\ \ \textcolor{comment}{//\ namespace\ ump}}
+\DoxyCodeLine{00246\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00247\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_UMP\_CONSENT\_INFO\_H\_}}
+
+\end{DoxyCode}

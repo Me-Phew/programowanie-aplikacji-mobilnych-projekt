@@ -1,0 +1,82 @@
+\doxysection{firebase\+::gma\+::Ad\+Value Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_ad_value}{}\label{classfirebase_1_1gma_1_1_ad_value}\index{firebase::gma::AdValue@{firebase::gma::AdValue}}
+
+
+The monetary value earned from an ad.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{Precision\+Type}} \{ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3a8679de42c2ea6f9e7a4cd6cfa620b36d}{k\+Ad\+Value\+Precision\+Unknown}} = 0
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3ae2f618e55fec703f67dd951f752981db}{k\+Ad\+Value\+Precision\+Estimated}}
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3a40b071491590e2bdd32f46d84366e2ca}{k\+Ad\+Value\+Precision\+Publisher\+Provided}} = 2
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3ab45bb6e6588b185181b5c53dc41db2fc}{k\+Ad\+Value\+Precision\+Precise}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Allowed constants for \doxylink{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}{precision\+\_\+type()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a789e06266ee31e321d3a8f54956577c5}\label{classfirebase_1_1gma_1_1_ad_value_a789e06266ee31e321d3a8f54956577c5} 
+{\bfseries Ad\+Value} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_aa56618706863a52324055b4349f9592c}{currency\+\_\+code}}, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{Precision\+Type}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}{precision\+\_\+type}}, int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23}{value\+\_\+micros}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_value_aa56618706863a52324055b4349f9592c}\label{classfirebase_1_1gma_1_1_ad_value_aa56618706863a52324055b4349f9592c} 
+const std\+::string \& {\bfseries currency\+\_\+code} () const
+\begin{DoxyCompactList}\small\item\em The value\textquotesingle{}s ISO 4217 currency code. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}\label{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{Precision\+Type}} {\bfseries precision\+\_\+type} () const
+\begin{DoxyCompactList}\small\item\em The precision of the reported ad value. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23}{value\+\_\+micros}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The monetary value earned from an ad. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}\index{firebase::gma::AdValue@{firebase::gma::AdValue}!PrecisionType@{PrecisionType}}
+\index{PrecisionType@{PrecisionType}!firebase::gma::AdValue@{firebase::gma::AdValue}}
+\doxysubsubsection{\texorpdfstring{PrecisionType}{PrecisionType}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3} 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{firebase\+::gma\+::\+Ad\+Value\+::\+Precision\+Type}}}
+
+
+
+Allowed constants for \doxylink{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}{precision\+\_\+type()}. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAdValuePrecisionUnknown@{kAdValuePrecisionUnknown}!firebase::gma::AdValue@{firebase::gma::AdValue}}\index{firebase::gma::AdValue@{firebase::gma::AdValue}!kAdValuePrecisionUnknown@{kAdValuePrecisionUnknown}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3a8679de42c2ea6f9e7a4cd6cfa620b36d}\label{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3} 
+k\+Ad\+Value\+Precision\+Unknown&An ad value with unknown precision. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAdValuePrecisionEstimated@{kAdValuePrecisionEstimated}!firebase::gma::AdValue@{firebase::gma::AdValue}}\index{firebase::gma::AdValue@{firebase::gma::AdValue}!kAdValuePrecisionEstimated@{kAdValuePrecisionEstimated}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3ae2f618e55fec703f67dd951f752981db}\label{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3} 
+k\+Ad\+Value\+Precision\+Estimated&An ad value estimated from aggregated data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAdValuePrecisionPublisherProvided@{kAdValuePrecisionPublisherProvided}!firebase::gma::AdValue@{firebase::gma::AdValue}}\index{firebase::gma::AdValue@{firebase::gma::AdValue}!kAdValuePrecisionPublisherProvided@{kAdValuePrecisionPublisherProvided}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3a40b071491590e2bdd32f46d84366e2ca}\label{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3} 
+k\+Ad\+Value\+Precision\+Publisher\+Provided&A publisher-\/provided ad value, such as manual CPMs in a mediation group. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAdValuePrecisionPrecise@{kAdValuePrecisionPrecise}!firebase::gma::AdValue@{firebase::gma::AdValue}}\index{firebase::gma::AdValue@{firebase::gma::AdValue}!kAdValuePrecisionPrecise@{kAdValuePrecisionPrecise}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3ab45bb6e6588b185181b5c53dc41db2fc}\label{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3} 
+k\+Ad\+Value\+Precision\+Precise&The precise value paid for this ad. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23}\index{firebase::gma::AdValue@{firebase::gma::AdValue}!value\_micros@{value\_micros}}
+\index{value\_micros@{value\_micros}!firebase::gma::AdValue@{firebase::gma::AdValue}}
+\doxysubsubsection{\texorpdfstring{value\_micros()}{value\_micros()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23} 
+int64\+\_\+t firebase\+::gma\+::\+Ad\+Value\+::value\+\_\+micros (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The ad\textquotesingle{}s value in micro-\/units, where 1,000,000 micro-\/units equal one unit of the currency. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

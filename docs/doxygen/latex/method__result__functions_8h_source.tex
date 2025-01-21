@@ -1,0 +1,86 @@
+\doxysection{method\+\_\+result\+\_\+functions.\+h}
+\hypertarget{method__result__functions_8h_source}{}\label{method__result__functions_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_result\_functions.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_result\_functions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_RESULT\_FUNCTIONS\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_RESULT\_FUNCTIONS\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}method\_result.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Handler\ types\ for\ each\ of\ the\ MethodResult\ outcomes.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }ResultHandlerSuccess\ =\ std::function<void(\textcolor{keyword}{const}\ T*\ result)>;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00022\ \textcolor{keyword}{using\ }ResultHandlerError\ =\ std::function<void(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details)>;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ }ResultHandlerNotImplemented\ =\ std::function<void()>;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ An\ implementation\ of\ MethodResult\ that\ pass\ calls\ through\ to\ provided}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ function\ objects,\ for\ ease\ of\ constructing\ one-\/off\ result\ handlers.}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_method_result_functions}{MethodResultFunctions}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}<T>\ \{}
+\DoxyCodeLine{00032\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ Creates\ a\ result\ object\ that\ calls\ the\ provided\ functions\ for\ the}}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ corresponding\ MethodResult\ outcomes.}}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classflutter_1_1_method_result_functions}{MethodResultFunctions}}(ResultHandlerSuccess<T>\ on\_success,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ResultHandlerError<T>\ on\_error,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ResultHandlerNotImplemented<T>\ on\_not\_implemented)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ :\ on\_success\_(on\_success),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ on\_error\_(on\_error),}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ on\_not\_implemented\_(std::move(on\_not\_implemented))\ \{\}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_method_result_functions}{\string~MethodResultFunctions}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classflutter_1_1_method_result_functions}{MethodResultFunctions}}(\mbox{\hyperlink{classflutter_1_1_method_result_functions}{MethodResultFunctions}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classflutter_1_1_method_result_functions}{MethodResultFunctions}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_method_result_functions}{MethodResultFunctions}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ |flutter::MethodResult|}}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ SuccessInternal(\textcolor{keyword}{const}\ T*\ result)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (on\_success\_)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ on\_success\_(result);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ |flutter::MethodResult|}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ ErrorInternal(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (on\_error\_)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ on\_error\_(error\_code,\ error\_message,\ error\_details);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ |flutter::MethodResult|}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ NotImplementedInternal()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (on\_not\_implemented\_)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ on\_not\_implemented\_();}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ ResultHandlerSuccess<T>\ on\_success\_;}
+\DoxyCodeLine{00074\ \ \ ResultHandlerError<T>\ on\_error\_;}
+\DoxyCodeLine{00075\ \ \ ResultHandlerNotImplemented<T>\ on\_not\_implemented\_;}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_RESULT\_FUNCTIONS\_H\_}}
+
+\end{DoxyCode}

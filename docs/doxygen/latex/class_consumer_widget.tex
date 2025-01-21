@@ -1,0 +1,238 @@
+\doxysection{Consumer\+Widget Class Reference}
+\hypertarget{class_consumer_widget}{}\label{class_consumer_widget}\index{ConsumerWidget@{ConsumerWidget}}
+
+
+Collaboration diagram for Consumer\+Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_consumer_widget__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_consumer_widget_a77476de6ec05177fdc393e27f3e4ac3f}{My\+App}} (\{super.\+key\})
+\item 
+override Widget \mbox{\hyperlink{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}{build}} (Build\+Context context, Widget\+Ref ref)
+\begin{DoxyCompactList}\small\item\em Buduje widget aplikacji. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_consumer_widget_aada7f87940b8ee8933f17df1a49b5b19}{Announcement\+Details\+Page}} (\{super.\+key, required this.\+announcement\})
+\item 
+void \mbox{\hyperlink{class_consumer_widget_a910f432086ee0ee2c3cd1047edd0ca3d}{\+\_\+launch\+URL}} (Uri url) async
+\item 
+override Widget \mbox{\hyperlink{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}{build}} (Build\+Context context, Widget\+Ref ref)
+\item 
+const \mbox{\hyperlink{class_consumer_widget_a25dcd6b2987587b9b72240de24de90df}{Settings\+Page}} (\{super.\+key, required this.\+student\})
+\begin{DoxyCompactList}\small\item\em Konstruktor widgetu Settings\+Page. \end{DoxyCompactList}\item 
+Widget \mbox{\hyperlink{class_consumer_widget_ab2dea615741504e966506f5a9fdd2c5f}{\+\_\+build\+Profile\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Buduje widget wyświetlający zdjęcie profilowe. \end{DoxyCompactList}\item 
+override Widget \mbox{\hyperlink{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}{build}} (Build\+Context context, Widget\+Ref ref)
+\item 
+\mbox{\hyperlink{class_consumer_widget_ab30736292047e0478188b5815731954e}{Grades\+Page}} (\{super.\+key\})
+\begin{DoxyCompactList}\small\item\em Konstruktor widgetu Grades\+Page. \end{DoxyCompactList}\item 
+override Widget \mbox{\hyperlink{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}{build}} (Build\+Context context, Widget\+Ref ref)
+\item 
+const \mbox{\hyperlink{class_consumer_widget_a36d1d8d59346fbd2fd589a7be1f9d9ad}{Subject\+Details\+Page}} (\{super.\+key, required this.\+subject\})
+\begin{DoxyCompactList}\small\item\em Konstruktor widgetu Subject\+Details\+Page. \end{DoxyCompactList}\item 
+override Widget \mbox{\hyperlink{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}{build}} (Build\+Context context, Widget\+Ref ref)
+\item 
+Widget \mbox{\hyperlink{class_consumer_widget_ac2058e319c153591483a0498b43bab41}{\+\_\+build\+Grades\+Tab}} (bool is\+Dark\+Mode)
+\item 
+Widget \mbox{\hyperlink{class_consumer_widget_a0e6e4b689542d0949724b9c3cf4d5296}{\+\_\+build\+Exams\+Tab}} (bool is\+Dark\+Mode)
+\item 
+Color \mbox{\hyperlink{class_consumer_widget_a39d255fa33ad431e371568dcc108be20}{\+\_\+get\+Grade\+Color}} (double grade)
+\begin{DoxyCompactList}\small\item\em Pobiera kolor oceny na podstawie jej wartości. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Announcement \mbox{\hyperlink{class_consumer_widget_a3474f849da5f718daabe13e4d1ba4ed2}{announcement}}
+\item 
+final Student \mbox{\hyperlink{class_consumer_widget_a470b4ff275941fb6b9fc391512f34b9b}{student}}
+\item 
+final List$<$ \mbox{\hyperlink{class_subject}{Subject}} $>$ \mbox{\hyperlink{class_consumer_widget_a511d22f8300d943e66f0fa5e1a596a30}{subjects}}
+\item 
+final \mbox{\hyperlink{class_subject}{Subject}} \mbox{\hyperlink{class_consumer_widget_a509c6586303d69e30898053e1d485821}{subject}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_consumer_widget_a0e6e4b689542d0949724b9c3cf4d5296}\index{ConsumerWidget@{ConsumerWidget}!\_buildExamsTab@{\_buildExamsTab}}
+\index{\_buildExamsTab@{\_buildExamsTab}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{\_buildExamsTab()}{\_buildExamsTab()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a0e6e4b689542d0949724b9c3cf4d5296} 
+Widget Consumer\+Widget\+::\+\_\+build\+Exams\+Tab (\begin{DoxyParamCaption}\item[{bool}]{is\+Dark\+Mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_ac2058e319c153591483a0498b43bab41}\index{ConsumerWidget@{ConsumerWidget}!\_buildGradesTab@{\_buildGradesTab}}
+\index{\_buildGradesTab@{\_buildGradesTab}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{\_buildGradesTab()}{\_buildGradesTab()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_ac2058e319c153591483a0498b43bab41} 
+Widget Consumer\+Widget\+::\+\_\+build\+Grades\+Tab (\begin{DoxyParamCaption}\item[{bool}]{is\+Dark\+Mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_ab2dea615741504e966506f5a9fdd2c5f}\index{ConsumerWidget@{ConsumerWidget}!\_buildProfileImage@{\_buildProfileImage}}
+\index{\_buildProfileImage@{\_buildProfileImage}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{\_buildProfileImage()}{\_buildProfileImage()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_ab2dea615741504e966506f5a9fdd2c5f} 
+Widget Consumer\+Widget\+::\+\_\+build\+Profile\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Buduje widget wyświetlający zdjęcie profilowe. 
+
+\begin{DoxyReturn}{Returns}
+Widget wyświetlający zdjęcie profilowe. 
+\end{DoxyReturn}
+\Hypertarget{class_consumer_widget_a39d255fa33ad431e371568dcc108be20}\index{ConsumerWidget@{ConsumerWidget}!\_getGradeColor@{\_getGradeColor}}
+\index{\_getGradeColor@{\_getGradeColor}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{\_getGradeColor()}{\_getGradeColor()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a39d255fa33ad431e371568dcc108be20} 
+Color Consumer\+Widget\+::\+\_\+get\+Grade\+Color (\begin{DoxyParamCaption}\item[{double}]{grade}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Pobiera kolor oceny na podstawie jej wartości. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grade} & Wartość oceny. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Kolor odpowiadający ocenie. 
+\end{DoxyReturn}
+\Hypertarget{class_consumer_widget_a910f432086ee0ee2c3cd1047edd0ca3d}\index{ConsumerWidget@{ConsumerWidget}!\_launchURL@{\_launchURL}}
+\index{\_launchURL@{\_launchURL}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{\_launchURL()}{\_launchURL()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a910f432086ee0ee2c3cd1047edd0ca3d} 
+void Consumer\+Widget\+::\+\_\+launch\+URL (\begin{DoxyParamCaption}\item[{Uri}]{url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_aada7f87940b8ee8933f17df1a49b5b19}\index{ConsumerWidget@{ConsumerWidget}!AnnouncementDetailsPage@{AnnouncementDetailsPage}}
+\index{AnnouncementDetailsPage@{AnnouncementDetailsPage}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{AnnouncementDetailsPage()}{AnnouncementDetailsPage()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_aada7f87940b8ee8933f17df1a49b5b19} 
+const Consumer\+Widget\+::\+Announcement\+Details\+Page (\begin{DoxyParamCaption}\item[{\{super.\+key, required this.\+announcement\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}\index{ConsumerWidget@{ConsumerWidget}!build@{build}}
+\index{build@{build}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705} 
+override Widget Consumer\+Widget\+::build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{, }\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Buduje widget aplikacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Kontekst budowania widgetu \\
+\hline
+{\em ref} & Referencja do providerów Riverpod \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Widget aplikacji 
+\end{DoxyReturn}
+\Hypertarget{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}\index{ConsumerWidget@{ConsumerWidget}!build@{build}}
+\index{build@{build}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705} 
+override Widget Consumer\+Widget\+::build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{, }\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}\index{ConsumerWidget@{ConsumerWidget}!build@{build}}
+\index{build@{build}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705} 
+override Widget Consumer\+Widget\+::build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{, }\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}\index{ConsumerWidget@{ConsumerWidget}!build@{build}}
+\index{build@{build}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705} 
+override Widget Consumer\+Widget\+::build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{, }\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705}\index{ConsumerWidget@{ConsumerWidget}!build@{build}}
+\index{build@{build}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a0e5d4d9e11ca7d02ef17c46a5a92e705} 
+override Widget Consumer\+Widget\+::build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{, }\item[{Widget\+Ref}]{ref}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_ab30736292047e0478188b5815731954e}\index{ConsumerWidget@{ConsumerWidget}!GradesPage@{GradesPage}}
+\index{GradesPage@{GradesPage}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{GradesPage()}{GradesPage()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_ab30736292047e0478188b5815731954e} 
+Consumer\+Widget\+::\+Grades\+Page (\begin{DoxyParamCaption}\item[{\{super.\+key\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Konstruktor widgetu Grades\+Page. 
+
+\Hypertarget{class_consumer_widget_a77476de6ec05177fdc393e27f3e4ac3f}\index{ConsumerWidget@{ConsumerWidget}!MyApp@{MyApp}}
+\index{MyApp@{MyApp}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{MyApp()}{MyApp()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a77476de6ec05177fdc393e27f3e4ac3f} 
+const Consumer\+Widget\+::\+My\+App (\begin{DoxyParamCaption}\item[{\{super.\+key\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a25dcd6b2987587b9b72240de24de90df}\index{ConsumerWidget@{ConsumerWidget}!SettingsPage@{SettingsPage}}
+\index{SettingsPage@{SettingsPage}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{SettingsPage()}{SettingsPage()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a25dcd6b2987587b9b72240de24de90df} 
+const Consumer\+Widget\+::\+Settings\+Page (\begin{DoxyParamCaption}\item[{\{super.\+key, required this.\+student\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Konstruktor widgetu Settings\+Page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & Obiekt studenta zawierający dane do wyświetlenia. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_consumer_widget_a36d1d8d59346fbd2fd589a7be1f9d9ad}\index{ConsumerWidget@{ConsumerWidget}!SubjectDetailsPage@{SubjectDetailsPage}}
+\index{SubjectDetailsPage@{SubjectDetailsPage}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{SubjectDetailsPage()}{SubjectDetailsPage()}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a36d1d8d59346fbd2fd589a7be1f9d9ad} 
+const Consumer\+Widget\+::\+Subject\+Details\+Page (\begin{DoxyParamCaption}\item[{\{super.\+key, required this.\+subject\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Konstruktor widgetu Subject\+Details\+Page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subject} & Obiekt przedmiotu zawierający dane do wyświetlenia. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_consumer_widget_a3474f849da5f718daabe13e4d1ba4ed2}\index{ConsumerWidget@{ConsumerWidget}!announcement@{announcement}}
+\index{announcement@{announcement}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{announcement}{announcement}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a3474f849da5f718daabe13e4d1ba4ed2} 
+final Announcement Consumer\+Widget\+::announcement\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a470b4ff275941fb6b9fc391512f34b9b}\index{ConsumerWidget@{ConsumerWidget}!student@{student}}
+\index{student@{student}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{student}{student}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a470b4ff275941fb6b9fc391512f34b9b} 
+final Student Consumer\+Widget\+::student\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a509c6586303d69e30898053e1d485821}\index{ConsumerWidget@{ConsumerWidget}!subject@{subject}}
+\index{subject@{subject}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{subject}{subject}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a509c6586303d69e30898053e1d485821} 
+final \mbox{\hyperlink{class_subject}{Subject}} Consumer\+Widget\+::subject\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_consumer_widget_a511d22f8300d943e66f0fa5e1a596a30}\index{ConsumerWidget@{ConsumerWidget}!subjects@{subjects}}
+\index{subjects@{subjects}!ConsumerWidget@{ConsumerWidget}}
+\doxysubsubsection{\texorpdfstring{subjects}{subjects}}
+{\footnotesize\ttfamily \label{class_consumer_widget_a511d22f8300d943e66f0fa5e1a596a30} 
+final List$<$\mbox{\hyperlink{class_subject}{Subject}}$>$ Consumer\+Widget\+::subjects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\mbox{\hyperlink{main_8dart}{main.\+dart}}\item 
+lib/screens/announcements/\mbox{\hyperlink{announcement__details__page_8dart}{announcement\+\_\+details\+\_\+page.\+dart}}\item 
+lib/screens/settings/\mbox{\hyperlink{settings__page_8dart}{settings\+\_\+page.\+dart}}\item 
+lib/screens/subjects/\mbox{\hyperlink{subject__page_8dart}{subject\+\_\+page.\+dart}}\end{DoxyCompactItemize}

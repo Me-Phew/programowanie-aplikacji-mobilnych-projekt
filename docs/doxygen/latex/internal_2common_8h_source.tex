@@ -1,0 +1,134 @@
+\doxysection{common.\+h}
+\hypertarget{internal_2common_8h_source}{}\label{internal_2common_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/common.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/common.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_COMMON\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_COMMON\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ This\ file\ contains\ definitions\ that\ configure\ the\ SDK.}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Include\ a\ STL\ header\ file,\ othewise\ \_STLPORT\_VERSION\ won't\ be\ set.}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Move\ operators\ use\ rvalue\ references,\ which\ are\ a\ C++11\ extension.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Also,\ Visual\ Studio\ 2010\ and\ later\ actually\ support\ move\ operators\ despite}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ reporting\ \_\_cplusplus\ to\ be\ 199711L,\ so\ explicitly\ check\ for\ that.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Also,\ stlport\ doesn't\ implement\ std::move().}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#if\ (\_\_cplusplus\ >=\ 201103L\ ||\ \_MSC\_VER\ >=\ 1600)\ \&\&\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ FIREBASE\_USE\_MOVE\_OPERATORS}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ stlport\ doesn't\ implement\ std::function.}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ FIREBASE\_USE\_STD\_FUNCTION}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ stlport\ doesn't\ implement\ std::aligned\_storage.}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#if\ defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}\ <std::\textcolor{keywordtype}{size\_t}\ Length,\ std::\textcolor{keywordtype}{size\_t}\ Alignment>}
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }AlignedStorage\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{struct\ }type\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{alignas}(Alignment)\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ data[Length];}
+\DoxyCodeLine{00047\ \ \ \};}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ FIREBASE\_ALIGNED\_STORAGE\ ::firebase::AlignedStorage}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ FIREBASE\_ALIGNED\_STORAGE\ std::aligned\_storage}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Visual\ Studio\ 2013\ does\ not\ support\ snprintf,\ so\ use\ streams\ instead.}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#if\ !(defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ <=\ 1800)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ FIREBASE\_USE\_SNPRINTF}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !(defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ <=\ 1800)}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#if\ !(defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ <=\ 1800)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ FIREBASE\_USE\_EXPLICIT\_DEFAULT\_METHODS}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !(defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ <=\ 1800)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#if\ !defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ Prevent\ GCC\ \&\ Clang\ from\ stripping\ a\ symbol.}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_KEEP\_SYMBOL\ \_\_attribute\_\_((used))}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ MSVC\ needs\ to\ reference\ a\ symbol\ directly\ in\ the\ application\ for\ it\ to\ be}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ kept\ in\ the\ final\ executable.\ \ In\ this\ case,\ the\ end\ user's\ application}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ must\ include\ the\ appropriate\ Firebase\ header\ (e.g\ firebase/analytics.h)\ to}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ initialize\ the\ module.}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_KEEP\_SYMBOL}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ Module\ initializer's\ name.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ This\ can\ be\ used\ to\ explicitly\ include\ a\ module\ initializer\ in\ an\ application}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ to\ prevent\ the\ object\ from\ being\ stripped\ by\ the\ linker.\ \ The\ symbol\ is}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ located\ in\ the\ "{}firebase"{}\ namespace\ so\ can\ be\ referenced\ using:}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ ::firebase::FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE\_NAME(name)}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ Where\ "{}name"{}\ is\ the\ module\ name,\ for\ example\ "{}analytics"{}.}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_INITIALIZER\_NAME(module\_name)\ \(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ g\_\#\#module\_name\#\#\_initializer}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ Declare\ a\ module\ initializer\ variable\ as\ a\ global.}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_INITIALIZER\_VARIABLE(module\_name)\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ namespace\ firebase\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ extern\ void*\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_INITIALIZER\_NAME(module\_name);\ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \}\ }\textcolor{comment}{/*\ namespace\ firebase\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ Generates\ code\ which\ references\ a\ module\ initializer.}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ For\ example,\ FIREBASE\_APP\_REGISTER\_REFERENCE(analytics)\ will\ register\ the}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ module\ initializer\ for\ the\ analytics\ module.}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE(module\_name)\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ FIREBASE\_APP\_REGISTER\_CALLBACKS\_INITIALIZER\_VARIABLE(module\_name)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ namespace\ firebase\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ static\ void*\ module\_name\#\#\_ref\ FIREBASE\_APP\_KEEP\_SYMBOL\ =\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \&FIREBASE\_APP\_REGISTER\_CALLBACKS\_INITIALIZER\_NAME(module\_name);\ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \}\ \ \ \ \ }\textcolor{comment}{/*\ namespace\ firebase\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#if\ defined(SWIG)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ SWIG\ needs\ to\ ignore\ the\ FIREBASE\_DEPRECATED\ tag.}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ FIREBASE\_DEPRECATED}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(SWIG)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_DEPRECATED}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ FIREBASE\_DEPRECATED\ \_\_attribute\_\_((deprecated))}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#elif\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ FIREBASE\_DEPRECATED\ \_\_declspec(deprecated)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ We\ don't\ know\ how\ to\ mark\ functions\ as\ "{}deprecated"{}\ with\ this\ compiler.}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ FIREBASE\_DEPRECATED}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_DEPRECATED}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ Calculates\ the\ number\ of\ elements\ in\ an\ array.}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ FIREBASE\_ARRAYSIZE(x)\ (sizeof(x)\ /\ sizeof((x)[0]))}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ Guaranteed\ compile\ time\ strlen.}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ FIREBASE\_STRLEN(s)\ (FIREBASE\_ARRAYSIZE(s)\ -\/\ sizeof((s)[0]))}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_COMMON\_H\_}}
+
+\end{DoxyCode}

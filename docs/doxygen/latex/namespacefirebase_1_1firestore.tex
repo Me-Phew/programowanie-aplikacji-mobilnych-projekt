@@ -1,0 +1,542 @@
+\doxysection{firebase\+::firestore Namespace Reference}
+\hypertarget{namespacefirebase_1_1firestore}{}\label{namespacefirebase_1_1firestore}\index{firebase::firestore@{firebase::firestore}}
+
+
+Cloud \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} API.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}}
+\begin{DoxyCompactList}\small\item\em A query that calculates aggregations over an underlying query. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}}
+\begin{DoxyCompactList}\small\item\em The results of executing an \doxylink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} can be used for adding documents, getting document references, and querying for documents (using the methods inherited from {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}}). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} represents a change to the documents matching a query. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} refers to a document location in a \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} database and can be used to write, read, or listen to the location. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} contains data read from a document in your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} database. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_event_listener}{Event\+Listener}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} refers to a field in a document. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}
+\begin{DoxyCompactList}\small\item\em A field value represents variant datatypes as stored by \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_filter}{Filter} represents a restriction on one or more field values and can be used to refine the results of a \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}
+\begin{DoxyCompactList}\small\item\em Entry point for the Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} C++ SDK. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} which you can read or listen to. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} contains zero or more \doxylink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot} objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}
+\begin{DoxyCompactList}\small\item\em An options object that configures the behavior of Set() calls. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfirebase_1_1firestore_1_1_transaction}{Transaction} provides methods to read and write data within a transaction. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}}
+\begin{DoxyCompactList}\small\item\em A write batch is used to perform multiple writes as a single atomic unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}\label{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96} 
+using {\bfseries Map\+Field\+Value} = std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}$>$
+\begin{DoxyCompactList}\small\item\em A map of {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}s indexed by stringified field paths. \end{DoxyCompactList}\item 
+\Hypertarget{namespacefirebase_1_1firestore_a9a4f49a16c341d414106e290e7bae6f9}\label{namespacefirebase_1_1firestore_a9a4f49a16c341d414106e290e7bae6f9} 
+using {\bfseries Map\+Field\+Path\+Value} = std\+::unordered\+\_\+map$<$\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}$>$
+\begin{DoxyCompactList}\small\item\em A map of {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}s indexed by field paths. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178}{Aggregate\+Source}} \{ \mbox{\hyperlink{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178a715c76514601e8aea81451c7edb84c8e}{k\+Server}}
+ \}
+\begin{DoxyCompactList}\small\item\em The sources from which Aggregate\+Query\+::\+Get can retrieve its results. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4543bbd1182c0fba4a8a537de76b3a67}{k\+Error\+Ok}} = 0
+, {\bfseries k\+Error\+None} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a034361bf002510c82e7dd3c307bebaf3}{k\+Error\+Cancelled}} = 1
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a26ab45bc766029a40d9253a66800fcc1}{k\+Error\+Unknown}} = 2
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5ab577ce97f7e0006d388ab0357516fdf0}{k\+Error\+Invalid\+Argument}} = 3
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a482ff646b328e1a44e594b8cb4ab7e06}{k\+Error\+Deadline\+Exceeded}} = 4
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a74ea89cf7525e272cb0be0ba61bfde39}{k\+Error\+Not\+Found}} = 5
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5afdf9a46c9e27c84348dcd1cf6b8b94d4}{k\+Error\+Already\+Exists}} = 6
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a5e4b23a79dba3cf4110f82d21fdec5d8}{k\+Error\+Permission\+Denied}} = 7
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a2183f1693ceedd4f8e44251833add2c1}{k\+Error\+Resource\+Exhausted}} = 8
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4f8313a97899d38f9db35ca0e4203db0}{k\+Error\+Failed\+Precondition}} = 9
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a50d563e40440520cfbf83506546c86c0}{k\+Error\+Aborted}} = 10
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a281943ee475cc624ca9193d0dee6d1aa}{k\+Error\+Out\+Of\+Range}} = 11
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5af5fa5818a3d5f8ba53d2b82622380b3f}{k\+Error\+Unimplemented}} = 12
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a95c398020e27b05cf08d62558493a800}{k\+Error\+Internal}} = 13
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5abc1f998b6a59756d3df8e3842af21258}{k\+Error\+Unavailable}} = 14
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5af495b2c284a9382e11ebd9f038f132bc}{k\+Error\+Data\+Loss}} = 15
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5ae655076d190802b2721c5661efb6e3e5}{k\+Error\+Unauthenticated}} = 16
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{Metadata\+Changes}} \{ \mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54af8c2c92c856283e1c9ef91e8380edf40}{k\+Exclude}}
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54a279a35d9e230b4c8a0796fdf6f0d5360}{k\+Include}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66}{Source}} \{ \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a6867faeaa475fda467e48267db2bb8a8}{k\+Default}}
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a715c76514601e8aea81451c7edb84c8e}{k\+Server}}
+, \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a59d994f4e8fe1ee6a49f6c9b59047c98}{k\+Cache}}
+ \}
+\begin{DoxyCompactList}\small\item\em Configures the behavior of Document\+Reference\+::\+Get() and Query\+::\+Get(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a228fd9e92b3b3178273836f434cce075}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_ae7a7fe3e6616052e01d6746338e00df0}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a1eee30c519215303cfdb01126cb17a0c}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_aa629cb9b60b8b03c4b916c935bcbcae2}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_ab25486cce81630931e952ae5bc40e9d9}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a15fa752515111aa2a9a29c82bd1922a9}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a73c40cdf260cfdfcf0c1f3c075d1b026}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a9b01ba8f15bf19f3319b3208be0fd572}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_afa1c2acad04fa5ebe80da6cbd4467550}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_aae00d79fa0048868ce4b66ccc60357fa}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a2655fceec804ae456b5190c3a2526f9c}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a0bd8352feb52c7646950f5aac3207f81}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_ad487599682f2014c55bcc56e653a69a9}{operator$<$}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_ac3555aaefe50fe6d17f405922891d1df}{operator$>$}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_aa77bdd2b973a1718695c0a82f67f1236}{operator$>$=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a250c820bc936f575b2a89cd37cb5857a}{operator$<$=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_ae5cecb3830cc5ecfc69bbd8bfc5b0d80}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_adeb0c27e6ac97810164ba17bdb5b79b4}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a50c0ad08080ffe0535c61916f5ee5801}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a909337acaab4c4e8fd0d2783ab846352}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a265a576ba23114477884a2f666486220}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a6cbf7661e269eeac27826fe7887374d5}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_af6bd40502ebfe4e66d6eb3c8a980ee0e}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a7abdfaca6bbb9990453017db618ca88f}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a7ee6b14aac754eeb12645900a3b605d9}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_af5a965793fb4702f079f3fb3db59761a}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a3e0f0536f3ff3e5ea16da4c5590e1ebd}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a0efdc13ad7b4226f380636795bd0d9df}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_aa09d60ac5faae6ec52787c3353861433}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a9ec93c95612d98ce5e640773960e1b1e}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&rhs)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_a5e9ee27d6d974554cf396c62772ed5d3}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&)
+\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1firestore_aa02a5844191baca0752697863a4a5e4a}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&rhs)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*}const \mbox{\hyperlink{namespacefirebase_1_1firestore_a68506ca7a5b04688312326b190288a3f}{k\+Firestore\+Version\+String}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cloud \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} API. 
+
+Cloud \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} is a flexible, scalable database for mobile, web, and server development from Firebase and Google Cloud Platform. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178}\index{firebase::firestore@{firebase::firestore}!AggregateSource@{AggregateSource}}
+\index{AggregateSource@{AggregateSource}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{AggregateSource}{AggregateSource}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178} 
+enum class \mbox{\hyperlink{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178}{firebase\+::firestore\+::\+Aggregate\+Source}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The sources from which \doxylink{classfirebase_1_1firestore_1_1_aggregate_query_af4b11a0416d9322954daa645e121c7d0}{Aggregate\+Query\+::\+Get} can retrieve its results. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kServer@{kServer}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kServer@{kServer}}}\Hypertarget{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178a715c76514601e8aea81451c7edb84c8e}\label{namespacefirebase_1_1firestore_a1d6797da13a16683507ee70cf1702178} 
+k\+Server&Perform the aggregation on the server and download the result.
+
+The result received from the server is presented, unaltered, without considering any local state. That is, documents in the local cache are not taken into consideration, neither are local modifications not yet synchronized with the server. Previously-\/downloaded results, if any, are not used. Every request using this source necessarily involves a round trip to the server.
+
+The \doxylink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query} will fail if the server cannot be reached, such as if the client is offline. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}\index{firebase::firestore@{firebase::firestore}!Error@{Error}}
+\index{Error@{Error}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+enum \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{firebase\+::firestore\+::\+Error}}}
+
+Error codes used by Cloud \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}.
+
+The codes are in sync across \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} SDKs on various platforms. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorOk@{kErrorOk}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorOk@{kErrorOk}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4543bbd1182c0fba4a8a537de76b3a67}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Ok&The operation completed successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorCancelled@{kErrorCancelled}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorCancelled@{kErrorCancelled}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a034361bf002510c82e7dd3c307bebaf3}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Cancelled&The operation was cancelled (typically by the caller). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnknown@{kErrorUnknown}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorUnknown@{kErrorUnknown}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a26ab45bc766029a40d9253a66800fcc1}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Unknown&Unknown error or an error from a different error domain. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorInvalidArgument@{kErrorInvalidArgument}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorInvalidArgument@{kErrorInvalidArgument}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5ab577ce97f7e0006d388ab0357516fdf0}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Invalid\+Argument&Client specified an invalid argument. Note that this differs from Failed\+Precondition. Invalid\+Argument indicates arguments that are problematic regardless of the state of the system (e.\+g., an invalid field name). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorDeadlineExceeded@{kErrorDeadlineExceeded}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorDeadlineExceeded@{kErrorDeadlineExceeded}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a482ff646b328e1a44e594b8cb4ab7e06}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Deadline\+Exceeded&Deadline expired before operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNotFound@{kErrorNotFound}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorNotFound@{kErrorNotFound}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a74ea89cf7525e272cb0be0ba61bfde39}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Not\+Found&Some requested document was not found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorAlreadyExists@{kErrorAlreadyExists}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorAlreadyExists@{kErrorAlreadyExists}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5afdf9a46c9e27c84348dcd1cf6b8b94d4}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Already\+Exists&Some document that we attempted to create already exists. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorPermissionDenied@{kErrorPermissionDenied}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorPermissionDenied@{kErrorPermissionDenied}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a5e4b23a79dba3cf4110f82d21fdec5d8}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Permission\+Denied&The caller does not have permission to execute the specified operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorResourceExhausted@{kErrorResourceExhausted}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorResourceExhausted@{kErrorResourceExhausted}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a2183f1693ceedd4f8e44251833add2c1}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Resource\+Exhausted&Some resource has been exhausted, perhaps a per-\/user quota, or perhaps the entire file system is out of space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorFailedPrecondition@{kErrorFailedPrecondition}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorFailedPrecondition@{kErrorFailedPrecondition}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4f8313a97899d38f9db35ca0e4203db0}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Failed\+Precondition&Operation was rejected because the system is not in a state required for the operation\textquotesingle{}s execution. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorAborted@{kErrorAborted}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorAborted@{kErrorAborted}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a50d563e40440520cfbf83506546c86c0}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Aborted&The operation was aborted, typically due to a concurrency issue like transaction aborts, etc. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorOutOfRange@{kErrorOutOfRange}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorOutOfRange@{kErrorOutOfRange}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a281943ee475cc624ca9193d0dee6d1aa}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Out\+Of\+Range&Operation was attempted past the valid range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnimplemented@{kErrorUnimplemented}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorUnimplemented@{kErrorUnimplemented}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5af5fa5818a3d5f8ba53d2b82622380b3f}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Unimplemented&Operation is not implemented or not supported/enabled. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorInternal@{kErrorInternal}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorInternal@{kErrorInternal}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a95c398020e27b05cf08d62558493a800}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Internal&Internal errors. Means some invariants expected by underlying system has been broken. If you see one of these errors, something is very broken. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnavailable@{kErrorUnavailable}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorUnavailable@{kErrorUnavailable}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5abc1f998b6a59756d3df8e3842af21258}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Unavailable&The service is currently unavailable. This is a most likely a transient condition and may be corrected by retrying with a backoff. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorDataLoss@{kErrorDataLoss}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorDataLoss@{kErrorDataLoss}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5af495b2c284a9382e11ebd9f038f132bc}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Data\+Loss&Unrecoverable data loss or corruption. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnauthenticated@{kErrorUnauthenticated}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kErrorUnauthenticated@{kErrorUnauthenticated}}}\Hypertarget{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5ae655076d190802b2721c5661efb6e3e5}\label{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5} 
+k\+Error\+Unauthenticated&The request does not have valid authentication credentials for the operation. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}\index{firebase::firestore@{firebase::firestore}!MetadataChanges@{MetadataChanges}}
+\index{MetadataChanges@{MetadataChanges}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{MetadataChanges}{MetadataChanges}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54} 
+enum class \mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{firebase\+::firestore\+::\+Metadata\+Changes}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Indicates whether metadata-\/only changes (that is, \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a5210e6e363d2814cecdf262cc7d85462}{Document\+Snapshot\+::metadata()} or \doxylink{classfirebase_1_1firestore_1_1_query_snapshot_a21dd9f2bf5ea092d668962e86091d4e7}{Query\+Snapshot\+::metadata()} changed) should trigger snapshot events. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kExclude@{kExclude}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kExclude@{kExclude}}}\Hypertarget{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54af8c2c92c856283e1c9ef91e8380edf40}\label{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54} 
+k\+Exclude&Snapshot events will not be triggered by metadata-\/only changes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kInclude@{kInclude}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kInclude@{kInclude}}}\Hypertarget{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54a279a35d9e230b4c8a0796fdf6f0d5360}\label{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54} 
+k\+Include&Snapshot events will be triggered by any changes, including metadata-\/only changes. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66}\index{firebase::firestore@{firebase::firestore}!Source@{Source}}
+\index{Source@{Source}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{Source}{Source}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66} 
+enum class \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66}{firebase\+::firestore\+::\+Source}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Configures the behavior of \doxylink{classfirebase_1_1firestore_1_1_document_reference_a1b665ad5f842a184222c14fde179a252}{Document\+Reference\+::\+Get()} and \doxylink{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}{Query\+::\+Get()}. 
+
+By providing a Source value, these methods can be configured to fetch results only from the server, only from the local cache, or attempt to fetch results from the server and fall back to the cache (which is the default). \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDefault@{kDefault}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kDefault@{kDefault}}}\Hypertarget{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a6867faeaa475fda467e48267db2bb8a8}\label{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66} 
+k\+Default&Causes \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} to try to retrieve an up-\/to-\/date (server-\/retrieved) snapshot, but fall back to returning cached data if the server can\textquotesingle{}t be reached. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kServer@{kServer}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kServer@{kServer}}}\Hypertarget{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a715c76514601e8aea81451c7edb84c8e}\label{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66} 
+k\+Server&Causes \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} to avoid the cache, generating an error if the server cannot be reached. Note that the cache will still be updated if the server request succeeds. Also note that latency-\/compensation still takes effect, so any pending write operations will be visible in the returned data (merged into the server-\/provided data). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kCache@{kCache}!firebase::firestore@{firebase::firestore}}\index{firebase::firestore@{firebase::firestore}!kCache@{kCache}}}\Hypertarget{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a59d994f4e8fe1ee6a49f6c9b59047c98}\label{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66} 
+k\+Cache&Causes \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} to immediately return a value from the cache, ignoring the server completely (implying that the returned value may be stale with respect to the value on the server). If there is no data in the cache to satisfy the \doxylink{classfirebase_1_1firestore_1_1_document_reference_a1b665ad5f842a184222c14fde179a252}{Document\+Reference\+::\+Get()} call will return an error and \doxylink{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}{Query\+::\+Get()} will return an empty \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} with no documents. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_ae7a7fe3e6616052e01d6746338e00df0}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_ae7a7fe3e6616052e01d6746338e00df0} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_aa629cb9b60b8b03c4b916c935bcbcae2}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_aa629cb9b60b8b03c4b916c935bcbcae2} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a15fa752515111aa2a9a29c82bd1922a9}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a15fa752515111aa2a9a29c82bd1922a9} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a9b01ba8f15bf19f3319b3208be0fd572}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a9b01ba8f15bf19f3319b3208be0fd572} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_aae00d79fa0048868ce4b66ccc60357fa}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_aae00d79fa0048868ce4b66ccc60357fa} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a0bd8352feb52c7646950f5aac3207f81}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a0bd8352feb52c7646950f5aac3207f81} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_ae5cecb3830cc5ecfc69bbd8bfc5b0d80}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_ae5cecb3830cc5ecfc69bbd8bfc5b0d80} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a909337acaab4c4e8fd0d2783ab846352}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a909337acaab4c4e8fd0d2783ab846352} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress} != comparison operator. \Hypertarget{namespacefirebase_1_1firestore_a6cbf7661e269eeac27826fe7887374d5}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a6cbf7661e269eeac27826fe7887374d5} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a7abdfaca6bbb9990453017db618ca88f}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a7abdfaca6bbb9990453017db618ca88f} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_af5a965793fb4702f079f3fb3db59761a}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_af5a965793fb4702f079f3fb3db59761a} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a0efdc13ad7b4226f380636795bd0d9df}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a0efdc13ad7b4226f380636795bd0d9df} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_a9ec93c95612d98ce5e640773960e1b1e}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a9ec93c95612d98ce5e640773960e1b1e} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for inequality. \Hypertarget{namespacefirebase_1_1firestore_aa02a5844191baca0752697863a4a5e4a}\index{firebase::firestore@{firebase::firestore}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_aa02a5844191baca0752697863a4a5e4a} 
+bool firebase\+::firestore\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares two {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} objects for inequality. \Hypertarget{namespacefirebase_1_1firestore_ad487599682f2014c55bcc56e653a69a9}\index{firebase::firestore@{firebase::firestore}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_ad487599682f2014c55bcc56e653a69a9} 
+bool firebase\+::firestore\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks whether {\ttfamily lhs} and {\ttfamily rhs} are in ascending order. \Hypertarget{namespacefirebase_1_1firestore_a250c820bc936f575b2a89cd37cb5857a}\index{firebase::firestore@{firebase::firestore}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a250c820bc936f575b2a89cd37cb5857a} 
+bool firebase\+::firestore\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether {\ttfamily lhs} and {\ttfamily rhs} are in non-\/descending order. \Hypertarget{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a228fd9e92b3b3178273836f434cce075}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a228fd9e92b3b3178273836f434cce075} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query_snapshot}{Aggregate\+Query\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a1eee30c519215303cfdb01126cb17a0c}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [3/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a1eee30c519215303cfdb01126cb17a0c} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_ab25486cce81630931e952ae5bc40e9d9}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [4/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_ab25486cce81630931e952ae5bc40e9d9} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a73c40cdf260cfdfcf0c1f3c075d1b026}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [5/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a73c40cdf260cfdfcf0c1f3c075d1b026} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_afa1c2acad04fa5ebe80da6cbd4467550}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [6/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_afa1c2acad04fa5ebe80da6cbd4467550} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a2655fceec804ae456b5190c3a2526f9c}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [7/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a2655fceec804ae456b5190c3a2526f9c} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_adeb0c27e6ac97810164ba17bdb5b79b4}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [8/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_adeb0c27e6ac97810164ba17bdb5b79b4} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a50c0ad08080ffe0535c61916f5ee5801}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [9/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a50c0ad08080ffe0535c61916f5ee5801} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress} == comparison operator. \Hypertarget{namespacefirebase_1_1firestore_a265a576ba23114477884a2f666486220}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [10/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a265a576ba23114477884a2f666486220} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_af6bd40502ebfe4e66d6eb3c8a980ee0e}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [11/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_af6bd40502ebfe4e66d6eb3c8a980ee0e} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a7ee6b14aac754eeb12645900a3b605d9}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [12/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a7ee6b14aac754eeb12645900a3b605d9} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a3e0f0536f3ff3e5ea16da4c5590e1ebd}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [13/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a3e0f0536f3ff3e5ea16da4c5590e1ebd} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_aa09d60ac5faae6ec52787c3353861433}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [14/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_aa09d60ac5faae6ec52787c3353861433} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. \Hypertarget{namespacefirebase_1_1firestore_a5e9ee27d6d974554cf396c62772ed5d3}\index{firebase::firestore@{firebase::firestore}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [15/15]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a5e9ee27d6d974554cf396c62772ed5d3} 
+bool firebase\+::firestore\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{}{}\end{DoxyParamCaption})}
+
+Compares two {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} objects for equality. \Hypertarget{namespacefirebase_1_1firestore_ac3555aaefe50fe6d17f405922891d1df}\index{firebase::firestore@{firebase::firestore}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_ac3555aaefe50fe6d17f405922891d1df} 
+bool firebase\+::firestore\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether {\ttfamily lhs} and {\ttfamily rhs} are in descending order. \Hypertarget{namespacefirebase_1_1firestore_aa77bdd2b973a1718695c0a82f67f1236}\index{firebase::firestore@{firebase::firestore}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_aa77bdd2b973a1718695c0a82f67f1236} 
+bool firebase\+::firestore\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks whether {\ttfamily lhs} and {\ttfamily rhs} are in non-\/ascending order. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacefirebase_1_1firestore_a68506ca7a5b04688312326b190288a3f}\index{firebase::firestore@{firebase::firestore}!kFirestoreVersionString@{kFirestoreVersionString}}
+\index{kFirestoreVersionString@{kFirestoreVersionString}!firebase::firestore@{firebase::firestore}}
+\doxysubsubsection{\texorpdfstring{kFirestoreVersionString}{kFirestoreVersionString}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1firestore_a68506ca7a5b04688312326b190288a3f} 
+const char\texorpdfstring{$\ast$}{*} const firebase\+::firestore\+::k\+Firestore\+Version\+String\hspace{0.3cm}{\ttfamily [extern]}}
+
+Version string for the Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} SDK. 

@@ -1,0 +1,92 @@
+\doxysection{engine\+\_\+method\+\_\+result.\+h}
+\hypertarget{engine__method__result_8h_source}{}\label{engine__method__result_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/engine\_method\_result.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/engine\_method\_result.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_ENGINE\_METHOD\_RESULT\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_ENGINE\_METHOD\_RESULT\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}binary\_messenger.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}method\_codec.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}method\_result.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Manages\ the\ one-\/time\ sending\ of\ response\ data.\ This\ is\ an\ internal\ helper}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ class\ for\ EngineMethodResult,\ separated\ out\ since\ the\ implementation\ doesn't}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ vary\ based\ on\ the\ template\ type.}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{ReplyManager}}\ \{}
+\DoxyCodeLine{00023\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{ReplyManager}}(BinaryReply\ reply\_handler\_);}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{\string~ReplyManager}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{ReplyManager}}(\mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{ReplyManager}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{ReplyManager}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1internal_1_1_reply_manager}{ReplyManager}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ Sends\ the\ given\ response\ data\ (which\ must\ either\ be\ nullptr,\ which}}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ indicates\ an\ unhandled\ method,\ or\ a\ response\ serialized\ with\ |codec\_|)\ to}}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ the\ engine.}}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ SendResponseData(\textcolor{keyword}{const}\ std::vector<uint8\_t>*\ data);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ BinaryReply\ reply\_handler\_;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ Implemention\ of\ MethodResult\ that\ sends\ a\ response\ to\ the\ Flutter\ engine}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ exactly\ once,\ encoded\ using\ a\ given\ codec.}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_engine_method_result}{EngineMethodResult}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult}}<T>\ \{}
+\DoxyCodeLine{00045\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Creates\ a\ result\ object\ that\ will\ send\ results\ to\ |reply\_handler|,\ encoded}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ using\ |codec|.\ The\ |codec|\ pointer\ must\ remain\ valid\ for\ as\ long\ as\ this}}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ object\ exists.}}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classflutter_1_1_engine_method_result}{EngineMethodResult}}(BinaryReply\ reply\_handler,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec<T>}}*\ codec)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ :\ reply\_manager\_(}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_unique<internal::ReplyManager>(std::move(reply\_handler))),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ codec\_(codec)\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classflutter_1_1_engine_method_result}{\string~EngineMethodResult}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ |flutter::MethodResult|}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ SuccessInternal(\textcolor{keyword}{const}\ T*\ result)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00059\ \ \ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ data\ =}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ codec\_-\/>EncodeSuccessEnvelope(result);}
+\DoxyCodeLine{00061\ \ \ \ \ reply\_manager\_-\/>SendResponseData(data.get());}
+\DoxyCodeLine{00062\ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ |flutter::MethodResult|}}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ ErrorInternal(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ data\ =}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ codec\_-\/>EncodeErrorEnvelope(error\_code,\ error\_message,\ error\_details);}
+\DoxyCodeLine{00070\ \ \ \ \ reply\_manager\_-\/>SendResponseData(data.get());}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ |flutter::MethodResult|}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ NotImplementedInternal()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ reply\_manager\_-\/>SendResponseData(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ std::unique\_ptr<internal::ReplyManager>\ reply\_manager\_;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec<T>}}*\ codec\_;}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_ENGINE\_METHOD\_RESULT\_H\_}}
+
+\end{DoxyCode}

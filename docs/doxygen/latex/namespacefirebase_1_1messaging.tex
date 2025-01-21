@@ -1,0 +1,427 @@
+\doxysection{firebase\+::messaging Namespace Reference}
+\hypertarget{namespacefirebase_1_1messaging}{}\label{namespacefirebase_1_1messaging}\index{firebase::messaging@{firebase::messaging}}
+
+
+Firebase Cloud Messaging API.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1messaging_1_1_android_notification_params}{Android\+Notification\+Params}}
+\begin{DoxyCompactList}\small\item\em Data structure for parameters that are unique to the Android implementation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}
+\begin{DoxyCompactList}\small\item\em Base class used to receive messages from Firebase Cloud Messaging. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}
+\begin{DoxyCompactList}\small\item\em Data structure used to send messages to, and receive messages from, cloud messaging. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options}{Messaging\+Options}}
+\begin{DoxyCompactList}\small\item\em A class to configure the behavior of Firebase Cloud Messaging. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener}{Pollable\+Listener}}
+\begin{DoxyCompactList}\small\item\em A listener that can be polled to consume pending {\ttfamily \doxylink{structfirebase_1_1messaging_1_1_message}{Message}}s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e}{Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea828ab8592fa5452102ef8866b5ac3ef0}{k\+Error\+None}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52eae4b0e2f43c2a5743f8a3d3def9e6d6da}{k\+Error\+Failed\+To\+Register\+For\+Remote\+Notifications}}
+, \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea14e31ee08c3c8f7e36643650af4c6c73}{k\+Error\+Invalid\+Topic\+Name}}
+, \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea5a44aae4e1e159f62bda25142f2b5732}{k\+Error\+No\+Registration\+Token}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea4894bb32277e0fe33507955b22779d07}{k\+Error\+Unknown}}
+ \}
+\begin{DoxyCompactList}\small\item\em Error code returned by Firebase Cloud Messaging C++ functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \mbox{\hyperlink{namespacefirebase_1_1messaging_a5e3bd7545d50f7877ce9f72909718750}{Initialize}} (const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&app, \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Initialize Firebase Cloud Messaging. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \mbox{\hyperlink{namespacefirebase_1_1messaging_ae664cb21b945aafbb02833f08b03d5f6}{Initialize}} (const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&app, \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener, const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options}{Messaging\+Options}} \&options)
+\begin{DoxyCompactList}\small\item\em Initialize Firebase Cloud Messaging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1messaging_adff0925cf22b170e5f1b7c487abff3d6}{Terminate}} ()
+\begin{DoxyCompactList}\small\item\em Terminate Firebase Cloud Messaging. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1messaging_a59e78159e30437b9ee0616a9627d27b5}{Is\+Token\+Registration\+On\+Init\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{namespacefirebase_1_1messaging_a65a14f20d60814d8a280517ffccff6ab}{Set\+Token\+Registration\+On\+Init\+Enabled}} (bool enable)
+\item 
+\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1messaging_a58f63dbc3540e4c17d8103d9b0162e89}{Set\+Listener}} (\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Set the listener for events from the Firebase Cloud Messaging servers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{Request\+Permission}} ()
+\begin{DoxyCompactList}\small\item\em Displays a prompt to the user requesting permission to display notifications. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a942cb16ab4f5edfe636f4a26b8e14fbf}{Request\+Permission\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{Request\+Permission()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a51409652cbe47776f39636316befaa87}{Subscribe}} (const char \texorpdfstring{$\ast$}{*}topic)
+\begin{DoxyCompactList}\small\item\em Subscribe to receive all messages to the specified topic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a01bfb8281efde1b719807ed5ea568fb0}{Subscribe\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe}} (const char \texorpdfstring{$\ast$}{*}topic)
+\begin{DoxyCompactList}\small\item\em Unsubscribe from a topic. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a2237194a938078aae89e919dc6a12bdb}{Unsubscribe\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe()};. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1messaging_a13025fea4aecb5ba5f6a8ae7e1be2cae}{Delivery\+Metrics\+Export\+To\+Big\+Query\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{namespacefirebase_1_1messaging_a9e2061da1c885ecdaac79fb24db33094}{Set\+Delivery\+Metrics\+Export\+To\+Big\+Query}} (bool enable)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a}{Get\+Token}} ()
+\begin{DoxyCompactList}\small\item\em This creates a Firebase Installations ID, if one does not exist, and sends information about the application and the device where it\textquotesingle{}s running to the Firebase backend. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_ab07952755aa8943c8072e317f41aeebe}{Get\+Token\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a}{Get\+Token()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7}{Delete\+Token}} ()
+\begin{DoxyCompactList}\small\item\em Deletes the default token for this Firebase project. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{namespacefirebase_1_1messaging_a61d00e6cd7cd4e7691b6a11036125c4b}{Delete\+Token\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7}{Delete\+Token()};. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase Cloud Messaging API. 
+
+Firebase Cloud Messaging allows you to send data from your server to your users\textquotesingle{} devices, and receive messages from devices on the same connection if you\textquotesingle{}re using a XMPP server.
+
+The FCM service handles all aspects of queueing of messages and delivery to client applications running on target devices. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e}\index{firebase::messaging@{firebase::messaging}!Error@{Error}}
+\index{Error@{Error}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e} 
+enum \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e}{firebase\+::messaging\+::\+Error}}}
+
+
+
+Error code returned by Firebase Cloud Messaging C++ functions. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNone@{kErrorNone}!firebase::messaging@{firebase::messaging}}\index{firebase::messaging@{firebase::messaging}!kErrorNone@{kErrorNone}}}\Hypertarget{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea828ab8592fa5452102ef8866b5ac3ef0}\label{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e} 
+k\+Error\+None&The operation was a success, no error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorFailedToRegisterForRemoteNotifications@{kErrorFailedToRegisterForRemoteNotifications}!firebase::messaging@{firebase::messaging}}\index{firebase::messaging@{firebase::messaging}!kErrorFailedToRegisterForRemoteNotifications@{kErrorFailedToRegisterForRemoteNotifications}}}\Hypertarget{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52eae4b0e2f43c2a5743f8a3d3def9e6d6da}\label{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e} 
+k\+Error\+Failed\+To\+Register\+For\+Remote\+Notifications&Permission to receive notifications was not granted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorInvalidTopicName@{kErrorInvalidTopicName}!firebase::messaging@{firebase::messaging}}\index{firebase::messaging@{firebase::messaging}!kErrorInvalidTopicName@{kErrorInvalidTopicName}}}\Hypertarget{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea14e31ee08c3c8f7e36643650af4c6c73}\label{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e} 
+k\+Error\+Invalid\+Topic\+Name&Topic name is invalid for subscription/unsubscription. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNoRegistrationToken@{kErrorNoRegistrationToken}!firebase::messaging@{firebase::messaging}}\index{firebase::messaging@{firebase::messaging}!kErrorNoRegistrationToken@{kErrorNoRegistrationToken}}}\Hypertarget{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea5a44aae4e1e159f62bda25142f2b5732}\label{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e} 
+k\+Error\+No\+Registration\+Token&Could not subscribe/unsubscribe because there is no registration token. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnknown@{kErrorUnknown}!firebase::messaging@{firebase::messaging}}\index{firebase::messaging@{firebase::messaging}!kErrorUnknown@{kErrorUnknown}}}\Hypertarget{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea4894bb32277e0fe33507955b22779d07}\label{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e} 
+k\+Error\+Unknown&Unknown error. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7}\index{firebase::messaging@{firebase::messaging}!DeleteToken@{DeleteToken}}
+\index{DeleteToken@{DeleteToken}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{DeleteToken()}{DeleteToken()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Delete\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Deletes the default token for this Firebase project. 
+
+Note that this does not delete the Firebase Installations ID that may have been created when generating the token. See Installations.\+Delete() for deleting that.
+
+\begin{DoxyReturn}{Returns}
+A future that completes when the token is deleted. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a61d00e6cd7cd4e7691b6a11036125c4b}\index{firebase::messaging@{firebase::messaging}!DeleteTokenLastResult@{DeleteTokenLastResult}}
+\index{DeleteTokenLastResult@{DeleteTokenLastResult}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{DeleteTokenLastResult()}{DeleteTokenLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a61d00e6cd7cd4e7691b6a11036125c4b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Delete\+Token\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7}{Delete\+Token()};. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7}{Delete\+Token()}. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a13025fea4aecb5ba5f6a8ae7e1be2cae}\index{firebase::messaging@{firebase::messaging}!DeliveryMetricsExportToBigQueryEnabled@{DeliveryMetricsExportToBigQueryEnabled}}
+\index{DeliveryMetricsExportToBigQueryEnabled@{DeliveryMetricsExportToBigQueryEnabled}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{DeliveryMetricsExportToBigQueryEnabled()}{DeliveryMetricsExportToBigQueryEnabled()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a13025fea4aecb5ba5f6a8ae7e1be2cae} 
+bool firebase\+::messaging\+::\+Delivery\+Metrics\+Export\+To\+Big\+Query\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Determines whether Firebase Cloud Messaging exports message delivery metrics to Big\+Query.
+
+This function is currently only implemented on Android, and returns false with no other behavior on other platforms.
+
+\begin{DoxyReturn}{Returns}
+true if Firebase Cloud Messaging exports message delivery metrics to Big\+Query. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a}\index{firebase::messaging@{firebase::messaging}!GetToken@{GetToken}}
+\index{GetToken@{GetToken}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{GetToken()}{GetToken()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::messaging\+::\+Get\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+This creates a Firebase Installations ID, if one does not exist, and sends information about the application and the device where it\textquotesingle{}s running to the Firebase backend. 
+
+\begin{DoxyReturn}{Returns}
+A future with the token. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_ab07952755aa8943c8072e317f41aeebe}\index{firebase::messaging@{firebase::messaging}!GetTokenLastResult@{GetTokenLastResult}}
+\index{GetTokenLastResult@{GetTokenLastResult}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{GetTokenLastResult()}{GetTokenLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_ab07952755aa8943c8072e317f41aeebe} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::messaging\+::\+Get\+Token\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a}{Get\+Token()};. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a}{Get\+Token()}. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a5e3bd7545d50f7877ce9f72909718750}\index{firebase::messaging@{firebase::messaging}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a5e3bd7545d50f7877ce9f72909718750} 
+\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} firebase\+::messaging\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&}]{app}{, }\item[{\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Initialize Firebase Cloud Messaging. 
+
+After Initialize is called, the implementation may call functions on the \doxylink{classfirebase_1_1messaging_1_1_listener}{Listener} provided at any time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & The Firebase \doxylink{classfirebase_1_1_app}{App} object for this application. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1messaging_1_1_listener}{Listener} object that listens for events from the Firebase Cloud Messaging servers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_ae664cb21b945aafbb02833f08b03d5f6}\index{firebase::messaging@{firebase::messaging}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_ae664cb21b945aafbb02833f08b03d5f6} 
+\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} firebase\+::messaging\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&}]{app}{, }\item[{\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{, }\item[{const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options}{Messaging\+Options}} \&}]{options}{}\end{DoxyParamCaption})}
+
+
+
+Initialize Firebase Cloud Messaging. 
+
+After Initialize is called, the implementation may call functions on the \doxylink{classfirebase_1_1messaging_1_1_listener}{Listener} provided at any time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & The Firebase \doxylink{classfirebase_1_1_app}{App} object for this application. \\
+\hline
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1messaging_1_1_listener}{Listener} object that listens for events from the Firebase Cloud Messaging servers. \\
+\hline
+\mbox{\texttt{ in}}  & {\em options} & A set of options that configure the initialzation behavior of Firebase Cloud Messaging.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a59e78159e30437b9ee0616a9627d27b5}\index{firebase::messaging@{firebase::messaging}!IsTokenRegistrationOnInitEnabled@{IsTokenRegistrationOnInitEnabled}}
+\index{IsTokenRegistrationOnInitEnabled@{IsTokenRegistrationOnInitEnabled}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{IsTokenRegistrationOnInitEnabled()}{IsTokenRegistrationOnInitEnabled()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a59e78159e30437b9ee0616a9627d27b5} 
+bool firebase\+::messaging\+::\+Is\+Token\+Registration\+On\+Init\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Determines if automatic token registration during initalization is enabled.
+
+\begin{DoxyReturn}{Returns}
+true if auto token registration is enabled and false if disabled. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}\index{firebase::messaging@{firebase::messaging}!RequestPermission@{RequestPermission}}
+\index{RequestPermission@{RequestPermission}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{RequestPermission()}{RequestPermission()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Request\+Permission (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays a prompt to the user requesting permission to display notifications. 
+
+The permission prompt only appears on i\+OS and tv\+OS. If the user has already agreed to allow notifications, no prompt is displayed and the returned future is completed immediately.
+
+\begin{DoxyReturn}{Returns}
+A future that completes when the notification prompt has been dismissed. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a942cb16ab4f5edfe636f4a26b8e14fbf}\index{firebase::messaging@{firebase::messaging}!RequestPermissionLastResult@{RequestPermissionLastResult}}
+\index{RequestPermissionLastResult@{RequestPermissionLastResult}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{RequestPermissionLastResult()}{RequestPermissionLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a942cb16ab4f5edfe636f4a26b8e14fbf} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Request\+Permission\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{Request\+Permission()};. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{Request\+Permission()}. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a9e2061da1c885ecdaac79fb24db33094}\index{firebase::messaging@{firebase::messaging}!SetDeliveryMetricsExportToBigQuery@{SetDeliveryMetricsExportToBigQuery}}
+\index{SetDeliveryMetricsExportToBigQuery@{SetDeliveryMetricsExportToBigQuery}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{SetDeliveryMetricsExportToBigQuery()}{SetDeliveryMetricsExportToBigQuery()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a9e2061da1c885ecdaac79fb24db33094} 
+void firebase\+::messaging\+::\+Set\+Delivery\+Metrics\+Export\+To\+Big\+Query (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})}
+
+Enables or disables Firebase Cloud Messaging message delivery metrics export to Big\+Query.
+
+By default, message delivery metrics are not exported to Big\+Query. Use this method to enable or disable the export at runtime. In addition, you can enable the export by adding to your manifest. Note that the run-\/time method call will override the manifest value.
+
+\texorpdfstring{$<$}{<}meta-\/data android\+:name= "{}delivery\+\_\+metrics\+\_\+exported\+\_\+to\+\_\+big\+\_\+query\+\_\+enabled"{} android\+:value="{}true"{}/\texorpdfstring{$>$}{>}
+
+This function is currently only implemented on Android, and has no behavior on other platforms.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable} & Whether Firebase Cloud Messaging should export message delivery metrics to Big\+Query. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1messaging_a58f63dbc3540e4c17d8103d9b0162e89}\index{firebase::messaging@{firebase::messaging}!SetListener@{SetListener}}
+\index{SetListener@{SetListener}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{SetListener()}{SetListener()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a58f63dbc3540e4c17d8103d9b0162e89} 
+\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*} firebase\+::messaging\+::\+Set\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Set the listener for events from the Firebase Cloud Messaging servers. 
+
+A listener must be set for the application to receive messages from the Firebase Cloud Messaging servers. The implementation may call functions on the \doxylink{classfirebase_1_1messaging_1_1_listener}{Listener} provided at any time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1messaging_1_1_listener}{Listener} object that listens for events from the Firebase Cloud Messaging servers.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the previously set listener. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_a65a14f20d60814d8a280517ffccff6ab}\index{firebase::messaging@{firebase::messaging}!SetTokenRegistrationOnInitEnabled@{SetTokenRegistrationOnInitEnabled}}
+\index{SetTokenRegistrationOnInitEnabled@{SetTokenRegistrationOnInitEnabled}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{SetTokenRegistrationOnInitEnabled()}{SetTokenRegistrationOnInitEnabled()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a65a14f20d60814d8a280517ffccff6ab} 
+void firebase\+::messaging\+::\+Set\+Token\+Registration\+On\+Init\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})}
+
+Enable or disable token registration during initialization of Firebase Cloud Messaging.
+
+This token is what identifies the user to Firebase, so disabling this avoids creating any new identity and automatically sending it to Firebase, unless consent has been granted.
+
+If this setting is enabled, it triggers the token registration refresh immediately. This setting is persisted across app restarts and overrides the setting "{}firebase\+\_\+messaging\+\_\+auto\+\_\+init\+\_\+enabled"{} specified in your Android manifest (on Android) or Info.\+plist (on i\+OS and tv\+OS).
+
+By default, token registration during initialization is enabled.
+
+The registration happens before you can programmatically disable it, so if you need to change the default, (for example, because you want to prompt the user before FCM generates/refreshes a registration token on app startup), add to your application’s manifest\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\&lt;meta-\/data\ android:name=\textcolor{stringliteral}{"{}firebase\_messaging\_auto\_init\_enabled"{}}}
+\DoxyCodeLine{android:value=\textcolor{stringliteral}{"{}false"{}}\ /\&gt;}
+
+\end{DoxyCode}
+ 
+
+or on i\+OS or tv\+OS to your Info.\+plist\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\&lt;key\&gt;FirebaseMessagingAutoInitEnabled\&lt;/key\&gt;}
+\DoxyCodeLine{\&lt;\textcolor{keyword}{false}/\&gt;}
+
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & sets if a registration token should be requested on initialization. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1messaging_a51409652cbe47776f39636316befaa87}\index{firebase::messaging@{firebase::messaging}!Subscribe@{Subscribe}}
+\index{Subscribe@{Subscribe}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{Subscribe()}{Subscribe()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a51409652cbe47776f39636316befaa87} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Subscribe (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{}\end{DoxyParamCaption})}
+
+
+
+Subscribe to receive all messages to the specified topic. 
+
+Subscribes an app instance to a topic, enabling it to receive messages sent to that topic.
+
+Call this function from the main thread. FCM is not thread safe.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic} & The name of the topic to subscribe. Must match the following regular expression\+: {\ttfamily \mbox{[}a-\/z\+A-\/\+Z0-\/9-\/\+\_\+.\texorpdfstring{$\sim$}{\string~}\%\mbox{]}\{1,900\}}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1messaging_a01bfb8281efde1b719807ed5ea568fb0}\index{firebase::messaging@{firebase::messaging}!SubscribeLastResult@{SubscribeLastResult}}
+\index{SubscribeLastResult@{SubscribeLastResult}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{SubscribeLastResult()}{SubscribeLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a01bfb8281efde1b719807ed5ea568fb0} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Subscribe\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe()};. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe()}. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1messaging_adff0925cf22b170e5f1b7c487abff3d6}\index{firebase::messaging@{firebase::messaging}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{Terminate()}{Terminate()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_adff0925cf22b170e5f1b7c487abff3d6} 
+void firebase\+::messaging\+::\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Terminate Firebase Cloud Messaging. 
+
+Frees resources associated with Firebase Cloud Messaging.
+
+\begin{DoxyNote}{Note}
+On Android, the services will not be shut down by this method. 
+\end{DoxyNote}
+\Hypertarget{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}\index{firebase::messaging@{firebase::messaging}!Unsubscribe@{Unsubscribe}}
+\index{Unsubscribe@{Unsubscribe}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{Unsubscribe()}{Unsubscribe()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Unsubscribe (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{topic}{}\end{DoxyParamCaption})}
+
+
+
+Unsubscribe from a topic. 
+
+Unsubscribes an app instance from a topic, stopping it from receiving any further messages sent to that topic.
+
+Call this function from the main thread. FCM is not thread safe.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em topic} & The name of the topic to unsubscribe from. Must match the following regular expression\+: {\ttfamily \mbox{[}a-\/z\+A-\/\+Z0-\/9-\/\+\_\+.\texorpdfstring{$\sim$}{\string~}\%\mbox{]}\{1,900\}}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1messaging_a2237194a938078aae89e919dc6a12bdb}\index{firebase::messaging@{firebase::messaging}!UnsubscribeLastResult@{UnsubscribeLastResult}}
+\index{UnsubscribeLastResult@{UnsubscribeLastResult}!firebase::messaging@{firebase::messaging}}
+\doxysubsubsection{\texorpdfstring{UnsubscribeLastResult()}{UnsubscribeLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1messaging_a2237194a938078aae89e919dc6a12bdb} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::messaging\+::\+Unsubscribe\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe()};. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe()}. 
+\end{DoxyReturn}

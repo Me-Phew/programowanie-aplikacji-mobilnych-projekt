@@ -1,0 +1,42 @@
+\doxysection{firebase\+::Mutex Class Reference}
+\hypertarget{classfirebase_1_1_mutex}{}\label{classfirebase_1_1_mutex}\index{firebase::Mutex@{firebase::Mutex}}
+
+
+A simple synchronization lock. Only one thread at a time can Acquire.  
+
+
+
+
+{\ttfamily \#include $<$mutex.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_mutex_a97be2f22a47f86db3329a79aaa4c21b1}\label{classfirebase_1_1_mutex_a97be2f22a47f86db3329a79aaa4c21b1} 
+enum {\bfseries Mode} \{ {\bfseries k\+Mode\+Non\+Recursive} = (0 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, {\bfseries k\+Mode\+Recursive} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_mutex_aa13abaf1100d3001e349403b0b936b6f}\label{classfirebase_1_1_mutex_aa13abaf1100d3001e349403b0b936b6f} 
+{\bfseries Mutex} (Mode mode)
+\item 
+\Hypertarget{classfirebase_1_1_mutex_a11061efe59214d69dc879c3546788501}\label{classfirebase_1_1_mutex_a11061efe59214d69dc879c3546788501} 
+void {\bfseries Acquire} ()
+\item 
+\Hypertarget{classfirebase_1_1_mutex_a4868c1066027be334a522761f4d347b0}\label{classfirebase_1_1_mutex_a4868c1066027be334a522761f4d347b0} 
+void {\bfseries Release} ()
+\item 
+\Hypertarget{classfirebase_1_1_mutex_aa7c9a48b0550e2e733575abc86d0f12d}\label{classfirebase_1_1_mutex_aa7c9a48b0550e2e733575abc86d0f12d} 
+pthread\+\_\+mutex\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries native\+\_\+handle} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple synchronization lock. Only one thread at a time can Acquire. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/internal/mutex.\+h\end{DoxyCompactItemize}

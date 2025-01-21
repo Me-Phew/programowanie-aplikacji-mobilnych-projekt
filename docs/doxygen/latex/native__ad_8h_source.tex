@@ -1,0 +1,144 @@
+\doxysection{native\+\_\+ad.\+h}
+\hypertarget{native__ad_8h_source}{}\label{native__ad_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/internal/native\_ad.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/internal/native\_ad.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2023\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_INTERNAL\_NATIVE\_AD\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_INTERNAL\_NATIVE\_AD\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/types.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Doxygen\ breaks\ trying\ to\ parse\ this\ file,\ and\ since\ it\ is\ internal\ logic,}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ it\ doesn't\ need\ to\ be\ included\ in\ the\ generated\ documentation.}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ DOXYGEN}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Forward\ declaration\ for\ platform-\/specific\ data,\ implemented\ in\ each\ library.}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }NativeAdInternal;}
+\DoxyCodeLine{00038\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }NativeAdImageInternal;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }NativeAdImage;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }ImageResult;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad}{NativeAd}}\ \{}
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad}{NativeAd}}();}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad}{\string~NativeAd}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a8563b73464da98c8834c08b7d45e49f2}{Initialize}}(\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}}\ parent);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a609344868d91b595b275f98b12a8fd9b}{InitializeLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a5debc33975e1e7828fedfa8cbee0b054}{LoadAd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ad\_unit\_id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{AdRequest}}\&\ request);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_ac960e8ad24d0c144d08c8b8999489e77}{LoadAdLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a2b735fb3b499daf25532821c0a9677d2}{SetAdListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{AdListener}}*\ listener);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{NativeAdImage}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a49c28508f84014c3c4fe0ba524c8670b}{icon}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{const}\ std::vector<NativeAdImage>\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a8a8514e7b38af4d37cb34105a2826feb}{images}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ Returns\ the\ associated\ adchoices\ icon\ asset\ of\ the\ native\ ad.}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{NativeAdImage}}\&\ adchoices\_icon()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a43ebd573c65699f5b00109766f16ab34}{RecordImpression}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ impression\_data);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_ad3438212fc9a639474fd672d02b4f0c2}{RecordImpressionLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a72962112e872d2f6a7687550cc2d9213}{PerformClick}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ click\_data);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a026c4d7e583d018680dfde129da3d536}{PerformClickLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ Google\ Mobile\ Ads\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00102\ \ \ internal::NativeAdInternal*\ internal\_;}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result}{ImageResult}}\ \{}
+\DoxyCodeLine{00107\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result_a80bf79d0b9eaab5d70b4e5425e6c3de1}{ImageResult}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result_a631315e180efe87a19c944dcbfce3fd6}{\string~ImageResult}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result_a9771da3d6ecfa8a5ce73ad4608468df6}{is\_successful}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{const}\ std::vector<unsigned\ char>\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result_a1ef3afd7a81a71318e0c64ef5da2b246}{image}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result_a80bf79d0b9eaab5d70b4e5425e6c3de1}{ImageResult}}(\textcolor{keyword}{const}\ std::vector<unsigned\ char>\&\ image\_info);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{bool}\ is\_successful\_;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ std::vector<unsigned\ char>\ image\_info\_;}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{NativeAdImage}}\ \{}
+\DoxyCodeLine{00136\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_aba8964d5fe36a1ce845867036397460b}{NativeAdImage}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_a683ce73b82e2dd303b5dcb38e06605c0}{NativeAdImage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{NativeAdImage}}\&\ source\_native\_image);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_ad9c0e2a7fbbdc3a6ef320ed850f87511}{scale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_aa511a246331a2af31e5c85eb288b88cf}{image\_uri}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<ImageResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_a5cf8adefc842f8a58ea6c32eae895ed6}{LoadImage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \textcolor{comment}{//\ Returns\ a\ Future\ containing\ the\ status\ of\ the\ last\ call\ to}}
+\DoxyCodeLine{00153\ \ \ \textcolor{comment}{//\ LoadImage.}}
+\DoxyCodeLine{00154\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<ImageResult>}}\ LoadImageLastResult()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{\string~NativeAdImage}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{NativeAdImage}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_a59b29cb9c10d8bc9c1aa0da17cd849ce}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{NativeAdImage}}\&\ obj);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00162\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad}{NativeAd}};}
+\DoxyCodeLine{00163\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image_aba8964d5fe36a1ce845867036397460b}{NativeAdImage}}(\textcolor{keyword}{const}\ NativeAdImageInternal\&\ native\_ad\_image\_internal);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00168\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ Google\ Mobile\ Ads\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00169\ \ \ NativeAdImageInternal*\ internal\_;}
+\DoxyCodeLine{00170\ \};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00173\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ DOXYGEN}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_INTERNAL\_NATIVE\_AD\_H\_}}
+
+\end{DoxyCode}

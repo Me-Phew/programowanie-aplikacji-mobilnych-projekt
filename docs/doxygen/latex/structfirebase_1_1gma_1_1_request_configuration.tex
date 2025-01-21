@@ -1,0 +1,173 @@
+\doxysection{firebase\+::gma\+::Request\+Configuration Struct Reference}
+\hypertarget{structfirebase_1_1gma_1_1_request_configuration}{}\label{structfirebase_1_1gma_1_1_request_configuration}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+
+
+Global configuration that will be used for every \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}. Set the configuration via \doxylink{namespacefirebase_1_1gma_add5fc03e6d996ce57faeeabd16d86d6f}{Set\+Request\+Configuration}.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}{Max\+Ad\+Content\+Rating}} \{ \newline
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a54e05f425e43bd6ddf884b6e9fa919f4}{k\+Max\+Ad\+Content\+Rating\+Unspecified}} = -\/1
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a0c2944bca865f41d233496ea5c3d0105}{k\+Max\+Ad\+Content\+RatingG}}
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61aee7541d3afc7b03ead0fc5ec5d1bd4dc}{k\+Max\+Ad\+Content\+Rating\+MA}}
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a5e24c9ab4d5cd9b8a57e914fe9b1e1d0}{k\+Max\+Ad\+Content\+Rating\+PG}}
+, \newline
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a9057701879dcaa6d0752421b7e95cc23}{k\+Max\+Ad\+Content\+RatingT}}
+ \}
+\item 
+enum \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}{Tag\+For\+Child\+Directed\+Treatment}} \{ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a882437101730928b6dd950c696776e36}{k\+Child\+Directed\+Treatment\+Unspecified}} = -\/1
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50ad0202ab89ad55f6b300bd12ca81f0030}{k\+Child\+Directed\+Treatment\+False}}
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a0426a315b1c06acdb6d492ae46e8a101}{k\+Child\+Directed\+Treatment\+True}}
+ \}
+\item 
+enum \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}{Tag\+For\+Under\+Age\+Of\+Consent}} \{ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200aaca4f94a4790e0250786cf25d334db17}{k\+Under\+Age\+Of\+Consent\+Unspecified}} = -\/1
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200adda683ae51844dd880f3b0cf42e5ef70}{k\+Under\+Age\+Of\+Consent\+False}}
+, \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200a52b7925117145843b580d29739c654a4}{k\+Under\+Age\+Of\+Consent\+True}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}{Max\+Ad\+Content\+Rating}} \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a3eaf00f4f8ba0aa1208e40276a1bd4a2}{max\+\_\+ad\+\_\+content\+\_\+rating}}
+\item 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}{Tag\+For\+Child\+Directed\+Treatment}} \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a886267aa5db747c816f8441c53179195}{tag\+\_\+for\+\_\+child\+\_\+directed\+\_\+treatment}}
+\begin{DoxyCompactList}\small\item\em Allows you to specify whether you would like your app to be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA) -\/ \href{http://business.ftc.gov/privacy-and-security/childrens-privacy}{\texttt{ http\+://business.\+ftc.\+gov/privacy-\/and-\/security/childrens-\/privacy}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}{Tag\+For\+Under\+Age\+Of\+Consent}} \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_ae900aeac5dbacbbba0247870ed42a795}{tag\+\_\+for\+\_\+under\+\_\+age\+\_\+of\+\_\+consent}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_ab6b956eed5680d685df7267ccefe89bd}{test\+\_\+device\+\_\+ids}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global configuration that will be used for every \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}. Set the configuration via \doxylink{namespacefirebase_1_1gma_add5fc03e6d996ce57faeeabd16d86d6f}{Set\+Request\+Configuration}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!MaxAdContentRating@{MaxAdContentRating}}
+\index{MaxAdContentRating@{MaxAdContentRating}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{MaxAdContentRating}{MaxAdContentRating}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61} 
+enum \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}{firebase\+::gma\+::\+Request\+Configuration\+::\+Max\+Ad\+Content\+Rating}}}
+
+A maximum ad content rating, which may be configured via \doxylink{structfirebase_1_1gma_1_1_request_configuration_a3eaf00f4f8ba0aa1208e40276a1bd4a2}{max\+\_\+ad\+\_\+content\+\_\+rating}. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMaxAdContentRatingUnspecified@{kMaxAdContentRatingUnspecified}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kMaxAdContentRatingUnspecified@{kMaxAdContentRatingUnspecified}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a54e05f425e43bd6ddf884b6e9fa919f4}\label{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61} 
+k\+Max\+Ad\+Content\+Rating\+Unspecified&No content rating has been specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMaxAdContentRatingG@{kMaxAdContentRatingG}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kMaxAdContentRatingG@{kMaxAdContentRatingG}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a0c2944bca865f41d233496ea5c3d0105}\label{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61} 
+k\+Max\+Ad\+Content\+RatingG&Content suitable for general audiences, including families. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMaxAdContentRatingMA@{kMaxAdContentRatingMA}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kMaxAdContentRatingMA@{kMaxAdContentRatingMA}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61aee7541d3afc7b03ead0fc5ec5d1bd4dc}\label{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61} 
+k\+Max\+Ad\+Content\+Rating\+MA&Content suitable only for mature audiences. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMaxAdContentRatingPG@{kMaxAdContentRatingPG}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kMaxAdContentRatingPG@{kMaxAdContentRatingPG}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a5e24c9ab4d5cd9b8a57e914fe9b1e1d0}\label{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61} 
+k\+Max\+Ad\+Content\+Rating\+PG&Content suitable for most audiences with parental guidance. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMaxAdContentRatingT@{kMaxAdContentRatingT}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kMaxAdContentRatingT@{kMaxAdContentRatingT}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a9057701879dcaa6d0752421b7e95cc23}\label{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61} 
+k\+Max\+Ad\+Content\+RatingT&Content suitable for teen and older audiences. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!TagForChildDirectedTreatment@{TagForChildDirectedTreatment}}
+\index{TagForChildDirectedTreatment@{TagForChildDirectedTreatment}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{TagForChildDirectedTreatment}{TagForChildDirectedTreatment}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50} 
+enum \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}{firebase\+::gma\+::\+Request\+Configuration\+::\+Tag\+For\+Child\+Directed\+Treatment}}}
+
+Specify whether you would like your app to be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA). Values defined here may be configured via \doxylink{structfirebase_1_1gma_1_1_request_configuration_a886267aa5db747c816f8441c53179195}{tag\+\_\+for\+\_\+child\+\_\+directed\+\_\+treatment}. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kChildDirectedTreatmentUnspecified@{kChildDirectedTreatmentUnspecified}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kChildDirectedTreatmentUnspecified@{kChildDirectedTreatmentUnspecified}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a882437101730928b6dd950c696776e36}\label{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50} 
+k\+Child\+Directed\+Treatment\+Unspecified&Indicates that ad requests will include no indication of how you would like your app treated with respect to COPPA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kChildDirectedTreatmentFalse@{kChildDirectedTreatmentFalse}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kChildDirectedTreatmentFalse@{kChildDirectedTreatmentFalse}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50ad0202ab89ad55f6b300bd12ca81f0030}\label{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50} 
+k\+Child\+Directed\+Treatment\+False&Indicates that your app should not be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kChildDirectedTreatmentTrue@{kChildDirectedTreatmentTrue}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kChildDirectedTreatmentTrue@{kChildDirectedTreatmentTrue}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a0426a315b1c06acdb6d492ae46e8a101}\label{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50} 
+k\+Child\+Directed\+Treatment\+True&Indicates that your app should be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA). \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!TagForUnderAgeOfConsent@{TagForUnderAgeOfConsent}}
+\index{TagForUnderAgeOfConsent@{TagForUnderAgeOfConsent}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{TagForUnderAgeOfConsent}{TagForUnderAgeOfConsent}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200} 
+enum \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}{firebase\+::gma\+::\+Request\+Configuration\+::\+Tag\+For\+Under\+Age\+Of\+Consent}}}
+
+Configuration values to mark your app to receive treatment for users in the European Economic Area (EEA) under the age of consent. Values defined here should be configured via \doxylink{structfirebase_1_1gma_1_1_request_configuration_ae900aeac5dbacbbba0247870ed42a795}{tag\+\_\+for\+\_\+under\+\_\+age\+\_\+of\+\_\+consent}. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUnderAgeOfConsentUnspecified@{kUnderAgeOfConsentUnspecified}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kUnderAgeOfConsentUnspecified@{kUnderAgeOfConsentUnspecified}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200aaca4f94a4790e0250786cf25d334db17}\label{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200} 
+k\+Under\+Age\+Of\+Consent\+Unspecified&Indicates that the publisher has not specified whether the ad request should receive treatment for users in the European Economic Area (EEA) under the age of consent. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUnderAgeOfConsentFalse@{kUnderAgeOfConsentFalse}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kUnderAgeOfConsentFalse@{kUnderAgeOfConsentFalse}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200adda683ae51844dd880f3b0cf42e5ef70}\label{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200} 
+k\+Under\+Age\+Of\+Consent\+False&Indicates the publisher specified that the ad request should not receive treatment for users in the European Economic Area (EEA) under the age of consent. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUnderAgeOfConsentTrue@{kUnderAgeOfConsentTrue}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!kUnderAgeOfConsentTrue@{kUnderAgeOfConsentTrue}}}\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200a52b7925117145843b580d29739c654a4}\label{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200} 
+k\+Under\+Age\+Of\+Consent\+True&Indicates the publisher specified that the ad request should receive treatment for users in the European Economic Area (EEA) under the age of consent. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a3eaf00f4f8ba0aa1208e40276a1bd4a2}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!max\_ad\_content\_rating@{max\_ad\_content\_rating}}
+\index{max\_ad\_content\_rating@{max\_ad\_content\_rating}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{max\_ad\_content\_rating}{max\_ad\_content\_rating}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_a3eaf00f4f8ba0aa1208e40276a1bd4a2} 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}{Max\+Ad\+Content\+Rating}} firebase\+::gma\+::\+Request\+Configuration\+::max\+\_\+ad\+\_\+content\+\_\+rating}
+
+Sets a maximum ad content rating. GMA ads returned for your app will have a content rating at or below that level. \Hypertarget{structfirebase_1_1gma_1_1_request_configuration_a886267aa5db747c816f8441c53179195}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!tag\_for\_child\_directed\_treatment@{tag\_for\_child\_directed\_treatment}}
+\index{tag\_for\_child\_directed\_treatment@{tag\_for\_child\_directed\_treatment}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{tag\_for\_child\_directed\_treatment}{tag\_for\_child\_directed\_treatment}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_a886267aa5db747c816f8441c53179195} 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}{Tag\+For\+Child\+Directed\+Treatment}} firebase\+::gma\+::\+Request\+Configuration\+::tag\+\_\+for\+\_\+child\+\_\+directed\+\_\+treatment}
+
+
+
+Allows you to specify whether you would like your app to be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA) -\/ \href{http://business.ftc.gov/privacy-and-security/childrens-privacy}{\texttt{ http\+://business.\+ftc.\+gov/privacy-\/and-\/security/childrens-\/privacy}}. 
+
+If you set this value to \doxylink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a0426a315b1c06acdb6d492ae46e8a101}{Request\+Configuration.\+k\+Child\+Directed\+Treatment\+True}, you will indicate that your app should be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA).
+
+If you set this value to \doxylink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50ad0202ab89ad55f6b300bd12ca81f0030}{Request\+Configuration.\+k\+Child\+Directed\+Treatment\+False}, you will indicate that your app should not be treated as child-\/directed for purposes of the Children’s Online Privacy Protection Act (COPPA).
+
+If you do not set this value, or set this value to \doxylink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a882437101730928b6dd950c696776e36}{Request\+Configuration.\+k\+Child\+Directed\+Treatment\+Unspecified}, ad requests will include no indication of how you would like your app treated with respect to COPPA.
+
+By setting this value, you certify that this notification is accurate and you are authorized to act on behalf of the owner of the app. You understand that abuse of this setting may result in termination of your Google account.
+
+\begin{DoxyNote}{Note}
+\+: it may take some time for this designation to be fully implemented in applicable Google services. 
+\end{DoxyNote}
+\Hypertarget{structfirebase_1_1gma_1_1_request_configuration_ae900aeac5dbacbbba0247870ed42a795}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!tag\_for\_under\_age\_of\_consent@{tag\_for\_under\_age\_of\_consent}}
+\index{tag\_for\_under\_age\_of\_consent@{tag\_for\_under\_age\_of\_consent}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{tag\_for\_under\_age\_of\_consent}{tag\_for\_under\_age\_of\_consent}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_ae900aeac5dbacbbba0247870ed42a795} 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}{Tag\+For\+Under\+Age\+Of\+Consent}} firebase\+::gma\+::\+Request\+Configuration\+::tag\+\_\+for\+\_\+under\+\_\+age\+\_\+of\+\_\+consent}
+
+This value allows you to mark your app to receive treatment for users in the European Economic Area (EEA) under the age of consent. This feature is designed to help facilitate compliance with the General Data Protection Regulation (GDPR). Note that you may have other legal obligations under GDPR. Please review the European Union\textquotesingle{}s guidance and consult with your own legal counsel. Please remember that Google\textquotesingle{}s tools are designed to facilitate compliance and do not relieve any particular publisher of its obligations under the law.
+
+When using this feature, a Tag For Users under the Age of Consent in Europe (TFUA) parameter will be included in all ad requests. This parameter disables personalized advertising, including remarketing, for that specific ad request. It also disables requests to third-\/party ad vendors, such as ad measurement pixels and third-\/party ad servers.
+
+If you set this value to \doxylink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200a52b7925117145843b580d29739c654a4}{Request\+Configuration.\+k\+Under\+Age\+Of\+Consent\+True}, you will indicate that you want your app to be handled in a manner suitable for users under the age of consent.
+
+If you set this value to \doxylink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200adda683ae51844dd880f3b0cf42e5ef70}{Request\+Configuration.\+k\+Under\+Age\+Of\+Consent\+False}, you will indicate that you don\textquotesingle{}t want your app to be handled in a manner suitable for users under the age of consent.
+
+If you do not set this value, or set this value to k\+Under\+Age\+Of\+Consent\+Unspecified, your app will include no indication of how you would like your app to be handled in a manner suitable for users under the age of consent. \Hypertarget{structfirebase_1_1gma_1_1_request_configuration_ab6b956eed5680d685df7267ccefe89bd}\index{firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}!test\_device\_ids@{test\_device\_ids}}
+\index{test\_device\_ids@{test\_device\_ids}!firebase::gma::RequestConfiguration@{firebase::gma::RequestConfiguration}}
+\doxysubsubsection{\texorpdfstring{test\_device\_ids}{test\_device\_ids}}
+{\footnotesize\ttfamily \label{structfirebase_1_1gma_1_1_request_configuration_ab6b956eed5680d685df7267ccefe89bd} 
+std\+::vector$<$std\+::string$>$ firebase\+::gma\+::\+Request\+Configuration\+::test\+\_\+device\+\_\+ids}
+
+Sets a list of test device IDs corresponding to test devices which will always request test ads. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

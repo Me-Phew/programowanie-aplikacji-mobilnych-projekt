@@ -1,0 +1,11 @@
+<map id="FlutterDesktopTextureInfo" name="FlutterDesktopTextureInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="102,219,274,245"/>
+<area shape="rect" id="Node000002" href="$struct_flutter_desktop_pixel_buffer_texture_config.html" title=" " alt="" coords="5,112,176,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,166,134,193,166,216,162,220,130,197,108,169"/>
+<area shape="rect" id="Node000003" href="$struct_flutter_desktop_pixel_buffer.html" title=" " alt="" coords="5,13,176,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,55,93,111,88,111,88,55"/>
+<area shape="rect" id="Node000004" href="$struct_flutter_desktop_gpu_surface_texture_config.html" title=" " alt="" coords="200,112,376,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,169,246,197,213,220,210,216,242,193,265,166"/>
+<area shape="rect" id="Node000005" href="$struct_flutter_desktop_gpu_surface_descriptor.html" title=" " alt="" coords="200,5,376,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="290,64,290,111,285,111,285,64"/>
+</map>

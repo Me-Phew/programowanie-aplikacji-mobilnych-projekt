@@ -1,0 +1,129 @@
+\doxysection{firebase\+::auth\+::Phone\+Auth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider}{}\label{classfirebase_1_1auth_1_1_phone_auth_provider}\index{firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}}
+
+
+Use phone number text messages to authenticate.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Force\+Resending\+Token}}
+\begin{DoxyCompactList}\small\item\em Token to maintain current phone number verification session. Acquired via \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a65f3a2abf007af3dfb1f8d2136bf4c29}{Listener\+::\+On\+Code\+Sent}. Used in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener}{Listener}}
+\begin{DoxyCompactList}\small\item\em Receive callbacks from \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number} events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number}} (const \mbox{\hyperlink{structfirebase_1_1auth_1_1_phone_auth_options}{Phone\+Auth\+Options}} \&options, \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener}{Phone\+Auth\+Provider\+::\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_a149b7a3daa4161cd754cdeeff2779437}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}verification\+\_\+id, const char \texorpdfstring{$\ast$}{*}verification\+\_\+code)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}} \& \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_a56b0746571167619553dcf34603f20a0}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}} \texorpdfstring{$\ast$}{*}auth)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_a76386856f415f1802c47a4ddcfea9996}\label{classfirebase_1_1auth_1_1_phone_auth_provider_a76386856f415f1802c47a4ddcfea9996} 
+static const char \texorpdfstring{$\ast$}{*}const {\bfseries k\+Provider\+Id}
+\begin{DoxyCompactList}\small\item\em The string used to identify this provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_ae01e20d45bf4cfe9300b9f61378873c4}\label{classfirebase_1_1auth_1_1_phone_auth_provider_ae01e20d45bf4cfe9300b9f61378873c4} 
+struct {\bfseries Auth\+Data}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_a435187bdaa7cec8143be5a35a207eea8}\label{classfirebase_1_1auth_1_1_phone_auth_provider_a435187bdaa7cec8143be5a35a207eea8} 
+class {\bfseries Jni\+Auth\+Phone\+Listener}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use phone number text messages to authenticate. 
+
+Allows developers to use the phone number and SMS verification codes to authenticate a user on a mobile device.
+
+This class is not supported on tv\+OS and Desktop platforms.
+
+The verification flow results in a \doxylink{classfirebase_1_1auth_1_1_credential}{Credential} that can be used to,
+\begin{DoxyItemize}
+\item Sign in to an existing phone number account/sign up with a new phone number
+\item Link a phone number to a current user. This provider will be added to the user.
+\item Update a phone number on an existing user.
+\item Re-\/authenticate an existing user. This may be needed when a sensitive operation requires the user to be recently logged in.
+\end{DoxyItemize}
+
+Possible verification flows\+: (1) \doxylink{classfirebase_1_1auth_1_1_user}{User} manually enters verification code.  $<$\+SWIG$>$  $<$/\+SWIG$>$
+
+(2) SMS is automatically retrieved (Android only).
+\begin{DoxyItemize}
+\item \doxylink{classfirebase_1_1_app}{App} calls \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number} with {\ttfamily timeout\+\_\+ms} \texorpdfstring{$>$}{>} 0.
+\item \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} server sends the verification code via SMS to the provided phone number.
+\item SMS arrives and is automatically retrieved by the operating system. \doxylink{classfirebase_1_1auth_1_1_credential}{Credential} is automatically created and passed to the app via  $<$\+SWIG$>$  
+\end{DoxyItemize}$<$/\+SWIG$>$
+
+(3) Phone number is instantly verified (Android only).
+\begin{DoxyItemize}
+\item \doxylink{classfirebase_1_1_app}{App} calls \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number}.
+\item The operating system validates the phone number without having to send an SMS. \doxylink{classfirebase_1_1auth_1_1_credential}{Credential} is automatically created and passed to the app via  $<$\+SWIG$>$  
+\end{DoxyItemize}$<$/\+SWIG$>$
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_a149b7a3daa4161cd754cdeeff2779437}\index{firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_a149b7a3daa4161cd754cdeeff2779437} 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}} firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{verification\+\_\+id}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{verification\+\_\+code}{}\end{DoxyParamCaption})}
+
+Generate a credential for the given phone number.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em verification\+\_\+id} & The id returned when sending the verification code. Sent to the caller via \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a65f3a2abf007af3dfb1f8d2136bf4c29}{Listener\+::\+On\+Code\+Sent}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em verification\+\_\+code} & The verification code supplied by the user, most likely by a GUI where the user manually enters the code received in the SMS sent by \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}{Verify\+Phone\+Number}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_a56b0746571167619553dcf34603f20a0}\index{firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_a56b0746571167619553dcf34603f20a0} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}} \& firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}} \texorpdfstring{$\ast$}{*}}]{auth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider} for the specified {\ttfamily auth}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em auth} & The \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} session for which we want to get a \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84}\index{firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}!VerifyPhoneNumber@{VerifyPhoneNumber}}
+\index{VerifyPhoneNumber@{VerifyPhoneNumber}!firebase::auth::PhoneAuthProvider@{firebase::auth::PhoneAuthProvider}}
+\doxysubsubsection{\texorpdfstring{VerifyPhoneNumber()}{VerifyPhoneNumber()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_phone_auth_provider_ad8b24001f507a420a3915d0f29865d84} 
+void firebase\+::auth\+::\+Phone\+Auth\+Provider\+::\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1auth_1_1_phone_auth_options}{Phone\+Auth\+Options}} \&}]{options}{, }\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener}{Phone\+Auth\+Provider\+::\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Start the phone number authentication operation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em options} & The \doxylink{structfirebase_1_1auth_1_1_phone_auth_options}{Phone\+Auth\+Options} struct with a verification configuration. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em listener} & Class that receives notification whenever an SMS verification event occurs. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

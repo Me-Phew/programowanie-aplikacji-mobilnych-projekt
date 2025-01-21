@@ -1,0 +1,86 @@
+\doxysection{flutter\+::Method\+Result\+Functions\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_method_result_functions}{}\label{classflutter_1_1_method_result_functions}\index{flutter::MethodResultFunctions$<$ T $>$@{flutter::MethodResultFunctions$<$ T $>$}}
+
+
+Inheritance diagram for flutter\+::Method\+Result\+Functions\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classflutter_1_1_method_result_functions__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Method\+Result\+Functions\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{classflutter_1_1_method_result_functions__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_method_result_functions_a73d842cd1fce08af5e2cef6127dfa11e}\label{classflutter_1_1_method_result_functions_a73d842cd1fce08af5e2cef6127dfa11e} 
+{\bfseries Method\+Result\+Functions} (Result\+Handler\+Success$<$ T $>$ on\+\_\+success, Result\+Handler\+Error$<$ T $>$ on\+\_\+error, Result\+Handler\+Not\+Implemented$<$ T $>$ on\+\_\+not\+\_\+implemented)
+\item 
+\Hypertarget{classflutter_1_1_method_result_functions_a90083b322994def09146c5fa6f239e2a}\label{classflutter_1_1_method_result_functions_a90083b322994def09146c5fa6f239e2a} 
+{\bfseries Method\+Result\+Functions} (\mbox{\hyperlink{classflutter_1_1_method_result_functions}{Method\+Result\+Functions}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_method_result_functions_aea4824c937184b70f45bd31e674491e0}\label{classflutter_1_1_method_result_functions_aea4824c937184b70f45bd31e674491e0} 
+\mbox{\hyperlink{classflutter_1_1_method_result_functions}{Method\+Result\+Functions}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_method_result_functions}{Method\+Result\+Functions}} const \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ Encodable\+Value $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Method\+Result} (\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} const \&)=delete
+\item 
+\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} const \&)=delete
+\item 
+void {\bfseries Success} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \&result)
+\item 
+void {\bfseries Success} ()
+\item 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \&error\+\_\+details)
+\item 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message="{}"{})
+\item 
+void {\bfseries Not\+Implemented} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_method_result_functions_a404a0b03c2fce45e5671fa369f51d037}\label{classflutter_1_1_method_result_functions_a404a0b03c2fce45e5671fa369f51d037} 
+void {\bfseries Success\+Internal} (const T \texorpdfstring{$\ast$}{*}result) override
+\item 
+\Hypertarget{classflutter_1_1_method_result_functions_ab4b3fba789aee80815d1dcd3850c5445}\label{classflutter_1_1_method_result_functions_ab4b3fba789aee80815d1dcd3850c5445} 
+void {\bfseries Error\+Internal} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \texorpdfstring{$\ast$}{*}error\+\_\+details) override
+\item 
+void \mbox{\hyperlink{classflutter_1_1_method_result_functions_a6f655eee3bc37aad6e4e16961fe11ab3}{Not\+Implemented\+Internal}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ Encodable\+Value $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Success\+Internal} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}result)=0
+\item 
+virtual void {\bfseries Error\+Internal} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}error\+\_\+details)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflutter_1_1_method_result_functions_a6f655eee3bc37aad6e4e16961fe11ab3}\index{flutter::MethodResultFunctions$<$ T $>$@{flutter::MethodResultFunctions$<$ T $>$}!NotImplementedInternal@{NotImplementedInternal}}
+\index{NotImplementedInternal@{NotImplementedInternal}!flutter::MethodResultFunctions$<$ T $>$@{flutter::MethodResultFunctions$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NotImplementedInternal()}{NotImplementedInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_method_result_functions_a6f655eee3bc37aad6e4e16961fe11ab3} 
+template$<$typename T  = Encodable\+Value$>$ \\
+void \mbox{\hyperlink{classflutter_1_1_method_result_functions}{flutter\+::\+Method\+Result\+Functions}}$<$ T $>$\+::\+Not\+Implemented\+Internal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ Encodable\+Value $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/method\+\_\+result\+\_\+functions.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,105 @@
+\doxysection{storage.\+h}
+\hypertarget{storage_8h_source}{}\label{storage_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/storage.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/storage.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/storage/common.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/storage/controller.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/storage/listener.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/storage/metadata.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/storage/storage\_reference.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00030\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE(storage)}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }storage\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }StorageInternal;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }MetadataInternal;}
+\DoxyCodeLine{00042\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}\ \{}
+\DoxyCodeLine{00055\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a684ce7fca43a5122169195b31ca29563}{\string~Storage}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a057fc8bc69877c7c674f4b220dba1f9f}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a21c3d30485f284cec6dd74e92c79cf19}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}},}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a476a4580fbe47370076974dd442ed8e0}{GetReference}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_ab0e71df0ae1b664dd55d9c7762762a7c}{GetReference}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a867b310c3229070a610b7f35255101b3}{GetReference}}(\textcolor{keyword}{const}\ std::string\&\ path)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a476a4580fbe47370076974dd442ed8e0}{GetReference}}(path.c\_str());}
+\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_aba2ae40e27c8fc17819b71622d64b665}{GetReferenceFromUrl}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{StorageReference}}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a1db30b8b60083e668a33bed655d2fed0}{GetReferenceFromUrl}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_aba2ae40e27c8fc17819b71622d64b665}{GetReferenceFromUrl}}(\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}}.c\_str());}
+\DoxyCodeLine{00120\ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_aff19f227824708589afe9c9b1df57456}{max\_download\_retry\_time}}();}
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_ac6e638b08fe1f2a20de990052094720a}{set\_max\_download\_retry\_time}}(\textcolor{keywordtype}{double}\ max\_transfer\_retry\_seconds);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a8edee2fbdb726e94f40f2bd1ea4309c9}{max\_upload\_retry\_time}}();}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a2be9c12e8134817bfbebb87e321b716a}{set\_max\_upload\_retry\_time}}(\textcolor{keywordtype}{double}\ max\_transfer\_retry\_seconds);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_adfc88ec0a3929b4f1aa541a6cb83724f}{max\_operation\_retry\_time}}();}
+\DoxyCodeLine{00140\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a74ff037cfdbd291ee804c5fdd056e8e1}{set\_max\_operation\_retry\_time}}(\textcolor{keywordtype}{double}\ max\_transfer\_retry\_seconds);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}};}
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::MetadataInternal;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}});}
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}\&\ src);}
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}}\&\ src);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{comment}{//\ Destroy\ the\ internal\_\ object.}}
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordtype}{void}\ DeleteInternal();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ internal::StorageInternal*\ internal\_;}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \}\ \ \textcolor{comment}{//\ namespace\ storage}}
+\DoxyCodeLine{00159\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_H\_}}
+
+\end{DoxyCode}

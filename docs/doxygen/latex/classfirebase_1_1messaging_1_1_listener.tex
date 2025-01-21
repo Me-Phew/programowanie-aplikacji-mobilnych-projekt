@@ -1,0 +1,74 @@
+\doxysection{firebase\+::messaging\+::Listener Class Reference}
+\hypertarget{classfirebase_1_1messaging_1_1_listener}{}\label{classfirebase_1_1messaging_1_1_listener}\index{firebase::messaging::Listener@{firebase::messaging::Listener}}
+
+
+Base class used to receive messages from Firebase Cloud Messaging.  
+
+
+
+
+{\ttfamily \#include $<$messaging.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::messaging\+::Listener\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classfirebase_1_1messaging_1_1_listener__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{On\+Message}} (const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \&message)=0
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener_a837d52cfb06e12c85d4df06583567eed}{On\+Token\+Received}} (const char \texorpdfstring{$\ast$}{*}token)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class used to receive messages from Firebase Cloud Messaging. 
+
+You need to override base class methods to handle any events required by the application. Methods are invoked asynchronously and may be invoked on other threads. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}\index{firebase::messaging::Listener@{firebase::messaging::Listener}!OnMessage@{OnMessage}}
+\index{OnMessage@{OnMessage}!firebase::messaging::Listener@{firebase::messaging::Listener}}
+\doxysubsubsection{\texorpdfstring{OnMessage()}{OnMessage()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281} 
+virtual void firebase\+::messaging\+::\+Listener\+::\+On\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called on the client when a message arrives.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em message} & The data describing this message. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_aeb924594f29e81b9e90eafc450b9813e}{firebase\+::messaging\+::\+Pollable\+Listener}}.
+
+\Hypertarget{classfirebase_1_1messaging_1_1_listener_a837d52cfb06e12c85d4df06583567eed}\index{firebase::messaging::Listener@{firebase::messaging::Listener}!OnTokenReceived@{OnTokenReceived}}
+\index{OnTokenReceived@{OnTokenReceived}!firebase::messaging::Listener@{firebase::messaging::Listener}}
+\doxysubsubsection{\texorpdfstring{OnTokenReceived()}{OnTokenReceived()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1messaging_1_1_listener_a837d52cfb06e12c85d4df06583567eed} 
+virtual void firebase\+::messaging\+::\+Listener\+::\+On\+Token\+Received (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called on the client when a registration token arrives. This function will eventually be called in response to a call to firebase\+::messaging\+::\+Initialize(...).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em token} & The registration token. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_acdd9f0597ba7687863bab94d9867f95f}{firebase\+::messaging\+::\+Pollable\+Listener}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/messaging.\+h\end{DoxyCompactItemize}

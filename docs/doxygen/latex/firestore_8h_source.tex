@@ -1,0 +1,187 @@
+\doxysection{firestore.\+h}
+\hypertarget{firestore_8h_source}{}\label{firestore_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}firebase/log.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Include\ *all*\ the\ public\ headers\ to\ make\ sure\ including\ just\ "{}firestore.h"{}\ is}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ sufficient\ for\ users.}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/aggregate\_query.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/aggregate\_query\_snapshot.h"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/aggregate\_source.h"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/collection\_reference.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/document\_change.h"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/document\_reference.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/document\_snapshot.h"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/field\_path.h"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/field\_value.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/filter.h"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/firestore\_errors.h"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/geo\_point.h"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/listener\_registration.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/load\_bundle\_task\_progress.h"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/map\_field\_value.h"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/metadata\_changes.h"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/query.h"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/query\_snapshot.h"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/set\_options.h"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/settings.h"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/snapshot\_metadata.h"{}}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/source.h"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/timestamp.h"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/transaction.h"{}}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/transaction\_options.h"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/write\_batch.h"{}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00064\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{namespace\ }csharp\ \{}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }ApiHeaders;}
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }TransactionManager;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \}\ \ \textcolor{comment}{//\ namespace\ csharp}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kDefaultDatabase\ =\ \textcolor{stringliteral}{"{}(default)"{}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}\ \{}
+\DoxyCodeLine{00093\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}},}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad922d78c4f51cbc57fab1c7d6c6ba43e}{GetInstance}}(\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00158\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a8e0b13f105661288c2fda598f893ae47}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}},}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ db\_name,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00182\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a50ca8d42887a8c4d299052754407ff52}{GetInstance}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ db\_name,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00192\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a2928d0f91f517f15a73c5ad6a4ed94bd}{\string~Firestore}}();}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00198\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_af30801a3e89994a9a024ec0a263af21e}{Firestore}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}\&\ src)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00204\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a301be5e26bc93f42807f5b4af050a4e1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}\&\ src)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00211\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a50cabf23b8ded663f92e234fec1392b9}{app}}();}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad63645003fc293ca2adadee0c451ae20}{Collection}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ collection\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00238\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ae8a51d24ed695fc021aa3f3ba6ee192d}{Collection}}(}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ collection\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00248\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a63e7155867ce6daf744c1738e029492a}{Document}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ document\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00258\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a02fa5fda18ed29a7db92447e1cb29bdc}{Document}}(\textcolor{keyword}{const}\ std::string\&\ document\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00271\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_afa9e705594361a335fb28b502972ba07}{CollectionGroup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ collection\_id)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00284\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a78f6593ffe159b7efce7b2ee14649318}{CollectionGroup}}(\textcolor{keyword}{const}\ std::string\&\ collection\_id)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00287\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4}{settings}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00290\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a1f66673a54ef76ffd3123cabad46b405}{set\_settings}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4}{settings}});}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00301\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_aa0130a6f81ce177431562a64866fe3a1}{batch}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00314\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a334fd6ca23f019c97229926986a59e4a}{RunTransaction}}(}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ std::function<\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}}\&,\ std::string\&)>\ update);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00330\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a47a7d4e8fb544dc7ca2180bf0634fa09}{RunTransaction}}(}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\ options,}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ std::function<\mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}}\&,\ std::string\&)>\ update);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00341\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_af10daa3d7a5af55931934cfed8a62bee}{set\_log\_level}}(\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{LogLevel}}\ log\_level);}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00352\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a32d5a7ca5d03ceaca997f5adf74792cd}{DisableNetwork}}();}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00360\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_aa067e500bc77ab24512399ab0cd697d8}{EnableNetwork}}();}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00384\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8}{Terminate}}();}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00400\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a15dc6d2f085313b4ba02b9f81efe34e0}{WaitForPendingWrites}}();}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00419\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665}{ClearPersistence}}();}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00438\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a377bf2232a3234157152be9ecb70814d}{AddSnapshotsInSyncListener}}(}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}()>\ callback);}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00448\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<LoadBundleTaskProgress>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad942b7143f40d56641863732002c3e78}{LoadBundle}}(\textcolor{keyword}{const}\ std::string\&\ bundle);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00460\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<LoadBundleTaskProgress>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a5d23675f81f7102e286c3af051a02cfd}{LoadBundle}}(}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ bundle,}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}\&)>\ progress\_callback);}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00477\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<Query>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a57dee7a67f00148a1ac5509c16c47d0e}{NamedQuery}}(\textcolor{keyword}{const}\ std::string\&\ query\_name);}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00483\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a0578e000e0f165b6e28a10be038e66ab}{Firestore}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00486\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FieldValueInternal;}
+\DoxyCodeLine{00487\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00488\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Wrapper;}
+\DoxyCodeLine{00489\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00490\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FirestoreIntegrationTest;}
+\DoxyCodeLine{00491\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }IncludesTest;}
+\DoxyCodeLine{00492\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ \textcolor{keyword}{typename}\ F>}
+\DoxyCodeLine{00493\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }CleanupFn;}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }csharp::ApiHeaders;}
+\DoxyCodeLine{00496\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }csharp::TransactionManager;}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a0578e000e0f165b6e28a10be038e66ab}{Firestore}}(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}},}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ database\_id\ =\ kDefaultDatabase);}
+\DoxyCodeLine{00500\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a0578e000e0f165b6e28a10be038e66ab}{Firestore}}(FirestoreInternal*\ internal);}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ CreateFirestore(\mbox{\hyperlink{classfirebase_1_1_app}{::firebase::App}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}},}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FirestoreInternal*\ internal,}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out);}
+\DoxyCodeLine{00505\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ AddFirestoreToCache(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ firestore,}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}*\ init\_result\_out);}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ SetClientLanguage(\textcolor{keyword}{const}\ std::string\&\ language\_token);}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \ \ \textcolor{comment}{//\ Delete\ the\ internal\_\ data.}}
+\DoxyCodeLine{00511\ \ \ \textcolor{keywordtype}{void}\ DeleteInternal();}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \ \ \textcolor{keyword}{mutable}\ FirestoreInternal*\ internal\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00514\ \};}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00516\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00517\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,213 @@
+\doxysection{query.\+h}
+\hypertarget{firestore_2query_8h_source}{}\label{firestore_2query_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/query.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/query.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_QUERY\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_QUERY\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/firestore\_errors.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/metadata\_changes.h"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/source.h"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }Future;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }AggregateQuery;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }DocumentSnapshot;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_event_listener}{EventListener}};}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}};}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}};}
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }QueryInternal;}
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{QuerySnapshot}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \{}
+\DoxyCodeLine{00065\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}}\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ kAscending,}
+\DoxyCodeLine{00071\ \ \ \ \ kDescending,}
+\DoxyCodeLine{00072\ \ \ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a4f60a0201265ead1826025e27f759ef6}{Query}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a5ec9f17aec1c45cc2fd44e6f2fe89ea4}{Query}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ other);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_acf8a6439390db42df8a1b425074107a3}{Query}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\&\ other);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{\string~Query}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a59b4bb456a9530e21b4e059fa0b60451}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ other);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ab059c12989ec55bbd571e59b5bf9a5c7}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\&\ other);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a76e86914e4fe0e5c652ea4951e39a488}{firestore}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}*\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae24f6695aefc660d725069a628e885ec}{firestore}}();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{AggregateQuery}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aa2ca61a87427e6be034981deed981a3e}{Count}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a2422d82825534708c902f074672ea6c3}{Where}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}}\&\ filter)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aed0d78e7ea7ec0bb4b124613d2f33815}{WhereEqualTo}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00194\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a8394443cb068581c85d7c3c4cd254042}{WhereEqualTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00210\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}{WhereNotEqualTo}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aba6bd8a35ab9165f59d8c2df022744cc}{WhereNotEqualTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00239\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ab863b5c3289369ffbef7ef7d490e7d0d}{WhereLessThan}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00252\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9ed3c5716ee0c278eb91708897ae2c38}{WhereLessThan}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a8b1256752b7f85389053a0e0ffa71f80}{WhereLessThanOrEqualTo}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00278\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a002b0840ad9f81bf73547d4a15ee1aa2}{WhereLessThanOrEqualTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00291\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a061e410f8aac5357ef6afb5f2cddf30e}{WhereGreaterThan}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00304\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae97619e07ae72bf007e658c611aadcc1}{WhereGreaterThan}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00317\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ac346e354f6cda65c42745325f84373f7}{WhereGreaterThanOrEqualTo}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00330\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a08b33afa5924a0460e8b01cca1114748}{WhereGreaterThanOrEqualTo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00346\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{WhereArrayContains}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00362\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ad25cec571e18723419cb410378340f4d}{WhereArrayContains}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{FieldValue}}\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00378\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{WhereArrayContainsAny}}(}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ field,\ \textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00394\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ab386a566c5f03ed8b1d071c1c95b6ef7}{WhereArrayContainsAny}}(}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,\ \textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00410\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{WhereIn}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00426\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9a4c1953a6ba6e585daa36d3da5952b4}{WhereIn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00448\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}{WhereNotIn}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00470\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a79e93ddbeb5275f6c11df8d94684668e}{WhereNotIn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00483\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a7321502d5a84c6efafd83f8d9ba23160}{OrderBy}}(\textcolor{keyword}{const}\ std::string\&\ field,}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}}\ direction\ =\ Direction::kAscending)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00496\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_adff3a2fdb63158e545faf776fa2aec43}{OrderBy}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{FieldPath}}\&\ field,}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}}\ direction\ =\ Direction::kAscending)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00508\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aebb07a6e5bb247c0902195901ab37bc9}{Limit}}(int32\_t\ limit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00519\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_acd246d60423f120675ef86346bc39055}{LimitToLast}}(int32\_t\ limit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00531\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a941679a11fe1f0c8dfcc5734ac4f9765}{StartAt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{DocumentSnapshot}}\&\ snapshot)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00543\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a3a8703633c6c9d0a2c8378f646707ce8}{StartAt}}(\textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00555\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a663e772a791d4bc627640248aa7f2b3e}{StartAfter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{DocumentSnapshot}}\&\ snapshot)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00567\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a8e1665b62ccc4da8500689b7d520f1ea}{StartAfter}}(\textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00579\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a7d337660fab8bf97ea5fd43eaf790f85}{EndBefore}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{DocumentSnapshot}}\&\ snapshot)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00591\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aaea523c523f3e6f7be9f2c1c115775a1}{EndBefore}}(\textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00603\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9856075dac1cde759cb8edbaf7454b75}{EndAt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{DocumentSnapshot}}\&\ snapshot)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00615\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ad39825878f57cc74ae4e290513aa661f}{EndAt}}(\textcolor{keyword}{const}\ std::vector<FieldValue>\&\ values)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00629\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<QuerySnapshot>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}{Get}}(\mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66}{Source}}\ source\ =\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a6867faeaa475fda467e48267db2bb8a8}{Source::kDefault}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00642\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae0b372205de96efe45992d48d6f8aaef}{AddSnapshotListener}}(}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{QuerySnapshot}}\&,\ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}},\ \textcolor{keyword}{const}\ std::string\&)>}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ callback);}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00660\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a985be080cd45fb2300497c3a5061dad7}{AddSnapshotListener}}(}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{MetadataChanges}}\ metadata\_changes,}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{QuerySnapshot}}\&,\ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}},\ \textcolor{keyword}{const}\ std::string\&)>}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ callback);}
+\DoxyCodeLine{00664\ }
+\DoxyCodeLine{00675\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9e6b0fb2d4a4492d38a51932f834f666}{is\_valid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ internal\_\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00677\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00678\ \ \ \textcolor{keywordtype}{size\_t}\ Hash()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a55fd281ad6fb634804f15ae44f0868a3}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ rhs);}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00682\ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{size\_t}\ QueryHash(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ query);}
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ not\ SWIG}}
+\DoxyCodeLine{00684\ }
+\DoxyCodeLine{00685\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00686\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }QueryInternal;}
+\DoxyCodeLine{00687\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }QuerySnapshotInternal;}
+\DoxyCodeLine{00688\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00689\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ \textcolor{keyword}{typename}\ F>}
+\DoxyCodeLine{00690\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }CleanupFn;}
+\DoxyCodeLine{00691\ \ \ \textcolor{comment}{//\ For\ access\ to\ the\ constructor\ and\ to\ \`{}internal\_`.}}
+\DoxyCodeLine{00692\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}};}
+\DoxyCodeLine{00693\ }
+\DoxyCodeLine{00694\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a4f60a0201265ead1826025e27f759ef6}{Query}}(QueryInternal*\ internal);}
+\DoxyCodeLine{00695\ }
+\DoxyCodeLine{00696\ \ \ \textcolor{keyword}{mutable}\ QueryInternal*\ internal\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00697\ \};}
+\DoxyCodeLine{00698\ }
+\DoxyCodeLine{00700\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ rhs);}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00703\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\&\ rhs)\ \{}
+\DoxyCodeLine{00704\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00705\ \}}
+\DoxyCodeLine{00706\ }
+\DoxyCodeLine{00707\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00708\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00709\ }
+\DoxyCodeLine{00710\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_QUERY\_H\_}}
+
+\end{DoxyCode}

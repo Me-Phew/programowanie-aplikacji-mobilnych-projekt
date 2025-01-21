@@ -1,0 +1,51 @@
+\doxysection{firebase\+::remote\+\_\+config\+::Config\+Settings Struct Reference}
+\hypertarget{structfirebase_1_1remote__config_1_1_config_settings}{}\label{structfirebase_1_1remote__config_1_1_config_settings}\index{firebase::remote\_config::ConfigSettings@{firebase::remote\_config::ConfigSettings}}
+
+
+Configurations for Remote Config behavior.  
+
+
+
+
+{\ttfamily \#include $<$remote\+\_\+config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings_a35d2883e062576bc80a2292400a79a22}{fetch\+\_\+timeout\+\_\+in\+\_\+milliseconds}} = k\+Default\+Timeout\+In\+Milliseconds
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings_ae5e78aa019e31ded1e35ae57137b94f8}{minimum\+\_\+fetch\+\_\+interval\+\_\+in\+\_\+milliseconds}} = k\+Default\+Cache\+Expiration
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configurations for Remote Config behavior. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_settings_a35d2883e062576bc80a2292400a79a22}\index{firebase::remote\_config::ConfigSettings@{firebase::remote\_config::ConfigSettings}!fetch\_timeout\_in\_milliseconds@{fetch\_timeout\_in\_milliseconds}}
+\index{fetch\_timeout\_in\_milliseconds@{fetch\_timeout\_in\_milliseconds}!firebase::remote\_config::ConfigSettings@{firebase::remote\_config::ConfigSettings}}
+\doxysubsubsection{\texorpdfstring{fetch\_timeout\_in\_milliseconds}{fetch\_timeout\_in\_milliseconds}}
+{\footnotesize\ttfamily \label{structfirebase_1_1remote__config_1_1_config_settings_a35d2883e062576bc80a2292400a79a22} 
+uint64\+\_\+t firebase\+::remote\+\_\+config\+::\+Config\+Settings\+::fetch\+\_\+timeout\+\_\+in\+\_\+milliseconds = k\+Default\+Timeout\+In\+Milliseconds}
+
+The timeout specifies how long the client should wait for a connection to the Firebase Remote Config servers.
+
+\begin{DoxyNote}{Note}
+A fetch call will fail if it takes longer than the specified timeout to connect to the Remote Config servers. Default is 60 seconds. 
+\end{DoxyNote}
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_settings_ae5e78aa019e31ded1e35ae57137b94f8}\index{firebase::remote\_config::ConfigSettings@{firebase::remote\_config::ConfigSettings}!minimum\_fetch\_interval\_in\_milliseconds@{minimum\_fetch\_interval\_in\_milliseconds}}
+\index{minimum\_fetch\_interval\_in\_milliseconds@{minimum\_fetch\_interval\_in\_milliseconds}!firebase::remote\_config::ConfigSettings@{firebase::remote\_config::ConfigSettings}}
+\doxysubsubsection{\texorpdfstring{minimum\_fetch\_interval\_in\_milliseconds}{minimum\_fetch\_interval\_in\_milliseconds}}
+{\footnotesize\ttfamily \label{structfirebase_1_1remote__config_1_1_config_settings_ae5e78aa019e31ded1e35ae57137b94f8} 
+uint64\+\_\+t firebase\+::remote\+\_\+config\+::\+Config\+Settings\+::minimum\+\_\+fetch\+\_\+interval\+\_\+in\+\_\+milliseconds = k\+Default\+Cache\+Expiration}
+
+The minimum interval between successive fetch calls.
+
+\begin{DoxyNote}{Note}
+Fetches less than duration seconds after the last fetch from the Firebase Remote Config server would use values returned during the last fetch. Default is 12 hours. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/remote\+\_\+config.\+h\end{DoxyCompactItemize}

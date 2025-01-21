@@ -1,0 +1,410 @@
+\newpage
+\section{Implementacja}		%4
+%Wkleić szkielet kodu, wraz z komentarzami. Opisać zmienne, struktury do czego służą. Opisać procedury, metody co wykonują. Opisać nowe zdefiniowane klasy. Opisać dziedziczenie. Opisać nowo utworzone pliki za co odpowiadają.
+
+\subsection{Struktura projektu}
+
+Projekt został podzielony na następujące główne katalogi:
+
+\begin{itemize}
+  \item \textbf{lib/} - główny katalog z kodem źródłowym
+        \begin{itemize}
+          \item \textbf{models/} - modele danych
+          \item \textbf{screens/} - widoki aplikacji
+          \item \textbf{utils/} - narzędzia pomocnicze
+          \item \textbf{providers/} - zarządzanie stanem
+          \item \textbf{services/} - warstwa komunikacji z API
+          \item \textbf{widgets/} - komponenty wielokrotnego użytku
+        \end{itemize}
+\end{itemize}
+
+\subsection{Modele danych}
+
+\subsubsection{Model użytkownika \textbf{Listing. \ref{lst:user-model} (s. \pageref{lst:user-model})}}
+\begin{lstlisting}[language=C++, caption=Model użytkownika, label={lst:user-model}]
+class AppUser {
+  final String uid;
+  final String email;
+  
+  AppUser({
+    required this.uid,
+    required this.email,
+  });
+}
+\end{lstlisting}
+Model `AppUser` reprezentuje użytkownika aplikacji. Zawiera unikalny identyfikator `uid` oraz adres email `email`.
+\newpage
+\subsubsection{Model wydarzenia \textbf{Listing. \ref{lst:event-model} (s. \pageref{lst:event-model})}}
+\begin{lstlisting}[language=C++, caption=Model wydarzenia, label={lst:event-model}]
+class Event {
+  final String title;
+  final TimeOfDay startTime;
+  final TimeOfDay endTime;
+  final String room;
+  final String type;
+  final String lecturer;
+  final DateTime date;
+
+  Event({
+    required this.title,
+    required this.startTime,
+    required this.endTime,
+    required this.room,
+    required this.lecturer,
+    required this.type,
+    required this.date,
+  });
+}
+\end{lstlisting}
+Model `Event` reprezentuje wydarzenie w aplikacji. Zawiera informacje takie jak tytuł `title`, czas rozpoczęcia `startTime`, czas zakończenia `endTime`, sala `room`, typ zajęć `type`, wykładowca `lecturer` oraz data `date`.
+
+\subsection{Zarządzanie stanem}
+
+\subsubsection{Dostawca motywu \textbf{Listing. \ref{lst:theme-provider} (s. \pageref{lst:theme-provider})}}
+\begin{lstlisting}[language=C++, caption=Provider motywu, label={lst:theme-provider}]
+final darkModeProvider = StateNotifierProvider<DarkModeNotifier, bool>((ref) {
+  return DarkModeNotifier();
+});
+
+class DarkModeNotifier extends StateNotifier<bool> {
+  DarkModeNotifier() : super(false);
+
+  void toggleDarkMode(bool value) {
+    state = value;
+  }
+}
+\end{lstlisting}
+Provider `darkModeProvider` zarządza stanem trybu ciemnego w aplikacji. Klasa `DarkModeNotifier` dziedziczy po `StateNotifier<bool>` i umożliwia przełączanie trybu ciemnego za pomocą metody `toggleDarkMode`.
+
+\subsection{Usługi API}
+
+\subsubsection{Serwis powiadomień \textbf{Listing. \ref{lst:notification-service} (s. \pageref{lst:notification-service})}}
+\begin{lstlisting}[language=C++, caption=Serwis powiadomień, label={lst:notification-service}]
+class FirebaseApi {
+  final _firebaseMessaging = FirebaseMessaging.instance;
+
+  Future<void> initNotifications() async {
+    await _firebaseMessaging.requestPermission();
+    final token = await _firebaseMessaging.getToken();
+    print('Token: $token');
+  }
+
+  void handleMessage(RemoteMessage? message) {
+    if (message == null) return;
+  }
+}
+\end{lstlisting}
+Klasa `FirebaseApi` odpowiada za obsługę powiadomień push. Metoda `initNotifications` inicjalizuje powiadomienia, a `handleMessage` obsługuje otrzymane wiadomości.
+
+\subsection{Komponenty wielokrotnego użytku}
+
+\subsubsection{Przycisk stylizowany \textbf{Listing. \ref{lst:styled-button} (s. \pageref{lst:styled-button})}}
+\begin{lstlisting}[language=C++, caption=Komponent przycisku, label={lst:styled-button}]
+class StyledButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final Widget child;
+
+  const StyledButton({
+    Key? key,
+    required this.onPressed,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+      child: child,
+    );
+  }
+}
+\end{lstlisting}
+Komponent `StyledButton` to stylizowany przycisk, który można wielokrotnie używać w aplikacji. Przyjmuje funkcję `onPressed` oraz widget `child` jako argumenty.
+
+\subsection{Logika biznesowa}
+
+\subsubsection{Filtrowanie wydarzeń \textbf{Listing. \ref{lst:event-filtering} (s. \pageref{lst:event-filtering})}}
+\begin{lstlisting}[language=C++, caption=Filtrowanie wydarzeń, label={lst:event-filtering}]
+List<Event> filterEvents(List<Event> events, DateTime selectedDay) {
+  return events
+    .where((event) => isSameDay(event.date, selectedDay))
+    .toList()
+    ..sort((a, b) {
+      final aStart = DateTime(
+        selectedDay.year, 
+        selectedDay.month, 
+        selectedDay.day,
+        a.startTime.hour,
+        a.startTime.minute
+      );
+      final bStart = DateTime(
+        selectedDay.year,
+        selectedDay.month,
+        selectedDay.day,
+        b.startTime.hour,
+        b.startTime.minute
+      );
+      return aStart.compareTo(bStart);
+    });
+}
+\end{lstlisting}
+Funkcja `filterEvents` filtruje i sortuje wydarzenia na podstawie wybranego dnia `selectedDay`.
+
+\subsection{Wygodne SDK do komunikacji z backendem}
+
+Poniższy kod implementuje klasę \texttt{WirtualnySdk}, która pełni rolę wygodnego narzędzia do komunikacji z backendem. Dzięki wykorzystaniu wzorców projektowych takich jak \textbf{Singleton} oraz \textbf{Factory}, zapewniono efektywną inicjalizację i dostęp do komponentów SDK.
+
+\subsubsection{Wzorzec Singleton}
+Wzorzec \textbf{Singleton} umożliwia istnienie tylko jednej instancji klasy \texttt{WirtualnySdk} w całej aplikacji. Dzięki temu wszystkie moduły aplikacji mają dostęp do tej samej konfiguracji SDK i mogą współdzielić zasoby. W kodzie poniżej mechanizm Singleton realizowany jest poprzez:
+
+\begin{itemize}
+  \item Prywatne pole statyczne \texttt{\_instance}, które przechowuje instancję klasy.
+  \item Prywatny konstruktor \texttt{\_internal}, który zapobiega tworzeniu instancji z zewnątrz.
+  \item Publiczną metodę \texttt{initialize()}, która inicjalizuje SDK i ustawia konfigurację.
+  \item Getter \texttt{instance}, który zwraca istniejącą instancję SDK lub zgłasza wyjątek, jeśli SDK nie zostało zainicjalizowane.
+\end{itemize}
+
+Kod weryfikuje, czy SDK zostało już zainicjalizowane. Próba wielokrotnej inicjalizacji prowadzi do zgłoszenia wyjątku \textbf{Listing. \ref{lst:event-sdk} (s. \pageref{lst:event-sdk})}:
+
+\begin{lstlisting}[language=C++, caption=Zgłoszenie wyjątku,  label={lst:event-sdk}]
+if (_instance != null) {
+    throw Exception('WirtualnySdk has already been initialized.');
+}
+\end{lstlisting}
+
+\subsubsection{Wzorzec Factory}
+Wzorzec \textbf{Factory} umożliwia tworzenie instancji klasy poprzez wywołanie metody \texttt{factory}. W kodzie zastosowano fabrykę do implementacji uproszczonego dostępu do obiektu SDK \textbf{Listing. \ref{lst:event-factory} (s. \pageref{lst:event-factory})}:
+
+\begin{lstlisting}[language=C++, caption=Wzorzec Factory,  label={lst:event-factory}]
+factory WirtualnySdk() {
+    return instance;
+}
+\end{lstlisting}
+
+Fabryka zwraca już istniejącą instancję klasy \texttt{WirtualnySdk}, co integruje się z mechanizmem Singleton. Umożliwia to bezpieczny i wygodny dostęp do SDK bez potrzeby ręcznego zarządzania instancją.
+
+\subsubsection{Modularna budowa SDK}
+Klasa \texttt{WirtualnySdk} zapewnia dostęp do modułów \texttt{auth} oraz \texttt{notifications}, odpowiedzialnych za uwierzytelnianie i obsługę powiadomień. Każdy z modułów jest instancjonowany jako prywatne pole i dostępny za pośrednictwem getterów \textbf{Listing. \ref{lst:event-auth} (s. \pageref{lst:event-auth})}:
+
+\begin{lstlisting}[language=C++, caption=WirtualnyAuth,  label={lst:event-auth}]
+final WirtualnyAuth _auth = WirtualnyAuth();
+final WirtualnyNotifications _wirtualnyNotifications =
+    WirtualnyNotifications();
+
+WirtualnyAuth get auth => _auth;
+WirtualnyNotifications get notifications => _wirtualnyNotifications;
+\end{lstlisting}
+
+Dzięki takiemu podejściu aplikacja ma zapewnioną modularność i łatwość rozbudowy SDK o kolejne komponenty.
+
+\subsubsection{Podsumowanie}
+Implementacja klasy \texttt{WirtualnySdk} pokazuje skuteczne wykorzystanie wzorców Singleton i Factory, dzięki czemu SDK jest łatwe w użyciu, bezpieczne i zgodne z zasadami dobrej architektury. Klasa zapewnia wygodny dostęp do kluczowych funkcji, takich jak uwierzytelnianie i powiadomienia, co czyni ją centralnym punktem integracji z backendem.
+
+\subsection{Wysyłanie powiadomień o ogłoszeniach - implementacja backendowa}
+
+Poniższy kod w języku TypeScript przedstawia proces wysyłania powiadomień typu FCM (Firebase Cloud Messaging) do wielu urządzeń jednocześnie w formie powiadomień o ogłoszeniach. Obsługiwane są zarówno urządzenia Android, jak i iOS. Kod zawiera również mechanizm logowania oraz obsługi błędów. \textbf{Listing. \ref{lst:fcm_notification} (s. \pageref{lst:fcm_notification})}
+
+\begin{lstlisting}[language=c++, caption={Implementacja wysyłania powiadomień FCM}, label={lst:fcm_notification}]
+try {
+  getMessaging().sendEachForMulticast({
+    tokens: fcmTokens,
+    notification: {
+      title: doc.subject,
+      body: stripHtml(doc.content_html).result,
+    },
+    data: {
+      type: 'announcement',
+      id: doc.id.toString(),
+      click_action: 'FLUTTER_NOTIFICATION_CLICK',
+    },
+    android: {
+      priority: doc.priority === 'high' ? 'high' : 'normal',
+      notification: {
+        clickAction: 'FLUTTER_NOTIFICATION_CLICK',
+      },
+    },
+    apns: {
+      headers: {
+        'apns-priority': doc.priority === 'high' ? '10' : '5',
+      },
+    },
+    fcmOptions: {
+      analyticsLabel: 'announcement',
+    },
+  });
+
+  if (enableLogs) {
+    payload.logger.info(
+      `Successfully sent FCM notification for '${collectionSlug}' document with ID: '${doc.id}''.`,
+    );
+  }
+} catch (error: unknown) {
+  const msg = error instanceof Error ? error.message : error;
+  throw new APIError(
+    `Failed to send FCM notification for '${collectionSlug}' document with ID: '${doc.id}': ${msg}'.`,
+  );
+}
+\end{lstlisting}
+
+\textbf{Opis działania:}
+\begin{itemize}
+  \item \textbf{Powiadomienia FCM:} Funkcja \texttt{sendEachForMulticast} umożliwia wysyłanie powiadomień do grupy urządzeń zdefiniowanych w tablicy \texttt{fcmTokens}.
+  \item \textbf{Struktura powiadomienia:} Powiadomienia zawierają tytuł (\texttt{title}), treść (\texttt{body}) oraz dane dodatkowe (\texttt{data}), takie jak typ powiadomienia (\texttt{announcement}) czy identyfikator dokumentu (\texttt{id}).
+  \item \textbf{Obsługa platform:}
+        \begin{itemize}
+          \item \textbf{Android:} Ustawiane są priorytety (\texttt{high} lub \texttt{normal}) oraz akcje kliknięcia.
+          \item \textbf{iOS:} Nagłówki \texttt{apns-priority} definiują priorytet wiadomości.
+        \end{itemize}
+  \item \textbf{Logowanie:} W przypadku sukcesu wysyłania, logowana jest informacja o wysłaniu powiadomienia.
+  \item \textbf{Obsługa błędów:} W przypadku błędu, rzucany jest wyjątek \texttt{APIError} z odpowiednim komunikatem.
+\end{itemize}
+
+\subsection{Integracja z backendem}
+
+Aplikacja komunikuje się z backendem Payload CMS poprzez REST API. Główne endpointy:
+
+\begin{itemize}
+  \item \texttt{/api/auth/login} - logowanie użytkownika
+  \item \texttt{/api/events} - zarządzanie planem zajęć
+  \item \texttt{/api/subjects} - zarządzanie przedmiotami
+  \item \texttt{/api/notifications} - zarządzanie powiadomieniami
+\end{itemize}
+Uwierzytelnianie odbywa się poprzez tokeny JWT przechowywane w \texttt{SharedPreferences}.
+
+\subsection{Deployment}
+
+Projekt PayloadCMS\cite{github-backend} został wdrożony na serwerze Ubuntu\cite{backend} z wykorzystaniem Nginx jako reverse proxy, certyfikatu SSL od Certbota, zarządzania DNS przez Cloudflare oraz narzędzi takich jak PM2 i pnpm. PayloadCMS w wersji 3 działa na frameworku Next.js, co zapewnia wydajność i elastyczność w budowie aplikacji.
+
+\subsubsection{Uruchamianie aplikacji za pomocą pnpm i PM2}
+
+Do zarządzania zależnościami projektu wykorzystano pnpm, co pozwala na szybsze instalacje oraz oszczędność miejsca na dysku. W katalogu projektu wszystkie niezbędne zależności zostały zainstalowane poleceniem \textbf{Listing. \ref{lst:event-pnpm} (s. \pageref{lst:event-pnpm})}:
+\begin{lstlisting}[language=C++, caption=Instalacja pnpm,  label={lst:event-pnpm}]
+pnpm install
+\end{lstlisting}
+
+Po zakończeniu konfiguracji i upewnieniu się, że aplikacja działa lokalnie w trybie produkcyjnym (\texttt{pnpm build} oraz \texttt{pnpm start}), PayloadCMS został uruchomiony i monitorowany za pomocą PM2. PM2 jest używany do zarządzania procesami aplikacji w tle, co zapewnia niezawodność oraz możliwość automatycznego restartu w razie awarii. Aplikację uruchomiono w trybie produkcyjnym następująco \textbf{Listing. \ref{lst:event-pnpm2} (s. \pageref{lst:event-pnpm2})}:
+\begin{lstlisting}[language=C++, caption=Uruchamianie pnpm,  label={lst:event-pnpm2}]
+pm2 start npm --name "payload-cms" -- start
+\end{lstlisting}
+
+PM2 zapewnia również możliwość monitorowania procesów oraz logów \textbf{Listing. \ref{lst:event-pnpm3} (s. \pageref{lst:event-pnpm3})}:
+\begin{lstlisting}[language=C++, caption=Sprawdzenie status oraz logów przy pomocy pnpm,  label={lst:event-pnpm3}]
+pm2 status
+pm2 logs payload-cms
+\end{lstlisting}
+
+\subsubsection{Konfiguracja Nginx jako Reverse Proxy}
+
+Nginx został skonfigurowany jako reverse proxy, aby przekierowywać ruch HTTP/HTTPS na serwer PayloadCMS działający na porcie aplikacji. Oto przykład konfiguracji wirtualnego hosta \textbf{Listing. \ref{lst:event-pnpm4} (s. \pageref{lst:event-pnpm4})}:
+\begin{lstlisting}[language=C++, caption=Konfiguracja nginx,  label={lst:event-pnpm4}]
+server {
+    listen 80;
+    server_name example.com www.example.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+\end{lstlisting}
+
+Po dodaniu powyższej konfiguracji Nginx został przeładowany \textbf{Listing. \ref{lst:event-pnpm5} (s. \pageref{lst:event-pnpm5})}:
+\begin{lstlisting}[language=C++, caption=przeładowanie konfiguracji,  label={lst:event-pnpm5}]
+sudo systemctl reload nginx
+\end{lstlisting}
+
+\subsubsection{SSL i Cloudflare}
+
+Domenę skonfigurowano z użyciem Cloudflare oraz certyfikatu SSL wygenerowanego przez Certbota. Certbot zaktualizował konfigurację Nginx w celu obsługi HTTPS \textbf{Listing. \ref{lst:event-pnpm6} (s. \pageref{lst:event-pnpm6})}:
+\begin{lstlisting}[language=C++, caption=Ustawienie cerbota,  label={lst:event-pnpm6}]
+sudo certbot --nginx -d example.com -d www.example.com
+\end{lstlisting}
+
+Cloudflare zostało skonfigurowane do zarządzania DNS (rekordy \texttt{A} i \texttt{CNAME}) oraz aktywowano tryb \texttt{Full SSL/TLS encryption mode}.
+
+\subsubsection{Podsumowanie}
+
+Dzięki wykorzystaniu pnpm do zarządzania zależnościami oraz PM2 do nadzorowania procesu aplikacji, PayloadCMS w wersji 3 (opartej na Next.js) działa stabilnie i wydajnie. Dodatkowo Nginx, Certbot oraz Cloudflare zapewniają bezpieczeństwo, wysoką dostępność i optymalizację dla użytkowników końcowych.
+
+\subsection{Przygotowanie pakietu .apk aplikacji mobilnej}
+
+Proces przygotowania pakietu \texttt{.apk} dla aplikacji mobilnej stworzonej w Flutterze obejmuje kilka kroków, od konfiguracji projektu po generowanie gotowego pliku instalacyjnego. Poniżej przedstawiono szczegóły całego procesu.
+
+\subsubsection{Konfiguracja projektu Flutter}
+
+Przed rozpoczęciem procesu budowy upewniono się, że projekt Flutter jest odpowiednio skonfigurowany do pracy w środowisku produkcyjnym:
+\begin{enumerate}
+  \item Plik \texttt{pubspec.yaml} został zaktualizowany, a wszystkie zależności zostały zainstalowane \textbf{Listing. \ref{lst:event-pnpm7} (s. \pageref{lst:event-pnpm7})}:
+        \begin{lstlisting}[language=C++, caption=Pobranie pakietów w flutterze,  label={lst:event-pnpm7}]
+    flutter pub get
+    \end{lstlisting}
+  \item Zdefiniowano odpowiednią konfigurację w pliku \texttt{AndroidManifest.xml}, w tym \texttt{applicationId}, pozwolenia (\texttt{permissions}) oraz ustawienia dotyczące wersji aplikacji (\texttt{versionCode} i \texttt{versionName}).
+  \item Plik \texttt{build.gradle} w module \texttt{app} zawierał właściwą konfigurację dla środowiska produkcyjnego, w tym \texttt{minSdkVersion} i \texttt{targetSdkVersion}.
+\end{enumerate}
+
+\subsubsection{Budowanie pakietu .apk}
+
+Pakiet \texttt{.apk} został wygenerowany za pomocą polecenia Fluttera do budowy w trybie produkcyjnym \textbf{Listing. \ref{lst:event-pnpm8} (s. \pageref{lst:event-pnpm8})}:
+\begin{lstlisting}[language=C++, caption=Budowa oficjalnego pakietu .apk,  label={lst:event-pnpm8}]
+flutter build apk --release
+\end{lstlisting}
+
+Wygenerowany plik \texttt{app-release.apk} został zapisany w katalogu \texttt{build/app/outputs/flutter-apk/}.
+
+\subsubsection{Podpisywanie aplikacji}
+
+Aby aplikacja mogła być zainstalowana na urządzeniach użytkowników, wymagane było jej podpisanie:
+\begin{enumerate}
+  \item Wygenerowano klucz kryptograficzny (\texttt{.keystore}) za pomocą narzędzia \texttt{keytool} \textbf{Listing. \ref{lst:event-pnpm9} (s. \pageref{lst:event-pnpm9})}:
+        \begin{lstlisting}[language=C++, caption=Generowanie kluczu krypotraficznego,  label={lst:event-pnpm9}]
+    keytool -genkey -v -keystore my-release-key.jks \
+        -keyalg RSA -keysize 2048 -validity 10000 \
+        -alias my-key-alias
+    \end{lstlisting}
+  \item Plik \texttt{my-release-key.jks} został umieszczony w katalogu \texttt{android/app/}.
+  \item W pliku \texttt{android/key.properties} zdefiniowano dane dostępowe do klucza \textbf{Listing. \ref{lst:event-pnpm10} (s. \pageref{lst:event-pnpm10})}:
+        \begin{lstlisting}[language=C++, caption=Dane dostępowe do klucza,  label={lst:event-pnpm10}]
+    storePassword=your-store-password
+    keyPassword=your-key-password
+    keyAlias=my-key-alias
+    storeFile=path/to/my-release-key.jks
+    \end{lstlisting}
+  \item Plik \texttt{build.gradle} został zaktualizowany, aby uwzględnić konfigurację podpisu \textbf{Listing. \ref{lst:event-pnpm11} (s. \pageref{lst:event-pnpm11})}:
+        \begin{lstlisting}[language=C++, caption=Uwzględnienie podpisu w pliku build.gradle,  label={lst:event-pnpm11}]
+    android {
+        signingConfigs {
+            release {
+                keyAlias 'my-key-alias'
+                keyPassword 'your-key-password'
+                storeFile file('path/to/my-release-key.jks')
+                storePassword 'your-store-password'
+            }
+        }
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+    \end{lstlisting}
+\end{enumerate}
+
+\subsubsection{Testowanie pakietu}
+
+Gotowy pakiet \texttt{.apk} został przetestowany na urządzeniach fizycznych i emulatorach, aby upewnić się, że działa poprawnie. Weryfikację przeprowadzono za pomocą polecenia \textbf{Listing. \ref{lst:event-pnpm12} (s. \pageref{lst:event-pnpm12})}:
+\begin{lstlisting}[language=C++, caption=Testowanie pakietu,  label={lst:event-pnpm12}]
+flutter install
+\end{lstlisting}
+
+\subsubsection{Podsumowanie}
+
+Pakiet \texttt{.apk} aplikacji mobilnej został przygotowany i podpisany, co pozwala na jego dystrybucję do użytkowników poprzez ręczną instalację lub publikację w sklepie Google Play. Wykorzystanie Fluttera oraz właściwa konfiguracja środowiska produkcyjnego gwarantują wysoką wydajność oraz zgodność z różnymi urządzeniami Android.

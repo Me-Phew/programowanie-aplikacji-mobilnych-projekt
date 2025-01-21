@@ -1,0 +1,449 @@
+\doxysection{firebase\+::firestore\+::Field\+Value Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_field_value}{}\label{classfirebase_1_1firestore_1_1_field_value}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+
+
+A field value represents variant datatypes as stored by \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}.  
+
+
+
+
+{\ttfamily \#include $<$field\+\_\+value.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_aae7d666fe5704aa8ec3aeee221bca661}{Type}} \{ \newline
+{\bfseries k\+Null}
+, {\bfseries k\+Boolean}
+, {\bfseries k\+Integer}
+, {\bfseries k\+Double}
+, \newline
+{\bfseries k\+Timestamp}
+, {\bfseries k\+String}
+, {\bfseries k\+Blob}
+, {\bfseries k\+Reference}
+, \newline
+{\bfseries k\+Geo\+Point}
+, {\bfseries k\+Array}
+, {\bfseries k\+Map}
+, {\bfseries k\+Delete}
+, \newline
+{\bfseries k\+Server\+Timestamp}
+, {\bfseries k\+Array\+Union}
+, {\bfseries k\+Array\+Remove}
+, {\bfseries k\+Increment\+Integer}
+, \newline
+{\bfseries k\+Increment\+Double}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a45c923f91d56627b75c06ee70daa67c3}{Field\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a8cb79b35bf5d2c16c6f2f6b209153787}{Field\+Value}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a6c6a0cf49e220307e0eedbd9a19fd16d}{Field\+Value}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a89bc8a0066c1f22d2e43f34f83c15e8d}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a3bf2e9b39f86a632326b396394d6b5c0}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ae53ae60213cf5acf6ecd2b12ccfe601c}\label{classfirebase_1_1firestore_1_1_field_value_ae53ae60213cf5acf6ecd2b12ccfe601c} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_aae7d666fe5704aa8ec3aeee221bca661}{Type}} {\bfseries type} () const
+\begin{DoxyCompactList}\small\item\em Gets the current type contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a5d4e21b1764a54a89b1831c69ffe097d}\label{classfirebase_1_1firestore_1_1_field_value_a5d4e21b1764a54a89b1831c69ffe097d} 
+bool {\bfseries is\+\_\+null} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} is currently null. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a97e38c9a93f2b423e0c952f3b664fb05}\label{classfirebase_1_1firestore_1_1_field_value_a97e38c9a93f2b423e0c952f3b664fb05} 
+bool {\bfseries is\+\_\+boolean} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a boolean value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a223a3ad2ae72b91b1184641f009e0aa9}\label{classfirebase_1_1firestore_1_1_field_value_a223a3ad2ae72b91b1184641f009e0aa9} 
+bool {\bfseries is\+\_\+integer} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains an integer value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a82676cfa18a14e39a0a22658ceccd29b}\label{classfirebase_1_1firestore_1_1_field_value_a82676cfa18a14e39a0a22658ceccd29b} 
+bool {\bfseries is\+\_\+double} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a double value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a15ef039b88dc7aa78eb1ad1bd74e6f68}\label{classfirebase_1_1firestore_1_1_field_value_a15ef039b88dc7aa78eb1ad1bd74e6f68} 
+bool {\bfseries is\+\_\+timestamp} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a timestamp. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a0b37708ebc01e35465bb3f51db09c88f}\label{classfirebase_1_1firestore_1_1_field_value_a0b37708ebc01e35465bb3f51db09c88f} 
+bool {\bfseries is\+\_\+string} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a string. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ad8afccddffb78abe5d23d78a3b59efeb}\label{classfirebase_1_1firestore_1_1_field_value_ad8afccddffb78abe5d23d78a3b59efeb} 
+bool {\bfseries is\+\_\+blob} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a blob. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ad9ebd94220bbb10419d94573269be52e}\label{classfirebase_1_1firestore_1_1_field_value_ad9ebd94220bbb10419d94573269be52e} 
+bool {\bfseries is\+\_\+reference} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a reference to a document in the same \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_acf4e7a952d0ecc18526e3ceba4492917}\label{classfirebase_1_1firestore_1_1_field_value_acf4e7a952d0ecc18526e3ceba4492917} 
+bool {\bfseries is\+\_\+geo\+\_\+point} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a1d929d1150842dcaff770824c87e6fb5}\label{classfirebase_1_1firestore_1_1_field_value_a1d929d1150842dcaff770824c87e6fb5} 
+bool {\bfseries is\+\_\+array} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains an array of Field\+Values. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a59819af0fa26fb415c06624cc0f6b87a}\label{classfirebase_1_1firestore_1_1_field_value_a59819af0fa26fb415c06624cc0f6b87a} 
+bool {\bfseries is\+\_\+map} () const
+\begin{DoxyCompactList}\small\item\em Gets whether this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contains a map of std\+::string to \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_acacb5ffd615de7a8a1c1536a7ff72bd6}\label{classfirebase_1_1firestore_1_1_field_value_acacb5ffd615de7a8a1c1536a7ff72bd6} 
+bool {\bfseries boolean\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the boolean value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a30a37580e8fb73e6f01cb1e85dc9fffa}\label{classfirebase_1_1firestore_1_1_field_value_a30a37580e8fb73e6f01cb1e85dc9fffa} 
+int64\+\_\+t {\bfseries integer\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the integer value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a1eaf2df8125c8349b6b974bb836ee317}\label{classfirebase_1_1firestore_1_1_field_value_a1eaf2df8125c8349b6b974bb836ee317} 
+double {\bfseries double\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the double value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ae771e9000e48f7919d45cd13d49ec4d3}\label{classfirebase_1_1firestore_1_1_field_value_ae771e9000e48f7919d45cd13d49ec4d3} 
+class \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} {\bfseries timestamp\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the timestamp value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ab3dbeaedbc8145f766935e48c9289a25}\label{classfirebase_1_1firestore_1_1_field_value_ab3dbeaedbc8145f766935e48c9289a25} 
+std\+::string {\bfseries string\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the string value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a060f9bd92194da840b4d2d0d0724c565}\label{classfirebase_1_1firestore_1_1_field_value_a060f9bd92194da840b4d2d0d0724c565} 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries blob\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the blob value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a6c4538d2d96c36dacbfd85bec9cd35cf}\label{classfirebase_1_1firestore_1_1_field_value_a6c4538d2d96c36dacbfd85bec9cd35cf} 
+size\+\_\+t {\bfseries blob\+\_\+size} () const
+\begin{DoxyCompactList}\small\item\em Gets the blob size contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a6647d116af1451a66c119fad9891e95e}\label{classfirebase_1_1firestore_1_1_field_value_a6647d116af1451a66c119fad9891e95e} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} {\bfseries reference\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_abefb2a1e445284afc1ae7e65cbda1c73}\label{classfirebase_1_1firestore_1_1_field_value_abefb2a1e445284afc1ae7e65cbda1c73} 
+class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} {\bfseries geo\+\_\+point\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point} value contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a85d5e9cbc1927b395c062e055c27dc6f}\label{classfirebase_1_1firestore_1_1_field_value_a85d5e9cbc1927b395c062e055c27dc6f} 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ {\bfseries array\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the vector of Field\+Values contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a7631b7e01b874fa616b15b64999b07c8}\label{classfirebase_1_1firestore_1_1_field_value_a7631b7e01b874fa616b15b64999b07c8} 
+\mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} {\bfseries map\+\_\+value} () const
+\begin{DoxyCompactList}\small\item\em Gets the map of string to \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} contained in this \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a607eb2d15154fe157983dc0b5d16225b}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is valid, {\ttfamily false} if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} could be the result of\+: \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ae380d607a9abe4f06973a96b7c5faef7}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a700e66e7c0cf68e30c88d0b9963e2677}\label{classfirebase_1_1firestore_1_1_field_value_a700e66e7c0cf68e30c88d0b9963e2677} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Boolean} (bool value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given boolean value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_acb7fafdc0cdf464ff2c753f97a250f1f}\label{classfirebase_1_1firestore_1_1_field_value_acb7fafdc0cdf464ff2c753f97a250f1f} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Integer} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given 64-\/bit integer value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a21924bbac448cc58f740d6b27a83ee22}\label{classfirebase_1_1firestore_1_1_field_value_a21924bbac448cc58f740d6b27a83ee22} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Double} (double value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given double-\/precision floating point value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a3d70b6af389b8de1db8c46a42fb55e14}\label{classfirebase_1_1firestore_1_1_field_value_a3d70b6af389b8de1db8c46a42fb55e14} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Timestamp} (\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given \doxylink{classfirebase_1_1_timestamp}{Timestamp} value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a30002edad4bb1ce74adecd3c9c539b34}\label{classfirebase_1_1firestore_1_1_field_value_a30002edad4bb1ce74adecd3c9c539b34} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries String} (std\+::string value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given std\+::string value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a017e2836fc39ff7f48ef3c36391d7165}\label{classfirebase_1_1firestore_1_1_field_value_a017e2836fc39ff7f48ef3c36391d7165} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Blob} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}value, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given blob value of given size. {\ttfamily value} is copied into the returned \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ae23cfcd7eeaae6933aa20a37e0c487f5}\label{classfirebase_1_1firestore_1_1_field_value_ae23cfcd7eeaae6933aa20a37e0c487f5} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Reference} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given reference value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_aa5701ea46e0fd192ca96b219e7df819e}\label{classfirebase_1_1firestore_1_1_field_value_aa5701ea46e0fd192ca96b219e7df819e} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Geo\+Point} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point} value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a6391cfa0350e6c6cdeebbbd926075818}\label{classfirebase_1_1firestore_1_1_field_value_a6391cfa0350e6c6cdeebbbd926075818} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Array} (std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} vector value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ade4029b4af459e6e2fad000f39b5916f}\label{classfirebase_1_1firestore_1_1_field_value_ade4029b4af459e6e2fad000f39b5916f} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Map} (\mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} value)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} containing the given \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} map value. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a2f53ca0c77dfabd8ed8bd313721f960c}\label{classfirebase_1_1firestore_1_1_field_value_a2f53ca0c77dfabd8ed8bd313721f960c} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Null} ()
+\begin{DoxyCompactList}\small\item\em Constructs a null. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ac3e445cdf6a56f62f4d7dd4f6015e81e}\label{classfirebase_1_1firestore_1_1_field_value_ac3e445cdf6a56f62f4d7dd4f6015e81e} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em Returns a sentinel for use with Update() to mark a field for deletion. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a3b819352e7dd45e30d427cee8ca78ee1}{Server\+Timestamp}} ()
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ac1afec9c75b7c89e00db18dab4568e94}{Array\+Union}} (std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ elements)
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ab5d91fc8b4806a0d4168b372e83442c8}{Array\+Remove}} (std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ elements)
+\item 
+{\footnotesize template$<$typename T , typename Enable\+If\+Integral$<$ T $>$\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ae53ae60213cf5acf6ecd2b12ccfe601c}{\+::type}}  = 0$>$ }\\static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_aca49a435cad7ff4d2cbe20c17eef83b0}{Increment}} (T by\+\_\+value)
+\item 
+{\footnotesize template$<$typename T , typename Enable\+If\+Floating\+Point$<$ T $>$\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ae53ae60213cf5acf6ecd2b12ccfe601c}{\+::type}}  = 0$>$ }\\static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_aca49a435cad7ff4d2cbe20c17eef83b0}{Increment}} (T by\+\_\+value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_acb1ddb4297a2a4ac901e09804c1bf74d}\label{classfirebase_1_1firestore_1_1_field_value_acb1ddb4297a2a4ac901e09804c1bf74d} 
+class {\bfseries Document\+Reference\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ad6ecc5059744d754b3a05f7bd135ce66}\label{classfirebase_1_1firestore_1_1_field_value_ad6ecc5059744d754b3a05f7bd135ce66} 
+class {\bfseries Document\+Snapshot\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a7401e97391c424ed371f1e7d785f55b6}\label{classfirebase_1_1firestore_1_1_field_value_a7401e97391c424ed371f1e7d785f55b6} 
+class {\bfseries Field\+Value\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_field_value_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_af6cb3d6b6c0e0eca68e1f4cbc42db8bb}\label{classfirebase_1_1firestore_1_1_field_value_af6cb3d6b6c0e0eca68e1f4cbc42db8bb} 
+class {\bfseries Query\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_add208beb107d99e8616c7e73e580f5ba}\label{classfirebase_1_1firestore_1_1_field_value_add208beb107d99e8616c7e73e580f5ba} 
+class {\bfseries Transaction\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a78fe9810384af4049d4b19b00be1f646}\label{classfirebase_1_1firestore_1_1_field_value_a78fe9810384af4049d4b19b00be1f646} 
+class {\bfseries Wrapper}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a0c491f15816190f8235ccd1367d5ae5f}\label{classfirebase_1_1firestore_1_1_field_value_a0c491f15816190f8235ccd1367d5ae5f} 
+class {\bfseries Write\+Batch\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_field_value_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a6a7d918563420d2bb60d09aea60a8c98}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value)
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_a5500edeac1c628770ccc9994054c1d3f}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A field value represents variant datatypes as stored by \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}. 
+
+\doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} can be used when reading a particular field with \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a726989caf1c55d7d355af3d5bfa3f518}{Document\+Snapshot\+::\+Get()} or fields with \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a27c719118b16ca67f96634015863baa9}{Document\+Snapshot\+::\+Get\+Data()}. When writing document fields with \doxylink{classfirebase_1_1firestore_1_1_document_reference_ad4a7cf6a1e9a51cafd99d3f9aeaeaeb7}{Document\+Reference\+::\+Set()} or \doxylink{classfirebase_1_1firestore_1_1_document_reference_a0d8d5bd4ffe02567e582d0c09d56387c}{Document\+Reference\+::\+Update()}, it can also represent sentinel values in addition to real data values.
+
+For a non-\/sentinel instance, you can check whether it is of a particular type with is\+\_\+foo() and get the value with foo\+\_\+value(), where foo can be one of null, boolean, integer, double, timestamp, string, blob, reference, geo\+\_\+point, array or map. If the instance is not of type foo, the call to foo\+\_\+value() will fail (and cause a crash). 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_aae7d666fe5704aa8ec3aeee221bca661}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!Type@{Type}}
+\index{Type@{Type}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_aae7d666fe5704aa8ec3aeee221bca661} 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_aae7d666fe5704aa8ec3aeee221bca661}{firebase\+::firestore\+::\+Field\+Value\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The enumeration of all valid runtime types of \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a45c923f91d56627b75c06ee70daa67c3}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!FieldValue@{FieldValue}}
+\index{FieldValue@{FieldValue}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{FieldValue()}{FieldValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a45c923f91d56627b75c06ee70daa67c3} 
+firebase\+::firestore\+::\+Field\+Value\+::\+Field\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_field_value_a8cb79b35bf5d2c16c6f2f6b209153787}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!FieldValue@{FieldValue}}
+\index{FieldValue@{FieldValue}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{FieldValue()}{FieldValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a8cb79b35bf5d2c16c6f2f6b209153787} 
+firebase\+::firestore\+::\+Field\+Value\+::\+Field\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a6c6a0cf49e220307e0eedbd9a19fd16d}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!FieldValue@{FieldValue}}
+\index{FieldValue@{FieldValue}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{FieldValue()}{FieldValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a6c6a0cf49e220307e0eedbd9a19fd16d} 
+firebase\+::firestore\+::\+Field\+Value\+::\+Field\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ab5d91fc8b4806a0d4168b372e83442c8}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!ArrayRemove@{ArrayRemove}}
+\index{ArrayRemove@{ArrayRemove}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{ArrayRemove()}{ArrayRemove()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_ab5d91fc8b4806a0d4168b372e83442c8} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Field\+Value\+::\+Array\+Remove (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$}]{elements}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a special value that can be used with Set() or Update() that tells the server to remove the given elements from any array value that already exists on the server. All instances of each element specified will be removed from the array. If the field being modified is not already an array, it will be overwritten with an empty array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em elements} & The elements to remove from the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} sentinel for use in a call to Set() or Update(). 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_ac1afec9c75b7c89e00db18dab4568e94}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!ArrayUnion@{ArrayUnion}}
+\index{ArrayUnion@{ArrayUnion}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{ArrayUnion()}{ArrayUnion()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_ac1afec9c75b7c89e00db18dab4568e94} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Field\+Value\+::\+Array\+Union (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$}]{elements}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a special value that can be used with Set() or Update() that tells the server to union the given elements with any array value that already exists on the server. Each specified element that doesn\textquotesingle{}t already exist in the array will be added to the end. If the field being modified is not already an array, it will be overwritten with an array containing exactly the specified elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em elements} & The elements to union into the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} sentinel for use in a call to Set() or Update(). 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_aca49a435cad7ff4d2cbe20c17eef83b0}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!Increment@{Increment}}
+\index{Increment@{Increment}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{Increment()}{Increment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_aca49a435cad7ff4d2cbe20c17eef83b0} 
+template$<$typename T , typename Enable\+If\+Integral$<$ T $>$\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ae53ae60213cf5acf6ecd2b12ccfe601c}{\+::type}}  = 0$>$ \\
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Field\+Value\+::\+Increment (\begin{DoxyParamCaption}\item[{T}]{by\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns a special value that can be used with {\ttfamily Set()} or {\ttfamily Update()} that tells the server to increment the field\textquotesingle{}s current value by the given integer value.
+
+If the current field value is an integer, possible integer overflows are resolved to {\ttfamily LONG\+\_\+\+MAX} or {\ttfamily LONG\+\_\+\+MIN}. If the current field value is a double, both values will be interpreted as doubles and the arithmetic will follow IEEE 754 semantics.
+
+If field is not an integer or a double, or if the field does not yet exist, the transformation will set the field to the given value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em by\+\_\+value} & The integer value to increment by. Should be an integer type not larger than {\ttfamily int64\+\_\+t}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} sentinel for use in a call to {\ttfamily Set()} or {\ttfamily Update().} 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_aca49a435cad7ff4d2cbe20c17eef83b0}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!Increment@{Increment}}
+\index{Increment@{Increment}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{Increment()}{Increment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_aca49a435cad7ff4d2cbe20c17eef83b0} 
+template$<$typename T , typename Enable\+If\+Floating\+Point$<$ T $>$\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value_ae53ae60213cf5acf6ecd2b12ccfe601c}{\+::type}}  = 0$>$ \\
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Field\+Value\+::\+Increment (\begin{DoxyParamCaption}\item[{T}]{by\+\_\+value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns a special value that can be used with {\ttfamily Set()} or {\ttfamily Update()} that tells the server to increment the field\textquotesingle{}s current value by the given floating point value.
+
+If the current field value is an integer, possible integer overflows are resolved to {\ttfamily LONG\+\_\+\+MAX} or {\ttfamily LONG\+\_\+\+MIN}. If the current field value is a double, both values will be interpreted as doubles and the arithmetic will follow IEEE 754 semantics.
+
+If field is not an integer or a double, or if the field does not yet exist, the transformation will set the field to the given value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em by\+\_\+value} & The double value to increment by. Should be a floating point type no larger than {\ttfamily double}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} sentinel for use in a call to {\ttfamily Set()} or {\ttfamily Update().} 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a607eb2d15154fe157983dc0b5d16225b}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a607eb2d15154fe157983dc0b5d16225b} 
+bool firebase\+::firestore\+::\+Field\+Value\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns {\ttfamily true} if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is valid, {\ttfamily false} if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}.
+\item Calling {\ttfamily Document\+Snapshot\+::\+Get(field)} for a field that does not exist in the document.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is valid, {\ttfamily false} if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a89bc8a0066c1f22d2e43f34f83c15e8d}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a89bc8a0066c1f22d2e43f34f83c15e8d} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \& firebase\+::firestore\+::\+Field\+Value\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a3bf2e9b39f86a632326b396394d6b5c0}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a3bf2e9b39f86a632326b396394d6b5c0} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \& firebase\+::firestore\+::\+Field\+Value\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a3b819352e7dd45e30d427cee8ca78ee1}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!ServerTimestamp@{ServerTimestamp}}
+\index{ServerTimestamp@{ServerTimestamp}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{ServerTimestamp()}{ServerTimestamp()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a3b819352e7dd45e30d427cee8ca78ee1} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} firebase\+::firestore\+::\+Field\+Value\+::\+Server\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a sentinel that can be used with Set() or Update() to include a server-\/generated timestamp in the written data. \Hypertarget{classfirebase_1_1firestore_1_1_field_value_ae380d607a9abe4f06973a96b7c5faef7}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_ae380d607a9abe4f06973a96b7c5faef7} 
+std\+::string firebase\+::firestore\+::\+Field\+Value\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a6a7d918563420d2bb60d09aea60a8c98}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a6a7d918563420d2bb60d09aea60a8c98} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value_ae380d607a9abe4f06973a96b7c5faef7}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_value_a5500edeac1c628770ccc9994054c1d3f}\index{firebase::firestore::FieldValue@{firebase::firestore::FieldValue}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::FieldValue@{firebase::firestore::FieldValue}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_value_a5500edeac1c628770ccc9994054c1d3f} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/field\+\_\+value.\+h\end{DoxyCompactItemize}

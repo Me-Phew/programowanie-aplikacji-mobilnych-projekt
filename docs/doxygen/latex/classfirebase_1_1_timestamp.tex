@@ -1,0 +1,195 @@
+\doxysection{firebase\+::Timestamp Class Reference}
+\hypertarget{classfirebase_1_1_timestamp}{}\label{classfirebase_1_1_timestamp}\index{firebase::Timestamp@{firebase::Timestamp}}
+
+
+{\ttfamily \#include $<$timestamp.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_timestamp_ac32e672755662f1056f0f5adabac787c}{Timestamp}} ()=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1_timestamp_aef76dce7a9ecf4c432e9cdebcd843893}{Timestamp}} (int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}, int32\+\_\+t \mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}})
+\item 
+\mbox{\hyperlink{classfirebase_1_1_timestamp_a4b16397af48b6b5c968573f2c00b7ab7}{Timestamp}} (const \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&other)=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1_timestamp_ac96b74066e10d8a904448e8cdec1a162}{Timestamp}} (\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&\&other)=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \& \mbox{\hyperlink{classfirebase_1_1_timestamp_afa816e1acaad30b004952b88d7db1750}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&other)=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \& \mbox{\hyperlink{classfirebase_1_1_timestamp_a1ded6404b2caad001096436822fa42d4}{operator=}} (\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&\&other)=default
+\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}} () const
+\item 
+int32\+\_\+t \mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}} () const
+\item 
+{\footnotesize template$<$typename Clock  = std\+::chrono\+::system\+\_\+clock, typename Duration  = std\+::chrono\+::microseconds$>$ }\\std\+::chrono\+::time\+\_\+point$<$ Clock, Duration $>$ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4d037dfccf28fbd0efe6fbe8141d796c}{To\+Time\+Point}} () const
+\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1_timestamp_a1b460866c2103cd59f9df6aa0e9e759d}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \mbox{\hyperlink{classfirebase_1_1_timestamp_a7667c46bfe64d56ec2aaf675069036a7}{Now}} ()
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \mbox{\hyperlink{classfirebase_1_1_timestamp_a8bec4b207c51b44bfc5afea8302cc50f}{From\+TimeT}} (time\+\_\+t seconds\+\_\+since\+\_\+unix\+\_\+epoch)
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \mbox{\hyperlink{classfirebase_1_1_timestamp_a2fa2c8d8b5821aff9c3f3a6752d87369}{From\+Time\+Point}} (std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ time\+\_\+point)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1_timestamp_a5c22bd9e1ecd23f817dfb053eee25108}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&timestamp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1_timestamp}{Timestamp} represents a point in time independent of any time zone or calendar, represented as seconds and fractions of seconds at nanosecond resolution in UTC Epoch time. It is encoded using the Proleptic Gregorian Calendar which extends the Gregorian calendar backwards to year one. It is encoded assuming all minutes are 60 seconds long, i.\+e. leap seconds are "{}smeared"{} so that no leap second table is needed for interpretation. Range is from 0001-\/01-\/01T00\+:00\+:00Z to 9999-\/12-\/31T23\+:59\+:59.\+999999999Z.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://github.com/google/protobuf/blob/main/src/google/protobuf/timestamp.proto}{\texttt{ https\+://github.\+com/google/protobuf/blob/main/src/google/protobuf/timestamp.\+proto}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1_timestamp_ac32e672755662f1056f0f5adabac787c}\index{firebase::Timestamp@{firebase::Timestamp}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{Timestamp()}{Timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_ac32e672755662f1056f0f5adabac787c} 
+firebase\+::\+Timestamp\+::\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Creates a new timestamp representing the epoch (with seconds and nanoseconds set to 0). \Hypertarget{classfirebase_1_1_timestamp_aef76dce7a9ecf4c432e9cdebcd843893}\index{firebase::Timestamp@{firebase::Timestamp}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{Timestamp()}{Timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_aef76dce7a9ecf4c432e9cdebcd843893} 
+firebase\+::\+Timestamp\+::\+Timestamp (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{seconds}{, }\item[{int32\+\_\+t}]{nanoseconds}{}\end{DoxyParamCaption})}
+
+Creates a new timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & The number of seconds of UTC time since Unix epoch 1970-\/01-\/01T00\+:00\+:00Z. Must be from 0001-\/01-\/01T00\+:00\+:00Z to 9999-\/12-\/31T23\+:59\+:59Z inclusive; otherwise, assertion failure will be triggered. \\
+\hline
+{\em nanoseconds} & The non-\/negative fractions of a second at nanosecond resolution. Negative second values with fractions must still have non-\/negative nanoseconds values that count forward in time. Must be from 0 to 999,999,999 inclusive; otherwise, assertion failure will be triggered. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_timestamp_a4b16397af48b6b5c968573f2c00b7ab7}\index{firebase::Timestamp@{firebase::Timestamp}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{Timestamp()}{Timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a4b16397af48b6b5c968573f2c00b7ab7} 
+firebase\+::\+Timestamp\+::\+Timestamp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copy constructor, {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}} is trivially copyable. \Hypertarget{classfirebase_1_1_timestamp_ac96b74066e10d8a904448e8cdec1a162}\index{firebase::Timestamp@{firebase::Timestamp}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{Timestamp()}{Timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_ac96b74066e10d8a904448e8cdec1a162} 
+firebase\+::\+Timestamp\+::\+Timestamp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Move constructor, equivalent to copying. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1_timestamp_a2fa2c8d8b5821aff9c3f3a6752d87369}\index{firebase::Timestamp@{firebase::Timestamp}!FromTimePoint@{FromTimePoint}}
+\index{FromTimePoint@{FromTimePoint}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{FromTimePoint()}{FromTimePoint()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a2fa2c8d8b5821aff9c3f3a6752d87369} 
+static \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} firebase\+::\+Timestamp\+::\+From\+Time\+Point (\begin{DoxyParamCaption}\item[{std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$}]{time\+\_\+point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts {\ttfamily std\+::chrono\+::time\+\_\+point} to a {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+point} & The time point with system clock\textquotesingle{}s epoch, which is presumed to be Unix epoch 1970-\/01-\/01T00\+:00\+:00Z. Can be negative to represent dates before the epoch. Must be from 0001-\/01-\/01T00\+:00\+:00Z to 9999-\/12-\/31T23\+:59\+:59Z inclusive; otherwise, assertion failure will be triggered. Note that while the epoch of {\ttfamily std\+::chrono\+::system\+\_\+clock} is unspecified, it\textquotesingle{}s usually Unix epoch. If this assumption is broken, this constructor will produce incorrect results. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_timestamp_a8bec4b207c51b44bfc5afea8302cc50f}\index{firebase::Timestamp@{firebase::Timestamp}!FromTimeT@{FromTimeT}}
+\index{FromTimeT@{FromTimeT}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{FromTimeT()}{FromTimeT()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a8bec4b207c51b44bfc5afea8302cc50f} 
+static \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} firebase\+::\+Timestamp\+::\+From\+TimeT (\begin{DoxyParamCaption}\item[{time\+\_\+t}]{seconds\+\_\+since\+\_\+unix\+\_\+epoch}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts {\ttfamily time\+\_\+t} to a {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds\+\_\+since\+\_\+unix\+\_\+epoch} & The number of seconds of UTC time since Unix epoch 1970-\/01-\/01T00\+:00\+:00Z. Can be negative to represent dates before the epoch. Must be from 0001-\/01-\/01T00\+:00\+:00Z to 9999-\/12-\/31T23\+:59\+:59Z inclusive; otherwise, assertion failure will be triggered. Note that while the epoch of {\ttfamily time\+\_\+t} is unspecified, it\textquotesingle{}s usually Unix epoch. If this assumption is broken, this function will produce incorrect results.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new timestamp with the given number of seconds and zero nanoseconds. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}\index{firebase::Timestamp@{firebase::Timestamp}!nanoseconds@{nanoseconds}}
+\index{nanoseconds@{nanoseconds}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{nanoseconds()}{nanoseconds()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f} 
+int32\+\_\+t firebase\+::\+Timestamp\+::nanoseconds (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The non-\/negative fractions of a second at nanosecond resolution. Negative second values with fractions still have non-\/negative nanoseconds values that count forward in time. \Hypertarget{classfirebase_1_1_timestamp_a7667c46bfe64d56ec2aaf675069036a7}\index{firebase::Timestamp@{firebase::Timestamp}!Now@{Now}}
+\index{Now@{Now}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{Now()}{Now()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a7667c46bfe64d56ec2aaf675069036a7} 
+static \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} firebase\+::\+Timestamp\+::\+Now (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new timestamp with the current date.
+
+The precision is up to nanoseconds, depending on the system clock.
+
+\begin{DoxyReturn}{Returns}
+a new timestamp representing the current date. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_timestamp_afa816e1acaad30b004952b88d7db1750}\index{firebase::Timestamp@{firebase::Timestamp}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_afa816e1acaad30b004952b88d7db1750} 
+\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \& firebase\+::\+Timestamp\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copy assignment operator, {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}} is trivially copyable. \Hypertarget{classfirebase_1_1_timestamp_a1ded6404b2caad001096436822fa42d4}\index{firebase::Timestamp@{firebase::Timestamp}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a1ded6404b2caad001096436822fa42d4} 
+\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \& firebase\+::\+Timestamp\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Move assignment operator, equivalent to copying. \Hypertarget{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}\index{firebase::Timestamp@{firebase::Timestamp}!seconds@{seconds}}
+\index{seconds@{seconds}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{seconds()}{seconds()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6} 
+int64\+\_\+t firebase\+::\+Timestamp\+::seconds (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The number of seconds of UTC time since Unix epoch 1970-\/01-\/01T00\+:00\+:00Z. \Hypertarget{classfirebase_1_1_timestamp_a1b460866c2103cd59f9df6aa0e9e759d}\index{firebase::Timestamp@{firebase::Timestamp}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a1b460866c2103cd59f9df6aa0e9e759d} 
+std\+::string firebase\+::\+Timestamp\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+\+: the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_timestamp_a4d037dfccf28fbd0efe6fbe8141d796c}\index{firebase::Timestamp@{firebase::Timestamp}!ToTimePoint@{ToTimePoint}}
+\index{ToTimePoint@{ToTimePoint}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{ToTimePoint()}{ToTimePoint()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a4d037dfccf28fbd0efe6fbe8141d796c} 
+template$<$typename Clock , typename Duration $>$ \\
+std\+::chrono\+::time\+\_\+point$<$ Clock, Duration $>$ firebase\+::\+Timestamp\+::\+To\+Time\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Converts this {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}} to a {\ttfamily time\+\_\+point}.
+
+Important\+: if overflow would occur, the returned value will be the maximum or minimum value that {\ttfamily Duration} can hold. Note in particular that {\ttfamily long long} is insufficient to hold the full range of {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}} values with nanosecond precision (which is why {\ttfamily Duration} defaults to {\ttfamily microseconds}). 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1_timestamp_a5c22bd9e1ecd23f817dfb053eee25108}\index{firebase::Timestamp@{firebase::Timestamp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::Timestamp@{firebase::Timestamp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_timestamp_a5c22bd9e1ecd23f817dfb053eee25108} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}} \&}]{timestamp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1_timestamp}{Timestamp}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1_timestamp_a1b460866c2103cd59f9df6aa0e9e759d}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/timestamp.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\doxysection{firebase\+::auth\+::Email\+Auth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_email_auth_provider}{}\label{classfirebase_1_1auth_1_1_email_auth_provider}\index{firebase::auth::EmailAuthProvider@{firebase::auth::EmailAuthProvider}}
+
+
+Use email and password to authenticate.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_email_auth_provider_a7d86709d38b24e4923024e243d112aaa}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}email, const char \texorpdfstring{$\ast$}{*}password)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_email_auth_provider_ae0e30d0da0a4bf9059e6d3c277574f41}\label{classfirebase_1_1auth_1_1_email_auth_provider_ae0e30d0da0a4bf9059e6d3c277574f41} 
+static const char \texorpdfstring{$\ast$}{*}const {\bfseries k\+Provider\+Id}
+\begin{DoxyCompactList}\small\item\em The string used to identify this provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use email and password to authenticate. 
+
+Allows developers to use the email and password credentials as they could other auth providers. For example, this can be used to change passwords, log in, etc. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_email_auth_provider_a7d86709d38b24e4923024e243d112aaa}\index{firebase::auth::EmailAuthProvider@{firebase::auth::EmailAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::EmailAuthProvider@{firebase::auth::EmailAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_email_auth_provider_a7d86709d38b24e4923024e243d112aaa} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+Email\+Auth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential from the given email and password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & E-\/mail to generate the credential from. \\
+\hline
+{\em password} & Password to use for the new credential.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

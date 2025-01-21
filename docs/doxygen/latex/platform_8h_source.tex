@@ -1,0 +1,116 @@
+\doxysection{platform.\+h}
+\hypertarget{platform_8h_source}{}\label{platform_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/platform.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/platform.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2019\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_PLATFORM\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_PLATFORM\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ This\ header\ serts\ exactly\ one\ of\ these\ FIREBASE\_PLATFORM\ macros\ to\ 1,\ and\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ rest\ to\ 0:}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_IOS}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_OSX}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_LINUX}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_UNKNOWN}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ You\ can\ use\ e.g.\ \#if\ FIREBASE\_PLATFORM\_OSX\ to\ conditionally\ compile\ code}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ after\ including\ this\ header.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ It\ also\ defines\ some\ convenience\ macros:}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ \ \ FIREBASE\_PLATFORM\_DESKTOP\ (1\ on\ OSX,\ WINDOWS,\ and\ LINUX,\ 0\ otherwise)}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ \ \ FIREBASE\_PLATFORM\_MOBILE\ (1\ on\ IOS\ and\ ANDROID,\ 0\ otherwise)}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_ANDROID\ 0}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_IOS\ 0}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_TVOS\ 0}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_OSX\ 0}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_WINDOWS\ 0}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_LINUX\ 0}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_UNKNOWN\ 0}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifdef\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}TargetConditionals.h"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#if\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_ANDROID\ 1}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#elif\ defined(TARGET\_OS\_IOS)\ \&\&\ TARGET\_OS\_IOS}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_IOS}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_IOS\ 1}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#elif\ defined(TARGET\_OS\_TV)\ \&\&\ TARGET\_OS\_TV}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_TVOS\ 1}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#elif\ defined(TARGET\_OS\_OSX)\ \&\&\ TARGET\_OS\_OSX}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_OSX}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_OSX\ 1}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#elif\ defined(\_WIN32)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_WINDOWS\ 1}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#elif\ defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_LINUX}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_LINUX\ 1}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#undef\ FIREBASE\_PLATFORM\_UNKNOWN}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_UNKNOWN\ 1}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_LINUX}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ Include\ std\ library\ header\ to\ get\ version\ defines}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ FIREBASE\_COMPILER\_CLANG\ 1}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ FIREBASE\_COMPILER\_GCC\ 1}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#if\ defined(\_LIBCPP\_VERSION)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ FIREBASE\_STANDARD\_LIBCPP\ 1}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#elif\ defined(\_\_GLIBCXX\_\_)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ FIREBASE\_STANDARD\_LIBSTDCPP\ 1}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#if\ (FIREBASE\_COMPILER\_CLANG\ \&\&\ FIREBASE\_STANDARD\_LIBCPP)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ FIREBASE\_LINUX\_BUILD\_CONFIG\_STRING\ "{}clang\_libstdcpp"{}}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#elif\ (FIREBASE\_COMPILER\_CLANG\ \&\&\ FIREBASE\_STANDARD\_LIBSTDCPP)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ FIREBASE\_LINUX\_BUILD\_CONFIG\_STRING\ "{}clang\_libcpp"{}}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#elif\ (FIREBASE\_COMPILER\_GCC\ \&\&\ FIREBASE\_STANDARD\_LIBCPP)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ FIREBASE\_LINUX\_BUILD\_CONFIG\_STRING\ "{}gcc\_libstdcpp"{}}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#elif\ (FIREBASE\_COMPILER\_GCC\ \&\&\ FIREBASE\_STANDARD\_LIBSTDCPP)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ FIREBASE\_LINUX\_BUILD\_CONFIG\_STRING\ "{}gcc\_libcpp"{}}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#error\ "{}Unsupported\ compiler\ or\ standard\ library"{}}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_LINUX}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_MOBILE\ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ (FIREBASE\_PLATFORM\_IOS\ ||\ FIREBASE\_PLATFORM\_ANDROID)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ FIREBASE\_PLATFORM\_DESKTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ (FIREBASE\_PLATFORM\_LINUX\ ||\ FIREBASE\_PLATFORM\_WINDOWS\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ FIREBASE\_PLATFORM\_OSX)}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_PLATFORM\_H\_}}
+
+\end{DoxyCode}

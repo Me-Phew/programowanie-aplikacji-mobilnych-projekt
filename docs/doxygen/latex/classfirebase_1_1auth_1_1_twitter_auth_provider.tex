@@ -1,0 +1,51 @@
+\doxysection{firebase\+::auth\+::Twitter\+Auth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_twitter_auth_provider}{}\label{classfirebase_1_1auth_1_1_twitter_auth_provider}\index{firebase::auth::TwitterAuthProvider@{firebase::auth::TwitterAuthProvider}}
+
+
+Use a token and secret provided by Twitter to authenticate.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_twitter_auth_provider_a8e1bbdeb3d161a0ff880f86d1b7947ad}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}token, const char \texorpdfstring{$\ast$}{*}secret)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_twitter_auth_provider_ac3dee562cc22ffae3bef8da6ce079cd7}\label{classfirebase_1_1auth_1_1_twitter_auth_provider_ac3dee562cc22ffae3bef8da6ce079cd7} 
+static const char \texorpdfstring{$\ast$}{*}const {\bfseries k\+Provider\+Id}
+\begin{DoxyCompactList}\small\item\em The string used to identify this provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use a token and secret provided by Twitter to authenticate. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_twitter_auth_provider_a8e1bbdeb3d161a0ff880f86d1b7947ad}\index{firebase::auth::TwitterAuthProvider@{firebase::auth::TwitterAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::TwitterAuthProvider@{firebase::auth::TwitterAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_twitter_auth_provider_a8e1bbdeb3d161a0ff880f86d1b7947ad} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+Twitter\+Auth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{token}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{secret}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential from the given Twitter token and password.
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The Twitter OAuth token. \\
+\hline
+{\em secret} & The Twitter OAuth secret.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

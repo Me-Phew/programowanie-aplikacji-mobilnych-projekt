@@ -1,0 +1,213 @@
+\doxysection{firebase\+::firestore\+::Set\+Options Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_set_options}{}\label{classfirebase_1_1firestore_1_1_set_options}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+
+
+An options object that configures the behavior of Set() calls.  
+
+
+
+
+{\ttfamily \#include $<$set\+\_\+options.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205}{Type}} \{ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205abfd4483cecc9ffd36f88de2c9f53b8dc}{k\+Overwrite}}
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205a95704621f6cc655bcd2a198b33be9bcf}{k\+Merge\+All}}
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205afa73c9a632b76599acd400459861bcbf}{k\+Merge\+Specific}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_ab655936516fa63ebe64e2cb6a278c136}{Set\+Options}} ()=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_ac4b2e1b8fdf115d6fc4e1d317fe0d83f}{Set\+Options}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a8464c5185ad38b43f8a45c26b03cf588}{Set\+Options}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a07fcbdf16b59c4e2f2cecadb7d0f29d6}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a5adab1c3f3f7e53730134b20e70c9cc5}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a64fc825a4de04509f392f3947075cc14}{Merge}} ()
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_aa304a67776e89b98c385eb8929e64a98}{Merge\+Fields}} (const std\+::vector$<$ std\+::string $>$ \&fields)
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_aeaa962277a4419b7dd2f8e1044e9fccf}{Merge\+Field\+Paths}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} $>$ \&fields)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_ae743fc5c3093f029af4ba6c1ef4bc7b4}\label{classfirebase_1_1firestore_1_1_set_options_ae743fc5c3093f029af4ba6c1ef4bc7b4} 
+class {\bfseries Set\+Options\+Internal}
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a447d37176e4e9df629f3b8736e32cb46}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An options object that configures the behavior of Set() calls. 
+
+By providing the \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options} objects returned by \doxylink{classfirebase_1_1firestore_1_1_set_options_a64fc825a4de04509f392f3947075cc14}{Merge()}, the Set() methods in \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}, \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} and \doxylink{classfirebase_1_1firestore_1_1_transaction}{Transaction} can be configured to perform granular merges instead of overwriting the target documents in their entirety. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!Type@{Type}}
+\index{Type@{Type}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205} 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205}{firebase\+::firestore\+::\+Set\+Options\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+The enumeration of all types of \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kOverwrite@{kOverwrite}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!kOverwrite@{kOverwrite}}}\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205abfd4483cecc9ffd36f88de2c9f53b8dc}\label{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205} 
+k\+Overwrite&Overwrites the whole document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMergeAll@{kMergeAll}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!kMergeAll@{kMergeAll}}}\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205a95704621f6cc655bcd2a198b33be9bcf}\label{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205} 
+k\+Merge\+All&Replaces the values specified in the call parameter while leaves omitted fields untouched. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMergeSpecific@{kMergeSpecific}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!kMergeSpecific@{kMergeSpecific}}}\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205afa73c9a632b76599acd400459861bcbf}\label{classfirebase_1_1firestore_1_1_set_options_a2135efa4447faa76a8c400eab7084205} 
+k\+Merge\+Specific&Replaces the values of the fields explicitly specified in the call parameter. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_ab655936516fa63ebe64e2cb6a278c136}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!SetOptions@{SetOptions}}
+\index{SetOptions@{SetOptions}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{SetOptions()}{SetOptions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_ab655936516fa63ebe64e2cb6a278c136} 
+firebase\+::firestore\+::\+Set\+Options\+::\+Set\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Creates \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options} with overwrite semantics. \Hypertarget{classfirebase_1_1firestore_1_1_set_options_ac4b2e1b8fdf115d6fc4e1d317fe0d83f}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!SetOptions@{SetOptions}}
+\index{SetOptions@{SetOptions}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{SetOptions()}{SetOptions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_ac4b2e1b8fdf115d6fc4e1d317fe0d83f} 
+firebase\+::firestore\+::\+Set\+Options\+::\+Set\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a8464c5185ad38b43f8a45c26b03cf588}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!SetOptions@{SetOptions}}
+\index{SetOptions@{SetOptions}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{SetOptions()}{SetOptions()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_a8464c5185ad38b43f8a45c26b03cf588} 
+firebase\+::firestore\+::\+Set\+Options\+::\+Set\+Options (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a64fc825a4de04509f392f3947075cc14}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!Merge@{Merge}}
+\index{Merge@{Merge}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{Merge()}{Merge()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_a64fc825a4de04509f392f3947075cc14} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} firebase\+::firestore\+::\+Set\+Options\+::\+Merge (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an instance that can be used to change the behavior of Set() calls to only replace the values specified in its data argument. Fields omitted from the Set() call will remain untouched. \Hypertarget{classfirebase_1_1firestore_1_1_set_options_aeaa962277a4419b7dd2f8e1044e9fccf}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!MergeFieldPaths@{MergeFieldPaths}}
+\index{MergeFieldPaths@{MergeFieldPaths}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{MergeFieldPaths()}{MergeFieldPaths()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_aeaa962277a4419b7dd2f8e1044e9fccf} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} firebase\+::firestore\+::\+Set\+Options\+::\+Merge\+Field\+Paths (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} $>$ \&}]{fields}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an instance that can be used to change the behavior of Set() calls to only replace the given fields. Any field that is not specified in {\ttfamily fields} is ignored and remains untouched.
+
+It is an error to pass a \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options} object to a Set() call that is missing a value for any of the fields specified here in its to data argument.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fields} & The list of fields to merge. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_aa304a67776e89b98c385eb8929e64a98}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!MergeFields@{MergeFields}}
+\index{MergeFields@{MergeFields}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{MergeFields()}{MergeFields()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_aa304a67776e89b98c385eb8929e64a98} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} firebase\+::firestore\+::\+Set\+Options\+::\+Merge\+Fields (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{fields}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an instance that can be used to change the behavior of Set() calls to only replace the given fields. Any field that is not specified in {\ttfamily fields} is ignored and remains untouched.
+
+It is an error to pass a \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options} object to a Set() call that is missing a value for any of the fields specified here.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fields} & The list of fields to merge. Fields can contain dots to reference nested fields within the document. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a07fcbdf16b59c4e2f2cecadb7d0f29d6}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_a07fcbdf16b59c4e2f2cecadb7d0f29d6} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \& firebase\+::firestore\+::\+Set\+Options\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy assignment operator. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a5adab1c3f3f7e53730134b20e70c9cc5}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_a5adab1c3f3f7e53730134b20e70c9cc5} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \& firebase\+::firestore\+::\+Set\+Options\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_set_options_a447d37176e4e9df629f3b8736e32cb46}\index{firebase::firestore::SetOptions@{firebase::firestore::SetOptions}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::SetOptions@{firebase::firestore::SetOptions}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_set_options_a447d37176e4e9df629f3b8736e32cb46} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/set\+\_\+options.\+h\end{DoxyCompactItemize}

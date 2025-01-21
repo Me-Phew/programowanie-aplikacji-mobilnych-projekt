@@ -1,0 +1,127 @@
+\doxysection{flutter\+::Standard\+Method\+Codec Class Reference}
+\hypertarget{classflutter_1_1_standard_method_codec}{}\label{classflutter_1_1_standard_method_codec}\index{flutter::StandardMethodCodec@{flutter::StandardMethodCodec}}
+
+
+Inheritance diagram for flutter\+::Standard\+Method\+Codec\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classflutter_1_1_standard_method_codec__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Standard\+Method\+Codec\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classflutter_1_1_standard_method_codec__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_standard_method_codec_a7a9581bd1028822b19c3c5e5732af42b}\label{classflutter_1_1_standard_method_codec_a7a9581bd1028822b19c3c5e5732af42b} 
+{\bfseries Standard\+Method\+Codec} (\mbox{\hyperlink{classflutter_1_1_standard_method_codec}{Standard\+Method\+Codec}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_standard_method_codec_afc7ed9f02c6b2a4d237c0ff3c87752f0}\label{classflutter_1_1_standard_method_codec_afc7ed9f02c6b2a4d237c0ff3c87752f0} 
+\mbox{\hyperlink{classflutter_1_1_standard_method_codec}{Standard\+Method\+Codec}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_standard_method_codec}{Standard\+Method\+Codec}} const \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Method\+Codec} (\mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ const \&)=delete
+\item 
+\mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ const \&)=delete
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ {\bfseries Decode\+Method\+Call} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}message, size\+\_\+t message\+\_\+size) const
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ {\bfseries Decode\+Method\+Call} (const std\+::vector$<$ uint8\+\_\+t $>$ \&message) const
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Method\+Call} (const \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \&method\+\_\+call) const
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Success\+Envelope} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}result=nullptr) const
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Error\+Envelope} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message="{}"{}, const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}error\+\_\+details=nullptr) const
+\item 
+bool {\bfseries Decode\+And\+Process\+Response\+Envelope} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}response, size\+\_\+t response\+\_\+size, \mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \texorpdfstring{$\ast$}{*}result) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_standard_method_codec_ae25d6025c20d0df3bd0b116ca0a729eb}\label{classflutter_1_1_standard_method_codec_ae25d6025c20d0df3bd0b116ca0a729eb} 
+static const \mbox{\hyperlink{classflutter_1_1_standard_method_codec}{Standard\+Method\+Codec}} \& {\bfseries Get\+Instance} (const \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{Standard\+Codec\+Serializer}} \texorpdfstring{$\ast$}{*}serializer=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ \mbox{\hyperlink{classflutter_1_1_standard_method_codec_a9a072fc09b33830a330705b2f98f0741}{Decode\+Method\+Call\+Internal}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}message, size\+\_\+t message\+\_\+size) const override
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classflutter_1_1_standard_method_codec_a4d9dec03fba22a558b7e136df59ba513}{Encode\+Method\+Call\+Internal}} (const \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \&method\+\_\+call) const override
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classflutter_1_1_standard_method_codec_a901fff7524d8a00373bd727574e3d84b}{Encode\+Success\+Envelope\+Internal}} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}result) const override
+\item 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \mbox{\hyperlink{classflutter_1_1_standard_method_codec_a4be58f91a18eabbb463b0c3210111664}{Encode\+Error\+Envelope\+Internal}} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}error\+\_\+details) const override
+\item 
+bool \mbox{\hyperlink{classflutter_1_1_standard_method_codec_af012d79d280ea0e8eb61e1095e2632ce}{Decode\+And\+Process\+Response\+Envelope\+Internal}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}response, size\+\_\+t response\+\_\+size, \mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \texorpdfstring{$\ast$}{*}result) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflutter_1_1_standard_method_codec_af012d79d280ea0e8eb61e1095e2632ce}\index{flutter::StandardMethodCodec@{flutter::StandardMethodCodec}!DecodeAndProcessResponseEnvelopeInternal@{DecodeAndProcessResponseEnvelopeInternal}}
+\index{DecodeAndProcessResponseEnvelopeInternal@{DecodeAndProcessResponseEnvelopeInternal}!flutter::StandardMethodCodec@{flutter::StandardMethodCodec}}
+\doxysubsubsection{\texorpdfstring{DecodeAndProcessResponseEnvelopeInternal()}{DecodeAndProcessResponseEnvelopeInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_method_codec_af012d79d280ea0e8eb61e1095e2632ce} 
+bool flutter\+::\+Standard\+Method\+Codec\+::\+Decode\+And\+Process\+Response\+Envelope\+Internal (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{response}{, }\item[{size\+\_\+t}]{response\+\_\+size}{, }\item[{\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}.
+
+\Hypertarget{classflutter_1_1_standard_method_codec_a9a072fc09b33830a330705b2f98f0741}\index{flutter::StandardMethodCodec@{flutter::StandardMethodCodec}!DecodeMethodCallInternal@{DecodeMethodCallInternal}}
+\index{DecodeMethodCallInternal@{DecodeMethodCallInternal}!flutter::StandardMethodCodec@{flutter::StandardMethodCodec}}
+\doxysubsubsection{\texorpdfstring{DecodeMethodCallInternal()}{DecodeMethodCallInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_method_codec_a9a072fc09b33830a330705b2f98f0741} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ flutter\+::\+Standard\+Method\+Codec\+::\+Decode\+Method\+Call\+Internal (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{message}{, }\item[{size\+\_\+t}]{message\+\_\+size}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}.
+
+\Hypertarget{classflutter_1_1_standard_method_codec_a4be58f91a18eabbb463b0c3210111664}\index{flutter::StandardMethodCodec@{flutter::StandardMethodCodec}!EncodeErrorEnvelopeInternal@{EncodeErrorEnvelopeInternal}}
+\index{EncodeErrorEnvelopeInternal@{EncodeErrorEnvelopeInternal}!flutter::StandardMethodCodec@{flutter::StandardMethodCodec}}
+\doxysubsubsection{\texorpdfstring{EncodeErrorEnvelopeInternal()}{EncodeErrorEnvelopeInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_method_codec_a4be58f91a18eabbb463b0c3210111664} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ flutter\+::\+Standard\+Method\+Codec\+::\+Encode\+Error\+Envelope\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+\_\+code}{, }\item[{const std\+::string \&}]{error\+\_\+message}{, }\item[{const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}}]{error\+\_\+details}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}.
+
+\Hypertarget{classflutter_1_1_standard_method_codec_a4d9dec03fba22a558b7e136df59ba513}\index{flutter::StandardMethodCodec@{flutter::StandardMethodCodec}!EncodeMethodCallInternal@{EncodeMethodCallInternal}}
+\index{EncodeMethodCallInternal@{EncodeMethodCallInternal}!flutter::StandardMethodCodec@{flutter::StandardMethodCodec}}
+\doxysubsubsection{\texorpdfstring{EncodeMethodCallInternal()}{EncodeMethodCallInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_method_codec_a4d9dec03fba22a558b7e136df59ba513} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ flutter\+::\+Standard\+Method\+Codec\+::\+Encode\+Method\+Call\+Internal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ \&}]{method\+\_\+call}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}.
+
+\Hypertarget{classflutter_1_1_standard_method_codec_a901fff7524d8a00373bd727574e3d84b}\index{flutter::StandardMethodCodec@{flutter::StandardMethodCodec}!EncodeSuccessEnvelopeInternal@{EncodeSuccessEnvelopeInternal}}
+\index{EncodeSuccessEnvelopeInternal@{EncodeSuccessEnvelopeInternal}!flutter::StandardMethodCodec@{flutter::StandardMethodCodec}}
+\doxysubsubsection{\texorpdfstring{EncodeSuccessEnvelopeInternal()}{EncodeSuccessEnvelopeInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_standard_method_codec_a901fff7524d8a00373bd727574e3d84b} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ flutter\+::\+Standard\+Method\+Codec\+::\+Encode\+Success\+Envelope\+Internal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_codec}{flutter\+::\+Method\+Codec$<$ Encodable\+Value $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/standard\+\_\+method\+\_\+codec.\+h\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/standard\+\_\+codec.\+cc\end{DoxyCompactItemize}

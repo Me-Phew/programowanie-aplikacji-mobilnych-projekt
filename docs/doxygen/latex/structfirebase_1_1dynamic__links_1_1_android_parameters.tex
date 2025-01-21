@@ -1,0 +1,67 @@
+\doxysection{firebase\+::dynamic\+\_\+links\+::Android\+Parameters Struct Reference}
+\hypertarget{structfirebase_1_1dynamic__links_1_1_android_parameters}{}\label{structfirebase_1_1dynamic__links_1_1_android_parameters}\index{firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}}
+
+
+Android Parameters.  
+
+
+
+
+{\ttfamily \#include $<$components.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a86fca1890fcf4c33af4124a3f6fac63b}{Android\+Parameters}} (const char \texorpdfstring{$\ast$}{*}package\+\_\+name\+\_\+)
+\item 
+\Hypertarget{structfirebase_1_1dynamic__links_1_1_android_parameters_a970ddaa02a582b1d2100f9f067f8d343}\label{structfirebase_1_1dynamic__links_1_1_android_parameters_a970ddaa02a582b1d2100f9f067f8d343} 
+{\bfseries Android\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty set of Android parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a6127ac13320320d463ef558f9ffcc959}{package\+\_\+name}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structfirebase_1_1dynamic__links_1_1_android_parameters_a665ddb1f61716c62609291eb1ad09957}{fallback\+\_\+url}}
+\item 
+\Hypertarget{structfirebase_1_1dynamic__links_1_1_android_parameters_a644c0dee53db8a6eb72e582a37e94751}\label{structfirebase_1_1dynamic__links_1_1_android_parameters_a644c0dee53db8a6eb72e582a37e94751} 
+int {\bfseries minimum\+\_\+version}
+\begin{DoxyCompactList}\small\item\em The version\+Code of the minimum version of your app that can open the link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Android Parameters. 
+
+Note that the strings used by the struct are not copied, as so must either be statically allocated, or must persist in memory until the \doxylink{structfirebase_1_1dynamic__links_1_1_dynamic_link_components}{Dynamic\+Link\+Components} that uses them goes out of scope. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structfirebase_1_1dynamic__links_1_1_android_parameters_a86fca1890fcf4c33af4124a3f6fac63b}\index{firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}!AndroidParameters@{AndroidParameters}}
+\index{AndroidParameters@{AndroidParameters}!firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}}
+\doxysubsubsection{\texorpdfstring{AndroidParameters()}{AndroidParameters()}}
+{\footnotesize\ttfamily \label{structfirebase_1_1dynamic__links_1_1_android_parameters_a86fca1890fcf4c33af4124a3f6fac63b} 
+firebase\+::dynamic\+\_\+links\+::\+Android\+Parameters\+::\+Android\+Parameters (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{package\+\_\+name\+\_\+}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a set of Android parameters with the given package name.
+
+The package name of the Android app to use to open the link. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1dynamic__links_1_1_android_parameters_a665ddb1f61716c62609291eb1ad09957}\index{firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}!fallback\_url@{fallback\_url}}
+\index{fallback\_url@{fallback\_url}!firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}}
+\doxysubsubsection{\texorpdfstring{fallback\_url}{fallback\_url}}
+{\footnotesize\ttfamily \label{structfirebase_1_1dynamic__links_1_1_android_parameters_a665ddb1f61716c62609291eb1ad09957} 
+const char\texorpdfstring{$\ast$}{*} firebase\+::dynamic\+\_\+links\+::\+Android\+Parameters\+::fallback\+\_\+url}
+
+The link to open when the app isn\textquotesingle{}t installed.
+
+Specify this to do something other than install your app from the Play Store when the app isn\textquotesingle{}t installed, such as open the mobile web version of the content, or display a promotional page for your app. \Hypertarget{structfirebase_1_1dynamic__links_1_1_android_parameters_a6127ac13320320d463ef558f9ffcc959}\index{firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}!package\_name@{package\_name}}
+\index{package\_name@{package\_name}!firebase::dynamic\_links::AndroidParameters@{firebase::dynamic\_links::AndroidParameters}}
+\doxysubsubsection{\texorpdfstring{package\_name}{package\_name}}
+{\footnotesize\ttfamily \label{structfirebase_1_1dynamic__links_1_1_android_parameters_a6127ac13320320d463ef558f9ffcc959} 
+const char\texorpdfstring{$\ast$}{*} firebase\+::dynamic\+\_\+links\+::\+Android\+Parameters\+::package\+\_\+name}
+
+The package name of the Android app to use to open the link. The app must be connected to your project from the Overview page of the Firebase console. Note this field is required. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/dynamic\+\_\+links/components.\+h\end{DoxyCompactItemize}

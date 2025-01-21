@@ -1,0 +1,207 @@
+\doxysection{firebase\+::database\+::Disconnection\+Handler Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_disconnection_handler}{}\label{classfirebase_1_1database_1_1_disconnection_handler}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+
+
+{\ttfamily \#include $<$disconnection.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}{Cancel}} ()
+\begin{DoxyCompactList}\small\item\em Cancel any Disconnection operations that are queued up by this handler. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the queue has been cleared on the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a867d5d86947d97febdd0f69ba8a63624}{Cancel\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}{Cancel()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8}{Remove\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Remove the value at the current location when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Remove\+Value operation has been successfully queued up on the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ae102d5c9627d2fa243906c9731a5f95e}{Remove\+Value\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8}{Remove\+Value()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a0027db21c8de31a540e1fa72479ab7bb}{Set\+Value}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} value)
+\begin{DoxyCompactList}\small\item\em Set the value of the data at the current location when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Set\+Value operation has been successfully queued up on the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ad2bb7dc96ea40fd72155a9ed792118cf}{Set\+Value\+Last\+Result}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30}{Set\+Value\+And\+Priority}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} value, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} priority)
+\begin{DoxyCompactList}\small\item\em Set the value and priority of the data at the current location when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Set\+Value operation has been successfully queued up on the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_aba215d81a42b984dd7fea7e399125bd5}{Set\+Value\+And\+Priority\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30}{Set\+Value\+And\+Priority()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}{Update\+Children}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} values)
+\begin{DoxyCompactList}\small\item\em Updates the specified child keys to the given values when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Update\+Children operation has been successfully queued up by the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ab3bca4eef583eef199adb6cb911ef252}{Update\+Children}} (const std\+::map$<$ std\+::string, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Updates the specified child keys to the given values when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Update\+Children operation has been successfully queued up by the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a0b80dc59ea84e8c54407969699a31464}{Update\+Children\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to either version of \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}{Update\+Children()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allows you to register server-\/side actions to occur when the client disconnects. Each method you call (with the exception of Cancel) will queue up an action on the data that will be performed by the server in the event the client disconnects. To reset this queue, call \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}{Cancel()}.
+
+A \doxylink{classfirebase_1_1database_1_1_disconnection_handler}{Disconnection\+Handler} is associated with a specific location in the database, as they are obtained by calling \doxylink{classfirebase_1_1database_1_1_database_reference_a0eee7be37c0aeac0172356f0e46f112b}{Database\+Reference\+::\+On\+Disconnect()}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!Cancel@{Cancel}}
+\index{Cancel@{Cancel}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{Cancel()}{Cancel()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Cancel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cancel any Disconnection operations that are queued up by this handler. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the queue has been cleared on the server. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_a867d5d86947d97febdd0f69ba8a63624}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!CancelLastResult@{CancelLastResult}}
+\index{CancelLastResult@{CancelLastResult}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{CancelLastResult()}{CancelLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_a867d5d86947d97febdd0f69ba8a63624} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Cancel\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}{Cancel()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}{Cancel()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!RemoveValue@{RemoveValue}}
+\index{RemoveValue@{RemoveValue}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{RemoveValue()}{RemoveValue()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Remove\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Remove the value at the current location when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Remove\+Value operation has been successfully queued up on the server. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_ae102d5c9627d2fa243906c9731a5f95e}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!RemoveValueLastResult@{RemoveValueLastResult}}
+\index{RemoveValueLastResult@{RemoveValueLastResult}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{RemoveValueLastResult()}{RemoveValueLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_ae102d5c9627d2fa243906c9731a5f95e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Remove\+Value\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8}{Remove\+Value()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8}{Remove\+Value()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_a0027db21c8de31a540e1fa72479ab7bb}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{SetValue()}{SetValue()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_a0027db21c8de31a540e1fa72479ab7bb} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Set\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Set the value of the data at the current location when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Set\+Value operation has been successfully queued up on the server. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to set this location to when the client disconnects. For information on how the \doxylink{classfirebase_1_1_variant}{Variant} types are used, see \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{firebase\+::database\+::\+Database\+Reference\+::\+Set\+Value()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!SetValueAndPriority@{SetValueAndPriority}}
+\index{SetValueAndPriority@{SetValueAndPriority}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{SetValueAndPriority()}{SetValueAndPriority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Set\+Value\+And\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{value}{, }\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{priority}{}\end{DoxyParamCaption})}
+
+
+
+Set the value and priority of the data at the current location when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Set\+Value operation has been successfully queued up on the server. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to set this location to when the client disconnects. For information on how the \doxylink{classfirebase_1_1_variant}{Variant} types are used, see \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{firebase\+::database\+::\+Database\+Reference\+::\+Set\+Value()}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em priority} & The priority to set this location to when the client disconnects. The \doxylink{classfirebase_1_1_variant}{Variant} types accepted are Null, Int64, Double, and String. For information about how priority is used, see \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{firebase\+::database\+::\+Database\+Reference\+::\+Set\+Priority()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_aba215d81a42b984dd7fea7e399125bd5}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!SetValueAndPriorityLastResult@{SetValueAndPriorityLastResult}}
+\index{SetValueAndPriorityLastResult@{SetValueAndPriorityLastResult}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{SetValueAndPriorityLastResult()}{SetValueAndPriorityLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_aba215d81a42b984dd7fea7e399125bd5} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Set\+Value\+And\+Priority\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30}{Set\+Value\+And\+Priority()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30}{Set\+Value\+And\+Priority()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_ad2bb7dc96ea40fd72155a9ed792118cf}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!SetValueLastResult@{SetValueLastResult}}
+\index{SetValueLastResult@{SetValueLastResult}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{SetValueLastResult()}{SetValueLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_ad2bb7dc96ea40fd72155a9ed792118cf} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Set\+Value\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a0027db21c8de31a540e1fa72479ab7bb}{Set\+Value()}.
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a0027db21c8de31a540e1fa72479ab7bb}{Set\+Value()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_ab3bca4eef583eef199adb6cb911ef252}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!UpdateChildren@{UpdateChildren}}
+\index{UpdateChildren@{UpdateChildren}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateChildren()}{UpdateChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_ab3bca4eef583eef199adb6cb911ef252} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Update\+Children (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the specified child keys to the given values when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Update\+Children operation has been successfully queued up by the server. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The paths to update, and their new child values. A value of type Null will delete that particular child.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!UpdateChildren@{UpdateChildren}}
+\index{UpdateChildren@{UpdateChildren}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateChildren()}{UpdateChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Update\+Children (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Updates the specified child keys to the given values when the client disconnects. When the \doxylink{classfirebase_1_1_future}{Future} returns, if its Error is k\+Error\+None, the Update\+Children operation has been successfully queued up by the server. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & A variant of type Map. The keys are the paths to update and must be of type String (or Int64/\+Double which are converted to String). The values can be any \doxylink{classfirebase_1_1_variant}{Variant} type. A value of \doxylink{classfirebase_1_1_variant}{Variant} type Null will delete the child.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_disconnection_handler_a0b80dc59ea84e8c54407969699a31464}\index{firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}!UpdateChildrenLastResult@{UpdateChildrenLastResult}}
+\index{UpdateChildrenLastResult@{UpdateChildrenLastResult}!firebase::database::DisconnectionHandler@{firebase::database::DisconnectionHandler}}
+\doxysubsubsection{\texorpdfstring{UpdateChildrenLastResult()}{UpdateChildrenLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_disconnection_handler_a0b80dc59ea84e8c54407969699a31464} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Disconnection\+Handler\+::\+Update\+Children\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to either version of \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}{Update\+Children()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}{Update\+Children()}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/disconnection.\+h\end{DoxyCompactItemize}

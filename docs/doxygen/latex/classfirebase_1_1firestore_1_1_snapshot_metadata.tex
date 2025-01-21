@@ -1,0 +1,194 @@
+\doxysection{firebase\+::firestore\+::Snapshot\+Metadata Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata}{}\label{classfirebase_1_1firestore_1_1_snapshot_metadata}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+
+
+{\ttfamily \#include $<$snapshot\+\_\+metadata.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a5ed9881ce7368e6df6a205b6839f88ef}{Snapshot\+Metadata}} ()=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_ae5da92f585d864dcba7dfbe342c99308}{Snapshot\+Metadata}} (bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a3925c96abdb2ffdaaff44cc4fc7744d6}{has\+\_\+pending\+\_\+writes}}, bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a82a34a51eabcb57e7bfa233fc1fb46f7}{is\+\_\+from\+\_\+cache}})
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a2bb80b4b35fa7ba5a397c792de115334}{Snapshot\+Metadata}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a3ffd87ecb389f3625df2268d43f8c379}{Snapshot\+Metadata}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move constructor, equivalent to copying. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a431e894ee7214dc790407af031e4b11c}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_addc49e59f1e88d33ce7e72759d27c522}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move assignment operator, equivalent to copying. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a3925c96abdb2ffdaaff44cc4fc7744d6}{has\+\_\+pending\+\_\+writes}} () const
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a82a34a51eabcb57e7bfa233fc1fb46f7}{is\+\_\+from\+\_\+cache}} () const
+\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a46b734c004b811ee5b895222ddf89088}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata_a26d29c60f0251c9c94fb01e6a7548475}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&metadata)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Metadata about a snapshot, describing the state of the snapshot. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a5ed9881ce7368e6df6a205b6839f88ef}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!SnapshotMetadata@{SnapshotMetadata}}
+\index{SnapshotMetadata@{SnapshotMetadata}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{SnapshotMetadata()}{SnapshotMetadata()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a5ed9881ce7368e6df6a205b6839f88ef} 
+firebase\+::firestore\+::\+Snapshot\+Metadata\+::\+Snapshot\+Metadata (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Constructs a \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata} that has all of its boolean members set to false. \Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_ae5da92f585d864dcba7dfbe342c99308}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!SnapshotMetadata@{SnapshotMetadata}}
+\index{SnapshotMetadata@{SnapshotMetadata}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{SnapshotMetadata()}{SnapshotMetadata()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_ae5da92f585d864dcba7dfbe342c99308} 
+firebase\+::firestore\+::\+Snapshot\+Metadata\+::\+Snapshot\+Metadata (\begin{DoxyParamCaption}\item[{bool}]{has\+\_\+pending\+\_\+writes}{, }\item[{bool}]{is\+\_\+from\+\_\+cache}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata} by providing boolean parameters that describe the state of the snapshot.
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\+\_\+pending\+\_\+writes} & Whether there is any pending write on the snapshot. \\
+\hline
+{\em is\+\_\+from\+\_\+cache} & Whether the snapshot is from cache instead of backend. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a2bb80b4b35fa7ba5a397c792de115334}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!SnapshotMetadata@{SnapshotMetadata}}
+\index{SnapshotMetadata@{SnapshotMetadata}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{SnapshotMetadata()}{SnapshotMetadata()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a2bb80b4b35fa7ba5a397c792de115334} 
+firebase\+::firestore\+::\+Snapshot\+Metadata\+::\+Snapshot\+Metadata (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+This performs a deep copy, creating an independent instance.
+
+\begin{DoxyNote}{Note}
+This class is currently trivially copyable, but it is not guaranteed to stay that way, and code relying on this might be broken by a future release.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a3ffd87ecb389f3625df2268d43f8c379}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!SnapshotMetadata@{SnapshotMetadata}}
+\index{SnapshotMetadata@{SnapshotMetadata}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{SnapshotMetadata()}{SnapshotMetadata()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a3ffd87ecb389f3625df2268d43f8c379} 
+firebase\+::firestore\+::\+Snapshot\+Metadata\+::\+Snapshot\+Metadata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move constructor, equivalent to copying. 
+
+After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a3925c96abdb2ffdaaff44cc4fc7744d6}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!has\_pending\_writes@{has\_pending\_writes}}
+\index{has\_pending\_writes@{has\_pending\_writes}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{has\_pending\_writes()}{has\_pending\_writes()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a3925c96abdb2ffdaaff44cc4fc7744d6} 
+bool firebase\+::firestore\+::\+Snapshot\+Metadata\+::has\+\_\+pending\+\_\+writes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether the snapshot contains the result of local writes.
+
+\begin{DoxyReturn}{Returns}
+true if the snapshot contains the result of local writes (for example, Set() or Update() calls) that have not yet been committed to the backend. If your listener has opted into metadata updates (via \doxylink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54a279a35d9e230b4c8a0796fdf6f0d5360}{Metadata\+Changes\+::k\+Include}) you will receive another snapshot with \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata_a3925c96abdb2ffdaaff44cc4fc7744d6}{has\+\_\+pending\+\_\+writes()} equal to false once the writes have been committed to the backend. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a82a34a51eabcb57e7bfa233fc1fb46f7}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!is\_from\_cache@{is\_from\_cache}}
+\index{is\_from\_cache@{is\_from\_cache}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{is\_from\_cache()}{is\_from\_cache()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a82a34a51eabcb57e7bfa233fc1fb46f7} 
+bool firebase\+::firestore\+::\+Snapshot\+Metadata\+::is\+\_\+from\+\_\+cache (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether the snapshot was created from cached data.
+
+\begin{DoxyReturn}{Returns}
+true if the snapshot was created from cached data rather than guaranteed up-\/to-\/date server data. If your listener has opted into metadata updates (via \doxylink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54a279a35d9e230b4c8a0796fdf6f0d5360}{Metadata\+Changes\+::k\+Include}) you will receive another snapshot with \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata_a82a34a51eabcb57e7bfa233fc1fb46f7}{is\+\_\+from\+\_\+cache()} equal to false once the client has received up-\/to-\/date data from the backend. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a431e894ee7214dc790407af031e4b11c}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a431e894ee7214dc790407af031e4b11c} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \& firebase\+::firestore\+::\+Snapshot\+Metadata\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy assignment operator. 
+
+This performs a deep copy, creating an independent instance.
+
+\begin{DoxyNote}{Note}
+This class is currently trivially copyable, but it is not guaranteed to stay that way, and code relying on this might be broken by a future release.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_addc49e59f1e88d33ce7e72759d27c522}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_addc49e59f1e88d33ce7e72759d27c522} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \& firebase\+::firestore\+::\+Snapshot\+Metadata\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move assignment operator, equivalent to copying. 
+
+After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a46b734c004b811ee5b895222ddf89088}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a46b734c004b811ee5b895222ddf89088} 
+std\+::string firebase\+::firestore\+::\+Snapshot\+Metadata\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_snapshot_metadata_a26d29c60f0251c9c94fb01e6a7548475}\index{firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::SnapshotMetadata@{firebase::firestore::SnapshotMetadata}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_snapshot_metadata_a26d29c60f0251c9c94fb01e6a7548475} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} \&}]{metadata}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata_a46b734c004b811ee5b895222ddf89088}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/snapshot\+\_\+metadata.\+h\end{DoxyCompactItemize}

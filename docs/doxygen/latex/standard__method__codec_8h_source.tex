@@ -1,0 +1,79 @@
+\doxysection{standard\+\_\+method\+\_\+codec.\+h}
+\hypertarget{standard__method__codec_8h_source}{}\label{standard__method__codec_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/standard\_method\_codec.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/standard\_method\_codec.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_METHOD\_CODEC\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_METHOD\_CODEC\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}encodable\_value.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}method\_call.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}method\_codec.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}standard\_codec\_serializer.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ An\ implementation\ of\ MethodCodec\ that\ uses\ a\ binary\ serialization.}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec}}<EncodableValue>\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Returns\ an\ instance\ of\ the\ codec,\ optionally\ using\ a\ custom\ serializer\ to}}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ add\ support\ for\ more\ types.}}
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ If\ provided,\ |serializer|\ must\ be\ long-\/lived.\ If\ no\ serializer\ is\ provided,}}
+\DoxyCodeLine{00024\ \ \ \textcolor{comment}{//\ the\ default\ will\ be\ used.}}
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ The\ instance\ returned\ for\ a\ given\ |extension|\ will\ be\ shared,\ and}}
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ any\ instance\ returned\ from\ this\ will\ be\ long-\/lived,\ and\ can\ be\ safely}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ passed\ to,\ e.g.,\ channel\ constructors.}}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}\&\ GetInstance(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}*\ serializer\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_method_codec}{\string~StandardMethodCodec}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}(\mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ |flutter::MethodCodec|}}
+\DoxyCodeLine{00040\ \ \ std::unique\_ptr<MethodCall<EncodableValue>>\ DecodeMethodCallInternal(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ message\_size)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ |flutter::MethodCodec|}}
+\DoxyCodeLine{00045\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeMethodCallInternal(}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall<EncodableValue>}}\&\ method\_call)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ |flutter::MethodCodec|}}
+\DoxyCodeLine{00049\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeSuccessEnvelopeInternal(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}*\ result)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ |flutter::MethodCodec|}}
+\DoxyCodeLine{00053\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeErrorEnvelopeInternal(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}*\ error\_details)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ |flutter::MethodCodec|}}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{bool}\ DecodeAndProcessResponseEnvelopeInternal(}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ response,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ response\_size,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult<EncodableValue>}}*\ result)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Instances\ should\ be\ obtained\ via\ GetInstance.}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_standard_method_codec}{StandardMethodCodec}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}*\ serializer);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}*\ serializer\_;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_METHOD\_CODEC\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\doxysection{firebase\+::auth\+::Auth\+State\+Listener Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_auth_state_listener}{}\label{classfirebase_1_1auth_1_1_auth_state_listener}\index{firebase::auth::AuthStateListener@{firebase::auth::AuthStateListener}}
+
+
+Listener called when there is a change in the authentication state.  
+
+
+
+
+{\ttfamily \#include $<$auth.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1auth_1_1_auth_state_listener_a1674fd3c94c8155ad79361b66f9eb487}{\texorpdfstring{$\sim$}{\string~}\+Auth\+State\+Listener}} ()
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1auth_1_1_auth_state_listener_a9ac0823945bfbd7074ad140a3206fd00}{On\+Auth\+State\+Changed}} (\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}} \texorpdfstring{$\ast$}{*}auth)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listener called when there is a change in the authentication state. 
+
+Override base class method to handle authentication state changes. Methods are invoked asynchronously and may be invoked on other threads. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_auth_state_listener_a1674fd3c94c8155ad79361b66f9eb487}\index{firebase::auth::AuthStateListener@{firebase::auth::AuthStateListener}!````~AuthStateListener@{\texorpdfstring{$\sim$}{\string~}AuthStateListener}}
+\index{````~AuthStateListener@{\texorpdfstring{$\sim$}{\string~}AuthStateListener}!firebase::auth::AuthStateListener@{firebase::auth::AuthStateListener}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AuthStateListener()}{\string~AuthStateListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_auth_state_listener_a1674fd3c94c8155ad79361b66f9eb487} 
+virtual firebase\+::auth\+::\+Auth\+State\+Listener\+::\texorpdfstring{$\sim$}{\string~}\+Auth\+State\+Listener (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyNote}{Note}
+\+: Destruction of the listener automatically calls Remove\+Auth\+State\+Listener() from the Auths this listener is registered with, if those Auths have not yet been destroyed. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_auth_state_listener_a9ac0823945bfbd7074ad140a3206fd00}\index{firebase::auth::AuthStateListener@{firebase::auth::AuthStateListener}!OnAuthStateChanged@{OnAuthStateChanged}}
+\index{OnAuthStateChanged@{OnAuthStateChanged}!firebase::auth::AuthStateListener@{firebase::auth::AuthStateListener}}
+\doxysubsubsection{\texorpdfstring{OnAuthStateChanged()}{OnAuthStateChanged()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_auth_state_listener_a9ac0823945bfbd7074ad140a3206fd00} 
+virtual void firebase\+::auth\+::\+Auth\+State\+Listener\+::\+On\+Auth\+State\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}} \texorpdfstring{$\ast$}{*}}]{auth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when the authentication state of {\ttfamily auth} changes.
+\begin{DoxyItemize}
+\item Right after the listener has been registered
+\item When a user is signed in
+\item When the current user is signed out
+\item When the current user changes
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em auth} & Disambiguates which \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} instance the event corresponds to, in the case where you are using more than one at the same time. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth.\+h\end{DoxyCompactItemize}

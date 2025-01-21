@@ -1,0 +1,80 @@
+\doxysection{rewarded\+\_\+ad.\+h}
+\hypertarget{rewarded__ad_8h_source}{}\label{rewarded__ad_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/rewarded\_ad.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/rewarded\_ad.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_REWARDED\_AD\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_REWARDED\_AD\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/types.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Forward\ declaration\ for\ platform-\/specific\ data,\ implemented\ in\ each\ library.}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }RewardedAdInternal;}
+\DoxyCodeLine{00032\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad}{RewardedAd}}\ \{}
+\DoxyCodeLine{00075\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options}{ServerSideVerificationOptions}}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options_aabbdcb0ee1ea64726a25f31c77d294f0}{custom\_data}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options_a5e13c3058a47f9d23f8231e94083696a}{user\_id}};}
+\DoxyCodeLine{00085\ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a05f77f91a0cd6d05e6995830cbaf8dde}{RewardedAd}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad}{\string~RewardedAd}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a18ffe57fad97142fb43479ecdd70b7e7}{Initialize}}(\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}}\ parent);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a24150b81945507685f7569be73f40975}{InitializeLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a98e50ae8b1d85ec1fc65a2a8452fc1ab}{LoadAd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ad\_unit\_id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{AdRequest}}\&\ request);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a075ac9b07859b9353080b03b018e2218}{LoadAdLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_aa90ca5f8c99ee3b9d368d20417c97695}{Show}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_user_earned_reward_listener}{UserEarnedRewardListener}}*\ listener);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_aa8042cdae5a37f467c3d708d272bd6c5}{ShowLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_a46d9d98a411697d994d4252a5e4e6049}{SetFullScreenContentListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{FullScreenContentListener}}*\ listener);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_aec0f68217cec31d8a57013faf08a3455}{SetPaidEventListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{PaidEventListener}}*\ listener);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00140\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_rewarded_ad_adf51013c5c2a54f1e69c781b3809175e}{SetServerSideVerificationOptions}}(}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_rewarded_ad_1_1_server_side_verification_options}{ServerSideVerificationOptions}}\&\ serverSideVerificationOptions);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00144\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ Google\ Mobile\ Ads\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00146\ \ \ internal::RewardedAdInternal*\ internal\_;}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00150\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_REWARDED\_AD\_H\_}}
+
+\end{DoxyCode}

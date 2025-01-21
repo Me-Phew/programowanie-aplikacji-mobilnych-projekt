@@ -1,0 +1,82 @@
+\doxysection{standard\+\_\+codec\+\_\+serializer.\+h}
+\hypertarget{standard__codec__serializer_8h_source}{}\label{standard__codec__serializer_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/standard\_codec\_serializer.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/standard\_codec\_serializer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_CODEC\_SERIALIZER\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_CODEC\_SERIALIZER\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}byte\_streams.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}encodable\_value.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Encapsulates\ the\ logic\ for\ encoding/decoding\ EncodableValues\ to/from\ the}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ standard\ codec\ binary\ representation.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ This\ can\ be\ subclassed\ to\ extend\ the\ standard\ codec\ with\ support\ for\ new}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ types.}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{\string~StandardCodecSerializer}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ Returns\ the\ shared\ serializer\ instance.}}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}\&\ GetInstance();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}(\mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ Reads\ and\ returns\ the\ next\ value\ from\ |stream|.}}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}\ ReadValue(\mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{ByteStreamReader}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Writes\ the\ encoding\ of\ |value|\ to\ |stream|,\ including\ the\ initial\ type}}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ discrimination\ byte.}}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Can\ be\ overridden\ by\ a\ subclass\ to\ extend\ the\ codec.}}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ WriteValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}\&\ value,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflutter_1_1_byte_stream_writer}{ByteStreamWriter}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ Codecs\ require\ long-\/lived\ serializers,\ so\ clients\ should\ always\ use}}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ GetInstance().}}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classflutter_1_1_standard_codec_serializer}{StandardCodecSerializer}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ Reads\ and\ returns\ the\ next\ value\ from\ |stream|,\ whose\ discrimination\ byte}}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ was\ |type|.}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ The\ discrimination\ byte\ will\ already\ have\ been\ read\ from\ the\ stream\ when}}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ this\ is\ called.}}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ Can\ be\ overridden\ by\ a\ subclass\ to\ extend\ the\ codec.}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}\ ReadValueOfType(uint8\_t\ type,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{ByteStreamReader}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ Reads\ the\ variable-\/length\ size\ from\ the\ current\ position\ in\ |stream|.}}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{size\_t}\ ReadSize(\mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{ByteStreamReader}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ Writes\ the\ variable-\/length\ size\ encoding\ to\ |stream|.}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ WriteSize(\textcolor{keywordtype}{size\_t}\ size,\ \mbox{\hyperlink{classflutter_1_1_byte_stream_writer}{ByteStreamWriter}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Reads\ a\ fixed-\/type\ list\ whose\ values\ are\ of\ type\ T\ from\ the\ current}}
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ position\ in\ |stream|,\ and\ returns\ it\ as\ the\ corresponding\ EncodableValue.}}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ |T|\ must\ correspond\ to\ one\ of\ the\ supported\ list\ value\ types\ of}}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ EncodableValue.}}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classflutter_1_1_encodable_value}{EncodableValue}}\ ReadVector(\mbox{\hyperlink{classflutter_1_1_byte_stream_reader}{ByteStreamReader}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Writes\ |vector|\ to\ |stream|\ as\ a\ fixed-\/type\ list.\ |T|\ must\ correspond\ to}}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ one\ of\ the\ supported\ list\ value\ types\ of\ EncodableValue.}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ WriteVector(\textcolor{keyword}{const}\ std::vector<T>\ vector,\ \mbox{\hyperlink{classflutter_1_1_byte_stream_writer}{ByteStreamWriter}}*\ stream)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_STANDARD\_CODEC\_SERIALIZER\_H\_}}
+
+\end{DoxyCode}

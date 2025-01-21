@@ -1,0 +1,56 @@
+\doxysection{version.\+h}
+\hypertarget{version_8h_source}{}\label{version_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/version.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/version.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ Inc.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_CLIENT\_CPP\_SRC\_VERSION\_H\_}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_CLIENT\_CPP\_SRC\_VERSION\_H\_}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FIREBASE\_VERSION\_MAJOR\ 12}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ FIREBASE\_VERSION\_MINOR\ 0}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ FIREBASE\_VERSION\_REVISION\ 0}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ FIREBASE\_STRING\_EXPAND(X)\ \#X}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ FIREBASE\_STRING(X)\ FIREBASE\_STRING\_EXPAND(X)}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Version\ number.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ FIREBASE\_VERSION\_NUMBER\_STRING\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ FIREBASE\_STRING(FIREBASE\_VERSION\_MAJOR)\ "{}."{}\ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ FIREBASE\_STRING(FIREBASE\_VERSION\_MINOR)\ "{}."{}\ \(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ FIREBASE\_STRING(FIREBASE\_VERSION\_REVISION)}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Identifier\ for\ version\ string,\ e.g.\ kFirebaseVersionString.}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FIREBASE\_VERSION\_IDENTIFIER(library)\ k\#\#library\#\#VersionString}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Concatenated\ version\ string,\ e.g.\ "{}Firebase\ C++\ x.y.z"{}.}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ FIREBASE\_VERSION\_STRING(library)\ \(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \#library\ "{}\ C++\ "{}\ FIREBASE\_VERSION\_NUMBER\_STRING}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ !defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ DEFINE\_FIREBASE\_VERSION\_STRING(library)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ extern\ volatile\ \_\_attribute\_\_((weak))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ const\ char*\ FIREBASE\_VERSION\_IDENTIFIER(library);\ \ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ volatile\ \_\_attribute\_\_((weak))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \ \ const\ char*\ FIREBASE\_VERSION\_IDENTIFIER(library)\ =\ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ FIREBASE\_VERSION\_STRING(library)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DEFINE\_FIREBASE\_VERSION\_STRING(library)\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ static\ const\ char*\ FIREBASE\_VERSION\_IDENTIFIER(library)\ =\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ FIREBASE\_VERSION\_STRING(library)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_WIN32)\ \&\&\ !defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#else\ \ \ }\textcolor{comment}{//\ if\ defined(DOXYGEN)}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ kFirebaseVersionString\ =\ FIREBASE\_VERSION\_STRING;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_CLIENT\_CPP\_SRC\_VERSION\_H\_}}
+
+\end{DoxyCode}

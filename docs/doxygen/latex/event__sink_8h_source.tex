@@ -1,0 +1,68 @@
+\doxysection{event\+\_\+sink.\+h}
+\hypertarget{event__sink_8h_source}{}\label{event__sink_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/event\_sink.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/event\_sink.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_EVENT\_SINK\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_EVENT\_SINK\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ Event\ callback.\ Events\ to\ be\ sent\ to\ Flutter\ application}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ act\ as\ clients\ of\ this\ interface\ for\ sending\ events.}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink}}\ \{}
+\DoxyCodeLine{00016\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_event_sink}{\string~EventSink}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink}}(\mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{comment}{//\ Consumes\ a\ successful\ event}}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ Success(\textcolor{keyword}{const}\ T\&\ event)\ \{\ SuccessInternal(\&event);\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Consumes\ a\ successful\ event.}}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ Success()\ \{\ SuccessInternal(\textcolor{keyword}{nullptr});\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Consumes\ an\ error\ event.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{void}\ Error(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ error\_details)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ ErrorInternal(error\_code,\ error\_message,\ \&error\_details);}
+\DoxyCodeLine{00035\ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ Consumes\ an\ error\ event.}}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ Error(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ ErrorInternal(error\_code,\ error\_message,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Consumes\ end\ of\ stream.\ Ensuing\ calls\ to\ Success()\ or}}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ Error(),\ if\ any,\ are\ ignored.}}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ EndOfStream()\ \{\ EndOfStreamInternal();\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SuccessInternal(\textcolor{keyword}{const}\ T*\ event\ =\ \textcolor{keyword}{nullptr})\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ErrorInternal(\textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details)\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ EndOfStreamInternal()\ =\ 0;}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_EVENT\_SINK\_H\_}}
+
+\end{DoxyCode}

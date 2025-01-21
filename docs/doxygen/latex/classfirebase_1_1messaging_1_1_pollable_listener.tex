@@ -1,0 +1,155 @@
+\doxysection{firebase\+::messaging\+::Pollable\+Listener Class Reference}
+\hypertarget{classfirebase_1_1messaging_1_1_pollable_listener}{}\label{classfirebase_1_1messaging_1_1_pollable_listener}\index{firebase::messaging::PollableListener@{firebase::messaging::PollableListener}}
+
+
+A listener that can be polled to consume pending {\ttfamily \doxylink{structfirebase_1_1messaging_1_1_message}{Message}}s.  
+
+
+
+
+{\ttfamily \#include $<$messaging.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::messaging\+::Pollable\+Listener\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classfirebase_1_1messaging_1_1_pollable_listener__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::messaging\+::Pollable\+Listener\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classfirebase_1_1messaging_1_1_pollable_listener__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1messaging_1_1_pollable_listener_aada54b5d624c0593b2521ba0a12231af}\label{classfirebase_1_1messaging_1_1_pollable_listener_aada54b5d624c0593b2521ba0a12231af} 
+{\bfseries Pollable\+Listener} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1messaging_1_1_pollable_listener_a5a43c4b5802989eab4081bf513d09c6a}\label{classfirebase_1_1messaging_1_1_pollable_listener_a5a43c4b5802989eab4081bf513d09c6a} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Pollable\+Listener} ()
+\begin{DoxyCompactList}\small\item\em The required virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_aeb924594f29e81b9e90eafc450b9813e}{On\+Message}} (const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \&message)
+\begin{DoxyCompactList}\small\item\em An implementation of {\ttfamily On\+Message} which adds the incoming messages to a queue, which can be consumed by calling {\ttfamily Poll\+Message}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_acdd9f0597ba7687863bab94d9867f95f}{On\+Token\+Received}} (const char \texorpdfstring{$\ast$}{*}token)
+\begin{DoxyCompactList}\small\item\em An implementation of {\ttfamily On\+Token\+Received} which stores the incoming token so that it can be consumed by calling {\ttfamily Poll\+Registration\+Token}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a9ad784d05e512afb638be6081c9df3f5}{Poll\+Message}} (\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Returns the first message queued up, if any. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a39915cdfda32fc52e7930288ddaac202}{Poll\+Registration\+Token}} (std\+::string \texorpdfstring{$\ast$}{*}token)
+\begin{DoxyCompactList}\small\item\em Returns the registration key, if a new one has been received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{firebase\+::messaging\+::\+Listener}}}
+
+
+\doxysubsection{Detailed Description}
+A listener that can be polled to consume pending {\ttfamily \doxylink{structfirebase_1_1messaging_1_1_message}{Message}}s. 
+
+This class is intended to be used with applications that have a main loop that frequently updates, such as in the case of a game that has a main loop that updates 30 to 60 times a second. Rather than respond to incoming messages and tokens via the {\ttfamily On\+Message} virtual function, this class will queue up the message internally in a thread-\/safe manner so that it can be consumed with {\ttfamily Poll\+Message}. For example\+: \begin{DoxyVerb}::firebase::messaging::PollableListener listener;
+::firebase::messaging::Initialize(app, &listener);
+
+while (true) {
+  std::string token;
+  if (listener.PollRegistrationToken(&token)) {
+    LogMessage("Received a registration token");
+  }
+
+  ::firebase::messaging::Message message;
+  while (listener.PollMessage(&message)) {
+    LogMessage("Received a new message");
+  }
+
+  // Remainder of application logic...
+} 
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1messaging_1_1_pollable_listener_aeb924594f29e81b9e90eafc450b9813e}\index{firebase::messaging::PollableListener@{firebase::messaging::PollableListener}!OnMessage@{OnMessage}}
+\index{OnMessage@{OnMessage}!firebase::messaging::PollableListener@{firebase::messaging::PollableListener}}
+\doxysubsubsection{\texorpdfstring{OnMessage()}{OnMessage()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1messaging_1_1_pollable_listener_aeb924594f29e81b9e90eafc450b9813e} 
+virtual void firebase\+::messaging\+::\+Pollable\+Listener\+::\+On\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An implementation of {\ttfamily On\+Message} which adds the incoming messages to a queue, which can be consumed by calling {\ttfamily Poll\+Message}. 
+
+
+
+Implements \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{firebase\+::messaging\+::\+Listener}}.
+
+\Hypertarget{classfirebase_1_1messaging_1_1_pollable_listener_acdd9f0597ba7687863bab94d9867f95f}\index{firebase::messaging::PollableListener@{firebase::messaging::PollableListener}!OnTokenReceived@{OnTokenReceived}}
+\index{OnTokenReceived@{OnTokenReceived}!firebase::messaging::PollableListener@{firebase::messaging::PollableListener}}
+\doxysubsubsection{\texorpdfstring{OnTokenReceived()}{OnTokenReceived()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1messaging_1_1_pollable_listener_acdd9f0597ba7687863bab94d9867f95f} 
+virtual void firebase\+::messaging\+::\+Pollable\+Listener\+::\+On\+Token\+Received (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An implementation of {\ttfamily On\+Token\+Received} which stores the incoming token so that it can be consumed by calling {\ttfamily Poll\+Registration\+Token}. 
+
+
+
+Implements \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener_a837d52cfb06e12c85d4df06583567eed}{firebase\+::messaging\+::\+Listener}}.
+
+\Hypertarget{classfirebase_1_1messaging_1_1_pollable_listener_a9ad784d05e512afb638be6081c9df3f5}\index{firebase::messaging::PollableListener@{firebase::messaging::PollableListener}!PollMessage@{PollMessage}}
+\index{PollMessage@{PollMessage}!firebase::messaging::PollableListener@{firebase::messaging::PollableListener}}
+\doxysubsubsection{\texorpdfstring{PollMessage()}{PollMessage()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1messaging_1_1_pollable_listener_a9ad784d05e512afb638be6081c9df3f5} 
+bool firebase\+::messaging\+::\+Pollable\+Listener\+::\+Poll\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Returns the first message queued up, if any. 
+
+If one or more messages has been received, the first message in the queue will be popped and used to populate the {\ttfamily message} argument and the function will return {\ttfamily true}. If there are no pending messages, {\ttfamily false} is returned. This function should be called in a loop until all messages have been consumed, like so\+: \begin{DoxyVerb}::firebase::messaging::Message message;
+while (listener.PollMessage(&message)) {
+  LogMessage("Received a new message");
+}
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em message} & The {\ttfamily \doxylink{structfirebase_1_1messaging_1_1_message}{Message}} struct to be populated. If there were no pending messages, {\ttfamily message} is not modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns {\ttfamily true} if there was a pending message, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1messaging_1_1_pollable_listener_a39915cdfda32fc52e7930288ddaac202}\index{firebase::messaging::PollableListener@{firebase::messaging::PollableListener}!PollRegistrationToken@{PollRegistrationToken}}
+\index{PollRegistrationToken@{PollRegistrationToken}!firebase::messaging::PollableListener@{firebase::messaging::PollableListener}}
+\doxysubsubsection{\texorpdfstring{PollRegistrationToken()}{PollRegistrationToken()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1messaging_1_1_pollable_listener_a39915cdfda32fc52e7930288ddaac202} 
+bool firebase\+::messaging\+::\+Pollable\+Listener\+::\+Poll\+Registration\+Token (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the registration key, if a new one has been received. 
+
+When a new registration token is received, it is cached internally and can be retrieved by calling {\ttfamily Poll\+Registration\+Token}. The cached registration token will be used to populate the {\ttfamily token} argument, then the cache will be cleared and the function will return {\ttfamily true}. If there is no cached registration token this function retuns {\ttfamily false}. \begin{DoxyVerb}std::string token;
+if (listener.PollRegistrationToken(&token)) {
+  LogMessage("Received a registration token");
+}
+\end{DoxyVerb}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em token} & A string to be populated with the new token if one has been received. If there were no new token, the string is left unmodified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns {\ttfamily true} if there was a new token, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/messaging.\+h\end{DoxyCompactItemize}

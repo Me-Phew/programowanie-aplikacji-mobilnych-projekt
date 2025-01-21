@@ -1,0 +1,140 @@
+\doxysection{type\+\_\+traits.\+h}
+\hypertarget{type__traits_8h_source}{}\label{type__traits_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/type\_traits.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/type\_traits.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2017\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_TYPE\_TRAITS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_TYPE\_TRAITS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Doxygen\ breaks\ trying\ to\ parse\ this\ file,\ and\ since\ it\ is\ internal\ logic,}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ it\ doesn't\ need\ to\ be\ included\ in\ the\ generated\ documentation.}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ DOXYGEN}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remove__reference}{remove\_reference}}\ \{}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{typedef}\ T\ type;}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remove__reference}{remove\_reference}}<T\&>\ \{}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{typedef}\ T\ type;}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00040\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1remove__reference}{remove\_reference}}<T\&\&>\ \{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{typedef}\ T\ type;}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__array}{is\_array}}\ \{}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00050\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__array}{is\_array}}<T[]>\ \{}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ std::\textcolor{keywordtype}{size\_t}\ N>}
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__array}{is\_array}}<T[N]>\ \{}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00060\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__lvalue__reference}{is\_lvalue\_reference}}\ \{}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__lvalue__reference}{is\_lvalue\_reference}}<T\&>\ \{}
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ STLPort\ does\ include\ <type\_traits>\ header,\ but\ its\ contents\ are\ in\ \`{}std::tr1`}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ namespace.\ To\ work\ around\ this,\ use\ aliases.}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ TODO(varconst):\ all\ of\ the\ reimplementations\ of\ traits\ above\ can\ be\ replaced}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ with\ appropriate\ aliases.}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ TODO(varconst):\ the\ traits\ in\ this\ file\ would\ be\ more\ conformant\ if\ they}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ inherited\ from\ \`{}std::integral\_constant`.}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifdef\ STLPORT}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ FIREBASE\_TYPE\_TRAITS\_NS\ std::tr1}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ FIREBASE\_TYPE\_TRAITS\_NS\ std}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00082\ \textcolor{keyword}{using\ }decay\ =\ FIREBASE\_TYPE\_TRAITS\_NS::decay<T>;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00085\ \textcolor{keyword}{using\ }decay\_t\ =\ \textcolor{keyword}{typename}\ decay<T>::type;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ value,\ \textcolor{keyword}{typename}\ T\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{00088\ \textcolor{keyword}{using\ }enable\_if\ =\ FIREBASE\_TYPE\_TRAITS\_NS::enable\_if<value,\ T>;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ \textcolor{keyword}{using\ }is\_floating\_point\ =\ FIREBASE\_TYPE\_TRAITS\_NS::is\_floating\_point<T>;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00094\ \textcolor{keyword}{using\ }is\_integral\ =\ FIREBASE\_TYPE\_TRAITS\_NS::is\_integral<T>;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00097\ \textcolor{keyword}{using\ }is\_same\ =\ FIREBASE\_TYPE\_TRAITS\_NS::is\_same<T,\ U>;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ T\ value>}
+\DoxyCodeLine{00100\ \textcolor{keyword}{using\ }integral\_constant\ =\ FIREBASE\_TYPE\_TRAITS\_NS::integral\_constant<T,\ value>;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{using\ }true\_type\ =\ FIREBASE\_TYPE\_TRAITS\_NS::true\_type;}
+\DoxyCodeLine{00103\ \textcolor{keyword}{using\ }false\_type\ =\ FIREBASE\_TYPE\_TRAITS\_NS::false\_type;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#undef\ FIREBASE\_TYPE\_TRAITS\_NS}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ \`{}is\_char<T>::value`\ is\ true\ iff\ \`{}T`\ is\ a\ character\ type\ (including\ \`{}wchar\_t`}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ and\ C++11\ fixed-\/width\ character\ types).}}
+\DoxyCodeLine{00109\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00110\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__char}{is\_char}}\ \{}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >=\ 202002L}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ is\_same<T,\ char8\_t>::value\ ||}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >=\ 201103L}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ is\_same<T,\ char16\_t>::value\ ||\ is\_same<T,\ char32\_t>::value\ ||}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ is\_same<T,\ char>::value\ ||\ is\_same<T,\ signed\ char>::value\ ||}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ is\_same<T,\ unsigned\ char>::value\ ||\ is\_same<T,\ wchar\_t>::value;}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ A\ subset\ of\ \`{}std::is\_integral`:\ excludes\ \`{}bool`\ and\ character\ types.}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00124\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1is__integer}{is\_integer}}\ \{}
+\DoxyCodeLine{00125\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ is\_integral<T>::value\ \&\&\ !is\_same<T,\ bool>::value\ \&\&\ !\mbox{\hyperlink{structfirebase_1_1is__char}{is\_char<T>::value}};}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ NOLINTNEXTLINE\ -\/\ allow\ namespace\ overridden}}
+\DoxyCodeLine{00130\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ DOXYGEN}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_TYPE\_TRAITS\_H\_}}
+
+\end{DoxyCode}

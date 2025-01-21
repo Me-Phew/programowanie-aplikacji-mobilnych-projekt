@@ -1,0 +1,49 @@
+\doxysection{firebase\+::auth\+::Play\+Games\+Auth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_play_games_auth_provider}{}\label{classfirebase_1_1auth_1_1_play_games_auth_provider}\index{firebase::auth::PlayGamesAuthProvider@{firebase::auth::PlayGamesAuthProvider}}
+
+
+Use a server auth code provided by Google Play Games to authenticate.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{classfirebase_1_1auth_1_1_play_games_auth_provider_a57ec99c1ef5ff2f077de4d54ae295f53}{Get\+Credential}} (const char \texorpdfstring{$\ast$}{*}server\+\_\+auth\+\_\+code)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_play_games_auth_provider_a4eae8bef113eb523a4d3689a6ebe5fe2}\label{classfirebase_1_1auth_1_1_play_games_auth_provider_a4eae8bef113eb523a4d3689a6ebe5fe2} 
+static const char \texorpdfstring{$\ast$}{*}const {\bfseries k\+Provider\+Id}
+\begin{DoxyCompactList}\small\item\em The string used to identify this provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use a server auth code provided by Google Play Games to authenticate. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_play_games_auth_provider_a57ec99c1ef5ff2f077de4d54ae295f53}\index{firebase::auth::PlayGamesAuthProvider@{firebase::auth::PlayGamesAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::PlayGamesAuthProvider@{firebase::auth::PlayGamesAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_play_games_auth_provider_a57ec99c1ef5ff2f077de4d54ae295f53} 
+static \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+Play\+Games\+Auth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{server\+\_\+auth\+\_\+code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential from the given Server \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} Code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+\_\+auth\+\_\+code} & Play Games Sign in Server \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} Code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

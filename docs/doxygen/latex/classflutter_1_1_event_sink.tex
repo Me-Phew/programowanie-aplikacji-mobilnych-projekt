@@ -1,0 +1,43 @@
+\doxysection{flutter\+::Event\+Sink\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_event_sink}{}\label{classflutter_1_1_event_sink}\index{flutter::EventSink$<$ T $>$@{flutter::EventSink$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_event_sink_ac2290557223134915e3e896a03a89e74}\label{classflutter_1_1_event_sink_ac2290557223134915e3e896a03a89e74} 
+{\bfseries Event\+Sink} (\mbox{\hyperlink{classflutter_1_1_event_sink}{Event\+Sink}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_event_sink_a2ee9cea7a14c94bdb888ec43eddd029d}\label{classflutter_1_1_event_sink_a2ee9cea7a14c94bdb888ec43eddd029d} 
+\mbox{\hyperlink{classflutter_1_1_event_sink}{Event\+Sink}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_event_sink}{Event\+Sink}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_event_sink_ad1d5edb0ddfe213449c40e43c3946fb7}\label{classflutter_1_1_event_sink_ad1d5edb0ddfe213449c40e43c3946fb7} 
+void {\bfseries Success} (const T \&event)
+\item 
+\Hypertarget{classflutter_1_1_event_sink_a7b5089c479c31c495753e86810a3152c}\label{classflutter_1_1_event_sink_a7b5089c479c31c495753e86810a3152c} 
+void {\bfseries Success} ()
+\item 
+\Hypertarget{classflutter_1_1_event_sink_aa1fc3b344f5804b603af87589b54bbc0}\label{classflutter_1_1_event_sink_aa1fc3b344f5804b603af87589b54bbc0} 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \&error\+\_\+details)
+\item 
+\Hypertarget{classflutter_1_1_event_sink_a51e1e40d5a1677af8fed8fb06d8872eb}\label{classflutter_1_1_event_sink_a51e1e40d5a1677af8fed8fb06d8872eb} 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message="{}"{})
+\item 
+\Hypertarget{classflutter_1_1_event_sink_ade5974022b351876e87ade781cd10500}\label{classflutter_1_1_event_sink_ade5974022b351876e87ade781cd10500} 
+void {\bfseries End\+Of\+Stream} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_event_sink_ab8820dcf6dd52564184253f04b394013}\label{classflutter_1_1_event_sink_ab8820dcf6dd52564184253f04b394013} 
+virtual void {\bfseries Success\+Internal} (const T \texorpdfstring{$\ast$}{*}event=nullptr)=0
+\item 
+\Hypertarget{classflutter_1_1_event_sink_a59c377c740c05409c30e2730f7c3c3a2}\label{classflutter_1_1_event_sink_a59c377c740c05409c30e2730f7c3c3a2} 
+virtual void {\bfseries Error\+Internal} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \texorpdfstring{$\ast$}{*}error\+\_\+details)=0
+\item 
+\Hypertarget{classflutter_1_1_event_sink_a1d06f9d2d40ebd2993cf3587eac9d26e}\label{classflutter_1_1_event_sink_a1d06f9d2d40ebd2993cf3587eac9d26e} 
+virtual void {\bfseries End\+Of\+Stream\+Internal} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/event\+\_\+sink.\+h\end{DoxyCompactItemize}

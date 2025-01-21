@@ -1,0 +1,134 @@
+\doxysection{flutter\+\_\+engine.\+h}
+\hypertarget{flutter__engine_8h_source}{}\label{flutter__engine_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/flutter\_engine.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/flutter\_engine.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_ENGINE\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_ENGINE\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <flutter\_windows.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}binary\_messenger.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}dart\_project.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}plugin\_registrar.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}plugin\_registry.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ An\ instance\ of\ a\ Flutter\ engine.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ In\ the\ future,\ this\ will\ be\ the\ API\ surface\ used\ for\ all\ interactions\ with}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ the\ engine,\ rather\ than\ having\ them\ duplicated\ on\ FlutterViewController.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ For\ now\ it\ is\ only\ used\ in\ the\ rare\ case\ where\ you\ need\ a\ headless\ Flutter}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ engine.}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_plugin_registry}{PluginRegistry}}\ \{}
+\DoxyCodeLine{00029\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Creates\ a\ new\ engine\ for\ running\ the\ given\ project.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_dart_project}{DartProject}}\&\ project);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_flutter_engine}{\string~FlutterEngine}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}(\mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ Starts\ running\ the\ engine\ at\ the\ entrypoint\ function\ specified\ in\ the}}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ DartProject\ used\ to\ configure\ the\ engine,\ or\ main()\ by\ default.}}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ Run();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Starts\ running\ the\ engine,\ with\ an\ optional\ entry\ point.}}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ If\ provided,\ entry\_point\ must\ be\ the\ name\ of\ a\ top-\/level\ function\ from\ the}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ same\ Dart\ library\ that\ contains\ the\ app's\ main()\ function,\ and\ must\ be}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ decorated\ with\ \`{}@pragma(vm:entry-\/point)`\ to\ ensure\ the\ method\ is\ not}}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ tree-\/shaken\ by\ the\ Dart\ compiler.\ If\ not\ provided,\ defaults\ to\ main().}}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{bool}\ Run(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ entry\_point);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Terminates\ the\ running\ engine.}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ ShutDown();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ Processes\ any\ pending\ events\ in\ the\ Flutter\ engine,\ and\ returns\ the}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ nanosecond\ delay\ until\ the\ next\ scheduled\ event\ (or\ \ max,\ if\ none).}}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ This\ should\ be\ called\ on\ every\ run\ of\ the\ application-\/level\ runloop,\ and}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ a\ wait\ for\ native\ events\ in\ the\ runloop\ should\ never\ be\ longer\ than\ the}}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ last\ return\ value\ from\ this\ function.}}
+\DoxyCodeLine{00060\ \ \ std::chrono::nanoseconds\ ProcessMessages();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ Tells\ the\ engine\ that\ the\ system\ font\ list\ has\ changed.\ Should\ be\ called}}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ by\ clients\ when\ OS-\/level\ font\ changes\ happen\ (e.g.,\ WM\_FONTCHANGE\ in\ a}}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ Win32\ application).}}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ ReloadSystemFonts();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Tells\ the\ engine\ that\ the\ platform\ brightness\ value\ has\ changed.\ Should\ be}}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ called\ by\ clients\ when\ OS-\/level\ theme\ changes\ happen\ (e.g.,}}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ WM\_DWMCOLORIZATIONCOLORCHANGED\ in\ a\ Win32\ application).}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ ReloadPlatformBrightness();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ flutter::PluginRegistry:}}
+\DoxyCodeLine{00073\ \ \ FlutterDesktopPluginRegistrarRef\ GetRegistrarForPlugin(}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ plugin\_name)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{//\ Returns\ the\ messenger\ to\ use\ for\ creating\ channels\ to\ communicate\ with\ the}}
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ Flutter\ engine.}}
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ This\ pointer\ will\ remain\ valid\ for\ the\ lifetime\ of\ this\ instance.}}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classflutter_1_1_binary_messenger}{BinaryMessenger}}*\ messenger()\ \{\ \textcolor{keywordflow}{return}\ messenger\_.get();\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ Schedule\ a\ callback\ to\ be\ called\ after\ the\ next\ frame\ is\ drawn.}}
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ This\ must\ be\ called\ from\ the\ platform\ thread.\ The\ callback\ is\ executed\ only}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ once\ on\ the\ platform\ thread.}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ SetNextFrameCallback(std::function<\textcolor{keywordtype}{void}()>\ callback);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ Called\ to\ pass\ an\ external\ window\ message\ to\ the\ engine\ for\ lifecycle}}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ state\ updates.\ Non-\/Flutter\ windows\ must\ call\ this\ method\ in\ their\ WndProc}}
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ in\ order\ to\ be\ included\ in\ the\ logic\ for\ application\ lifecycle\ state}}
+\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ updates.\ Returns\ a\ result\ if\ the\ message\ should\ be\ consumed.}}
+\DoxyCodeLine{00092\ \ \ std::optional<LRESULT>\ ProcessExternalWindowMessage(HWND\ hwnd,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT\ message,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WPARAM\ wparam,}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LPARAM\ lparam);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//\ For\ access\ to\ the\ engine\ handle.}}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ Gives\ up\ ownership\ of\ |engine\_|,\ but\ keeps\ a\ weak\ reference\ to\ it.}}
+\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ This\ is\ intended\ to\ be\ used\ by\ FlutterViewController,\ since\ the\ underlying}}
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ C\ API\ for\ view\ controllers\ takes\ over\ engine\ ownership.}}
+\DoxyCodeLine{00105\ \ \ FlutterDesktopEngineRef\ RelinquishEngine();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{comment}{//\ Handle\ for\ interacting\ with\ the\ C\ API's\ engine\ reference.}}
+\DoxyCodeLine{00108\ \ \ FlutterDesktopEngineRef\ engine\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ Messenger\ for\ communicating\ with\ the\ engine.}}
+\DoxyCodeLine{00111\ \ \ std::unique\_ptr<BinaryMessenger>\ messenger\_;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{comment}{//\ Whether\ or\ not\ this\ wrapper\ owns\ |engine\_|.}}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{bool}\ owns\_engine\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ Whether\ |Run|\ has\ been\ called\ successfully.}}
+\DoxyCodeLine{00117\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00118\ \ \ \textcolor{comment}{//\ This\ is\ used\ to\ improve\ error\ messages.\ This\ can\ be\ false\ while\ the\ engine}}
+\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ is\ running\ if\ the\ engine\ was\ started\ by\ creating\ a\ view.}}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordtype}{bool}\ run\_succeeded\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{comment}{//\ The\ callback\ to\ execute\ once\ the\ next\ frame\ is\ drawn.}}
+\DoxyCodeLine{00123\ \ \ std::function<void()>\ next\_frame\_callback\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_ENGINE\_H\_}}
+
+\end{DoxyCode}

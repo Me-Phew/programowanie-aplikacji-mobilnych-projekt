@@ -1,0 +1,290 @@
+\doxysection{core\+\_\+implementations.\+cc}
+\hypertarget{core__implementations_8cc_source}{}\label{core__implementations_8cc_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/core\_implementations.cc@{windows/flutter/ephemeral/cpp\_client\_wrapper/core\_implementations.cc}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ file\ contains\ the\ implementations\ of\ any\ class\ in\ the\ wrapper\ that}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ -\/\ is\ not\ fully\ inline,\ and}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ -\/\ is\ necessary\ for\ all\ clients\ of\ the\ wrapper\ (either\ app\ or\ plugin).}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ It\ exists\ instead\ of\ the\ usual\ structure\ of\ having\ some\_class\_name.cc\ files}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ so\ that\ changes\ to\ the\ set\ of\ things\ that\ need\ non-\/header\ implementations}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ are\ not\ breaking\ changes\ for\ the\ template.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ If\ https://github.com/flutter/flutter/issues/57146\ is\ fixed,\ this\ can\ be}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ removed\ in\ favor\ of\ the\ normal\ structure\ since\ templates\ will\ no\ longer}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ manually\ include\ files.}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}binary\_messenger\_impl.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}include/flutter/engine\_method\_result.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}include/flutter/method\_channel.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}include/flutter/standard\_method\_codec.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}texture\_registrar\_impl.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ ==========\ binary\_messenger\_impl.h\ ==========}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{using\ }FlutterDesktopMessengerScopedLock\ =}
+\DoxyCodeLine{00033\ \ \ \ \ std::unique\_ptr<FlutterDesktopMessenger,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{decltype}(\&FlutterDesktopMessengerUnlock)>;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Passes\ |message|\ to\ |user\_data|,\ which\ must\ be\ a\ BinaryMessageHandler,\ along}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ with\ a\ BinaryReply\ that\ will\ send\ a\ response\ on\ |message|'s\ response\ handle.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ This\ serves\ as\ an\ adaptor\ between\ the\ function-\/pointer-\/based\ message\ callback}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ interface\ provided\ by\ the\ C\ API\ and\ the\ std::function-\/based\ message\ handler}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ interface\ of\ BinaryMessenger.}}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ ForwardToHandler(FlutterDesktopMessengerRef\ messenger,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_message}{FlutterDesktopMessage}}*\ message,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{auto}*\ response\_handle\ =\ message-\/>response\_handle;}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{auto}\ messenger\_ptr\ =\ std::shared\_ptr<FlutterDesktopMessenger>(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ FlutterDesktopMessengerAddRef(messenger),}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \&FlutterDesktopMessengerRelease);}
+\DoxyCodeLine{00049\ \ \ BinaryReply\ reply\_handler\ =\ [messenger\_ptr,\ response\_handle](}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ reply,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ reply\_size)\ \textcolor{keyword}{mutable}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Note:\ This\ lambda\ can\ be\ called\ on\ any\ thread.}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{auto}\ lock\ =\ FlutterDesktopMessengerScopedLock(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ FlutterDesktopMessengerLock(messenger\_ptr.get()),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \&FlutterDesktopMessengerUnlock);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (!FlutterDesktopMessengerIsAvailable(messenger\_ptr.get()))\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{comment}{//\ Drop\ reply\ if\ it\ comes\ in\ after\ the\ engine\ is\ destroyed.}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (!response\_handle)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Response\ can\ be\ set\ only\ once.\ Ignoring\ "{}}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}duplicate\ response."{}}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ FlutterDesktopMessengerSendResponse(messenger\_ptr.get(),\ response\_handle,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reply,\ reply\_size);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ The\ engine\ frees\ the\ response\ handle\ once}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ FlutterDesktopSendMessageResponse\ is\ called.}}
+\DoxyCodeLine{00070\ \ \ \ \ response\_handle\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00071\ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{const}\ BinaryMessageHandler\&\ message\_handler\ =}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ *\textcolor{keyword}{static\_cast<}BinaryMessageHandler*\textcolor{keyword}{>}(user\_data);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ message\_handler(message-\/>message,\ message-\/>message\_size,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::move(reply\_handler));}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ \}\ \ \textcolor{comment}{//\ namespace}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ BinaryMessengerImpl::BinaryMessengerImpl(}
+\DoxyCodeLine{00082\ \ \ \ \ FlutterDesktopMessengerRef\ core\_messenger)}
+\DoxyCodeLine{00083\ \ \ \ \ :\ messenger\_(core\_messenger)\ \{\}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ BinaryMessengerImpl::\string~BinaryMessengerImpl()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ BinaryMessengerImpl::Send(\textcolor{keyword}{const}\ std::string\&\ channel,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ message\_size,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BinaryReply\ reply)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordflow}{if}\ (reply\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ FlutterDesktopMessengerSend(messenger\_,\ channel.c\_str(),\ message,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ message\_size);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00095\ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{struct\ }Captures\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ BinaryReply\ reply;}
+\DoxyCodeLine{00098\ \ \ \};}
+\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{auto}\ captures\ =\ \textcolor{keyword}{new}\ Captures();}
+\DoxyCodeLine{00100\ \ \ captures-\/>reply\ =\ reply;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{auto}\ message\_reply\ =\ [](\textcolor{keyword}{const}\ uint8\_t*\ data,\ \textcolor{keywordtype}{size\_t}\ data\_size,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ captures\ =\ \textcolor{keyword}{reinterpret\_cast<}Captures*\textcolor{keyword}{>}(user\_data);}
+\DoxyCodeLine{00105\ \ \ \ \ captures-\/>reply(data,\ data\_size);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{delete}\ captures;}
+\DoxyCodeLine{00107\ \ \ \};}
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{bool}\ result\ =\ FlutterDesktopMessengerSendWithReply(}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ messenger\_,\ channel.c\_str(),\ message,\ message\_size,\ message\_reply,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ captures);}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordflow}{if}\ (!result)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{delete}\ captures;}
+\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ BinaryMessengerImpl::SetMessageHandler(\textcolor{keyword}{const}\ std::string\&\ channel,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BinaryMessageHandler\ handler)\ \{}
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordflow}{if}\ (!handler)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ handlers\_.erase(channel);}
+\DoxyCodeLine{00120\ \ \ \ \ FlutterDesktopMessengerSetCallback(messenger\_,\ channel.c\_str(),\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00123\ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ Save\ the\ handler,\ to\ keep\ it\ alive.}}
+\DoxyCodeLine{00125\ \ \ handlers\_[channel]\ =\ std::move(handler);}
+\DoxyCodeLine{00126\ \ \ BinaryMessageHandler*\ message\_handler\ =\ \&handlers\_[channel];}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ Set\ an\ adaptor\ callback\ that\ will\ invoke\ the\ handler.}}
+\DoxyCodeLine{00128\ \ \ FlutterDesktopMessengerSetCallback(messenger\_,\ channel.c\_str(),}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ForwardToHandler,\ message\_handler);}
+\DoxyCodeLine{00130\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ ==========\ engine\_method\_result.h\ ==========}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ ReplyManager::ReplyManager(BinaryReply\ reply\_handler)}
+\DoxyCodeLine{00137\ \ \ \ \ :\ reply\_handler\_(std::move(reply\_handler))\ \{}
+\DoxyCodeLine{00138\ \ \ assert(reply\_handler\_);}
+\DoxyCodeLine{00139\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ ReplyManager::\string~ReplyManager()\ \{}
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordflow}{if}\ (reply\_handler\_)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ Warn,\ rather\ than\ send\ a\ not-\/implemented\ response,\ since\ the\ engine\ may}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//\ no\ longer\ be\ valid\ at\ this\ point.}}
+\DoxyCodeLine{00145\ \ \ \ \ std::cerr}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Warning:\ Failed\ to\ respond\ to\ a\ message.\ This\ is\ a\ memory\ leak."{}}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00148\ \ \ \}}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{void}\ ReplyManager::SendResponseData(\textcolor{keyword}{const}\ std::vector<uint8\_t>*\ data)\ \{}
+\DoxyCodeLine{00152\ \ \ \textcolor{keywordflow}{if}\ (!reply\_handler\_)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ std::cerr}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Error:\ Only\ one\ of\ Success,\ Error,\ or\ NotImplemented\ can\ be\ "{}}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}called,"{}}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ and\ it\ can\ be\ called\ exactly\ once.\ Ignoring\ duplicate\ result."{}}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00159\ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message\ =\ data\ \&\&\ !data-\/>empty()\ ?\ data-\/>data()\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{size\_t}\ message\_size\ =\ data\ ?\ data-\/>size()\ :\ 0;}
+\DoxyCodeLine{00163\ \ \ reply\_handler\_(message,\ message\_size);}
+\DoxyCodeLine{00164\ \ \ reply\_handler\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ ==========\ method\_channel.h\ ==========}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ kControlChannelName[]\ =\ \textcolor{stringliteral}{"{}dev.flutter/channel-\/buffers"{}};}
+\DoxyCodeLine{00174\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ kResizeMethod[]\ =\ \textcolor{stringliteral}{"{}resize"{}};}
+\DoxyCodeLine{00175\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{char}\ kOverflowMethod[]\ =\ \textcolor{stringliteral}{"{}overflow"{}};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \}\ \ \textcolor{comment}{//\ namespace}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{keywordtype}{void}\ ResizeChannel(BinaryMessenger*\ messenger,\ std::string\ name,\ \textcolor{keywordtype}{int}\ new\_size)\ \{}
+\DoxyCodeLine{00182\ \ \ \textcolor{keyword}{auto}\ control\_channel\ =\ std::make\_unique<MethodChannel<EncodableValue>>(}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ messenger,\ kControlChannelName,\ \&StandardMethodCodec::GetInstance());}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \textcolor{comment}{//\ The\ deserialization\ logic\ handles\ only\ 32\ bits\ values,\ see}}
+\DoxyCodeLine{00186\ \ \ \textcolor{comment}{//\ https://github.com/flutter/engine/blob/93e8901490e78c7ba7e319cce4470d9c6478c6dc/lib/ui/channel\_buffers.dart\#L495.}}
+\DoxyCodeLine{00187\ \ \ control\_channel-\/>InvokeMethod(}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ kResizeMethod,\ std::make\_unique<EncodableValue>(EncodableList\{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EncodableValue(name),}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EncodableValue(\textcolor{keyword}{static\_cast<}int32\_t\textcolor{keyword}{>}(new\_size)),}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{void}\ SetChannelWarnsOnOverflow(BinaryMessenger*\ messenger,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ name,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ warns)\ \{}
+\DoxyCodeLine{00197\ \ \ \textcolor{keyword}{auto}\ control\_channel\ =\ std::make\_unique<MethodChannel<EncodableValue>>(}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ messenger,\ kControlChannelName,\ \&StandardMethodCodec::GetInstance());}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ control\_channel-\/>InvokeMethod(kOverflowMethod,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_unique<EncodableValue>(EncodableList\{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EncodableValue(name),}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EncodableValue(!warns),}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00205\ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{comment}{//\ ==========\ texture\_registrar\_impl.h\ ==========}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ TextureRegistrarImpl::TextureRegistrarImpl(}
+\DoxyCodeLine{00212\ \ \ \ \ FlutterDesktopTextureRegistrarRef\ texture\_registrar\_ref)}
+\DoxyCodeLine{00213\ \ \ \ \ :\ texture\_registrar\_ref\_(texture\_registrar\_ref)\ \{\}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ TextureRegistrarImpl::\string~TextureRegistrarImpl()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ int64\_t\ TextureRegistrarImpl::RegisterTexture(TextureVariant*\ texture)\ \{}
+\DoxyCodeLine{00218\ \ \ \mbox{\hyperlink{struct_flutter_desktop_texture_info}{FlutterDesktopTextureInfo}}\ info\ =\ \{\};}
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}\ pixel\_buffer\_texture\ =\ std::get\_if<PixelBufferTexture>(texture))\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ info.type\ =\ kFlutterDesktopPixelBufferTexture;}
+\DoxyCodeLine{00221\ \ \ \ \ info.pixel\_buffer\_config.user\_data\ =\ pixel\_buffer\_texture;}
+\DoxyCodeLine{00222\ \ \ \ \ info.pixel\_buffer\_config.callback\ =}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ [](\textcolor{keywordtype}{size\_t}\ width,\ \textcolor{keywordtype}{size\_t}\ height,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\ -\/>\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer}{FlutterDesktopPixelBuffer}}*\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ texture\ =\ \textcolor{keyword}{static\_cast<}PixelBufferTexture*\textcolor{keyword}{>}(user\_data);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ texture-\/>CopyPixelBuffer(width,\ height);}
+\DoxyCodeLine{00227\ \ \ \ \ \};}
+\DoxyCodeLine{00228\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}\ gpu\_surface\_texture\ =}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::get\_if<GpuSurfaceTexture>(texture))\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ info.type\ =\ kFlutterDesktopGpuSurfaceTexture;}
+\DoxyCodeLine{00231\ \ \ \ \ info.gpu\_surface\_config.struct\_size\ =}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_flutter_desktop_gpu_surface_texture_config}{FlutterDesktopGpuSurfaceTextureConfig}});}
+\DoxyCodeLine{00233\ \ \ \ \ info.gpu\_surface\_config.type\ =\ gpu\_surface\_texture-\/>surface\_type();}
+\DoxyCodeLine{00234\ \ \ \ \ info.gpu\_surface\_config.user\_data\ =\ gpu\_surface\_texture;}
+\DoxyCodeLine{00235\ \ \ \ \ info.gpu\_surface\_config.callback\ =}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ [](\textcolor{keywordtype}{size\_t}\ width,\ \textcolor{keywordtype}{size\_t}\ height,}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\ -\/>\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_descriptor}{FlutterDesktopGpuSurfaceDescriptor}}*\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ texture\ =\ \textcolor{keyword}{static\_cast<}GpuSurfaceTexture*\textcolor{keyword}{>}(user\_data);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ texture-\/>ObtainDescriptor(width,\ height);}
+\DoxyCodeLine{00240\ \ \ \ \ \};}
+\DoxyCodeLine{00241\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Attempting\ to\ register\ unknown\ texture\ variant."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00244\ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ int64\_t\ texture\_id\ =\ FlutterDesktopTextureRegistrarRegisterExternalTexture(}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ texture\_registrar\_ref\_,\ \&info);}
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordflow}{return}\ texture\_id;}
+\DoxyCodeLine{00249\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{bool}\ TextureRegistrarImpl::MarkTextureFrameAvailable(int64\_t\ texture\_id)\ \{}
+\DoxyCodeLine{00252\ \ \ \textcolor{keywordflow}{return}\ FlutterDesktopTextureRegistrarMarkExternalTextureFrameAvailable(}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ texture\_registrar\_ref\_,\ texture\_id);}
+\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{keywordtype}{void}\ TextureRegistrarImpl::UnregisterTexture(int64\_t\ texture\_id,}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}()>\ callback)\ \{}
+\DoxyCodeLine{00258\ \ \ \textcolor{keywordflow}{if}\ (callback\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ FlutterDesktopTextureRegistrarUnregisterExternalTexture(}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ texture\_registrar\_ref\_,\ texture\_id,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00262\ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \textcolor{keyword}{struct\ }Captures\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ std::function<void()>\ callback;}
+\DoxyCodeLine{00266\ \ \ \};}
+\DoxyCodeLine{00267\ \ \ \textcolor{keyword}{auto}\ captures\ =\ \textcolor{keyword}{new}\ Captures();}
+\DoxyCodeLine{00268\ \ \ captures-\/>callback\ =\ std::move(callback);}
+\DoxyCodeLine{00269\ \ \ FlutterDesktopTextureRegistrarUnregisterExternalTexture(}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ texture\_registrar\_ref\_,\ texture\_id,}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ [](\textcolor{keywordtype}{void}*\ opaque)\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ captures\ =\ \textcolor{keyword}{reinterpret\_cast<}Captures*\textcolor{keyword}{>}(opaque);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ captures-\/>callback();}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ captures;}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ captures);}
+\DoxyCodeLine{00277\ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \textcolor{keywordtype}{bool}\ TextureRegistrarImpl::UnregisterTexture(int64\_t\ texture\_id)\ \{}
+\DoxyCodeLine{00280\ \ \ UnregisterTexture(texture\_id,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00281\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00282\ \}}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+
+\end{DoxyCode}

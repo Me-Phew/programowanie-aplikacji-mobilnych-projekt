@@ -1,0 +1,48 @@
+\doxysection{flutter\+\_\+view.\+h}
+\hypertarget{flutter__view_8h_source}{}\label{flutter__view_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/flutter\_view.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/flutter\_view.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_VIEW\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_VIEW\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <flutter\_windows.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ The\ unique\ identifier\ for\ a\ view.}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ int64\_t\ FlutterViewId;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ A\ view\ displaying\ Flutter\ content.}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}\ \{}
+\DoxyCodeLine{00017\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}(FlutterDesktopViewRef\ view)\ :\ view\_(view)\ \{\}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Destroys\ this\ reference\ to\ the\ view.\ The\ underlying\ view\ is\ not\ destroyed.}}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_flutter_view}{\string~FlutterView}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}(\mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Returns\ the\ backing\ HWND\ for\ the\ view.}}
+\DoxyCodeLine{00028\ \ \ HWND\ GetNativeWindow()\ \{\ \textcolor{keywordflow}{return}\ FlutterDesktopViewGetHWND(view\_);\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Returns\ the\ DXGI\ adapter\ used\ for\ rendering\ or\ nullptr\ in\ case\ of\ error.}}
+\DoxyCodeLine{00031\ \ \ IDXGIAdapter*\ GetGraphicsAdapter()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ FlutterDesktopViewGetGraphicsAdapter(view\_);}
+\DoxyCodeLine{00033\ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ Handle\ for\ interacting\ with\ the\ C\ API's\ view.}}
+\DoxyCodeLine{00037\ \ \ FlutterDesktopViewRef\ view\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_VIEW\_H\_}}
+
+\end{DoxyCode}

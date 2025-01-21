@@ -1,0 +1,59 @@
+\doxysection{debug\+\_\+provider.\+h}
+\hypertarget{debug__provider_8h_source}{}\label{debug__provider_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/app\_check/debug\_provider.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/app\_check/debug\_provider.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2022\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_DEBUG\_PROVIDER\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_DEBUG\_PROVIDER\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/app\_check.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }app\_check\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }DebugAppCheckProviderFactoryInternal;}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{AppCheckProviderFactory}}\ \{}
+\DoxyCodeLine{00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}\&)\ =}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a192cf46a370c840d7851a55b0ab194cc}{GetInstance}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase::app\_check::AppCheckProvider}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_ac75fd50b0070f31be60ebc01398c8931}{CreateProvider}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a9e86d28c9242413103fc2fbf34d45c41}{SetDebugToken}}(\textcolor{keyword}{const}\ std::string\&\ token);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{DebugAppCheckProviderFactory}}();}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{\string~DebugAppCheckProviderFactory}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ internal::DebugAppCheckProviderFactoryInternal*\ internal\_;}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \}\ \ \textcolor{comment}{//\ namespace\ app\_check}}
+\DoxyCodeLine{00067\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_DEBUG\_PROVIDER\_H\_}}
+
+\end{DoxyCode}
