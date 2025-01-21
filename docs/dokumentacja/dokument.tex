@@ -10,9 +10,9 @@
 
     %polecenia zdefiniowane w pakiecie strona_tytulowa.sty
     \title{Wirtualny Dziekanat}		%...Wpisać nazwę projektu...
+    % \author{}
     \authorI{Marcin Dudek}
-    \authorII{Mateusz Basiaga}
-    % \authorII{Imie3 Nazwisko3}		%jeśli są dwie osoby w projekcie to zostawiamy:    \authorII{}
+    \authorII{Mateusz Basiaga}		%jeśli są dwie osoby w projekcie to zostawiamy:    \authorII{}
 		
 	\uczelnia{AKADEMIA NAUK STOSOWANYCH \\W NOWYM SĄCZU}
     \instytut{Wydział Nauk Inżynieryjnych}
@@ -20,8 +20,7 @@
     \praca{DOKUMENTACJA PROJEKTOWA}
     \przedmiot{PROGRAMOWANIE URZĄDZEŃ MOBILNYCH}
     \prowadzacy{mgr inż. Dawid Kotlarski}
-    \rok{2024}
-
+    \rok{2025}
 
 %definicja składni mikrotik
 \usepackage{fancyvrb}
@@ -31,17 +30,14 @@
 %zakonczenie definicji składni mikrotik
 
 \usepackage{fancyhdr}    %biblioteka do nagłówka i stopki
-
-			
 \begin{document}
 
 \renewcommand{\figurename}{Rys.}    %musi byc pod \begin{document}, bo w~tym miejscu pakiet 'babel' narzuca swoje ustawienia
 \renewcommand{\tablename}{Tab.}     %j.w.
 \thispagestyle{empty}               %na tej stronie: brak numeru
-\stronatytulowa{}                     %strona tytułowa tworzona przez pakiet strona_tytulowa.tex
+\stronatytulowa                     %strona tytułowa tworzona przez pakiet strona_tytulowa.tex
 
 \pagestyle{fancy}
-
 \newpage
 
 %formatowanie spisu treści i~nagłówków
@@ -62,20 +58,20 @@
 
 \newpage
 
-
 %%%%%%%%%%%%%%%%%%% treść główna dokumentu %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{tex/rozdzial1.tex}
-\input{tex/rozdzial2.tex}
-\input{tex/rozdzial3.tex}
-\input{tex/rozdzial4.tex}
-\input{tex/rozdzial5.tex}
-\input{tex/rozdzial6.tex}
+\input{tex/1_Ogolne_okreslenie_wymagan.tex}
+\input{tex/2_Szczegolowe_okreslenie_wymagan.tex}
+\input{tex/3_Projektowanie.tex}
+\input{tex/4_Implementacja.tex}
+\input{tex/5_Testowanie.tex}
+\input{tex/6_Podrecznik_uzytkownika.tex}
 
 %%%%%%%%%%%%%%%%%%% koniec treść główna dokumentu %%%%%%%%%%%%%%%%%%%%%
 \newpage
-\addcontentsline{toc}{section}{Literatura}
-\printbibliography{}
+% \addcontentsline{toc}{section}{Literatura}
+% Modified by: Maciej Wójs  
+\printbibliography[heading=bibnumbered, label=Literatura, title=Literatura]
 
 \newpage
 \hypersetup{linkcolor=black}
@@ -95,12 +91,10 @@
 \newpage
 \renewcommand{\cftlottitlefont}{\Large\bfseries\sffamily}
 \renewcommand\lstlistlistingname{Spis listingów}
-\addcontentsline{toc}{section}{Spis listingów}\lstlistoflistings{}
+\addcontentsline{toc}{section}{Spis listingów}\lstlistoflistings
 \thispagestyle{fancy}
 
-
-
 %lista rzeczy do zrobienia: wypisuje na koñcu dokumentu, patrz: pakiet todo.sty
-\todos{}
+\todos
 %koniec listy rzeczy do zrobienia
 \end{document}

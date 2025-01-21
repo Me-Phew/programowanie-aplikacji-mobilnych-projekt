@@ -1,11 +1,6 @@
 % ------------------------------------------------------------------------
 % PAKIETY
 % ------------------------------------------------------------------------
-\usepackage{tikz}
-\usepackage{./tikz-uml/tikz-uml}
-\usepackage{float}
-\PassOptionsToPackage{pdftex,usenames,dvipsnames}{color}
-\PassOptionsToPackage{final}{graphicx}
 
 %różne pakiety matematyczne, warto przejrzeć dokumentację, muszą być powyżej ustawień językowych.
 \usepackage{mathrsfs}   %Różne symbole matematyczne opisane w katalogu ~\doc\latex\comprehensive. Zamienia \mathcal{L} ze zwykłego L na L-transformatę.
@@ -15,33 +10,45 @@
 
 %język polski i klawiatura
 \usepackage[polish]{babel}
+\usepackage{csquotes}
 %\usepackage{qtimes} % czcionka Times new Roman
-\usepackage[OT4]{polski}
-%\usepackage[cp1250]{inputenc}                       %Strona kodowa polskich znaków.
+\usepackage{polski}
 
-%obsługa pdf'a
-% \usepackage[pdftex,usenames,dvipsnames]{color}      %Obsługa kolorów. Opcje usenames i dvipsnames wprowadzają dodatkowe nazwy kolorow.
-\usepackage[pdftex,pagebackref=false,draft=false,pdfpagelabels=false,colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=green,pdfstartview=FitH,pdfstartpage=1,pdfpagemode=UseOutlines,bookmarks=true,bookmarksopen=true,bookmarksopenlevel=2,bookmarksnumbered=true,pdfauthor={Dawid Kotlarski},pdftitle={Dokumentacja Projektowa},pdfsubject={},pdfkeywords={transient recovery voltage trv},unicode=true]{hyperref}   %Opcja pagebackref=true dotyczy bibliografii: pokazuje w spisie literatury numery stron, na których odwołano się do danej pozycji.
+\usepackage{ifluatex}
+
+\ifluatex
+  %czcionka
+  \usepackage{fontspec}
+  \setmainfont{Calibri}
+
+  %obsługa pdf'a
+  \usepackage[luatex,usenames,dvipsnames]{color}      %Obsługa kolorów. Opcje usenames i dvipsnames wprowadzają dodatkowe nazwy kolorow.
+  \usepackage[luatex,pagebackref=false,draft=false,pdfpagelabels=false,colorlinks=true,urlcolor=cyan,linkcolor=blue,filecolor=magenta,citecolor=green,pdfstartview=FitH,pdfstartpage=1,pdfpagemode=UseOutlines,bookmarks=true,bookmarksopen=true,bookmarksopenlevel=2,bookmarksnumbered=true,pdfauthor={Dawid Kotlarski},pdftitle={Dokumentacja Projektowa},pdfsubject={},pdfkeywords={transient recovery voltage trv},unicode=true]{hyperref}   %Opcja pagebackref=true dotyczy bibliografii: pokazuje w spisie literatury numery stron, na których odwołano się do danej pozycji.
+\else
+  \usepackage[pdftex,usenames,dvipsnames]{color}      %Obsługa kolorów. Opcje usenames i dvipsnames wprowadzają dodatkowe nazwy kolorow.
+  \usepackage[pdftex,pagebackref=false,draft=false,pdfpagelabels=false,colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=green,pdfstartview=FitH,pdfstartpage=1,pdfpagemode=UseOutlines,bookmarks=true,bookmarksopen=true,bookmarksopenlevel=2,bookmarksnumbered=true,pdfauthor={Dawid Kotlarski},pdftitle={Dokumentacja Projektowa},pdfsubject={},pdfkeywords={transient recovery voltage trv},unicode=true]{hyperref}  %Opcja pagebackref=true dotyczy bibliografii: pokazuje w spisie literatury numery stron, na których odwołano się do danej pozycji.
+\fi
 
 %bibliografia
 %\usepackage[numbers,sort&compress]{natbib}  %Porządkuje zawartość odnośników do literatury, np. [2-4,6]. Musi być pod pdf'em, a styl bibliogfafii musi mieć nazwę z dodatkiem 'nat', np. \bibliographystyle{unsrtnat} (w kolejności cytowania).
 \usepackage[
-	backend=biber,
-	style=numeric,
-	sorting=none
+  backend=biber,
+  style=numeric,
+  sorting=none
 ]{biblatex}
 \addbibresource{bibliografia.bib}
 \usepackage{hypernat}                       %Potrzebna pakietowi natbib do wspolpracy z pakietem hyperref (wazna kolejnosc: 1. hyperref, 2. natbib, 3. hypernat).
 
 %grafika i geometria strony
 \usepackage{extsizes}           %Dostepne inne rozmiary czcionek, np. 14 w poleceniu: \documentclass[14pt]{article}.
-% \usepackage[final]{graphicx}
+\usepackage[final]{graphicx}
 \usepackage[a4paper,left=3.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 
 %strona tytułowa
 \usepackage{strona_tytulowa}
 
 %inne
+\usepackage{lastpage} %! do numerowania stron w formacie (x z y)
 \usepackage[hide]{todo}                     %Wprowadza polecenie \todo{treść}. Opcje pakietu: hide/show. Polecenie \todos ma byc na koncu dokumentu, wszystkie \todo{} po \todos sa ignorowane.
 \usepackage[basic,physics]{circ}            %Wprowadza środowisko circuit do rysowania obwodów elektrycznych. Musi byc poniżej pakietow językowych.
 \usepackage[sf,bf,outermarks]{titlesec}     %Troszczy się o wygląd tytułów rozdziałów (section, subsection, ...). sf oznacza czcionkę sans serif (typu arial), bf -- bold. U mnie: oddzielna linia dla naglowku paragraph. Patrz tez: tocloft -- lepiej robi format spisu tresci.
@@ -55,16 +62,16 @@
 \usepackage{floatflt}    %Troszczy się o oblewanie rysunkow tekstem.
 \usepackage{here}        %Wprowadza dodtkowy parametr umiejscowienia rysunków, tabel, itp.: H (duże). Umiejscawia obiekty ruchome dokladnie tam gdzie są w kodzie źródłowym dokumentu.
 \usepackage{makeidx}     %Troszczy się o indeks (skorowidz).
+\usepackage{tikz}
+\usepackage{./tikz-uml/tikz-uml}
 
 %nieużywane, ale potencjalnie przydatne
 \usepackage{sectsty}           %Formatuje nagłówki, np. żeby były kolorowe -- polecenie: \allsectionsfont{\color{Blue}}.
 %\usepackage{version}           %Wersje dokumentu.
 
-% 
-\usepackage{csquotes}
-
 %============
 \usepackage{longtable}			%tabelka
+\usepackage{tabularx}
 %============
 
 %============
@@ -81,22 +88,42 @@
 
 % Definicja stylu "mystyle"
 \lstdefinestyle{mystyle}{
-	backgroundcolor=\color{backcolour},
-	commentstyle=\color{codegreen},
-	keywordstyle=\color{blue},	%magenta
-	numberstyle=\tiny\color{codegray},
-	stringstyle=\color{codepurple},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,
-	breaklines=true,
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=2
+backgroundcolor=\color{backcolour},
+commentstyle=\color{codegreen},
+keywordstyle=\color{blue},	%magenta
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+keepspaces=true,
+numbers=left,
+numbersep=5pt,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=2,
+literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+{À}{{\`A}}1 {È}{{\`E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+{ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+{Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {Ø}{{\O}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1
+{ą}{{\k{a}}}1 {ć}{{\'{c}}}1 {ę}{{\k{e}}}1 {ł}{{\l}}1 {ń}{{\'n}}1
+{ó}{{\'o}}1 {ś}{{\'s}}1 {ź}{{\'z}}1 {ż}{{\.{z}}}1
+{Ą}{{\k{A}}}1 {Ć}{{\'{C}}}1 {Ę}{{\k{E}}}1 {Ł}{{\L}}1 {Ń}{{\'N}}1
+{Ó}{{\'O}}1 {Ś}{{\'S}}1 {Ź}{{\'Z}}1 {Ż}{{\.{Z}}}1
 }
 
 \lstset{style=mystyle} % Deklaracja aktywnego stylu
@@ -106,10 +133,9 @@
 \usepackage{fancyhdr}          %Dodaje naglowki jakie się chce.
 \pagestyle{fancy}
 \fancyhf{}
-% numery stron w paginie dolnej na srodku
-\fancyfoot[C]{\scriptsize DOKUMENTACJA PROJEKTU – PROGRAMOWANIE URZĄDZEŃ MOBILNCH \\
-	\normalsize\sffamily  \thepage}
-
+% numery stron na środku dolnej stopki
+\fancyfoot[C]{\footnotesize DOKUMENTACJA PROJEKTOWA – PROGRAMOWANIE URZĄDZEŃ MOBILNYCH  \\
+  \normalsize\sffamily  \thepage\ z~\pageref{LastPage}}
 
 %\fancyhead[L]{\small\sffamily \nouppercase{\leftmark}}
 \fancyhead[C]{\footnotesize \textit{AKADEMIA NAUK STOSOWANYCH W NOWYM SĄCZU}\\}

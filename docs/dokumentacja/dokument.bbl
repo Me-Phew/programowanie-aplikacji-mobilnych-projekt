@@ -16,5 +16,356 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{www14}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Git}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://git-scm.com/doc
+      \endverb
+      \verb{url}
+      \verb https://git-scm.com/doc
+      \endverb
+    \endentry
+    \entry{www3}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Visual Studio Code}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://code.visualstudio.com/
+      \endverb
+      \verb{url}
+      \verb https://code.visualstudio.com/
+      \endverb
+    \endentry
+    \entry{www15}{online}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa AndroidStudio}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.android.com/studio/intro?hl=pl
+      \endverb
+      \verb{url}
+      \verb https://developer.android.com/studio/intro?hl=pl
+      \endverb
+    \endentry
+    \entry{www1}{online}{}{}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Flutter docs}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.flutter.dev/
+      \endverb
+      \verb{url}
+      \verb https://docs.flutter.dev/
+      \endverb
+    \endentry
+    \entry{www16}{online}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Doxygen}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.doxygen.nl/
+      \endverb
+      \verb{url}
+      \verb https://www.doxygen.nl/
+      \endverb
+    \endentry
+    \entry{www17}{online}{}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Doxygen Awesome}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/jothepro/doxygen-awesome-css
+      \endverb
+      \verb{url}
+      \verb https://github.com/jothepro/doxygen-awesome-css
+      \endverb
+    \endentry
+    \entry{www18}{online}{}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa LeftHook}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/evilmartians/lefthook
+      \endverb
+      \verb{url}
+      \verb https://github.com/evilmartians/lefthook
+      \endverb
+    \endentry
+    \entry{www19}{online}{}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Commitlint}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://commitlint.js.org/
+      \endverb
+      \verb{url}
+      \verb https://commitlint.js.org/
+      \endverb
+    \endentry
+    \entry{www20}{online}{}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Github Actions}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.github.com/en/actions
+      \endverb
+      \verb{url}
+      \verb https://docs.github.com/en/actions
+      \endverb
+    \endentry
+    \entry{github-backend}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Repozytorium backendu}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/Me-Phew/wirtualny-dziekanat-cms
+      \endverb
+      \verb{url}
+      \verb https://github.com/Me-Phew/wirtualny-dziekanat-cms
+      \endverb
+    \endentry
+    \entry{backend}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Link do backendu}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://wd.mateuszbasiaga.pl/
+      \endverb
+      \verb{url}
+      \verb https://wd.mateuszbasiaga.pl/
+      \endverb
+    \endentry
+    \entry{www2}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa Github Copilot}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://github.com/features/copilot
+      \endverb
+      \verb{url}
+      \verb https://github.com/features/copilot
+      \endverb
+    \endentry
+    \entry{www4}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Strona internetowa RiverPod}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://riverpod.dev/
+      \endverb
+      \verb{url}
+      \verb https://riverpod.dev/
+      \endverb
+    \endentry
+    \entry{www5}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Google Fonts}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/google_fonts
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/google_fonts
+      \endverb
+    \endentry
+    \entry{www6}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Google Fonts}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/google_fonts
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/google_fonts
+      \endverb
+    \endentry
+    \entry{www7}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Google Nav Bar}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/google_nav_bar
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/google_nav_bar
+      \endverb
+    \endentry
+    \entry{www8}{online}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Table Calendar}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/table_calendar
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/table_calendar
+      \endverb
+    \endentry
+    \entry{www9}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Intl}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/intl
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/intl
+      \endverb
+    \endentry
+    \entry{www10}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Shared Preferences}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/shared_preferences
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/shared_preferences
+      \endverb
+    \endentry
+    \entry{www11}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Image Picker}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/image_picker
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/image_picker
+      \endverb
+    \endentry
+    \entry{www12}{online}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Paczka flutter Local Auth}
+      \field{urlday}{11}
+      \field{urlmonth}{1}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pub.dev/packages/local_auth
+      \endverb
+      \verb{url}
+      \verb https://pub.dev/packages/local_auth
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
