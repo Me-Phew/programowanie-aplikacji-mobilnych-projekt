@@ -1,0 +1,45 @@
+\doxysection{firebase\+::messaging\+::Messaging\+Options Struct Reference}
+\hypertarget{structfirebase_1_1messaging_1_1_messaging_options}{}\label{structfirebase_1_1messaging_1_1_messaging_options}\index{firebase::messaging::MessagingOptions@{firebase::messaging::MessagingOptions}}
+
+
+A class to configure the behavior of Firebase Cloud Messaging.  
+
+
+
+
+{\ttfamily \#include $<$messaging.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_messaging_options_a06a963c548d00be65b157f909e3a389f}\label{structfirebase_1_1messaging_1_1_messaging_options_a06a963c548d00be65b157f909e3a389f} 
+{\bfseries Messaging\+Options} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options_a271b720f0fdfc7394a7e47b1c04dca87}{suppress\+\_\+notification\+\_\+permission\+\_\+prompt}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to configure the behavior of Firebase Cloud Messaging. 
+
+This class contains various configuration options that control some of Firebase Cloud Messaging\textquotesingle{}s behavior. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1messaging_1_1_messaging_options_a271b720f0fdfc7394a7e47b1c04dca87}\index{firebase::messaging::MessagingOptions@{firebase::messaging::MessagingOptions}!suppress\_notification\_permission\_prompt@{suppress\_notification\_permission\_prompt}}
+\index{suppress\_notification\_permission\_prompt@{suppress\_notification\_permission\_prompt}!firebase::messaging::MessagingOptions@{firebase::messaging::MessagingOptions}}
+\doxysubsubsection{\texorpdfstring{suppress\_notification\_permission\_prompt}{suppress\_notification\_permission\_prompt}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_messaging_options_a271b720f0fdfc7394a7e47b1c04dca87} 
+bool firebase\+::messaging\+::\+Messaging\+Options\+::suppress\+\_\+notification\+\_\+permission\+\_\+prompt}
+
+If true, do not display the prompt to the user requesting permission to allow notifications to this app. If the prompt is suppressed in this way, the developer must manually prompt the user for permission at some point in the future using {\ttfamily \doxylink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{Request\+Permission()}}.
+
+If this prompt has already been accepted once in the past the prompt will not be displayed again.
+
+This option currently only applies to i\+OS and tv\+OS. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/messaging.\+h\end{DoxyCompactItemize}

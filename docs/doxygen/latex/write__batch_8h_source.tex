@@ -1,0 +1,84 @@
+\doxysection{write\+\_\+batch.\+h}
+\hypertarget{write__batch_8h_source}{}\label{write__batch_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/write\_batch.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/write\_batch.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_WRITE\_BATCH\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_WRITE\_BATCH\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/map\_field\_value.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/set\_options.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }Future;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }DocumentReference;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }WriteBatchInternal;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\ \{}
+\DoxyCodeLine{00051\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a1ef2385a4c63e72629050f5189f05a81}{WriteBatch}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a70ef96e2013e32353e7c38e3acf90a63}{WriteBatch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ other);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a6265f025cb1da1b53fa761a3080528a4}{WriteBatch}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\&\ other);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{\string~WriteBatch}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_ac821f6b4efa4000806a701427ec219c6}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ other);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a330099b27ac950eb35453ac0953303e4}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\&\ other);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_aa0d5b7a123282b39dd48c9d8cbac5605}{Set}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\&\ document,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{MapFieldValue}}\&\ data,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}\&\ options\ =\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{SetOptions}}());}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00131\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a594d9bd0708c0352022dfa393ea30c6a}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\&\ document,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{MapFieldValue}}\&\ data);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a8daa7118d68bd0d479b7c85184e7c3f7}{Update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\&\ document,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a9a4f49a16c341d414106e290e7bae6f9}{MapFieldPathValue}}\&\ data);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{WriteBatch}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a5ed777a15b81fa7f2412e6826cc12b27}{Delete}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\&\ document);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00158\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_af9c8e438f0d9d52d441c90d7cbad699f}{Commit}}();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00171\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_af0290e9c69f017a43ded4a5350cac491}{is\_valid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ internal\_\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00174\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00175\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }WriteBatchInternal;}
+\DoxyCodeLine{00176\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00177\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ \textcolor{keyword}{typename}\ F>}
+\DoxyCodeLine{00178\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }CleanupFn;}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a1ef2385a4c63e72629050f5189f05a81}{WriteBatch}}(WriteBatchInternal*\ internal);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \textcolor{keyword}{mutable}\ WriteBatchInternal*\ internal\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00186\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_WRITE\_BATCH\_H\_}}
+
+\end{DoxyCode}

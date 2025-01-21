@@ -1,0 +1,90 @@
+\doxysection{flutter\+::Texture\+Registrar\+Impl Class Reference}
+\hypertarget{classflutter_1_1_texture_registrar_impl}{}\label{classflutter_1_1_texture_registrar_impl}\index{flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}}
+
+
+Inheritance diagram for flutter\+::Texture\+Registrar\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classflutter_1_1_texture_registrar_impl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Texture\+Registrar\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classflutter_1_1_texture_registrar_impl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_texture_registrar_impl_a2f8d6707e833925c2fde0616ca5191be}\label{classflutter_1_1_texture_registrar_impl_a2f8d6707e833925c2fde0616ca5191be} 
+{\bfseries Texture\+Registrar\+Impl} (Flutter\+Desktop\+Texture\+Registrar\+Ref texture\+\_\+registrar\+\_\+ref)
+\item 
+\Hypertarget{classflutter_1_1_texture_registrar_impl_a278f5e1bcd05227a27f16a72983a0845}\label{classflutter_1_1_texture_registrar_impl_a278f5e1bcd05227a27f16a72983a0845} 
+{\bfseries Texture\+Registrar\+Impl} (\mbox{\hyperlink{classflutter_1_1_texture_registrar_impl}{Texture\+Registrar\+Impl}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_texture_registrar_impl_a45e5f347c3db29398883ded19acf4d65}\label{classflutter_1_1_texture_registrar_impl_a45e5f347c3db29398883ded19acf4d65} 
+\mbox{\hyperlink{classflutter_1_1_texture_registrar_impl}{Texture\+Registrar\+Impl}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_texture_registrar_impl}{Texture\+Registrar\+Impl}} const \&)=delete
+\item 
+int64\+\_\+t \mbox{\hyperlink{classflutter_1_1_texture_registrar_impl_a0423a592c2ad7f5a2a834b0481e734d8}{Register\+Texture}} (Texture\+Variant \texorpdfstring{$\ast$}{*}texture) override
+\item 
+bool \mbox{\hyperlink{classflutter_1_1_texture_registrar_impl_a21b1310b61d7e90c17a6c4719dbf6a4c}{Mark\+Texture\+Frame\+Available}} (int64\+\_\+t texture\+\_\+id) override
+\item 
+void \mbox{\hyperlink{classflutter_1_1_texture_registrar_impl_a87f53a14aafce11f025dc83bf1b120a0}{Unregister\+Texture}} (int64\+\_\+t texture\+\_\+id, std\+::function$<$ void()$>$ callback) override
+\item 
+bool \mbox{\hyperlink{classflutter_1_1_texture_registrar_impl_abf031f80fb2e016f00dde75210a5008d}{Unregister\+Texture}} (int64\+\_\+t texture\+\_\+id) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_texture_registrar}{flutter\+::\+Texture\+Registrar}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflutter_1_1_texture_registrar_impl_a21b1310b61d7e90c17a6c4719dbf6a4c}\index{flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}!MarkTextureFrameAvailable@{MarkTextureFrameAvailable}}
+\index{MarkTextureFrameAvailable@{MarkTextureFrameAvailable}!flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}}
+\doxysubsubsection{\texorpdfstring{MarkTextureFrameAvailable()}{MarkTextureFrameAvailable()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_texture_registrar_impl_a21b1310b61d7e90c17a6c4719dbf6a4c} 
+bool flutter\+::\+Texture\+Registrar\+Impl\+::\+Mark\+Texture\+Frame\+Available (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{texture\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_texture_registrar}{flutter\+::\+Texture\+Registrar}}.
+
+\Hypertarget{classflutter_1_1_texture_registrar_impl_a0423a592c2ad7f5a2a834b0481e734d8}\index{flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}!RegisterTexture@{RegisterTexture}}
+\index{RegisterTexture@{RegisterTexture}!flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}}
+\doxysubsubsection{\texorpdfstring{RegisterTexture()}{RegisterTexture()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_texture_registrar_impl_a0423a592c2ad7f5a2a834b0481e734d8} 
+int64\+\_\+t flutter\+::\+Texture\+Registrar\+Impl\+::\+Register\+Texture (\begin{DoxyParamCaption}\item[{Texture\+Variant \texorpdfstring{$\ast$}{*}}]{texture}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_texture_registrar}{flutter\+::\+Texture\+Registrar}}.
+
+\Hypertarget{classflutter_1_1_texture_registrar_impl_abf031f80fb2e016f00dde75210a5008d}\index{flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}!UnregisterTexture@{UnregisterTexture}}
+\index{UnregisterTexture@{UnregisterTexture}!flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}}
+\doxysubsubsection{\texorpdfstring{UnregisterTexture()}{UnregisterTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classflutter_1_1_texture_registrar_impl_abf031f80fb2e016f00dde75210a5008d} 
+bool flutter\+::\+Texture\+Registrar\+Impl\+::\+Unregister\+Texture (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{texture\+\_\+id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_texture_registrar}{flutter\+::\+Texture\+Registrar}}.
+
+\Hypertarget{classflutter_1_1_texture_registrar_impl_a87f53a14aafce11f025dc83bf1b120a0}\index{flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}!UnregisterTexture@{UnregisterTexture}}
+\index{UnregisterTexture@{UnregisterTexture}!flutter::TextureRegistrarImpl@{flutter::TextureRegistrarImpl}}
+\doxysubsubsection{\texorpdfstring{UnregisterTexture()}{UnregisterTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classflutter_1_1_texture_registrar_impl_a87f53a14aafce11f025dc83bf1b120a0} 
+void flutter\+::\+Texture\+Registrar\+Impl\+::\+Unregister\+Texture (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{texture\+\_\+id}{, }\item[{std\+::function$<$ void()$>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_texture_registrar}{flutter\+::\+Texture\+Registrar}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/texture\+\_\+registrar\+\_\+impl.\+h\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/core\+\_\+implementations.\+cc\end{DoxyCompactItemize}

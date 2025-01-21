@@ -1,6 +1,3 @@
-docs/doxygen/html/**
-docs/doxygen/latex/**
-
 .env
 node_modules
 

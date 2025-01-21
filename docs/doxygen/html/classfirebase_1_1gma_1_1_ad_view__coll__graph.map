@@ -1,0 +1,9 @@
+<map id="firebase::gma::AdView" name="firebase::gma::AdView">
+<area shape="rect" id="Node000001" title="Loads and displays Google Mobile Ads AdView ads." alt="" coords="400,68,553,95"/>
+<area shape="rect" id="Node000002" href="$classfirebase_1_1gma_1_1_ad_listener.html" title="A listener for receiving notifications during the lifecycle of a BannerAd." alt="" coords="24,5,194,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,22,292,31,376,45,440,65,439,70,375,51,291,36,210,27"/>
+<area shape="rect" id="Node000003" href="$classfirebase_1_1gma_1_1_ad_view_bounding_box_listener.html" title=" " alt="" coords="5,60,213,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,79,399,79,399,84,228,84"/>
+<area shape="rect" id="Node000004" href="$classfirebase_1_1gma_1_1_paid_event_listener.html" title="Listener to be invoked when ads have been estimated to earn money." alt="" coords="25,127,193,169"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,130,375,100,411,93,413,98,376,105,209,135"/>
+</map>

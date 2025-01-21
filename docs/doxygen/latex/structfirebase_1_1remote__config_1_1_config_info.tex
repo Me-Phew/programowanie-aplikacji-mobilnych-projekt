@@ -1,0 +1,34 @@
+\doxysection{firebase\+::remote\+\_\+config\+::Config\+Info Struct Reference}
+\hypertarget{structfirebase_1_1remote__config_1_1_config_info}{}\label{structfirebase_1_1remote__config_1_1_config_info}\index{firebase::remote\_config::ConfigInfo@{firebase::remote\_config::ConfigInfo}}
+
+
+Describes the state of the most recent Fetch() call. Normally returned as a result of the Get\+Info() function.  
+
+
+
+
+{\ttfamily \#include $<$remote\+\_\+config.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_info_a353be5e95447fb67de0cf34dc65a7013}\label{structfirebase_1_1remote__config_1_1_config_info_a353be5e95447fb67de0cf34dc65a7013} 
+uint64\+\_\+t {\bfseries fetch\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The time (in milliseconds since the epoch) that the last fetch operation completed. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_info_a023e7d12118c479ce06c8c07d3d5a1c7}\label{structfirebase_1_1remote__config_1_1_config_info_a023e7d12118c479ce06c8c07d3d5a1c7} 
+\mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a}{Last\+Fetch\+Status}} {\bfseries last\+\_\+fetch\+\_\+status}
+\begin{DoxyCompactList}\small\item\em The status of the last fetch request. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_info_aa353fb3a873feeed0c8cee9d57217f7b}\label{structfirebase_1_1remote__config_1_1_config_info_aa353fb3a873feeed0c8cee9d57217f7b} 
+\mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968}{Fetch\+Failure\+Reason}} {\bfseries last\+\_\+fetch\+\_\+failure\+\_\+reason}
+\begin{DoxyCompactList}\small\item\em The reason the most recent fetch failed. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1remote__config_1_1_config_info_a9d6def15a09e0f0f2aa38c61c3e9e513}\label{structfirebase_1_1remote__config_1_1_config_info_a9d6def15a09e0f0f2aa38c61c3e9e513} 
+uint64\+\_\+t {\bfseries throttled\+\_\+end\+\_\+time}
+\begin{DoxyCompactList}\small\item\em The time (in milliseconds since the epoch) when the refreshing of Remote Config data is throttled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes the state of the most recent Fetch() call. Normally returned as a result of the Get\+Info() function. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/remote\+\_\+config.\+h\end{DoxyCompactItemize}

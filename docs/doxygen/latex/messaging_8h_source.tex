@@ -1,0 +1,273 @@
+\doxysection{messaging.\+h}
+\hypertarget{messaging_8h_source}{}\label{messaging_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/messaging.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/messaging.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_MESSAGING\_SRC\_INCLUDE\_FIREBASE\_MESSAGING\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_MESSAGING\_SRC\_INCLUDE\_FIREBASE\_MESSAGING\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00029\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE(messaging)}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{namespace\ }messaging\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options}{MessagingOptions}}\ \{}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options_a06a963c548d00be65b157f909e3a389f}{MessagingOptions}}()\ :\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options_a271b720f0fdfc7394a7e47b1c04dca87}{suppress\_notification\_permission\_prompt}}(false)\ \{\}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options_a271b720f0fdfc7394a7e47b1c04dca87}{suppress\_notification\_permission\_prompt}};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1messaging_1_1_android_notification_params}{AndroidNotificationParams}}\ \{}
+\DoxyCodeLine{00068\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_android_notification_params_a800289e13efa788c9b6a8395499b607f}{channel\_id}};}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}\ \{}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}()\ :\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}}(\textcolor{keyword}{nullptr})\ \{\}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a2e95e3161938ad9d49d02c9d4c17d752}{Notification}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}\&\ other)\ :\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}}(nullptr)\ \{\ *\textcolor{keyword}{this}\ =\ other;\ \}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}\&\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a3b9a219656cc8801e0c95e8de5217f48}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}\&\ other)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a835f4027e27a0083e5a351ce0e67ead5}{title}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a835f4027e27a0083e5a351ce0e67ead5}{title}};}
+\DoxyCodeLine{00087\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a556535bdb4c355eedacea95660f44947}{body}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a556535bdb4c355eedacea95660f44947}{body}};}
+\DoxyCodeLine{00088\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a1eb21456354623b78f28d335431632d0}{icon}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a1eb21456354623b78f28d335431632d0}{icon}};}
+\DoxyCodeLine{00089\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a67e9173a8ea609ca5e0176d76a984177}{sound}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a67e9173a8ea609ca5e0176d76a984177}{sound}};}
+\DoxyCodeLine{00090\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a05304d0658b4ad75cb2838b798b71748}{tag}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a05304d0658b4ad75cb2838b798b71748}{tag}};}
+\DoxyCodeLine{00091\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a2fd13df5792abac17952a5c6de93df7b}{color}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a2fd13df5792abac17952a5c6de93df7b}{color}};}
+\DoxyCodeLine{00092\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a43f6afde3fa3a8d5ca9b7bffc45573bf}{click\_action}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a43f6afde3fa3a8d5ca9b7bffc45573bf}{click\_action}};}
+\DoxyCodeLine{00093\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_aa7c44942a0cf37089a4c911f61b79b30}{body\_loc\_key}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_aa7c44942a0cf37089a4c911f61b79b30}{body\_loc\_key}};}
+\DoxyCodeLine{00094\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a8125da230f7cc9c5ca2b1e8168799ae3}{body\_loc\_args}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a8125da230f7cc9c5ca2b1e8168799ae3}{body\_loc\_args}};}
+\DoxyCodeLine{00095\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a443ea90dd2d00de9219f0157db3f56f8}{title\_loc\_key}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a443ea90dd2d00de9219f0157db3f56f8}{title\_loc\_key}};}
+\DoxyCodeLine{00096\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a0cf79549025d86c9f9763ceb0348aec7}{title\_loc\_args}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a0cf79549025d86c9f9763ceb0348aec7}{title\_loc\_args}};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{if}\ (other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}})\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_android_notification_params}{AndroidNotificationParams}}(*other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}});}
+\DoxyCodeLine{00100\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00104\ \ \ \}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_add7635184af20f76f1faee7a88e9a019}{\string~Notification}}()\ \{\ \textcolor{keyword}{delete}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}};\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00112\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a835f4027e27a0083e5a351ce0e67ead5}{title}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a556535bdb4c355eedacea95660f44947}{body}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00119\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a1eb21456354623b78f28d335431632d0}{icon}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a67e9173a8ea609ca5e0176d76a984177}{sound}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00131\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a17e80042a025853792011237fa91dd7e}{badge}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a05304d0658b4ad75cb2838b798b71748}{tag}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a2fd13df5792abac17952a5c6de93df7b}{color}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00149\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a43f6afde3fa3a8d5ca9b7bffc45573bf}{click\_action}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00157\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_aa7c44942a0cf37089a4c911f61b79b30}{body\_loc\_key}};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00169\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a8125da230f7cc9c5ca2b1e8168799ae3}{body\_loc\_args}};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00177\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a443ea90dd2d00de9219f0157db3f56f8}{title\_loc\_key}};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00189\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a0cf79549025d86c9f9763ceb0348aec7}{title\_loc\_args}};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00192\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_android_notification_params}{AndroidNotificationParams}}*\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}{android}};}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}\ \{}
+\DoxyCodeLine{00199\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a14fb59167b60b3eff52f1e656e06fc8d}{Message}}()}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b}{time\_to\_live}}(0),}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}}(nullptr),}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82}{notification\_opened}}(false),}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ sent\_time(0)\ \{\}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00206\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aa16266e60e2583b47a4ba8a276d051a2}{\string~Message}}()\ \{\ \textcolor{keyword}{delete}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}};\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00210\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a9833168dfd13435832a6ff096d48170a}{Message}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}\&\ other)\ :\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}}(nullptr)\ \{\ *\textcolor{keyword}{this}\ =\ other;\ \}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00215\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}\&\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aa121da258b6efb0fd1b3f15da8b9b879}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}\&\ other)\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afdb0f76d509b241f8e75c6438908bb35}{from}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afdb0f76d509b241f8e75c6438908bb35}{from}};}
+\DoxyCodeLine{00217\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_acb76d0cfae7959fed1f703075d43c611}{to}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_acb76d0cfae7959fed1f703075d43c611}{to}};}
+\DoxyCodeLine{00218\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ad89997ef39d1ec5c4fde0b055b9f72}{collapse\_key}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ad89997ef39d1ec5c4fde0b055b9f72}{collapse\_key}};}
+\DoxyCodeLine{00219\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ab07ea6b606eb0c507beea7841cc33400}{data}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ab07ea6b606eb0c507beea7841cc33400}{data}};}
+\DoxyCodeLine{00220\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ad7867e7bc94e148c31a52b08cf5456f7}{raw\_data}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ad7867e7bc94e148c31a52b08cf5456f7}{raw\_data}};}
+\DoxyCodeLine{00221\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ae4326ab26e85dbf2590e4f5efa1f8c9c}{message\_id}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ae4326ab26e85dbf2590e4f5efa1f8c9c}{message\_id}};}
+\DoxyCodeLine{00222\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aa384b95b8a9a8f33e4e37d76f268361c}{message\_type}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aa384b95b8a9a8f33e4e37d76f268361c}{message\_type}};}
+\DoxyCodeLine{00223\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a830def80777c766936de1281224d6b23}{priority}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a830def80777c766936de1281224d6b23}{priority}};}
+\DoxyCodeLine{00224\ \ \ \ \ this-\/>original\_priority\ =\ other.original\_priority;}
+\DoxyCodeLine{00225\ \ \ \ \ this-\/>sent\_time\ =\ other.sent\_time;}
+\DoxyCodeLine{00226\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b}{time\_to\_live}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b}{time\_to\_live}};}
+\DoxyCodeLine{00227\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a77813a88e383a2095991b919994c9e5e}{error}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a77813a88e383a2095991b919994c9e5e}{error}};}
+\DoxyCodeLine{00228\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a35ee65569a8315b1833e4d0657663031}{error\_description}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a35ee65569a8315b1833e4d0657663031}{error\_description}};}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}};}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{if}\ (other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}})\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}(*other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}});}
+\DoxyCodeLine{00232\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82}{notification\_opened}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82}{notification\_opened}};}
+\DoxyCodeLine{00236\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ee3b958683c8fc861a7c0162e310ddb}{link}}\ =\ other.\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ee3b958683c8fc861a7c0162e310ddb}{link}};}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00238\ \ \ \}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00247\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afdb0f76d509b241f8e75c6438908bb35}{from}};}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00255\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_acb76d0cfae7959fed1f703075d43c611}{to}};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00272\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ad89997ef39d1ec5c4fde0b055b9f72}{collapse\_key}};}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00277\ \ \ std::map<std::string,\ std::string>\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ab07ea6b606eb0c507beea7841cc33400}{data}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00280\ \ \ std::vector<unsigned\ char>\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ad7867e7bc94e148c31a52b08cf5456f7}{raw\_data}};}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00286\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ae4326ab26e85dbf2590e4f5efa1f8c9c}{message\_id}};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00306\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aa384b95b8a9a8f33e4e37d76f268361c}{message\_type}};}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00327\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a830def80777c766936de1281224d6b23}{priority}};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00338\ \ \ int32\_t\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b}{time\_to\_live}};}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00346\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a77813a88e383a2095991b919994c9e5e}{error}};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00352\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a35ee65569a8315b1833e4d0657663031}{error\_description}};}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00365\ \ \ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}*\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00370\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82}{notification\_opened}};}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00376\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ee3b958683c8fc861a7c0162e310ddb}{link}};}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00380\ \ \ std::string\ original\_priority;}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00384\ \ \ int64\_t\ sent\_time;}
+\DoxyCodeLine{00386\ \};}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00393\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}\ \{}
+\DoxyCodeLine{00394\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00395\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{\string~Listener}}();}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00400\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{OnMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}\&\ message)\ =\ 0;}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00407\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener_a837d52cfb06e12c85d4df06583567eed}{OnTokenReceived}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ token)\ =\ 0;}
+\DoxyCodeLine{00408\ \};}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00422\ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a5e3bd7545d50f7877ce9f72909718750}{Initialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_app}{App}}\&\ app,\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}*\ listener);}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00438\ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a5e3bd7545d50f7877ce9f72909718750}{Initialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_app}{App}}\&\ app,\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}*\ listener,}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_messaging_options}{MessagingOptions}}\&\ options);}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00446\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_adff0925cf22b170e5f1b7c487abff3d6}{Terminate}}();}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00451\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a59e78159e30437b9ee0616a9627d27b5}{IsTokenRegistrationOnInitEnabled}}();}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00497\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a65a14f20d60814d8a280517ffccff6ab}{SetTokenRegistrationOnInitEnabled}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00511\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}*\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a58f63dbc3540e4c17d8103d9b0162e89}{SetListener}}(\mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}*\ listener);}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00513\ }
+\DoxyCodeLine{00515\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52e}{Error}}\ \{}
+\DoxyCodeLine{00517\ \ \ \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea828ab8592fa5452102ef8866b5ac3ef0}{kErrorNone}}\ =\ 0,}
+\DoxyCodeLine{00519\ \ \ \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52eae4b0e2f43c2a5743f8a3d3def9e6d6da}{kErrorFailedToRegisterForRemoteNotifications}},}
+\DoxyCodeLine{00521\ \ \ \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea14e31ee08c3c8f7e36643650af4c6c73}{kErrorInvalidTopicName}},}
+\DoxyCodeLine{00523\ \ \ \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea5a44aae4e1e159f62bda25142f2b5732}{kErrorNoRegistrationToken}},}
+\DoxyCodeLine{00525\ \ \ \mbox{\hyperlink{namespacefirebase_1_1messaging_a6678514e05b8faf6c0a5fc6b7a0dd52ea4894bb32277e0fe33507955b22779d07}{kErrorUnknown}},}
+\DoxyCodeLine{00526\ \};}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00537\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{RequestPermission}}();}
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00542\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a942cb16ab4f5edfe636f4a26b8e14fbf}{RequestPermissionLastResult}}();}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00553\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a51409652cbe47776f39636316befaa87}{Subscribe}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ topic);}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00558\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a01bfb8281efde1b719807ed5ea568fb0}{SubscribeLastResult}}();}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00569\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_ae8a3c3f512f8a344e131492f94bef11c}{Unsubscribe}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ topic);}
+\DoxyCodeLine{00570\ }
+\DoxyCodeLine{00574\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a2237194a938078aae89e919dc6a12bdb}{UnsubscribeLastResult}}();}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00584\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a13025fea4aecb5ba5f6a8ae7e1be2cae}{DeliveryMetricsExportToBigQueryEnabled}}();}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00602\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a9e2061da1c885ecdaac79fb24db33094}{SetDeliveryMetricsExportToBigQuery}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00609\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_afe150b1dca9bdfa19a9677a887873e2a}{GetToken}}();}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00614\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_ab07952755aa8943c8072e317f41aeebe}{GetTokenLastResult}}();}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00623\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a68f7c1d340972d08eaee0211c9cdf2f7}{DeleteToken}}();}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00628\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{namespacefirebase_1_1messaging_a61d00e6cd7cd4e7691b6a11036125c4b}{DeleteTokenLastResult}}();}
+\DoxyCodeLine{00629\ }
+\DoxyCodeLine{00630\ \textcolor{keyword}{class\ }PollableListenerImpl;}
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00657\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener}{PollableListener}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_listener}{Listener}}\ \{}
+\DoxyCodeLine{00658\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00660\ \ \ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_aada54b5d624c0593b2521ba0a12231af}{PollableListener}}();}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00663\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a5a43c4b5802989eab4081bf513d09c6a}{\string~PollableListener}}();}
+\DoxyCodeLine{00664\ }
+\DoxyCodeLine{00667\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_aeb924594f29e81b9e90eafc450b9813e}{OnMessage}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}\&\ message);}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00671\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_acdd9f0597ba7687863bab94d9867f95f}{OnTokenReceived}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ token);}
+\DoxyCodeLine{00672\ }
+\DoxyCodeLine{00690\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a9ad784d05e512afb638be6081c9df3f5}{PollMessage}}(\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}}*\ message);}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00709\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a39915cdfda32fc52e7930288ddaac202}{PollRegistrationToken}}(std::string*\ token)\ \{}
+\DoxyCodeLine{00710\ \ \ \ \ \textcolor{keywordtype}{bool}\ got\_token;}
+\DoxyCodeLine{00711\ \ \ \ \ std::string\ token\_received\ =\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a39915cdfda32fc52e7930288ddaac202}{PollRegistrationToken}}(\&got\_token);}
+\DoxyCodeLine{00712\ \ \ \ \ \textcolor{keywordflow}{if}\ (got\_token)\ \{}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ *token\ =\ token\_received;}
+\DoxyCodeLine{00714\ \ \ \ \ \}}
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{keywordflow}{return}\ got\_token;}
+\DoxyCodeLine{00716\ \ \ \}}
+\DoxyCodeLine{00717\ }
+\DoxyCodeLine{00718\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00719\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1messaging_1_1_pollable_listener_a39915cdfda32fc52e7930288ddaac202}{PollRegistrationToken}}(\textcolor{keywordtype}{bool}*\ got\_token);}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \ \ \textcolor{comment}{//\ The\ implementation\ of\ the\ \`{}PollableListener`.}}
+\DoxyCodeLine{00722\ \ \ PollableListenerImpl*\ impl\_;}
+\DoxyCodeLine{00723\ \};}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00725\ \}\ \ \textcolor{comment}{//\ namespace\ messaging}}
+\DoxyCodeLine{00726\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00727\ }
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_MESSAGING\_SRC\_INCLUDE\_FIREBASE\_MESSAGING\_H\_}}
+
+\end{DoxyCode}

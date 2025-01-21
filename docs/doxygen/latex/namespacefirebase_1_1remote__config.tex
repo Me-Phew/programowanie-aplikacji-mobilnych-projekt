@@ -1,0 +1,159 @@
+\doxysection{firebase\+::remote\+\_\+config Namespace Reference}
+\hypertarget{namespacefirebase_1_1remote__config}{}\label{namespacefirebase_1_1remote__config}\index{firebase::remote\_config@{firebase::remote\_config}}
+
+
+Firebase Remote Config API.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info}}
+\begin{DoxyCompactList}\small\item\em Describes the state of the most recent Fetch() call. Normally returned as a result of the Get\+Info() function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value}{Config\+Key\+Value}}
+\begin{DoxyCompactList}\small\item\em Describes a mapping of a key to a string value. Used to set default values. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant}{Config\+Key\+Value\+Variant}}
+\begin{DoxyCompactList}\small\item\em Describes a mapping of a key to a value of any type. Used to set default values. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{Config\+Settings}}
+\begin{DoxyCompactList}\small\item\em Configurations for Remote Config behavior. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_update}{Config\+Update}}
+\begin{DoxyCompactList}\small\item\em Information about the updated config. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}}
+\begin{DoxyCompactList}\small\item\em Calling Remove stops the listener from receiving config updates and unregisters itself. If remove is called and no other listener registrations remain, the connection to the Remote Config backend is closed. Subsequently calling Add\+On\+Config\+Update will re-\/open the connection. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config}}
+\begin{DoxyCompactList}\small\item\em Entry point for the Firebase C++ SDK for Remote Config. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}}
+\begin{DoxyCompactList}\small\item\em Describes a retrieved value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a}{Last\+Fetch\+Status}} \{ \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa080d33dfe8997c552f749f87867a54b9}{k\+Last\+Fetch\+Status\+Success}}
+, \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa481fd8f4bb99abefc6d0bf4c00502bc6}{k\+Last\+Fetch\+Status\+Failure}}
+, \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa242ce52eda369bb1b0f1411de469689b}{k\+Last\+Fetch\+Status\+Pending}}
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the most recent fetch request status. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968}{Fetch\+Failure\+Reason}} \{ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968a4d5611568fe6fbb8fe2b8939bad625c3}{k\+Fetch\+Failure\+Reason\+Invalid}}
+, \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968af3d06dd83cdc950ffe07be7f4890e57c}{k\+Fetch\+Failure\+Reason\+Throttled}}
+, \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968a254de71033d93c33d32d20d9de5cc666}{k\+Fetch\+Failure\+Reason\+Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the most recent fetch failure. \end{DoxyCompactList}\item 
+\Hypertarget{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2}\label{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2} 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2}{Remote\+Config\+Error}} \{ \newline
+{\bfseries k\+Remote\+Config\+Error\+Unimplemented} = -\/1
+, {\bfseries k\+Remote\+Config\+Error\+None} = 0
+, {\bfseries k\+Remote\+Config\+Error\+Config\+Update\+Stream\+Error}
+, {\bfseries k\+Remote\+Config\+Error\+Config\+Update\+Message\+Invalid}
+, \newline
+{\bfseries k\+Remote\+Config\+Error\+Config\+Update\+Not\+Fetched}
+, {\bfseries k\+Remote\+Config\+Error\+Config\+Update\+Unavailable}
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the error codes returned by Remote Config. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f}{Value\+Source}} \{ \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192fa2bd211253ca0dd3d85215892c9ff8242}{k\+Value\+Source\+Static\+Value}}
+, \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192fa13c00a32bc4cd3b5f6902dca6e0a2144}{k\+Value\+Source\+Remote\+Value}}
+, \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192faa4ee15f9df9c19aa79ea2a0dfb1b480f}{k\+Value\+Source\+Default\+Value}}
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the source a config value was retrieved from. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434}{Config\+Setting}} \{ \mbox{\hyperlink{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434abece739c9d1b23d8b0138f3cf2e69c92}{k\+Config\+Setting\+Developer\+Mode}}
+ \}
+\begin{DoxyCompactList}\small\item\em Keys of API settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase Remote Config API. 
+
+Firebase Remote Config is a cloud service that lets you change the appearance and behavior of your app without requiring users to download an app update. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434}\index{firebase::remote\_config@{firebase::remote\_config}!ConfigSetting@{ConfigSetting}}
+\index{ConfigSetting@{ConfigSetting}!firebase::remote\_config@{firebase::remote\_config}}
+\doxysubsubsection{\texorpdfstring{ConfigSetting}{ConfigSetting}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434} 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434}{firebase\+::remote\+\_\+config\+::\+Config\+Setting}}}
+
+
+
+Keys of API settings. 
+
+\begin{DoxySeeAlso}{See also}
+Set\+Config\+Setting 
+
+Get\+Config\+Setting 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kConfigSettingDeveloperMode@{kConfigSettingDeveloperMode}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kConfigSettingDeveloperMode@{kConfigSettingDeveloperMode}}}\Hypertarget{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434abece739c9d1b23d8b0138f3cf2e69c92}\label{namespacefirebase_1_1remote__config_abd312db12a2f0c9ad1f6907ec2c04434} 
+k\+Config\+Setting\+Developer\+Mode&Set the value associated with this key to "{}1"{} to enable developer mode (i.\+e disable throttling) and "{}0"{} to disable. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968}\index{firebase::remote\_config@{firebase::remote\_config}!FetchFailureReason@{FetchFailureReason}}
+\index{FetchFailureReason@{FetchFailureReason}!firebase::remote\_config@{firebase::remote\_config}}
+\doxysubsubsection{\texorpdfstring{FetchFailureReason}{FetchFailureReason}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968} 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968}{firebase\+::remote\+\_\+config\+::\+Fetch\+Failure\+Reason}}}
+
+
+
+Describes the most recent fetch failure. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFetchFailureReasonInvalid@{kFetchFailureReasonInvalid}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kFetchFailureReasonInvalid@{kFetchFailureReasonInvalid}}}\Hypertarget{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968a4d5611568fe6fbb8fe2b8939bad625c3}\label{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968} 
+k\+Fetch\+Failure\+Reason\+Invalid&The fetch has not yet failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFetchFailureReasonThrottled@{kFetchFailureReasonThrottled}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kFetchFailureReasonThrottled@{kFetchFailureReasonThrottled}}}\Hypertarget{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968af3d06dd83cdc950ffe07be7f4890e57c}\label{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968} 
+k\+Fetch\+Failure\+Reason\+Throttled&The most recent fetch failed because it was throttled by the server. (You are sending too many fetch requests in too short a time.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFetchFailureReasonError@{kFetchFailureReasonError}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kFetchFailureReasonError@{kFetchFailureReasonError}}}\Hypertarget{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968a254de71033d93c33d32d20d9de5cc666}\label{namespacefirebase_1_1remote__config_a6fb05ff71e1e4820f002ccaf7d0b2968} 
+k\+Fetch\+Failure\+Reason\+Error&The most recent fetch failed for an unknown reason. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a}\index{firebase::remote\_config@{firebase::remote\_config}!LastFetchStatus@{LastFetchStatus}}
+\index{LastFetchStatus@{LastFetchStatus}!firebase::remote\_config@{firebase::remote\_config}}
+\doxysubsubsection{\texorpdfstring{LastFetchStatus}{LastFetchStatus}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a} 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a}{firebase\+::remote\+\_\+config\+::\+Last\+Fetch\+Status}}}
+
+
+
+Describes the most recent fetch request status. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLastFetchStatusSuccess@{kLastFetchStatusSuccess}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kLastFetchStatusSuccess@{kLastFetchStatusSuccess}}}\Hypertarget{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa080d33dfe8997c552f749f87867a54b9}\label{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a} 
+k\+Last\+Fetch\+Status\+Success&The most recent fetch was a success, and its data is ready to be applied, if you have not already done so. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLastFetchStatusFailure@{kLastFetchStatusFailure}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kLastFetchStatusFailure@{kLastFetchStatusFailure}}}\Hypertarget{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa481fd8f4bb99abefc6d0bf4c00502bc6}\label{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a} 
+k\+Last\+Fetch\+Status\+Failure&The most recent fetch request failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLastFetchStatusPending@{kLastFetchStatusPending}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kLastFetchStatusPending@{kLastFetchStatusPending}}}\Hypertarget{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586aa242ce52eda369bb1b0f1411de469689b}\label{namespacefirebase_1_1remote__config_ac0e46414bf605c3cfaac1c6f370d586a} 
+k\+Last\+Fetch\+Status\+Pending&The most recent fetch is still in progress. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f}\index{firebase::remote\_config@{firebase::remote\_config}!ValueSource@{ValueSource}}
+\index{ValueSource@{ValueSource}!firebase::remote\_config@{firebase::remote\_config}}
+\doxysubsubsection{\texorpdfstring{ValueSource}{ValueSource}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f} 
+enum \mbox{\hyperlink{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f}{firebase\+::remote\+\_\+config\+::\+Value\+Source}}}
+
+
+
+Describes the source a config value was retrieved from. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kValueSourceStaticValue@{kValueSourceStaticValue}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kValueSourceStaticValue@{kValueSourceStaticValue}}}\Hypertarget{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192fa2bd211253ca0dd3d85215892c9ff8242}\label{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f} 
+k\+Value\+Source\+Static\+Value&The value was not specified and no default was specified, so a static value (0 for numeric values, an empty string for strings) was returned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kValueSourceRemoteValue@{kValueSourceRemoteValue}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kValueSourceRemoteValue@{kValueSourceRemoteValue}}}\Hypertarget{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192fa13c00a32bc4cd3b5f6902dca6e0a2144}\label{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f} 
+k\+Value\+Source\+Remote\+Value&The value was found in the remote data store, and returned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kValueSourceDefaultValue@{kValueSourceDefaultValue}!firebase::remote\_config@{firebase::remote\_config}}\index{firebase::remote\_config@{firebase::remote\_config}!kValueSourceDefaultValue@{kValueSourceDefaultValue}}}\Hypertarget{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192faa4ee15f9df9c19aa79ea2a0dfb1b480f}\label{namespacefirebase_1_1remote__config_a825e9930f665960955ee8c7ae071192f} 
+k\+Value\+Source\+Default\+Value&The value was not specified, so the specified default value was returned instead. \\
+\hline
+
+\end{DoxyEnumFields}

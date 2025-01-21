@@ -1,0 +1,243 @@
+\doxysection{types.\+h}
+\hypertarget{auth_2types_8h_source}{}\label{auth_2types_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/auth/types.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/auth/types.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_AUTH\_SRC\_INCLUDE\_FIREBASE\_AUTH\_TYPES\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_AUTH\_SRC\_INCLUDE\_FIREBASE\_AUTH\_TYPES\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }auth\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209}{AuthError}}\ \{}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac77c1c9da510b8948b7d957daf25f9cb}{kAuthErrorNone}}\ =\ 0,}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209abde429faece81ae26b8bd422d0ae660e}{kAuthErrorUnimplemented}}\ =\ -\/1,}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4b782cb43abed1bfbacee12c933cba48}{kAuthErrorFailure}}\ =\ 1,}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0fa75771e138ec22bd303c8f9270c763}{kAuthErrorInvalidCustomToken}},}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad0fea05349f4f6b33a786eeba8ceef30}{kAuthErrorCustomTokenMismatch}},}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1a9585629f4d0b023b407f205744aa11}{kAuthErrorInvalidCredential}},}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa3184632433c01f9a03ada25922600e2}{kAuthErrorUserDisabled}},}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aded75a1fe4ec02772c4fdd92adb6f6ed}{kAuthErrorAccountExistsWithDifferentCredentials}},}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a24cba13534fe10b0885996016841f749}{kAuthErrorOperationNotAllowed}},}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae2f14751f864ebb5c82a0968a8ddbdf3}{kAuthErrorEmailAlreadyInUse}},}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a65aea9f6e3c992391d7f1f9ea0786fbf}{kAuthErrorRequiresRecentLogin}},}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1a2b7d234b5acc2dca55d1061edfb68f}{kAuthErrorCredentialAlreadyInUse}},}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9da4384adbfbee95abd887ae4b721790}{kAuthErrorInvalidEmail}},}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a295df9a8a78d03f0a5057ee22454461a}{kAuthErrorWrongPassword}},}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae111405ead13ea3ae37782445f31e250}{kAuthErrorTooManyRequests}},}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba42d546585df64ffed8be857f4e1fa8}{kAuthErrorUserNotFound}},}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa388c4f59c21e6ff28a5fbe6c32e9e1a}{kAuthErrorProviderAlreadyLinked}},}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a5cbc57b8221b6af50b99e092c4c5b3d7}{kAuthErrorNoSuchProvider}},}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a54586f39a02f5f0880876b2de44b3e03}{kAuthErrorInvalidUserToken}},}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0e3f846ccebc25cd41a6d90b4e3c5d5a}{kAuthErrorUserTokenExpired}},}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aa021ca8790784f27135e87f9f2f080d6}{kAuthErrorNetworkRequestFailed}},}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0a9da05ae06149cc5258bec3eeba1e54}{kAuthErrorInvalidApiKey}},}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a93c0a6044b448542958de7501c158e93}{kAuthErrorAppNotAuthorized}},}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00146\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209af5ac8d0cf7d0d28f9add4d7adfc43a22}{kAuthErrorUserMismatch}},}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a056bb1c727b98f9649493c650faacb33}{kAuthErrorWeakPassword}},}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a851f594b0cadcfaf989b0423556ababd}{kAuthErrorNoSignedInUser}},}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00161\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a2231568bd06a573836dddfa51db442d2}{kAuthErrorApiNotAvailable}},}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a914a15a72bd6c412769bab05293c1e26}{kAuthErrorExpiredActionCode}},}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00167\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aaf6042bfc9278101d64b5b513756b8b3}{kAuthErrorInvalidActionCode}},}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00171\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a3fc1a873b787f82aedbb8c9c655c9d7e}{kAuthErrorInvalidMessagePayload}},}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00175\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba8dadab3e8f6a6e6e9b9a4e4d255cde}{kAuthErrorInvalidPhoneNumber}},}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a09cece828147c74426e866af4cc9b81f}{kAuthErrorMissingPhoneNumber}},}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aba6bb51435cbc786f68607f67cd2abe3}{kAuthErrorInvalidRecipientEmail}},}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aeec600a0d13daaa6bcde3e5b4ce30aff}{kAuthErrorInvalidSender}},}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00192\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a136dce28a38e2cf9d54bba69de915380}{kAuthErrorInvalidVerificationCode}},}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00196\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aacb4f7fb14206544f4c4a6265cf499d9}{kAuthErrorInvalidVerificationId}},}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00200\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac5c097ff80d51c0f9e29a338a3cdb5e9}{kAuthErrorMissingVerificationCode}},}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00204\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a53f230eb30d37fd3ceacb3a57c40fb77}{kAuthErrorMissingVerificationId}},}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00207\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4e3d6a76f624c8dddb3cc420df20930a}{kAuthErrorMissingEmail}},}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00213\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a60b2d04e680dceb10a1ac7f365e02654}{kAuthErrorMissingPassword}},}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00217\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a059c1463e0bd2198ec69a4ebeea30b51}{kAuthErrorQuotaExceeded}},}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00223\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae0343393fc62fa5c23512512b411a140}{kAuthErrorRetryPhoneAuth}},}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00226\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac56e94ec0d5c1daf7866ccfa9a0097a9}{kAuthErrorSessionExpired}},}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00232\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0f875b8e9b150f72f0d91cb0e57548e5}{kAuthErrorAppNotVerified}},}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00237\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a19e6e66d9082d3a283d316c2af426570}{kAuthErrorAppVerificationFailed}},}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00242\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ab55e451ad437644ef04efe0baeaccef3}{kAuthErrorCaptchaCheckFailed}},}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00248\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a041283d4295c7f2ec117a118a9d5cde5}{kAuthErrorInvalidAppCredential}},}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00254\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209afd45ab2a753125dd6292e8883ea42c64}{kAuthErrorMissingAppCredential}},}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00259\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a6787c9c279563033ef6a776ec82d4c4b}{kAuthErrorInvalidClientId}},}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00264\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a1affb6751704856a86578119cf4ddc5a}{kAuthErrorInvalidContinueUri}},}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00268\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aac538586c8732846441479039b5b0469}{kAuthErrorMissingContinueUri}},}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00274\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9d08b83e2622b827795f88d5360d74c9}{kAuthErrorKeychainError}},}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00282\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a8900d0709062a378070d32a8086d6a05}{kAuthErrorMissingAppToken}},}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00288\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a9e1057211536efe5c7f0abaf0652daeb}{kAuthErrorMissingIosBundleId}},}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00293\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209abc88140e85eb0d742519d731ee84f1e7}{kAuthErrorNotificationNotForwarded}},}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00299\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209acba84e729721bb45feef22a92eb059c3}{kAuthErrorUnauthorizedDomain}},}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00303\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a203ae13b4ff3b586ac1004721872a062}{kAuthErrorWebContextAlreadyPresented}},}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00306\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a202c80b683ab1f3cdb110bc88a7c51ae}{kAuthErrorWebContextCancelled}},}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00309\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ae2a105a3ee3f6f89df9d640248f34b58}{kAuthErrorDynamicLinkNotActivated}},}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00312\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a0995e1b27cf9465ab00cacd955218e61}{kAuthErrorCancelled}},}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00315\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a8fea051b6cf6616430238bffd664d83e}{kAuthErrorInvalidProviderId}},}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00318\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a20dafc97000f5b43e304543967886884}{kAuthErrorWebInternalError}},}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00322\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a7030452b176d0447c00f522552646772}{kAuthErrorWebStorateUnsupported}},}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00326\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209af518b4a0fc63506bfa2cba2775faecbf}{kAuthErrorTenantIdMismatch}},}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00330\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a7972f6a84cb9c6671ec8c7677ee555b1}{kAuthErrorUnsupportedTenantOperation}},}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00334\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a4b3ea4a479ec62db7089a1679db5dea7}{kAuthErrorInvalidLinkDomain}},}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00342\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a96edd9849c89f2c90970309271085f65}{kAuthErrorRejectedCredential}},}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00346\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209adcaa76bb4a1c536e32bd836f94d244da}{kAuthErrorPhoneNumberNotFound}},}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00350\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a84a35f30b45c323c240dda6a0a36a427}{kAuthErrorInvalidTenantId}},}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00354\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a869f8dd57ac4d783c7c279a69c835530}{kAuthErrorMissingClientIdentifier}},}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00358\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad3b20d19b2ec4aaeb10433a8e7107497}{kAuthErrorMissingMultiFactorSession}},}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00362\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209acc6c4550fe0d47fe137699a57e07c3a7}{kAuthErrorMissingMultiFactorInfo}},}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00366\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a205d15406bf5d0e45ee4dc8355601335}{kAuthErrorInvalidMultiFactorSession}},}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00370\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ac39a0da2da47daee7318e600cb2d2d6a}{kAuthErrorMultiFactorInfoNotFound}},}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00374\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ad85a6ff834625a56ac705cd7981f035a}{kAuthErrorAdminRestrictedOperation}},}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00377\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209aead8acdca29c280daeb1b4a1a732b1cf}{kAuthErrorUnverifiedEmail}},}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00381\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a36d6952ca8ed38c4e9c7c081e463917a}{kAuthErrorSecondFactorAlreadyEnrolled}},}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00385\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a30dca098f11052386db59bbcee8f6466}{kAuthErrorMaximumSecondFactorCountExceeded}},}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00390\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209ada31496c9c1208ae265ae1f7b967c123}{kAuthErrorUnsupportedFirstFactor}},}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00394\ \ \ \mbox{\hyperlink{namespacefirebase_1_1auth_ac177a32ca7c1d676b2b88556410b0209a16e0424fc7a491dc92ff3df203fd8b4b}{kAuthErrorEmailChangeNeedsVerification}},}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#ifdef\ INTERNAL\_EXPERIMENTAL}}
+\DoxyCodeLine{00398\ \ \ kAuthErrorInvalidEventHandler,}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00403\ \ \ kAuthErrorFederatedProviderAreadyInUse,}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00407\ \ \ kAuthErrorInvalidAuthenticatedUserData,}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00411\ \ \ kAuthErrorFederatedSignInUserInteractionFailure,}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00416\ \ \ kAuthErrorMissingOrInvalidNonce,}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00420\ \ \ kAuthErrorUserCancelled,}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00424\ \ \ kAuthErrorUnsupportedPassthroughOperation,}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00428\ \ \ kAuthErrorTokenRefreshUnavailable,}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ INTERNAL\_EXEPERIMENTAL}}
+\DoxyCodeLine{00431\ \};}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00435\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data}{FederatedProviderData}}\ \{}
+\DoxyCodeLine{00438\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data_a3a4f052f8e1fd685ec2b2a253c190139}{provider\_id}};}
+\DoxyCodeLine{00439\ \};}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00442\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{FederatedOAuthProviderData}}\ :\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data}{FederatedProviderData}}\ \{}
+\DoxyCodeLine{00444\ \ \ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a231678537898b48971bed4f195d5f8a4}{FederatedOAuthProviderData}}()\ \{\}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00447\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afda3bfa3534c1a1108cc668adb49d150}{FederatedOAuthProviderData}}(\textcolor{keyword}{const}\ std::string\&\ provider)\ \{}
+\DoxyCodeLine{00448\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data_a3a4f052f8e1fd685ec2b2a253c190139}{provider\_id}}\ =\ provider;}
+\DoxyCodeLine{00449\ \ \ \}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00454\ \ \ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a24a854283e00c0802de820771ab03634}{FederatedOAuthProviderData}}(}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ provider,\ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afd20cd394e5f88f07c614a1d6103efb0}{scopes}},}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ std::map<std::string,\ std::string>\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a27f1e28473cd0618716575cea63fdbfc}{custom\_parameters}})\ \{}
+\DoxyCodeLine{00457\ \ \ \ \ this-\/>\mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data_a3a4f052f8e1fd685ec2b2a253c190139}{provider\_id}}\ =\ provider;}
+\DoxyCodeLine{00458\ \ \ \ \ this-\/>scopes\ =\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afd20cd394e5f88f07c614a1d6103efb0}{scopes}};}
+\DoxyCodeLine{00459\ \ \ \ \ this-\/>custom\_parameters\ =\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a27f1e28473cd0618716575cea63fdbfc}{custom\_parameters}};}
+\DoxyCodeLine{00460\ \ \ \}}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00464\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afd20cd394e5f88f07c614a1d6103efb0}{scopes}};}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00467\ \ \ std::map<std::string,\ std::string>\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a27f1e28473cd0618716575cea63fdbfc}{custom\_parameters}};}
+\DoxyCodeLine{00468\ \};}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \}\ \ \textcolor{comment}{//\ namespace\ auth}}
+\DoxyCodeLine{00471\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_AUTH\_SRC\_INCLUDE\_FIREBASE\_AUTH\_TYPES\_H\_}}
+
+\end{DoxyCode}

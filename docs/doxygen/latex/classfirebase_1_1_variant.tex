@@ -1,0 +1,1723 @@
+\doxysection{firebase\+::Variant Class Reference}
+\hypertarget{classfirebase_1_1_variant}{}\label{classfirebase_1_1_variant}\index{firebase::Variant@{firebase::Variant}}
+
+
+\doxylink{classfirebase_1_1_variant}{Variant} data type used by Firebase libraries.  
+
+
+
+
+{\ttfamily \#include $<$variant.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}} \{ \newline
+\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{k\+Type\+Null}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}{k\+Type\+Int64}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}{k\+Type\+Double}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}{k\+Type\+Bool}}
+, \newline
+\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1aa2fe144a4817d080e5a840b8f62657e6}{k\+Type\+Static\+String}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{k\+Type\+Mutable\+String}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{k\+Type\+Vector}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{k\+Type\+Map}}
+, \newline
+\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ad3dcaa73712ffe0c42fd69f4d2dd0caa}{k\+Type\+Static\+Blob}}
+, \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{k\+Type\+Mutable\+Blob}}
+ \}
+\begin{DoxyCompactList}\small\item\em Type of data that this variant object contains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}} ()
+\begin{DoxyCompactList}\small\item\em Construct a null \doxylink{classfirebase_1_1_variant}{Variant}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classfirebase_1_1_variant_afb30b564129107050ee61c5612a870a5}{Variant}} (T value)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfirebase_1_1_variant}{Variant} with the given templated type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant_aaf440f3716ed46fdcba18c1f4a2f8109}{Variant}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given string value (makes a copy). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant_af4ff4674a4ea140eb74c66d2f1dc4893}{Variant}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given std\+::vector of \doxylink{classfirebase_1_1_variant}{Variant}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classfirebase_1_1_variant_aa361ad6b25c70323cc18a19ae1d9e472}{Variant}} (const std\+::vector$<$ T $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given std\+::vector of something that can be constructed into a \doxylink{classfirebase_1_1_variant}{Variant}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classfirebase_1_1_variant_a4c5da9332000eb578cec61b27775ef8a}{Variant}} (const T array\+\_\+of\+\_\+values\mbox{[}$\,$\mbox{]}, size\+\_\+t array\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfirebase_1_1_variant}{Variant} from an array of supported types into a Vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant_aa01c7173ed132bbbc700b4494e21dc70}{Variant}} (const std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Construct a Variatn containing the given std\+::map of \doxylink{classfirebase_1_1_variant}{Variant} to \doxylink{classfirebase_1_1_variant}{Variant}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\\mbox{\hyperlink{classfirebase_1_1_variant_a6ce0f6bb2468d7390c8dd16d9da41cf6}{Variant}} (const std\+::map$<$ K, V $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given std\+::map of something that can be constructed into a \doxylink{classfirebase_1_1_variant}{Variant}, to something that can be constructed into a \doxylink{classfirebase_1_1_variant}{Variant}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant_a6cc3131bf93a5d95ffbe338b26674f5e}{Variant}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. Performs a deep copy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \& \mbox{\hyperlink{classfirebase_1_1_variant_ae1e6bf63e35ef94d64b58548e6f01241}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. Performs a deep copy. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1_variant_aabf383eed0a7edbce2e3398659a51f76}\label{classfirebase_1_1_variant_aabf383eed0a7edbce2e3398659a51f76} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Variant} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Frees the memory that this \doxylink{classfirebase_1_1_variant}{Variant} owns. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a79c43e421e296ce237cffef4125bfa56}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality operator. Both the type and the value must be equal (except that static strings CAN be == to mutable strings). For container types, element-\/by-\/element comparison is performed. For strings, string comparison is performed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_afd5664045599f0f89c4bf25305a5194e}{operator$<$}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality operator, only meant for internal use. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a740cb6567ff70932c440227061840a51}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality operator\+: x != y is evaluated as !(x == y). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a22c38606dee2809dbbb6404d1da826ea}{operator$>$}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality operator\+: x \texorpdfstring{$>$}{>} y is evaluated as y \texorpdfstring{$<$}{<} x. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a1ecbf0268ddb2874bb735ab2c3c56a82}{operator$>$=}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality operator\+: x \texorpdfstring{$>$}{>}= y is evaluated as !(x \texorpdfstring{$<$}{<} y) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a7cfaee0a2ff651538d1aab2789545841}{operator$<$=}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality operator\+: x \texorpdfstring{$<$}{<}= y is evaluated as !(x \texorpdfstring{$>$}{>} y) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}} (\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}} new\+\_\+type=\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{k\+Type\+Null}})
+\begin{DoxyCompactList}\small\item\em Clear the given \doxylink{classfirebase_1_1_variant}{Variant} data, optionally into a new type. Frees up any memory that might have been allocated. After calling this, you can access the \doxylink{classfirebase_1_1_variant}{Variant} as the new type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}} \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}} () const
+\begin{DoxyCompactList}\small\item\em Get the current type contained in this \doxylink{classfirebase_1_1_variant}{Variant}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_af1600a4a1a0e18130bf8524de02a3f95}{is\+\_\+null}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} is currently null. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_adcd579e2f64e2a741e6bc69b5a3b053b}{is\+\_\+int64}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains an integer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a4595470815e248d85af17024ddd81b8b}{is\+\_\+double}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a double. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_ab62ef8216a38a4d1ba31d60fe4688447}{is\+\_\+bool}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_ae3519092f95e50a2e5f2fa8ce95c6925}{is\+\_\+vector}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_acf1cfbea36669aa62fe0a6810ae9effd}{is\+\_\+map}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a14aa34be60368575751a6844effc8b35}{is\+\_\+static\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a static string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_ac258153dca25fff87a6b02176ed2bf35}{is\+\_\+mutable\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a mutable string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}{is\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a85cbc01667f687eda2339e204ea31b16}{is\+\_\+static\+\_\+blob}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a static blob. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_a02cb2432060aaac0caa63d8c455bd9e1}{is\+\_\+mutable\+\_\+blob}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a mutable blob. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_aa173cbca691a113a6a69d27bffa68a43}{is\+\_\+blob}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a blob. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_ade0cb9b8908678452288bfc42509a732}{is\+\_\+numeric}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a numeric type, Int64 or Double. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_ad40d72d4b6dfa82b0225171def529da8}{is\+\_\+fundamental\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a fundamental type\+: Null, Int64, Double, Bool, or one of the two String types. Essentially !is\+\_\+container\+Type(). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1_variant_ab4e645dbd88c36b0a73ea882df489894}{is\+\_\+container\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a container type\+: Vector or Map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_ad01c61777c591ca0126fcca035385c66}{As\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into a string. Only valid for fundamental types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a216631c80effb41d8d291e206e3aee8a}{As\+Int64}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into an integer. Only valid for fundamental types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_af4cb90322db9a1a02bb9a05256b9de2a}{As\+Double}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into a floating-\/point number. Only valid for fundamental types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_adf372a7a23a790a4cc0934c88ebfc362}{As\+Bool}} () const
+\begin{DoxyCompactList}\small\item\em Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into a boolean. Null, 0, 0.\+0, empty strings, empty vectors, empty maps, blobs of size 0, and "{}false"{} (case-\/sensitive) are all considered false. All other values are true. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38}{mutable\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em Mutable accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a string. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c}{blob\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of a blob. This method works with both static and mutable blobs. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_variant_a5fc5ef90ef3adc60aadd7cb4f4cffecf}{blob\+\_\+data}} () const
+\begin{DoxyCompactList}\small\item\em Get the pointer to the binary data contained in a blob. This method works with both static and mutable blob. \end{DoxyCompactList}\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_variant_a7c11252dc8b94fbc2ed2ef9e9d226cad}{mutable\+\_\+blob\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Get a mutable pointer to the binary data contained in a blob. \end{DoxyCompactList}\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_variant_a9e000134063bc38d283d815a0c848ac6}{mutable\+\_\+blob\+\_\+data}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} contianing mutable blob data. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& \mbox{\hyperlink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector}} ()
+\begin{DoxyCompactList}\small\item\em Mutable accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a vector of \doxylink{classfirebase_1_1_variant}{Variant} data. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& \mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}} ()
+\begin{DoxyCompactList}\small\item\em Mutable accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a map of \doxylink{classfirebase_1_1_variant}{Variant} data. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1_variant_ac937c6b4e8f4f3029bb1a69bbb3ce404}{int64\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing an integer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classfirebase_1_1_variant_a81364423ba8aece9609016fca08cd931}{double\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a double. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{classfirebase_1_1_variant_a999ce2b76cba5b0a633cd17720887b4a}{bool\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a bool. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b}{string\+\_\+value}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1_variant_ae02e2dddd9ff1eefa86e4c4464f748de}{mutable\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a string. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& \mbox{\hyperlink{classfirebase_1_1_variant_ace787c8e7ab0cf9a0064919431808a36}{vector}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a vector of \doxylink{classfirebase_1_1_variant}{Variant} data. \end{DoxyCompactList}\item 
+const std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& \mbox{\hyperlink{classfirebase_1_1_variant_a6267c3ad031605e5a0b57ea924ed4825}{map}} () const
+\begin{DoxyCompactList}\small\item\em Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a map of strings to \doxylink{classfirebase_1_1_variant}{Variant} data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a5ff60ccab8f984622e31be7fae87ade3}{set\+\_\+null}} ()
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} value to null. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\+\_\+int64\+\_\+value}} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to an 64-\/bit integer value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a1c4d1c3179ee486cd8cb81420f8ed02c}{set\+\_\+double\+\_\+value}} (double value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to an double-\/precision floating point value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_ab5a6fbd7aee5c5fcf5b9f1e96ddc0c47}{set\+\_\+bool\+\_\+value}} (bool value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to the given boolean value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a2e5ff0117468094b0eb27e5908d0e527}{set\+\_\+string\+\_\+value}} (const char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to point to a static string buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a6fd0f849abfb67fc28b0e91b713416c3}{set\+\_\+string\+\_\+value}} (char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a mutable string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_ae7386879d8caf9f4e7bfbc743e8a88bf}{set\+\_\+string\+\_\+value}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a mutable string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\+\_\+mutable\+\_\+string}} (const std\+::string \&value, bool use\+\_\+small\+\_\+string=true)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}{set\+\_\+mutable\+\_\+blob}} (const void \texorpdfstring{$\ast$}{*}src\+\_\+data, size\+\_\+t size\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given binary data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_acf89af59b693d087b8b57d08ed4e62e8}{set\+\_\+static\+\_\+blob}} (const void \texorpdfstring{$\ast$}{*}static\+\_\+data, size\+\_\+t size\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to point to static binary data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a276a1ed8855a9a63a6632bd9b5956864}{set\+\_\+vector}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a4fbd1be786e58d3e8a62df09008eacaa}{set\+\_\+map}} (const std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&value)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_ad5b601bec15b37a57584f44e48538bfa}{Assign\+Mutable\+String}} (std\+::string \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Assigns an existing string which was allocated on the heap into the \doxylink{classfirebase_1_1_variant}{Variant} without performing a copy. This object will take over ownership of the pointer, and will set the std\+::string\texorpdfstring{$\ast$}{*} you pass in to NULL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a92b0dcdefe620f70bac5101fa6d0ad9c}{Assign\+Vector}} (std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}vect)
+\begin{DoxyCompactList}\small\item\em Assigns an existing vector which was allocated on the heap into the \doxylink{classfirebase_1_1_variant}{Variant} without performing a copy. This object will take over ownership of the pointer, and will set the std\+::vector\texorpdfstring{$\ast$}{*} you pass in to NULL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1_variant_a83457c7fbf0cb6f2a94fd7fcabb67039}{Assign\+Map}} (std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}})
+\begin{DoxyCompactList}\small\item\em Assigns an existing map which was allocated on the heap into the \doxylink{classfirebase_1_1_variant}{Variant} without performing a copy. This object will take over ownership of the map, and will set the std\+::map\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} you pass in to NULL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a44ad99ff82979b9cd8d483504b4877b7}{Null}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of type Null. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a22e651a96c4de89af4e68132d747d639}{Zero}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of integer value 0. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_ae273dbb9a86a640e1eb29e6cc5ce64a3}{One}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of integer value 1. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a7ab8ad27db32a5969e8c3d998a96c7ea}{Zero\+Point\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of double value 0.\+0. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_ae1a2589bcb3615ee0b5ecf272430e1fd}{One\+Point\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of double value 1.\+0. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a58fc0f239239e033fbf754fe7c20ddf2}{False}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of bool value false. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a71f7d0e2ef52fece8eedec032a2520f1}{True}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} of bool value true. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a7e493fd37616ce5913d48d9d35bf192d}{Empty\+String}} ()
+\begin{DoxyCompactList}\small\item\em Get an empty string variant. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a9d85a432eba25a009a2e7b508bdb8f6a}{Empty\+Mutable\+String}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty mutable string. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a52395f2c31da28050d29d3e02e8b06af}{Empty\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty vector. You can immediately call \doxylink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector()} on it to work with the vector it contains. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a50c570355384a10db088b0b9684a18f8}{Empty\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty map. You can immediately call \doxylink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map()} on it to work with the map it contains. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_ac827a26897029a574be33df7c5559b96}{Empty\+Mutable\+Blob}} (size\+\_\+t size\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty mutable blob of the requested size, filled with 0-\/bytes. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_ab7b37f77dc471d923b8cf1d791c6b8a2}{From\+Int64}} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} from a 64-\/bit integer. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a8bd830b41aca84815c2c1af5d200a002}{From\+Double}} (double value)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} from a double-\/precision floating point number. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a3ac269783b0cd633b175b82da624e2b3}{From\+Bool}} (bool value)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} from a boolean. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_ab3a9257e58b904e86c40cf20f11d0472}{From\+Static\+String}} (const char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} from a static string. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a56561fd23a61fe794d7d4b5d4f320494}{From\+Mutable\+String}} (const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} from a string. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a15a255dcadfe55adf1c49bdcb5505aff}{From\+Static\+Blob}} (const void \texorpdfstring{$\ast$}{*}static\+\_\+data, size\+\_\+t size\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} that points to static binary data. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a162e582ad6645546f1c53ebe9fb08ddd}{From\+Mutable\+Blob}} (const void \texorpdfstring{$\ast$}{*}src\+\_\+data, size\+\_\+t size\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} containing a copy of binary data. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \mbox{\hyperlink{classfirebase_1_1_variant_a64d1e49f84515a8a56a93ecd6021b02d}{Mutable\+String\+From\+Static\+String}} (const char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Return a \doxylink{classfirebase_1_1_variant}{Variant} from a string, but make it mutable. \end{DoxyCompactList}\item 
+static const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_variant_ae671dc0bbf02296da964ac1b2bb39a2a}{Type\+Name}} (\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}} \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}})
+\begin{DoxyCompactList}\small\item\em Get the human-\/readable type name of a \doxylink{classfirebase_1_1_variant}{Variant} type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_variant_a043618c16f19b79bd05a2c794598fda8}\label{classfirebase_1_1_variant_a043618c16f19b79bd05a2c794598fda8} 
+class {\bfseries firebase\+::internal\+::\+Variant\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfirebase_1_1_variant}{Variant} data type used by Firebase libraries. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}\index{firebase::Variant@{firebase::Variant}!Type@{Type}}
+\index{Type@{Type}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+enum \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{firebase\+::\+Variant\+::\+Type}}}
+
+
+
+Type of data that this variant object contains. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeNull@{kTypeNull}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeNull@{kTypeNull}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Null&Null, or no data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeInt64@{kTypeInt64}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeInt64@{kTypeInt64}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Int64&A 64-\/bit integer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeDouble@{kTypeDouble}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeDouble@{kTypeDouble}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Double&A double-\/precision floating point number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeBool@{kTypeBool}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeBool@{kTypeBool}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Bool&A boolean value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeStaticString@{kTypeStaticString}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeStaticString@{kTypeStaticString}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1aa2fe144a4817d080e5a840b8f62657e6}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Static\+String&A statically-\/allocated string we point to. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeMutableString@{kTypeMutableString}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeMutableString@{kTypeMutableString}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Mutable\+String&A std\+::string. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeVector@{kTypeVector}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeVector@{kTypeVector}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Vector&A std\+::vector of \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeMap@{kTypeMap}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeMap@{kTypeMap}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Map&A std\+::map, mapping \doxylink{classfirebase_1_1_variant}{Variant} to \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeStaticBlob@{kTypeStaticBlob}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeStaticBlob@{kTypeStaticBlob}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ad3dcaa73712ffe0c42fd69f4d2dd0caa}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Static\+Blob&An statically-\/allocated blob of data that we point to. Never constructed by default. Use \doxylink{classfirebase_1_1_variant_a15a255dcadfe55adf1c49bdcb5505aff}{Variant\+::\+From\+Static\+Blob()} to create a \doxylink{classfirebase_1_1_variant}{Variant} of this type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeMutableBlob@{kTypeMutableBlob}!firebase::Variant@{firebase::Variant}}\index{firebase::Variant@{firebase::Variant}!kTypeMutableBlob@{kTypeMutableBlob}}}\Hypertarget{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}\label{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1} 
+k\+Type\+Mutable\+Blob&A blob of data that the \doxylink{classfirebase_1_1_variant}{Variant} holds. Never constructed by default. Use \doxylink{classfirebase_1_1_variant_a162e582ad6645546f1c53ebe9fb08ddd}{Variant\+::\+From\+Mutable\+Blob()} to create a \doxylink{classfirebase_1_1_variant}{Variant} of this type, and copy binary data from an existing source. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4} 
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a null \doxylink{classfirebase_1_1_variant}{Variant}. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Null. \Hypertarget{classfirebase_1_1_variant_afb30b564129107050ee61c5612a870a5}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_afb30b564129107050ee61c5612a870a5} 
+template$<$typename T $>$ \\
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{T}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classfirebase_1_1_variant}{Variant} with the given templated type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to construct the variant.\\
+\hline
+\end{DoxyParams}
+Valid types for this constructor are {\ttfamily int}, {\ttfamily int64\+\_\+t}, {\ttfamily float}, {\ttfamily double}, {\ttfamily bool}, {\ttfamily const char\texorpdfstring{$\ast$}{*}}, and {\ttfamily char\texorpdfstring{$\ast$}{*}} (but see below for additional \doxylink{classfirebase_1_1_variant}{Variant} types).
+
+Type {\ttfamily int} or {\ttfamily int64\+\_\+t}\+:
+\begin{DoxyItemize}
+\item The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Int64.
+\end{DoxyItemize}
+
+Type {\ttfamily double} or {\ttfamily float}\+:
+\begin{DoxyItemize}
+\item The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Double.
+\end{DoxyItemize}
+
+Type {\ttfamily bool}\+:
+\begin{DoxyItemize}
+\item The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Bool.
+\end{DoxyItemize}
+
+Type {\ttfamily const char\texorpdfstring{$\ast$}{*}}\+:
+\begin{DoxyItemize}
+\item The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Static\+String, and \doxylink{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}{is\+\_\+string()} will return true. {\bfseries{Note\+:}} If you use this constructor, you must ensure that the memory pointed to stays valid for the life of the \doxylink{classfirebase_1_1_variant}{Variant}, otherwise call \doxylink{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38}{mutable\+\_\+string()} or \doxylink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\+\_\+mutable\+\_\+string()}, which will copy the string to an internal buffer.
+\end{DoxyItemize}
+
+Type {\ttfamily char\texorpdfstring{$\ast$}{*}}\+:
+\begin{DoxyItemize}
+\item The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Mutable\+String, and \doxylink{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}{is\+\_\+string()} will return true.
+\end{DoxyItemize}
+
+Other types will result in compiler error unless using the following constructor overloads\+:
+\begin{DoxyItemize}
+\item {\ttfamily std\+::string}
+\item {\ttfamily std\+::vector\texorpdfstring{$<$}{<}\doxylink{classfirebase_1_1_variant}{Variant}\texorpdfstring{$>$}{>}}
+\item {\ttfamily std\+::vector\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} where T is convertible to variant type
+\item {\ttfamily T\texorpdfstring{$\ast$}{*}}, {\ttfamily size\+\_\+t} where T is convertible to variant type
+\item {\ttfamily std\+::map\texorpdfstring{$<$}{<}\doxylink{classfirebase_1_1_variant}{Variant}, \doxylink{classfirebase_1_1_variant}{Variant}\texorpdfstring{$>$}{>}}
+\item {\ttfamily std\+::map\texorpdfstring{$<$}{<}K, V\texorpdfstring{$>$}{>}} where K and V is convertible to variant type 
+\end{DoxyItemize}\Hypertarget{classfirebase_1_1_variant_aaf440f3716ed46fdcba18c1f4a2f8109}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_aaf440f3716ed46fdcba18c1f4a2f8109} 
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given string value (makes a copy). 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Mutable\+String, and \doxylink{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}{is\+\_\+string()} will return true.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The string to use for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_af4ff4674a4ea140eb74c66d2f1dc4893}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_af4ff4674a4ea140eb74c66d2f1dc4893} 
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given std\+::vector of \doxylink{classfirebase_1_1_variant}{Variant}. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Vector.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The STL vector to copy into the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_aa361ad6b25c70323cc18a19ae1d9e472}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_aa361ad6b25c70323cc18a19ae1d9e472} 
+template$<$typename T $>$ \\
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given std\+::vector of something that can be constructed into a \doxylink{classfirebase_1_1_variant}{Variant}. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Vector.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & An STL vector containing elements that can be converted to \doxylink{classfirebase_1_1_variant}{Variant} (such as ints, strings, vectors). A \doxylink{classfirebase_1_1_variant}{Variant} will be created for each element, and copied into the Vector \doxylink{classfirebase_1_1_variant}{Variant} constructed here. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a4c5da9332000eb578cec61b27775ef8a}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a4c5da9332000eb578cec61b27775ef8a} 
+template$<$typename T $>$ \\
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const T}]{array\+\_\+of\+\_\+values}{\mbox{[}$\,$\mbox{]}, }\item[{size\+\_\+t}]{array\+\_\+size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classfirebase_1_1_variant}{Variant} from an array of supported types into a Vector. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Vector.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em array\+\_\+of\+\_\+values} & A C array containing elements that can be converted to \doxylink{classfirebase_1_1_variant}{Variant} (such as ints, strings, vectors). A \doxylink{classfirebase_1_1_variant}{Variant} will be created for each element, and copied into the Vector \doxylink{classfirebase_1_1_variant}{Variant} constructed here. \\
+\hline
+\mbox{\texttt{ in}}  & {\em array\+\_\+size} & Number of elements of the array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_aa01c7173ed132bbbc700b4494e21dc70}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_aa01c7173ed132bbbc700b4494e21dc70} 
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a Variatn containing the given std\+::map of \doxylink{classfirebase_1_1_variant}{Variant} to \doxylink{classfirebase_1_1_variant}{Variant}. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Map.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The STL map to copy into the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a6ce0f6bb2468d7390c8dd16d9da41cf6}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a6ce0f6bb2468d7390c8dd16d9da41cf6} 
+template$<$typename K , typename V $>$ \\
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const std\+::map$<$ K, V $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \doxylink{classfirebase_1_1_variant}{Variant} containing the given std\+::map of something that can be constructed into a \doxylink{classfirebase_1_1_variant}{Variant}, to something that can be constructed into a \doxylink{classfirebase_1_1_variant}{Variant}. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant} constructed will be of type Map.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & An STL map containing keys and values that can be converted to \doxylink{classfirebase_1_1_variant}{Variant} (such as ints, strings, vectors). A \doxylink{classfirebase_1_1_variant}{Variant} will be created for each key and for each value, and copied by pairs into the Map \doxylink{classfirebase_1_1_variant}{Variant} constructed here. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a6cc3131bf93a5d95ffbe338b26674f5e}\index{firebase::Variant@{firebase::Variant}!Variant@{Variant}}
+\index{Variant@{Variant}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a6cc3131bf93a5d95ffbe338b26674f5e} 
+firebase\+::\+Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. Performs a deep copy. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Source \doxylink{classfirebase_1_1_variant}{Variant} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1_variant_adf372a7a23a790a4cc0934c88ebfc362}\index{firebase::Variant@{firebase::Variant}!AsBool@{AsBool}}
+\index{AsBool@{AsBool}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AsBool()}{AsBool()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_adf372a7a23a790a4cc0934c88ebfc362} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+As\+Bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into a boolean. Null, 0, 0.\+0, empty strings, empty vectors, empty maps, blobs of size 0, and "{}false"{} (case-\/sensitive) are all considered false. All other values are true. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Bool containing the original \doxylink{classfirebase_1_1_variant}{Variant} interpreted as a Bool. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_af4cb90322db9a1a02bb9a05256b9de2a}\index{firebase::Variant@{firebase::Variant}!AsDouble@{AsDouble}}
+\index{AsDouble@{AsDouble}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AsDouble()}{AsDouble()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_af4cb90322db9a1a02bb9a05256b9de2a} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+As\+Double (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into a floating-\/point number. Only valid for fundamental types. 
+
+Special cases\+: If a Bool is true, this will return 1. All other cases will return 0.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing a Double that represents the value of this original \doxylink{classfirebase_1_1_variant}{Variant}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a216631c80effb41d8d291e206e3aee8a}\index{firebase::Variant@{firebase::Variant}!AsInt64@{AsInt64}}
+\index{AsInt64@{AsInt64}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AsInt64()}{AsInt64()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a216631c80effb41d8d291e206e3aee8a} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+As\+Int64 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into an integer. Only valid for fundamental types. 
+
+Special cases\+: If a String can be parsed as a number via strtol(), it will be. If a Bool is true, this will return 1. All other cases (including non-\/fundamental types) will return 0.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing an Int64 that represents the value of this original \doxylink{classfirebase_1_1_variant}{Variant}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a83457c7fbf0cb6f2a94fd7fcabb67039}\index{firebase::Variant@{firebase::Variant}!AssignMap@{AssignMap}}
+\index{AssignMap@{AssignMap}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AssignMap()}{AssignMap()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a83457c7fbf0cb6f2a94fd7fcabb67039} 
+void firebase\+::\+Variant\+::\+Assign\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{map}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns an existing map which was allocated on the heap into the \doxylink{classfirebase_1_1_variant}{Variant} without performing a copy. This object will take over ownership of the map, and will set the std\+::map\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} you pass in to NULL. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Map.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em map} & Pointer to a pointer to an STL map. The \doxylink{classfirebase_1_1_variant}{Variant} will take over ownership of the pointer to the map, and set the pointer you passed in to NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_ad5b601bec15b37a57584f44e48538bfa}\index{firebase::Variant@{firebase::Variant}!AssignMutableString@{AssignMutableString}}
+\index{AssignMutableString@{AssignMutableString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AssignMutableString()}{AssignMutableString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ad5b601bec15b37a57584f44e48538bfa} 
+void firebase\+::\+Variant\+::\+Assign\+Mutable\+String (\begin{DoxyParamCaption}\item[{std\+::string \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns an existing string which was allocated on the heap into the \doxylink{classfirebase_1_1_variant}{Variant} without performing a copy. This object will take over ownership of the pointer, and will set the std\+::string\texorpdfstring{$\ast$}{*} you pass in to NULL. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Mutable\+String.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em str} & Pointer to a pointer to an STL string. The \doxylink{classfirebase_1_1_variant}{Variant} will take over ownership of the pointer to the string, and set the pointer you passed in to NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a92b0dcdefe620f70bac5101fa6d0ad9c}\index{firebase::Variant@{firebase::Variant}!AssignVector@{AssignVector}}
+\index{AssignVector@{AssignVector}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AssignVector()}{AssignVector()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a92b0dcdefe620f70bac5101fa6d0ad9c} 
+void firebase\+::\+Variant\+::\+Assign\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{vect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns an existing vector which was allocated on the heap into the \doxylink{classfirebase_1_1_variant}{Variant} without performing a copy. This object will take over ownership of the pointer, and will set the std\+::vector\texorpdfstring{$\ast$}{*} you pass in to NULL. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Vector.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em vect} & Pointer to a pointer to an STL vector. The \doxylink{classfirebase_1_1_variant}{Variant} will take over ownership of the pointer to the vector, and set the pointer you passed in to NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_ad01c61777c591ca0126fcca035385c66}\index{firebase::Variant@{firebase::Variant}!AsString@{AsString}}
+\index{AsString@{AsString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{AsString()}{AsString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ad01c61777c591ca0126fcca035385c66} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+As\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current \doxylink{classfirebase_1_1_variant}{Variant} converted into a string. Only valid for fundamental types. 
+
+Special cases\+: Booleans will be returned as "{}true"{} or "{}false"{}. Null will be returned as an empty string. The returned string may be either mutable or static, depending on the source type. All other cases will return an empty string.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing a String that represents the value of this original \doxylink{classfirebase_1_1_variant}{Variant}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a5fc5ef90ef3adc60aadd7cb4f4cffecf}\index{firebase::Variant@{firebase::Variant}!blob\_data@{blob\_data}}
+\index{blob\_data@{blob\_data}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{blob\_data()}{blob\_data()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a5fc5ef90ef3adc60aadd7cb4f4cffecf} 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} firebase\+::\+Variant\+::blob\+\_\+data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pointer to the binary data contained in a blob. This method works with both static and mutable blob. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the binary data. Use \doxylink{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c}{blob\+\_\+size()} to get the number of bytes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c}\index{firebase::Variant@{firebase::Variant}!blob\_size@{blob\_size}}
+\index{blob\_size@{blob\_size}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{blob\_size()}{blob\_size()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c} 
+size\+\_\+t firebase\+::\+Variant\+::blob\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of a blob. This method works with both static and mutable blobs. 
+
+\begin{DoxyReturn}{Returns}
+Number of bytes of binary data contained in the blob. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a999ce2b76cba5b0a633cd17720887b4a}\index{firebase::Variant@{firebase::Variant}!bool\_value@{bool\_value}}
+\index{bool\_value@{bool\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{bool\_value()}{bool\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a999ce2b76cba5b0a633cd17720887b4a} 
+const bool \& firebase\+::\+Variant\+::bool\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a bool. 
+
+\begin{DoxyReturn}{Returns}
+The bool contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Bool type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}\index{firebase::Variant@{firebase::Variant}!Clear@{Clear}}
+\index{Clear@{Clear}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd} 
+void firebase\+::\+Variant\+::\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}}]{new\+\_\+type}{ = {\ttfamily \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{k\+Type\+Null}}}}\end{DoxyParamCaption})}
+
+
+
+Clear the given \doxylink{classfirebase_1_1_variant}{Variant} data, optionally into a new type. Frees up any memory that might have been allocated. After calling this, you can access the \doxylink{classfirebase_1_1_variant}{Variant} as the new type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+\_\+type} & Optional new type to clear the \doxylink{classfirebase_1_1_variant}{Variant} to. You may immediately begin using the \doxylink{classfirebase_1_1_variant}{Variant} as that new type. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a81364423ba8aece9609016fca08cd931}\index{firebase::Variant@{firebase::Variant}!double\_value@{double\_value}}
+\index{double\_value@{double\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{double\_value()}{double\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a81364423ba8aece9609016fca08cd931} 
+double firebase\+::\+Variant\+::double\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a double. 
+
+\begin{DoxyReturn}{Returns}
+The double contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Double type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a50c570355384a10db088b0b9684a18f8}\index{firebase::Variant@{firebase::Variant}!EmptyMap@{EmptyMap}}
+\index{EmptyMap@{EmptyMap}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{EmptyMap()}{EmptyMap()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a50c570355384a10db088b0b9684a18f8} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Empty\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty map. You can immediately call \doxylink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map()} on it to work with the map it contains. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Map, containing no elements. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ac827a26897029a574be33df7c5559b96}\index{firebase::Variant@{firebase::Variant}!EmptyMutableBlob@{EmptyMutableBlob}}
+\index{EmptyMutableBlob@{EmptyMutableBlob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{EmptyMutableBlob()}{EmptyMutableBlob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ac827a26897029a574be33df7c5559b96} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Empty\+Mutable\+Blob (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size\+\_\+bytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty mutable blob of the requested size, filled with 0-\/bytes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size\+\_\+bytes} & Size of the buffer you want, in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing a mutable blob of the requested size, filled with 0-\/bytes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a9d85a432eba25a009a2e7b508bdb8f6a}\index{firebase::Variant@{firebase::Variant}!EmptyMutableString@{EmptyMutableString}}
+\index{EmptyMutableString@{EmptyMutableString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{EmptyMutableString()}{EmptyMutableString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a9d85a432eba25a009a2e7b508bdb8f6a} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Empty\+Mutable\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty mutable string. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Mutable\+String, containing an empty string. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a7e493fd37616ce5913d48d9d35bf192d}\index{firebase::Variant@{firebase::Variant}!EmptyString@{EmptyString}}
+\index{EmptyString@{EmptyString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{EmptyString()}{EmptyString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a7e493fd37616ce5913d48d9d35bf192d} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Empty\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get an empty string variant. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Static\+String, referring to an empty string. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a52395f2c31da28050d29d3e02e8b06af}\index{firebase::Variant@{firebase::Variant}!EmptyVector@{EmptyVector}}
+\index{EmptyVector@{EmptyVector}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{EmptyVector()}{EmptyVector()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a52395f2c31da28050d29d3e02e8b06af} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Empty\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} containing an empty vector. You can immediately call \doxylink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector()} on it to work with the vector it contains. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Vector, containing no elements. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a58fc0f239239e033fbf754fe7c20ddf2}\index{firebase::Variant@{firebase::Variant}!False@{False}}
+\index{False@{False}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{False()}{False()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a58fc0f239239e033fbf754fe7c20ddf2} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+False (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of bool value false. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Bool, with value false. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a3ac269783b0cd633b175b82da624e2b3}\index{firebase::Variant@{firebase::Variant}!FromBool@{FromBool}}
+\index{FromBool@{FromBool}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromBool()}{FromBool()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a3ac269783b0cd633b175b82da624e2b3} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Bool (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} from a boolean. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Boolean value to put into the \doxylink{classfirebase_1_1_variant}{Variant}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing the Boolean. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a8bd830b41aca84815c2c1af5d200a002}\index{firebase::Variant@{firebase::Variant}!FromDouble@{FromDouble}}
+\index{FromDouble@{FromDouble}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromDouble()}{FromDouble()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a8bd830b41aca84815c2c1af5d200a002} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Double (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} from a double-\/precision floating point number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Double-\/precision floating point value to put into the \doxylink{classfirebase_1_1_variant}{Variant};\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing the double-\/precision floating point number. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ab7b37f77dc471d923b8cf1d791c6b8a2}\index{firebase::Variant@{firebase::Variant}!FromInt64@{FromInt64}}
+\index{FromInt64@{FromInt64}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromInt64()}{FromInt64()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ab7b37f77dc471d923b8cf1d791c6b8a2} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Int64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} from a 64-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & 64-\/bit integer value to put into the \doxylink{classfirebase_1_1_variant}{Variant}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing the 64-\/bit integer. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a162e582ad6645546f1c53ebe9fb08ddd}\index{firebase::Variant@{firebase::Variant}!FromMutableBlob@{FromMutableBlob}}
+\index{FromMutableBlob@{FromMutableBlob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromMutableBlob()}{FromMutableBlob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a162e582ad6645546f1c53ebe9fb08ddd} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Mutable\+Blob (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{src\+\_\+data}{, }\item[{size\+\_\+t}]{size\+\_\+bytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} containing a copy of binary data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src\+\_\+data} & Pointer to binary data to be copied into the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+bytes} & Size of the data, in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing a copy of the binary data. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a56561fd23a61fe794d7d4b5d4f320494}\index{firebase::Variant@{firebase::Variant}!FromMutableString@{FromMutableString}}
+\index{FromMutableString@{FromMutableString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromMutableString()}{FromMutableString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a56561fd23a61fe794d7d4b5d4f320494} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Mutable\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} from a string. 
+
+This method makes a copy of the string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & String value to copy into the \doxylink{classfirebase_1_1_variant}{Variant}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing a copy of the string. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a15a255dcadfe55adf1c49bdcb5505aff}\index{firebase::Variant@{firebase::Variant}!FromStaticBlob@{FromStaticBlob}}
+\index{FromStaticBlob@{FromStaticBlob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromStaticBlob()}{FromStaticBlob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a15a255dcadfe55adf1c49bdcb5505aff} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Static\+Blob (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{static\+\_\+data}{, }\item[{size\+\_\+t}]{size\+\_\+bytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} that points to static binary data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em static\+\_\+data} & Pointer to statically-\/allocated binary data. The \doxylink{classfirebase_1_1_variant}{Variant} will point to the data, not copy it. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+bytes} & Size of the data, in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} pointing to the binary data.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you use this function, you must ensure that the memory pointed to stays valid for the life of the \doxylink{classfirebase_1_1_variant}{Variant}, otherwise call mutable\+\_\+blob() or \doxylink{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}{set\+\_\+mutable\+\_\+blob()}, which will copy the data to an internal buffer. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_ab3a9257e58b904e86c40cf20f11d0472}\index{firebase::Variant@{firebase::Variant}!FromStaticString@{FromStaticString}}
+\index{FromStaticString@{FromStaticString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{FromStaticString()}{FromStaticString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ab3a9257e58b904e86c40cf20f11d0472} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+From\+Static\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} from a static string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & Pointer to statically-\/allocated null-\/terminated string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} referring to the string pointer you passed in.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you use this function, you must ensure that the memory pointed to stays valid for the life of the \doxylink{classfirebase_1_1_variant}{Variant}, otherwise call \doxylink{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38}{mutable\+\_\+string()} or \doxylink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\+\_\+mutable\+\_\+string()}, which will copy the string to an internal buffer. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_ac937c6b4e8f4f3029bb1a69bbb3ce404}\index{firebase::Variant@{firebase::Variant}!int64\_value@{int64\_value}}
+\index{int64\_value@{int64\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{int64\_value()}{int64\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ac937c6b4e8f4f3029bb1a69bbb3ce404} 
+int64\+\_\+t firebase\+::\+Variant\+::int64\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing an integer. 
+
+\begin{DoxyReturn}{Returns}
+The integer contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Int64 type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_aa173cbca691a113a6a69d27bffa68a43}\index{firebase::Variant@{firebase::Variant}!is\_blob@{is\_blob}}
+\index{is\_blob@{is\_blob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_blob()}{is\_blob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_aa173cbca691a113a6a69d27bffa68a43} 
+bool firebase\+::\+Variant\+::is\+\_\+blob (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a blob. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is either Static\+Blob or Mutable\+Blob; false otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+No matter which type of blob the \doxylink{classfirebase_1_1_variant}{Variant} contains, you can read its data via \doxylink{classfirebase_1_1_variant_a5fc5ef90ef3adc60aadd7cb4f4cffecf}{blob\+\_\+data()} and get its size via \doxylink{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c}{blob\+\_\+size()}. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_ab62ef8216a38a4d1ba31d60fe4688447}\index{firebase::Variant@{firebase::Variant}!is\_bool@{is\_bool}}
+\index{is\_bool@{is\_bool}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_bool()}{is\_bool()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ab62ef8216a38a4d1ba31d60fe4688447} 
+bool firebase\+::\+Variant\+::is\+\_\+bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a bool. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Bool, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ab4e645dbd88c36b0a73ea882df489894}\index{firebase::Variant@{firebase::Variant}!is\_container\_type@{is\_container\_type}}
+\index{is\_container\_type@{is\_container\_type}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_container\_type()}{is\_container\_type()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ab4e645dbd88c36b0a73ea882df489894} 
+bool firebase\+::\+Variant\+::is\+\_\+container\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a container type\+: Vector or Map. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Vector or Map; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a4595470815e248d85af17024ddd81b8b}\index{firebase::Variant@{firebase::Variant}!is\_double@{is\_double}}
+\index{is\_double@{is\_double}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_double()}{is\_double()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a4595470815e248d85af17024ddd81b8b} 
+bool firebase\+::\+Variant\+::is\+\_\+double (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a double. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Double, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ad40d72d4b6dfa82b0225171def529da8}\index{firebase::Variant@{firebase::Variant}!is\_fundamental\_type@{is\_fundamental\_type}}
+\index{is\_fundamental\_type@{is\_fundamental\_type}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_fundamental\_type()}{is\_fundamental\_type()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ad40d72d4b6dfa82b0225171def529da8} 
+bool firebase\+::\+Variant\+::is\+\_\+fundamental\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a fundamental type\+: Null, Int64, Double, Bool, or one of the two String types. Essentially !is\+\_\+container\+Type(). 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Int64, Double, Bool, or Null; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_adcd579e2f64e2a741e6bc69b5a3b053b}\index{firebase::Variant@{firebase::Variant}!is\_int64@{is\_int64}}
+\index{is\_int64@{is\_int64}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_int64()}{is\_int64()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_adcd579e2f64e2a741e6bc69b5a3b053b} 
+bool firebase\+::\+Variant\+::is\+\_\+int64 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains an integer. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Int64, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_acf1cfbea36669aa62fe0a6810ae9effd}\index{firebase::Variant@{firebase::Variant}!is\_map@{is\_map}}
+\index{is\_map@{is\_map}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_map()}{is\_map()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_acf1cfbea36669aa62fe0a6810ae9effd} 
+bool firebase\+::\+Variant\+::is\+\_\+map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a map. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Map, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a02cb2432060aaac0caa63d8c455bd9e1}\index{firebase::Variant@{firebase::Variant}!is\_mutable\_blob@{is\_mutable\_blob}}
+\index{is\_mutable\_blob@{is\_mutable\_blob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_mutable\_blob()}{is\_mutable\_blob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a02cb2432060aaac0caa63d8c455bd9e1} 
+bool firebase\+::\+Variant\+::is\+\_\+mutable\+\_\+blob (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a mutable blob. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Mutable\+Blob, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ac258153dca25fff87a6b02176ed2bf35}\index{firebase::Variant@{firebase::Variant}!is\_mutable\_string@{is\_mutable\_string}}
+\index{is\_mutable\_string@{is\_mutable\_string}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_mutable\_string()}{is\_mutable\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ac258153dca25fff87a6b02176ed2bf35} 
+bool firebase\+::\+Variant\+::is\+\_\+mutable\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a mutable string. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Mutable\+String, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_af1600a4a1a0e18130bf8524de02a3f95}\index{firebase::Variant@{firebase::Variant}!is\_null@{is\_null}}
+\index{is\_null@{is\_null}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_null()}{is\_null()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_af1600a4a1a0e18130bf8524de02a3f95} 
+bool firebase\+::\+Variant\+::is\+\_\+null (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} is currently null. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant} is Null, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ade0cb9b8908678452288bfc42509a732}\index{firebase::Variant@{firebase::Variant}!is\_numeric@{is\_numeric}}
+\index{is\_numeric@{is\_numeric}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_numeric()}{is\_numeric()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ade0cb9b8908678452288bfc42509a732} 
+bool firebase\+::\+Variant\+::is\+\_\+numeric (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a numeric type, Int64 or Double. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is either Int64 or Double; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a85cbc01667f687eda2339e204ea31b16}\index{firebase::Variant@{firebase::Variant}!is\_static\_blob@{is\_static\_blob}}
+\index{is\_static\_blob@{is\_static\_blob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_static\_blob()}{is\_static\_blob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a85cbc01667f687eda2339e204ea31b16} 
+bool firebase\+::\+Variant\+::is\+\_\+static\+\_\+blob (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a static blob. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Static\+Blob, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a14aa34be60368575751a6844effc8b35}\index{firebase::Variant@{firebase::Variant}!is\_static\_string@{is\_static\_string}}
+\index{is\_static\_string@{is\_static\_string}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_static\_string()}{is\_static\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a14aa34be60368575751a6844effc8b35} 
+bool firebase\+::\+Variant\+::is\+\_\+static\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a static string. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Static\+String, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}\index{firebase::Variant@{firebase::Variant}!is\_string@{is\_string}}
+\index{is\_string@{is\_string}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_string()}{is\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af} 
+bool firebase\+::\+Variant\+::is\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a string. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is either Static\+String or Mutable\+String or Small\+String; false otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+No matter which type of string the \doxylink{classfirebase_1_1_variant}{Variant} contains, you can read its value via \doxylink{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b}{string\+\_\+value()}. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_ae3519092f95e50a2e5f2fa8ce95c6925}\index{firebase::Variant@{firebase::Variant}!is\_vector@{is\_vector}}
+\index{is\_vector@{is\_vector}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{is\_vector()}{is\_vector()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae3519092f95e50a2e5f2fa8ce95c6925} 
+bool firebase\+::\+Variant\+::is\+\_\+vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get whether this \doxylink{classfirebase_1_1_variant}{Variant} contains a vector. 
+
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Vector, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}\index{firebase::Variant@{firebase::Variant}!map@{map}}
+\index{map@{map}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86} 
+std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& firebase\+::\+Variant\+::map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutable accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a map of \doxylink{classfirebase_1_1_variant}{Variant} data. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the map contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Map type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a6267c3ad031605e5a0b57ea924ed4825}\index{firebase::Variant@{firebase::Variant}!map@{map}}
+\index{map@{map}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a6267c3ad031605e5a0b57ea924ed4825} 
+const std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& firebase\+::\+Variant\+::map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a map of strings to \doxylink{classfirebase_1_1_variant}{Variant} data. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the map contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Map type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a7c11252dc8b94fbc2ed2ef9e9d226cad}\index{firebase::Variant@{firebase::Variant}!mutable\_blob\_data@{mutable\_blob\_data}}
+\index{mutable\_blob\_data@{mutable\_blob\_data}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{mutable\_blob\_data()}{mutable\_blob\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a7c11252dc8b94fbc2ed2ef9e9d226cad} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} firebase\+::\+Variant\+::mutable\+\_\+blob\+\_\+data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a mutable pointer to the binary data contained in a blob. 
+
+If the \doxylink{classfirebase_1_1_variant}{Variant} contains a static blob, it will be converted into a mutable blob, which copies the binary data into the \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s buffer.
+
+\begin{DoxyReturn}{Returns}
+Pointer to a mutable buffer of binary data. The size of the buffer cannot be changed, but the contents are mutable. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a9e000134063bc38d283d815a0c848ac6}\index{firebase::Variant@{firebase::Variant}!mutable\_blob\_data@{mutable\_blob\_data}}
+\index{mutable\_blob\_data@{mutable\_blob\_data}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{mutable\_blob\_data()}{mutable\_blob\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a9e000134063bc38d283d815a0c848ac6} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} firebase\+::\+Variant\+::mutable\+\_\+blob\+\_\+data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} contianing mutable blob data. 
+
+\begin{DoxyNote}{Note}
+Unlike the non-\/const accessor, this accessor cannot "{}promote"{} a static blob to mutable, and thus will assert if the \doxylink{classfirebase_1_1_variant}{Variant} you pass in is not of Mutable\+Blob type.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Pointer to a mutable buffer of binary data. The size of the buffer cannot be changed, but the contents are mutable. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38}\index{firebase::Variant@{firebase::Variant}!mutable\_string@{mutable\_string}}
+\index{mutable\_string@{mutable\_string}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{mutable\_string()}{mutable\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38} 
+std\+::string \& firebase\+::\+Variant\+::mutable\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutable accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a string. 
+
+If the \doxylink{classfirebase_1_1_variant}{Variant} contains a static string, it will be converted into a mutable string, which copies the const char\texorpdfstring{$\ast$}{*}\textquotesingle{}s data into a std\+::string.
+
+\begin{DoxyReturn}{Returns}
+Reference to the string contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not one of the two String types, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_ae02e2dddd9ff1eefa86e4c4464f748de}\index{firebase::Variant@{firebase::Variant}!mutable\_string@{mutable\_string}}
+\index{mutable\_string@{mutable\_string}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{mutable\_string()}{mutable\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae02e2dddd9ff1eefa86e4c4464f748de} 
+std\+::string firebase\+::\+Variant\+::mutable\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a string. 
+
+\begin{DoxyNote}{Note}
+Unlike the non-\/const accessor, this accessor cannot "{}promote"{} a static string to mutable, and thus returns a std\+::string copy instead of a const reference to a std\+::string
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+std\+::string with the string contents contained in this \doxylink{classfirebase_1_1_variant}{Variant}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a64d1e49f84515a8a56a93ecd6021b02d}\index{firebase::Variant@{firebase::Variant}!MutableStringFromStaticString@{MutableStringFromStaticString}}
+\index{MutableStringFromStaticString@{MutableStringFromStaticString}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{MutableStringFromStaticString()}{MutableStringFromStaticString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a64d1e49f84515a8a56a93ecd6021b02d} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Mutable\+String\+From\+Static\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a \doxylink{classfirebase_1_1_variant}{Variant} from a string, but make it mutable. 
+
+Only copies the string once, unlike Variant(std\+::string(value)), which copies the string twice.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & String value to copy into the \doxylink{classfirebase_1_1_variant}{Variant} and make mutable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} containing a mutable copy of the string. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a44ad99ff82979b9cd8d483504b4877b7}\index{firebase::Variant@{firebase::Variant}!Null@{Null}}
+\index{Null@{Null}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Null()}{Null()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a44ad99ff82979b9cd8d483504b4877b7} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Null (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of type Null. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Null. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ae273dbb9a86a640e1eb29e6cc5ce64a3}\index{firebase::Variant@{firebase::Variant}!One@{One}}
+\index{One@{One}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{One()}{One()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae273dbb9a86a640e1eb29e6cc5ce64a3} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+One (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of integer value 1. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Int64, with value 1. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ae1a2589bcb3615ee0b5ecf272430e1fd}\index{firebase::Variant@{firebase::Variant}!OnePointZero@{OnePointZero}}
+\index{OnePointZero@{OnePointZero}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{OnePointZero()}{OnePointZero()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae1a2589bcb3615ee0b5ecf272430e1fd} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+One\+Point\+Zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of double value 1.\+0. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Double, with value 1.\+0. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a740cb6567ff70932c440227061840a51}\index{firebase::Variant@{firebase::Variant}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a740cb6567ff70932c440227061840a51} 
+bool firebase\+::\+Variant\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality operator\+: x != y is evaluated as !(x == y). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1_variant}{Variant} to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Results of the comparison. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_afd5664045599f0f89c4bf25305a5194e}\index{firebase::Variant@{firebase::Variant}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_afd5664045599f0f89c4bf25305a5194e} 
+bool firebase\+::\+Variant\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Inequality operator, only meant for internal use. 
+
+Explanation\+: In order to use \doxylink{classfirebase_1_1_variant}{Variant} as a key for std\+::map, we must provide a comparison function. This comparison function is ONLY for std\+::map to be able to use a \doxylink{classfirebase_1_1_variant}{Variant} as a map key.
+
+We define v1 \texorpdfstring{$<$}{<} v2 IFF\+:
+\begin{DoxyItemize}
+\item If different types, compare type as int\+: v1.\+type() \texorpdfstring{$<$}{<} v2.\+type() (note\+: this means that Variant(1) \texorpdfstring{$<$}{<} \doxylink{classfirebase_1_1_variant}{Variant}(0.\+0) -\/ be careful!)
+\item If both are int64\+: v1.\+int64\+\_\+value() \texorpdfstring{$<$}{<} v2.\+int64\+\_\+value();
+\item If both are double\+: v1.\+double\+\_\+value() \texorpdfstring{$<$}{<} v2.\+double\+\_\+value()
+\item If both are bool\+: v1.\+bool\+\_\+value() \texorpdfstring{$<$}{<} v2.\+bool\+\_\+value();
+\item If both are either static or mutable strings\+: strcmp(v1, v2) \texorpdfstring{$<$}{<} 0
+\item If both are vectors\+:
+\begin{DoxyItemize}
+\item If v1\mbox{[}0\mbox{]} \texorpdfstring{$<$}{<} v2\mbox{[}0\mbox{]}, that means v1 \texorpdfstring{$<$}{<} v2 == true. Otherwise\+:
+\item If v1\mbox{[}0\mbox{]} \texorpdfstring{$>$}{>} v2\mbox{[}0\mbox{]}, that means v1 \texorpdfstring{$<$}{<} v2 == false. Otherwise\+:
+\item Continue to the next element of both vectors and compare again.
+\item If you reach the end of one vector first, that vector is considered to be lesser.
+\end{DoxyItemize}
+\item If both are maps, iterate similar to vectors (since maps are ordered), but for each element, first compare the key, then the value.
+\item If both are blobs, the smaller-\/sized blob is considered lesser. If both blobs are the same size, use memcmp to compare the bytes.
+\end{DoxyItemize}
+
+We have defined this operation such that if !(v1 \texorpdfstring{$<$}{<} v2) \&\& !(v2 \texorpdfstring{$<$}{<} v1), it must follow that v1 == v2.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1_variant}{Variant} to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Results of the comparison, as described in this documentation.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This will not give you the results you expect if you compare Variants of different types! For example, \doxylink{classfirebase_1_1_variant}{Variant}(0.\+0) \texorpdfstring{$<$}{<} Variant(1). 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a7cfaee0a2ff651538d1aab2789545841}\index{firebase::Variant@{firebase::Variant}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a7cfaee0a2ff651538d1aab2789545841} 
+bool firebase\+::\+Variant\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality operator\+: x \texorpdfstring{$<$}{<}= y is evaluated as !(x \texorpdfstring{$>$}{>} y) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1_variant}{Variant} to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Results of the comparison. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ae1e6bf63e35ef94d64b58548e6f01241}\index{firebase::Variant@{firebase::Variant}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae1e6bf63e35ef94d64b58548e6f01241} 
+\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \& firebase\+::\+Variant\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. Performs a deep copy. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Source \doxylink{classfirebase_1_1_variant}{Variant} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a79c43e421e296ce237cffef4125bfa56}\index{firebase::Variant@{firebase::Variant}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a79c43e421e296ce237cffef4125bfa56} 
+bool firebase\+::\+Variant\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Equality operator. Both the type and the value must be equal (except that static strings CAN be == to mutable strings). For container types, element-\/by-\/element comparison is performed. For strings, string comparison is performed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1_variant}{Variant} to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Variants are of identical types and values, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a22c38606dee2809dbbb6404d1da826ea}\index{firebase::Variant@{firebase::Variant}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a22c38606dee2809dbbb6404d1da826ea} 
+bool firebase\+::\+Variant\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality operator\+: x \texorpdfstring{$>$}{>} y is evaluated as y \texorpdfstring{$<$}{<} x. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1_variant}{Variant} to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Results of the comparison. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a1ecbf0268ddb2874bb735ab2c3c56a82}\index{firebase::Variant@{firebase::Variant}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a1ecbf0268ddb2874bb735ab2c3c56a82} 
+bool firebase\+::\+Variant\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inequality operator\+: x \texorpdfstring{$>$}{>}= y is evaluated as !(x \texorpdfstring{$<$}{<} y) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1_variant}{Variant} to compare to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Results of the comparison. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ab5a6fbd7aee5c5fcf5b9f1e96ddc0c47}\index{firebase::Variant@{firebase::Variant}!set\_bool\_value@{set\_bool\_value}}
+\index{set\_bool\_value@{set\_bool\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_bool\_value()}{set\_bool\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ab5a6fbd7aee5c5fcf5b9f1e96ddc0c47} 
+void firebase\+::\+Variant\+::set\+\_\+bool\+\_\+value (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to the given boolean value. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Bool.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The boolean value for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a1c4d1c3179ee486cd8cb81420f8ed02c}\index{firebase::Variant@{firebase::Variant}!set\_double\_value@{set\_double\_value}}
+\index{set\_double\_value@{set\_double\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_double\_value()}{set\_double\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a1c4d1c3179ee486cd8cb81420f8ed02c} 
+void firebase\+::\+Variant\+::set\+\_\+double\+\_\+value (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to an double-\/precision floating point value. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Double.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The double-\/precision floating point value for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}\index{firebase::Variant@{firebase::Variant}!set\_int64\_value@{set\_int64\_value}}
+\index{set\_int64\_value@{set\_int64\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_int64\_value()}{set\_int64\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae} 
+void firebase\+::\+Variant\+::set\+\_\+int64\+\_\+value (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to an 64-\/bit integer value. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Int64.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The 64-\/bit integer value for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a4fbd1be786e58d3e8a62df09008eacaa}\index{firebase::Variant@{firebase::Variant}!set\_map@{set\_map}}
+\index{set\_map@{set\_map}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_map()}{set\_map()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a4fbd1be786e58d3e8a62df09008eacaa} 
+void firebase\+::\+Variant\+::set\+\_\+map (\begin{DoxyParamCaption}\item[{const std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given map. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Map.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The STL map to copy into the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}\index{firebase::Variant@{firebase::Variant}!set\_mutable\_blob@{set\_mutable\_blob}}
+\index{set\_mutable\_blob@{set\_mutable\_blob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_mutable\_blob()}{set\_mutable\_blob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4} 
+void firebase\+::\+Variant\+::set\+\_\+mutable\+\_\+blob (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{src\+\_\+data}{, }\item[{size\+\_\+t}]{size\+\_\+bytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given binary data. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Mutable\+Blob.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em src\+\_\+data} & The data to use for the \doxylink{classfirebase_1_1_variant}{Variant}. If you pass in nullptr, no data will be copied, but a buffer of the requested size will be allocated. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+bytes} & The size of the data, in bytes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}\index{firebase::Variant@{firebase::Variant}!set\_mutable\_string@{set\_mutable\_string}}
+\index{set\_mutable\_string@{set\_mutable\_string}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_mutable\_string()}{set\_mutable\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653} 
+void firebase\+::\+Variant\+::set\+\_\+mutable\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value}{, }\item[{bool}]{use\+\_\+small\+\_\+string}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given string. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Small\+String if the size of the string is less than k\+Max\+Small\+String\+Size (8 bytes on x86, 16 bytes on x64) or otherwise set to Mutable\+String.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The string to use for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+small\+\_\+string} & Check to see if the input string should be treated as a small string or left as a mutable string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a5ff60ccab8f984622e31be7fae87ade3}\index{firebase::Variant@{firebase::Variant}!set\_null@{set\_null}}
+\index{set\_null@{set\_null}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_null()}{set\_null()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a5ff60ccab8f984622e31be7fae87ade3} 
+void firebase\+::\+Variant\+::set\+\_\+null (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} value to null. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be Null. \Hypertarget{classfirebase_1_1_variant_acf89af59b693d087b8b57d08ed4e62e8}\index{firebase::Variant@{firebase::Variant}!set\_static\_blob@{set\_static\_blob}}
+\index{set\_static\_blob@{set\_static\_blob}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_static\_blob()}{set\_static\_blob()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_acf89af59b693d087b8b57d08ed4e62e8} 
+void firebase\+::\+Variant\+::set\+\_\+static\+\_\+blob (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{static\+\_\+data}{, }\item[{size\+\_\+t}]{size\+\_\+bytes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to point to static binary data. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to k\+Type\+Static\+Blob.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em static\+\_\+data} & Pointer to statically-\/allocated binary data. The \doxylink{classfirebase_1_1_variant}{Variant} will point to the data, not copy it. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size\+\_\+bytes} & Size of the data, in bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you use this method, you must ensure that the memory pointer to stays valid for the life of the \doxylink{classfirebase_1_1_variant}{Variant}, or otherwise call \doxylink{classfirebase_1_1_variant_a7c11252dc8b94fbc2ed2ef9e9d226cad}{mutable\+\_\+blob\+\_\+data()} or \doxylink{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}{set\+\_\+mutable\+\_\+blob()}, which will copy the data into an internal buffer. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a6fd0f849abfb67fc28b0e91b713416c3}\index{firebase::Variant@{firebase::Variant}!set\_string\_value@{set\_string\_value}}
+\index{set\_string\_value@{set\_string\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_string\_value()}{set\_string\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a6fd0f849abfb67fc28b0e91b713416c3} 
+void firebase\+::\+Variant\+::set\+\_\+string\+\_\+value (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a mutable string. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Mutable\+String.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & A pointer to a null-\/terminated string, which will be copied into to the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a2e5ff0117468094b0eb27e5908d0e527}\index{firebase::Variant@{firebase::Variant}!set\_string\_value@{set\_string\_value}}
+\index{set\_string\_value@{set\_string\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_string\_value()}{set\_string\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a2e5ff0117468094b0eb27e5908d0e527} 
+void firebase\+::\+Variant\+::set\+\_\+string\+\_\+value (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to point to a static string buffer. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Static\+String.
+
+\begin{DoxyNote}{Note}
+If you use this method, you must ensure that the memory pointed to stays valid for the life of the \doxylink{classfirebase_1_1_variant}{Variant}, or otherwise call \doxylink{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38}{mutable\+\_\+string()} or \doxylink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\+\_\+mutable\+\_\+string()}, which will copy the string to an internal buffer.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & A pointer to the static null-\/terminated string for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_ae7386879d8caf9f4e7bfbc743e8a88bf}\index{firebase::Variant@{firebase::Variant}!set\_string\_value@{set\_string\_value}}
+\index{set\_string\_value@{set\_string\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_string\_value()}{set\_string\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae7386879d8caf9f4e7bfbc743e8a88bf} 
+void firebase\+::\+Variant\+::set\+\_\+string\+\_\+value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a mutable string. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Mutable\+String.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The string to use for the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a276a1ed8855a9a63a6632bd9b5956864}\index{firebase::Variant@{firebase::Variant}!set\_vector@{set\_vector}}
+\index{set\_vector@{set\_vector}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{set\_vector()}{set\_vector()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a276a1ed8855a9a63a6632bd9b5956864} 
+void firebase\+::\+Variant\+::set\+\_\+vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the \doxylink{classfirebase_1_1_variant}{Variant} to a copy of the given vector. 
+
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type will be set to Vector.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The STL vector to copy into the \doxylink{classfirebase_1_1_variant}{Variant}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b}\index{firebase::Variant@{firebase::Variant}!string\_value@{string\_value}}
+\index{string\_value@{string\_value}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{string\_value()}{string\_value()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+Variant\+::string\+\_\+value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a string. 
+
+This can return both static and mutable strings. The pointer is only guaranteed to persist if this \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type is Static\+String.
+
+\begin{DoxyReturn}{Returns}
+The string contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Static\+String or Mutable\+String type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a71f7d0e2ef52fece8eedec032a2520f1}\index{firebase::Variant@{firebase::Variant}!True@{True}}
+\index{True@{True}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{True()}{True()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a71f7d0e2ef52fece8eedec032a2520f1} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+True (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of bool value true. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Bool, with value true. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}\index{firebase::Variant@{firebase::Variant}!type@{type}}
+\index{type@{type}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda} 
+\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}} firebase\+::\+Variant\+::type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current type contained in this \doxylink{classfirebase_1_1_variant}{Variant}. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_ae671dc0bbf02296da964ac1b2bb39a2a}\index{firebase::Variant@{firebase::Variant}!TypeName@{TypeName}}
+\index{TypeName@{TypeName}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{TypeName()}{TypeName()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ae671dc0bbf02296da964ac1b2bb39a2a} 
+static const char \texorpdfstring{$\ast$}{*} firebase\+::\+Variant\+::\+Type\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the human-\/readable type name of a \doxylink{classfirebase_1_1_variant}{Variant} type. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & \doxylink{classfirebase_1_1_variant}{Variant} type to describe.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string describing the type, suitable for error messages or debugging. For example "{}\+Int64"{} or "{}\+Mutable\+String"{}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}\index{firebase::Variant@{firebase::Variant}!vector@{vector}}
+\index{vector@{vector}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951} 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& firebase\+::\+Variant\+::vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutable accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a vector of \doxylink{classfirebase_1_1_variant}{Variant} data. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Vector type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_ace787c8e7ab0cf9a0064919431808a36}\index{firebase::Variant@{firebase::Variant}!vector@{vector}}
+\index{vector@{vector}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_ace787c8e7ab0cf9a0064919431808a36} 
+const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \& firebase\+::\+Variant\+::vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Const accessor for a \doxylink{classfirebase_1_1_variant}{Variant} containing a vector of \doxylink{classfirebase_1_1_variant}{Variant} data. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector contained in this \doxylink{classfirebase_1_1_variant}{Variant}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the \doxylink{classfirebase_1_1_variant}{Variant} is not of Vector type, this will assert. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_variant_a22e651a96c4de89af4e68132d747d639}\index{firebase::Variant@{firebase::Variant}!Zero@{Zero}}
+\index{Zero@{Zero}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{Zero()}{Zero()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a22e651a96c4de89af4e68132d747d639} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of integer value 0. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Int64, with value 0. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_variant_a7ab8ad27db32a5969e8c3d998a96c7ea}\index{firebase::Variant@{firebase::Variant}!ZeroPointZero@{ZeroPointZero}}
+\index{ZeroPointZero@{ZeroPointZero}!firebase::Variant@{firebase::Variant}}
+\doxysubsubsection{\texorpdfstring{ZeroPointZero()}{ZeroPointZero()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_variant_a7ab8ad27db32a5969e8c3d998a96c7ea} 
+static \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} firebase\+::\+Variant\+::\+Zero\+Point\+Zero (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get a \doxylink{classfirebase_1_1_variant}{Variant} of double value 0.\+0. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_variant}{Variant} of type Double, with value 0.\+0. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/variant.\+h\end{DoxyCompactItemize}

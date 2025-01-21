@@ -1,0 +1,80 @@
+\doxysection{firebase\+::app\+\_\+check\+::Debug\+App\+Check\+Provider\+Factory Class Reference}
+\hypertarget{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{}\label{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}\index{firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}}
+
+
+{\ttfamily \#include $<$debug\+\_\+provider.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::app\+\_\+check\+::Debug\+App\+Check\+Provider\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::app\+\_\+check\+::Debug\+App\+Check\+Provider\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a3fa31d87d5e3007b7b233993a52e679a}\label{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a3fa31d87d5e3007b7b233993a52e679a} 
+{\bfseries Debug\+App\+Check\+Provider\+Factory} (const \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{Debug\+App\+Check\+Provider\+Factory}} \&)=delete
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a31e110a64542adf42ea3e829e4d1b6cf}\label{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a31e110a64542adf42ea3e829e4d1b6cf} 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{Debug\+App\+Check\+Provider\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{Debug\+App\+Check\+Provider\+Factory}} \&)=delete
+\item 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_ac75fd50b0070f31be60ebc01398c8931}{Create\+Provider}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}app) override
+\item 
+void \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a9e86d28c9242413103fc2fbf34d45c41}{Set\+Debug\+Token}} (const std\+::string \&token)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+Factory}}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{Debug\+App\+Check\+Provider\+Factory}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a192cf46a370c840d7851a55b0ab194cc}{Get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of an {\ttfamily \doxylink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{App\+Check\+Provider\+Factory}} that builds Debug\+App\+Check\+Providers.
+
+Debug\+App\+Check\+Provider can exchange a debug token registered in the Firebase console for a Firebase \doxylink{classfirebase_1_1_app}{App} Check token. The debug provider is designed to enable testing applications on a simulator or test environment.
+
+NOTE\+: Do not use the debug provider in applications used by real users. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_ac75fd50b0070f31be60ebc01398c8931}\index{firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}!CreateProvider@{CreateProvider}}
+\index{CreateProvider@{CreateProvider}!firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}}
+\doxysubsubsection{\texorpdfstring{CreateProvider()}{CreateProvider()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_ac75fd50b0070f31be60ebc01398c8931} 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+Debug\+App\+Check\+Provider\+Factory\+::\+Create\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the \doxylink{classfirebase_1_1app__check_1_1_app_check_provider}{App\+Check\+Provider} associated with the given {\ttfamily \doxylink{classfirebase_1_1_app}{App}} instance, or creates one if none already exists. 
+
+Implements \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory_a0e7914f6261fd65e53b5b2aa25b4ed9e}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+Factory}}.
+
+\Hypertarget{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a192cf46a370c840d7851a55b0ab194cc}\index{firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a192cf46a370c840d7851a55b0ab194cc} 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory}{Debug\+App\+Check\+Provider\+Factory}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+Debug\+App\+Check\+Provider\+Factory\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets an instance of this class for installation into a \doxylink{classfirebase_1_1app__check_1_1_app_check}{firebase\+::app\+\_\+check\+::\+App\+Check} instance. \Hypertarget{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a9e86d28c9242413103fc2fbf34d45c41}\index{firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}!SetDebugToken@{SetDebugToken}}
+\index{SetDebugToken@{SetDebugToken}!firebase::app\_check::DebugAppCheckProviderFactory@{firebase::app\_check::DebugAppCheckProviderFactory}}
+\doxysubsubsection{\texorpdfstring{SetDebugToken()}{SetDebugToken()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_debug_app_check_provider_factory_a9e86d28c9242413103fc2fbf34d45c41} 
+void firebase\+::app\+\_\+check\+::\+Debug\+App\+Check\+Provider\+Factory\+::\+Set\+Debug\+Token (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{token}{}\end{DoxyParamCaption})}
+
+Sets the Debug Token to use when communicating with the backend. This should match a debug token set in the Firebase console for your \doxylink{classfirebase_1_1_app}{App}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app\+\_\+check/debug\+\_\+provider.\+h\end{DoxyCompactItemize}

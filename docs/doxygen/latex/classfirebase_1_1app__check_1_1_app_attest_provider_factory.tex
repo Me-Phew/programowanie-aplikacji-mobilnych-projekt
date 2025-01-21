@@ -1,0 +1,68 @@
+\doxysection{firebase\+::app\+\_\+check\+::App\+Attest\+Provider\+Factory Class Reference}
+\hypertarget{classfirebase_1_1app__check_1_1_app_attest_provider_factory}{}\label{classfirebase_1_1app__check_1_1_app_attest_provider_factory}\index{firebase::app\_check::AppAttestProviderFactory@{firebase::app\_check::AppAttestProviderFactory}}
+
+
+{\ttfamily \#include $<$app\+\_\+attest\+\_\+provider.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::app\+\_\+check\+::App\+Attest\+Provider\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classfirebase_1_1app__check_1_1_app_attest_provider_factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::app\+\_\+check\+::App\+Attest\+Provider\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classfirebase_1_1app__check_1_1_app_attest_provider_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a83154e4fde165b24c0dff6f86a98969a}\label{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a83154e4fde165b24c0dff6f86a98969a} 
+{\bfseries App\+Attest\+Provider\+Factory} (const \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory}{App\+Attest\+Provider\+Factory}} \&)=delete
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a06ca2f0aa151c87516dce434496bf668}\label{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a06ca2f0aa151c87516dce434496bf668} 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory}{App\+Attest\+Provider\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory}{App\+Attest\+Provider\+Factory}} \&)=delete
+\item 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory_aa025ec14bd081d9db852482024950d95}{Create\+Provider}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}app) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+Factory}}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory}{App\+Attest\+Provider\+Factory}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a1a9a0a6b95725d967e99d59df620214f}{Get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of an {\ttfamily \doxylink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{App\+Check\+Provider\+Factory}} that builds App\+Attest\+Providers. This is the default implementation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1app__check_1_1_app_attest_provider_factory_aa025ec14bd081d9db852482024950d95}\index{firebase::app\_check::AppAttestProviderFactory@{firebase::app\_check::AppAttestProviderFactory}!CreateProvider@{CreateProvider}}
+\index{CreateProvider@{CreateProvider}!firebase::app\_check::AppAttestProviderFactory@{firebase::app\_check::AppAttestProviderFactory}}
+\doxysubsubsection{\texorpdfstring{CreateProvider()}{CreateProvider()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_attest_provider_factory_aa025ec14bd081d9db852482024950d95} 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+App\+Attest\+Provider\+Factory\+::\+Create\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the \doxylink{classfirebase_1_1app__check_1_1_app_check_provider}{App\+Check\+Provider} associated with the given {\ttfamily \doxylink{classfirebase_1_1_app}{App}} instance, or creates one if none already exists. 
+
+Implements \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory_a0e7914f6261fd65e53b5b2aa25b4ed9e}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+Factory}}.
+
+\Hypertarget{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a1a9a0a6b95725d967e99d59df620214f}\index{firebase::app\_check::AppAttestProviderFactory@{firebase::app\_check::AppAttestProviderFactory}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::app\_check::AppAttestProviderFactory@{firebase::app\_check::AppAttestProviderFactory}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_attest_provider_factory_a1a9a0a6b95725d967e99d59df620214f} 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_attest_provider_factory}{App\+Attest\+Provider\+Factory}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+App\+Attest\+Provider\+Factory\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets an instance of this class for installation into a \doxylink{classfirebase_1_1app__check_1_1_app_check}{firebase\+::app\+\_\+check\+::\+App\+Check} instance. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app\+\_\+check/app\+\_\+attest\+\_\+provider.\+h\end{DoxyCompactItemize}

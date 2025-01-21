@@ -1,0 +1,68 @@
+\doxysection{message\+\_\+codec.\+h}
+\hypertarget{message__codec_8h_source}{}\label{message__codec_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/message\_codec.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/message\_codec.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_MESSAGE\_CODEC\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_MESSAGE\_CODEC\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Translates\ between\ a\ binary\ message\ and\ higher-\/level\ method\ call\ and}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ response/error\ objects.}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec}}\ \{}
+\DoxyCodeLine{00018\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_message_codec}{\string~MessageCodec}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec}}(\mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec<T>}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec<T>}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Returns\ the\ message\ encoded\ in\ |binary\_message|,\ or\ nullptr\ if\ it\ cannot\ be}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ decoded\ by\ this\ codec.}}
+\DoxyCodeLine{00029\ \ \ std::unique\_ptr<T>\ DecodeMessage(\textcolor{keyword}{const}\ uint8\_t*\ binary\_message,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ message\_size)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(DecodeMessageInternal(binary\_message,\ message\_size));}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Returns\ the\ message\ encoded\ in\ |binary\_message|,\ or\ nullptr\ if\ it\ cannot\ be}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ decoded\ by\ this\ codec.}}
+\DoxyCodeLine{00036\ \ \ std::unique\_ptr<T>\ DecodeMessage(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ binary\_message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ binary\_message.size();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ data\ =\ size\ >\ 0\ ?\ \&binary\_message[0]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(DecodeMessageInternal(data,\ size));}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Returns\ a\ binary\ encoding\ of\ the\ given\ |message|,\ or\ nullptr\ if\ the}}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ message\ cannot\ be\ serialized\ by\ this\ codec.}}
+\DoxyCodeLine{00045\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeMessage(\textcolor{keyword}{const}\ T\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(EncodeMessageInternal(message));}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<T>\ DecodeMessageInternal(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ binary\_message,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ message\_size)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeMessageInternal(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T\&\ message)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_MESSAGE\_CODEC\_H\_}}
+
+\end{DoxyCode}

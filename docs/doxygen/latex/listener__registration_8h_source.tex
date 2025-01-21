@@ -1,0 +1,70 @@
+\doxysection{listener\+\_\+registration.\+h}
+\hypertarget{listener__registration_8h_source}{}\label{listener__registration_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/listener\_registration.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/listener\_registration.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_LISTENER\_REGISTRATION\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_LISTENER\_REGISTRATION\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }ListenerRegistrationInternal;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\ \{}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a360e7b9ea3df89dca7163594f5ef0966}{ListenerRegistration}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a9572ff9ec2fd95ad637799b9fb29bf01}{ListenerRegistration}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\&\ other);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a1aef70877ce764cecfbb212977aa9758}{ListenerRegistration}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\&\&\ other);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{\string~ListenerRegistration}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a24a0c3594efb674074cef75f3bfa516d}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\&\ other);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_ab18aa33c46f11b3c7ff34853aa5ad976}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{ListenerRegistration}}\&\&\ other);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_acb1a46cf74c63cd376252babe8dcc018}{Remove}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a19929fc0178324ae9a426f3ffdb1b40a}{is\_valid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ internal\_\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DocumentReferenceInternal;}
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }ListenerRegistrationInternal;}
+\DoxyCodeLine{00114\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }QueryInternal;}
+\DoxyCodeLine{00115\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00116\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ \textcolor{keyword}{typename}\ F>}
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }CleanupFn;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration_a360e7b9ea3df89dca7163594f5ef0966}{ListenerRegistration}}(ListenerRegistrationInternal*\ internal);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{void}\ Cleanup();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ FirestoreInternal*\ firestore\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00124\ \ \ \textcolor{keyword}{mutable}\ ListenerRegistrationInternal*\ internal\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00128\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_LISTENER\_REGISTRATION\_H\_}}
+
+\end{DoxyCode}

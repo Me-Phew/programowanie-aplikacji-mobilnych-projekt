@@ -1,0 +1,5 @@
+<map id="firebase::auth::PhoneAuthOptions" name="firebase::auth::PhoneAuthOptions">
+<area shape="rect" id="Node000001" title=" " alt="" coords="23,112,195,155"/>
+<area shape="rect" id="Node000002" href="$classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token.html" title="Token to maintain current phone number verification session. Acquired via Listener::OnCodeSent...." alt="" coords="5,5,213,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,64,112,111,106,111,106,64"/>
+</map>

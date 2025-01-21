@@ -1,0 +1,519 @@
+\doxysection{firebase\+::database\+::Query Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_query}{}\label{classfirebase_1_1database_1_1_query}\index{firebase::database::Query@{firebase::database::Query}}
+
+
+{\ttfamily \#include $<$query.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::database\+::Query\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classfirebase_1_1database_1_1_query__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query_ae7cbf62d262d121962d2ae1bb7617522}{Query}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query_aaa4356c97c1dbc6bf0f0656dc7a7807b}{Query}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&query)
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \& \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a92074f96bb244e161264d7a5a5502a74}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&query)
+\item 
+\Hypertarget{classfirebase_1_1database_1_1_query_a0cfac5d5b9d96bfef69aec37f16f98da}\label{classfirebase_1_1database_1_1_query_a0cfac5d5b9d96bfef69aec37f16f98da} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Query} ()
+\begin{DoxyCompactList}\small\item\em Required virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Gets the value of the query for the given location a single time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a08ccdf7cbc375e14b7868b0cf54aa2af}{Get\+Value\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Get\+Value()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Adds a listener that will be called immediately and then again any time the data changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_addfac4809c61fc91567e033e4edc90f9}{Remove\+Value\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Removes a listener that was previously added with \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_abf356818e2d12cd09e20b020d9c5b50d}{Remove\+All\+Value\+Listeners}} ()
+\begin{DoxyCompactList}\small\item\em Removes all value listeners that were added with \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Adds a listener that will be called any time a child is added, removed, modified, or reordered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a71862feda6f04f19d45fdae297b024a5}{Remove\+Child\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Removes a listener that was previously added with \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a505c51cb77cefb2fae31d23999d4a56d}{Remove\+All\+Child\+Listeners}} ()
+\begin{DoxyCompactList}\small\item\em Removes all child listeners that were added by \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_adaa1e307eb8ff6cb0987d81b05258353}{Get\+Reference}} () const
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} corresponding to the given location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a7e21505d9c247bf03abe564fe08baa56}{Set\+Keep\+Synchronized}} (bool keep\+\_\+sync)
+\begin{DoxyCompactList}\small\item\em Sets whether this location\textquotesingle{}s data should be kept in sync even if there are no active Listeners. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a18250ad084814598c9cbd96df7f3eb30}{Order\+By\+Child}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by the values of the specified path. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a0a6290971237a1d367583f18b5c6a3a0}{Order\+By\+Child}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by the values of the specified path. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_abc509b58705fc896ef9be808b759a5af}{Order\+By\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by their keys. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a4bf0bc99c7133c90277e3d9dde0946d3}{Order\+By\+Priority}} ()
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by their priority. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_ae9718eb0511153f404e16db1800bfc3f}{Order\+By\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Create a query in which nodes are ordered by their value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a77abcf23c95bf6ad500f2a30b46f9a35}{Start\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or higher. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a8a61996a0ab4e1abfd2e2b4970bafa28}{Start\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value, const char \texorpdfstring{$\ast$}{*}child\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or higher, and the given key or higher. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a24504e530c9ba49e3d3ada52ec6e47c1}{End\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or lower. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a229885e98360bfc52a423d26db4c4a14}{End\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value, const char \texorpdfstring{$\ast$}{*}child\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or lower, and the given key or lower. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_ac07ca967bbec3db1bf8906fc325e0e68}{Equal\+To}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the exact given sort value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a886202008d893180647ff67b670d1019}{Equal\+To}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value, const char \texorpdfstring{$\ast$}{*}child\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the exact given sort value, and the exact given key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a825c551e69560f2522db426b3300274c}{Limit\+To\+First}} (size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classfirebase_1_1database_1_1_query}{Query} limited to only the first results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_ac13afd9f657d30e5927c319f5acd6aaf}{Limit\+To\+Last}} (size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classfirebase_1_1database_1_1_query}{Query} limited to only the last results. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classfirebase_1_1database_1_1_query_af4f055835ec7bb4054f11889e1e19d59}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this query is valid, false if it is not valid. An invalid query could be returned by, say, attempting to Order\+By two different items, or calling \doxylink{classfirebase_1_1database_1_1_query_a18250ad084814598c9cbd96df7f3eb30}{Order\+By\+Child()} with an empty path, or by constructing a \doxylink{classfirebase_1_1database_1_1_query}{Query} with the default constructor. If a \doxylink{classfirebase_1_1database_1_1_query}{Query} is invalid, attempting to add more constraints will also result in an invalid \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classfirebase_1_1database_1_1_query}{Query} class is used for reading data. Listeners can be attached, which will be triggered when the data changes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_query_ae7cbf62d262d121962d2ae1bb7617522}\index{firebase::database::Query@{firebase::database::Query}!Query@{Query}}
+\index{Query@{Query}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_ae7cbf62d262d121962d2ae1bb7617522} 
+firebase\+::database\+::\+Query\+::\+Query (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. This creates an invalid \doxylink{classfirebase_1_1database_1_1_query}{Query}. Attempting to perform any operations on this reference will fail unless a valid \doxylink{classfirebase_1_1database_1_1_query}{Query} has been assigned to it. \Hypertarget{classfirebase_1_1database_1_1_query_aaa4356c97c1dbc6bf0f0656dc7a7807b}\index{firebase::database::Query@{firebase::database::Query}!Query@{Query}}
+\index{Query@{Query}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_aaa4356c97c1dbc6bf0f0656dc7a7807b} 
+firebase\+::database\+::\+Query\+::\+Query (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&}]{query}{}\end{DoxyParamCaption})}
+
+Copy constructor. Queries can be copied. Copies exist independently of each other. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}\index{firebase::database::Query@{firebase::database::Query}!AddChildListener@{AddChildListener}}
+\index{AddChildListener@{AddChildListener}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{AddChildListener()}{AddChildListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750} 
+void firebase\+::database\+::\+Query\+::\+Add\+Child\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Adds a listener that will be called any time a child is added, removed, modified, or reordered. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener} instance, which must remain in memory until you remove the listener from the \doxylink{classfirebase_1_1database_1_1_query}{Query}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}\index{firebase::database::Query@{firebase::database::Query}!AddValueListener@{AddValueListener}}
+\index{AddValueListener@{AddValueListener}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{AddValueListener()}{AddValueListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810} 
+void firebase\+::database\+::\+Query\+::\+Add\+Value\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Adds a listener that will be called immediately and then again any time the data changes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener} instance, which must remain in memory until you remove the listener from the \doxylink{classfirebase_1_1database_1_1_query}{Query}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_query_a24504e530c9ba49e3d3ada52ec6e47c1}\index{firebase::database::Query@{firebase::database::Query}!EndAt@{EndAt}}
+\index{EndAt@{EndAt}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{EndAt()}{EndAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a24504e530c9ba49e3d3ada52ec6e47c1} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+End\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{order\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or lower. 
+
+This method is used to generate a reference to a limited view of the data at this location. The \doxylink{classfirebase_1_1database_1_1_query}{Query} returned will only refer to child nodes with a value less than or equal to the given value, using the given Order\+By directive (or priority as default).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em order\+\_\+value} & The highest sort value the \doxylink{classfirebase_1_1database_1_1_query}{Query} should refer to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, filtering out child nodes that have a higher sort value or key than the sort value or key specified. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a229885e98360bfc52a423d26db4c4a14}\index{firebase::database::Query@{firebase::database::Query}!EndAt@{EndAt}}
+\index{EndAt@{EndAt}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{EndAt()}{EndAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a229885e98360bfc52a423d26db4c4a14} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+End\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{order\+\_\+value}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{child\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or lower, and the given key or lower. 
+
+This method is used to generate a reference to a limited view of the data at this location. The \doxylink{classfirebase_1_1database_1_1_query}{Query} returned will only refer to child nodes with a value less than or equal to the given value, using the given Order\+By directive (or priority as default), and additionally only child nodes with a key less than or equal to the given key.
+
+{\bfseries{Known issue}} This currently does not work properly on all platforms. Please use \doxylink{classfirebase_1_1database_1_1_query_a24504e530c9ba49e3d3ada52ec6e47c1}{End\+At(\+Variant order\+\_\+value)} instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em order\+\_\+value} & The highest sort value the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include. \\
+\hline
+\mbox{\texttt{ in}}  & {\em child\+\_\+key} & The highest key the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, filtering out child nodes that have a higher sort value than the sort value specified, or a higher key than the key specified. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_ac07ca967bbec3db1bf8906fc325e0e68}\index{firebase::database::Query@{firebase::database::Query}!EqualTo@{EqualTo}}
+\index{EqualTo@{EqualTo}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{EqualTo()}{EqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_ac07ca967bbec3db1bf8906fc325e0e68} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Equal\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{order\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the exact given sort value. 
+
+This method is used to create a query constrained to only return child nodes with the given value, using the given Order\+By directive (or priority as default).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em order\+\_\+value} & The exact sort value the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, filtering out child nodes that have a different sort value than the sort value specified. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a886202008d893180647ff67b670d1019}\index{firebase::database::Query@{firebase::database::Query}!EqualTo@{EqualTo}}
+\index{EqualTo@{EqualTo}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{EqualTo()}{EqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a886202008d893180647ff67b670d1019} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Equal\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{order\+\_\+value}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{child\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the exact given sort value, and the exact given key. 
+
+This method is used to create a query constrained to only return the child node with the given value, using the given Order\+By directive (or priority as default), and the given key. Note that there is at most one such child as child key names are unique.
+
+{\bfseries{Known issue}} This currently does not work properly on i\+OS, tv\+OS and desktop. Please use \doxylink{classfirebase_1_1database_1_1_query_ac07ca967bbec3db1bf8906fc325e0e68}{Equal\+To(\+Variant order\+\_\+value)} instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em order\+\_\+value} & The exact sort value the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include. \\
+\hline
+\mbox{\texttt{ in}}  & {\em child\+\_\+key} & The exact key the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, filtering out child nodes that have a different sort value than the sort value specified, and containing at most one child with the exact key specified. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_adaa1e307eb8ff6cb0987d81b05258353}\index{firebase::database::Query@{firebase::database::Query}!GetReference@{GetReference}}
+\index{GetReference@{GetReference}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{GetReference()}{GetReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_adaa1e307eb8ff6cb0987d81b05258353} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Query\+::\+Get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} corresponding to the given location. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} corresponding to the same location as the \doxylink{classfirebase_1_1database_1_1_query}{Query}, but without any of the ordering or filtering parameters. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}\index{firebase::database::Query@{firebase::database::Query}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ firebase\+::database\+::\+Query\+::\+Get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the value of the query for the given location a single time. 
+
+This is an asynchronous operation which takes time to execute, and uses \doxylink{classfirebase_1_1_future}{firebase\+::\+Future} to return its result.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. On this \doxylink{classfirebase_1_1_future}{Future}\textquotesingle{}s completion, if its Error is k\+Error\+None, the operation succeeded, and the \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} contains the data in this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a08ccdf7cbc375e14b7868b0cf54aa2af}\index{firebase::database::Query@{firebase::database::Query}!GetValueLastResult@{GetValueLastResult}}
+\index{GetValueLastResult@{GetValueLastResult}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{GetValueLastResult()}{GetValueLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a08ccdf7cbc375e14b7868b0cf54aa2af} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ firebase\+::database\+::\+Query\+::\+Get\+Value\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Get\+Value()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Get\+Value()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_af4f055835ec7bb4054f11889e1e19d59}\index{firebase::database::Query@{firebase::database::Query}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_af4f055835ec7bb4054f11889e1e19d59} 
+virtual bool firebase\+::database\+::\+Query\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns true if this query is valid, false if it is not valid. An invalid query could be returned by, say, attempting to Order\+By two different items, or calling \doxylink{classfirebase_1_1database_1_1_query_a18250ad084814598c9cbd96df7f3eb30}{Order\+By\+Child()} with an empty path, or by constructing a \doxylink{classfirebase_1_1database_1_1_query}{Query} with the default constructor. If a \doxylink{classfirebase_1_1database_1_1_query}{Query} is invalid, attempting to add more constraints will also result in an invalid \doxylink{classfirebase_1_1database_1_1_query}{Query}. 
+
+\begin{DoxyReturn}{Returns}
+true if this query is valid, false if this query is invalid. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a457a5f7416db0f5b66fa4e2c2486fa8a}{firebase\+::database\+::\+Database\+Reference}}.
+
+\Hypertarget{classfirebase_1_1database_1_1_query_a825c551e69560f2522db426b3300274c}\index{firebase::database::Query@{firebase::database::Query}!LimitToFirst@{LimitToFirst}}
+\index{LimitToFirst@{LimitToFirst}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{LimitToFirst()}{LimitToFirst()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a825c551e69560f2522db426b3300274c} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Limit\+To\+First (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{limit}{}\end{DoxyParamCaption})}
+
+
+
+Gets a \doxylink{classfirebase_1_1database_1_1_query}{Query} limited to only the first results. 
+
+Limits the query to reference only the first N child nodes, using the given Order\+By directive (or priority as default).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em limit} & Number of children to limit the \doxylink{classfirebase_1_1database_1_1_query}{Query} to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, limited to the specified number of children (taken from the beginning of the sorted list). 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_ac13afd9f657d30e5927c319f5acd6aaf}\index{firebase::database::Query@{firebase::database::Query}!LimitToLast@{LimitToLast}}
+\index{LimitToLast@{LimitToLast}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{LimitToLast()}{LimitToLast()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_ac13afd9f657d30e5927c319f5acd6aaf} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Limit\+To\+Last (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{limit}{}\end{DoxyParamCaption})}
+
+
+
+Gets a \doxylink{classfirebase_1_1database_1_1_query}{Query} limited to only the last results. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em limit} & Number of children to limit the \doxylink{classfirebase_1_1database_1_1_query}{Query} to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, limited to the specified number of children (taken from the end of the sorted list). 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a92074f96bb244e161264d7a5a5502a74}\index{firebase::database::Query@{firebase::database::Query}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a92074f96bb244e161264d7a5a5502a74} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \& firebase\+::database\+::\+Query\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&}]{query}{}\end{DoxyParamCaption})}
+
+Copy assignment operator. Queries can be copied. Copies exist independently of each other. \Hypertarget{classfirebase_1_1database_1_1_query_a18250ad084814598c9cbd96df7f3eb30}\index{firebase::database::Query@{firebase::database::Query}!OrderByChild@{OrderByChild}}
+\index{OrderByChild@{OrderByChild}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{OrderByChild()}{OrderByChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a18250ad084814598c9cbd96df7f3eb30} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Order\+By\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Gets a query in which child nodes are ordered by the values of the specified path. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path to a child node. The value of this node will be used for sorting this query. The pointer you pass in need not remain valid after the call completes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, with the children are sorted by the value of their own child specified here. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a0a6290971237a1d367583f18b5c6a3a0}\index{firebase::database::Query@{firebase::database::Query}!OrderByChild@{OrderByChild}}
+\index{OrderByChild@{OrderByChild}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{OrderByChild()}{OrderByChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a0a6290971237a1d367583f18b5c6a3a0} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Order\+By\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Gets a query in which child nodes are ordered by the values of the specified path. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path to a child node. The value of this node will be used for sorting this query.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, with the children are sorted by the value of their own child specified here. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_abc509b58705fc896ef9be808b759a5af}\index{firebase::database::Query@{firebase::database::Query}!OrderByKey@{OrderByKey}}
+\index{OrderByKey@{OrderByKey}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{OrderByKey()}{OrderByKey()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_abc509b58705fc896ef9be808b759a5af} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Order\+By\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets a query in which child nodes are ordered by their keys. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, with the children are sorted by their key. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a4bf0bc99c7133c90277e3d9dde0946d3}\index{firebase::database::Query@{firebase::database::Query}!OrderByPriority@{OrderByPriority}}
+\index{OrderByPriority@{OrderByPriority}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{OrderByPriority()}{OrderByPriority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a4bf0bc99c7133c90277e3d9dde0946d3} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Order\+By\+Priority (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets a query in which child nodes are ordered by their priority. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, with the children are sorted by their priority. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_ae9718eb0511153f404e16db1800bfc3f}\index{firebase::database::Query@{firebase::database::Query}!OrderByValue@{OrderByValue}}
+\index{OrderByValue@{OrderByValue}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{OrderByValue()}{OrderByValue()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_ae9718eb0511153f404e16db1800bfc3f} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Order\+By\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Create a query in which nodes are ordered by their value. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, with the children are sorted by their value. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a505c51cb77cefb2fae31d23999d4a56d}\index{firebase::database::Query@{firebase::database::Query}!RemoveAllChildListeners@{RemoveAllChildListeners}}
+\index{RemoveAllChildListeners@{RemoveAllChildListeners}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{RemoveAllChildListeners()}{RemoveAllChildListeners()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a505c51cb77cefb2fae31d23999d4a56d} 
+void firebase\+::database\+::\+Query\+::\+Remove\+All\+Child\+Listeners (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes all child listeners that were added by \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener()}. 
+
+\begin{DoxyNote}{Note}
+You can remove Child\+Listeners from a different \doxylink{classfirebase_1_1database_1_1_query}{Query} than you added them to, as long as the two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances are equivalent. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_query_abf356818e2d12cd09e20b020d9c5b50d}\index{firebase::database::Query@{firebase::database::Query}!RemoveAllValueListeners@{RemoveAllValueListeners}}
+\index{RemoveAllValueListeners@{RemoveAllValueListeners}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{RemoveAllValueListeners()}{RemoveAllValueListeners()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_abf356818e2d12cd09e20b020d9c5b50d} 
+void firebase\+::database\+::\+Query\+::\+Remove\+All\+Value\+Listeners (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes all value listeners that were added with \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener()}. 
+
+\begin{DoxyNote}{Note}
+You can remove Value\+Listeners from a different \doxylink{classfirebase_1_1database_1_1_query}{Query} than you added them to, as long as the two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances are equivalent. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_query_a71862feda6f04f19d45fdae297b024a5}\index{firebase::database::Query@{firebase::database::Query}!RemoveChildListener@{RemoveChildListener}}
+\index{RemoveChildListener@{RemoveChildListener}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{RemoveChildListener()}{RemoveChildListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a71862feda6f04f19d45fdae297b024a5} 
+void firebase\+::database\+::\+Query\+::\+Remove\+Child\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Removes a listener that was previously added with \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener} instance to remove from the \doxylink{classfirebase_1_1database_1_1_query}{Query}. After it is removed, you can delete it or attach it to a new location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You can remove a \doxylink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener} from a different \doxylink{classfirebase_1_1database_1_1_query}{Query} than you added it to, as long as the two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances are equivalent. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_query_addfac4809c61fc91567e033e4edc90f9}\index{firebase::database::Query@{firebase::database::Query}!RemoveValueListener@{RemoveValueListener}}
+\index{RemoveValueListener@{RemoveValueListener}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{RemoveValueListener()}{RemoveValueListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_addfac4809c61fc91567e033e4edc90f9} 
+void firebase\+::database\+::\+Query\+::\+Remove\+Value\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+Removes a listener that was previously added with \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener} instance to remove from the \doxylink{classfirebase_1_1database_1_1_query}{Query}. After it is removed, you can delete it or attach it to a new location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You can remove a \doxylink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener} from a different \doxylink{classfirebase_1_1database_1_1_query}{Query} than you added it to, as long as the two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances are equivalent. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_query_a7e21505d9c247bf03abe564fe08baa56}\index{firebase::database::Query@{firebase::database::Query}!SetKeepSynchronized@{SetKeepSynchronized}}
+\index{SetKeepSynchronized@{SetKeepSynchronized}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{SetKeepSynchronized()}{SetKeepSynchronized()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a7e21505d9c247bf03abe564fe08baa56} 
+void firebase\+::database\+::\+Query\+::\+Set\+Keep\+Synchronized (\begin{DoxyParamCaption}\item[{bool}]{keep\+\_\+sync}{}\end{DoxyParamCaption})}
+
+
+
+Sets whether this location\textquotesingle{}s data should be kept in sync even if there are no active Listeners. 
+
+By calling Set\+Keep\+Synchronized(true) on a given database location, the data for that location will automatically be downloaded and kept in sync, even when no listeners are attached for that location. Additionally, while a location is kept synced, it will not be evicted from the persistent disk cache.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em keep\+\_\+sync} & If true, set this location to be synchronized. If false, set it to not be synchronized. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_query_a77abcf23c95bf6ad500f2a30b46f9a35}\index{firebase::database::Query@{firebase::database::Query}!StartAt@{StartAt}}
+\index{StartAt@{StartAt}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{StartAt()}{StartAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a77abcf23c95bf6ad500f2a30b46f9a35} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Start\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{order\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or higher. 
+
+This method is used to generate a reference to a limited view of the data at this location. The \doxylink{classfirebase_1_1database_1_1_query}{Query} returned will only refer to child nodes with a value greater than or equal to the given value, using the given Order\+By directive (or priority as the default).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em order\+\_\+value} & The lowest sort value the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, filtering out child nodes that have a lower sort value than the sort value specified. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_query_a8a61996a0ab4e1abfd2e2b4970bafa28}\index{firebase::database::Query@{firebase::database::Query}!StartAt@{StartAt}}
+\index{StartAt@{StartAt}!firebase::database::Query@{firebase::database::Query}}
+\doxysubsubsection{\texorpdfstring{StartAt()}{StartAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_query_a8a61996a0ab4e1abfd2e2b4970bafa28} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} firebase\+::database\+::\+Query\+::\+Start\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{order\+\_\+value}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{child\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or higher, and the given key or higher. 
+
+This method is used to generate a reference to a limited view of the data at this location. The \doxylink{classfirebase_1_1database_1_1_query}{Query} returned will only refer to child nodes with a value greater than or equal to the given value, using the given Order\+By directive (or priority as default), and additionally only child nodes with a key greater than or equal to the given key.
+
+{\bfseries{Known issue}} This currently does not work properly on all platforms. Please use \doxylink{classfirebase_1_1database_1_1_query_a77abcf23c95bf6ad500f2a30b46f9a35}{Start\+At(\+Variant order\+\_\+value)} instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em order\+\_\+value} & The lowest sort value the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include. \\
+\hline
+\mbox{\texttt{ in}}  & {\em child\+\_\+key} & The lowest key the \doxylink{classfirebase_1_1database_1_1_query}{Query} should include.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1database_1_1_query}{Query} in this same location, filtering out child nodes that have a lower sort value than the sort value specified, or a lower key than the key specified. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/query.\+h\end{DoxyCompactItemize}

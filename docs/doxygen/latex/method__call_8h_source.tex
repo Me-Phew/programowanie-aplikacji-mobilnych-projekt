@@ -1,0 +1,49 @@
+\doxysection{method\+\_\+call.\+h}
+\hypertarget{method__call_8h_source}{}\label{method__call_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_call.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_call.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CALL\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CALL\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ An\ object\ encapsulating\ a\ method\ call\ from\ Flutter\ whose\ arguments\ are\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ type\ T.}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall}}\ \{}
+\DoxyCodeLine{00019\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ Creates\ a\ MethodCall\ with\ the\ given\ name\ and\ arguments.}}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall}}(\textcolor{keyword}{const}\ std::string\&\ method\_name,\ std::unique\_ptr<T>\ arguments)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ :\ method\_name\_(method\_name),\ arguments\_(std::move(arguments))\ \{\}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_method_call}{\string~MethodCall}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall}}(\mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall<T>}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall<T>}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ The\ name\ of\ the\ method\ being\ called.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{const}\ std::string\&\ method\_name()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ method\_name\_;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ The\ arguments\ to\ the\ method\ call,\ or\ NULL\ if\ there\ are\ none.}}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{const}\ T*\ arguments()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ arguments\_.get();\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ std::string\ method\_name\_;}
+\DoxyCodeLine{00038\ \ \ std::unique\_ptr<T>\ arguments\_;}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CALL\_H\_}}
+
+\end{DoxyCode}

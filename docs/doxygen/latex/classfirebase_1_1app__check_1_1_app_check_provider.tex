@@ -1,0 +1,28 @@
+\doxysection{firebase\+::app\+\_\+check\+::App\+Check\+Provider Class Reference}
+\hypertarget{classfirebase_1_1app__check_1_1_app_check_provider}{}\label{classfirebase_1_1app__check_1_1_app_check_provider}\index{firebase::app\_check::AppCheckProvider@{firebase::app\_check::AppCheckProvider}}
+
+
+{\ttfamily \#include $<$app\+\_\+check.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_a1bfe8c92a50c664c35063f14c31a5647}{Get\+Token}} (std\+::function$<$ void(\mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}}, int, const std\+::string \&)$>$ completion\+\_\+callback)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for a provider that generates {\ttfamily \doxylink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}}s. This provider can be called at any time by any Firebase library that depends (optionally or otherwise) on {\ttfamily \doxylink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}}s. This provider is responsible for determining if it can create a new token at the time of the call and returning that new token if it can. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_provider_a1bfe8c92a50c664c35063f14c31a5647}\index{firebase::app\_check::AppCheckProvider@{firebase::app\_check::AppCheckProvider}!GetToken@{GetToken}}
+\index{GetToken@{GetToken}!firebase::app\_check::AppCheckProvider@{firebase::app\_check::AppCheckProvider}}
+\doxysubsubsection{\texorpdfstring{GetToken()}{GetToken()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_provider_a1bfe8c92a50c664c35063f14c31a5647} 
+virtual void firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+::\+Get\+Token (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}}, int, const std\+::string \&)$>$}]{completion\+\_\+callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Fetches an \doxylink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token} and then calls the provided callback method with the token or with an error code and error message. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app\+\_\+check.\+h\end{DoxyCompactItemize}

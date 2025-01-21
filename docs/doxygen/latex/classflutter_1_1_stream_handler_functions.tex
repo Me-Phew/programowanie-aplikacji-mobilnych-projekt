@@ -1,0 +1,73 @@
+\doxysection{flutter\+::Stream\+Handler\+Functions\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_stream_handler_functions}{}\label{classflutter_1_1_stream_handler_functions}\index{flutter::StreamHandlerFunctions$<$ T $>$@{flutter::StreamHandlerFunctions$<$ T $>$}}
+
+
+Inheritance diagram for flutter\+::Stream\+Handler\+Functions\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classflutter_1_1_stream_handler_functions__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Stream\+Handler\+Functions\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classflutter_1_1_stream_handler_functions__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_afba947f77b3edc5fe16ebe9c49f79274}\label{classflutter_1_1_stream_handler_functions_afba947f77b3edc5fe16ebe9c49f79274} 
+{\bfseries Stream\+Handler\+Functions} (Stream\+Handler\+Listen$<$ T $>$ on\+\_\+listen, Stream\+Handler\+Cancel$<$ T $>$ on\+\_\+cancel)
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_aac23a7c435581a311b2df01190e16e71}\label{classflutter_1_1_stream_handler_functions_aac23a7c435581a311b2df01190e16e71} 
+{\bfseries Stream\+Handler\+Functions} (\mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{Stream\+Handler\+Functions}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_aebcce674ae3d45945de156982882796e}\label{classflutter_1_1_stream_handler_functions_aebcce674ae3d45945de156982882796e} 
+\mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{Stream\+Handler\+Functions}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{Stream\+Handler\+Functions}} const \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_stream_handler}{flutter\+::\+Stream\+Handler$<$ Encodable\+Value $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Stream\+Handler} (\mbox{\hyperlink{classflutter_1_1_stream_handler}{Stream\+Handler}} const \&)=delete
+\item 
+\mbox{\hyperlink{classflutter_1_1_stream_handler}{Stream\+Handler}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_stream_handler}{Stream\+Handler}} const \&)=delete
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structflutter_1_1_stream_handler_error}{Stream\+Handler\+Error}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ {\bfseries On\+Listen} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}arguments, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_event_sink}{Event\+Sink}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ \&\&events)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structflutter_1_1_stream_handler_error}{Stream\+Handler\+Error}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ {\bfseries On\+Cancel} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}arguments)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_a054314c2e4f439ba284288a6b035c445}\label{classflutter_1_1_stream_handler_functions_a054314c2e4f439ba284288a6b035c445} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structflutter_1_1_stream_handler_error}{Stream\+Handler\+Error}}$<$ T $>$ $>$ {\bfseries On\+Listen\+Internal} (const T \texorpdfstring{$\ast$}{*}arguments, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_event_sink}{Event\+Sink}}$<$ T $>$ $>$ \&\&events) override
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_a4c01b5ee3afbb24cc8f10024c1a90762}\label{classflutter_1_1_stream_handler_functions_a4c01b5ee3afbb24cc8f10024c1a90762} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structflutter_1_1_stream_handler_error}{Stream\+Handler\+Error}}$<$ T $>$ $>$ {\bfseries On\+Cancel\+Internal} (const T \texorpdfstring{$\ast$}{*}arguments) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_stream_handler}{flutter\+::\+Stream\+Handler$<$ Encodable\+Value $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structflutter_1_1_stream_handler_error}{Stream\+Handler\+Error}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ {\bfseries On\+Listen\+Internal} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}arguments, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_event_sink}{Event\+Sink}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ \&\&events)=0
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structflutter_1_1_stream_handler_error}{Stream\+Handler\+Error}}$<$ \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} $>$ $>$ {\bfseries On\+Cancel\+Internal} (const \mbox{\hyperlink{classflutter_1_1_encodable_value}{Encodable\+Value}} \texorpdfstring{$\ast$}{*}arguments)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_a6e7af2c9e54c406b750131299b69fdb1}\label{classflutter_1_1_stream_handler_functions_a6e7af2c9e54c406b750131299b69fdb1} 
+Stream\+Handler\+Listen$<$ T $>$ {\bfseries on\+\_\+listen\+\_\+}
+\item 
+\Hypertarget{classflutter_1_1_stream_handler_functions_a324b673d55d3f4d8a177214203202944}\label{classflutter_1_1_stream_handler_functions_a324b673d55d3f4d8a177214203202944} 
+Stream\+Handler\+Cancel$<$ T $>$ {\bfseries on\+\_\+cancel\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/event\+\_\+stream\+\_\+handler\+\_\+functions.\+h\end{DoxyCompactItemize}

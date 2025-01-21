@@ -1,0 +1,108 @@
+\doxysection{dart\+\_\+project.\+h}
+\hypertarget{dart__project_8h_source}{}\label{dart__project_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/dart\_project.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/dart\_project.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_DART\_PROJECT\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_DART\_PROJECT\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ A\ set\ of\ Flutter\ and\ Dart\ assets\ used\ to\ initialize\ a\ Flutter\ engine.}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_dart_project}{DartProject}}\ \{}
+\DoxyCodeLine{00015\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \textcolor{comment}{//\ Creates\ a\ DartProject\ from\ a\ series\ of\ absolute\ paths.}}
+\DoxyCodeLine{00017\ \ \ \textcolor{comment}{//\ The\ three\ paths\ are:}}
+\DoxyCodeLine{00018\ \ \ \textcolor{comment}{//\ -\/\ assets\_path:\ Path\ to\ the\ assets\ directory\ as\ built\ by\ the\ Flutter\ tool.}}
+\DoxyCodeLine{00019\ \ \ \textcolor{comment}{//\ -\/\ icu\_data\_path:\ Path\ to\ the\ icudtl.dat\ file.}}
+\DoxyCodeLine{00020\ \ \ \textcolor{comment}{//\ -\/\ aot\_library\_path:\ Path\ to\ the\ AOT\ snapshot\ file.}}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \ \ \textcolor{comment}{//\ The\ paths\ may\ either\ be\ absolute\ or\ relative\ to\ the\ directory\ containing}}
+\DoxyCodeLine{00023\ \ \ \textcolor{comment}{//\ the\ running\ executable.}}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_dart_project}{DartProject}}(\textcolor{keyword}{const}\ std::wstring\&\ assets\_path,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::wstring\&\ icu\_data\_path,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::wstring\&\ aot\_library\_path)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ assets\_path\_\ =\ assets\_path;}
+\DoxyCodeLine{00028\ \ \ \ \ icu\_data\_path\_\ =\ icu\_data\_path;}
+\DoxyCodeLine{00029\ \ \ \ \ aot\_library\_path\_\ =\ aot\_library\_path;}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Creates\ a\ DartProject\ from\ a\ directory\ path.\ The\ directory\ should\ contain}}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ the\ following\ top-\/level\ items:}}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ -\/\ icudtl.dat\ (provided\ as\ a\ resource\ by\ the\ Flutter\ tool)}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ -\/\ flutter\_assets\ (as\ built\ by\ the\ Flutter\ tool)}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ -\/\ app.so,\ for\ an\ AOT\ build\ (as\ built\ by\ the\ Flutter\ tool)}}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ The\ path\ can\ either\ be\ absolute,\ or\ relative\ to\ the\ directory\ containing}}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ the\ running\ executable.}}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_dart_project}{DartProject}}(\textcolor{keyword}{const}\ std::wstring\&\ path)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ assets\_path\_\ =\ path\ +\ L\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)flutter\_assets"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ icu\_data\_path\_\ =\ path\ +\ L\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)icudtl.dat"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ aot\_library\_path\_\ =\ path\ +\ L\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)app.so"{}};}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classflutter_1_1_dart_project}{\string~DartProject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ Sets\ the\ Dart\ entrypoint\ to\ the\ specified\ value.}}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ If\ not\ set,\ the\ default\ entrypoint\ (main)\ is\ used.\ Custom\ Dart\ entrypoints}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ must\ be\ decorated\ with\ \`{}@pragma('vm:entry-\/point')`.}}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ set\_dart\_entrypoint(\textcolor{keyword}{const}\ std::string\&\ entrypoint)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (entrypoint.empty())\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ dart\_entrypoint\_\ =\ entrypoint;}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Returns\ the\ Dart\ entrypoint.}}
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{const}\ std::string\&\ dart\_entrypoint()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dart\_entrypoint\_;\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//\ Sets\ the\ command\ line\ arguments\ that\ should\ be\ passed\ to\ the\ Dart}}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ entrypoint.}}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ set\_dart\_entrypoint\_arguments(std::vector<std::string>\ arguments)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ dart\_entrypoint\_arguments\_\ =\ std::move(arguments);}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Returns\ any\ command\ line\ arguments\ that\ should\ be\ passed\ to\ the\ Dart}}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ entrypoint.}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ dart\_entrypoint\_arguments()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ dart\_entrypoint\_arguments\_;}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ Accessors\ for\ internals\ are\ private,\ so\ that\ they\ can\ be\ changed\ if\ more}}
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{//\ flexible\ options\ for\ project\ structures\ are\ needed\ later\ without\ it}}
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ being\ a\ breaking\ change.\ Provide\ access\ to\ internal\ classes\ that\ need}}
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ them.}}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}};}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}};}
+\DoxyCodeLine{00081\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DartProjectTest;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{const}\ std::wstring\&\ assets\_path()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ assets\_path\_;\ \}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{const}\ std::wstring\&\ icu\_data\_path()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ icu\_data\_path\_;\ \}}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{const}\ std::wstring\&\ aot\_library\_path()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ aot\_library\_path\_;\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ The\ path\ to\ the\ assets\ directory.}}
+\DoxyCodeLine{00088\ \ \ std::wstring\ assets\_path\_;}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ The\ path\ to\ the\ ICU\ data.}}
+\DoxyCodeLine{00090\ \ \ std::wstring\ icu\_data\_path\_;}
+\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ The\ path\ to\ the\ AOT\ library.\ This\ will\ always\ return\ a\ path,\ but\ non-\/AOT}}
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ builds\ will\ not\ be\ expected\ to\ actually\ have\ a\ library\ at\ that\ path.}}
+\DoxyCodeLine{00093\ \ \ std::wstring\ aot\_library\_path\_;}
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//\ The\ Dart\ entrypoint\ to\ launch.}}
+\DoxyCodeLine{00095\ \ \ std::string\ dart\_entrypoint\_;}
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ The\ list\ of\ arguments\ to\ pass\ through\ to\ the\ Dart\ entrypoint.}}
+\DoxyCodeLine{00097\ \ \ std::vector<std::string>\ dart\_entrypoint\_arguments\_;}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_DART\_PROJECT\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\doxysection{flutter\+::Method\+Result\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_method_result}{}\label{classflutter_1_1_method_result}\index{flutter::MethodResult$<$ T $>$@{flutter::MethodResult$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_method_result_a1e1524eb9bcd778d39327bece478dfc2}\label{classflutter_1_1_method_result_a1e1524eb9bcd778d39327bece478dfc2} 
+{\bfseries Method\+Result} (\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_method_result_a13a6f9fe50a47839ef73c2597b5457f4}\label{classflutter_1_1_method_result_a13a6f9fe50a47839ef73c2597b5457f4} 
+\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_method_result_a990b98e11c55aef031cb433bc1b6f433}\label{classflutter_1_1_method_result_a990b98e11c55aef031cb433bc1b6f433} 
+void {\bfseries Success} (const T \&result)
+\item 
+\Hypertarget{classflutter_1_1_method_result_ab5cc64c5a1d72de78d5a9212a2fea28a}\label{classflutter_1_1_method_result_ab5cc64c5a1d72de78d5a9212a2fea28a} 
+void {\bfseries Success} ()
+\item 
+\Hypertarget{classflutter_1_1_method_result_a38a441cbe542b14eee155ff992b86a29}\label{classflutter_1_1_method_result_a38a441cbe542b14eee155ff992b86a29} 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \&error\+\_\+details)
+\item 
+\Hypertarget{classflutter_1_1_method_result_ab77c1d1d46a8674e75dfbef0b87593d0}\label{classflutter_1_1_method_result_ab77c1d1d46a8674e75dfbef0b87593d0} 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message="{}"{})
+\item 
+\Hypertarget{classflutter_1_1_method_result_a321ba4e0a38d4c683ffd275afedb52a2}\label{classflutter_1_1_method_result_a321ba4e0a38d4c683ffd275afedb52a2} 
+void {\bfseries Not\+Implemented} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_method_result_a41539dc1554138e4f52da7051f365571}\label{classflutter_1_1_method_result_a41539dc1554138e4f52da7051f365571} 
+virtual void {\bfseries Success\+Internal} (const T \texorpdfstring{$\ast$}{*}result)=0
+\item 
+\Hypertarget{classflutter_1_1_method_result_a10cfc17a9e6da00650bf4727af21e048}\label{classflutter_1_1_method_result_a10cfc17a9e6da00650bf4727af21e048} 
+virtual void {\bfseries Error\+Internal} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \texorpdfstring{$\ast$}{*}error\+\_\+details)=0
+\item 
+\Hypertarget{classflutter_1_1_method_result_a6e5940fb7d7f513ff3da28333424a0f6}\label{classflutter_1_1_method_result_a6e5940fb7d7f513ff3da28333424a0f6} 
+virtual void {\bfseries Not\+Implemented\+Internal} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/method\+\_\+result.\+h\end{DoxyCompactItemize}

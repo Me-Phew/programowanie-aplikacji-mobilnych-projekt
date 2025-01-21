@@ -1,0 +1,403 @@
+\doxysection{firebase\+::auth\+::User Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_user}{}\label{classfirebase_1_1auth_1_1_user}\index{firebase::auth::User@{firebase::auth::User}}
+
+
+Firebase user account object.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::auth\+::User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classfirebase_1_1auth_1_1_user__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::auth\+::User\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classfirebase_1_1auth_1_1_user__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile}{User\+Profile}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_abc3154a55ebc56240edbebe8240340c8}\label{classfirebase_1_1auth_1_1_user_abc3154a55ebc56240edbebe8240340c8} 
+{\bfseries User} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a5f10fbc8b0ef1336c1c8a54a003bbbb4}\label{classfirebase_1_1auth_1_1_user_a5f10fbc8b0ef1336c1c8a54a003bbbb4} 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} \&)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_afe2930f45113bc4ffac22a435475a3ac}\label{classfirebase_1_1auth_1_1_user_afe2930f45113bc4ffac22a435475a3ac} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} \&) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a5ae2ef0762280b8b80d41177d3e88c66}\label{classfirebase_1_1auth_1_1_user_a5ae2ef0762280b8b80d41177d3e88c66} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} \&) const
+\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_aed1157b697acd1ee88763b90798cd29a}{is\+\_\+valid}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a63c5ee74507b48921f5b4c63a832232b}{Get\+Token}} (bool force\+\_\+refresh)
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a6b2728369ca0fba3ab4ee539477a7daf}\label{classfirebase_1_1auth_1_1_user_a6b2728369ca0fba3ab4ee539477a7daf} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ {\bfseries Get\+Token\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Get\+Token. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{User\+Info\+Interface}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_abe7b994ec18b67e1304fdcfa43f34ffb}{provider\+\_\+data}} () const
+\item 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a583b897e17a8f7160fcb97db74b6adc9}{Update\+Email}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{email}})
+\item 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a1b92a94f9ab49b1715fda255ccee96e2}{Update\+Email\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5ffe7734317835f25aaf7278673f6a1e}{Update\+Password}} (const char \texorpdfstring{$\ast$}{*}password)
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a60d1f6148dab9e4cd41ff77aeb652f17}\label{classfirebase_1_1auth_1_1_user_a60d1f6148dab9e4cd41ff77aeb652f17} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Update\+Password\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Update\+Password. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_aed4e6a979d9d6d05aeac0d526388cb51}{Reauthenticate}} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \&credential)
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_af5a4238acce796f2317e7bc61acfac90}\label{classfirebase_1_1auth_1_1_user_af5a4238acce796f2317e7bc61acfac90} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Reauthenticate\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Reauthenticate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a7715875bab369b6fcfc17e69e25918da}{Reauthenticate\+And\+Retrieve\+Data}} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \&credential)
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a4fa92f8bd8eb81b140e2338941919e1b}\label{classfirebase_1_1auth_1_1_user_a4fa92f8bd8eb81b140e2338941919e1b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ {\bfseries Reauthenticate\+And\+Retrieve\+Data\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Reauthenticate\+And\+Retrieve\+Data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a35603c0b5336c919cbf90402959dfcd2}{Reauthenticate\+With\+Provider}} (\mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{Federated\+Auth\+Provider}} \texorpdfstring{$\ast$}{*}provider) const
+\begin{DoxyCompactList}\small\item\em Re-\/authenticates the user with a federated auth provider. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_ae798f551e0324b0957ec32b4db882322}\label{classfirebase_1_1auth_1_1_user_ae798f551e0324b0957ec32b4db882322} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Send\+Email\+Verification} ()
+\begin{DoxyCompactList}\small\item\em Initiates email verification for the user. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a64c62ab350fcfc337bafe2de40e74829}\label{classfirebase_1_1auth_1_1_user_a64c62ab350fcfc337bafe2de40e74829} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Send\+Email\+Verification\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Send\+Email\+Verification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_aa2b3ec10f6abb80b4d3534f7e4f2217b}{Send\+Email\+Verification\+Before\+Updating\+Email}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{email}})
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_af5a468bb09e2588246293f8df91a0249}{Send\+Email\+Verification\+Before\+Updating\+Email\+Last\+Result}} () const
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a7eca63a8c8ba19e0b6a3f87b238b0a98}\label{classfirebase_1_1auth_1_1_user_a7eca63a8c8ba19e0b6a3f87b238b0a98} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Update\+User\+Profile} (const \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile}{User\+Profile}} \&profile)
+\begin{DoxyCompactList}\small\item\em Updates a subset of user profile information. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a69f4a0369dd3c6b2ce8ecb43034a1e12}\label{classfirebase_1_1auth_1_1_user_a69f4a0369dd3c6b2ce8ecb43034a1e12} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Update\+User\+Profile\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Update\+User\+Profile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a3c69fa931127579ebaf681c0e19fbdaa}{Link\+With\+Credential}} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \&credential)
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a9d9c0c0aec2d0cdd1bd4fb098c2ed6fc}\label{classfirebase_1_1auth_1_1_user_a9d9c0c0aec2d0cdd1bd4fb098c2ed6fc} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ {\bfseries Link\+With\+Credential\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Link\+With\+Credential. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a0ab32323766476a0d16afd7f4b0074d4}{Link\+With\+Provider}} (\mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{Federated\+Auth\+Provider}} \texorpdfstring{$\ast$}{*}provider) const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae40ec8ab4759cc3570848fa79f2d8a3a}{Unlink}} (const char \texorpdfstring{$\ast$}{*}provider)
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_af8c6c41ba24dd35d8640c282978c2cbb}\label{classfirebase_1_1auth_1_1_user_af8c6c41ba24dd35d8640c282978c2cbb} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ {\bfseries Unlink\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Unlink. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ac1b5ac8d049df0ce4bcfa7602930f3dc}{Update\+Phone\+Number\+Credential}} (const \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}} \&credential)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a740afc9294997fe09239b98f38cf69db}{Update\+Phone\+Number\+Credential\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a9f8fd3dc6825d0db2949adf2a25a3669}{Reload}} ()
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_ab5043d60f9f5cf9415aafcc209e1e875}\label{classfirebase_1_1auth_1_1_user_ab5043d60f9f5cf9415aafcc209e1e875} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Reload\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Reload. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a53625c7a0ca71d782114cc163b4c05f7}\label{classfirebase_1_1auth_1_1_user_a53625c7a0ca71d782114cc163b4c05f7} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em Deletes the user account. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_a2f67e1f54c131db125ff7957a8938f9b}\label{classfirebase_1_1auth_1_1_user_a2f67e1f54c131db125ff7957a8938f9b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Delete\+Last\+Result} () const
+\begin{DoxyCompactList}\small\item\em Get results of the most recent call to Delete. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_ab07ebe8cf209985b109268c11abbbc88}\label{classfirebase_1_1auth_1_1_user_ab07ebe8cf209985b109268c11abbbc88} 
+\mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata}{User\+Metadata}} {\bfseries metadata} () const
+\begin{DoxyCompactList}\small\item\em Gets the metadata for this user account. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a51d316aa47a2c9064789f1b28a7605ba}{is\+\_\+email\+\_\+verified}} () const
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a574c10bf0498656a9c0427861921df2f}{is\+\_\+anonymous}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a662d4994ef64c1689d8c3bf09d093b05}{uid}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{email}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a8348bc6c3247dd61ff0a2dd9b406dc95}{display\+\_\+name}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a3dd64a1f0fb3a3188aedde3f0605c713}{photo\+\_\+url}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5167d84d40bfde9bdd366c6f70678c3d}{provider\+\_\+id}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a48b7e1eaaef2da37b6ffc1793df5d58c}{phone\+\_\+number}} () const
+\begin{DoxyCompactList}\small\item\em Gets the phone number for the user, in E.\+164 format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{firebase\+::auth\+::\+User\+Info\+Interface}}}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_ae01e20d45bf4cfe9300b9f61378873c4}\label{classfirebase_1_1auth_1_1_user_ae01e20d45bf4cfe9300b9f61378873c4} 
+struct {\bfseries Auth\+Data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase user account object. 
+
+This class allows you to manipulate the profile of a user, link to and unlink from authentication providers, and refresh authentication tokens. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_user_a8348bc6c3247dd61ff0a2dd9b406dc95}\index{firebase::auth::User@{firebase::auth::User}!display\_name@{display\_name}}
+\index{display\_name@{display\_name}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{display\_name()}{display\_name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a8348bc6c3247dd61ff0a2dd9b406dc95} 
+virtual std\+::string firebase\+::auth\+::\+User\+::display\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the display name associated with the user, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a311530d046c0ef11d0fddbf9b99240a2}{firebase\+::auth\+::\+User\+Info\+Interface}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}\index{firebase::auth::User@{firebase::auth::User}!email@{email}}
+\index{email@{email}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{email()}{email()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32} 
+virtual std\+::string firebase\+::auth\+::\+User\+::email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets email associated with the user, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_aabdb7270e7295a3108103ea863b2547d}{firebase\+::auth\+::\+User\+Info\+Interface}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_a63c5ee74507b48921f5b4c63a832232b}\index{firebase::auth::User@{firebase::auth::User}!GetToken@{GetToken}}
+\index{GetToken@{GetToken}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{GetToken()}{GetToken()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a63c5ee74507b48921f5b4c63a832232b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::auth\+::\+User\+::\+Get\+Token (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\+refresh}{}\end{DoxyParamCaption})}
+
+The Java Web Token (JWT) that can be used to identify the user to the backend.
+
+If a current ID token is still believed to be valid (i.\+e. it has not yet expired), that token will be returned immediately. A developer may set the optional force\+\_\+refresh flag to get a new ID token, whether or not the existing token has expired. For example, a developer may use this when they have discovered that the token is invalid for some other reason. \Hypertarget{classfirebase_1_1auth_1_1_user_a574c10bf0498656a9c0427861921df2f}\index{firebase::auth::User@{firebase::auth::User}!is\_anonymous@{is\_anonymous}}
+\index{is\_anonymous@{is\_anonymous}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{is\_anonymous()}{is\_anonymous()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a574c10bf0498656a9c0427861921df2f} 
+bool firebase\+::auth\+::\+User\+::is\+\_\+anonymous (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns true if user signed in anonymously. $<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1auth_1_1_user_a51d316aa47a2c9064789f1b28a7605ba}\index{firebase::auth::User@{firebase::auth::User}!is\_email\_verified@{is\_email\_verified}}
+\index{is\_email\_verified@{is\_email\_verified}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{is\_email\_verified()}{is\_email\_verified()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a51d316aa47a2c9064789f1b28a7605ba} 
+bool firebase\+::auth\+::\+User\+::is\+\_\+email\+\_\+verified (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns true if the email address associated with this user has been verified. $<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1auth_1_1_user_aed1157b697acd1ee88763b90798cd29a}\index{firebase::auth::User@{firebase::auth::User}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_aed1157b697acd1ee88763b90798cd29a} 
+bool firebase\+::auth\+::\+User\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns whether this \doxylink{classfirebase_1_1auth_1_1_user}{User} object represents a valid user. Could be false on Users contained with \doxylink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result} structures from failed \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} operations. \Hypertarget{classfirebase_1_1auth_1_1_user_a3c69fa931127579ebaf681c0e19fbdaa}\index{firebase::auth::User@{firebase::auth::User}!LinkWithCredential@{LinkWithCredential}}
+\index{LinkWithCredential@{LinkWithCredential}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{LinkWithCredential()}{LinkWithCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a3c69fa931127579ebaf681c0e19fbdaa} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ firebase\+::auth\+::\+User\+::\+Link\+With\+Credential (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \&}]{credential}{}\end{DoxyParamCaption})}
+
+Links the user with the given 3rd party credentials.
+
+For example, a Facebook login access token, a Twitter token/token-\/secret pair.
+
+Status will be an error if the token is invalid, expired, or otherwise not accepted by the server as well as if the given 3rd party user id is already linked with another user account or if the current user is already linked with another id from the same provider.
+
+Data from the Identity Provider used to sign-\/in is returned in the \doxylink{structfirebase_1_1auth_1_1_additional_user_info}{Additional\+User\+Info} inside \doxylink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}. \Hypertarget{classfirebase_1_1auth_1_1_user_a0ab32323766476a0d16afd7f4b0074d4}\index{firebase::auth::User@{firebase::auth::User}!LinkWithProvider@{LinkWithProvider}}
+\index{LinkWithProvider@{LinkWithProvider}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{LinkWithProvider()}{LinkWithProvider()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a0ab32323766476a0d16afd7f4b0074d4} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ firebase\+::auth\+::\+User\+::\+Link\+With\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{Federated\+Auth\+Provider}} \texorpdfstring{$\ast$}{*}}]{provider}{}\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em provider} & Contains information on the auth provider to link with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Future$<$\+Auth\+Result$>$ with the user data result of the link request.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\+: This operation is supported only on i\+OS, tv\+OS and Android platforms. On other platforms this method will return a \doxylink{classfirebase_1_1_future}{Future} with a preset error code\+: k\+Auth\+Error\+Unimplemented. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1auth_1_1_user_a48b7e1eaaef2da37b6ffc1793df5d58c}\index{firebase::auth::User@{firebase::auth::User}!phone\_number@{phone\_number}}
+\index{phone\_number@{phone\_number}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{phone\_number()}{phone\_number()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a48b7e1eaaef2da37b6ffc1793df5d58c} 
+virtual std\+::string firebase\+::auth\+::\+User\+::phone\+\_\+number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the phone number for the user, in E.\+164 format. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_ae19c8d66a7640e0160ede3f55c58e78b}{firebase\+::auth\+::\+User\+Info\+Interface}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_a3dd64a1f0fb3a3188aedde3f0605c713}\index{firebase::auth::User@{firebase::auth::User}!photo\_url@{photo\_url}}
+\index{photo\_url@{photo\_url}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{photo\_url()}{photo\_url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a3dd64a1f0fb3a3188aedde3f0605c713} 
+virtual std\+::string firebase\+::auth\+::\+User\+::photo\+\_\+url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the photo url associated with the user, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_aca549b97721b1b262c317f2798fef808}{firebase\+::auth\+::\+User\+Info\+Interface}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_abe7b994ec18b67e1304fdcfa43f34ffb}\index{firebase::auth::User@{firebase::auth::User}!provider\_data@{provider\_data}}
+\index{provider\_data@{provider\_data}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{provider\_data()}{provider\_data()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_abe7b994ec18b67e1304fdcfa43f34ffb} 
+std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{User\+Info\+Interface}} $>$ firebase\+::auth\+::\+User\+::provider\+\_\+data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Gets the third party profile data associated with this user returned by the authentication server, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1auth_1_1_user_a5167d84d40bfde9bdd366c6f70678c3d}\index{firebase::auth::User@{firebase::auth::User}!provider\_id@{provider\_id}}
+\index{provider\_id@{provider\_id}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{provider\_id()}{provider\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a5167d84d40bfde9bdd366c6f70678c3d} 
+virtual std\+::string firebase\+::auth\+::\+User\+::provider\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the provider ID for the user (For example, "{}\+Facebook"{}). $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a25e1899b5ff84ce236c6c7e6aa9d5906}{firebase\+::auth\+::\+User\+Info\+Interface}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_aed4e6a979d9d6d05aeac0d526388cb51}\index{firebase::auth::User@{firebase::auth::User}!Reauthenticate@{Reauthenticate}}
+\index{Reauthenticate@{Reauthenticate}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{Reauthenticate()}{Reauthenticate()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_aed4e6a979d9d6d05aeac0d526388cb51} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Reauthenticate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \&}]{credential}{}\end{DoxyParamCaption})}
+
+Convenience function for Reauthenticate\+And\+Retrieve\+Data that discards the returned \doxylink{structfirebase_1_1auth_1_1_additional_user_info}{Additional\+User\+Info} data. \Hypertarget{classfirebase_1_1auth_1_1_user_a7715875bab369b6fcfc17e69e25918da}\index{firebase::auth::User@{firebase::auth::User}!ReauthenticateAndRetrieveData@{ReauthenticateAndRetrieveData}}
+\index{ReauthenticateAndRetrieveData@{ReauthenticateAndRetrieveData}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{ReauthenticateAndRetrieveData()}{ReauthenticateAndRetrieveData()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a7715875bab369b6fcfc17e69e25918da} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ firebase\+::auth\+::\+User\+::\+Reauthenticate\+And\+Retrieve\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \&}]{credential}{}\end{DoxyParamCaption})}
+
+Reauthenticate using a credential.
+
+$<$\+SWIG$>$  $<$/\+SWIG$>$
+
+Data from the Identity Provider used to sign-\/in is returned in the \doxylink{structfirebase_1_1auth_1_1_additional_user_info}{Additional\+User\+Info} inside the returned \doxylink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}.
+
+Returns an error if the existing credential is not for this user or if sign-\/in with that credential failed.
+
+\begin{DoxyNote}{Note}
+\+: The current user may be signed out if this operation fails on Android and desktop platforms. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1auth_1_1_user_a35603c0b5336c919cbf90402959dfcd2}\index{firebase::auth::User@{firebase::auth::User}!ReauthenticateWithProvider@{ReauthenticateWithProvider}}
+\index{ReauthenticateWithProvider@{ReauthenticateWithProvider}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{ReauthenticateWithProvider()}{ReauthenticateWithProvider()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a35603c0b5336c919cbf90402959dfcd2} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ firebase\+::auth\+::\+User\+::\+Reauthenticate\+With\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{Federated\+Auth\+Provider}} \texorpdfstring{$\ast$}{*}}]{provider}{}\end{DoxyParamCaption}) const}
+
+
+
+Re-\/authenticates the user with a federated auth provider. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em provider} & Contains information on the auth provider to authenticate with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Future$<$\+Auth\+Result$>$ with the result of the re-\/authentication request. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\+: This operation is supported only on i\+OS, tv\+OS and Android platforms. On other platforms this method will return a \doxylink{classfirebase_1_1_future}{Future} with a preset error code\+: k\+Auth\+Error\+Unimplemented. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1auth_1_1_user_a9f8fd3dc6825d0db2949adf2a25a3669}\index{firebase::auth::User@{firebase::auth::User}!Reload@{Reload}}
+\index{Reload@{Reload}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{Reload()}{Reload()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a9f8fd3dc6825d0db2949adf2a25a3669} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Refreshes the data for this user.
+
+For example, the attached providers, email address, display name, etc. \Hypertarget{classfirebase_1_1auth_1_1_user_aa2b3ec10f6abb80b4d3534f7e4f2217b}\index{firebase::auth::User@{firebase::auth::User}!SendEmailVerificationBeforeUpdatingEmail@{SendEmailVerificationBeforeUpdatingEmail}}
+\index{SendEmailVerificationBeforeUpdatingEmail@{SendEmailVerificationBeforeUpdatingEmail}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{SendEmailVerificationBeforeUpdatingEmail()}{SendEmailVerificationBeforeUpdatingEmail()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_aa2b3ec10f6abb80b4d3534f7e4f2217b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Send\+Email\+Verification\+Before\+Updating\+Email (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+Send an email to verify the ownership of the account, then update to the new email. \Hypertarget{classfirebase_1_1auth_1_1_user_af5a468bb09e2588246293f8df91a0249}\index{firebase::auth::User@{firebase::auth::User}!SendEmailVerificationBeforeUpdatingEmailLastResult@{SendEmailVerificationBeforeUpdatingEmailLastResult}}
+\index{SendEmailVerificationBeforeUpdatingEmailLastResult@{SendEmailVerificationBeforeUpdatingEmailLastResult}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{SendEmailVerificationBeforeUpdatingEmailLastResult()}{SendEmailVerificationBeforeUpdatingEmailLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_af5a468bb09e2588246293f8df91a0249} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Send\+Email\+Verification\+Before\+Updating\+Email\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Get results of the most recent call to Send\+Email\+Verification\+Before\+Updating\+Email. \Hypertarget{classfirebase_1_1auth_1_1_user_a662d4994ef64c1689d8c3bf09d093b05}\index{firebase::auth::User@{firebase::auth::User}!uid@{uid}}
+\index{uid@{uid}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{uid()}{uid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a662d4994ef64c1689d8c3bf09d093b05} 
+virtual std\+::string firebase\+::auth\+::\+User\+::uid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the unique Firebase user ID for the user.
+
+\begin{DoxyNote}{Note}
+The user\textquotesingle{}s ID, unique to the Firebase project. Do NOT use this value to authenticate with your backend server, if you have one.  $<$\+SWIG$>$   $<$/\+SWIG$>$ 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a7f2082cf46b1971825792fd36912a972}{firebase\+::auth\+::\+User\+Info\+Interface}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_ae40ec8ab4759cc3570848fa79f2d8a3a}\index{firebase::auth::User@{firebase::auth::User}!Unlink@{Unlink}}
+\index{Unlink@{Unlink}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{Unlink()}{Unlink()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_ae40ec8ab4759cc3570848fa79f2d8a3a} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{Auth\+Result}} $>$ firebase\+::auth\+::\+User\+::\+Unlink (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{provider}{}\end{DoxyParamCaption})}
+
+Unlinks the current user from the provider specified. Status will be an error if the user is not linked to the given provider. \Hypertarget{classfirebase_1_1auth_1_1_user_a583b897e17a8f7160fcb97db74b6adc9}\index{firebase::auth::User@{firebase::auth::User}!UpdateEmail@{UpdateEmail}}
+\index{UpdateEmail@{UpdateEmail}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{UpdateEmail()}{UpdateEmail()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a583b897e17a8f7160fcb97db74b6adc9} 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Update\+Email (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]This is a deprecated method. Please use Send\+Email\+Verification\+Before\+Updating\+Email(email) instead.\end{DoxyRefDesc}
+
+
+Sets the email address for the user.
+
+May fail if there is already an email/password-\/based account for the same email address. \Hypertarget{classfirebase_1_1auth_1_1_user_a1b92a94f9ab49b1715fda255ccee96e2}\index{firebase::auth::User@{firebase::auth::User}!UpdateEmailLastResult@{UpdateEmailLastResult}}
+\index{UpdateEmailLastResult@{UpdateEmailLastResult}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{UpdateEmailLastResult()}{UpdateEmailLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a1b92a94f9ab49b1715fda255ccee96e2} 
+FIREBASE\+\_\+\+DEPRECATED \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Update\+Email\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]\end{DoxyRefDesc}
+
+
+Get results of the most recent call to Update\+Email. \Hypertarget{classfirebase_1_1auth_1_1_user_a5ffe7734317835f25aaf7278673f6a1e}\index{firebase::auth::User@{firebase::auth::User}!UpdatePassword@{UpdatePassword}}
+\index{UpdatePassword@{UpdatePassword}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{UpdatePassword()}{UpdatePassword()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a5ffe7734317835f25aaf7278673f6a1e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::auth\+::\+User\+::\+Update\+Password (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{password}{}\end{DoxyParamCaption})}
+
+Attempts to change the password for the current user.
+
+For an account linked to an Identity Provider (IDP) with no password, this will result in the account becoming an email/password-\/based account while maintaining the IDP link. May fail if the password is invalid, if there is a conflicting email/password-\/based account, or if the token has expired. To retrieve fresh tokens,  $<$\+SWIG$>$  $<$/\+SWIG$>$ \Hypertarget{classfirebase_1_1auth_1_1_user_ac1b5ac8d049df0ce4bcfa7602930f3dc}\index{firebase::auth::User@{firebase::auth::User}!UpdatePhoneNumberCredential@{UpdatePhoneNumberCredential}}
+\index{UpdatePhoneNumberCredential@{UpdatePhoneNumberCredential}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{UpdatePhoneNumberCredential()}{UpdatePhoneNumberCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_ac1b5ac8d049df0ce4bcfa7602930f3dc} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} $>$ firebase\+::auth\+::\+User\+::\+Update\+Phone\+Number\+Credential (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{Phone\+Auth\+Credential}} \&}]{credential}{}\end{DoxyParamCaption})}
+
+Updates the currently linked phone number on the user. This is useful when a user wants to change their phone number. It is a shortcut to calling Unlink(phone\+\_\+credential.\+provider().c\+\_\+str()) and then Link\+With\+Credential(phone\+\_\+credential). {\ttfamily credential} must have been created with \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}. \Hypertarget{classfirebase_1_1auth_1_1_user_a740afc9294997fe09239b98f38cf69db}\index{firebase::auth::User@{firebase::auth::User}!UpdatePhoneNumberCredentialLastResult@{UpdatePhoneNumberCredentialLastResult}}
+\index{UpdatePhoneNumberCredentialLastResult@{UpdatePhoneNumberCredentialLastResult}!firebase::auth::User@{firebase::auth::User}}
+\doxysubsubsection{\texorpdfstring{UpdatePhoneNumberCredentialLastResult()}{UpdatePhoneNumberCredentialLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_a740afc9294997fe09239b98f38cf69db} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} $>$ firebase\+::auth\+::\+User\+::\+Update\+Phone\+Number\+Credential\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Get results of the most recent call to Update\+Phone\+Number\+Credential. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/user.\+h\end{DoxyCompactItemize}

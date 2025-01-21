@@ -1,0 +1,70 @@
+\doxysection{firebase\+::auth\+::Phone\+Auth\+Options Struct Reference}
+\hypertarget{structfirebase_1_1auth_1_1_phone_auth_options}{}\label{structfirebase_1_1auth_1_1_phone_auth_options}\index{firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}}
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::auth\+::Phone\+Auth\+Options\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{structfirebase_1_1auth_1_1_phone_auth_options__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Phone\+Auth\+Provider\+::\+Force\+Resending\+Token}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structfirebase_1_1auth_1_1_phone_auth_options_aec4aaf0d4994672709037da53a7b680b}{force\+\_\+resending\+\_\+token}}
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Phone\+Auth\+Provider\+::\+Force\+Resending\+Token} to force another verification SMS to be sent before the auto-\/retrieval timeout. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1auth_1_1_phone_auth_options_acad93564b1b7392e0e8f543deb978311}\label{structfirebase_1_1auth_1_1_phone_auth_options_acad93564b1b7392e0e8f543deb978311} 
+std\+::string {\bfseries phone\+\_\+number}
+\begin{DoxyCompactList}\small\item\em The phone number for sign-\/in, sign-\/up, or second factor enrollment. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structfirebase_1_1auth_1_1_phone_auth_options_a2e58febe0988c8ec04d86a7d1308148e}{timeout\+\_\+milliseconds}}
+\item 
+\mbox{\hyperlink{namespacefirebase_1_1auth_a9b38b42e47035c229760f293282a5664}{UIParent}} \mbox{\hyperlink{structfirebase_1_1auth_1_1_phone_auth_options_a6917ed9bb2cddbcd78dfce1d83c36e73}{ui\+\_\+parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Options object for configuring phone validation flows in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider}{Phone\+Auth\+Provider}. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1auth_1_1_phone_auth_options_aec4aaf0d4994672709037da53a7b680b}\index{firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}!force\_resending\_token@{force\_resending\_token}}
+\index{force\_resending\_token@{force\_resending\_token}!firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}}
+\doxysubsubsection{\texorpdfstring{force\_resending\_token}{force\_resending\_token}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_phone_auth_options_aec4aaf0d4994672709037da53a7b680b} 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Phone\+Auth\+Provider\+::\+Force\+Resending\+Token}}\texorpdfstring{$\ast$}{*} firebase\+::auth\+::\+Phone\+Auth\+Options\+::force\+\_\+resending\+\_\+token}
+
+
+
+Sets the \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_force_resending_token}{Phone\+Auth\+Provider\+::\+Force\+Resending\+Token} to force another verification SMS to be sent before the auto-\/retrieval timeout. 
+
+If nullptr, assume this is a new phone number to verify. If not-\/\+NULL, bypass the verification session deduping and force resending a new SMS. This token is received in \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a65f3a2abf007af3dfb1f8d2136bf4c29}{Phone\+Auth\+Provider\+::\+Listener\+::\+On\+Code\+Sent}. This should only be used when the user presses a Resend SMS button. \Hypertarget{structfirebase_1_1auth_1_1_phone_auth_options_a2e58febe0988c8ec04d86a7d1308148e}\index{firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}!timeout\_milliseconds@{timeout\_milliseconds}}
+\index{timeout\_milliseconds@{timeout\_milliseconds}!firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}}
+\doxysubsubsection{\texorpdfstring{timeout\_milliseconds}{timeout\_milliseconds}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_phone_auth_options_a2e58febe0988c8ec04d86a7d1308148e} 
+uint32\+\_\+t firebase\+::auth\+::\+Phone\+Auth\+Options\+::timeout\+\_\+milliseconds}
+
+The maximum amount of time you’re willing to wait for SMS auto-\/retrieval to be completed by the SDK.
+
+This value is supported on Android devices only.
+
+The minimum timeout is 30 seconds, and the maximum timeout is 2 minutes. If you specified a positive value less than 30 seconds, the SDK will default to 30 seconds. Specifying a timeout that is greater than 120 seconds will result in an Illegal\+Argument\+Exception being thrown.
+
+Use 0 to disable SMS-\/auto-\/retrieval. This will also cause \doxylink{classfirebase_1_1auth_1_1_phone_auth_provider_1_1_listener_a3ea7ebac04e74de3ff76996ce4090193}{Phone\+Auth\+Provider\+::\+Listener\+::\+On\+Code\+Auto\+Retrieval\+Time\+Out} to be called immediately. \Hypertarget{structfirebase_1_1auth_1_1_phone_auth_options_a6917ed9bb2cddbcd78dfce1d83c36e73}\index{firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}!ui\_parent@{ui\_parent}}
+\index{ui\_parent@{ui\_parent}!firebase::auth::PhoneAuthOptions@{firebase::auth::PhoneAuthOptions}}
+\doxysubsubsection{\texorpdfstring{ui\_parent}{ui\_parent}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_phone_auth_options_a6917ed9bb2cddbcd78dfce1d83c36e73} 
+\mbox{\hyperlink{namespacefirebase_1_1auth_a9b38b42e47035c229760f293282a5664}{UIParent}} firebase\+::auth\+::\+Phone\+Auth\+Options\+::ui\+\_\+parent}
+
+Sets the context to which the callbacks are scoped, and with which app verification will be completed.
+
+On Android, the context should be a jobject referencing an Android Activity. On Apple platforms, this should be a pointer to UIView. For any other platforms, the context is ignored.
+
+If ui\+\_\+parent isn’t defined (ie\+: nullptr or nil) then the Firebase\+App’s default Activity or UIView will be used. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

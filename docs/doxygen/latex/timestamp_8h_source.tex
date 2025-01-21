@@ -1,0 +1,150 @@
+\doxysection{timestamp.\+h}
+\hypertarget{timestamp_8h_source}{}\label{timestamp_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/timestamp.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/timestamp.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_TIMESTAMP\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_TIMESTAMP\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iosfwd>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#if\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <chrono>}\ \ \textcolor{comment}{//\ NOLINT(build/c++11)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\ \{}
+\DoxyCodeLine{00044\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classfirebase_1_1_timestamp_ac32e672755662f1056f0f5adabac787c}{Timestamp}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classfirebase_1_1_timestamp_aef76dce7a9ecf4c432e9cdebcd843893}{Timestamp}}(int64\_t\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}},\ int32\_t\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4b16397af48b6b5c968573f2c00b7ab7}{Timestamp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classfirebase_1_1_timestamp_ac96b74066e10d8a904448e8cdec1a162}{Timestamp}}(\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ \mbox{\hyperlink{classfirebase_1_1_timestamp_afa816e1acaad30b004952b88d7db1750}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a1ded6404b2caad001096436822fa42d4}{operator=}}(\mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a7667c46bfe64d56ec2aaf675069036a7}{Now}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ seconds\_;}
+\DoxyCodeLine{00092\ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ int32\_t\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ nanoseconds\_;}
+\DoxyCodeLine{00101\ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a8bec4b207c51b44bfc5afea8302cc50f}{FromTimeT}}(time\_t\ seconds\_since\_unix\_epoch);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#if\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a2fa2c8d8b5821aff9c3f3a6752d87369}{FromTimePoint}}(}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ std::chrono::time\_point<std::chrono::system\_clock>\ time\_point);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Clock\ =\ std::chrono::system\_clock,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Duration\ =\ std::chrono::microseconds>}
+\DoxyCodeLine{00147\ \ \ std::chrono::time\_point<Clock,\ Duration>\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4d037dfccf28fbd0efe6fbe8141d796c}{ToTimePoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00157\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a1b460866c2103cd59f9df6aa0e9e759d}{ToString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a5c22bd9e1ecd23f817dfb053eee25108}{operator<<}}(std::ostream\&\ out,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ timestamp);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00168\ \ \ \textcolor{comment}{//\ Checks\ that\ the\ number\ of\ seconds\ is\ within\ the\ supported\ date\ range,\ and}}
+\DoxyCodeLine{00169\ \ \ \textcolor{comment}{//\ that\ nanoseconds\ satisfy\ 0\ <=\ ns\ <=\ 1second.}}
+\DoxyCodeLine{00170\ \ \ \textcolor{keywordtype}{void}\ ValidateBounds()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ int64\_t\ seconds\_\ =\ 0;}
+\DoxyCodeLine{00173\ \ \ int32\_t\ nanoseconds\_\ =\ 0;}
+\DoxyCodeLine{00174\ \};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00177\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_a186f0d745dd4da9cee3ac733581b6229}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ rhs)\ \{}
+\DoxyCodeLine{00178\ \ \ \textcolor{keywordflow}{return}\ lhs.\mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}()\ <\ rhs.\mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}()\ ||}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ (lhs.\mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}()\ \&\&}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ lhs.\mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}}()\ <\ rhs.\mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}}());}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_a651a889d77fa3942a9840a34305fb32b}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ rhs)\ \{}
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordflow}{return}\ rhs\ <\ lhs;}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00189\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_af171375cda16911c33f659e3efa50856}{operator>=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ rhs)\ \{}
+\DoxyCodeLine{00190\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ <\ rhs);}
+\DoxyCodeLine{00191\ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_a31fe9c3a7e1dbee68a65b7bfcb557e5b}{operator<=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ rhs)\ \{}
+\DoxyCodeLine{00195\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ >\ rhs);}
+\DoxyCodeLine{00196\ \}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_add6df98f65d75bdcd068d0062a67b449}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ rhs)\ \{}
+\DoxyCodeLine{00200\ \ \ \textcolor{keywordflow}{return}\ lhs\ <\ rhs\ ||\ lhs\ >\ rhs;}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00204\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_ae591837f86a1f54877af84150b3cbed6}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_timestamp}{Timestamp}}\&\ rhs)\ \{}
+\DoxyCodeLine{00205\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ !=\ rhs);}
+\DoxyCodeLine{00206\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#if\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{comment}{//\ Make\ sure\ the\ header\ compiles\ even\ when\ included\ after\ \`{}<windows.h>`\ without}}
+\DoxyCodeLine{00211\ \textcolor{comment}{//\ \`{}NOMINMAX`\ defined.\ \`{}push/pop\_macro`\ pragmas\ are\ supported\ by\ Visual\ Studio}}
+\DoxyCodeLine{00212\ \textcolor{comment}{//\ as\ well\ as\ Clang\ and\ GCC.}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#pragma\ push\_macro("{}min"{})}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#pragma\ push\_macro("{}max"{})}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#undef\ min}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#undef\ max}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Clock,\ \textcolor{keyword}{typename}\ Duration>}
+\DoxyCodeLine{00219\ std::chrono::time\_point<Clock,\ Duration>\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4d037dfccf28fbd0efe6fbe8141d796c}{Timestamp::ToTimePoint}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00220\ \ \ \textcolor{keyword}{namespace\ }chr\ =\ std::chrono;}
+\DoxyCodeLine{00221\ \ \ \textcolor{keyword}{using\ }TimePoint\ =\ chr::time\_point<Clock,\ Duration>;}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \textcolor{comment}{//\ Saturate\ on\ overflow}}
+\DoxyCodeLine{00224\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ max\_seconds\ =\ chr::duration\_cast<chr::seconds>(Duration::max());}
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordflow}{if}\ (seconds\_\ >\ 0\ \&\&\ max\_seconds.count()\ <=\ seconds\_)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{return}\ TimePoint\{Duration::max()\};}
+\DoxyCodeLine{00227\ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ min\_seconds\ =\ chr::duration\_cast<chr::seconds>(Duration::min());}
+\DoxyCodeLine{00229\ \ \ \textcolor{keywordflow}{if}\ (seconds\_\ <\ 0\ \&\&\ min\_seconds.count()\ >=\ seconds\_)\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{return}\ TimePoint\{Duration::min()\};}
+\DoxyCodeLine{00231\ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}\ =\ chr::duration\_cast<Duration>(chr::seconds(seconds\_));}
+\DoxyCodeLine{00234\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}}\ =}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ chr::duration\_cast<Duration>(chr::nanoseconds(nanoseconds\_));}
+\DoxyCodeLine{00236\ \ \ \textcolor{keywordflow}{return}\ TimePoint\{\mbox{\hyperlink{classfirebase_1_1_timestamp_a7242d274c7e465f47e12c4a335c298f6}{seconds}}\ +\ \mbox{\hyperlink{classfirebase_1_1_timestamp_a4043ed07d7ddd859f53b02a643a62e0f}{nanoseconds}}\};}
+\DoxyCodeLine{00237\ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#pragma\ pop\_macro("{}max"{})}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#pragma\ pop\_macro("{}min"{})}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(\_STLPORT\_VERSION)}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_TIMESTAMP\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{play\+\_\+integrity\+\_\+provider.\+h}
+\hypertarget{play__integrity__provider_8h_source}{}\label{play__integrity__provider_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/app\_check/play\_integrity\_provider.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/app\_check/play\_integrity\_provider.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2022\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_PLAY\_INTEGRITY\_PROVIDER\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_PLAY\_INTEGRITY\_PROVIDER\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/app\_check.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }app\_check\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }PlayIntegrityProviderFactoryInternal;}
+\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{AppCheckProviderFactory}}\ \{}
+\DoxyCodeLine{00030\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}\&)\ =}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory_a1e572051e81bf0a59482057b84410f2d}{GetInstance}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase::app\_check::AppCheckProvider}}*\ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory_a450f7746b4dd4b02f3610523d3c5eed4}{CreateProvider}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{PlayIntegrityProviderFactory}}();}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_play_integrity_provider_factory}{\string~PlayIntegrityProviderFactory}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ internal::PlayIntegrityProviderFactoryInternal*\ internal\_;}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \}\ \ \textcolor{comment}{//\ namespace\ app\_check}}
+\DoxyCodeLine{00054\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_CHECK\_SRC\_INCLUDE\_FIREBASE\_APP\_CHECK\_PLAY\_INTEGRITY\_PROVIDER\_H\_}}
+
+\end{DoxyCode}

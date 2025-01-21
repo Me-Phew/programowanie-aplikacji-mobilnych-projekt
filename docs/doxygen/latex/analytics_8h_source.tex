@@ -1,0 +1,160 @@
+\doxysection{analytics.\+h}
+\hypertarget{analytics_8h_source}{}\label{analytics_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/analytics.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/analytics.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_ANALYTICS\_SRC\_INCLUDE\_FIREBASE\_ANALYTICS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_ANALYTICS\_SRC\_INCLUDE\_FIREBASE\_ANALYTICS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00031\ FIREBASE\_APP\_REGISTER\_CALLBACKS\_REFERENCE(analytics)}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)\ \&\&\ !defined(SWIG)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }analytics\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter}{Parameter}}\ \{}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aada5505c002bf36f1e35d484f6261087}{Parameter}}()\ :\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}(nullptr)\ \{\}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ <SWIG>}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ We\ don't\ want\ to\ pull\ in\ Variant\ in\ the\ C\#\ interface.}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ </SWIG>}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a88757052ac9bed32235a505e52e8cf7a}{Parameter}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ parameter\_value)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}(parameter\_name)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}}\ =\ parameter\_value;}
+\DoxyCodeLine{00147\ \ \ \}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !SWIG}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a80d12a6d4e25636270c574561468e515}{Parameter}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,\ \textcolor{keywordtype}{int}\ parameter\_value)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}(parameter\_name)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}}\ =\ parameter\_value;}
+\DoxyCodeLine{00167\ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a0e3da2af18d007e67eb540efa9ed344c}{Parameter}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,\ int64\_t\ parameter\_value)}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}(parameter\_name)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}}\ =\ parameter\_value;}
+\DoxyCodeLine{00186\ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00202\ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_a79042aa646c0fec8b77981c5ce6e9157}{Parameter}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,\ \textcolor{keywordtype}{double}\ parameter\_value)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}(parameter\_name)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}}\ =\ parameter\_value;}
+\DoxyCodeLine{00205\ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00222\ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_abfb180cbd208825145e45f0e0576c4bc}{Parameter}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_value)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}}(parameter\_name)\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}}\ =\ parameter\_value;}
+\DoxyCodeLine{00225\ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00228\ \ \ \textcolor{comment}{//\ <SWIG>}}
+\DoxyCodeLine{00229\ \ \ \textcolor{comment}{//\ Skipping\ implementation\ values\ because\ the\ C\#\ API\ members\ are}}
+\DoxyCodeLine{00230\ \ \ \textcolor{comment}{//\ immutable,\ and\ there's\ no\ other\ need\ to\ read\ these\ values\ in}}
+\DoxyCodeLine{00231\ \ \ \textcolor{comment}{//\ C\#.\ The\ class\ just\ needs\ to\ be\ passed\ to\ the\ C++\ layers.}}
+\DoxyCodeLine{00232\ \ \ \textcolor{comment}{//\ This\ also\ avoids\ having\ to\ solve\ the\ nested\ union,\ which\ is}}
+\DoxyCodeLine{00233\ \ \ \textcolor{comment}{//\ unsupported\ in\ swig.}}
+\DoxyCodeLine{00234\ \ \ \textcolor{comment}{//\ </SWIG>}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00242\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aba705f47b129352dfef5d9481cf907d7}{name}};}
+\DoxyCodeLine{00247\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter_aa894317308ad4208f3a195c301005ed6}{value}};}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00249\ \};}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00259\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_ab15684936a9f93921f0fa31deb508a4d}{Initialize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_app}{App}}\&\ app);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00264\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a4ffbdf8db17725dd3c2e1732fb6a8009}{Terminate}}();}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00272\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a5615fefec127488911e140d180ee7479}{SetAnalyticsCollectionEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166}{ConsentType}}\ \{}
+\DoxyCodeLine{00279\ \ \ kConsentTypeAdStorage\ =\ 0,}
+\DoxyCodeLine{00280\ \ \ kConsentTypeAnalyticsStorage,}
+\DoxyCodeLine{00281\ \ \ kConsentTypeAdUserData,}
+\DoxyCodeLine{00282\ \ \ kConsentTypeAdPersonalization}
+\DoxyCodeLine{00283\ \};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00288\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f}{ConsentStatus}}\ \{\ kConsentStatusGranted\ =\ 0,\ kConsentStatusDenied\ \};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00296\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a2942e4f437ff60079bc786c5ea8bb474}{SetConsent}}(\textcolor{keyword}{const}\ std::map<ConsentType,\ ConsentStatus>\&\ consent\_settings);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00327\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_value);}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00359\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ parameter\_value);}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00391\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ int64\_t\ parameter\_value);}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00424\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ parameter\_name,}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ parameter\_value);}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00453\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#ifdef\ SWIG}}
+\DoxyCodeLine{00457\ \textcolor{comment}{//\ Modify\ the\ following\ overload\ with\ unsafe,\ so\ that\ we\ can\ do\ some\ pinning}}
+\DoxyCodeLine{00458\ \textcolor{comment}{//\ in\ the\ C\#\ code.}}
+\DoxyCodeLine{00459\ \%csmethodmodifiers\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}\ \textcolor{stringliteral}{"{}public\ unsafe"{}}}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00461\ \textcolor{comment}{//\ clang-\/format\ on}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00483\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{LogEvent}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter}{Parameter}}*\ parameters,}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ number\_of\_parameters);}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00492\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a3b2895a358908e8352f479422ec48dc0}{InitiateOnDeviceConversionMeasurementWithEmailAddress}}(}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email\_address);}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00503\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_afdd62efe3ae1461d6fcc40e5ee4c5c00}{InitiateOnDeviceConversionMeasurementWithPhoneNumber}}(}
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ phone\_number);}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00524\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_aaf483fcf6eeaf78db243635783b4f6b1}{SetUserProperty}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ property);}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00535\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a45bf93e57c474e4ab36f92433e62cfbd}{SetUserId}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ user\_id);}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00543\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_affa3d0db3d8803d15b1d0d951adf6fb7}{SetSessionTimeoutDuration}}(int64\_t\ milliseconds);}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00547\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_aa011e496efbc85e1e740d8caadd8e37b}{ResetAnalyticsData}}();}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00559\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_a8e165637a983c3c323f653e4fe4f385c}{GetAnalyticsInstanceId}}();}
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00564\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_aa8c4de43c75da8a54a88c7d54de04de2}{GetAnalyticsInstanceIdLastResult}}();}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00574\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<int64\_t>}}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_af0740417ffed7571a2567b3d965e39a5}{GetSessionId}}();}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00580\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<int64\_t>}}\ \mbox{\hyperlink{namespacefirebase_1_1analytics_ad12b197133050338f532af442b668ba2}{GetSessionIdLastResult}}();}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \}\ \ \textcolor{comment}{//\ namespace\ analytics}}
+\DoxyCodeLine{00583\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_ANALYTICS\_SRC\_INCLUDE\_FIREBASE\_ANALYTICS\_H\_}}
+
+\end{DoxyCode}

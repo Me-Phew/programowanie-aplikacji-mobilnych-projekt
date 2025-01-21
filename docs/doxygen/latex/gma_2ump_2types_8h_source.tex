@@ -1,0 +1,120 @@
+\doxysection{types.\+h}
+\hypertarget{gma_2ump_2types_8h_source}{}\label{gma_2ump_2types_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/ump/types.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/ump/types.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2023\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_UMP\_TYPES\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_UMP\_TYPES\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/platform.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <jni.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#elif\ FIREBASE\_PLATFORM\_IOS\ ||\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <objc/objc.h>}}
+\DoxyCodeLine{00031\ \}\ \ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID,\ FIREBASE\_PLATFORM\_IOS,}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }ump\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f}{ConsentDebugGeography}}\ \{}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae989846ffeb964b6dd0aa00f2c62c76a}{kConsentDebugGeographyDisabled}}\ =\ 0,}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae22e21b1a97c684406d413cd3a1218af}{kConsentDebugGeographyEEA}},}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fad38d46763fbd2c76418d2c43c034d40c}{kConsentDebugGeographyNonEEA}}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings}{ConsentDebugSettings}}\ \{}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings_a7fcca3b1ecda632d2dcf15782e10ed0b}{ConsentDebugSettings}}()\ :\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings_ae0734501b4f4f75af6cf3d73283b703d}{debug\_geography}}(\mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74fae989846ffeb964b6dd0aa00f2c62c76a}{kConsentDebugGeographyDisabled}})\ \{\}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a4d5617f24718c0f4f2e4d3268874d74f}{ConsentDebugGeography}}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings_ae0734501b4f4f75af6cf3d73283b703d}{debug\_geography}};}
+\DoxyCodeLine{00060\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings_ad22b1dc51ba486e370090ff97d86e1ea}{debug\_device\_ids}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters}{ConsentRequestParameters}}\ \{}
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters}{ConsentRequestParameters}}()\ :\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters_a733716b4ab542cc8fca68042554c6d83}{tag\_for\_under\_age\_of\_consent}}(\textcolor{keyword}{false})\ \{\}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_debug_settings}{ConsentDebugSettings}}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters_a562a007368cdc804625ae9d27794fc40}{debug\_settings}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1ump_1_1_consent_request_parameters_a733716b4ab542cc8fca68042554c6d83}{tag\_for\_under\_age\_of\_consent}};}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00084\ \textcolor{keyword}{typedef}\ jobject\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{FormParent}};}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#elif\ FIREBASE\_PLATFORM\_IOS\ ||\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{id}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{FormParent}};}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a2aef33d9a1aa6bf80c70b40ef9c0268e}{FormParent}};}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID,\ FIREBASE\_PLATFORM\_IOS,}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cf}{ConsentStatus}}\ \{}
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa4925be3d87bfc1d5bac8edc96161f1f4}{kConsentStatusUnknown}}\ =\ 0,}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa0642ccb2affc60fa3da5aaf83a284061}{kConsentStatusRequired}},}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfaf058796c48341e133eb1396c929e8b9a}{kConsentStatusNotRequired}},}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a9185ca551351378e3c99e2cd357979cfa9e5c8d0f7935690e6eacc95838159507}{kConsentStatusObtained}}}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45f}{ConsentRequestError}}\ \{}
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa3a7bb7fb2f30cac7a02ebfa6c88ab45a}{kConsentRequestSuccess}}\ =\ 0,}
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fac874294b362466bac99ebbb84f843478}{kConsentRequestErrorInvalidAppId}},}
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa59a2421dde5278658142adeb0a59f49a}{kConsentRequestErrorNetwork}},}
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa94a1c781cee8a486ccd80aa6388873cd}{kConsentRequestErrorInternal}},}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fad12615ce5e00bfccd504252afeb90adf}{kConsentRequestErrorMisconfiguration}},}
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa8d65aaf89e7b8ba6c7b084c7ec79a3bb}{kConsentRequestErrorUnknown}},}
+\DoxyCodeLine{00121\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45faa84ae03bdbdfce003b79236108f857fb}{kConsentRequestErrorInvalidOperation}},}
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a8cd2fc9dded81fbba4f1d4c2ac3ee45fa0bdd1e8a2e5b4fba7104a33059413eff}{kConsentRequestErrorOperationInProgress}}}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233d}{ConsentFormStatus}}\ \{}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233da237d1f16704094de356cdb274df47630}{kConsentFormStatusUnknown}}\ =\ 0,}
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233dac5579ed8ffe224280d0192ee37cb43b7}{kConsentFormStatusUnavailable}},}
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a257886851ea6ac048f36cb87e623233da375d6a4623ae1818aa5b3ebf27b8a53e}{kConsentFormStatusAvailable}},}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983}{ConsentFormError}}\ \{}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a56ae829f6b68adcc5c5db48947d1f1c7}{kConsentFormSuccess}}\ =\ 0,}
+\DoxyCodeLine{00146\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a2a5f9a57761a115bba8e5b6a96e0d6bb}{kConsentFormErrorTimeout}},}
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a02fcae9b629866f1b621908ca1be2623}{kConsentFormErrorInternal}},}
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a1d06a7a383f55a7a6b14ad56ae6b3a79}{kConsentFormErrorUnknown}},}
+\DoxyCodeLine{00152\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a5d425ea25c34781c3ea9282d7e0e1488}{kConsentFormErrorUnavailable}},}
+\DoxyCodeLine{00154\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a52ee1332960f4c69d09054f7082bf1af}{kConsentFormErrorAlreadyUsed}},}
+\DoxyCodeLine{00156\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a146f75b03f50c79f1808fad5e7dd4c28}{kConsentFormErrorInvalidOperation}},}
+\DoxyCodeLine{00160\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_a1dc9def6277f9e2bfd76bbe5c4780983a3c1a3cb36d20b43a4266043b7470c6f2}{kConsentFormErrorOperationInProgress}}}
+\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64}{PrivacyOptionsRequirementStatus}}\ \{}
+\DoxyCodeLine{00167\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64ad3f9cfadbaf9e8de43e150b65f5c8537}{kPrivacyOptionsRequirementStatusUnknown}}\ =\ 0,}
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64a0ff46cde0b025df30439eeacdf3046f3}{kPrivacyOptionsRequirementStatusNotRequired}},}
+\DoxyCodeLine{00172\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_1_1ump_ad94746f2f3492e68b92738b9cf4cfb64a52d7bb8a5ffffefdebd2d4d61d5cad23}{kPrivacyOptionsRequirementStatusRequired}}}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \}\ \ \textcolor{comment}{//\ namespace\ ump}}
+\DoxyCodeLine{00176\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00177\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_UMP\_TYPES\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,93 @@
+\doxysection{firebase\+::gma\+::Native\+Ad Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_native_ad}{}\label{classfirebase_1_1gma_1_1_native_ad}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a8563b73464da98c8834c08b7d45e49f2}{Initialize}} (\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}} parent)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a609344868d91b595b275f98b12a8fd9b}{Initialize\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a5debc33975e1e7828fedfa8cbee0b054}{Load\+Ad}} (const char \texorpdfstring{$\ast$}{*}ad\+\_\+unit\+\_\+id, const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&request)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_ac960e8ad24d0c144d08c8b8999489e77}{Load\+Ad\+Last\+Result}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a2b735fb3b499daf25532821c0a9677d2}{Set\+Ad\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_native_ad_a49c28508f84014c3c4fe0ba524c8670b}\label{classfirebase_1_1gma_1_1_native_ad_a49c28508f84014c3c4fe0ba524c8670b} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{Native\+Ad\+Image}} \& {\bfseries icon} () const
+\begin{DoxyCompactList}\small\item\em Returns the associated icon asset of the native ad. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_native_ad_a8a8514e7b38af4d37cb34105a2826feb}\label{classfirebase_1_1gma_1_1_native_ad_a8a8514e7b38af4d37cb34105a2826feb} 
+const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{Native\+Ad\+Image}} $>$ \& {\bfseries images} () const
+\begin{DoxyCompactList}\small\item\em Returns the associated image assets of the native ad. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_native_ad_aa4d904f6e04b263aeeea7a6bc4d023aa}\label{classfirebase_1_1gma_1_1_native_ad_aa4d904f6e04b263aeeea7a6bc4d023aa} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_image}{Native\+Ad\+Image}} \& {\bfseries adchoices\+\_\+icon} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_native_ad_a43ebd573c65699f5b00109766f16ab34}\label{classfirebase_1_1gma_1_1_native_ad_a43ebd573c65699f5b00109766f16ab34} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Record\+Impression} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&impression\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Only allowlisted ad units use this api. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_ad3438212fc9a639474fd672d02b4f0c2}{Record\+Impression\+Last\+Result}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_native_ad_a72962112e872d2f6a7687550cc2d9213}\label{classfirebase_1_1gma_1_1_native_ad_a72962112e872d2f6a7687550cc2d9213} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Perform\+Click} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&click\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Only allowlisted ad units use this api. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_native_ad_a026c4d7e583d018680dfde129da3d536}{Perform\+Click\+Last\+Result}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_native_ad_a8563b73464da98c8834c08b7d45e49f2}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_a8563b73464da98c8834c08b7d45e49f2} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Native\+Ad\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}}}]{parent}{}\end{DoxyParamCaption})}
+
+Initialize the \doxylink{classfirebase_1_1gma_1_1_native_ad}{Native\+Ad} object. parent\+: The platform-\/specific UI element that will host the ad. \Hypertarget{classfirebase_1_1gma_1_1_native_ad_a609344868d91b595b275f98b12a8fd9b}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!InitializeLastResult@{InitializeLastResult}}
+\index{InitializeLastResult@{InitializeLastResult}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{InitializeLastResult()}{InitializeLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_a609344868d91b595b275f98b12a8fd9b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Native\+Ad\+::\+Initialize\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to Initialize. \Hypertarget{classfirebase_1_1gma_1_1_native_ad_a5debc33975e1e7828fedfa8cbee0b054}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!LoadAd@{LoadAd}}
+\index{LoadAd@{LoadAd}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{LoadAd()}{LoadAd()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_a5debc33975e1e7828fedfa8cbee0b054} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Native\+Ad\+::\+Load\+Ad (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ad\+\_\+unit\+\_\+id}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&}]{request}{}\end{DoxyParamCaption})}
+
+Begins an asynchronous request for an ad.
+
+ad\+\_\+unit\+\_\+id\+: The ad unit ID to use in loading the ad. request\+: An \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request} struct with information about the request to be made (such as targeting info). \Hypertarget{classfirebase_1_1gma_1_1_native_ad_ac960e8ad24d0c144d08c8b8999489e77}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!LoadAdLastResult@{LoadAdLastResult}}
+\index{LoadAdLastResult@{LoadAdLastResult}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{LoadAdLastResult()}{LoadAdLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_ac960e8ad24d0c144d08c8b8999489e77} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Native\+Ad\+::\+Load\+Ad\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to Load\+Ad. \Hypertarget{classfirebase_1_1gma_1_1_native_ad_a026c4d7e583d018680dfde129da3d536}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!PerformClickLastResult@{PerformClickLastResult}}
+\index{PerformClickLastResult@{PerformClickLastResult}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{PerformClickLastResult()}{PerformClickLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_a026c4d7e583d018680dfde129da3d536} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Native\+Ad\+::\+Perform\+Click\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to Perform\+Click. \Hypertarget{classfirebase_1_1gma_1_1_native_ad_ad3438212fc9a639474fd672d02b4f0c2}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!RecordImpressionLastResult@{RecordImpressionLastResult}}
+\index{RecordImpressionLastResult@{RecordImpressionLastResult}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{RecordImpressionLastResult()}{RecordImpressionLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_ad3438212fc9a639474fd672d02b4f0c2} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Native\+Ad\+::\+Record\+Impression\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to Record\+Impression. \Hypertarget{classfirebase_1_1gma_1_1_native_ad_a2b735fb3b499daf25532821c0a9677d2}\index{firebase::gma::NativeAd@{firebase::gma::NativeAd}!SetAdListener@{SetAdListener}}
+\index{SetAdListener@{SetAdListener}!firebase::gma::NativeAd@{firebase::gma::NativeAd}}
+\doxysubsubsection{\texorpdfstring{SetAdListener()}{SetAdListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_native_ad_a2b735fb3b499daf25532821c0a9677d2} 
+void firebase\+::gma\+::\+Native\+Ad\+::\+Set\+Ad\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Sets an \doxylink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener} for this native ad.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & An \doxylink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener} object which will be invoked when lifecycle events occur on this \doxylink{classfirebase_1_1gma_1_1_native_ad}{Native\+Ad}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/internal/native\+\_\+ad.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="firebase::auth::AdditionalUserInfo" name="firebase::auth::AdditionalUserInfo">
+<area shape="rect" id="Node000001" title="Additional user data returned from an identity provider." alt="" coords="6,96,172,139"/>
+<area shape="rect" id="Node000002" href="$classfirebase_1_1auth_1_1_credential.html" title="Authentication credentials for an authentication provider." alt="" coords="5,5,173,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,48,92,95,86,95,86,48"/>
+</map>

@@ -1,0 +1,101 @@
+\doxysection{firebase\+::gma\+::Ad\+Error Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_ad_error}{}\label{classfirebase_1_1gma_1_1_ad_error}\index{firebase::gma::AdError@{firebase::gma::AdError}}
+
+
+Information about why an ad operation failed.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_a1b94324ddc1ab32649bca69ac30eeabb}\label{classfirebase_1_1gma_1_1_ad_error_a1b94324ddc1ab32649bca69ac30eeabb} 
+{\bfseries Ad\+Error} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_a77580c82486072f1df1845d359a13019}\label{classfirebase_1_1gma_1_1_ad_error_a77580c82486072f1df1845d359a13019} 
+{\bfseries Ad\+Error} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \&ad\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_a35cd7b4e801b8b6dd066a0276dab9665}\label{classfirebase_1_1gma_1_1_ad_error_a35cd7b4e801b8b6dd066a0276dab9665} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ad\+Error} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_adb46996768ccdbd56f1243ceafcd2bb1}\label{classfirebase_1_1gma_1_1_ad_error_adb46996768ccdbd56f1243ceafcd2bb1} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \&obj)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_ab84a96a3ffc9734a7abbd3d1fd351e23}{Get\+Cause}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_a82066177203fdbde859db56edff182a0}\label{classfirebase_1_1gma_1_1_ad_error_a82066177203fdbde859db56edff182a0} 
+\mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14}{Ad\+Error\+Code}} {\bfseries code} () const
+\begin{DoxyCompactList}\small\item\em Gets the error\textquotesingle{}s code. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_ae1228ba484951c40bd8f80d32503fc2f}\label{classfirebase_1_1gma_1_1_ad_error_ae1228ba484951c40bd8f80d32503fc2f} 
+const std\+::string \& {\bfseries domain} () const
+\begin{DoxyCompactList}\small\item\em Gets the domain of the error. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_afbd0c48fbd60a924131b988d9530d668}\label{classfirebase_1_1gma_1_1_ad_error_afbd0c48fbd60a924131b988d9530d668} 
+const std\+::string \& {\bfseries message} () const
+\begin{DoxyCompactList}\small\item\em Gets the message describing the error. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{Response\+Info}} \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a6cbba63f609f27f7ddcf1db410049dd5}{response\+\_\+info}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_a454dc49bbb1815ffe00a1d69583cb908}\label{classfirebase_1_1gma_1_1_ad_error_a454dc49bbb1815ffe00a1d69583cb908} 
+virtual const std\+::string \& {\bfseries To\+String} () const
+\begin{DoxyCompactList}\small\item\em Returns a log friendly string version of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \texorpdfstring{$\ast$}{*}const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_aab24d46d221e40b709989dce691d57e3}{k\+Undefined\+Domain}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_afa19f317408c06c448aa824a84043b9a}\label{classfirebase_1_1gma_1_1_ad_error_afa19f317408c06c448aa824a84043b9a} 
+class {\bfseries Adapter\+Response\+Info}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_aa5b423678a12251e5caa8b1c0d0958eb}\label{classfirebase_1_1gma_1_1_ad_error_aa5b423678a12251e5caa8b1c0d0958eb} 
+class {\bfseries Gma\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_aeead42a76037ccbb3a58514d558b188d}\label{classfirebase_1_1gma_1_1_ad_error_aeead42a76037ccbb3a58514d558b188d} 
+class {\bfseries Ad\+View}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_ac52d39aafd2244657a85ebd09a62a83d}\label{classfirebase_1_1gma_1_1_ad_error_ac52d39aafd2244657a85ebd09a62a83d} 
+class {\bfseries Interstitial\+Ad}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about why an ad operation failed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_ab84a96a3ffc9734a7abbd3d1fd351e23}\index{firebase::gma::AdError@{firebase::gma::AdError}!GetCause@{GetCause}}
+\index{GetCause@{GetCause}!firebase::gma::AdError@{firebase::gma::AdError}}
+\doxysubsubsection{\texorpdfstring{GetCause()}{GetCause()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_error_ab84a96a3ffc9734a7abbd3d1fd351e23} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} $>$ firebase\+::gma\+::\+Ad\+Error\+::\+Get\+Cause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Retrieves an \doxylink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error} which represents the cause of this error.
+
+\begin{DoxyReturn}{Returns}
+a pointer to an ad\+Error which represents the cause of this \doxylink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}. If there was no cause then nullptr is returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_a6cbba63f609f27f7ddcf1db410049dd5}\index{firebase::gma::AdError@{firebase::gma::AdError}!response\_info@{response\_info}}
+\index{response\_info@{response\_info}!firebase::gma::AdError@{firebase::gma::AdError}}
+\doxysubsubsection{\texorpdfstring{response\_info()}{response\_info()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_error_a6cbba63f609f27f7ddcf1db410049dd5} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{Response\+Info}} \& firebase\+::gma\+::\+Ad\+Error\+::response\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Gets the \doxylink{classfirebase_1_1gma_1_1_response_info}{Response\+Info} if an error occurred during a load\+Ad operation. The \doxylink{classfirebase_1_1gma_1_1_response_info}{Response\+Info} will have empty fields if this \doxylink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error} does not represent an error stemming from a load ad operation. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_error_aab24d46d221e40b709989dce691d57e3}\index{firebase::gma::AdError@{firebase::gma::AdError}!kUndefinedDomain@{kUndefinedDomain}}
+\index{kUndefinedDomain@{kUndefinedDomain}!firebase::gma::AdError@{firebase::gma::AdError}}
+\doxysubsubsection{\texorpdfstring{kUndefinedDomain}{kUndefinedDomain}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_error_aab24d46d221e40b709989dce691d57e3} 
+const char\texorpdfstring{$\ast$}{*} const firebase\+::gma\+::\+Ad\+Error\+::k\+Undefined\+Domain\hspace{0.3cm}{\ttfamily [static]}}
+
+A domain string which represents an undefined error domain.
+
+The GMA SDK returns this domain for \doxylink{classfirebase_1_1gma_1_1_ad_error_ae1228ba484951c40bd8f80d32503fc2f}{domain()} method invocations when converting error information from legacy mediation adapter callbacks. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

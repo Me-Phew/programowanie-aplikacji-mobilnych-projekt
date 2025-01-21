@@ -1,0 +1,295 @@
+\doxysection{firebase\+::database Namespace Reference}
+\hypertarget{namespacefirebase_1_1database}{}\label{namespacefirebase_1_1database}\index{firebase::database@{firebase::database}}
+
+
+Namespace for the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} C++ SDK.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}}
+\begin{DoxyCompactList}\small\item\em Entry point for the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} C++ SDK. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler}{Disconnection\+Handler}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}}
+\item 
+class \mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}{Transaction\+Result}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec}{Do\+Transaction}}) (\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} \texorpdfstring{$\ast$}{*}data)
+\item 
+typedef \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}{Transaction\+Result}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9}{Do\+Transaction\+With\+Context}}) (\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} \texorpdfstring{$\ast$}{*}data, void \texorpdfstring{$\ast$}{*}context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}} \{ \newline
+\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a4589f1a305b7bf25951b8b345ca2ea53}{k\+Error\+None}} = 0
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a449ec7d89f1ea10b60d8c482705a7d80}{k\+Error\+Disconnected}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ae4107651eb03b3a5578c1d269e3e1584}{k\+Error\+Expired\+Token}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231abf25851e1999cd0468de8a94834306d8}{k\+Error\+Invalid\+Token}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a1489f3c18bc92ddcef64fd025b6fbcad}{k\+Error\+Max\+Retries}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231aac353a1e53bcfc6cc2d60adb32bf6e4d}{k\+Error\+Network\+Error}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a51ccc4696f0f8ad24aad214af174fe7e}{k\+Error\+Operation\+Failed}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231af91a63a16e4bbe859d70273dc9214599}{k\+Error\+Overridden\+By\+Set}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ac562f511e335597e9ee888e931ab2987}{k\+Error\+Permission\+Denied}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231af0fc64bd2fa60402e9973bc8f6f444e4}{k\+Error\+Unavailable}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231aafb67f0652362c7f68a16adc99f08595}{k\+Error\+Unknown\+Error}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ac821e79bdf06f7e3acaa440da5a1a801}{k\+Error\+Write\+Canceled}}
+, \newline
+\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a2b46764d2c7479b6859e129ab7385536}{k\+Error\+Invalid\+Variant\+Type}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a0c9d49d794f752622fa5dcd8813ae302}{k\+Error\+Conflicting\+Operation\+In\+Progress}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ae64c6ce35e43893af8d2470f451b25d0}{k\+Error\+Transaction\+Aborted\+By\+User}}
+ \}
+\begin{DoxyCompactList}\small\item\em Error code returned by Firebase Realtime Database C++ functions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}{Transaction\+Result}} \{ \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704baf36b83b017bf6d1e33470b73ea9b1cd4}{k\+Transaction\+Result\+Success}}
+, \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704ba1cb82f507416604bbca91980b0fd4c69}{k\+Transaction\+Result\+Abort}}
+ \}
+\begin{DoxyCompactList}\small\item\em Specifies whether the transaction succeeded or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespacefirebase_1_1database_a31e46acb6082d1b6060fc79149a6a0eb}{Get\+Error\+Message}} (\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}} error)
+\begin{DoxyCompactList}\small\item\em Get the human-\/readable error message corresponding to an error code. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \& \mbox{\hyperlink{namespacefirebase_1_1database_af567fafd0b0b1241a6fc3e7f16f9db52}{Server\+Timestamp}} ()
+\begin{DoxyCompactList}\small\item\em Get a server-\/populated value corresponding to the current timestamp. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1database_a9bd2c0dd411d5ddbbd0e0d457c9ea65c}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacefirebase_1_1database_aceba02421311a4797694a38b2f1b2b74}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&rhs)
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace for the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} C++ SDK. 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec}\index{firebase::database@{firebase::database}!DoTransaction@{DoTransaction}}
+\index{DoTransaction@{DoTransaction}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{DoTransaction}{DoTransaction}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec} 
+typedef \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}{Transaction\+Result}}(\texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Do\+Transaction) (\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} \texorpdfstring{$\ast$}{*}data)}
+
+Your own transaction handler, which the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} library may call multiple times to apply changes to the data, and should return success or failure depending on whether it succeeds. \begin{DoxyNote}{Note}
+This version of the callback is no longer supported (unless you are building for Android with stlport). You should use either one of Do\+Transaction\+With\+Context (a simple function pointer that accepts context data) or Do\+Transaction\+Function (based on std\+::function).
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9}{Do\+Transaction\+With\+Context} for more information. 
+\end{DoxySeeAlso}
+\Hypertarget{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9}\index{firebase::database@{firebase::database}!DoTransactionWithContext@{DoTransactionWithContext}}
+\index{DoTransactionWithContext@{DoTransactionWithContext}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{DoTransactionWithContext}{DoTransactionWithContext}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9} 
+typedef \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}{Transaction\+Result}}(\texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Do\+Transaction\+With\+Context) (\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data}} \texorpdfstring{$\ast$}{*}data, void \texorpdfstring{$\ast$}{*}context)}
+
+Your own transaction handler, which the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} library may call multiple times to apply changes to the data, and should return success or failure depending on whether it succeeds. The context you specified to Run\+Transaction will be passed into this call.
+
+This function will be called, {\itshape possibly multiple times}, with the current data at this location. The function is responsible for inspecting that data and modifying it as desired, then returning a Transaction\+Result specifying either that the \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} was modified to a desired new state, or that the transaction should be aborted. Whenever this function is called, the \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} passed in must be modified from scratch.
+
+Since this function may be called repeatedly for the same transaction, be extremely careful of any side effects that may be triggered by this function. In addition, this function is called from within the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} library\textquotesingle{}s run loop, so care is also required when accessing data that may be in use by other threads in your application.
+
+Best practices for this function are to ONLY rely on the data passed in.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & Mutable data, which the callback can edit. \\
+\hline
+\mbox{\texttt{ in}}  & {\em context} & Context pointer, passed verbatim to the callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The callback should return k\+Transaction\+Result\+Success if the data was modified, or k\+Transaction\+Result\+Abort if it was unable to modify the data. If the callback returns k\+Transaction\+Result\+Abort, the Run\+Transaction() call will return the k\+Error\+Transaction\+Aborted\+By\+User error code.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If you want a callback to be triggered when the transaction is finished, you can use the Future$<$\+Data\+Snapshot$>$ value returned by the method running the transaction, and call \doxylink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{Future\+::\+On\+Completion()} to register a callback to be called when the transaction either succeeds or fails.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec}{Do\+Transaction} for more information. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}\index{firebase::database@{firebase::database}!Error@{Error}}
+\index{Error@{Error}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+enum \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{firebase\+::database\+::\+Error}}}
+
+
+
+Error code returned by Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} C++ functions. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNone@{kErrorNone}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorNone@{kErrorNone}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a4589f1a305b7bf25951b8b345ca2ea53}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+None&The operation was a success, no error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorDisconnected@{kErrorDisconnected}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorDisconnected@{kErrorDisconnected}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a449ec7d89f1ea10b60d8c482705a7d80}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Disconnected&The operation had to be aborted due to a network disconnect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorExpiredToken@{kErrorExpiredToken}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorExpiredToken@{kErrorExpiredToken}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ae4107651eb03b3a5578c1d269e3e1584}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Expired\+Token&The supplied auth token has expired. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorInvalidToken@{kErrorInvalidToken}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorInvalidToken@{kErrorInvalidToken}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231abf25851e1999cd0468de8a94834306d8}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Invalid\+Token&The specified authentication token is invalid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorMaxRetries@{kErrorMaxRetries}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorMaxRetries@{kErrorMaxRetries}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a1489f3c18bc92ddcef64fd025b6fbcad}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Max\+Retries&The transaction had too many retries. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorNetworkError@{kErrorNetworkError}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorNetworkError@{kErrorNetworkError}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231aac353a1e53bcfc6cc2d60adb32bf6e4d}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Network\+Error&The operation could not be performed due to a network error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorOperationFailed@{kErrorOperationFailed}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorOperationFailed@{kErrorOperationFailed}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a51ccc4696f0f8ad24aad214af174fe7e}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Operation\+Failed&The server indicated that this operation failed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorOverriddenBySet@{kErrorOverriddenBySet}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorOverriddenBySet@{kErrorOverriddenBySet}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231af91a63a16e4bbe859d70273dc9214599}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Overridden\+By\+Set&The transaction was overridden by a subsequent set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorPermissionDenied@{kErrorPermissionDenied}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorPermissionDenied@{kErrorPermissionDenied}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ac562f511e335597e9ee888e931ab2987}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Permission\+Denied&This client does not have permission to perform this operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnavailable@{kErrorUnavailable}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorUnavailable@{kErrorUnavailable}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231af0fc64bd2fa60402e9973bc8f6f444e4}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Unavailable&The service is unavailable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorUnknownError@{kErrorUnknownError}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorUnknownError@{kErrorUnknownError}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231aafb67f0652362c7f68a16adc99f08595}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Unknown\+Error&An unknown error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorWriteCanceled@{kErrorWriteCanceled}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorWriteCanceled@{kErrorWriteCanceled}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ac821e79bdf06f7e3acaa440da5a1a801}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Write\+Canceled&The write was canceled locally. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorInvalidVariantType@{kErrorInvalidVariantType}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorInvalidVariantType@{kErrorInvalidVariantType}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a2b46764d2c7479b6859e129ab7385536}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Invalid\+Variant\+Type&You specified an invalid \doxylink{classfirebase_1_1_variant}{Variant} type for a field. For example, a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}\textquotesingle{}s Priority and the keys of a Map must be of scalar type (Mutable\+String, Static\+String, Int64, Double). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorConflictingOperationInProgress@{kErrorConflictingOperationInProgress}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorConflictingOperationInProgress@{kErrorConflictingOperationInProgress}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a0c9d49d794f752622fa5dcd8813ae302}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Conflicting\+Operation\+In\+Progress&An operation that conflicts with this one is already in progress. For example, calling Set\+Value and Set\+Value\+And\+Priority on a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} is not allowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kErrorTransactionAbortedByUser@{kErrorTransactionAbortedByUser}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kErrorTransactionAbortedByUser@{kErrorTransactionAbortedByUser}}}\Hypertarget{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ae64c6ce35e43893af8d2470f451b25d0}\label{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231} 
+k\+Error\+Transaction\+Aborted\+By\+User&The transaction was aborted, because the user\textquotesingle{}s Do\+Transaction function returned k\+Transaction\+Result\+Abort instead of k\+Transaction\+Result\+Success. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}\index{firebase::database@{firebase::database}!TransactionResult@{TransactionResult}}
+\index{TransactionResult@{TransactionResult}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{TransactionResult}{TransactionResult}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b} 
+enum \mbox{\hyperlink{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b}{firebase\+::database\+::\+Transaction\+Result}}}
+
+
+
+Specifies whether the transaction succeeded or not. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTransactionResultSuccess@{kTransactionResultSuccess}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kTransactionResultSuccess@{kTransactionResultSuccess}}}\Hypertarget{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704baf36b83b017bf6d1e33470b73ea9b1cd4}\label{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b} 
+k\+Transaction\+Result\+Success&The transaction was successful, the \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} was updated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTransactionResultAbort@{kTransactionResultAbort}!firebase::database@{firebase::database}}\index{firebase::database@{firebase::database}!kTransactionResultAbort@{kTransactionResultAbort}}}\Hypertarget{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704ba1cb82f507416604bbca91980b0fd4c69}\label{namespacefirebase_1_1database_a9809aaddcfabafdeedee53895914704b} 
+k\+Transaction\+Result\+Abort&The transaction did not succeed. Any changes to the \doxylink{classfirebase_1_1database_1_1_mutable_data}{Mutable\+Data} will be discarded. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefirebase_1_1database_a31e46acb6082d1b6060fc79149a6a0eb}\index{firebase::database@{firebase::database}!GetErrorMessage@{GetErrorMessage}}
+\index{GetErrorMessage@{GetErrorMessage}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{GetErrorMessage()}{GetErrorMessage()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_a31e46acb6082d1b6060fc79149a6a0eb} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Get\+Error\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}}}]{error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the human-\/readable error message corresponding to an error code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error} & Error code to get the error message for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Statically-\/allocated string describing the error. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1database_a9bd2c0dd411d5ddbbd0e0d457c9ea65c}\index{firebase::database@{firebase::database}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_a9bd2c0dd411d5ddbbd0e0d457c9ea65c} 
+bool firebase\+::database\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Compares two \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lhs} & A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em rhs} & A \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances have the same URL. False otherwise. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1database_aceba02421311a4797694a38b2f1b2b74}\index{firebase::database@{firebase::database}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_aceba02421311a4797694a38b2f1b2b74} 
+bool firebase\+::database\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Compares two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances. 
+
+Two \doxylink{classfirebase_1_1database_1_1_query}{Query} instances on the same database, in the same location, with the same parameters (Order\+By\texorpdfstring{$\ast$}{*}, Start\+At, End\+At, Equal\+To, Limit\texorpdfstring{$\ast$}{*}) are considered equivalent.
+
+Equivalent Queries have a shared pool of Value\+Listeners and Child\+Listeners. When listeners are added or removed from one \doxylink{classfirebase_1_1database_1_1_query}{Query} instance, it affects all equivalent \doxylink{classfirebase_1_1database_1_1_query}{Query} instances.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lhs} & The \doxylink{classfirebase_1_1database_1_1_query}{Query} to compare against. \\
+\hline
+\mbox{\texttt{ in}}  & {\em rhs} & The \doxylink{classfirebase_1_1database_1_1_query}{Query} to compare against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the \doxylink{classfirebase_1_1database_1_1_query}{Query} instances have the same database, the same path, and the same parameters, determined by Start\+At(), End\+At(), Equal\+To(), and the Order\+By and Limit\+To methods. False otherwise. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1database_af567fafd0b0b1241a6fc3e7f16f9db52}\index{firebase::database@{firebase::database}!ServerTimestamp@{ServerTimestamp}}
+\index{ServerTimestamp@{ServerTimestamp}!firebase::database@{firebase::database}}
+\doxysubsubsection{\texorpdfstring{ServerTimestamp()}{ServerTimestamp()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1database_af567fafd0b0b1241a6fc3e7f16f9db52} 
+const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \& firebase\+::database\+::\+Server\+Timestamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get a server-\/populated value corresponding to the current timestamp. 
+
+When inserting values into the database, you can use the special value \doxylink{namespacefirebase_1_1database_af567fafd0b0b1241a6fc3e7f16f9db52}{firebase\+::database\+::\+Server\+Timestamp()} to have the server auto-\/populate the current timestamp, which is represented as millieconds since the Unix epoch, into the field.
+
+\begin{DoxyReturn}{Returns}
+A special value that tells the server to use the current timestamp. 
+\end{DoxyReturn}

@@ -1,0 +1,171 @@
+\doxysection{firebase\+::gma\+::Interstitial\+Ad Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_interstitial_ad}{}\label{classfirebase_1_1gma_1_1_interstitial_ad}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+
+
+Loads and displays Google Mobile Ads interstitial ads.  
+
+
+
+
+{\ttfamily \#include $<$interstitial\+\_\+ad.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a62b0bcde05b77dcde7c6a6c7fe5d9478}{Interstitial\+Ad}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c}{Initialize}} (\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}} parent)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a000e39b7853970e8fe37e797c635ee25}{Initialize\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a4225f1868a1f48e3daee260d75be1e78}{Load\+Ad}} (const char \texorpdfstring{$\ast$}{*}ad\+\_\+unit\+\_\+id, const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&request)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a52b3b191f73254c94fca116ed9f5a92e}{Load\+Ad\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a0bd3e10dc864610e5ebfb663a0d0aa57}{Show}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_ab5ec6a4bc3d028efabdcd0b0bb1700b1}{Show\+Last\+Result}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_aecc8414a930c11c44ea93714fecfb72a}{Set\+Full\+Screen\+Content\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a21f53766610a10c1f61419e0ef77dc40}{Set\+Paid\+Event\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads and displays Google Mobile Ads interstitial ads. 
+
+\doxylink{classfirebase_1_1gma_1_1_interstitial_ad}{Interstitial\+Ad} is a single-\/use object that can load and show a single GMA interstitial ad.
+
+\doxylink{classfirebase_1_1gma_1_1_interstitial_ad}{Interstitial\+Ad} objects provide information about their current state through Futures. \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c}{Initialize}, \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_a4225f1868a1f48e3daee260d75be1e78}{Load\+Ad}, and \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_a0bd3e10dc864610e5ebfb663a0d0aa57}{Show} each have a corresponding \doxylink{classfirebase_1_1_future}{Future} from which you can determine result of the previous call.
+
+Here\textquotesingle{}s how one might initialize, load, and show an interstitial ad while checking against the result of the previous action at each step\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }gma\ =\ ::firebase::gma;}
+\DoxyCodeLine{gma::InterstitialAd*\ interstitial\ =\ \textcolor{keyword}{new}\ gma::InterstitialAd();}
+\DoxyCodeLine{interstitial-\/>Initialize(ad\_parent);}
+
+\end{DoxyCode}
+
+
+Then, later\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (interstitial-\/>InitializeLastResult().status()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa33e40478e42949d7dc59951089f56921}{::firebase::kFutureStatusComplete}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ interstitial-\/>InitializeLastResult().error()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0ba0e33d712bb2a75f829d5f3df1706b}{firebase::gma::kAdErrorCodeNone}})\ \{}
+\DoxyCodeLine{\ \ interstitial-\/>LoadAd(\ \textcolor{stringliteral}{"{}YOUR\_AD\_UNIT\_ID"{}},\ my\_ad\_request);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+And after that\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (interstitial-\/>LoadAdLastResult().status()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa33e40478e42949d7dc59951089f56921}{::firebase::kFutureStatusComplete}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ interstitial-\/>LoadAdLastResult().error()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0ba0e33d712bb2a75f829d5f3df1706b}{firebase::gma::kAdErrorCodeNone}}))\ \{}
+\DoxyCodeLine{\ \ interstitial-\/>Show();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_a62b0bcde05b77dcde7c6a6c7fe5d9478}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!InterstitialAd@{InterstitialAd}}
+\index{InterstitialAd@{InterstitialAd}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{InterstitialAd()}{InterstitialAd()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_a62b0bcde05b77dcde7c6a6c7fe5d9478} 
+firebase\+::gma\+::\+Interstitial\+Ad\+::\+Interstitial\+Ad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Creates an uninitialized \doxylink{classfirebase_1_1gma_1_1_interstitial_ad}{Interstitial\+Ad} object. \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c}{Initialize} must be called before the object is used. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Interstitial\+Ad\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}}}]{parent}{}\end{DoxyParamCaption})}
+
+Initialize the \doxylink{classfirebase_1_1gma_1_1_interstitial_ad}{Interstitial\+Ad} object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parent} & The platform-\/specific UI element that will host the ad. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_a000e39b7853970e8fe37e797c635ee25}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!InitializeLastResult@{InitializeLastResult}}
+\index{InitializeLastResult@{InitializeLastResult}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{InitializeLastResult()}{InitializeLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_a000e39b7853970e8fe37e797c635ee25} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Interstitial\+Ad\+::\+Initialize\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c}{Initialize}. \Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_a4225f1868a1f48e3daee260d75be1e78}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!LoadAd@{LoadAd}}
+\index{LoadAd@{LoadAd}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{LoadAd()}{LoadAd()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_a4225f1868a1f48e3daee260d75be1e78} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Interstitial\+Ad\+::\+Load\+Ad (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ad\+\_\+unit\+\_\+id}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&}]{request}{}\end{DoxyParamCaption})}
+
+Begins an asynchronous request for an ad.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ad\+\_\+unit\+\_\+id} & The ad unit ID to use in loading the ad. \\
+\hline
+\mbox{\texttt{ in}}  & {\em request} & An \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request} struct with information about the request to be made (such as targeting info). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_a52b3b191f73254c94fca116ed9f5a92e}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!LoadAdLastResult@{LoadAdLastResult}}
+\index{LoadAdLastResult@{LoadAdLastResult}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{LoadAdLastResult()}{LoadAdLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_a52b3b191f73254c94fca116ed9f5a92e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Interstitial\+Ad\+::\+Load\+Ad\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_a4225f1868a1f48e3daee260d75be1e78}{Load\+Ad}. \Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_aecc8414a930c11c44ea93714fecfb72a}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!SetFullScreenContentListener@{SetFullScreenContentListener}}
+\index{SetFullScreenContentListener@{SetFullScreenContentListener}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{SetFullScreenContentListener()}{SetFullScreenContentListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_aecc8414a930c11c44ea93714fecfb72a} 
+void firebase\+::gma\+::\+Interstitial\+Ad\+::\+Set\+Full\+Screen\+Content\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Sets the \doxylink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener} for this \doxylink{classfirebase_1_1gma_1_1_interstitial_ad}{Interstitial\+Ad}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A valid \doxylink{classfirebase_1_1gma_1_1_full_screen_content_listener}{Full\+Screen\+Content\+Listener} to receive callbacks. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_a21f53766610a10c1f61419e0ef77dc40}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!SetPaidEventListener@{SetPaidEventListener}}
+\index{SetPaidEventListener@{SetPaidEventListener}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{SetPaidEventListener()}{SetPaidEventListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_a21f53766610a10c1f61419e0ef77dc40} 
+void firebase\+::gma\+::\+Interstitial\+Ad\+::\+Set\+Paid\+Event\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Registers a callback to be invoked when this ad is estimated to have earned money
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A valid \doxylink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener} to receive callbacks. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_a0bd3e10dc864610e5ebfb663a0d0aa57}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!Show@{Show}}
+\index{Show@{Show}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{Show()}{Show()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_a0bd3e10dc864610e5ebfb663a0d0aa57} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Interstitial\+Ad\+::\+Show (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Shows the \doxylink{classfirebase_1_1gma_1_1_interstitial_ad}{Interstitial\+Ad}. This should not be called unless an ad has already been loaded. \Hypertarget{classfirebase_1_1gma_1_1_interstitial_ad_ab5ec6a4bc3d028efabdcd0b0bb1700b1}\index{firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}!ShowLastResult@{ShowLastResult}}
+\index{ShowLastResult@{ShowLastResult}!firebase::gma::InterstitialAd@{firebase::gma::InterstitialAd}}
+\doxysubsubsection{\texorpdfstring{ShowLastResult()}{ShowLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_interstitial_ad_ab5ec6a4bc3d028efabdcd0b0bb1700b1} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Interstitial\+Ad\+::\+Show\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_interstitial_ad_a0bd3e10dc864610e5ebfb663a0d0aa57}{Show}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/interstitial\+\_\+ad.\+h\end{DoxyCompactItemize}

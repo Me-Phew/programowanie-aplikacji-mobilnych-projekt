@@ -1,0 +1,648 @@
+\doxysection{firebase\+::database\+::Database\+Reference Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_database_reference}{}\label{classfirebase_1_1database_1_1_database_reference}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+
+
+{\ttfamily \#include $<$database\+\_\+reference.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::database\+::Database\+Reference\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classfirebase_1_1database_1_1_database_reference__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::database\+::Database\+Reference\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classfirebase_1_1database_1_1_database_reference__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a9c00ce11d9d97258d2d5c011c6b7b0fe}\label{classfirebase_1_1database_1_1_database_reference_a9c00ce11d9d97258d2d5c011c6b7b0fe} 
+{\bfseries Database\+Reference} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. This creates an invalid \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}. Attempting to perform any operations on this reference will fail unless a valid \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} has been assigned to it. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_afb03aa732fde9b5657b414bff832668a}\label{classfirebase_1_1database_1_1_database_reference_afb03aa732fde9b5657b414bff832668a} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Database\+Reference} ()
+\begin{DoxyCompactList}\small\item\em Required virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_ac0ec9372591638c5cc293f904ba0a11e}{Database\+Reference}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&reference)
+\begin{DoxyCompactList}\small\item\em Copy constructor. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances, as they simply point to the same location in the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \& \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a44dc2380a89adbcaf4d653d1610f31d8}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&reference)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances, as they simply point to the same location in the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_ac5dcb770e3242b912b55b68b2c6f59c6}{database}} () const
+\begin{DoxyCompactList}\small\item\em Gets the database to which we refer. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a1ec743cc3d6ff7b1e05a622e9e0f10c0}{key}} () const
+\begin{DoxyCompactList}\small\item\em Gets the string key of this database location. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_acc2b6f93fab45c1637cc643a92b640e6}{key\+\_\+string}} () const
+\begin{DoxyCompactList}\small\item\em Gets the string key of this database location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a0e312e60e830ea5d013685cf2271d195}{is\+\_\+root}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this reference refers to the root of the database. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a457a5f7416db0f5b66fa4e2c2486fa8a}{is\+\_\+valid}} () const override
+\begin{DoxyCompactList}\small\item\em Returns true if this reference is valid, false if it is not valid. Database\+References constructed with the default constructor are considered invalid. An invalid reference could be returned by \doxylink{classfirebase_1_1database_1_1_database_ab743b8bcd8cab7f0886521cd0ee91910}{Database\+::\+Get\+Reference()} or \doxylink{classfirebase_1_1database_1_1_database_ab8773d7a5c568bcd3b7d9755f8b106f6}{Database\+::\+Get\+Reference\+From\+Url()} if you specify an incorrect location, or calling \doxylink{classfirebase_1_1database_1_1_query_adaa1e307eb8ff6cb0987d81b05258353}{Query\+::\+Get\+Reference()} on an invalid query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_ad9d322d6e9821cb7e86c336fab2a5f86}{Get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Gets the parent of this location, or get this location again if Is\+Root(). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a8002fd92c7f8a59f4f2ca4e6156cfb31}{Get\+Root}} () const
+\begin{DoxyCompactList}\small\item\em Gets the root of the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_aca4712671d2dca9ffaa3de3fbdf6d399}{Child}} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Gets a reference to a location relative to this one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_af9a0dbba9c1f9e9f284deeedee15edfd}{Child}} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Gets a reference to a location relative to this one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a6c74fa4631c4406cba5824e67e7522dc}{Push\+Child}} () const
+\begin{DoxyCompactList}\small\item\em Automatically generates a child location, create a reference to it, and returns that reference to it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}{Remove\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Removes the value at this location from the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_aadb91e00eca990589d4e3abc6694085c}{Remove\+Value\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}{Remove\+Value()};. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction}} (\mbox{\hyperlink{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9}{Do\+Transaction\+With\+Context}} transaction\+\_\+function, void \texorpdfstring{$\ast$}{*}context, bool trigger\+\_\+local\+\_\+events=true)
+\begin{DoxyCompactList}\small\item\em Run a user-\/supplied callback function (passing in a context), possibly multiple times, to perform an atomic transaction on the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_afd6fa16ffc037e8e7d1ae5c437e40b1b}{Run\+Transaction}} (\mbox{\hyperlink{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec}{Do\+Transaction}} transaction\+\_\+function, bool trigger\+\_\+local\+\_\+events=true)
+\begin{DoxyCompactList}\small\item\em Run a user-\/supplied callback function, possibly multiple times, to perform an atomic transaction on the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_ab68bb0a59e5056e14c41704f79c19137}{Run\+Transaction\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} priority)
+\begin{DoxyCompactList}\small\item\em Sets the priority of this field, which controls its sort order relative to its siblings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a6944ed07e2bd083100e123e82414081b}{Set\+Priority\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} value)
+\begin{DoxyCompactList}\small\item\em Sets the data at this location to the given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_aa215028b917a9b49af0607ccb9741609}{Set\+Value\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} value, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} priority)
+\begin{DoxyCompactList}\small\item\em Sets both the data and priority of this location. See \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()} and \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()} for context on the parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a93c5b3c24a567c5d7dc2c4bff98cf8d6}{Set\+Value\+And\+Priority\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a9b846565ed8cd56707abe2069d8bd75a}{Update\+Children}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} values)
+\begin{DoxyCompactList}\small\item\em Updates the specified child keys to the given values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_ad0a8935c8ed90ed1ba1fac12859d7e0d}{Update\+Children}} (const std\+::map$<$ std\+::string, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Updates the specified child keys to the given values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a8b0b9acec8f89ae4c8283d67670a8634}{Update\+Children\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to either version of \doxylink{classfirebase_1_1database_1_1_database_reference_a9b846565ed8cd56707abe2069d8bd75a}{Update\+Children()}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a5ce8cf24d402001adba07363e74267ce}{url}} () const
+\begin{DoxyCompactList}\small\item\em Get the absolute URL of this reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler}{Disconnection\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference_a0eee7be37c0aeac0172356f0e46f112b}{On\+Disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Get the disconnect handler, which controls what actions the server will perform to this location\textquotesingle{}s data when this client disconnects. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a0497b9c87998f3f046b46c03e8650689}\label{classfirebase_1_1database_1_1_database_reference_a0497b9c87998f3f046b46c03e8650689} 
+void {\bfseries Go\+Offline} ()
+\begin{DoxyCompactList}\small\item\em Manually disconnect Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} from the server, and disable automatic reconnection. This will affect all other instances of \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} as well. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ae057efb4208b7fe75984d304b0f17777}\label{classfirebase_1_1database_1_1_database_reference_ae057efb4208b7fe75984d304b0f17777} 
+void {\bfseries Go\+Online} ()
+\begin{DoxyCompactList}\small\item\em Manually reestablish connection to the Firebase Realtime \doxylink{classfirebase_1_1database_1_1_database}{Database} server and enable automatic reconnection. This will affect all other instances of \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} as well. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{firebase\+::database\+::\+Query}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query_ae7cbf62d262d121962d2ae1bb7617522}{Query}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query_aaa4356c97c1dbc6bf0f0656dc7a7807b}{Query}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&query)
+\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \& \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a92074f96bb244e161264d7a5a5502a74}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \&query)
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Query} ()
+\begin{DoxyCompactList}\small\item\em Required virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Gets the value of the query for the given location a single time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a08ccdf7cbc375e14b7868b0cf54aa2af}{Get\+Value\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_query_af828a8575c01e5455a05795dd5803025}{Get\+Value()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Adds a listener that will be called immediately and then again any time the data changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_addfac4809c61fc91567e033e4edc90f9}{Remove\+Value\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener}{Value\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Removes a listener that was previously added with \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_abf356818e2d12cd09e20b020d9c5b50d}{Remove\+All\+Value\+Listeners}} ()
+\begin{DoxyCompactList}\small\item\em Removes all value listeners that were added with \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Add\+Value\+Listener()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Adds a listener that will be called any time a child is added, removed, modified, or reordered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a71862feda6f04f19d45fdae297b024a5}{Remove\+Child\+Listener}} (\mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener}{Child\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Removes a listener that was previously added with \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a505c51cb77cefb2fae31d23999d4a56d}{Remove\+All\+Child\+Listeners}} ()
+\begin{DoxyCompactList}\small\item\em Removes all child listeners that were added by \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Add\+Child\+Listener()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_adaa1e307eb8ff6cb0987d81b05258353}{Get\+Reference}} () const
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} corresponding to the given location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a7e21505d9c247bf03abe564fe08baa56}{Set\+Keep\+Synchronized}} (bool keep\+\_\+sync)
+\begin{DoxyCompactList}\small\item\em Sets whether this location\textquotesingle{}s data should be kept in sync even if there are no active Listeners. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a18250ad084814598c9cbd96df7f3eb30}{Order\+By\+Child}} (const char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by the values of the specified path. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a0a6290971237a1d367583f18b5c6a3a0}{Order\+By\+Child}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by the values of the specified path. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_abc509b58705fc896ef9be808b759a5af}{Order\+By\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by their keys. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a4bf0bc99c7133c90277e3d9dde0946d3}{Order\+By\+Priority}} ()
+\begin{DoxyCompactList}\small\item\em Gets a query in which child nodes are ordered by their priority. Any previous Order\+By directive will be replaced in the returned \doxylink{classfirebase_1_1database_1_1_query}{Query}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_ae9718eb0511153f404e16db1800bfc3f}{Order\+By\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Create a query in which nodes are ordered by their value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a77abcf23c95bf6ad500f2a30b46f9a35}{Start\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or higher. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a8a61996a0ab4e1abfd2e2b4970bafa28}{Start\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value, const char \texorpdfstring{$\ast$}{*}child\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or higher, and the given key or higher. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a24504e530c9ba49e3d3ada52ec6e47c1}{End\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or lower. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a229885e98360bfc52a423d26db4c4a14}{End\+At}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value, const char \texorpdfstring{$\ast$}{*}child\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the given sort value or lower, and the given key or lower. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_ac07ca967bbec3db1bf8906fc325e0e68}{Equal\+To}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the exact given sort value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a886202008d893180647ff67b670d1019}{Equal\+To}} (\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} order\+\_\+value, const char \texorpdfstring{$\ast$}{*}child\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1database_1_1_query}{Query} constrained to nodes with the exact given sort value, and the exact given key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_a825c551e69560f2522db426b3300274c}{Limit\+To\+First}} (size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classfirebase_1_1database_1_1_query}{Query} limited to only the first results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1database_1_1_query_ac13afd9f657d30e5927c319f5acd6aaf}{Limit\+To\+Last}} (size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Gets a \doxylink{classfirebase_1_1database_1_1_query}{Query} limited to only the last results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} represents a particular location in your \doxylink{classfirebase_1_1database_1_1_database}{Database} and can be used for reading or writing data to that \doxylink{classfirebase_1_1database_1_1_database}{Database} location.
+
+This class is the starting point for all \doxylink{classfirebase_1_1database_1_1_database}{Database} operations. After you\textquotesingle{}ve initialized it with a URL, you can use it to read data, write data, and to create new \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ac0ec9372591638c5cc293f904ba0a11e}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!DatabaseReference@{DatabaseReference}}
+\index{DatabaseReference@{DatabaseReference}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{DatabaseReference()}{DatabaseReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_ac0ec9372591638c5cc293f904ba0a11e} 
+firebase\+::database\+::\+Database\+Reference\+::\+Database\+Reference (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances, as they simply point to the same location in the database. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference} & \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_aca4712671d2dca9ffaa3de3fbdf6d399}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!Child@{Child}}
+\index{Child@{Child}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_aca4712671d2dca9ffaa3de3fbdf6d399} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+Reference\+::\+Child (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets a reference to a location relative to this one. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location. The pointer only needs to be valid during this call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Child relative to this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_af9a0dbba9c1f9e9f284deeedee15edfd}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!Child@{Child}}
+\index{Child@{Child}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_af9a0dbba9c1f9e9f284deeedee15edfd} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+Reference\+::\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets a reference to a location relative to this one. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em path} & Path relative to this snapshot\textquotesingle{}s location.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Child relative to this location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ac5dcb770e3242b912b55b68b2c6f59c6}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!database@{database}}
+\index{database@{database}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{database()}{database()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_ac5dcb770e3242b912b55b68b2c6f59c6} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database}{Database}} \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+Reference\+::database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the database to which we refer. 
+
+The pointer will remain valid indefinitely.
+
+\begin{DoxyReturn}{Returns}
+Firebase \doxylink{classfirebase_1_1database_1_1_database}{Database} instance that this \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} refers to. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ad9d322d6e9821cb7e86c336fab2a5f86}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_ad9d322d6e9821cb7e86c336fab2a5f86} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+Reference\+::\+Get\+Parent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the parent of this location, or get this location again if Is\+Root(). 
+
+\begin{DoxyReturn}{Returns}
+Parent of this location in the database, unless this location is the root, in which case it returns this same location again. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a8002fd92c7f8a59f4f2ca4e6156cfb31}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!GetRoot@{GetRoot}}
+\index{GetRoot@{GetRoot}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{GetRoot()}{GetRoot()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a8002fd92c7f8a59f4f2ca4e6156cfb31} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+Reference\+::\+Get\+Root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the root of the database. 
+
+\begin{DoxyReturn}{Returns}
+Root of the database. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a0e312e60e830ea5d013685cf2271d195}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!is\_root@{is\_root}}
+\index{is\_root@{is\_root}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{is\_root()}{is\_root()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a0e312e60e830ea5d013685cf2271d195} 
+bool firebase\+::database\+::\+Database\+Reference\+::is\+\_\+root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this reference refers to the root of the database. 
+
+\begin{DoxyReturn}{Returns}
+true if this reference refers to the root of the database, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a457a5f7416db0f5b66fa4e2c2486fa8a}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a457a5f7416db0f5b66fa4e2c2486fa8a} 
+bool firebase\+::database\+::\+Database\+Reference\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns true if this reference is valid, false if it is not valid. Database\+References constructed with the default constructor are considered invalid. An invalid reference could be returned by \doxylink{classfirebase_1_1database_1_1_database_ab743b8bcd8cab7f0886521cd0ee91910}{Database\+::\+Get\+Reference()} or \doxylink{classfirebase_1_1database_1_1_database_ab8773d7a5c568bcd3b7d9755f8b106f6}{Database\+::\+Get\+Reference\+From\+Url()} if you specify an incorrect location, or calling \doxylink{classfirebase_1_1database_1_1_query_adaa1e307eb8ff6cb0987d81b05258353}{Query\+::\+Get\+Reference()} on an invalid query. 
+
+\begin{DoxyReturn}{Returns}
+true if this reference is valid, false if this reference is invalid. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classfirebase_1_1database_1_1_query_af4f055835ec7bb4054f11889e1e19d59}{firebase\+::database\+::\+Query}}.
+
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a1ec743cc3d6ff7b1e05a622e9e0f10c0}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!key@{key}}
+\index{key@{key}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a1ec743cc3d6ff7b1e05a622e9e0f10c0} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+Reference\+::key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the string key of this database location. 
+
+The pointer is only valid while the \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} remains in memory.
+
+\begin{DoxyReturn}{Returns}
+String key of this database location, which will remain valid in memory until the \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} itself goes away. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_acc2b6f93fab45c1637cc643a92b640e6}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!key\_string@{key\_string}}
+\index{key\_string@{key\_string}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{key\_string()}{key\_string()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_acc2b6f93fab45c1637cc643a92b640e6} 
+std\+::string firebase\+::database\+::\+Database\+Reference\+::key\+\_\+string (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the string key of this database location. 
+
+\begin{DoxyReturn}{Returns}
+String key of this database location. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a0eee7be37c0aeac0172356f0e46f112b}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!OnDisconnect@{OnDisconnect}}
+\index{OnDisconnect@{OnDisconnect}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{OnDisconnect()}{OnDisconnect()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a0eee7be37c0aeac0172356f0e46f112b} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler}{Disconnection\+Handler}} \texorpdfstring{$\ast$}{*} firebase\+::database\+::\+Database\+Reference\+::\+On\+Disconnect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the disconnect handler, which controls what actions the server will perform to this location\textquotesingle{}s data when this client disconnects. 
+
+\begin{DoxyReturn}{Returns}
+Disconnection handler for this location. You can use this to queue up operations on the server to be performed when the client disconnects. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a44dc2380a89adbcaf4d653d1610f31d8}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a44dc2380a89adbcaf4d653d1610f31d8} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \& firebase\+::database\+::\+Database\+Reference\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} \&}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} instances, as they simply point to the same location in the database. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference} & \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination \doxylink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a6c74fa4631c4406cba5824e67e7522dc}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!PushChild@{PushChild}}
+\index{PushChild@{PushChild}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{PushChild()}{PushChild()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a6c74fa4631c4406cba5824e67e7522dc} 
+\mbox{\hyperlink{classfirebase_1_1database_1_1_database_reference}{Database\+Reference}} firebase\+::database\+::\+Database\+Reference\+::\+Push\+Child (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Automatically generates a child location, create a reference to it, and returns that reference to it. 
+
+\begin{DoxyReturn}{Returns}
+A newly created child, with a unique key. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!RemoveValue@{RemoveValue}}
+\index{RemoveValue@{RemoveValue}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{RemoveValue()}{RemoveValue()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Remove\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Removes the value at this location from the database. 
+
+This is an asynchronous operation which takes time to execute, and uses \doxylink{classfirebase_1_1_future}{firebase\+::\+Future} to return its result.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Only one \doxylink{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}{Remove\+Value()} should be running on a given database location at the same time. If you need to run multiple operations at once, use \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_aadb91e00eca990589d4e3abc6694085c}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!RemoveValueLastResult@{RemoveValueLastResult}}
+\index{RemoveValueLastResult@{RemoveValueLastResult}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{RemoveValueLastResult()}{RemoveValueLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_aadb91e00eca990589d4e3abc6694085c} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Remove\+Value\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}{Remove\+Value()};. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}{Remove\+Value()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_afd6fa16ffc037e8e7d1ae5c437e40b1b}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!RunTransaction@{RunTransaction}}
+\index{RunTransaction@{RunTransaction}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{RunTransaction()}{RunTransaction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_afd6fa16ffc037e8e7d1ae5c437e40b1b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ firebase\+::database\+::\+Database\+Reference\+::\+Run\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec}{Do\+Transaction}}}]{transaction\+\_\+function}{, }\item[{bool}]{trigger\+\_\+local\+\_\+events}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Run a user-\/supplied callback function, possibly multiple times, to perform an atomic transaction on the database. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespacefirebase_1_1database_a59b85aebc37676ea46046932d0fb52ec}{firebase\+::database\+::\+Do\+Transaction} for more information.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em transaction\+\_\+function} & The user-\/supplied function that will be called, possibly multiple times, to perform the database transaction. \\
+\hline
+\mbox{\texttt{ in}}  & {\em trigger\+\_\+local\+\_\+events} & If true, events will be triggered for intermediate state changes during the transaction. If false, only the final state will cause events to be triggered.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the transaction either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded and the transaction was committed, and the new value of the data will be returned in the \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} result. If the Error is k\+Error\+Transaction\+Aborted\+By\+User, the transaction was aborted because the transaction function returned k\+Transaction\+Result\+Abort, and the old value will be returned in \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}. Otherwise, if some other error occurred, Error and Error\+Message will be set and \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} will be invalid.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Only one \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()} should be running on a given database location at the same time.
+
+This version (that accepts a simple function pointer) is only available when using stlport and std\+::function is not available. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!RunTransaction@{RunTransaction}}
+\index{RunTransaction@{RunTransaction}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{RunTransaction()}{RunTransaction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ firebase\+::database\+::\+Database\+Reference\+::\+Run\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9}{Do\+Transaction\+With\+Context}}}]{transaction\+\_\+function}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{bool}]{trigger\+\_\+local\+\_\+events}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Run a user-\/supplied callback function (passing in a context), possibly multiple times, to perform an atomic transaction on the database. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespacefirebase_1_1database_a7534c9a8974d185b30280684addfcbe9}{firebase\+::database\+::\+Do\+Transaction\+With\+Context} for more information.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em transaction\+\_\+function} & The user-\/supplied function that will be called, possibly multiple times, to perform the database transaction. \\
+\hline
+\mbox{\texttt{ in}}  & {\em context} & User-\/supplied context that will be passed to the transaction function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em trigger\+\_\+local\+\_\+events} & If true, events will be triggered for intermediate state changes during the transaction. If false, only the final state will cause events to be triggered.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the transaction either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded and the transaction was committed, and the new value of the data will be returned in the \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} result. If the Error is k\+Error\+Transaction\+Aborted\+By\+User, the transaction was aborted because the transaction function returned k\+Transaction\+Result\+Abort, and the old value will be returned in \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}. Otherwise, if some other error occurred, Error and Error\+Message will be set and \doxylink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot} will be invalid.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Only one \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()} should be running on a given database location at the same time. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ab68bb0a59e5056e14c41704f79c19137}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!RunTransactionLastResult@{RunTransactionLastResult}}
+\index{RunTransactionLastResult@{RunTransactionLastResult}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{RunTransactionLastResult()}{RunTransactionLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_ab68bb0a59e5056e14c41704f79c19137} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} $>$ firebase\+::database\+::\+Database\+Reference\+::\+Run\+Transaction\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. 
+
+\begin{DoxyReturn}{Returns}
+Results of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!SetPriority@{SetPriority}}
+\index{SetPriority@{SetPriority}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{SetPriority()}{SetPriority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Set\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{priority}{}\end{DoxyParamCaption})}
+
+
+
+Sets the priority of this field, which controls its sort order relative to its siblings. 
+
+In Firebase, children are sorted in the following order\+:
+\begin{DoxyEnumerate}
+\item First, children with no priority.
+\item Then, children with numerical priority, sorted numerically in ascending order.
+\item Then, remaining children, sorted lexicographically in ascending order of their text priority.
+\end{DoxyEnumerate}
+
+Children with the same priority (including no priority) are sorted by key\+: A. First, children with keys that can be parsed as 32-\/bit integers, sorted in ascending numerical order of their keys. B. Then, remaining children, sorted in ascending lexicographical order of their keys.
+
+This is an asynchronous operation which takes time to execute, and uses \doxylink{classfirebase_1_1_future}{firebase\+::\+Future} to return its result.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em priority} & Sort priority for this child relative to its siblings. The \doxylink{classfirebase_1_1_variant}{Variant} types accepted are Null, Int64, Double, and String. Other types will return k\+Error\+Invalid\+Variant\+Type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Only one \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()} should be running on a given database location at the same time. If you need to run multiple operations at once, use \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a6944ed07e2bd083100e123e82414081b}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!SetPriorityLastResult@{SetPriorityLastResult}}
+\index{SetPriorityLastResult@{SetPriorityLastResult}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{SetPriorityLastResult()}{SetPriorityLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a6944ed07e2bd083100e123e82414081b} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Set\+Priority\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{SetValue()}{SetValue()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Set\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the data at this location to the given value. 
+
+This is an asynchronous operation which takes time to execute, and uses \doxylink{classfirebase_1_1_future}{firebase\+::\+Future} to return its result.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to set this location to. The \doxylink{classfirebase_1_1_variant}{Variant}\textquotesingle{}s type corresponds to the types accepted by the database JSON\+: Null\+: Deletes this location from the database. Int64\+: Inserts an integer value into this location. Double\+: Inserts a floating point value into this location. String\+: Inserts a string into this location. (Accepts both Mutable and Static strings) Vector\+: Inserts a JSON array into this location. The elements can be any \doxylink{classfirebase_1_1_variant}{Variant} type, including Vector and Map. Map\+: Inserts a JSON associative array into this location. The keys must be of type String (or Int64/\+Double which are converted to String). The values can be any \doxylink{classfirebase_1_1_variant}{Variant} type, including Vector and Map.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Only one \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()} should be running on a given database location at the same time. If you need to run multiple operations at once, use \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!SetValueAndPriority@{SetValueAndPriority}}
+\index{SetValueAndPriority@{SetValueAndPriority}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{SetValueAndPriority()}{SetValueAndPriority()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Set\+Value\+And\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{value}{, }\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{priority}{}\end{DoxyParamCaption})}
+
+
+
+Sets both the data and priority of this location. See \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()} and \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()} for context on the parameters. 
+
+This is an asynchronous operation which takes time to execute, and uses \doxylink{classfirebase_1_1_future}{firebase\+::\+Future} to return its result.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The value to set this location to. See \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()} for information on the types accepted. \\
+\hline
+\mbox{\texttt{ in}}  & {\em priority} & The priority to set this location to. See \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()} for information on the types accepted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Only one \doxylink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority()} should be running on a given database location at the same time. \doxylink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority()} can\textquotesingle{}t be used on the same location at the same time as either \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()} or \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Set\+Priority()}, and will return k\+Error\+Conflicting\+Operation\+In\+Progress if you try. If you need to run multiple operations at once, use \doxylink{classfirebase_1_1database_1_1_database_reference_a15b5a1434665fe3f13c9ce4a649b09b0}{Run\+Transaction()}. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a93c5b3c24a567c5d7dc2c4bff98cf8d6}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!SetValueAndPriorityLastResult@{SetValueAndPriorityLastResult}}
+\index{SetValueAndPriorityLastResult@{SetValueAndPriorityLastResult}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{SetValueAndPriorityLastResult()}{SetValueAndPriorityLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a93c5b3c24a567c5d7dc2c4bff98cf8d6} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Set\+Value\+And\+Priority\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_aa215028b917a9b49af0607ccb9741609}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!SetValueLastResult@{SetValueLastResult}}
+\index{SetValueLastResult@{SetValueLastResult}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{SetValueLastResult()}{SetValueLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_aa215028b917a9b49af0607ccb9741609} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Set\+Value\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_ad0a8935c8ed90ed1ba1fac12859d7e0d}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!UpdateChildren@{UpdateChildren}}
+\index{UpdateChildren@{UpdateChildren}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{UpdateChildren()}{UpdateChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_ad0a8935c8ed90ed1ba1fac12859d7e0d} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Update\+Children (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \&}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the specified child keys to the given values. 
+
+This is an asynchronous operation which takes time to execute, and uses \doxylink{classfirebase_1_1_future}{firebase\+::\+Future} to return its result.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The paths to update, and their new child values. A value of type Null will delete that particular child.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a9b846565ed8cd56707abe2069d8bd75a}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!UpdateChildren@{UpdateChildren}}
+\index{UpdateChildren@{UpdateChildren}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{UpdateChildren()}{UpdateChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a9b846565ed8cd56707abe2069d8bd75a} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Update\+Children (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Updates the specified child keys to the given values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & A variant of type Map. The keys are the paths to update and must be of type String (or Int64/\+Double which are converted to String). The values can be any \doxylink{classfirebase_1_1_variant}{Variant} type. A value of \doxylink{classfirebase_1_1_variant}{Variant} type Null will delete the child.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} result, which will complete when the operation either succeeds or fails. When the \doxylink{classfirebase_1_1_future}{Future} is completed, if its Error is k\+Error\+None, the operation succeeded.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method will return k\+Error\+Conflicting\+Operation\+In\+Progress if it is run at the same time as \doxylink{classfirebase_1_1database_1_1_database_reference_a03ec27c242b8692f1dc2d131bbc4b205}{Set\+Value()}, \doxylink{classfirebase_1_1database_1_1_database_reference_a2780dca52d06c202a6fa660cfd029908}{Set\+Value\+And\+Priority()}, or \doxylink{classfirebase_1_1database_1_1_database_reference_a3ceff9324e9bd6a846c1488f9e53a4f6}{Remove\+Value()} in the same location. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a8b0b9acec8f89ae4c8283d67670a8634}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!UpdateChildrenLastResult@{UpdateChildrenLastResult}}
+\index{UpdateChildrenLastResult@{UpdateChildrenLastResult}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{UpdateChildrenLastResult()}{UpdateChildrenLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a8b0b9acec8f89ae4c8283d67670a8634} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::database\+::\+Database\+Reference\+::\+Update\+Children\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the result of the most recent call to either version of \doxylink{classfirebase_1_1database_1_1_database_reference_a9b846565ed8cd56707abe2069d8bd75a}{Update\+Children()}. 
+
+\begin{DoxyReturn}{Returns}
+Result of the most recent call to \doxylink{classfirebase_1_1database_1_1_database_reference_a9b846565ed8cd56707abe2069d8bd75a}{Update\+Children()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1database_1_1_database_reference_a5ce8cf24d402001adba07363e74267ce}\index{firebase::database::DatabaseReference@{firebase::database::DatabaseReference}!url@{url}}
+\index{url@{url}!firebase::database::DatabaseReference@{firebase::database::DatabaseReference}}
+\doxysubsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_database_reference_a5ce8cf24d402001adba07363e74267ce} 
+std\+::string firebase\+::database\+::\+Database\+Reference\+::url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the absolute URL of this reference. 
+
+\begin{DoxyReturn}{Returns}
+The absolute URL of the location this reference refers to. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/database\+\_\+reference.\+h\end{DoxyCompactItemize}

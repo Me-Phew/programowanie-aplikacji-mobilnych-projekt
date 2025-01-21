@@ -1,0 +1,121 @@
+\doxysection{firebase\+::auth\+::User\+Info\+Interface Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_user_info_interface}{}\label{classfirebase_1_1auth_1_1_user_info_interface}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+
+
+Interface implemented by each identity provider.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::auth\+::User\+Info\+Interface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classfirebase_1_1auth_1_1_user_info_interface__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a7f2082cf46b1971825792fd36912a972}{uid}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_aabdb7270e7295a3108103ea863b2547d}{email}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a311530d046c0ef11d0fddbf9b99240a2}{display\+\_\+name}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_aca549b97721b1b262c317f2798fef808}{photo\+\_\+url}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a25e1899b5ff84ce236c6c7e6aa9d5906}{provider\+\_\+id}} () const
+\item 
+virtual std\+::string \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_ae19c8d66a7640e0160ede3f55c58e78b}{phone\+\_\+number}} () const
+\begin{DoxyCompactList}\small\item\em Gets the phone number for the user, in E.\+164 format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_a38c437d9dcaefebe4efaf0edf00c45de}\label{classfirebase_1_1auth_1_1_user_info_interface_a38c437d9dcaefebe4efaf0edf00c45de} 
+class {\bfseries User}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface implemented by each identity provider. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_a311530d046c0ef11d0fddbf9b99240a2}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}!display\_name@{display\_name}}
+\index{display\_name@{display\_name}!firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+\doxysubsubsection{\texorpdfstring{display\_name()}{display\_name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_info_interface_a311530d046c0ef11d0fddbf9b99240a2} 
+virtual std\+::string firebase\+::auth\+::\+User\+Info\+Interface\+::display\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the display name associated with the user, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a8348bc6c3247dd61ff0a2dd9b406dc95}{firebase\+::auth\+::\+User}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_aabdb7270e7295a3108103ea863b2547d}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}!email@{email}}
+\index{email@{email}!firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+\doxysubsubsection{\texorpdfstring{email()}{email()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_info_interface_aabdb7270e7295a3108103ea863b2547d} 
+virtual std\+::string firebase\+::auth\+::\+User\+Info\+Interface\+::email (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets email associated with the user, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{firebase\+::auth\+::\+User}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_ae19c8d66a7640e0160ede3f55c58e78b}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}!phone\_number@{phone\_number}}
+\index{phone\_number@{phone\_number}!firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+\doxysubsubsection{\texorpdfstring{phone\_number()}{phone\_number()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_info_interface_ae19c8d66a7640e0160ede3f55c58e78b} 
+virtual std\+::string firebase\+::auth\+::\+User\+Info\+Interface\+::phone\+\_\+number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the phone number for the user, in E.\+164 format. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a48b7e1eaaef2da37b6ffc1793df5d58c}{firebase\+::auth\+::\+User}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_aca549b97721b1b262c317f2798fef808}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}!photo\_url@{photo\_url}}
+\index{photo\_url@{photo\_url}!firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+\doxysubsubsection{\texorpdfstring{photo\_url()}{photo\_url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_info_interface_aca549b97721b1b262c317f2798fef808} 
+virtual std\+::string firebase\+::auth\+::\+User\+Info\+Interface\+::photo\+\_\+url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the photo url associated with the user, if any. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a3dd64a1f0fb3a3188aedde3f0605c713}{firebase\+::auth\+::\+User}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_a25e1899b5ff84ce236c6c7e6aa9d5906}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}!provider\_id@{provider\_id}}
+\index{provider\_id@{provider\_id}!firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+\doxysubsubsection{\texorpdfstring{provider\_id()}{provider\_id()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_info_interface_a25e1899b5ff84ce236c6c7e6aa9d5906} 
+virtual std\+::string firebase\+::auth\+::\+User\+Info\+Interface\+::provider\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the provider ID for the user (For example, "{}\+Facebook"{}). $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5167d84d40bfde9bdd366c6f70678c3d}{firebase\+::auth\+::\+User}}.
+
+\Hypertarget{classfirebase_1_1auth_1_1_user_info_interface_a7f2082cf46b1971825792fd36912a972}\index{firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}!uid@{uid}}
+\index{uid@{uid}!firebase::auth::UserInfoInterface@{firebase::auth::UserInfoInterface}}
+\doxysubsubsection{\texorpdfstring{uid()}{uid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_user_info_interface_a7f2082cf46b1971825792fd36912a972} 
+virtual std\+::string firebase\+::auth\+::\+User\+Info\+Interface\+::uid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the unique Firebase user ID for the user.
+
+\begin{DoxyNote}{Note}
+The user\textquotesingle{}s ID, unique to the Firebase project. Do NOT use this value to authenticate with your backend server, if you have one.  $<$\+SWIG$>$   $<$/\+SWIG$>$ 
+\end{DoxyNote}
+
+
+Reimplemented in \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a662d4994ef64c1689d8c3bf09d093b05}{firebase\+::auth\+::\+User}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/user.\+h\end{DoxyCompactItemize}

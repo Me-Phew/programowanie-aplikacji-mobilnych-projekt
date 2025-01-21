@@ -1,0 +1,55 @@
+\doxysection{firebase\+::gma\+::Adapter\+Status Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_adapter_status}{}\label{classfirebase_1_1gma_1_1_adapter_status}\index{firebase::gma::AdapterStatus@{firebase::gma::AdapterStatus}}
+
+
+A snapshot of a mediation adapter\textquotesingle{}s initialization status.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_a39b3d54c1452181913657da91026d7ed}{description}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_status_aa8cda96aed4248f3b64f65ec6f7fb48f}\label{classfirebase_1_1gma_1_1_adapter_status_aa8cda96aed4248f3b64f65ec6f7fb48f} 
+bool {\bfseries is\+\_\+initialized} () const
+\begin{DoxyCompactList}\small\item\em Returns the adapter\textquotesingle{}s initialization state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_af9e208e23e5512e6024b38d78a340fa6}{latency}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_status_abfa251bc38c034f665726175f68a7153}\label{classfirebase_1_1gma_1_1_adapter_status_abfa251bc38c034f665726175f68a7153} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status}{Adapter\+Status}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_status_aa5b423678a12251e5caa8b1c0d0958eb}\label{classfirebase_1_1gma_1_1_adapter_status_aa5b423678a12251e5caa8b1c0d0958eb} 
+class {\bfseries Gma\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A snapshot of a mediation adapter\textquotesingle{}s initialization status. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_status_a39b3d54c1452181913657da91026d7ed}\index{firebase::gma::AdapterStatus@{firebase::gma::AdapterStatus}!description@{description}}
+\index{description@{description}!firebase::gma::AdapterStatus@{firebase::gma::AdapterStatus}}
+\doxysubsubsection{\texorpdfstring{description()}{description()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_adapter_status_a39b3d54c1452181913657da91026d7ed} 
+const std\+::string \& firebase\+::gma\+::\+Adapter\+Status\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Detailed description of the status.
+
+This method should only be used for informational purposes, such as logging. Use \doxylink{classfirebase_1_1gma_1_1_adapter_status_aa8cda96aed4248f3b64f65ec6f7fb48f}{is\+\_\+initialized} to make logical decisions regarding an adapter\textquotesingle{}s status. \Hypertarget{classfirebase_1_1gma_1_1_adapter_status_af9e208e23e5512e6024b38d78a340fa6}\index{firebase::gma::AdapterStatus@{firebase::gma::AdapterStatus}!latency@{latency}}
+\index{latency@{latency}!firebase::gma::AdapterStatus@{firebase::gma::AdapterStatus}}
+\doxysubsubsection{\texorpdfstring{latency()}{latency()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_adapter_status_af9e208e23e5512e6024b38d78a340fa6} 
+int firebase\+::gma\+::\+Adapter\+Status\+::latency (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The adapter\textquotesingle{}s initialization latency in milliseconds. 0 if initialization has not yet ended. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

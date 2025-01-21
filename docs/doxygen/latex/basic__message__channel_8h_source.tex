@@ -1,0 +1,155 @@
+\doxysection{basic\+\_\+message\+\_\+channel.\+h}
+\hypertarget{basic__message__channel_8h_source}{}\label{basic__message__channel_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/basic\_message\_channel.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/basic\_message\_channel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_BASIC\_MESSAGE\_CHANNEL\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_BASIC\_MESSAGE\_CHANNEL\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}binary\_messenger.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}message\_codec.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Internal\ helper\ functions\ used\ by\ BasicMessageChannel\ and\ MethodChannel.}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Adjusts\ the\ number\ of\ messages\ that\ will\ get\ buffered\ when\ sending\ messages}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ to\ channels\ that\ aren't\ fully\ set\ up\ yet.\ For\ example,\ the\ engine\ isn't}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ running\ yet\ or\ the\ channel's\ message\ handler\ isn't\ set\ up\ on\ the\ Dart\ side}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ yet.}}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ ResizeChannel(BinaryMessenger*\ messenger,\ std::string\ name,\ \textcolor{keywordtype}{int}\ new\_size);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ Defines\ whether\ the\ channel\ should\ show\ warning\ messages\ when\ discarding}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ messages\ due\ to\ overflow.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ When\ |warns|\ is\ false,\ the\ channel\ is\ expected\ to\ overflow\ and\ warning}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ messages\ will\ not\ be\ shown.}}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ SetChannelWarnsOnOverflow(BinaryMessenger*\ messenger,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ name,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ warns);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ A\ message\ reply\ callback.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ Used\ for\ submitting\ a\ reply\ back\ to\ a\ Flutter\ message\ sender.}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00043\ \textcolor{keyword}{using\ }MessageReply\ =\ std::function<void(\textcolor{keyword}{const}\ T\&\ reply)>;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ A\ handler\ for\ receiving\ a\ message\ from\ the\ Flutter\ engine.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ Implementations\ must\ asynchronously\ call\ reply\ exactly\ once\ with\ the\ reply}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ to\ the\ message.}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00050\ \textcolor{keyword}{using\ }MessageHandler\ =}
+\DoxyCodeLine{00051\ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ T\&\ message,\ \textcolor{keyword}{const}\ MessageReply<T>\&\ reply)>;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ A\ channel\ for\ communicating\ with\ the\ Flutter\ engine\ by\ sending\ asynchronous}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ messages.}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_basic_message_channel}{BasicMessageChannel}}\ \{}
+\DoxyCodeLine{00057\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ Creates\ an\ instance\ that\ sends\ and\ receives\ method\ calls\ on\ the\ channel}}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ named\ |name|,\ encoded\ with\ |codec|\ and\ dispatched\ via\ |messenger|.}}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classflutter_1_1_basic_message_channel}{BasicMessageChannel}}(\mbox{\hyperlink{classflutter_1_1_binary_messenger}{BinaryMessenger}}*\ messenger,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec<T>}}*\ codec)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ :\ messenger\_(messenger),\ name\_(name),\ codec\_(codec)\ \{\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{classflutter_1_1_basic_message_channel}{\string~BasicMessageChannel}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classflutter_1_1_basic_message_channel}{BasicMessageChannel}}(\mbox{\hyperlink{classflutter_1_1_basic_message_channel}{BasicMessageChannel}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classflutter_1_1_basic_message_channel}{BasicMessageChannel}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_basic_message_channel}{BasicMessageChannel}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ Sends\ a\ message\ to\ the\ Flutter\ engine\ on\ this\ channel.}}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ Send(\textcolor{keyword}{const}\ T\&\ message)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ raw\_message\ =}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ codec\_-\/>EncodeMessage(message);}
+\DoxyCodeLine{00075\ \ \ \ \ messenger\_-\/>Send(name\_,\ raw\_message-\/>data(),\ raw\_message-\/>size());}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ Sends\ a\ message\ to\ the\ Flutter\ engine\ on\ this\ channel\ expecting\ a\ reply.}}
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ Send(\textcolor{keyword}{const}\ T\&\ message,\ BinaryReply\ reply)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ raw\_message\ =}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ codec\_-\/>EncodeMessage(message);}
+\DoxyCodeLine{00082\ \ \ \ \ messenger\_-\/>Send(name\_,\ raw\_message-\/>data(),\ raw\_message-\/>size(),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::move(reply));}
+\DoxyCodeLine{00084\ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ Registers\ a\ handler\ that\ should\ be\ called\ any\ time\ a\ message\ is}}
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ received\ on\ this\ channel.\ A\ null\ handler\ will\ remove\ any\ previous\ handler.}}
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ Note\ that\ the\ BasicMessageChannel\ does\ not\ own\ the\ handler,\ and\ will\ not}}
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ unregister\ it\ on\ destruction,\ so\ the\ caller\ is\ responsible\ for}}
+\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ unregistering\ explicitly\ if\ it\ should\ no\ longer\ be\ called.}}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{void}\ SetMessageHandler(\textcolor{keyword}{const}\ MessageHandler<T>\&\ handler)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (!handler)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ messenger\_-\/>SetMessageHandler(name\_,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ codec\ =\ codec\_;}
+\DoxyCodeLine{00098\ \ \ \ \ std::string\ channel\_name\ =\ name\_;}
+\DoxyCodeLine{00099\ \ \ \ \ BinaryMessageHandler\ binary\_handler\ =\ [handler,\ codec,\ channel\_name](}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ binary\_message,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ binary\_message\_size,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ BinaryReply\&\ binary\_reply)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ this\ channel's\ codec\ to\ decode\ the\ message\ and\ build\ a\ reply}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{comment}{//\ handler.}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ std::unique\_ptr<T>\ message\ =}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ codec-\/>DecodeMessage(binary\_message,\ binary\_message\_size);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!message)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Unable\ to\ decode\ message\ on\ channel\ "{}}\ <<\ channel\_name}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ binary\_reply(\textcolor{keyword}{nullptr},\ 0);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ MessageReply<T>\ unencoded\_reply\ =\ [binary\_reply,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ codec](\textcolor{keyword}{const}\ T\&\ unencoded\_response)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ binary\_response\ =\ codec-\/>EncodeMessage(unencoded\_response);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ binary\_reply(binary\_response-\/>data(),\ binary\_response-\/>size());}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ handler(*message,\ std::move(unencoded\_reply));}
+\DoxyCodeLine{00120\ \ \ \ \ \};}
+\DoxyCodeLine{00121\ \ \ \ \ messenger\_-\/>SetMessageHandler(name\_,\ std::move(binary\_handler));}
+\DoxyCodeLine{00122\ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ Adjusts\ the\ number\ of\ messages\ that\ will\ get\ buffered\ when\ sending\ messages}}
+\DoxyCodeLine{00125\ \ \ \textcolor{comment}{//\ to\ channels\ that\ aren't\ fully\ set\ up\ yet.\ For\ example,\ the\ engine\ isn't}}
+\DoxyCodeLine{00126\ \ \ \textcolor{comment}{//\ running\ yet\ or\ the\ channel's\ message\ handler\ isn't\ set\ up\ on\ the\ Dart\ side}}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ yet.}}
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordtype}{void}\ Resize(\textcolor{keywordtype}{int}\ new\_size)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ internal::ResizeChannel(messenger\_,\ name\_,\ new\_size);}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ Defines\ whether\ the\ channel\ should\ show\ warning\ messages\ when\ discarding}}
+\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//\ messages\ due\ to\ overflow.}}
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ When\ |warns|\ is\ false,\ the\ channel\ is\ expected\ to\ overflow\ and\ warning}}
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//\ messages\ will\ not\ be\ shown.}}
+\DoxyCodeLine{00137\ \ \ \textcolor{keywordtype}{void}\ SetWarnsOnOverflow(\textcolor{keywordtype}{bool}\ warns)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ internal::SetChannelWarnsOnOverflow(messenger\_,\ name\_,\ warns);}
+\DoxyCodeLine{00139\ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00142\ \ \ \mbox{\hyperlink{classflutter_1_1_binary_messenger}{BinaryMessenger}}*\ messenger\_;}
+\DoxyCodeLine{00143\ \ \ std::string\ name\_;}
+\DoxyCodeLine{00144\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_message_codec}{MessageCodec<T>}}*\ codec\_;}
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_BASIC\_MESSAGE\_CHANNEL\_H\_}}
+
+\end{DoxyCode}

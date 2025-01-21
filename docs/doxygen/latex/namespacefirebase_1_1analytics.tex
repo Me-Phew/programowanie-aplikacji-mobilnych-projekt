@@ -1,0 +1,404 @@
+\doxysection{firebase\+::analytics Namespace Reference}
+\hypertarget{namespacefirebase_1_1analytics}{}\label{namespacefirebase_1_1analytics}\index{firebase::analytics@{firebase::analytics}}
+
+
+Firebase Analytics API.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter}{Parameter}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_event}{Event} parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166}{Consent\+Type}} \{ {\bfseries k\+Consent\+Type\+Ad\+Storage} = 0
+, {\bfseries k\+Consent\+Type\+Analytics\+Storage}
+, {\bfseries k\+Consent\+Type\+Ad\+User\+Data}
+, {\bfseries k\+Consent\+Type\+Ad\+Personalization}
+ \}
+\begin{DoxyCompactList}\small\item\em The type of consent to set. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f}{Consent\+Status}} \{ {\bfseries k\+Consent\+Status\+Granted} = 0
+, {\bfseries k\+Consent\+Status\+Denied}
+ \}
+\begin{DoxyCompactList}\small\item\em The status value of the consent type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_ab15684936a9f93921f0fa31deb508a4d}{Initialize}} (const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&app)
+\begin{DoxyCompactList}\small\item\em Initialize the Analytics API. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a4ffbdf8db17725dd3c2e1732fb6a8009}{Terminate}} ()
+\begin{DoxyCompactList}\small\item\em Terminate the Analytics API. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a5615fefec127488911e140d180ee7479}{Set\+Analytics\+Collection\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Sets whether analytics collection is enabled for this app on this device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a2942e4f437ff60079bc786c5ea8bb474}{Set\+Consent}} (const std\+::map$<$ \mbox{\hyperlink{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166}{Consent\+Type}}, \mbox{\hyperlink{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f}{Consent\+Status}} $>$ \&consent\+\_\+settings)
+\begin{DoxyCompactList}\small\item\em Sets the applicable end user consent state (e.\+g., for device identifiers) for this app on this device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}{Log\+Event}} (const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, const char \texorpdfstring{$\ast$}{*}parameter\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Log an event with one string parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_aef2252a6cae8a45704aec3af60c8df21}{Log\+Event}} (const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, const double parameter\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Log an event with one float parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a339e179eaee0abd26a6e3db20d07bab0}{Log\+Event}} (const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, const int64\+\_\+t parameter\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Log an event with one 64-\/bit integer parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a59844903c84bb1711bb7397a31c8d461}{Log\+Event}} (const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}parameter\+\_\+name, const int parameter\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Log an event with one integer parameter (stored as a 64-\/bit integer). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_ad4aff1c74480a5a13d5e6e58170bc75d}{Log\+Event}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Log an event with no parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a638c62aa918c2cb5d23740c19fb911df}{Log\+Event}} (const char \texorpdfstring{$\ast$}{*}name, const \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter}{Parameter}} \texorpdfstring{$\ast$}{*}parameters, size\+\_\+t number\+\_\+of\+\_\+parameters)
+\begin{DoxyCompactList}\small\item\em Log an event with associated parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a3b2895a358908e8352f479422ec48dc0}{Initiate\+On\+Device\+Conversion\+Measurement\+With\+Email\+Address}} (const char \texorpdfstring{$\ast$}{*}email\+\_\+address)
+\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_afdd62efe3ae1461d6fcc40e5ee4c5c00}{Initiate\+On\+Device\+Conversion\+Measurement\+With\+Phone\+Number}} (const char \texorpdfstring{$\ast$}{*}phone\+\_\+number)
+\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_aaf483fcf6eeaf78db243635783b4f6b1}{Set\+User\+Property}} (const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}property)
+\begin{DoxyCompactList}\small\item\em Set a user property to the given value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_a45bf93e57c474e4ab36f92433e62cfbd}{Set\+User\+Id}} (const char \texorpdfstring{$\ast$}{*}user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Sets the user ID property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_affa3d0db3d8803d15b1d0d951adf6fb7}{Set\+Session\+Timeout\+Duration}} (int64\+\_\+t milliseconds)
+\begin{DoxyCompactList}\small\item\em Sets the duration of inactivity that terminates the current session. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacefirebase_1_1analytics_aa011e496efbc85e1e740d8caadd8e37b}{Reset\+Analytics\+Data}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{namespacefirebase_1_1analytics_a8e165637a983c3c323f653e4fe4f385c}{Get\+Analytics\+Instance\+Id}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ \mbox{\hyperlink{namespacefirebase_1_1analytics_aa8c4de43c75da8a54a88c7d54de04de2}{Get\+Analytics\+Instance\+Id\+Last\+Result}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ int64\+\_\+t $>$ \mbox{\hyperlink{namespacefirebase_1_1analytics_af0740417ffed7571a2567b3d965e39a5}{Get\+Session\+Id}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ int64\+\_\+t $>$ \mbox{\hyperlink{namespacefirebase_1_1analytics_ad12b197133050338f532af442b668ba2}{Get\+Session\+Id\+Last\+Result}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase Analytics API. 
+
+See \href{/docs/analytics}{\texttt{ the developer guides}} for general information on using Firebase Analytics in your apps. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f}\index{firebase::analytics@{firebase::analytics}!ConsentStatus@{ConsentStatus}}
+\index{ConsentStatus@{ConsentStatus}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{ConsentStatus}{ConsentStatus}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f} 
+enum \mbox{\hyperlink{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f}{firebase\+::analytics\+::\+Consent\+Status}}}
+
+
+
+The status value of the consent type. 
+
+Supported statuses are k\+Consent\+Status\+Granted and k\+Consent\+Status\+Denied. \Hypertarget{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166}\index{firebase::analytics@{firebase::analytics}!ConsentType@{ConsentType}}
+\index{ConsentType@{ConsentType}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{ConsentType}{ConsentType}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166} 
+enum \mbox{\hyperlink{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166}{firebase\+::analytics\+::\+Consent\+Type}}}
+
+
+
+The type of consent to set. 
+
+Supported consent types are mapped to corresponding constants in the Android and i\+OS SDKs. Omitting a type retains its previous status. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacefirebase_1_1analytics_a8e165637a983c3c323f653e4fe4f385c}\index{firebase::analytics@{firebase::analytics}!GetAnalyticsInstanceId@{GetAnalyticsInstanceId}}
+\index{GetAnalyticsInstanceId@{GetAnalyticsInstanceId}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{GetAnalyticsInstanceId()}{GetAnalyticsInstanceId()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a8e165637a983c3c323f653e4fe4f385c} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::analytics\+::\+Get\+Analytics\+Instance\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get the instance ID from the analytics service.
+
+\begin{DoxyNote}{Note}
+This is {\itshape not} the same ID as the ID returned by  Firebase.\+Instance\+Id.\+Firebase\+Instance\+Id. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Object which can be used to retrieve the analytics instance ID. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1analytics_aa8c4de43c75da8a54a88c7d54de04de2}\index{firebase::analytics@{firebase::analytics}!GetAnalyticsInstanceIdLastResult@{GetAnalyticsInstanceIdLastResult}}
+\index{GetAnalyticsInstanceIdLastResult@{GetAnalyticsInstanceIdLastResult}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{GetAnalyticsInstanceIdLastResult()}{GetAnalyticsInstanceIdLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_aa8c4de43c75da8a54a88c7d54de04de2} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ std\+::string $>$ firebase\+::analytics\+::\+Get\+Analytics\+Instance\+Id\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get the result of the most recent \doxylink{namespacefirebase_1_1analytics_a8e165637a983c3c323f653e4fe4f385c}{Get\+Analytics\+Instance\+Id()} call.
+
+\begin{DoxyReturn}{Returns}
+Object which can be used to retrieve the analytics instance ID. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1analytics_af0740417ffed7571a2567b3d965e39a5}\index{firebase::analytics@{firebase::analytics}!GetSessionId@{GetSessionId}}
+\index{GetSessionId@{GetSessionId}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{GetSessionId()}{GetSessionId()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_af0740417ffed7571a2567b3d965e39a5} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ int64\+\_\+t $>$ firebase\+::analytics\+::\+Get\+Session\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Asynchronously retrieves the identifier of the current app session.
+
+The session ID retrieval could fail due to Analytics collection disabled, or if the app session was expired.
+
+\begin{DoxyReturn}{Returns}
+Object which can be used to retrieve the identifier of the current app session. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1analytics_ad12b197133050338f532af442b668ba2}\index{firebase::analytics@{firebase::analytics}!GetSessionIdLastResult@{GetSessionIdLastResult}}
+\index{GetSessionIdLastResult@{GetSessionIdLastResult}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{GetSessionIdLastResult()}{GetSessionIdLastResult()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_ad12b197133050338f532af442b668ba2} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ int64\+\_\+t $>$ firebase\+::analytics\+::\+Get\+Session\+Id\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Get the result of the most recent \doxylink{namespacefirebase_1_1analytics_af0740417ffed7571a2567b3d965e39a5}{Get\+Session\+Id()} call.
+
+\begin{DoxyReturn}{Returns}
+Object which can be used to retrieve the identifier of the current app session. 
+\end{DoxyReturn}
+\Hypertarget{namespacefirebase_1_1analytics_ab15684936a9f93921f0fa31deb508a4d}\index{firebase::analytics@{firebase::analytics}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_ab15684936a9f93921f0fa31deb508a4d} 
+void firebase\+::analytics\+::\+Initialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \&}]{app}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the Analytics API. 
+
+This must be called prior to calling any other methods in the \doxylink{namespacefirebase_1_1analytics}{firebase\+::analytics} namespace.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & Default \doxylink{classfirebase_1_1_app}{firebase\+::\+App} instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfirebase_1_1_app_afb41d4bc5da4da3784bcc61683df0560}{firebase\+::\+App\+::\+Get\+Instance()}. 
+\end{DoxySeeAlso}
+\Hypertarget{namespacefirebase_1_1analytics_a3b2895a358908e8352f479422ec48dc0}\index{firebase::analytics@{firebase::analytics}!InitiateOnDeviceConversionMeasurementWithEmailAddress@{InitiateOnDeviceConversionMeasurementWithEmailAddress}}
+\index{InitiateOnDeviceConversionMeasurementWithEmailAddress@{InitiateOnDeviceConversionMeasurementWithEmailAddress}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{InitiateOnDeviceConversionMeasurementWithEmailAddress()}{InitiateOnDeviceConversionMeasurementWithEmailAddress()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a3b2895a358908e8352f479422ec48dc0} 
+void firebase\+::analytics\+::\+Initiate\+On\+Device\+Conversion\+Measurement\+With\+Email\+Address (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email\+\_\+address}{}\end{DoxyParamCaption})}
+
+Initiates on-\/device conversion measurement given a user email address on i\+OS and tv\+OS (no-\/op on Android). On i\+OS and tv\+OS, this method requires the dependency Google\+App\+Measurement\+On\+Device\+Conversion to be linked in, otherwise the invocation results in a no-\/op. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em email\+\_\+address} & User email address. Include a domain name for all email addresses (e.\+g. gmail.\+com or hotmail.\+co.\+jp). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_afdd62efe3ae1461d6fcc40e5ee4c5c00}\index{firebase::analytics@{firebase::analytics}!InitiateOnDeviceConversionMeasurementWithPhoneNumber@{InitiateOnDeviceConversionMeasurementWithPhoneNumber}}
+\index{InitiateOnDeviceConversionMeasurementWithPhoneNumber@{InitiateOnDeviceConversionMeasurementWithPhoneNumber}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{InitiateOnDeviceConversionMeasurementWithPhoneNumber()}{InitiateOnDeviceConversionMeasurementWithPhoneNumber()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_afdd62efe3ae1461d6fcc40e5ee4c5c00} 
+void firebase\+::analytics\+::\+Initiate\+On\+Device\+Conversion\+Measurement\+With\+Phone\+Number (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{phone\+\_\+number}{}\end{DoxyParamCaption})}
+
+Initiates on-\/device conversion measurement given a phone number in E.\+164 format on i\+OS (no-\/op on Android). On i\+OS, requires dependency Google\+App\+Measurement\+On\+Device\+Conversion to be linked in, otherwise it is a no-\/op. 
+\begin{DoxyParams}{Parameters}
+{\em phone\+\_\+number} & User phone number. Must be in E.\+164 format, which means it must be limited to a maximum of 15 digits and must include a plus sign (+) prefix and country code with no dashes, parentheses, or spaces. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_ad4aff1c74480a5a13d5e6e58170bc75d}\index{firebase::analytics@{firebase::analytics}!LogEvent@{LogEvent}}
+\index{LogEvent@{LogEvent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{LogEvent()}{LogEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_ad4aff1c74480a5a13d5e6e58170bc75d} 
+void firebase\+::analytics\+::\+Log\+Event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Log an event with no parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the event to log. Should contain 1 to 40 alphanumeric characters or underscores. The name must start with an alphabetic character. Some event names are reserved. $<$\+SWIG$>$  $<$/\+SWIG$>$  The "{}firebase\+\_\+"{} prefix is reserved and should not be used. Note that event names are case-\/sensitive and that logging two events whose names differ only in case will result in two distinct events.\\
+\hline
+\end{DoxyParams}
+$<$\+SWIG$>$  $<$/\+SWIG$>$  \Hypertarget{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82}\index{firebase::analytics@{firebase::analytics}!LogEvent@{LogEvent}}
+\index{LogEvent@{LogEvent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{LogEvent()}{LogEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a93b61cf7740883d81eeaa442d951ac82} 
+void firebase\+::analytics\+::\+Log\+Event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Log an event with one string parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the event to log. Should contain 1 to 40 alphanumeric characters or underscores. The name must start with an alphabetic character. Some event names are reserved. $<$\+SWIG$>$  $<$/\+SWIG$>$  The "{}firebase\+\_\+"{} prefix is reserved and should not be used. Note that event names are case-\/sensitive and that logging two events whose names differ only in case will result in two distinct events. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & Name of the parameter to log. For more information, see \doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+value} & Value of the parameter to log.\\
+\hline
+\end{DoxyParams}
+$<$\+SWIG$>$  $<$/\+SWIG$>$  \Hypertarget{namespacefirebase_1_1analytics_aef2252a6cae8a45704aec3af60c8df21}\index{firebase::analytics@{firebase::analytics}!LogEvent@{LogEvent}}
+\index{LogEvent@{LogEvent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{LogEvent()}{LogEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_aef2252a6cae8a45704aec3af60c8df21} 
+void firebase\+::analytics\+::\+Log\+Event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{const double}]{parameter\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Log an event with one float parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the event to log. Should contain 1 to 40 alphanumeric characters or underscores. The name must start with an alphabetic character. Some event names are reserved. $<$\+SWIG$>$  $<$/\+SWIG$>$  The "{}firebase\+\_\+"{} prefix is reserved and should not be used. Note that event names are case-\/sensitive and that logging two events whose names differ only in case will result in two distinct events. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & Name of the parameter to log. For more information, see \doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+value} & Value of the parameter to log.\\
+\hline
+\end{DoxyParams}
+$<$\+SWIG$>$  $<$/\+SWIG$>$  \Hypertarget{namespacefirebase_1_1analytics_a59844903c84bb1711bb7397a31c8d461}\index{firebase::analytics@{firebase::analytics}!LogEvent@{LogEvent}}
+\index{LogEvent@{LogEvent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{LogEvent()}{LogEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a59844903c84bb1711bb7397a31c8d461} 
+void firebase\+::analytics\+::\+Log\+Event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{const int}]{parameter\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Log an event with one integer parameter (stored as a 64-\/bit integer). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the event to log. Should contain 1 to 40 alphanumeric characters or underscores. The name must start with an alphabetic character. Some event names are reserved. $<$\+SWIG$>$  $<$/\+SWIG$>$  The "{}firebase\+\_\+"{} prefix is reserved and should not be used. Note that event names are case-\/sensitive and that logging two events whose names differ only in case will result in two distinct events. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & Name of the parameter to log. For more information, see \doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+value} & Value of the parameter to log.\\
+\hline
+\end{DoxyParams}
+$<$\+SWIG$>$  $<$/\+SWIG$>$  \Hypertarget{namespacefirebase_1_1analytics_a339e179eaee0abd26a6e3db20d07bab0}\index{firebase::analytics@{firebase::analytics}!LogEvent@{LogEvent}}
+\index{LogEvent@{LogEvent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{LogEvent()}{LogEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a339e179eaee0abd26a6e3db20d07bab0} 
+void firebase\+::analytics\+::\+Log\+Event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{parameter\+\_\+name}{, }\item[{const int64\+\_\+t}]{parameter\+\_\+value}{}\end{DoxyParamCaption})}
+
+
+
+Log an event with one 64-\/bit integer parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the event to log. Should contain 1 to 40 alphanumeric characters or underscores. The name must start with an alphabetic character. Some event names are reserved. $<$\+SWIG$>$  $<$/\+SWIG$>$  The "{}firebase\+\_\+"{} prefix is reserved and should not be used. Note that event names are case-\/sensitive and that logging two events whose names differ only in case will result in two distinct events. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+name} & Name of the parameter to log. For more information, see \doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameter\+\_\+value} & Value of the parameter to log.\\
+\hline
+\end{DoxyParams}
+$<$\+SWIG$>$  $<$/\+SWIG$>$  \Hypertarget{namespacefirebase_1_1analytics_a638c62aa918c2cb5d23740c19fb911df}\index{firebase::analytics@{firebase::analytics}!LogEvent@{LogEvent}}
+\index{LogEvent@{LogEvent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{LogEvent()}{LogEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a638c62aa918c2cb5d23740c19fb911df} 
+void firebase\+::analytics\+::\+Log\+Event (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const \mbox{\hyperlink{structfirebase_1_1analytics_1_1_parameter}{Parameter}} \texorpdfstring{$\ast$}{*}}]{parameters}{, }\item[{size\+\_\+t}]{number\+\_\+of\+\_\+parameters}{}\end{DoxyParamCaption})}
+
+
+
+Log an event with associated parameters. 
+
+An \doxylink{class_event}{Event} is an important occurrence in your app that you want to measure. You can report up to 500 different types of events per app and you can associate up to 25 unique parameters with each \doxylink{class_event}{Event} type.
+
+Some common events are documented in \doxylink{group__event__names}{Analytics Events} (event\+\_\+names.\+h), but you may also choose to specify custom event types that are associated with your specific app.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the event to log. Should contain 1 to 40 alphanumeric characters or underscores. The name must start with an alphabetic character. Some event names are reserved. See \doxylink{group__event__names}{Analytics Events} (event\+\_\+names.\+h) for the list of reserved event names. The "{}firebase\+\_\+"{} prefix is reserved and should not be used. Note that event names are case-\/sensitive and that logging two events whose names differ only in case will result in two distinct events. \\
+\hline
+\mbox{\texttt{ in}}  & {\em parameters} & Array of \doxylink{structfirebase_1_1analytics_1_1_parameter}{Parameter} structures. \\
+\hline
+\mbox{\texttt{ in}}  & {\em number\+\_\+of\+\_\+parameters} & Number of elements in the parameters array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_aa011e496efbc85e1e740d8caadd8e37b}\index{firebase::analytics@{firebase::analytics}!ResetAnalyticsData@{ResetAnalyticsData}}
+\index{ResetAnalyticsData@{ResetAnalyticsData}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{ResetAnalyticsData()}{ResetAnalyticsData()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_aa011e496efbc85e1e740d8caadd8e37b} 
+void firebase\+::analytics\+::\+Reset\+Analytics\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Clears all analytics data for this app from the device and resets the app instance id. \Hypertarget{namespacefirebase_1_1analytics_a5615fefec127488911e140d180ee7479}\index{firebase::analytics@{firebase::analytics}!SetAnalyticsCollectionEnabled@{SetAnalyticsCollectionEnabled}}
+\index{SetAnalyticsCollectionEnabled@{SetAnalyticsCollectionEnabled}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{SetAnalyticsCollectionEnabled()}{SetAnalyticsCollectionEnabled()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a5615fefec127488911e140d180ee7479} 
+void firebase\+::analytics\+::\+Set\+Analytics\+Collection\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+
+
+Sets whether analytics collection is enabled for this app on this device. 
+
+This setting is persisted across app sessions. By default it is enabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enabled} & true to enable analytics collection, false to disable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_a2942e4f437ff60079bc786c5ea8bb474}\index{firebase::analytics@{firebase::analytics}!SetConsent@{SetConsent}}
+\index{SetConsent@{SetConsent}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{SetConsent()}{SetConsent()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a2942e4f437ff60079bc786c5ea8bb474} 
+void firebase\+::analytics\+::\+Set\+Consent (\begin{DoxyParamCaption}\item[{const std\+::map$<$ \mbox{\hyperlink{namespacefirebase_1_1analytics_ab36250435cd94106989a32f1b654e166}{Consent\+Type}}, \mbox{\hyperlink{namespacefirebase_1_1analytics_a506d02f0829e762922caf374c8d1fd2f}{Consent\+Status}} $>$ \&}]{consent\+\_\+settings}{}\end{DoxyParamCaption})}
+
+
+
+Sets the applicable end user consent state (e.\+g., for device identifiers) for this app on this device. 
+
+Use the consent map to specify individual consent type values. Settings are persisted across app sessions. By default consent types are set to "{}granted"{}. \Hypertarget{namespacefirebase_1_1analytics_affa3d0db3d8803d15b1d0d951adf6fb7}\index{firebase::analytics@{firebase::analytics}!SetSessionTimeoutDuration@{SetSessionTimeoutDuration}}
+\index{SetSessionTimeoutDuration@{SetSessionTimeoutDuration}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{SetSessionTimeoutDuration()}{SetSessionTimeoutDuration()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_affa3d0db3d8803d15b1d0d951adf6fb7} 
+void firebase\+::analytics\+::\+Set\+Session\+Timeout\+Duration (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{milliseconds}{}\end{DoxyParamCaption})}
+
+
+
+Sets the duration of inactivity that terminates the current session. 
+
+\begin{DoxyNote}{Note}
+The default value is 1800000 (30 minutes).
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em milliseconds} & The duration of inactivity that terminates the current session. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_a45bf93e57c474e4ab36f92433e62cfbd}\index{firebase::analytics@{firebase::analytics}!SetUserId@{SetUserId}}
+\index{SetUserId@{SetUserId}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{SetUserId()}{SetUserId()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a45bf93e57c474e4ab36f92433e62cfbd} 
+void firebase\+::analytics\+::\+Set\+User\+Id (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{user\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Sets the user ID property. 
+
+This feature must be used in accordance with \href{https://www.google.com/policies/privacy}{\texttt{ Google\textquotesingle{}s Privacy Policy}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em user\+\_\+id} & The user ID associated with the user of this app on this device. The user ID must be non-\/empty and no more than 256 characters long. Setting user\+\_\+id to NULL or nullptr removes the user ID. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_aaf483fcf6eeaf78db243635783b4f6b1}\index{firebase::analytics@{firebase::analytics}!SetUserProperty@{SetUserProperty}}
+\index{SetUserProperty@{SetUserProperty}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{SetUserProperty()}{SetUserProperty()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_aaf483fcf6eeaf78db243635783b4f6b1} 
+void firebase\+::analytics\+::\+Set\+User\+Property (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Set a user property to the given value. 
+
+Properties associated with a user allow a developer to segment users into groups that are useful to their application. Up to 25 properties can be associated with a user.
+
+Suggested property names are listed \doxylink{group__user__property__names}{Analytics User Properties} (user\+\_\+property\+\_\+names.\+h) but you\textquotesingle{}re not limited to this set. For example, the "{}gamertype"{} property could be used to store the type of player where a range of values could be "{}casual"{}, "{}mid\+\_\+core"{}, or "{}core"{}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the user property to set. This must be a combination of letters and digits (matching the regular expression \mbox{[}a-\/z\+A-\/\+Z0-\/9\mbox{]} between 1 and 40 characters long starting with a letter \mbox{[}a-\/z\+A-\/Z\mbox{]} character. \\
+\hline
+\mbox{\texttt{ in}}  & {\em property} & Value to set the user property to. Set this argument to NULL or nullptr to remove the user property. The value can be between 1 to 100 characters long. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacefirebase_1_1analytics_a4ffbdf8db17725dd3c2e1732fb6a8009}\index{firebase::analytics@{firebase::analytics}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!firebase::analytics@{firebase::analytics}}
+\doxysubsubsection{\texorpdfstring{Terminate()}{Terminate()}}
+{\footnotesize\ttfamily \label{namespacefirebase_1_1analytics_a4ffbdf8db17725dd3c2e1732fb6a8009} 
+void firebase\+::analytics\+::\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Terminate the Analytics API. 
+
+Cleans up resources associated with the API. 

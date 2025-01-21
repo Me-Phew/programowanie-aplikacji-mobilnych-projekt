@@ -1,0 +1,131 @@
+\doxysection{firebase\+::App Class Reference}
+\hypertarget{classfirebase_1_1_app}{}\label{classfirebase_1_1_app}\index{firebase::App@{firebase::App}}
+
+
+Firebase application object.  
+
+
+
+
+{\ttfamily \#include $<$app.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_adbeb866a7b44f297dc095100d0663551}{name}} () const
+\item 
+const \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \& \mbox{\hyperlink{classfirebase_1_1_app_a80266c89cacefe114a300cc42596cd73}{options}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_a1bfc43cb5ae0839edd027c7f8cf95258}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the default \doxylink{classfirebase_1_1_app}{firebase\+::\+App} with default options. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_a6d57aeae13e783ee422d95ac3e59f5e1}{Create}} (const \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \&\mbox{\hyperlink{classfirebase_1_1_app_a80266c89cacefe114a300cc42596cd73}{options}})
+\begin{DoxyCompactList}\small\item\em Initializes the default \doxylink{classfirebase_1_1_app}{firebase\+::\+App} with the given options. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1_app_a5a9351e6f356aa9c7bd4e043f8e7f090}{Create}} (const \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \&\mbox{\hyperlink{classfirebase_1_1_app_a80266c89cacefe114a300cc42596cd73}{options}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1_app_adbeb866a7b44f297dc095100d0663551}{name}})
+\begin{DoxyCompactList}\small\item\em Initializes a \doxylink{classfirebase_1_1_app}{firebase\+::\+App} with the given options that operates on the named app. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1_app_afb41d4bc5da4da3784bcc61683df0560}\label{classfirebase_1_1_app_afb41d4bc5da4da3784bcc61683df0560} 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Get the default \doxylink{classfirebase_1_1_app}{App}, or nullptr if none has been created. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1_app_a37eefdeba27c9df57ad427829e6ae3a4}\label{classfirebase_1_1_app_a37eefdeba27c9df57ad427829e6ae3a4} 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Instance} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1_app_adbeb866a7b44f297dc095100d0663551}{name}})
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classfirebase_1_1_app}{App} with the given name, or nullptr if none have been created. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1_app_ad9409ec7a3ac266525e9d1349c472952}\label{classfirebase_1_1_app_ad9409ec7a3ac266525e9d1349c472952} 
+static std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries Get\+Apps} ()
+\begin{DoxyCompactList}\small\item\em Get all the apps, including the default one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase application object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1_app_a1bfc43cb5ae0839edd027c7f8cf95258}\index{firebase::App@{firebase::App}!Create@{Create}}
+\index{Create@{Create}!firebase::App@{firebase::App}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_a1bfc43cb5ae0839edd027c7f8cf95258} 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::\+App\+::\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the default \doxylink{classfirebase_1_1_app}{firebase\+::\+App} with default options. 
+
+\begin{DoxyNote}{Note}
+This method is specific to non-\/\+Android implementations.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1_app}{App} instance, the \doxylink{classfirebase_1_1_app}{App} should not be destroyed for the lifetime of the application. If default options can\textquotesingle{}t be loaded this will return null. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_app_a6d57aeae13e783ee422d95ac3e59f5e1}\index{firebase::App@{firebase::App}!Create@{Create}}
+\index{Create@{Create}!firebase::App@{firebase::App}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_a6d57aeae13e783ee422d95ac3e59f5e1} 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::\+App\+::\+Create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \&}]{options}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the default \doxylink{classfirebase_1_1_app}{firebase\+::\+App} with the given options. 
+
+\begin{DoxyNote}{Note}
+This method is specific to non-\/\+Android implementations.
+\end{DoxyNote}
+Options are copied at initialization time, so changes to the object are ignored. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em options} & Options that control the creation of the \doxylink{classfirebase_1_1_app}{App}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1_app}{App} instance, the \doxylink{classfirebase_1_1_app}{App} should not be destroyed for the lifetime of the application. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_app_a5a9351e6f356aa9c7bd4e043f8e7f090}\index{firebase::App@{firebase::App}!Create@{Create}}
+\index{Create@{Create}!firebase::App@{firebase::App}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_a5a9351e6f356aa9c7bd4e043f8e7f090} 
+static \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::\+App\+::\+Create (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \&}]{options}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes a \doxylink{classfirebase_1_1_app}{firebase\+::\+App} with the given options that operates on the named app. 
+
+\begin{DoxyNote}{Note}
+This method is specific to non-\/\+Android implementations.
+\end{DoxyNote}
+Options are copied at initialization time, so changes to the object are ignored. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em options} & Options that control the creation of the \doxylink{classfirebase_1_1_app}{App}. \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & Name of this \doxylink{classfirebase_1_1_app}{App} instance. This is only required when one application uses multiple \doxylink{classfirebase_1_1_app}{App} instances.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{classfirebase_1_1_app}{App} instance, the \doxylink{classfirebase_1_1_app}{App} should not be destroyed for the lifetime of the application. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_app_adbeb866a7b44f297dc095100d0663551}\index{firebase::App@{firebase::App}!name@{name}}
+\index{name@{name}!firebase::App@{firebase::App}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_adbeb866a7b44f297dc095100d0663551} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::\+App\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the name of this \doxylink{classfirebase_1_1_app}{App} instance.
+
+\begin{DoxyReturn}{Returns}
+The name of this \doxylink{classfirebase_1_1_app}{App} instance. If a name wasn\textquotesingle{}t provided via \doxylink{classfirebase_1_1_app_a1bfc43cb5ae0839edd027c7f8cf95258}{Create()}, this returns \doxylink{namespacefirebase_af14dd1b4270c2d08b327ff399ef868c9}{k\+Default\+App\+Name}. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1_app_a80266c89cacefe114a300cc42596cd73}\index{firebase::App@{firebase::App}!options@{options}}
+\index{options@{options}!firebase::App@{firebase::App}}
+\doxysubsubsection{\texorpdfstring{options()}{options()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_app_a80266c89cacefe114a300cc42596cd73} 
+const \mbox{\hyperlink{classfirebase_1_1_app_options}{App\+Options}} \& firebase\+::\+App\+::options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get options the \doxylink{classfirebase_1_1_app}{App} was created with.
+
+\begin{DoxyReturn}{Returns}
+Options used to create the \doxylink{classfirebase_1_1_app}{App}. $<$\+SWIG$>$  $<$/\+SWIG$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\doxysection{lib/screens/tabs/tabs\+\_\+screen.dart File Reference}
+\hypertarget{tabs__screen_8dart}{}\label{tabs__screen_8dart}\index{lib/screens/tabs/tabs\_screen.dart@{lib/screens/tabs/tabs\_screen.dart}}
+
+
+Ekran z zakładkami nawigacyjnymi aplikacji.  
+
+
+{\ttfamily import dart;}\newline
+Include dependency graph for tabs\+\_\+screen.\+dart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{tabs__screen_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{tabs__screen_8dart_ab339d53d3945a16dfdd20004616a8ddc}{init\+State}} ()
+\item 
+override Widget \mbox{\hyperlink{tabs__screen_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}{build}} (Build\+Context context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tabs__screen_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\item 
+class Tabs\+Screen extends \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}} \mbox{\hyperlink{tabs__screen_8dart_a2c3ccb9bba41e7de7168fef400929475}{\+\_\+selected\+Index}} = 0
+\item 
+late final List$<$ Widget $>$ \mbox{\hyperlink{tabs__screen_8dart_a76f43a97868e65e7a07636d3075e9bfb}{\+\_\+pages}}
+\item 
+Stream\+Subscription$<$ List$<$ Connectivity\+Result $>$ $>$ \mbox{\hyperlink{tabs__screen_8dart_a729a2378b3f56d68b7d1e0a268e5f7a4}{subscription}}
+\item 
+Connectivity\+Result \mbox{\hyperlink{tabs__screen_8dart_a8cc53b12e946f2db8fd9474cdaad1d73}{connectivity\+Result}}
+\item 
+Snack\+Bar \mbox{\hyperlink{tabs__screen_8dart_af4ab23a2a611c82d14c616e94e680970}{connection\+Lost\+Snackbar}}
+\item 
+Snack\+Bar \mbox{\hyperlink{tabs__screen_8dart_a04489701ef1db9f99ccea09845d203d9}{connection\+Recovered\+Snackbar}}
+\item 
+bool \mbox{\hyperlink{tabs__screen_8dart_abee0383364b89b6d71b51aad81be8cc1}{connection\+Lost}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ekran z zakładkami nawigacyjnymi aplikacji. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{tabs__screen_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}\index{tabs\_screen.dart@{tabs\_screen.dart}!build@{build}}
+\index{build@{build}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a} 
+override Widget build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tabs__screen_8dart_ab339d53d3945a16dfdd20004616a8ddc}\index{tabs\_screen.dart@{tabs\_screen.dart}!initState@{initState}}
+\index{initState@{initState}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{initState()}{initState()}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_ab339d53d3945a16dfdd20004616a8ddc} 
+override void init\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{tabs__screen_8dart_a76f43a97868e65e7a07636d3075e9bfb}\index{tabs\_screen.dart@{tabs\_screen.dart}!\_pages@{\_pages}}
+\index{\_pages@{\_pages}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{\_pages}{\_pages}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_a76f43a97868e65e7a07636d3075e9bfb} 
+late final List$<$Widget$>$ \+\_\+pages}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ HomePage(}
+\DoxyCodeLine{\ \ \ \ \ \ student:\ widget.student,}
+\DoxyCodeLine{\ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ GradesPage(),}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{announcements__page_8dart_abaa2452bef699c85abccba455216bb95}{AnnouncementsPage}}(),}
+\DoxyCodeLine{\ \ \ \ SettingsPage(student:\ widget.student),}
+\DoxyCodeLine{\ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{tabs__screen_8dart_a2c3ccb9bba41e7de7168fef400929475}\index{tabs\_screen.dart@{tabs\_screen.dart}!\_selectedIndex@{\_selectedIndex}}
+\index{\_selectedIndex@{\_selectedIndex}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{\_selectedIndex}{\_selectedIndex}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_a2c3ccb9bba41e7de7168fef400929475} 
+class Tabs\+Screen extends \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}} \+\_\+selected\+Index = 0}
+
+\Hypertarget{tabs__screen_8dart_abee0383364b89b6d71b51aad81be8cc1}\index{tabs\_screen.dart@{tabs\_screen.dart}!connectionLost@{connectionLost}}
+\index{connectionLost@{connectionLost}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{connectionLost}{connectionLost}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_abee0383364b89b6d71b51aad81be8cc1} 
+bool connection\+Lost = false}
+
+\Hypertarget{tabs__screen_8dart_af4ab23a2a611c82d14c616e94e680970}\index{tabs\_screen.dart@{tabs\_screen.dart}!connectionLostSnackbar@{connectionLostSnackbar}}
+\index{connectionLostSnackbar@{connectionLostSnackbar}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{connectionLostSnackbar}{connectionLostSnackbar}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_af4ab23a2a611c82d14c616e94e680970} 
+Snack\+Bar connection\+Lost\+Snackbar}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ SnackBar(}
+\DoxyCodeLine{\ \ \ \ content:\ Row(}
+\DoxyCodeLine{\ \ \ \ \ \ children:\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Icon(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ Icons.cloud\_off,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ color:\ Colors.white,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SizedBox(width:\ 10),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Text(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Brak\ połączenia\ z\ internetem'},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ style:\ TextStyle(fontWeight:\ FontWeight.bold),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ backgroundColor:\ Colors.red,}
+\DoxyCodeLine{\ \ \ \ dismissDirection:\ DismissDirection.none,}
+\DoxyCodeLine{\ \ \ \ duration:\ Duration(days:\ 1),}
+\DoxyCodeLine{\ \ )}
+
+\end{DoxyCode}
+\Hypertarget{tabs__screen_8dart_a04489701ef1db9f99ccea09845d203d9}\index{tabs\_screen.dart@{tabs\_screen.dart}!connectionRecoveredSnackbar@{connectionRecoveredSnackbar}}
+\index{connectionRecoveredSnackbar@{connectionRecoveredSnackbar}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{connectionRecoveredSnackbar}{connectionRecoveredSnackbar}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_a04489701ef1db9f99ccea09845d203d9} 
+Snack\+Bar connection\+Recovered\+Snackbar}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ SnackBar(}
+\DoxyCodeLine{\ \ \ \ content:\ Row(}
+\DoxyCodeLine{\ \ \ \ \ \ children:\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Icon(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ Icons.cloud,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ color:\ Colors.white,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SizedBox(width:\ 10),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Text(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'Odzyskano\ połączenie\ z\ internetem'},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ style:\ TextStyle(fontWeight:\ FontWeight.bold),}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ ),}
+\DoxyCodeLine{\ \ \ \ backgroundColor:\ Colors.green,}
+\DoxyCodeLine{\ \ \ \ duration:\ Duration(seconds:\ 2),}
+\DoxyCodeLine{\ \ )}
+
+\end{DoxyCode}
+\Hypertarget{tabs__screen_8dart_a8cc53b12e946f2db8fd9474cdaad1d73}\index{tabs\_screen.dart@{tabs\_screen.dart}!connectivityResult@{connectivityResult}}
+\index{connectivityResult@{connectivityResult}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{connectivityResult}{connectivityResult}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_a8cc53b12e946f2db8fd9474cdaad1d73} 
+Connectivity\+Result connectivity\+Result}
+
+\Hypertarget{tabs__screen_8dart_a2276f26ae4897992f6da960ea88601e9}\index{tabs\_screen.dart@{tabs\_screen.dart}!library@{library}}
+\index{library@{library}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+
+\Hypertarget{tabs__screen_8dart_a729a2378b3f56d68b7d1e0a268e5f7a4}\index{tabs\_screen.dart@{tabs\_screen.dart}!subscription@{subscription}}
+\index{subscription@{subscription}!tabs\_screen.dart@{tabs\_screen.dart}}
+\doxysubsubsection{\texorpdfstring{subscription}{subscription}}
+{\footnotesize\ttfamily \label{tabs__screen_8dart_a729a2378b3f56d68b7d1e0a268e5f7a4} 
+Stream\+Subscription$<$List$<$Connectivity\+Result$>$ $>$ subscription}
+

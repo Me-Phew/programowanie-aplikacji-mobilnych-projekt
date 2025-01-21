@@ -1,0 +1,225 @@
+\doxysection{user.\+h}
+\hypertarget{user_8h_source}{}\label{user_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/auth/user.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/auth/user.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_AUTH\_SRC\_INCLUDE\_FIREBASE\_AUTH\_USER\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_AUTH\_SRC\_INCLUDE\_FIREBASE\_AUTH\_USER\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/auth/credential.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/auth/types.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }auth\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Predeclarations.}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }Auth;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{struct\ }AuthData;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }AuthResult;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }FederatedAuthProvider;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{UserInfoInterface}}\ \{}
+\DoxyCodeLine{00040\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{\string~UserInfoInterface}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a7f2082cf46b1971825792fd36912a972}{uid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_aabdb7270e7295a3108103ea863b2547d}{email}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a311530d046c0ef11d0fddbf9b99240a2}{display\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00095\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_aca549b97721b1b262c317f2798fef808}{photo\_url}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_a25e1899b5ff84ce236c6c7e6aa9d5906}{provider\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface_ae19c8d66a7640e0160ede3f55c58e78b}{phone\_number}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}};}
+\DoxyCodeLine{00112\ \ \ std::string\ uid\_;}
+\DoxyCodeLine{00113\ \ \ std::string\ email\_;}
+\DoxyCodeLine{00114\ \ \ std::string\ display\_name\_;}
+\DoxyCodeLine{00115\ \ \ std::string\ photo\_url\_;}
+\DoxyCodeLine{00116\ \ \ std::string\ provider\_id\_;}
+\DoxyCodeLine{00117\ \ \ std::string\ phone\_number\_;}
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info}{AdditionalUserInfo}}\ \{}
+\DoxyCodeLine{00123\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info_a22f21833ad85e87385a4d76a9526cb69}{provider\_id}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ std::string\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info_a176357fc06d2fc2a89bf3a8fa7601747}{user\_name}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00131\ \ \ std::map<Variant,\ Variant>\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info_a7052241b279c9a1535655d61d5257d9f}{profile}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}}\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info_af2d15f430bb4cf7d23ff695b7011c8fb}{updated\_credential}};}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata}{UserMetadata}}\ \{}
+\DoxyCodeLine{00143\ \ \ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata}{UserMetadata}}()\ :\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata_a8521038f82702936eb4a3bb1853e112b}{last\_sign\_in\_timestamp}}(0),\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata_a6544df83c8968cfc198a97e7f81460ad}{creation\_timestamp}}(0)\ \{\}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00147\ \ \ uint64\_t\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata_a8521038f82702936eb4a3bb1853e112b}{last\_sign\_in\_timestamp}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ uint64\_t\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata_a6544df83c8968cfc198a97e7f81460ad}{creation\_timestamp}};}
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_info_interface}{UserInfoInterface}}\ \{}
+\DoxyCodeLine{00158\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00159\ \ \ \textcolor{comment}{//\ Default\ constructor\ -\/\ creates\ an\ invalid\ user.}}
+\DoxyCodeLine{00160\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile}{UserProfile}}\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile_a50360daabe722379af60b0f216856c93}{UserProfile}}()\ :\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile_a4bae837a5fcf0863fe2228fd4b151f8b}{display\_name}}(NULL),\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile_ab7fcca5f69159d73fcf3b64d3ef73fe5}{photo\_url}}(NULL)\ \{\}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile_a4bae837a5fcf0863fe2228fd4b151f8b}{display\_name}};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile_ab7fcca5f69159d73fcf3b64d3ef73fe5}{photo\_url}};}
+\DoxyCodeLine{00175\ \ \ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00178\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_abc3154a55ebc56240edbebe8240340c8}{User}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\&);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00181\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\&\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5f10fbc8b0ef1336c1c8a54a003bbbb4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\&);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00184\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_afe2930f45113bc4ffac22a435475a3ac}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00187\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5ae2ef0762280b8b80d41177d3e88c66}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{\string~User}}();}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00194\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_aed1157b697acd1ee88763b90798cd29a}{is\_valid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00205\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a63c5ee74507b48921f5b4c63a832232b}{GetToken}}(\textcolor{keywordtype}{bool}\ force\_refresh);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#if\ defined(INTERNAL\_EXPERIMENTAL)\ ||\ defined(SWIG)}}
+\DoxyCodeLine{00214\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ GetTokenThreadSafe(\textcolor{keywordtype}{bool}\ force\_refresh);}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(INTERNAL\_EXPERIMENTAL)\ ||\ defined(SWIG)}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00218\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a6b2728369ca0fba3ab4ee539477a7daf}{GetTokenLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00230\ \ \ std::vector<UserInfoInterface>\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_abe7b994ec18b67e1304fdcfa43f34ffb}{provider\_data}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00239\ \ \ FIREBASE\_DEPRECATED\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a583b897e17a8f7160fcb97db74b6adc9}{UpdateEmail}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{email}});}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00244\ \ \ FIREBASE\_DEPRECATED\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a1b92a94f9ab49b1715fda255ccee96e2}{UpdateEmailLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00262\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5ffe7734317835f25aaf7278673f6a1e}{UpdatePassword}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ password);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00265\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a60d1f6148dab9e4cd41ff77aeb652f17}{UpdatePasswordLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00269\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_aed4e6a979d9d6d05aeac0d526388cb51}{Reauthenticate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}}\&\ credential);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00272\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_af5a4238acce796f2317e7bc61acfac90}{ReauthenticateLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00301\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a7715875bab369b6fcfc17e69e25918da}{ReauthenticateAndRetrieveData}}(}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}}\&\ credential);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00305\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a4fa92f8bd8eb81b140e2338941919e1b}{ReauthenticateAndRetrieveDataLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00316\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a35603c0b5336c919cbf90402959dfcd2}{ReauthenticateWithProvider}}(}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{FederatedAuthProvider}}*\ provider)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00320\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae798f551e0324b0957ec32b4db882322}{SendEmailVerification}}();}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00323\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a64c62ab350fcfc337bafe2de40e74829}{SendEmailVerificationLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00327\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_aa2b3ec10f6abb80b4d3534f7e4f2217b}{SendEmailVerificationBeforeUpdatingEmail}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{email}});}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00331\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_af5a468bb09e2588246293f8df91a0249}{SendEmailVerificationBeforeUpdatingEmailLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00334\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a7eca63a8c8ba19e0b6a3f87b238b0a98}{UpdateUserProfile}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_1_1_user_profile}{UserProfile}}\&\ profile);}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00337\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a69f4a0369dd3c6b2ce8ecb43034a1e12}{UpdateUserProfileLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00351\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a3c69fa931127579ebaf681c0e19fbdaa}{LinkWithCredential}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}}\&\ credential);}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00354\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a9d9c0c0aec2d0cdd1bd4fb098c2ed6fc}{LinkWithCredentialLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00365\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a0ab32323766476a0d16afd7f4b0074d4}{LinkWithProvider}}(\mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{FederatedAuthProvider}}*\ provider)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00369\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae40ec8ab4759cc3570848fa79f2d8a3a}{Unlink}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ provider);}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00372\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AuthResult>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_af8c6c41ba24dd35d8640c282978c2cbb}{UnlinkLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00379\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<User>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ac1b5ac8d049df0ce4bcfa7602930f3dc}{UpdatePhoneNumberCredential}}(}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_phone_auth_credential}{PhoneAuthCredential}}\&\ credential);}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00384\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<User>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a740afc9294997fe09239b98f38cf69db}{UpdatePhoneNumberCredentialLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00389\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a9f8fd3dc6825d0db2949adf2a25a3669}{Reload}}();}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00392\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ab5043d60f9f5cf9415aafcc209e1e875}{ReloadLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00395\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a53625c7a0ca71d782114cc163b4c05f7}{Delete}}();}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00398\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a2f67e1f54c131db125ff7957a8938f9b}{DeleteLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00401\ \ \ \mbox{\hyperlink{structfirebase_1_1auth_1_1_user_metadata}{UserMetadata}}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ab07ebe8cf209985b109268c11abbbc88}{metadata}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00412\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a51d316aa47a2c9064789f1b28a7605ba}{is\_email\_verified}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00422\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a574c10bf0498656a9c0427861921df2f}{is\_anonymous}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00446\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a662d4994ef64c1689d8c3bf09d093b05}{uid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00456\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_ae9902357b3d293c919b39888e8d09a32}{email}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00466\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a8348bc6c3247dd61ff0a2dd9b406dc95}{display\_name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00476\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a3dd64a1f0fb3a3188aedde3f0605c713}{photo\_url}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00486\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a5167d84d40bfde9bdd366c6f70678c3d}{provider\_id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00489\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user_a48b7e1eaaef2da37b6ffc1793df5d58c}{phone\_number}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00492\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }AuthData;}
+\DoxyCodeLine{00493\ \ \ \textcolor{comment}{//\ Only\ exists\ in\ AuthData.\ Access\ via\ Auth::CurrentUser().}}
+\DoxyCodeLine{00494\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}(AuthData*\ auth\_data)\ :\ auth\_data\_(auth\_data)\ \{\}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#if\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00497\ \ \ \textcolor{comment}{//\ Doxygen\ should\ not\ make\ docs\ for\ this\ function.}}
+\DoxyCodeLine{00499\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }IdTokenRefreshThread;}
+\DoxyCodeLine{00500\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }IdTokenRefreshListener;}
+\DoxyCodeLine{00501\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}};}
+\DoxyCodeLine{00502\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ GetTokenInternal(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ force\_refresh,}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ future\_identifier);}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \textcolor{comment}{//\ Use\ the\ pimpl\ mechanism\ to\ hide\ data\ details\ in\ the\ cpp\ files.}}
+\DoxyCodeLine{00508\ \ \ AuthData*\ auth\_data\_;}
+\DoxyCodeLine{00509\ \};}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00512\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result}{AuthResult}}\ \{}
+\DoxyCodeLine{00515\ \ \ \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info}{AdditionalUserInfo}}\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result_aef94bf126d5ef8027d3dc075cf35f856}{additional\_user\_info}};}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00519\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}}\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result_a44b78f50ef2707b6cb731b5163d5826b}{credential}};}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00523\ \ \ \mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}}\ \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result_a531cac980c6c47951ceeb67e3870ea94}{user}};}
+\DoxyCodeLine{00524\ \};}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \}\ \ \textcolor{comment}{//\ namespace\ auth}}
+\DoxyCodeLine{00527\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_AUTH\_SRC\_INCLUDE\_FIREBASE\_AUTH\_USER\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,88 @@
+\doxysection{geo\+\_\+point.\+h}
+\hypertarget{geo__point_8h_source}{}\label{geo__point_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/geo\_point.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/geo\_point.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_GEO\_POINT\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_GEO\_POINT\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <iosfwd>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\ \{}
+\DoxyCodeLine{00034\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_abeaa0258595983ace6e0c0a833272a32}{GeoPoint}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_af75b37aa89a82c258ff670313b563e49}{GeoPoint}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a32345f452e056b9a4e758b5627e34310}{latitude}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_aa0ba0e8179ff2d84e2db28f9eee8fe95}{longitude}});}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a0ec4d648318c335388b14e7878aa5070}{GeoPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a2e6c4a10f17fcb0bcce7836dff813755}{GeoPoint}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_ac01f189f1146da37246d6dff917b3003}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a8120a7088c5e6ec8e48848cd7f0080fb}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a32345f452e056b9a4e758b5627e34310}{latitude}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ latitude\_;}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_aa0ba0e8179ff2d84e2db28f9eee8fe95}{longitude}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ longitude\_;}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_ac3cb38aadadde9b1f6732e07c677e1b9}{ToString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a3b302363f6c2885aab9d97eab99b63f1}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ geo\_point);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{double}\ latitude\_\ =\ 0.0;}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{double}\ longitude\_\ =\ 0.0;}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_ad487599682f2014c55bcc56e653a69a9}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ rhs);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_ac3555aaefe50fe6d17f405922891d1df}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ rhs)\ \{}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordflow}{return}\ rhs\ <\ lhs;}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_aa77bdd2b973a1718695c0a82f67f1236}{operator>=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ rhs)\ \{}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ <\ rhs);}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a250c820bc936f575b2a89cd37cb5857a}{operator<=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ rhs)\ \{}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ >\ rhs);}
+\DoxyCodeLine{00105\ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ rhs)\ \{}
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordflow}{return}\ lhs\ <\ rhs\ ||\ lhs\ >\ rhs;}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{GeoPoint}}\&\ rhs)\ \{}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ !=\ rhs);}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00118\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_GEO\_POINT\_H\_}}
+
+\end{DoxyCode}

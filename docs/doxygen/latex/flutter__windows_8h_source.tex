@@ -1,0 +1,312 @@
+\doxysection{flutter\+\_\+windows.\+h}
+\hypertarget{flutter__windows_8h_source}{}\label{flutter__windows_8h_source}\index{windows/flutter/ephemeral/flutter\_windows.h@{windows/flutter/ephemeral/flutter\_windows.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_PUBLIC\_FLUTTER\_WINDOWS\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_PUBLIC\_FLUTTER\_WINDOWS\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <dxgi.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}flutter\_export.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}flutter\_messenger.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}flutter\_plugin\_registrar.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ void\ (*VoidCallback)(\textcolor{keywordtype}{void}*\ \textcolor{comment}{/*\ user\ data\ */});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Opaque\ reference\ to\ a\ Flutter\ view\ controller.}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }FlutterDesktopViewController;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }FlutterDesktopViewController*\ FlutterDesktopViewControllerRef;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Opaque\ reference\ to\ a\ Flutter\ window.}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }FlutterDesktopView;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }FlutterDesktopView*\ FlutterDesktopViewRef;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Opaque\ reference\ to\ a\ Flutter\ engine\ instance.}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }FlutterDesktopEngine;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }FlutterDesktopEngine*\ FlutterDesktopEngineRef;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ The\ unique\ identifier\ for\ a\ view.}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ int64\_t\ FlutterDesktopViewId;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ Properties\ for\ configuring\ a\ Flutter\ engine\ instance.}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ The\ path\ to\ the\ flutter\_assets\ folder\ for\ the\ application\ to\ be\ run.}}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ This\ can\ either\ be\ an\ absolute\ path\ or\ a\ path\ relative\ to\ the\ directory}}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ containing\ the\ executable.}}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ assets\_path;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ The\ path\ to\ the\ icudtl.dat\ file\ for\ the\ version\ of\ Flutter\ you\ are\ using.}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ This\ can\ either\ be\ an\ absolute\ path\ or\ a\ path\ relative\ to\ the\ directory}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ containing\ the\ executable.}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ icu\_data\_path;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ The\ path\ to\ the\ AOT\ library\ file\ for\ your\ application,\ if\ any.}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ This\ can\ either\ be\ an\ absolute\ path\ or\ a\ path\ relative\ to\ the\ directory}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ containing\ the\ executable.\ This\ can\ be\ nullptr\ for\ a\ non-\/AOT\ build,\ as}}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ it\ will\ be\ ignored\ in\ that\ case.}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ aot\_library\_path;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ The\ name\ of\ the\ top-\/level\ Dart\ entrypoint\ function.\ If\ null\ or\ the\ empty}}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ string,\ 'main'\ is\ assumed.\ If\ a\ custom\ entrypoint\ is\ used,\ this\ parameter}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ must\ specifiy\ the\ name\ of\ a\ top-\/level\ function\ in\ the\ same\ Dart\ library\ as}}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ the\ app's\ main()\ function.\ Custom\ entrypoint\ functions\ must\ be\ decorated}}
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ with\ \`{}@pragma('vm:entry-\/point')`\ to\ ensure\ the\ method\ is\ not\ tree-\/shaken}}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ by\ the\ Dart\ compiler.}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ dart\_entrypoint;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ Number\ of\ elements\ in\ the\ array\ passed\ in\ as\ dart\_entrypoint\_argv.}}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{int}\ dart\_entrypoint\_argc;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ Array\ of\ Dart\ entrypoint\ arguments.\ This\ is\ deep\ copied\ during\ the\ call}}
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ to\ FlutterDesktopEngineCreate.}}
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ dart\_entrypoint\_argv;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \mbox{\hyperlink{struct_flutter_desktop_engine_properties}{FlutterDesktopEngineProperties}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ ==========\ View\ Controller\ ==========}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ Creates\ a\ view\ that\ hosts\ and\ displays\ the\ given\ engine\ instance.}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ This\ takes\ ownership\ of\ |engine|,\ so\ FlutterDesktopEngineDestroy\ should\ no}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ longer\ be\ called\ on\ it,\ as\ it\ will\ be\ called\ internally\ when\ the\ view}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ controller\ is\ destroyed.\ If\ creating\ the\ view\ controller\ fails,\ the\ engine}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ will\ be\ destroyed\ immediately.}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ If\ |engine|\ is\ not\ already\ running,\ the\ view\ controller\ will\ start\ running}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ it\ automatically\ before\ displaying\ the\ window.}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ The\ caller\ owns\ the\ returned\ reference,\ and\ is\ responsible\ for\ calling}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ FlutterDesktopViewControllerDestroy.\ Returns\ a\ null\ pointer\ in\ the\ event\ of}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ an\ error.}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ The\ Win32\ implementation\ accepts\ width,\ height\ with\ view\ hookup\ explicitly}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ performed\ using\ the\ caller\ using\ HWND\ parenting.}}
+\DoxyCodeLine{00091\ FLUTTER\_EXPORT\ FlutterDesktopViewControllerRef}
+\DoxyCodeLine{00092\ FlutterDesktopViewControllerCreate(\textcolor{keywordtype}{int}\ width,}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FlutterDesktopEngineRef\ engine);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ Shuts\ down\ the\ engine\ instance\ associated\ with\ |controller|,\ and\ cleans\ up}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ associated\ state.}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ |controller|\ is\ no\ longer\ valid\ after\ this\ call.}}
+\DoxyCodeLine{00100\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopViewControllerDestroy(}
+\DoxyCodeLine{00101\ \ \ \ \ FlutterDesktopViewControllerRef\ controller);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ Returns\ the\ view\ controller's\ view\ ID.}}
+\DoxyCodeLine{00104\ FLUTTER\_EXPORT\ FlutterDesktopViewId\ FlutterDesktopViewControllerGetViewId(}
+\DoxyCodeLine{00105\ \ \ \ \ FlutterDesktopViewControllerRef\ view\_controller);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ Returns\ the\ handle\ for\ the\ engine\ running\ in\ FlutterDesktopViewControllerRef.}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ Its\ lifetime\ is\ the\ same\ as\ the\ |controller|'s.}}
+\DoxyCodeLine{00110\ FLUTTER\_EXPORT\ FlutterDesktopEngineRef\ FlutterDesktopViewControllerGetEngine(}
+\DoxyCodeLine{00111\ \ \ \ \ FlutterDesktopViewControllerRef\ controller);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ Returns\ the\ view\ managed\ by\ the\ given\ controller.}}
+\DoxyCodeLine{00114\ FLUTTER\_EXPORT\ FlutterDesktopViewRef\ FlutterDesktopViewControllerGetView(}
+\DoxyCodeLine{00115\ \ \ \ \ FlutterDesktopViewControllerRef\ controller);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ Requests\ new\ frame\ from\ the\ engine\ and\ repaints\ the\ view.}}
+\DoxyCodeLine{00118\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopViewControllerForceRedraw(}
+\DoxyCodeLine{00119\ \ \ \ \ FlutterDesktopViewControllerRef\ controller);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ Allows\ the\ Flutter\ engine\ and\ any\ interested\ plugins\ an\ opportunity\ to}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ handle\ the\ given\ message.}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ If\ the\ WindowProc\ was\ handled\ and\ further\ handling\ should\ stop,\ this\ returns}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ true\ and\ |result|\ will\ be\ populated.\ |result|\ is\ not\ set\ if\ returning\ false.}}
+\DoxyCodeLine{00126\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopViewControllerHandleTopLevelWindowProc(}
+\DoxyCodeLine{00127\ \ \ \ \ FlutterDesktopViewControllerRef\ controller,}
+\DoxyCodeLine{00128\ \ \ \ \ HWND\ hwnd,}
+\DoxyCodeLine{00129\ \ \ \ \ UINT\ message,}
+\DoxyCodeLine{00130\ \ \ \ \ WPARAM\ wparam,}
+\DoxyCodeLine{00131\ \ \ \ \ LPARAM\ lparam,}
+\DoxyCodeLine{00132\ \ \ \ \ LRESULT*\ result);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ ==========\ Engine\ ==========}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ Creates\ a\ Flutter\ engine\ with\ the\ given\ properties.}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ The\ caller\ owns\ the\ returned\ reference,\ and\ is\ responsible\ for\ calling}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ FlutterDesktopEngineDestroy.\ The\ lifetime\ of\ |engine\_properties|\ is\ required}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ to\ extend\ only\ until\ the\ end\ of\ this\ call.}}
+\DoxyCodeLine{00141\ FLUTTER\_EXPORT\ FlutterDesktopEngineRef\ FlutterDesktopEngineCreate(}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_engine_properties}{FlutterDesktopEngineProperties}}*\ engine\_properties);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ Shuts\ down\ and\ destroys\ the\ given\ engine\ instance.\ Returns\ true\ if\ the}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ shutdown\ was\ successful,\ or\ if\ the\ engine\ was\ not\ running.}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ |engine|\ is\ no\ longer\ valid\ after\ this\ call.}}
+\DoxyCodeLine{00148\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopEngineDestroy(FlutterDesktopEngineRef\ engine);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ Starts\ running\ the\ given\ engine\ instance.}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ The\ entry\_point\ parameter\ is\ deprecated\ but\ preserved\ for}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ backward-\/compatibility.\ If\ desired,\ a\ custom\ Dart\ entrypoint\ function\ can\ be}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ set\ in\ the\ dart\_entrypoint\ field\ of\ the\ FlutterDesktopEngineProperties}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ struct\ passed\ to\ FlutterDesktopEngineCreate.}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ If\ specified,\ entry\_point\ must\ be\ the\ name\ of\ a\ top-\/level\ function\ from\ the}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ same\ Dart\ library\ that\ contains\ the\ app's\ main()\ function,\ and\ must\ be}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ decorated\ with\ \`{}@pragma(vm:entry-\/point)`\ to\ ensure\ the\ method\ is\ not}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ tree-\/shaken\ by\ the\ Dart\ compiler.\ If\ conflicting\ non-\/null\ values\ are\ passed}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ to\ this\ function\ and\ via\ the\ FlutterDesktopEngineProperties\ struct,\ the\ run}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ will\ fail.}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ Returns\ false\ if\ running\ the\ engine\ failed.}}
+\DoxyCodeLine{00165\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopEngineRun(FlutterDesktopEngineRef\ engine,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ entry\_point);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ DEPRECATED:\ This\ is\ no\ longer\ necessary\ to\ call,\ Flutter\ will\ take\ care\ of}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ processing\ engine\ messages\ transparently\ through\ DispatchMessage.}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ Processes\ any\ pending\ events\ in\ the\ Flutter\ engine,\ and\ returns\ the}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ number\ of\ nanoseconds\ until\ the\ next\ scheduled\ event\ (or\ max,\ if\ none).}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ This\ should\ be\ called\ on\ every\ run\ of\ the\ application-\/level\ runloop,\ and}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ a\ wait\ for\ native\ events\ in\ the\ runloop\ should\ never\ be\ longer\ than\ the}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//\ last\ return\ value\ from\ this\ function.}}
+\DoxyCodeLine{00177\ FLUTTER\_EXPORT\ uint64\_t\ FlutterDesktopEngineProcessMessages(}
+\DoxyCodeLine{00178\ \ \ \ \ FlutterDesktopEngineRef\ engine);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopEngineReloadSystemFonts(}
+\DoxyCodeLine{00181\ \ \ \ \ FlutterDesktopEngineRef\ engine);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ Returns\ the\ plugin\ registrar\ handle\ for\ the\ plugin\ with\ the\ given\ name.}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ The\ name\ must\ be\ unique\ across\ the\ application.}}
+\DoxyCodeLine{00186\ FLUTTER\_EXPORT\ FlutterDesktopPluginRegistrarRef}
+\DoxyCodeLine{00187\ FlutterDesktopEngineGetPluginRegistrar(FlutterDesktopEngineRef\ engine,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ plugin\_name);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ Returns\ the\ messenger\ associated\ with\ the\ engine.}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ This\ does\ not\ provide\ an\ owning\ reference,\ so\ should\ *not*\ be\ balanced\ with\ a}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ call\ to\ |FlutterDesktopMessengerRelease|.}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ Callers\ should\ use\ |FlutterDesktopMessengerAddRef|\ if\ the\ returned\ pointer}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ will\ potentially\ outlive\ 'engine',\ such\ as\ when\ passing\ it\ to\ another\ thread.}}
+\DoxyCodeLine{00197\ FLUTTER\_EXPORT\ FlutterDesktopMessengerRef\ FlutterDesktopEngineGetMessenger(}
+\DoxyCodeLine{00198\ \ \ \ \ FlutterDesktopEngineRef\ engine);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ Returns\ the\ texture\ registrar\ associated\ with\ the\ engine.}}
+\DoxyCodeLine{00201\ FLUTTER\_EXPORT\ FlutterDesktopTextureRegistrarRef}
+\DoxyCodeLine{00202\ FlutterDesktopEngineGetTextureRegistrar(FlutterDesktopEngineRef\ engine);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{//\ Schedule\ a\ callback\ to\ be\ called\ after\ the\ next\ frame\ is\ drawn.}}
+\DoxyCodeLine{00205\ \textcolor{comment}{//}}
+\DoxyCodeLine{00206\ \textcolor{comment}{//\ This\ must\ be\ called\ from\ the\ platform\ thread.\ The\ callback\ is\ executed\ only}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ once\ on\ the\ platform\ thread.}}
+\DoxyCodeLine{00208\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopEngineSetNextFrameCallback(}
+\DoxyCodeLine{00209\ \ \ \ \ FlutterDesktopEngineRef\ engine,}
+\DoxyCodeLine{00210\ \ \ \ \ VoidCallback\ callback,}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{//\ ==========\ View\ ==========}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ Returns\ the\ backing\ HWND\ for\ manipulation\ in\ host\ application.}}
+\DoxyCodeLine{00216\ FLUTTER\_EXPORT\ HWND\ FlutterDesktopViewGetHWND(FlutterDesktopViewRef\ view);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{comment}{//\ Returns\ the\ DXGI\ adapter\ used\ for\ rendering\ or\ nullptr\ in\ case\ of\ error.}}
+\DoxyCodeLine{00219\ FLUTTER\_EXPORT\ IDXGIAdapter*\ FlutterDesktopViewGetGraphicsAdapter(}
+\DoxyCodeLine{00220\ \ \ \ \ FlutterDesktopViewRef\ view);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{comment}{//\ Called\ to\ pass\ an\ external\ window\ message\ to\ the\ engine\ for\ lifecycle}}
+\DoxyCodeLine{00223\ \textcolor{comment}{//\ state\ updates.\ Non-\/Flutter\ windows\ must\ call\ this\ method\ in\ their\ WndProc}}
+\DoxyCodeLine{00224\ \textcolor{comment}{//\ in\ order\ to\ be\ included\ in\ the\ logic\ for\ application\ lifecycle\ state}}
+\DoxyCodeLine{00225\ \textcolor{comment}{//\ updates.\ Returns\ a\ result\ if\ the\ message\ should\ be\ consumed.}}
+\DoxyCodeLine{00226\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}\ FlutterDesktopEngineProcessExternalWindowMessage(}
+\DoxyCodeLine{00227\ \ \ \ \ FlutterDesktopEngineRef\ engine,}
+\DoxyCodeLine{00228\ \ \ \ \ HWND\ hwnd,}
+\DoxyCodeLine{00229\ \ \ \ \ UINT\ message,}
+\DoxyCodeLine{00230\ \ \ \ \ WPARAM\ wparam,}
+\DoxyCodeLine{00231\ \ \ \ \ LPARAM\ lparam,}
+\DoxyCodeLine{00232\ \ \ \ \ LRESULT*\ result);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{comment}{//\ ==========\ Plugin\ Registrar\ (extensions)\ ==========}}
+\DoxyCodeLine{00235\ \textcolor{comment}{//\ These\ are\ Windows-\/specific\ extensions\ to\ flutter\_plugin\_registrar.h}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{comment}{//\ Function\ pointer\ type\ for\ top\ level\ WindowProc\ delegate\ registration.}}
+\DoxyCodeLine{00238\ \textcolor{comment}{//}}
+\DoxyCodeLine{00239\ \textcolor{comment}{//\ The\ user\ data\ will\ be\ whatever\ was\ passed\ to}}
+\DoxyCodeLine{00240\ \textcolor{comment}{//\ FlutterDesktopRegisterTopLevelWindowProcHandler.}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//}}
+\DoxyCodeLine{00242\ \textcolor{comment}{//\ Implementations\ should\ populate\ |result|\ and\ return\ true\ if\ the\ WindowProc}}
+\DoxyCodeLine{00243\ \textcolor{comment}{//\ was\ handled\ and\ further\ handling\ should\ stop.\ |result|\ is\ ignored\ if\ the}}
+\DoxyCodeLine{00244\ \textcolor{comment}{//\ function\ returns\ false.}}
+\DoxyCodeLine{00245\ \textcolor{keyword}{typedef}\ bool\ (*FlutterDesktopWindowProcCallback)(HWND\ \textcolor{comment}{/*\ hwnd\ */},}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT\ \textcolor{comment}{/*\ uMsg\ */},}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WPARAM\ \textcolor{comment}{/*wParam*/},}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LPARAM\ \textcolor{comment}{/*\ lParam*/},}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ \textcolor{comment}{/*\ user\ data\ */},}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LRESULT*\ result);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{comment}{//\ Returns\ the\ implicit\ view\ associated\ with\ this\ registrar's\ engine\ instance,}}
+\DoxyCodeLine{00253\ \textcolor{comment}{//\ or\ null\ if\ there\ is\ no\ implicit\ view.}}
+\DoxyCodeLine{00254\ \textcolor{comment}{//}}
+\DoxyCodeLine{00255\ \textcolor{comment}{//\ See:}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//\ https://api.flutter.dev/flutter/dart-\/ui/PlatformDispatcher/implicitView.html}}
+\DoxyCodeLine{00257\ \textcolor{comment}{//}}
+\DoxyCodeLine{00258\ \textcolor{comment}{//\ DEPRECATED:\ Use\ |FlutterDesktopPluginRegistrarGetViewById|\ instead.}}
+\DoxyCodeLine{00259\ FLUTTER\_EXPORT\ FlutterDesktopViewRef\ FlutterDesktopPluginRegistrarGetView(}
+\DoxyCodeLine{00260\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \textcolor{comment}{//\ Returns\ the\ view\ associated\ with\ the\ registrar's\ engine\ instance,\ or\ null\ if}}
+\DoxyCodeLine{00263\ \textcolor{comment}{//\ the\ view\ does\ not\ exist.}}
+\DoxyCodeLine{00264\ FLUTTER\_EXPORT\ FlutterDesktopViewRef\ FlutterDesktopPluginRegistrarGetViewById(}
+\DoxyCodeLine{00265\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar,}
+\DoxyCodeLine{00266\ \ \ \ \ FlutterDesktopViewId\ view\_id);}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00269\ FlutterDesktopPluginRegistrarRegisterTopLevelWindowProcDelegate(}
+\DoxyCodeLine{00270\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar,}
+\DoxyCodeLine{00271\ \ \ \ \ FlutterDesktopWindowProcCallback\ delegate,}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00275\ FlutterDesktopPluginRegistrarUnregisterTopLevelWindowProcDelegate(}
+\DoxyCodeLine{00276\ \ \ \ \ FlutterDesktopPluginRegistrarRef\ registrar,}
+\DoxyCodeLine{00277\ \ \ \ \ FlutterDesktopWindowProcCallback\ delegate);}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \textcolor{comment}{//\ ==========\ Freestanding\ Utilities\ ==========}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{comment}{//\ Gets\ the\ DPI\ for\ a\ given\ |hwnd|,\ depending\ on\ the\ supported\ APIs\ per}}
+\DoxyCodeLine{00282\ \textcolor{comment}{//\ windows\ version\ and\ DPI\ awareness\ mode.\ If\ nullptr\ is\ passed,\ returns\ the\ DPI}}
+\DoxyCodeLine{00283\ \textcolor{comment}{//\ of\ the\ primary\ monitor.}}
+\DoxyCodeLine{00284\ \textcolor{comment}{//}}
+\DoxyCodeLine{00285\ \textcolor{comment}{//\ This\ uses\ the\ same\ logic\ and\ fallback\ for\ older\ Windows\ versions\ that\ is\ used}}
+\DoxyCodeLine{00286\ \textcolor{comment}{//\ internally\ by\ Flutter\ to\ determine\ the\ DPI\ to\ use\ for\ displaying\ Flutter}}
+\DoxyCodeLine{00287\ \textcolor{comment}{//\ content,\ so\ should\ be\ used\ by\ any\ code\ (e.g.,\ in\ plugins)\ that\ translates}}
+\DoxyCodeLine{00288\ \textcolor{comment}{//\ between\ Windows\ and\ Dart\ sizes/offsets.}}
+\DoxyCodeLine{00289\ FLUTTER\_EXPORT\ UINT\ FlutterDesktopGetDpiForHWND(HWND\ hwnd);}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ Gets\ the\ DPI\ for\ a\ given\ |monitor|.\ If\ the\ API\ is\ not\ available,\ a\ default}}
+\DoxyCodeLine{00292\ \textcolor{comment}{//\ DPI\ of\ 96\ is\ returned.}}
+\DoxyCodeLine{00293\ \textcolor{comment}{//}}
+\DoxyCodeLine{00294\ \textcolor{comment}{//\ See\ FlutterDesktopGetDpiForHWND\ for\ more\ information.}}
+\DoxyCodeLine{00295\ FLUTTER\_EXPORT\ UINT\ FlutterDesktopGetDpiForMonitor(HMONITOR\ monitor);}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \textcolor{comment}{//\ Reopens\ stdout\ and\ stderr\ and\ resysncs\ the\ standard\ library\ output\ streams.}}
+\DoxyCodeLine{00298\ \textcolor{comment}{//\ Should\ be\ called\ if\ output\ is\ being\ directed\ somewhere\ in\ the\ runner\ process}}
+\DoxyCodeLine{00299\ \textcolor{comment}{//\ (e.g.,\ after\ an\ AllocConsole\ call).}}
+\DoxyCodeLine{00300\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopResyncOutputStreams();}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00303\ \}\ \ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_PUBLIC\_FLUTTER\_WINDOWS\_H\_}}
+
+\end{DoxyCode}

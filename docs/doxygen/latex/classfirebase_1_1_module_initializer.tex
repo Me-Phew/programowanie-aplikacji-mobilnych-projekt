@@ -1,0 +1,96 @@
+\doxysection{firebase\+::Module\+Initializer Class Reference}
+\hypertarget{classfirebase_1_1_module_initializer}{}\label{classfirebase_1_1_module_initializer}\index{firebase::ModuleInitializer@{firebase::ModuleInitializer}}
+
+
+Utility class to help with initializing Firebase modules.  
+
+
+
+
+{\ttfamily \#include $<$util.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}\label{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352} 
+typedef \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}}(\texorpdfstring{$\ast$}{*}) {\bfseries Initializer\+Fn}(\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}app, void \texorpdfstring{$\ast$}{*}context)
+\begin{DoxyCompactList}\small\item\em Initialization function, which should initialize a single Firebase module and return the Init\+Result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1_module_initializer_a25ebba2d3b7dbba3c9b9e832b05076be}{Initialize}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}app, void \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{Initializer\+Fn}} \texorpdfstring{$\ast$}{*}init\+\_\+fns, size\+\_\+t init\+\_\+fns\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Initialize Firebase modules by calling one or more user-\/supplied functions, each of which must initialize at most one library, and should return the Init\+Result of the initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1_module_initializer_ae109b7189cb88e83af1ded9af45672b6}{Initialize}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}app, void \texorpdfstring{$\ast$}{*}context, \mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{Initializer\+Fn}} init\+\_\+fn)
+\begin{DoxyCompactList}\small\item\em Initialize one Firebase module by calling a single user-\/supplied function that should initialize a Firebase module and return the Init\+Result. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1_module_initializer_a2d9650083aae73471d85c7853425591e}{Initialize\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the result of the most recent call to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class to help with initializing Firebase modules. 
+
+This optional class handles a basic Firebase C++ SDK code pattern\+: attempt to initialize a Firebase module, and if the initialization fails on Android due to Google Play services being unavailable, prompt the user to update/enable Google Play services on their device.
+
+If the developer wants more advanced behavior (for example, wait to prompt the user to update or enable Google Play services until later, or opt not to use Firebase modules), they can still initialize each Firebase module individually, and use google\+\_\+play\+\_\+services\+::\+Make\+Available() directly if any initializations fail. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1_module_initializer_a25ebba2d3b7dbba3c9b9e832b05076be}\index{firebase::ModuleInitializer@{firebase::ModuleInitializer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::ModuleInitializer@{firebase::ModuleInitializer}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_module_initializer_a25ebba2d3b7dbba3c9b9e832b05076be} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::\+Module\+Initializer\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{Initializer\+Fn}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+fns}{, }\item[{size\+\_\+t}]{init\+\_\+fns\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Initialize Firebase modules by calling one or more user-\/supplied functions, each of which must initialize at most one library, and should return the Init\+Result of the initialization. 
+
+This function will run the initializers in order, checking the return value of each. On Android, if the Init\+Result returned is k\+Init\+Result\+Failed\+Missing\+Dependency, this indicates that Google Play services is not available and a Firebase module requires it. This function will attempt to fix Google Play services, and will retry initializations where it left off, beginning with the one that failed.
+
+\begin{DoxyReturn}{Returns}
+A future result. When all of the initializers are completed, the \doxylink{classfirebase_1_1_future}{Future} will be completed with Error() = 0. If an initializer fails and the situation cannot be fixed, the \doxylink{classfirebase_1_1_future}{Future} will be completed with Error() equal to the number of initializers that did not succeed (since they are run in order, this tells you which ones failed).
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that will be passed to the initializers, as well as used to fix Google Play services on Android if needed.\\
+\hline
+\mbox{\texttt{ in}}  & {\em context} & User-\/defined context, which will be passed to the initializer functions. If you don\textquotesingle{}t need this, you can use nullptr.\\
+\hline
+\mbox{\texttt{ in}}  & {\em init\+\_\+fns} & Your initialization functions to call, in an array. At their simplest, these will each simply call a single Firebase module\textquotesingle{}s Initialize(app) and return the result, but you can perform more complex logic if you prefer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em init\+\_\+fns\+\_\+count} & Number of initialization functions in the supplied array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If a pending \doxylink{classfirebase_1_1_module_initializer_a25ebba2d3b7dbba3c9b9e832b05076be}{Initialize()} is already running, this function will return the existing \doxylink{classfirebase_1_1_future}{Future} rather than adding any new functions to the initializer list. 
+\end{DoxyNote}
+\Hypertarget{classfirebase_1_1_module_initializer_ae109b7189cb88e83af1ded9af45672b6}\index{firebase::ModuleInitializer@{firebase::ModuleInitializer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::ModuleInitializer@{firebase::ModuleInitializer}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_module_initializer_ae109b7189cb88e83af1ded9af45672b6} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::\+Module\+Initializer\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{\mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{Initializer\+Fn}}}]{init\+\_\+fn}{}\end{DoxyParamCaption})}
+
+
+
+Initialize one Firebase module by calling a single user-\/supplied function that should initialize a Firebase module and return the Init\+Result. 
+
+\begin{DoxySeeAlso}{See also}
+Initialize(\+::firebase\+::\+App\texorpdfstring{$\ast$}{*}, void\texorpdfstring{$\ast$}{*}, const Initializer\+Fn\texorpdfstring{$\ast$}{*}) for more information. 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1_module_initializer_a2d9650083aae73471d85c7853425591e}\index{firebase::ModuleInitializer@{firebase::ModuleInitializer}!InitializeLastResult@{InitializeLastResult}}
+\index{InitializeLastResult@{InitializeLastResult}!firebase::ModuleInitializer@{firebase::ModuleInitializer}}
+\doxysubsubsection{\texorpdfstring{InitializeLastResult()}{InitializeLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1_module_initializer_a2d9650083aae73471d85c7853425591e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::\+Module\+Initializer\+::\+Initialize\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the result of the most recent call to. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfirebase_1_1_module_initializer_a25ebba2d3b7dbba3c9b9e832b05076be}{Initialize()}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/util.\+h\end{DoxyCompactItemize}

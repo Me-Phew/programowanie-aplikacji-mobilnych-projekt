@@ -1,0 +1,63 @@
+\doxysection{firebase\+::auth\+::Federated\+OAuth\+Provider\+Data Struct Reference}
+\hypertarget{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{}\label{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}\index{firebase::auth::FederatedOAuthProviderData@{firebase::auth::FederatedOAuthProviderData}}
+
+
+Contains information to identify an OAuth povider.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::auth\+::Federated\+OAuth\+Provider\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{structfirebase_1_1auth_1_1_federated_o_auth_provider_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::auth\+::Federated\+OAuth\+Provider\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{structfirebase_1_1auth_1_1_federated_o_auth_provider_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a231678537898b48971bed4f195d5f8a4}\label{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a231678537898b48971bed4f195d5f8a4} 
+{\bfseries Federated\+OAuth\+Provider\+Data} ()
+\begin{DoxyCompactList}\small\item\em Initailizes an empty provider data structure. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afda3bfa3534c1a1108cc668adb49d150}\label{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afda3bfa3534c1a1108cc668adb49d150} 
+{\bfseries Federated\+OAuth\+Provider\+Data} (const std\+::string \&provider)
+\begin{DoxyCompactList}\small\item\em Initializes the provider data structure with a provider id. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a24a854283e00c0802de820771ab03634}\label{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a24a854283e00c0802de820771ab03634} 
+{\bfseries Federated\+OAuth\+Provider\+Data} (const std\+::string \&provider, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afd20cd394e5f88f07c614a1d6103efb0}{scopes}}, std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a27f1e28473cd0618716575cea63fdbfc}{custom\+\_\+parameters}})
+\begin{DoxyCompactList}\small\item\em Initializes the provider data structure with the specified provider id, scopes and custom parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afd20cd394e5f88f07c614a1d6103efb0}\label{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_afd20cd394e5f88f07c614a1d6103efb0} 
+std\+::vector$<$ std\+::string $>$ {\bfseries scopes}
+\begin{DoxyCompactList}\small\item\em OAuth parmeters which specify which rights of access are being requested. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a27f1e28473cd0618716575cea63fdbfc}\label{structfirebase_1_1auth_1_1_federated_o_auth_provider_data_a27f1e28473cd0618716575cea63fdbfc} 
+std\+::map$<$ std\+::string, std\+::string $>$ {\bfseries custom\+\_\+parameters}
+\begin{DoxyCompactList}\small\item\em OAuth parameters which are provided to the federated provider service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_provider_data}{firebase\+::auth\+::\+Federated\+Provider\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries provider\+\_\+id}
+\begin{DoxyCompactList}\small\item\em contains the id of the provider to be used during sign-\/in, link, or reauthentication requests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains information to identify an OAuth povider. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/types.\+h\end{DoxyCompactItemize}

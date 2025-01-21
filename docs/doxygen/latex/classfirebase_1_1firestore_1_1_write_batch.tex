@@ -1,0 +1,265 @@
+\doxysection{firebase\+::firestore\+::Write\+Batch Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_write_batch}{}\label{classfirebase_1_1firestore_1_1_write_batch}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+
+
+A write batch is used to perform multiple writes as a single atomic unit.  
+
+
+
+
+{\ttfamily \#include $<$write\+\_\+batch.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a1ef2385a4c63e72629050f5189f05a81}{Write\+Batch}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a70ef96e2013e32353e7c38e3acf90a63}{Write\+Batch}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a6265f025cb1da1b53fa761a3080528a4}{Write\+Batch}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_ac821f6b4efa4000806a701427ec219c6}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a330099b27ac950eb35453ac0953303e4}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_aa0d5b7a123282b39dd48c9d8cbac5605}{Set}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&document, const \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} \&data, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&options=\mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}())
+\begin{DoxyCompactList}\small\item\em Writes to the document referred to by the provided reference. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a594d9bd0708c0352022dfa393ea30c6a}{Update}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&document, const \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} \&data)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a8daa7118d68bd0d479b7c85184e7c3f7}{Update}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&document, const \mbox{\hyperlink{namespacefirebase_1_1firestore_a9a4f49a16c341d414106e290e7bae6f9}{Map\+Field\+Path\+Value}} \&data)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_a5ed777a15b81fa7f2412e6826cc12b27}{Delete}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&document)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_af9c8e438f0d9d52d441c90d7cbad699f}{Commit}} ()
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch_af0290e9c69f017a43ded4a5350cac491}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} could be the result of\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_write_batch_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a0c491f15816190f8235ccd1367d5ae5f}\label{classfirebase_1_1firestore_1_1_write_batch_a0c491f15816190f8235ccd1367d5ae5f} 
+class {\bfseries Write\+Batch\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_write_batch_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_write_batch_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A write batch is used to perform multiple writes as a single atomic unit. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} object provides methods for adding writes to the write batch. None of the writes will be committed (or visible locally) until \doxylink{classfirebase_1_1firestore_1_1_write_batch_af9c8e438f0d9d52d441c90d7cbad699f}{Commit()} is called.
+
+Unlike transactions, write batches are persisted offline and therefore are preferable when you don\textquotesingle{}t need to condition your writes on read data.
+
+\begin{DoxyNote}{Note}
+\doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} classes are not meant to be subclassed except for use in test mocks. Subclassing is not supported in production code and new SDK releases may break code that does so. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a1ef2385a4c63e72629050f5189f05a81}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!WriteBatch@{WriteBatch}}
+\index{WriteBatch@{WriteBatch}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{WriteBatch()}{WriteBatch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a1ef2385a4c63e72629050f5189f05a81} 
+firebase\+::firestore\+::\+Write\+Batch\+::\+Write\+Batch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a70ef96e2013e32353e7c38e3acf90a63}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!WriteBatch@{WriteBatch}}
+\index{WriteBatch@{WriteBatch}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{WriteBatch()}{WriteBatch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a70ef96e2013e32353e7c38e3acf90a63} 
+firebase\+::firestore\+::\+Write\+Batch\+::\+Write\+Batch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a6265f025cb1da1b53fa761a3080528a4}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!WriteBatch@{WriteBatch}}
+\index{WriteBatch@{WriteBatch}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{WriteBatch()}{WriteBatch()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a6265f025cb1da1b53fa761a3080528a4} 
+firebase\+::firestore\+::\+Write\+Batch\+::\+Write\+Batch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_af9c8e438f0d9d52d441c90d7cbad699f}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!Commit@{Commit}}
+\index{Commit@{Commit}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{Commit()}{Commit()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_af9c8e438f0d9d52d441c90d7cbad699f} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Write\+Batch\+::\+Commit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Commits all of the writes in this write batch as a single atomic unit.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} that will be resolved when the write finishes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a5ed777a15b81fa7f2412e6826cc12b27}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!Delete@{Delete}}
+\index{Delete@{Delete}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a5ed777a15b81fa7f2412e6826cc12b27} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& firebase\+::firestore\+::\+Write\+Batch\+::\+Delete (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{document}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Deletes the document referred to by the provided reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em document} & The \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} instance. Used for chaining method calls. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_af0290e9c69f017a43ded4a5350cac491}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_af0290e9c69f017a43ded4a5350cac491} 
+bool firebase\+::firestore\+::\+Write\+Batch\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}}.
+\item Deleting your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance, which will invalidate all the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} instances associated with it.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_ac821f6b4efa4000806a701427ec219c6}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_ac821f6b4efa4000806a701427ec219c6} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& firebase\+::firestore\+::\+Write\+Batch\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a330099b27ac950eb35453ac0953303e4}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a330099b27ac950eb35453ac0953303e4} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& firebase\+::firestore\+::\+Write\+Batch\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_aa0d5b7a123282b39dd48c9d8cbac5605}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!Set@{Set}}
+\index{Set@{Set}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_aa0d5b7a123282b39dd48c9d8cbac5605} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& firebase\+::firestore\+::\+Write\+Batch\+::\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{document}{, }\item[{const \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} \&}]{data}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}} \&}]{options}{ = {\ttfamily \mbox{\hyperlink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}}()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes to the document referred to by the provided reference. 
+
+If the document does not yet exist, it will be created. If you pass \doxylink{classfirebase_1_1firestore_1_1_set_options}{Set\+Options}, the provided data can be merged into an existing document.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em document} & The \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} to write to. \\
+\hline
+ & {\em data} & A map of the fields and values to write to the document. \\
+\hline
+\mbox{\texttt{ in}}  & {\em options} & An object to configure the \doxylink{classfirebase_1_1firestore_1_1_write_batch_aa0d5b7a123282b39dd48c9d8cbac5605}{Set()} behavior (optional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} instance. Used for chaining method calls. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a8daa7118d68bd0d479b7c85184e7c3f7}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!Update@{Update}}
+\index{Update@{Update}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a8daa7118d68bd0d479b7c85184e7c3f7} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& firebase\+::firestore\+::\+Write\+Batch\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{document}{, }\item[{const \mbox{\hyperlink{namespacefirebase_1_1firestore_a9a4f49a16c341d414106e290e7bae6f9}{Map\+Field\+Path\+Value}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates fields in the document referred to by the provided reference. If no document exists yet, the update will fail.
+
+
+\begin{DoxyParams}{Parameters}
+{\em document} & The \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} to update. \\
+\hline
+{\em data} & A map from \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} to \doxylink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value} to update. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} instance. Used for chaining method calls. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_write_batch_a594d9bd0708c0352022dfa393ea30c6a}\index{firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}!Update@{Update}}
+\index{Update@{Update}!firebase::firestore::WriteBatch@{firebase::firestore::WriteBatch}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_write_batch_a594d9bd0708c0352022dfa393ea30c6a} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \& firebase\+::firestore\+::\+Write\+Batch\+::\+Update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \&}]{document}{, }\item[{const \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{Map\+Field\+Value}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Updates fields in the document referred to by the provided reference. If no document exists yet, the update will fail.
+
+
+\begin{DoxyParams}{Parameters}
+{\em document} & The \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} to update. \\
+\hline
+{\em data} & A map of field / value pairs to update. Fields can contain dots to reference nested fields within the document. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} instance. Used for chaining method calls. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/write\+\_\+batch.\+h\end{DoxyCompactItemize}

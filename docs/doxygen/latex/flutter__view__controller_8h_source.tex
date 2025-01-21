@@ -1,0 +1,82 @@
+\doxysection{flutter\+\_\+view\+\_\+controller.\+h}
+\hypertarget{flutter__view__controller_8h_source}{}\label{flutter__view__controller_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/flutter\_view\_controller.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/flutter\_view\_controller.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_VIEW\_CONTROLLER\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_VIEW\_CONTROLLER\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <flutter\_windows.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}dart\_project.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}flutter\_engine.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}flutter\_view.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ A\ controller\ for\ a\ view\ displaying\ Flutter\ content.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ This\ is\ the\ primary\ wrapper\ class\ for\ the\ desktop\ C\ API.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ If\ you\ use\ this\ class,\ you\ should\ not\ call\ any\ of\ the\ setup\ or\ teardown}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ methods\ in\ the\ C\ API\ directly,\ as\ this\ class\ will\ do\ that\ internally.}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}}\ \{}
+\DoxyCodeLine{00026\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Creates\ a\ FlutterView\ that\ can\ be\ parented\ into\ a\ Windows\ View\ hierarchy}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ either\ using\ HWNDs.}}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ This\ also\ creates\ a\ new\ FlutterEngine.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ |dart\_project|\ will\ be\ used\ to\ configure\ the\ engine\ backing\ this\ view.}}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_dart_project}{DartProject}}\&\ project);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{\string~FlutterViewController}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}}(\mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_flutter_view_controller}{FlutterViewController}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ Returns\ the\ view\ controller's\ view\ ID.}}
+\DoxyCodeLine{00042\ \ \ FlutterViewId\ view\_id()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ Returns\ the\ engine\ running\ Flutter\ content\ in\ this\ view.}}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_engine}{FlutterEngine}}*\ engine()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ engine\_.get();\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Returns\ the\ view\ managed\ by\ this\ controller.}}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}*\ view()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ view\_.get();\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ Requests\ new\ frame\ from\ the\ engine\ and\ repaints\ the\ view.}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ ForceRedraw();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ Allows\ the\ Flutter\ engine\ and\ any\ interested\ plugins\ an\ opportunity\ to}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ handle\ the\ given\ message.}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ If\ a\ result\ is\ returned,\ then\ the\ message\ was\ handled\ in\ such\ a\ way\ that}}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ further\ handling\ should\ not\ be\ done.}}
+\DoxyCodeLine{00058\ \ \ std::optional<LRESULT>\ HandleTopLevelWindowProc(HWND\ hwnd,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT\ message,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WPARAM\ wparam,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LPARAM\ lparam);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ Handle\ for\ interacting\ with\ the\ C\ API's\ view\ controller,\ if\ any.}}
+\DoxyCodeLine{00065\ \ \ FlutterDesktopViewControllerRef\ controller\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{comment}{//\ The\ backing\ engine}}
+\DoxyCodeLine{00068\ \ \ std::shared\_ptr<FlutterEngine>\ engine\_;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ The\ owned\ FlutterView.}}
+\DoxyCodeLine{00071\ \ \ std::unique\_ptr<FlutterView>\ view\_;}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_FLUTTER\_VIEW\_CONTROLLER\_H\_}}
+
+\end{DoxyCode}

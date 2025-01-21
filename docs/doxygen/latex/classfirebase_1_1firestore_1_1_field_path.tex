@@ -1,0 +1,248 @@
+\doxysection{firebase\+::firestore\+::Field\+Path Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_field_path}{}\label{classfirebase_1_1firestore_1_1_field_path}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+
+
+A \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} refers to a field in a document.  
+
+
+
+
+{\ttfamily \#include $<$field\+\_\+path.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a1bfb61ea96153e870611dfeca9ca5768}{Field\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a90bbfc3b4b5bb5b55141d82132731e02}{Field\+Path}} (std\+::initializer\+\_\+list$<$ std\+::string $>$ field\+\_\+names)
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a8dab4ca0013815114265c7511610de84}{Field\+Path}} (const std\+::vector$<$ std\+::string $>$ \&field\+\_\+names)
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_aa617f978bee4f464d276fc1a0215f099}{Field\+Path}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a43f69c580d47778b38bb5983a5bcfb64}{Field\+Path}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a3afc9dbf6fc9042984dfe079994df347}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a6c5803340ae7b76ac19e3ba11a2e2af3}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a8a942c5292362e1dc4bda947e9c4ed54}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} could be the result of\+: \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a7642cbb8576872dbac385459ad3740d5}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a0d5805f5220f6229494c6461e527d7d9}{Document\+Id}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_aca9b72ef3032adb6ff43441b1c3429eb}\label{classfirebase_1_1firestore_1_1_field_path_aca9b72ef3032adb6ff43441b1c3429eb} 
+struct {\bfseries std\+::hash$<$ Field\+Path $>$}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a34f7bc7cd29643e53d23b7d500d21739}\label{classfirebase_1_1firestore_1_1_field_path_a34f7bc7cd29643e53d23b7d500d21739} 
+class {\bfseries Filter}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_abd301be77f6b5a9bd29f3073e1def9ef}\label{classfirebase_1_1firestore_1_1_field_path_abd301be77f6b5a9bd29f3073e1def9ef} 
+class {\bfseries Document\+Snapshot}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a0de80064a367adf51ab09f7a9b6de05a}\label{classfirebase_1_1firestore_1_1_field_path_a0de80064a367adf51ab09f7a9b6de05a} 
+class {\bfseries Query}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_af6cb3d6b6c0e0eca68e1f4cbc42db8bb}\label{classfirebase_1_1firestore_1_1_field_path_af6cb3d6b6c0e0eca68e1f4cbc42db8bb} 
+class {\bfseries Query\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a6c6fdd3fee02eeba89e6b825455c9a91}\label{classfirebase_1_1firestore_1_1_field_path_a6c6fdd3fee02eeba89e6b825455c9a91} 
+class {\bfseries Set\+Options}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a23bc0e69a33a33cff1bfbb98cfcc6cda}\label{classfirebase_1_1firestore_1_1_field_path_a23bc0e69a33a33cff1bfbb98cfcc6cda} 
+class {\bfseries Field\+Path\+Converter}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_field_path_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path_a958bf77e75bdc0c9883cabdd7803c5d2}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&path)
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_ade08e12e80be98fb19a5fad24624adb9}\label{classfirebase_1_1firestore_1_1_field_path_ade08e12e80be98fb19a5fad24624adb9} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&rhs)
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a1e3cfb151cce09565df7563dd5114535}\label{classfirebase_1_1firestore_1_1_field_path_a1e3cfb151cce09565df7563dd5114535} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} refers to a field in a document. 
+
+The path may consist of a single field name (referring to a top level field in the document) or a list of field names (referring to a nested field in the document). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a1bfb61ea96153e870611dfeca9ca5768}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!FieldPath@{FieldPath}}
+\index{FieldPath@{FieldPath}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{FieldPath()}{FieldPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a1bfb61ea96153e870611dfeca9ca5768} 
+firebase\+::firestore\+::\+Field\+Path\+::\+Field\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_field_path_a90bbfc3b4b5bb5b55141d82132731e02}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!FieldPath@{FieldPath}}
+\index{FieldPath@{FieldPath}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{FieldPath()}{FieldPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a90bbfc3b4b5bb5b55141d82132731e02} 
+firebase\+::firestore\+::\+Field\+Path\+::\+Field\+Path (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::string $>$}]{field\+\_\+names}{}\end{DoxyParamCaption})}
+
+Creates a \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} from the provided field names. If more than one field name is provided, the path will point to a nested field in a document.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\+\_\+names} & A list of field names. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a8dab4ca0013815114265c7511610de84}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!FieldPath@{FieldPath}}
+\index{FieldPath@{FieldPath}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{FieldPath()}{FieldPath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a8dab4ca0013815114265c7511610de84} 
+firebase\+::firestore\+::\+Field\+Path\+::\+Field\+Path (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{field\+\_\+names}{}\end{DoxyParamCaption})}
+
+Creates a \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} from the provided field names. If more than one field name is provided, the path will point to a nested field in a document.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\+\_\+names} & A vector of field names. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_aa617f978bee4f464d276fc1a0215f099}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!FieldPath@{FieldPath}}
+\index{FieldPath@{FieldPath}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{FieldPath()}{FieldPath()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_aa617f978bee4f464d276fc1a0215f099} 
+firebase\+::firestore\+::\+Field\+Path\+::\+Field\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a43f69c580d47778b38bb5983a5bcfb64}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!FieldPath@{FieldPath}}
+\index{FieldPath@{FieldPath}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{FieldPath()}{FieldPath()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a43f69c580d47778b38bb5983a5bcfb64} 
+firebase\+::firestore\+::\+Field\+Path\+::\+Field\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a0d5805f5220f6229494c6461e527d7d9}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!DocumentId@{DocumentId}}
+\index{DocumentId@{DocumentId}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{DocumentId()}{DocumentId()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a0d5805f5220f6229494c6461e527d7d9} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} firebase\+::firestore\+::\+Field\+Path\+::\+Document\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A special sentinel \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path} to refer to the ID of a document. It can be used in queries to sort or filter by the document ID. \Hypertarget{classfirebase_1_1firestore_1_1_field_path_a8a942c5292362e1dc4bda947e9c4ed54}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a8a942c5292362e1dc4bda947e9c4ed54} 
+bool firebase\+::firestore\+::\+Field\+Path\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a3afc9dbf6fc9042984dfe079994df347}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a3afc9dbf6fc9042984dfe079994df347} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \& firebase\+::firestore\+::\+Field\+Path\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a6c5803340ae7b76ac19e3ba11a2e2af3}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a6c5803340ae7b76ac19e3ba11a2e2af3} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \& firebase\+::firestore\+::\+Field\+Path\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a7642cbb8576872dbac385459ad3740d5}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a7642cbb8576872dbac385459ad3740d5} 
+std\+::string firebase\+::firestore\+::\+Field\+Path\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_field_path_a958bf77e75bdc0c9883cabdd7803c5d2}\index{firebase::firestore::FieldPath@{firebase::firestore::FieldPath}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::FieldPath@{firebase::firestore::FieldPath}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_field_path_a958bf77e75bdc0c9883cabdd7803c5d2} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_path_a7642cbb8576872dbac385459ad3740d5}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/field\+\_\+path.\+h\end{DoxyCompactItemize}

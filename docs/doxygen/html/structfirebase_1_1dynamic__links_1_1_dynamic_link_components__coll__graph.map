@@ -1,0 +1,13 @@
+<map id="firebase::dynamic_links::DynamicLinkComponents" name="firebase::dynamic_links::DynamicLinkComponents">
+<area shape="rect" id="Node000001" title="The information needed to generate a Dynamic Link." alt="" coords="466,139,645,181"/>
+<area shape="rect" id="Node000002" href="$structfirebase_1_1dynamic__links_1_1_google_analytics_parameters.html" title="Google Analytics Parameters." alt="" coords="29,5,221,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,30,338,45,392,58,443,76,493,105,533,136,529,140,490,109,441,81,390,63,337,50,236,35"/>
+<area shape="rect" id="Node000003" href="$structfirebase_1_1dynamic__links_1_1_i_o_s_parameters.html" title="iOS Parameters." alt="" coords="46,72,204,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,94,327,102,442,120,497,135,496,141,441,125,327,108,220,99"/>
+<area shape="rect" id="Node000004" href="$structfirebase_1_1dynamic__links_1_1_i_tunes_connect_analytics_parameters.html" title="iTunes Connect App Analytics Parameters." alt="" coords="5,139,245,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="260,157,465,157,465,163,260,163"/>
+<area shape="rect" id="Node000005" href="$structfirebase_1_1dynamic__links_1_1_android_parameters.html" title="Android Parameters." alt="" coords="46,205,204,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="219,212,441,179,465,175,466,180,442,184,220,217"/>
+<area shape="rect" id="Node000006" href="$structfirebase_1_1dynamic__links_1_1_social_meta_tag_parameters.html" title="Social meta&#45;tag Parameters." alt="" coords="34,272,216,315"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="231,279,334,259,389,245,441,227,485,205,524,180,526,184,488,209,443,232,390,250,336,264,232,284"/>
+</map>

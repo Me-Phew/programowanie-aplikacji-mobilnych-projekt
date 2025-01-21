@@ -1,0 +1,70 @@
+\doxysection{firebase\+::auth\+::Game\+Center\+Auth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_game_center_auth_provider}{}\label{classfirebase_1_1auth_1_1_game_center_auth_provider}\index{firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}}
+
+
+Game\+Center (Apple) auth provider.  
+
+
+
+
+{\ttfamily \#include $<$credential.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_game_center_auth_provider_af6bf657f3adc87b1e8797d87f712df34}{Get\+Credential}} ()
+\item 
+static \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} $>$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_game_center_auth_provider_afb1b79c449bf4afeb926953f4e9d11b9}{Get\+Credential\+Last\+Result}} ()
+\item 
+static bool \mbox{\hyperlink{classfirebase_1_1auth_1_1_game_center_auth_provider_ab56ee9c4d887bc7207c03579dd6a5796}{Is\+Player\+Authenticated}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_game_center_auth_provider_a9139fca14c3e2daa5777221c1d79a358}\label{classfirebase_1_1auth_1_1_game_center_auth_provider_a9139fca14c3e2daa5777221c1d79a358} 
+static const char \texorpdfstring{$\ast$}{*}const {\bfseries k\+Provider\+Id}
+\begin{DoxyCompactList}\small\item\em The string used to identify this provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game\+Center (Apple) auth provider. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_game_center_auth_provider_af6bf657f3adc87b1e8797d87f712df34}\index{firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}!GetCredential@{GetCredential}}
+\index{GetCredential@{GetCredential}!firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredential()}{GetCredential()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_game_center_auth_provider_af6bf657f3adc87b1e8797d87f712df34} 
+static \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} $>$ firebase\+::auth\+::\+Game\+Center\+Auth\+Provider\+::\+Get\+Credential (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a credential from Game\+Center for the current user.
+
+\begin{DoxyReturn}{Returns}
+a \doxylink{classfirebase_1_1_future}{Future} that will be fulfilled with the resulting credential. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1auth_1_1_game_center_auth_provider_afb1b79c449bf4afeb926953f4e9d11b9}\index{firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}!GetCredentialLastResult@{GetCredentialLastResult}}
+\index{GetCredentialLastResult@{GetCredentialLastResult}!firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}}
+\doxysubsubsection{\texorpdfstring{GetCredentialLastResult()}{GetCredentialLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_game_center_auth_provider_afb1b79c449bf4afeb926953f4e9d11b9} 
+static \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} $>$ firebase\+::auth\+::\+Game\+Center\+Auth\+Provider\+::\+Get\+Credential\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the result of the most recent \doxylink{classfirebase_1_1auth_1_1_game_center_auth_provider_af6bf657f3adc87b1e8797d87f712df34}{Get\+Credential()} call.
+
+\begin{DoxyReturn}{Returns}
+an object which can be used to retrieve the \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1auth_1_1_game_center_auth_provider_ab56ee9c4d887bc7207c03579dd6a5796}\index{firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}!IsPlayerAuthenticated@{IsPlayerAuthenticated}}
+\index{IsPlayerAuthenticated@{IsPlayerAuthenticated}!firebase::auth::GameCenterAuthProvider@{firebase::auth::GameCenterAuthProvider}}
+\doxysubsubsection{\texorpdfstring{IsPlayerAuthenticated()}{IsPlayerAuthenticated()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_game_center_auth_provider_ab56ee9c4d887bc7207c03579dd6a5796} 
+static bool firebase\+::auth\+::\+Game\+Center\+Auth\+Provider\+::\+Is\+Player\+Authenticated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tests to see if the current user is signed in to Game\+Center.
+
+\begin{DoxyReturn}{Returns}
+true if the user is signed in, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/credential.\+h\end{DoxyCompactItemize}

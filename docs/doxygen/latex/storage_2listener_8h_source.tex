@@ -1,0 +1,57 @@
+\doxysection{listener.\+h}
+\hypertarget{storage_2listener_8h_source}{}\label{storage_2listener_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/storage/listener.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/storage/listener.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_LISTENER\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_LISTENER\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/storage/controller.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }storage\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }ListenerInternal;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }StorageInternal;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }StorageReferenceInternal;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }RestOperation;}
+\DoxyCodeLine{00029\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1storage_1_1_listener}{Listener}}\ \{}
+\DoxyCodeLine{00042\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener_aaf899da3515aaf98a7904aab8f192d0b}{Listener}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener_a470eaf355a19303357da7472e9eb05a5}{\string~Listener}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener_a002fd09bad9d749588407387bc7a0527}{OnPaused}}(\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}}*\ controller)\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener_a3049e5cceb71b018b34d9170e4948fef}{OnProgress}}(\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}}*\ controller)\ =\ 0;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::StorageReferenceInternal;}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::RestOperation;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{comment}{//\ Platform\ specific\ data.}}
+\DoxyCodeLine{00067\ \ \ internal::ListenerInternal*\ impl\_;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}\ \ \textcolor{comment}{//\ namespace\ storage}}
+\DoxyCodeLine{00072\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_STORAGE\_SRC\_INCLUDE\_FIREBASE\_STORAGE\_LISTENER\_H\_}}
+
+\end{DoxyCode}

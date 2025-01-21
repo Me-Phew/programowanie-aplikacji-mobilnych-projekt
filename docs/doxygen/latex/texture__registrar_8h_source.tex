@@ -1,0 +1,117 @@
+\doxysection{texture\+\_\+registrar.\+h}
+\hypertarget{texture__registrar_8h_source}{}\label{texture__registrar_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/texture\_registrar.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/texture\_registrar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_TEXTURE\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_TEXTURE\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <flutter\_texture\_registrar.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ A\ pixel\ buffer\ texture.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_pixel_buffer_texture}{PixelBufferTexture}}\ \{}
+\DoxyCodeLine{00020\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ A\ callback\ used\ for\ retrieving\ pixel\ buffers.}}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{typedef}\ std::function<\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer}{FlutterDesktopPixelBuffer}}*(\textcolor{keywordtype}{size\_t}\ width,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ height)>}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ CopyBufferCallback;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ Creates\ a\ pixel\ buffer\ texture\ that\ uses\ the\ provided\ |copy\_buffer\_cb|\ to}}
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ retrieve\ the\ buffer.}}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ As\ the\ callback\ is\ usually\ invoked\ from\ the\ render\ thread,\ the\ callee\ must}}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ take\ care\ of\ proper\ synchronization.\ It\ also\ needs\ to\ be\ ensured\ that\ the}}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ returned\ buffer\ isn't\ released\ prior\ to\ unregistering\ this\ texture.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_pixel_buffer_texture}{PixelBufferTexture}}(CopyBufferCallback\ copy\_buffer\_callback)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ :\ copy\_buffer\_callback\_(std::move(copy\_buffer\_callback))\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Returns\ the\ callback-\/provided\ FlutterDesktopPixelBuffer\ that\ contains\ the}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ actual\ pixel\ data.\ The\ intended\ surface\ size\ is\ specified\ by\ |width|\ and}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ |height|.}}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer}{FlutterDesktopPixelBuffer}}*\ CopyPixelBuffer(\textcolor{keywordtype}{size\_t}\ width,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ height)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{return}\ copy\_buffer\_callback\_(width,\ height);}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{const}\ CopyBufferCallback\ copy\_buffer\_callback\_;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ A\ GPU\ surface-\/based\ texture.}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_gpu_surface_texture}{GpuSurfaceTexture}}\ \{}
+\DoxyCodeLine{00048\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ A\ callback\ used\ for\ retrieving\ surface\ descriptors.}}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{typedef}\ std::function<}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_descriptor}{FlutterDesktopGpuSurfaceDescriptor}}*(\textcolor{keywordtype}{size\_t}\ width,\ \textcolor{keywordtype}{size\_t}\ height)>}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ ObtainDescriptorCallback;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{classflutter_1_1_gpu_surface_texture}{GpuSurfaceTexture}}(FlutterDesktopGpuSurfaceType\ surface\_type,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ObtainDescriptorCallback\ obtain\_descriptor\_callback)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ :\ surface\_type\_(surface\_type),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ obtain\_descriptor\_callback\_(std::move(obtain\_descriptor\_callback))\ \{\}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Returns\ the\ callback-\/provided\ FlutterDesktopGpuSurfaceDescriptor\ that}}
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ contains\ the\ surface\ handle.\ The\ intended\ surface\ size\ is\ specified\ by}}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ |width|\ and\ |height|.}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_descriptor}{FlutterDesktopGpuSurfaceDescriptor}}*\ ObtainDescriptor(}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ width,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ height)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ obtain\_descriptor\_callback\_(width,\ height);}
+\DoxyCodeLine{00066\ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{comment}{//\ Gets\ the\ surface\ type.}}
+\DoxyCodeLine{00069\ \ \ FlutterDesktopGpuSurfaceType\ surface\_type()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ surface\_type\_;\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{const}\ FlutterDesktopGpuSurfaceType\ surface\_type\_;}
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{const}\ ObtainDescriptorCallback\ obtain\_descriptor\_callback\_;}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ The\ available\ texture\ variants.}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ Only\ PixelBufferTexture\ is\ currently\ implemented.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ Other\ variants\ are\ expected\ to\ be\ added\ in\ the\ future.}}
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ std::variant<PixelBufferTexture,\ GpuSurfaceTexture>\ TextureVariant;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ An\ object\ keeping\ track\ of\ external\ textures.}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ Thread\ safety:}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ It's\ safe\ to\ call\ the\ member\ methods\ from\ any\ thread.}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_texture_registrar}{TextureRegistrar}}\ \{}
+\DoxyCodeLine{00086\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_texture_registrar}{\string~TextureRegistrar}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ Registers\ a\ |texture|\ object\ and\ returns\ the\ ID\ for\ that\ texture.}}
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{virtual}\ int64\_t\ RegisterTexture(TextureVariant*\ texture)\ =\ 0;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Notifies\ the\ flutter\ engine\ that\ the\ texture\ object\ corresponding}}
+\DoxyCodeLine{00093\ \ \ \textcolor{comment}{//\ to\ |texure\_id|\ needs\ to\ render\ a\ new\ frame.}}
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ For\ PixelBufferTextures,\ this\ will\ effectively\ make\ the\ engine\ invoke}}
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ the\ callback\ that\ was\ provided\ upon\ creating\ the\ texture.}}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ MarkTextureFrameAvailable(int64\_t\ texture\_id)\ =\ 0;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ Asynchronously\ unregisters\ an\ existing\ texture\ object.}}
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ Upon\ completion,\ the\ optional\ |callback|\ gets\ invoked.}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ UnregisterTexture(int64\_t\ texture\_id,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}()>\ callback)\ =\ 0;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{comment}{//\ Unregisters\ an\ existing\ texture\ object.}}
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ DEPRECATED:\ Use\ UnregisterTexture(texture\_id,\ optional\_callback)\ instead.}}
+\DoxyCodeLine{00106\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ UnregisterTexture(int64\_t\ texture\_id)\ =\ 0;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_TEXTURE\_REGISTRAR\_H\_}}
+
+\end{DoxyCode}

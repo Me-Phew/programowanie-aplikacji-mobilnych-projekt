@@ -1,0 +1,195 @@
+\doxysection{lib/screens/announcements/announcements\+\_\+page.dart File Reference}
+\hypertarget{announcements__page_8dart}{}\label{announcements__page_8dart}\index{lib/screens/announcements/announcements\_page.dart@{lib/screens/announcements/announcements\_page.dart}}
+
+
+Plik dostarczający stronę ogłoszeń  
+
+
+{\ttfamily import package;}\newline
+Include dependency graph for announcements\+\_\+page.\+dart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{announcements__page_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_stateful_widget}{Stateful\+Widget}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{announcements__page_8dart_abaa2452bef699c85abccba455216bb95}{Announcements\+Page}} (\{super.\+key\})
+\item 
+override State$<$ \mbox{\hyperlink{class_announcements_page}{Announcements\+Page}} $>$ \mbox{\hyperlink{announcements__page_8dart_a69c3e04300ada567a4f531a001c46c57}{create\+State}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{announcements__page_8dart_a09607679492e54adc2cb9d97c75791af}{load\+Announcements}} () async
+\begin{DoxyCompactList}\small\item\em Ładuje ogłoszenia. \end{DoxyCompactList}\item 
+Future$<$ void $>$ \mbox{\hyperlink{announcements__page_8dart_a1f9dec6272eade55d634e888b9050887}{init\+Last\+Update}} () async
+\item 
+override void \mbox{\hyperlink{announcements__page_8dart_ab339d53d3945a16dfdd20004616a8ddc}{init\+State}} ()
+\item 
+void \mbox{\hyperlink{announcements__page_8dart_aafe829fd0bcf24a22311113bdb5f927b}{\+\_\+on\+Refresh}} () async
+\item 
+override Widget \mbox{\hyperlink{announcements__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}{build}} (Build\+Context context)
+\item 
+Widget \mbox{\hyperlink{announcements__page_8dart_af136455b143cf99b847b4d717a379051}{\+\_\+build\+Inbox\+List}} ()
+\begin{DoxyCompactList}\small\item\em Buduje listę odebranych ogłoszeń \end{DoxyCompactList}\item 
+Widget \mbox{\hyperlink{announcements__page_8dart_ac72bcc1887432ef8c0bc70cb03ebc698}{\+\_\+build\+Trash\+Bin\+List}} ()
+\begin{DoxyCompactList}\small\item\em Buduje listę ogłoszeń w koszu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{announcements__page_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\item 
+\mbox{\hyperlink{announcements__page_8dart_aa506717a753e91a66d0e0b41d7d9fd5a}{\+\_\+announcements}} = \mbox{[}$\,$\mbox{]}
+\item 
+Date\+Time \mbox{\hyperlink{announcements__page_8dart_a7a8c344bed9b956316bf18c3671da202}{\+\_\+last\+Update}}
+\item 
+bool \mbox{\hyperlink{announcements__page_8dart_a34fdcc4bc4854d71d13ecc6b815e0db1}{\+\_\+is\+Loading}} = true
+\item 
+String \mbox{\hyperlink{announcements__page_8dart_ab2b5ec6d21350f0cc0d92e6b5ceaf830}{\+\_\+error\+Feedback}}
+\item 
+final Refresh\+Controller \mbox{\hyperlink{announcements__page_8dart_a323f0f59b6635db2252b18ea531b4353}{\+\_\+refresh\+Controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plik dostarczający stronę ogłoszeń 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{announcements__page_8dart_af136455b143cf99b847b4d717a379051}\index{announcements\_page.dart@{announcements\_page.dart}!\_buildInboxList@{\_buildInboxList}}
+\index{\_buildInboxList@{\_buildInboxList}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_buildInboxList()}{\_buildInboxList()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_af136455b143cf99b847b4d717a379051} 
+Widget \+\_\+build\+Inbox\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Buduje listę odebranych ogłoszeń 
+
+\begin{DoxyReturn}{Returns}
+Widget listy odebranych ogłoszeń 
+\end{DoxyReturn}
+\Hypertarget{announcements__page_8dart_ac72bcc1887432ef8c0bc70cb03ebc698}\index{announcements\_page.dart@{announcements\_page.dart}!\_buildTrashBinList@{\_buildTrashBinList}}
+\index{\_buildTrashBinList@{\_buildTrashBinList}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_buildTrashBinList()}{\_buildTrashBinList()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_ac72bcc1887432ef8c0bc70cb03ebc698} 
+Widget \+\_\+build\+Trash\+Bin\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Buduje listę ogłoszeń w koszu. 
+
+\begin{DoxyReturn}{Returns}
+Widget listy ogłoszeń w koszu 
+\end{DoxyReturn}
+\Hypertarget{announcements__page_8dart_aafe829fd0bcf24a22311113bdb5f927b}\index{announcements\_page.dart@{announcements\_page.dart}!\_onRefresh@{\_onRefresh}}
+\index{\_onRefresh@{\_onRefresh}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_onRefresh()}{\_onRefresh()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_aafe829fd0bcf24a22311113bdb5f927b} 
+void \+\_\+on\+Refresh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{announcements__page_8dart_abaa2452bef699c85abccba455216bb95}\index{announcements\_page.dart@{announcements\_page.dart}!AnnouncementsPage@{AnnouncementsPage}}
+\index{AnnouncementsPage@{AnnouncementsPage}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{AnnouncementsPage()}{AnnouncementsPage()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_abaa2452bef699c85abccba455216bb95} 
+const \+\_\+\+Announcements\+Page\+State\+::\+Announcements\+Page (\begin{DoxyParamCaption}\item[{\{super.\+key\}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{announcements__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}\index{announcements\_page.dart@{announcements\_page.dart}!build@{build}}
+\index{build@{build}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a} 
+override Widget build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})}
+
+\Hypertarget{announcements__page_8dart_a69c3e04300ada567a4f531a001c46c57}\index{announcements\_page.dart@{announcements\_page.dart}!createState@{createState}}
+\index{createState@{createState}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{createState()}{createState()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a69c3e04300ada567a4f531a001c46c57} 
+override State$<$ \mbox{\hyperlink{class_announcements_page}{Announcements\+Page}} $>$ \+\_\+\+Announcements\+Page\+State\+::create\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{announcements__page_8dart_a1f9dec6272eade55d634e888b9050887}\index{announcements\_page.dart@{announcements\_page.dart}!initLastUpdate@{initLastUpdate}}
+\index{initLastUpdate@{initLastUpdate}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{initLastUpdate()}{initLastUpdate()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a1f9dec6272eade55d634e888b9050887} 
+Future$<$ void $>$ init\+Last\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{announcements__page_8dart_ab339d53d3945a16dfdd20004616a8ddc}\index{announcements\_page.dart@{announcements\_page.dart}!initState@{initState}}
+\index{initState@{initState}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{initState()}{initState()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_ab339d53d3945a16dfdd20004616a8ddc} 
+override void init\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{announcements__page_8dart_a09607679492e54adc2cb9d97c75791af}\index{announcements\_page.dart@{announcements\_page.dart}!loadAnnouncements@{loadAnnouncements}}
+\index{loadAnnouncements@{loadAnnouncements}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{loadAnnouncements()}{loadAnnouncements()}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a09607679492e54adc2cb9d97c75791af} 
+Future$<$ void $>$ load\+Announcements (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Ładuje ogłoszenia. 
+
+Pobiera ogłoszenia z serwera i aktualizuje stan. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{announcements__page_8dart_aa506717a753e91a66d0e0b41d7d9fd5a}\index{announcements\_page.dart@{announcements\_page.dart}!\_announcements@{\_announcements}}
+\index{\_announcements@{\_announcements}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_announcements}{\_announcements}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_aa506717a753e91a66d0e0b41d7d9fd5a} 
+\+\_\+announcements = \mbox{[}$\,$\mbox{]}}
+
+\Hypertarget{announcements__page_8dart_ab2b5ec6d21350f0cc0d92e6b5ceaf830}\index{announcements\_page.dart@{announcements\_page.dart}!\_errorFeedback@{\_errorFeedback}}
+\index{\_errorFeedback@{\_errorFeedback}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_errorFeedback}{\_errorFeedback}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_ab2b5ec6d21350f0cc0d92e6b5ceaf830} 
+String \+\_\+error\+Feedback}
+
+\Hypertarget{announcements__page_8dart_a34fdcc4bc4854d71d13ecc6b815e0db1}\index{announcements\_page.dart@{announcements\_page.dart}!\_isLoading@{\_isLoading}}
+\index{\_isLoading@{\_isLoading}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_isLoading}{\_isLoading}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a34fdcc4bc4854d71d13ecc6b815e0db1} 
+bool \+\_\+is\+Loading = true}
+
+\Hypertarget{announcements__page_8dart_a7a8c344bed9b956316bf18c3671da202}\index{announcements\_page.dart@{announcements\_page.dart}!\_lastUpdate@{\_lastUpdate}}
+\index{\_lastUpdate@{\_lastUpdate}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_lastUpdate}{\_lastUpdate}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a7a8c344bed9b956316bf18c3671da202} 
+Date\+Time \+\_\+last\+Update}
+
+\Hypertarget{announcements__page_8dart_a323f0f59b6635db2252b18ea531b4353}\index{announcements\_page.dart@{announcements\_page.dart}!\_refreshController@{\_refreshController}}
+\index{\_refreshController@{\_refreshController}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_refreshController}{\_refreshController}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a323f0f59b6635db2252b18ea531b4353} 
+final Refresh\+Controller \+\_\+refresh\+Controller}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ RefreshController(initialRefresh:\ \textcolor{keyword}{false})}
+
+\end{DoxyCode}
+\Hypertarget{announcements__page_8dart_a2276f26ae4897992f6da960ea88601e9}\index{announcements\_page.dart@{announcements\_page.dart}!library@{library}}
+\index{library@{library}!announcements\_page.dart@{announcements\_page.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{announcements__page_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+

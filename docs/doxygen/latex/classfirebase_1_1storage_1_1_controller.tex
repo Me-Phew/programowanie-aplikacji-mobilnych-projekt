@@ -1,0 +1,194 @@
+\doxysection{firebase\+::storage\+::Controller Class Reference}
+\hypertarget{classfirebase_1_1storage_1_1_controller}{}\label{classfirebase_1_1storage_1_1_controller}\index{firebase::storage::Controller@{firebase::storage::Controller}}
+
+
+Controls an ongoing operation, allowing the caller to Pause, Resume or Cancel an ongoing download or upload.  
+
+
+
+
+{\ttfamily \#include $<$controller.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_aaeee611640b520cf00b68ed18a877904}{Controller}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_controller_a8c860ea35ac5116047993985c4b33c4b}\label{classfirebase_1_1storage_1_1_controller_a8c860ea35ac5116047993985c4b33c4b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_a2b63ac34bc46027e130a1e6991e88da2}{Controller}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \& \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_a90ad8bb03d18ac344dac308541928f5c}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_a10b5acbe4999f31d7cd3789a5424072c}{Pause}} ()
+\begin{DoxyCompactList}\small\item\em Pauses the operation currently in progress. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_a752be629bef74fcc762e6a14128503bd}{Resume}} ()
+\begin{DoxyCompactList}\small\item\em Resumes the operation that is paused. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_ac165335731df6e29c9f26b97ab83bf30}{Cancel}} ()
+\begin{DoxyCompactList}\small\item\em Cancels the operation currently in progress. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_controller_ae34184912b9e6c90525e3b0a98e28d26}\label{classfirebase_1_1storage_1_1_controller_ae34184912b9e6c90525e3b0a98e28d26} 
+bool {\bfseries is\+\_\+paused} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the operation is paused. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_a9a5c42dfcd5f59eda9dbb947c0411667}{bytes\+\_\+transferred}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes transferred so far. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_aa457b466d52e4e5ea3416be1f5fdd7ec}{total\+\_\+byte\+\_\+count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total bytes to be transferred. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_a2f672c5803ced0085bc01224b68b2c05}{Get\+Reference}} () const
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} associated with this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller_af7776499c4cea3271583e4ca1a0a16a5}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is one that is not associated with an operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls an ongoing operation, allowing the caller to Pause, Resume or Cancel an ongoing download or upload. 
+
+An instance of \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} can be constructed and passed to \doxylink{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}{Storage\+Reference\+::\+Get\+Bytes()}, \doxylink{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}{Storage\+Reference\+::\+Get\+File()}, \doxylink{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}{Storage\+Reference\+::\+Put\+Bytes()}, or \doxylink{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}{Storage\+Reference\+::\+Put\+File()} to become associated with it. Each \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} can only be associated with one operation at a time.
+
+A \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is also passed as an argument to \doxylink{classfirebase_1_1storage_1_1_listener}{Listener}\textquotesingle{}s callbacks. The \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} passed to a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} operation is not the same object passed to \doxylink{classfirebase_1_1storage_1_1_listener}{Listener} callbacks (though it refers to the same operation), so there are no restrictions on the lifetime of the \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} the user creates (but the \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} passed into a \doxylink{classfirebase_1_1storage_1_1_listener}{Listener} callbacks should only be used from within that callback).
+
+This class is currently not thread safe and can only be called on the main thread. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_aaeee611640b520cf00b68ed18a877904}\index{firebase::storage::Controller@{firebase::storage::Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_aaeee611640b520cf00b68ed18a877904} 
+firebase\+::storage\+::\+Controller\+::\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+You may construct your own \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} to pass into various \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} operations. \Hypertarget{classfirebase_1_1storage_1_1_controller_a2b63ac34bc46027e130a1e6991e88da2}\index{firebase::storage::Controller@{firebase::storage::Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_a2b63ac34bc46027e130a1e6991e88da2} 
+firebase\+::storage\+::\+Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_a9a5c42dfcd5f59eda9dbb947c0411667}\index{firebase::storage::Controller@{firebase::storage::Controller}!bytes\_transferred@{bytes\_transferred}}
+\index{bytes\_transferred@{bytes\_transferred}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{bytes\_transferred()}{bytes\_transferred()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_a9a5c42dfcd5f59eda9dbb947c0411667} 
+int64\+\_\+t firebase\+::storage\+::\+Controller\+::bytes\+\_\+transferred (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of bytes transferred so far. 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes transferred so far. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_ac165335731df6e29c9f26b97ab83bf30}\index{firebase::storage::Controller@{firebase::storage::Controller}!Cancel@{Cancel}}
+\index{Cancel@{Cancel}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{Cancel()}{Cancel()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_ac165335731df6e29c9f26b97ab83bf30} 
+bool firebase\+::storage\+::\+Controller\+::\+Cancel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cancels the operation currently in progress. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successfully canceled, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_a2f672c5803ced0085bc01224b68b2c05}\index{firebase::storage::Controller@{firebase::storage::Controller}!GetReference@{GetReference}}
+\index{GetReference@{GetReference}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{GetReference()}{GetReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_a2f672c5803ced0085bc01224b68b2c05} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} firebase\+::storage\+::\+Controller\+::\+Get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} associated with this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller}. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} associated with this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_af7776499c4cea3271583e4ca1a0a16a5}\index{firebase::storage::Controller@{firebase::storage::Controller}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_af7776499c4cea3271583e4ca1a0a16a5} 
+bool firebase\+::storage\+::\+Controller\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is one that is not associated with an operation. 
+
+\begin{DoxyReturn}{Returns}
+true if this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is valid, false if this \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_a90ad8bb03d18ac344dac308541928f5c}\index{firebase::storage::Controller@{firebase::storage::Controller}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_a90ad8bb03d18ac344dac308541928f5c} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \& firebase\+::storage\+::\+Controller\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1storage_1_1_controller}{Controller} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination \doxylink{classfirebase_1_1storage_1_1_controller}{Controller}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_a10b5acbe4999f31d7cd3789a5424072c}\index{firebase::storage::Controller@{firebase::storage::Controller}!Pause@{Pause}}
+\index{Pause@{Pause}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_a10b5acbe4999f31d7cd3789a5424072c} 
+bool firebase\+::storage\+::\+Controller\+::\+Pause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pauses the operation currently in progress. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successfully paused, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_a752be629bef74fcc762e6a14128503bd}\index{firebase::storage::Controller@{firebase::storage::Controller}!Resume@{Resume}}
+\index{Resume@{Resume}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_a752be629bef74fcc762e6a14128503bd} 
+bool firebase\+::storage\+::\+Controller\+::\+Resume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resumes the operation that is paused. 
+
+\begin{DoxyReturn}{Returns}
+True if the operation was successfully resumed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_controller_aa457b466d52e4e5ea3416be1f5fdd7ec}\index{firebase::storage::Controller@{firebase::storage::Controller}!total\_byte\_count@{total\_byte\_count}}
+\index{total\_byte\_count@{total\_byte\_count}!firebase::storage::Controller@{firebase::storage::Controller}}
+\doxysubsubsection{\texorpdfstring{total\_byte\_count()}{total\_byte\_count()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_controller_aa457b466d52e4e5ea3416be1f5fdd7ec} 
+int64\+\_\+t firebase\+::storage\+::\+Controller\+::total\+\_\+byte\+\_\+count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the total bytes to be transferred. 
+
+\begin{DoxyReturn}{Returns}
+The total bytes to be transferred. This will return -\/1 if the size of the transfer is unknown. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/storage/controller.\+h\end{DoxyCompactItemize}

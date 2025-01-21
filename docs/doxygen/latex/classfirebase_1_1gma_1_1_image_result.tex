@@ -1,0 +1,48 @@
+\doxysection{firebase\+::gma\+::Image\+Result Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_image_result}{}\label{classfirebase_1_1gma_1_1_image_result}\index{firebase::gma::ImageResult@{firebase::gma::ImageResult}}
+
+
+Information about the result of a load image operation.  
+
+
+
+
+{\ttfamily \#include $<$native\+\_\+ad.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_image_result_a80bf79d0b9eaab5d70b4e5425e6c3de1}\label{classfirebase_1_1gma_1_1_image_result_a80bf79d0b9eaab5d70b4e5425e6c3de1} 
+{\bfseries Image\+Result} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_image_result_a631315e180efe87a19c944dcbfce3fd6}\label{classfirebase_1_1gma_1_1_image_result_a631315e180efe87a19c944dcbfce3fd6} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Image\+Result} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_image_result_a9771da3d6ecfa8a5ce73ad4608468df6}\label{classfirebase_1_1gma_1_1_image_result_a9771da3d6ecfa8a5ce73ad4608468df6} 
+bool {\bfseries is\+\_\+successful} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the operation was successful. \end{DoxyCompactList}\item 
+const std\+::vector$<$ unsigned char $>$ \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_image_result_a1ef3afd7a81a71318e0c64ef5da2b246}{image}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_image_result_aa5b423678a12251e5caa8b1c0d0958eb}\label{classfirebase_1_1gma_1_1_image_result_aa5b423678a12251e5caa8b1c0d0958eb} 
+class {\bfseries Gma\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about the result of a load image operation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_image_result_a1ef3afd7a81a71318e0c64ef5da2b246}\index{firebase::gma::ImageResult@{firebase::gma::ImageResult}!image@{image}}
+\index{image@{image}!firebase::gma::ImageResult@{firebase::gma::ImageResult}}
+\doxysubsubsection{\texorpdfstring{image()}{image()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_image_result_a1ef3afd7a81a71318e0c64ef5da2b246} 
+const std\+::vector$<$ unsigned char $>$ \& firebase\+::gma\+::\+Image\+Result\+::image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+If the \doxylink{classfirebase_1_1gma_1_1_image_result_a9771da3d6ecfa8a5ce73ad4608468df6}{Image\+Result\+::is\+\_\+successful()} returned false, then the vector returned via this method will contain no contextual information. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/internal/native\+\_\+ad.\+h\end{DoxyCompactItemize}

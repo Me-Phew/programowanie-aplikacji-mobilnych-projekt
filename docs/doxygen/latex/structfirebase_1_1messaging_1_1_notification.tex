@@ -1,0 +1,149 @@
+\doxysection{firebase\+::messaging\+::Notification Struct Reference}
+\hypertarget{structfirebase_1_1messaging_1_1_notification}{}\label{structfirebase_1_1messaging_1_1_notification}\index{firebase::messaging::Notification@{firebase::messaging::Notification}}
+
+
+{\ttfamily \#include $<$messaging.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::messaging\+::Notification\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{structfirebase_1_1messaging_1_1_notification__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_a2e95e3161938ad9d49d02c9d4c17d752}\label{structfirebase_1_1messaging_1_1_notification_a2e95e3161938ad9d49d02c9d4c17d752} 
+{\bfseries Notification} (const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. Makes a deep copy of this \doxylink{structfirebase_1_1messaging_1_1_message}{Message}. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_a3b9a219656cc8801e0c95e8de5217f48}\label{structfirebase_1_1messaging_1_1_notification_a3b9a219656cc8801e0c95e8de5217f48} 
+\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}} \& {\bfseries operator=} (const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. Makes a deep copy of this \doxylink{structfirebase_1_1messaging_1_1_message}{Message}. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_add7635184af20f76f1faee7a88e9a019}\label{structfirebase_1_1messaging_1_1_notification_add7635184af20f76f1faee7a88e9a019} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Notification} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a835f4027e27a0083e5a351ce0e67ead5}{title}}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_a556535bdb4c355eedacea95660f44947}\label{structfirebase_1_1messaging_1_1_notification_a556535bdb4c355eedacea95660f44947} 
+std\+::string {\bfseries body}
+\begin{DoxyCompactList}\small\item\em Indicates notification body text. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a1eb21456354623b78f28d335431632d0}{icon}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a67e9173a8ea609ca5e0176d76a984177}{sound}}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_a17e80042a025853792011237fa91dd7e}\label{structfirebase_1_1messaging_1_1_notification_a17e80042a025853792011237fa91dd7e} 
+std\+::string {\bfseries badge}
+\begin{DoxyCompactList}\small\item\em Indicates the badge on the client app home icon. i\+OS and tv\+OS only. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a05304d0658b4ad75cb2838b798b71748}{tag}}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_a2fd13df5792abac17952a5c6de93df7b}\label{structfirebase_1_1messaging_1_1_notification_a2fd13df5792abac17952a5c6de93df7b} 
+std\+::string {\bfseries color}
+\begin{DoxyCompactList}\small\item\em Indicates color of the icon, expressed in \#rrggbb format. Android only. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a43f6afde3fa3a8d5ca9b7bffc45573bf}{click\+\_\+action}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_aa7c44942a0cf37089a4c911f61b79b30}{body\+\_\+loc\+\_\+key}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a8125da230f7cc9c5ca2b1e8168799ae3}{body\+\_\+loc\+\_\+args}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a443ea90dd2d00de9219f0157db3f56f8}{title\+\_\+loc\+\_\+key}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification_a0cf79549025d86c9f9763ceb0348aec7}{title\+\_\+loc\+\_\+args}}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953}\label{structfirebase_1_1messaging_1_1_notification_afacd3abd26f39c23608faed9ea290953} 
+\mbox{\hyperlink{structfirebase_1_1messaging_1_1_android_notification_params}{Android\+Notification\+Params}} \texorpdfstring{$\ast$}{*} {\bfseries android}
+\begin{DoxyCompactList}\small\item\em Parameters that are unique to the Android implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used for messages that display a notification.
+
+On android, this requires that the app is using the Play Services client library. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1messaging_1_1_notification_a8125da230f7cc9c5ca2b1e8168799ae3}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!body\_loc\_args@{body\_loc\_args}}
+\index{body\_loc\_args@{body\_loc\_args}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{body\_loc\_args}{body\_loc\_args}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a8125da230f7cc9c5ca2b1e8168799ae3} 
+std\+::vector$<$std\+::string$>$ firebase\+::messaging\+::\+Notification\+::body\+\_\+loc\+\_\+args}
+
+Indicates the string value to replace format specifiers in body string for localization.
+
+On i\+OS and tv\+OS, this corresponds to "{}loc-\/args"{} in APNS payload.
+
+On Android, these are the format arguments for the string resource. For more information, see \href{https://developer.android.com/guide/topics/resources/string-resource.html\#FormattingAndStyling}{\texttt{ Formatting strings}}. \Hypertarget{structfirebase_1_1messaging_1_1_notification_aa7c44942a0cf37089a4c911f61b79b30}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!body\_loc\_key@{body\_loc\_key}}
+\index{body\_loc\_key@{body\_loc\_key}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{body\_loc\_key}{body\_loc\_key}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_aa7c44942a0cf37089a4c911f61b79b30} 
+std\+::string firebase\+::messaging\+::\+Notification\+::body\+\_\+loc\+\_\+key}
+
+Indicates the key to the body string for localization.
+
+On i\+OS and tv\+OS, this corresponds to "{}loc-\/key"{} in APNS payload.
+
+On Android, use the key in the app\textquotesingle{}s string resources when populating this value. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a43f6afde3fa3a8d5ca9b7bffc45573bf}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!click\_action@{click\_action}}
+\index{click\_action@{click\_action}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{click\_action}{click\_action}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a43f6afde3fa3a8d5ca9b7bffc45573bf} 
+std\+::string firebase\+::messaging\+::\+Notification\+::click\+\_\+action}
+
+The action associated with a user click on the notification.
+
+On Android, if this is set, an activity with a matching intent filter is launched when user clicks the notification.
+
+If set on i\+OS or tv\+OS, corresponds to category in APNS payload. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a1eb21456354623b78f28d335431632d0}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!icon@{icon}}
+\index{icon@{icon}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{icon}{icon}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a1eb21456354623b78f28d335431632d0} 
+std\+::string firebase\+::messaging\+::\+Notification\+::icon}
+
+Indicates notification icon. Sets value to myicon for drawable resource myicon. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a67e9173a8ea609ca5e0176d76a984177}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!sound@{sound}}
+\index{sound@{sound}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{sound}{sound}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a67e9173a8ea609ca5e0176d76a984177} 
+std\+::string firebase\+::messaging\+::\+Notification\+::sound}
+
+Indicates a sound to play when the device receives the notification. Supports default, or the filename of a sound resource bundled in the app.
+
+Android sound files must reside in /res/raw/, while i\+OS and tv\+OS sound files can be in the main bundle of the client app or in the Library/\+Sounds folder of the app’s data container. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a05304d0658b4ad75cb2838b798b71748}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!tag@{tag}}
+\index{tag@{tag}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a05304d0658b4ad75cb2838b798b71748} 
+std\+::string firebase\+::messaging\+::\+Notification\+::tag}
+
+Indicates whether each notification results in a new entry in the notification drawer on Android. If not set, each request creates a new notification. If set, and a notification with the same tag is already being shown, the new notification replaces the existing one in the notification drawer. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a835f4027e27a0083e5a351ce0e67ead5}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!title@{title}}
+\index{title@{title}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a835f4027e27a0083e5a351ce0e67ead5} 
+std\+::string firebase\+::messaging\+::\+Notification\+::title}
+
+Indicates notification title. This field is not visible on tv\+OS, i\+OS phones and tablets. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a0cf79549025d86c9f9763ceb0348aec7}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!title\_loc\_args@{title\_loc\_args}}
+\index{title\_loc\_args@{title\_loc\_args}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{title\_loc\_args}{title\_loc\_args}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a0cf79549025d86c9f9763ceb0348aec7} 
+std\+::vector$<$std\+::string$>$ firebase\+::messaging\+::\+Notification\+::title\+\_\+loc\+\_\+args}
+
+Indicates the string value to replace format specifiers in title string for localization.
+
+On i\+OS and tv\+OS, this corresponds to "{}title-\/loc-\/args"{} in APNS payload.
+
+On Android, these are the format arguments for the string resource. For more information, see \href{https://developer.android.com/guide/topics/resources/string-resource.html\#FormattingAndStyling}{\texttt{ Formatting strings}}. \Hypertarget{structfirebase_1_1messaging_1_1_notification_a443ea90dd2d00de9219f0157db3f56f8}\index{firebase::messaging::Notification@{firebase::messaging::Notification}!title\_loc\_key@{title\_loc\_key}}
+\index{title\_loc\_key@{title\_loc\_key}!firebase::messaging::Notification@{firebase::messaging::Notification}}
+\doxysubsubsection{\texorpdfstring{title\_loc\_key}{title\_loc\_key}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_notification_a443ea90dd2d00de9219f0157db3f56f8} 
+std\+::string firebase\+::messaging\+::\+Notification\+::title\+\_\+loc\+\_\+key}
+
+Indicates the key to the title string for localization.
+
+On i\+OS and tv\+OS, this corresponds to "{}title-\/loc-\/key"{} in APNS payload.
+
+On Android, use the key in the app\textquotesingle{}s string resources when populating this value. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/messaging.\+h\end{DoxyCompactItemize}

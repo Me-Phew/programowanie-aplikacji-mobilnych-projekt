@@ -1,0 +1,68 @@
+\doxysection{firebase\+::app\+\_\+check\+::Device\+Check\+Provider\+Factory Class Reference}
+\hypertarget{classfirebase_1_1app__check_1_1_device_check_provider_factory}{}\label{classfirebase_1_1app__check_1_1_device_check_provider_factory}\index{firebase::app\_check::DeviceCheckProviderFactory@{firebase::app\_check::DeviceCheckProviderFactory}}
+
+
+{\ttfamily \#include $<$device\+\_\+check\+\_\+provider.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::app\+\_\+check\+::Device\+Check\+Provider\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classfirebase_1_1app__check_1_1_device_check_provider_factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::app\+\_\+check\+::Device\+Check\+Provider\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classfirebase_1_1app__check_1_1_device_check_provider_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_device_check_provider_factory_ab5aeefc2643e92402183dd609775ce93}\label{classfirebase_1_1app__check_1_1_device_check_provider_factory_ab5aeefc2643e92402183dd609775ce93} 
+{\bfseries Device\+Check\+Provider\+Factory} (const \mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory}{Device\+Check\+Provider\+Factory}} \&)=delete
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_device_check_provider_factory_a7b3516ac4cacc9ebf7d6ae18ac37dc3a}\label{classfirebase_1_1app__check_1_1_device_check_provider_factory_a7b3516ac4cacc9ebf7d6ae18ac37dc3a} 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory}{Device\+Check\+Provider\+Factory}} \& {\bfseries operator=} (const \mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory}{Device\+Check\+Provider\+Factory}} \&)=delete
+\item 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory_ae4110d9a01ffc2a3112b0ee42748c38c}{Create\+Provider}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}app) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+Factory}}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory}{Device\+Check\+Provider\+Factory}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory_a63560ddd9045093cc31bba3e5b503f0f}{Get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of an {\ttfamily \doxylink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{App\+Check\+Provider\+Factory}} that builds Device\+Check\+Providers. This is the default implementation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1app__check_1_1_device_check_provider_factory_ae4110d9a01ffc2a3112b0ee42748c38c}\index{firebase::app\_check::DeviceCheckProviderFactory@{firebase::app\_check::DeviceCheckProviderFactory}!CreateProvider@{CreateProvider}}
+\index{CreateProvider@{CreateProvider}!firebase::app\_check::DeviceCheckProviderFactory@{firebase::app\_check::DeviceCheckProviderFactory}}
+\doxysubsubsection{\texorpdfstring{CreateProvider()}{CreateProvider()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_device_check_provider_factory_ae4110d9a01ffc2a3112b0ee42748c38c} 
+\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+Device\+Check\+Provider\+Factory\+::\+Create\+Provider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets the \doxylink{classfirebase_1_1app__check_1_1_app_check_provider}{App\+Check\+Provider} associated with the given {\ttfamily \doxylink{classfirebase_1_1_app}{App}} instance, or creates one if none already exists. 
+
+Implements \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory_a0e7914f6261fd65e53b5b2aa25b4ed9e}{firebase\+::app\+\_\+check\+::\+App\+Check\+Provider\+Factory}}.
+
+\Hypertarget{classfirebase_1_1app__check_1_1_device_check_provider_factory_a63560ddd9045093cc31bba3e5b503f0f}\index{firebase::app\_check::DeviceCheckProviderFactory@{firebase::app\_check::DeviceCheckProviderFactory}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::app\_check::DeviceCheckProviderFactory@{firebase::app\_check::DeviceCheckProviderFactory}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_device_check_provider_factory_a63560ddd9045093cc31bba3e5b503f0f} 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_device_check_provider_factory}{Device\+Check\+Provider\+Factory}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+Device\+Check\+Provider\+Factory\+::\+Get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets an instance of this class for installation into a \doxylink{classfirebase_1_1app__check_1_1_app_check}{firebase\+::app\+\_\+check\+::\+App\+Check} instance. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app\+\_\+check/device\+\_\+check\+\_\+provider.\+h\end{DoxyCompactItemize}

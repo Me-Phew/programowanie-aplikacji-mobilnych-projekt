@@ -1,0 +1,67 @@
+\doxysection{firebase\+::storage\+::Listener Class Reference}
+\hypertarget{classfirebase_1_1storage_1_1_listener}{}\label{classfirebase_1_1storage_1_1_listener}\index{firebase::storage::Listener@{firebase::storage::Listener}}
+
+
+Base class used to receive pause and progress events on a running read or write operation.  
+
+
+
+
+{\ttfamily \#include $<$listener.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1storage_1_1_listener_aaf899da3515aaf98a7904aab8f192d0b}\label{classfirebase_1_1storage_1_1_listener_aaf899da3515aaf98a7904aab8f192d0b} 
+{\bfseries Listener} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_listener_a470eaf355a19303357da7472e9eb05a5}\label{classfirebase_1_1storage_1_1_listener_a470eaf355a19303357da7472e9eb05a5} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener_a002fd09bad9d749588407387bc7a0527}{On\+Paused}} (\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)=0
+\begin{DoxyCompactList}\small\item\em The operation was paused. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1storage_1_1_listener_a3049e5cceb71b018b34d9170e4948fef}{On\+Progress}} (\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller)=0
+\begin{DoxyCompactList}\small\item\em There has been progress event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class used to receive pause and progress events on a running read or write operation. 
+
+Subclasses of this listener class can be used to receive events about data transfer progress a location. Attach the listener to a location using \doxylink{classfirebase_1_1storage_1_1_storage_reference_a606eae171fe4dda094bdafde307e5022}{Storage\+Reference\+::\+Get\+Bytes()}, \doxylink{classfirebase_1_1storage_1_1_storage_reference_a77102fc20b083b13a3e9482d1b4b4678}{Storage\+Reference\+::\+Get\+File()}, \doxylink{classfirebase_1_1storage_1_1_storage_reference_a3da5eae65c4858dd68281f69bc1239a7}{Storage\+Reference\+::\+Put\+Bytes()}, and \doxylink{classfirebase_1_1storage_1_1_storage_reference_a1c1990b1936b13337ac55aa26f40db93}{Storage\+Reference\+::\+Put\+File()}; then \doxylink{classfirebase_1_1storage_1_1_listener_a002fd09bad9d749588407387bc7a0527}{On\+Paused()} will be called whenever the Read or Write operation is paused, and \doxylink{classfirebase_1_1storage_1_1_listener_a3049e5cceb71b018b34d9170e4948fef}{On\+Progress()} will be called periodically as the transfer makes progress. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_listener_a002fd09bad9d749588407387bc7a0527}\index{firebase::storage::Listener@{firebase::storage::Listener}!OnPaused@{OnPaused}}
+\index{OnPaused@{OnPaused}!firebase::storage::Listener@{firebase::storage::Listener}}
+\doxysubsubsection{\texorpdfstring{OnPaused()}{OnPaused()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_listener_a002fd09bad9d749588407387bc7a0527} 
+virtual void firebase\+::storage\+::\+Listener\+::\+On\+Paused (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The operation was paused. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em controller} & A controller that can be used to check the status and make changes to the ongoing operation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1storage_1_1_listener_a3049e5cceb71b018b34d9170e4948fef}\index{firebase::storage::Listener@{firebase::storage::Listener}!OnProgress@{OnProgress}}
+\index{OnProgress@{OnProgress}!firebase::storage::Listener@{firebase::storage::Listener}}
+\doxysubsubsection{\texorpdfstring{OnProgress()}{OnProgress()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_listener_a3049e5cceb71b018b34d9170e4948fef} 
+virtual void firebase\+::storage\+::\+Listener\+::\+On\+Progress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1storage_1_1_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+There has been progress event. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em controller} & A controller that can be used to check the status and make changes to the ongoing operation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/storage/listener.\+h\end{DoxyCompactItemize}

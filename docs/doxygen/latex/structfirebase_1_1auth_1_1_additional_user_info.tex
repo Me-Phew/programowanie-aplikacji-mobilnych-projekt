@@ -1,0 +1,56 @@
+\doxysection{firebase\+::auth\+::Additional\+User\+Info Struct Reference}
+\hypertarget{structfirebase_1_1auth_1_1_additional_user_info}{}\label{structfirebase_1_1auth_1_1_additional_user_info}\index{firebase::auth::AdditionalUserInfo@{firebase::auth::AdditionalUserInfo}}
+
+
+Additional user data returned from an identity provider.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::auth\+::Additional\+User\+Info\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{structfirebase_1_1auth_1_1_additional_user_info__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1auth_1_1_additional_user_info_a22f21833ad85e87385a4d76a9526cb69}\label{structfirebase_1_1auth_1_1_additional_user_info_a22f21833ad85e87385a4d76a9526cb69} 
+std\+::string {\bfseries provider\+\_\+id}
+\begin{DoxyCompactList}\small\item\em The provider identifier. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1auth_1_1_additional_user_info_a176357fc06d2fc2a89bf3a8fa7601747}\label{structfirebase_1_1auth_1_1_additional_user_info_a176357fc06d2fc2a89bf3a8fa7601747} 
+std\+::string {\bfseries user\+\_\+name}
+\begin{DoxyCompactList}\small\item\em The name of the user. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info_a7052241b279c9a1535655d61d5257d9f}{profile}}
+\item 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info_af2d15f430bb4cf7d23ff695b7011c8fb}{updated\+\_\+credential}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Additional user data returned from an identity provider. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1auth_1_1_additional_user_info_a7052241b279c9a1535655d61d5257d9f}\index{firebase::auth::AdditionalUserInfo@{firebase::auth::AdditionalUserInfo}!profile@{profile}}
+\index{profile@{profile}!firebase::auth::AdditionalUserInfo@{firebase::auth::AdditionalUserInfo}}
+\doxysubsubsection{\texorpdfstring{profile}{profile}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_additional_user_info_a7052241b279c9a1535655d61d5257d9f} 
+std\+::map$<$\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}$>$ firebase\+::auth\+::\+Additional\+User\+Info\+::profile}
+
+Additional identity-\/provider specific information. Most likely a hierarchical key-\/value mapping, like a parsed JSON file. Note we use map instead of unordered\+\_\+map to support older compilers. \Hypertarget{structfirebase_1_1auth_1_1_additional_user_info_af2d15f430bb4cf7d23ff695b7011c8fb}\index{firebase::auth::AdditionalUserInfo@{firebase::auth::AdditionalUserInfo}!updated\_credential@{updated\_credential}}
+\index{updated\_credential@{updated\_credential}!firebase::auth::AdditionalUserInfo@{firebase::auth::AdditionalUserInfo}}
+\doxysubsubsection{\texorpdfstring{updated\_credential}{updated\_credential}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_additional_user_info_af2d15f430bb4cf7d23ff695b7011c8fb} 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+Additional\+User\+Info\+::updated\+\_\+credential}
+
+On a nonce-\/based credential link failure where the user has already linked to the provider, the Firebase auth service may provide an updated \doxylink{classfirebase_1_1auth_1_1_credential}{Credential}. If is\+\_\+valid returns true on this credential, then it may be passed to a new \doxylink{classfirebase_1_1auth_1_1_auth_a7a426e5712e59c4998e18f2cf1ebb220}{firebase\+::auth\+::\+Auth\+::\+Sign\+In\+With\+Credential} request to sign the user in with the provider. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/user.\+h\end{DoxyCompactItemize}

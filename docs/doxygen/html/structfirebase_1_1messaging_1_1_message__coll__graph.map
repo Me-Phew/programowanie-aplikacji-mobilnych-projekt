@@ -1,0 +1,7 @@
+<map id="firebase::messaging::Message" name="firebase::messaging::Message">
+<area shape="rect" id="Node000001" title="Data structure used to send messages to, and receive messages from, cloud messaging." alt="" coords="28,219,167,261"/>
+<area shape="rect" id="Node000002" href="$structfirebase_1_1messaging_1_1_notification.html" title=" " alt="" coords="28,112,167,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,170,100,218,95,218,95,170"/>
+<area shape="rect" id="Node000003" href="$structfirebase_1_1messaging_1_1_android_notification_params.html" title="Data structure for parameters that are unique to the Android implementation." alt="" coords="5,5,190,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,64,100,111,95,111,95,64"/>
+</map>

@@ -1,0 +1,63 @@
+\doxysection{availability.\+h}
+\hypertarget{availability_8h_source}{}\label{availability_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/google\_play\_services/availability.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/google\_play\_services/availability.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_GOOGLE\_PLAY\_SERVICES\_AVAILABILITY\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_GOOGLE\_PLAY\_SERVICES\_AVAILABILITY\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if\ defined(\_\_ANDROID\_\_)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#if\ !defined(SWIG\_BUILD)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <jni.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{namespace\ }google\_play\_services\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{enum}\ Availability\ \{}
+\DoxyCodeLine{00034\ \ \ kAvailabilityAvailable,}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ kAvailabilityUnavailableDisabled,}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ kAvailabilityUnavailableInvalid,}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ kAvailabilityUnavailableMissing,}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ kAvailabilityUnavailablePermissions,}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ kAvailabilityUnavailableUpdateRequired,}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ kAvailabilityUnavailableUpdating,}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ kAvailabilityUnavailableOther,}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00067\ Availability\ CheckAvailability(JNIEnv*\ env,\ jobject\ activity);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \mbox{\hyperlink{classfirebase_1_1_future}{::firebase::Future<void>}}\ MakeAvailable(JNIEnv*\ env,\ jobject\ activity);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00087\ \mbox{\hyperlink{classfirebase_1_1_future}{::firebase::Future<void>}}\ MakeAvailableLastResult();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \}\ \ \textcolor{comment}{//\ namespace\ google\_play\_services}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(\_\_ANDROID\_\_)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_GOOGLE\_PLAY\_SERVICES\_AVAILABILITY\_H\_}}
+
+\end{DoxyCode}

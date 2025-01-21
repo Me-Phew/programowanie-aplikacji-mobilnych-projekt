@@ -1,0 +1,84 @@
+\doxysection{event\+\_\+stream\+\_\+handler\+\_\+functions.\+h}
+\hypertarget{event__stream__handler__functions_8h_source}{}\label{event__stream__handler__functions_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/event\_stream\_handler\_functions.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/event\_stream\_handler\_functions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_EVENT\_STREAM\_HANDLER\_FUNCTIONS\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_EVENT\_STREAM\_HANDLER\_FUNCTIONS\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}event\_sink.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}event\_stream\_handler.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Handler\ types\ for\ each\ of\ the\ StreamHandler\ setup\ and\ teardown}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ requests.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ }StreamHandlerListen\ =}
+\DoxyCodeLine{00021\ \ \ \ \ std::function<std::unique\_ptr<StreamHandlerError<T>>(}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ arguments,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::unique\_ptr<EventSink<T>>\&\&\ events)>;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ }StreamHandlerCancel\ =}
+\DoxyCodeLine{00027\ \ \ \ \ std::function<std::unique\_ptr<StreamHandlerError<T>>(\textcolor{keyword}{const}\ T*\ arguments)>;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ An\ implementation\ of\ StreamHandler\ that\ pass\ calls\ through\ to}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ provided\ function\ objects.}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{StreamHandlerFunctions}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_stream_handler}{StreamHandler}}<T>\ \{}
+\DoxyCodeLine{00033\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ Creates\ a\ handler\ object\ that\ calls\ the\ provided\ functions}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ for\ the\ corresponding\ StreamHandler\ outcomes.}}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{StreamHandlerFunctions}}(StreamHandlerListen<T>\ on\_listen,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StreamHandlerCancel<T>\ on\_cancel)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ :\ on\_listen\_(on\_listen),\ on\_cancel\_(on\_cancel)\ \{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{\string~StreamHandlerFunctions}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{StreamHandlerFunctions}}(\mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{StreamHandlerFunctions}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{StreamHandlerFunctions}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_stream_handler_functions}{StreamHandlerFunctions}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ |flutter::StreamHandler|}}
+\DoxyCodeLine{00048\ \ \ std::unique\_ptr<StreamHandlerError<T>>\ OnListenInternal(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ arguments,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ std::unique\_ptr<\mbox{\hyperlink{classflutter_1_1_event_sink}{EventSink<T>}}>\&\&\ events)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (on\_listen\_)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ on\_listen\_(arguments,\ std::move(events));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{auto}\ error\ =\ std::make\_unique<StreamHandlerError<T>>(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}No\ OnListen\ handler\ set"{}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(error);}
+\DoxyCodeLine{00058\ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ |flutter::StreamHandler|}}
+\DoxyCodeLine{00061\ \ \ std::unique\_ptr<StreamHandlerError<T>>\ OnCancelInternal(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ arguments)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (on\_cancel\_)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ on\_cancel\_(arguments);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{auto}\ error\ =\ std::make\_unique<StreamHandlerError<T>>(}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}No\ OnCancel\ handler\ set"{}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(error);}
+\DoxyCodeLine{00070\ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ StreamHandlerListen<T>\ on\_listen\_;}
+\DoxyCodeLine{00073\ \ \ StreamHandlerCancel<T>\ on\_cancel\_;}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_EVENT\_STREAM\_HANDLER\_FUNCTIONS\_H\_}}
+
+\end{DoxyCode}

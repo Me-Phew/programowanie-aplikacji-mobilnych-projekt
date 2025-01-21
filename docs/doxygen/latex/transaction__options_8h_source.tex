@@ -1,0 +1,67 @@
+\doxysection{transaction\+\_\+options.\+h}
+\hypertarget{transaction__options_8h_source}{}\label{transaction__options_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/transaction\_options.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/transaction\_options.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2022\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_TRANSACTION\_OPTIONS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_TRANSACTION\_OPTIONS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <iosfwd>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\ final\ \{}
+\DoxyCodeLine{00031\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_ae4b651df1c4dbc7fe7ff7a7a55532226}{TransactionOptions}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a2fb2e09c62b6d377281fac239bfc3f13}{TransactionOptions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a6760dab372ee10caa17b9d01749633d5}{TransactionOptions}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a406614c6efaa753a9edf7de257cd85e9}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_ad29e093bfe063c5315b997b4d70c49d5}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ int32\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a12bdaf84d6e3eaf54ddc103eeb66b513}{max\_attempts}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ max\_attempts\_;\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_ad38cd17206e39a9752d56644ade12c77}{set\_max\_attempts}}(int32\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a12bdaf84d6e3eaf54ddc103eeb66b513}{max\_attempts}});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00111\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a3f2b7c59d7277b44731358c9dfeaecee}{ToString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a28819ee8ced2624637f96f2b319e2601}{operator<<}}(std::ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00122\ \ \ int32\_t\ max\_attempts\_\ =\ 5;}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\ lhs,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{TransactionOptions}}\&\ rhs)\ \{}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00135\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_TRANSACTION\_OPTIONS\_H\_}}
+
+\end{DoxyCode}

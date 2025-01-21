@@ -1,0 +1,54 @@
+\doxysection{firebase\+::database\+::Value\+Listener Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_value_listener}{}\label{classfirebase_1_1database_1_1_value_listener}\index{firebase::database::ValueListener@{firebase::database::ValueListener}}
+
+
+{\ttfamily \#include $<$listener.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener_a02ce2f03e20564a124b5d290158494a8}{On\+Value\+Changed}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot)=0
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_value_listener_a8f97aa3b6378c57d0d4b8cf853a95538}{On\+Cancelled}} (const \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}} \&error, const char \texorpdfstring{$\ast$}{*}error\+\_\+message)=0
+\begin{DoxyCompactList}\small\item\em This method will be triggered in the event that this listener either failed at the server, or is removed as a result of the security and Firebase rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Value listener interface. Subclasses of this listener class can be used to receive events about data changes at a location. Attach the listener to a location using \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Database\+Reference\+::\+Add\+Value\+Listener()} or \doxylink{classfirebase_1_1database_1_1_query_aeb583c0c607b01692f9aaa9a59432810}{Query\+::\+Add\+Value\+Listener()}, and \doxylink{classfirebase_1_1database_1_1_value_listener_a02ce2f03e20564a124b5d290158494a8}{On\+Value\+Changed()} will be called once immediately, and again when the value changes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_value_listener_a8f97aa3b6378c57d0d4b8cf853a95538}\index{firebase::database::ValueListener@{firebase::database::ValueListener}!OnCancelled@{OnCancelled}}
+\index{OnCancelled@{OnCancelled}!firebase::database::ValueListener@{firebase::database::ValueListener}}
+\doxysubsubsection{\texorpdfstring{OnCancelled()}{OnCancelled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_value_listener_a8f97aa3b6378c57d0d4b8cf853a95538} 
+virtual void firebase\+::database\+::\+Value\+Listener\+::\+On\+Cancelled (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}} \&}]{error}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{error\+\_\+message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This method will be triggered in the event that this listener either failed at the server, or is removed as a result of the security and Firebase rules. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error} & A code corresponding to the error that occurred. \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+message} & A description of the error that occurred. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_value_listener_a02ce2f03e20564a124b5d290158494a8}\index{firebase::database::ValueListener@{firebase::database::ValueListener}!OnValueChanged@{OnValueChanged}}
+\index{OnValueChanged@{OnValueChanged}!firebase::database::ValueListener@{firebase::database::ValueListener}}
+\doxysubsubsection{\texorpdfstring{OnValueChanged()}{OnValueChanged()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_value_listener_a02ce2f03e20564a124b5d290158494a8} 
+virtual void firebase\+::database\+::\+Value\+Listener\+::\+On\+Value\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This method will be called with a snapshot of the data at this location each time that data changes.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & The current data at the location. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/listener.\+h\end{DoxyCompactItemize}

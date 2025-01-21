@@ -1,0 +1,93 @@
+\doxysection{mutable\+\_\+data.\+h}
+\hypertarget{mutable__data_8h_source}{}\label{mutable__data_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/mutable\_data.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/mutable\_data.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_MUTABLE\_DATA\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_MUTABLE\_DATA\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }database\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }DatabaseInternal;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }DatabaseReferenceInternal;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }MutableDataInternal;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }Repo;}
+\DoxyCodeLine{00028\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\ \{}
+\DoxyCodeLine{00036\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)}}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}(\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\&\&\ rhs);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ MutableData\ may\ be\ moved.}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\&\ operator=(\mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\&\&\ rhs);}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a53c623589a6d99a21d2801c987091ff5}{\string~MutableData}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a195fd2c2b8a8c8e8b8186afd4f41a437}{Child}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a2ca694b89725d586d2bdb341efdc26c7}{Child}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ std::vector<MutableData>\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a6f17f7a9fea77abbc5399d67cc1597f0}{children}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_aee49dfdb4f4cc0741dd2329727a8610f}{children\_count}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_acde0c224286948465923e4863d97cc9b}{key}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_aeac90d563cbec789fc5e379bf216f3a1}{key\_string}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a2715173f17315aab262e3ee2b3ec1370}{value}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a6cd529e1a816e423146fa80652b104cc}{priority}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_ad47612edcfdf4edd835a0815a39a5e74}{HasChild}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_aa24b52fdf04e36ccb79d69e33ec4ed52}{HasChild}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00132\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a53a6a2bf6a0ecce0fa06537060320c9b}{set\_value}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a2715173f17315aab262e3ee2b3ec1370}{value}});}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a9f72e95b1db5fac02e7e682ebbb2d5e6}{set\_priority}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data_a6cd529e1a816e423146fa80652b104cc}{priority}});}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00147\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::DatabaseReferenceInternal;}
+\DoxyCodeLine{00148\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::DatabaseInternal;}
+\DoxyCodeLine{00149\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::MutableDataInternal;}
+\DoxyCodeLine{00150\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::Repo;}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00152\ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\ GetInvalidMutableData();}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ not\ SWIG}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}(internal::MutableDataInternal*\ internal);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\&\ rhs)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00159\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_mutable_data}{MutableData}}\&\ rhs)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ internal::MutableDataInternal*\ internal\_;}
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \}\ \ \textcolor{comment}{//\ namespace\ database}}
+\DoxyCodeLine{00165\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_MUTABLE\_DATA\_H\_}}
+
+\end{DoxyCode}

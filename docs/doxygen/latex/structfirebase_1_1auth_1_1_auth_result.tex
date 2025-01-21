@@ -1,0 +1,58 @@
+\doxysection{firebase\+::auth\+::Auth\+Result Struct Reference}
+\hypertarget{structfirebase_1_1auth_1_1_auth_result}{}\label{structfirebase_1_1auth_1_1_auth_result}\index{firebase::auth::AuthResult@{firebase::auth::AuthResult}}
+
+
+The result of operations that can affect authentication state.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::auth\+::Auth\+Result\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structfirebase_1_1auth_1_1_auth_result__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info}{Additional\+User\+Info}} \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result_aef94bf126d5ef8027d3dc075cf35f856}{additional\+\_\+user\+\_\+info}}
+\item 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result_a44b78f50ef2707b6cb731b5163d5826b}{credential}}
+\item 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} \mbox{\hyperlink{structfirebase_1_1auth_1_1_auth_result_a531cac980c6c47951ceeb67e3870ea94}{user}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The result of operations that can affect authentication state. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1auth_1_1_auth_result_aef94bf126d5ef8027d3dc075cf35f856}\index{firebase::auth::AuthResult@{firebase::auth::AuthResult}!additional\_user\_info@{additional\_user\_info}}
+\index{additional\_user\_info@{additional\_user\_info}!firebase::auth::AuthResult@{firebase::auth::AuthResult}}
+\doxysubsubsection{\texorpdfstring{additional\_user\_info}{additional\_user\_info}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_auth_result_aef94bf126d5ef8027d3dc075cf35f856} 
+\mbox{\hyperlink{structfirebase_1_1auth_1_1_additional_user_info}{Additional\+User\+Info}} firebase\+::auth\+::\+Auth\+Result\+::additional\+\_\+user\+\_\+info}
+
+Identity-\/provider specific information for the user, if the provider is one of Facebook, Git\+Hub, Google, or Twitter. \Hypertarget{structfirebase_1_1auth_1_1_auth_result_a44b78f50ef2707b6cb731b5163d5826b}\index{firebase::auth::AuthResult@{firebase::auth::AuthResult}!credential@{credential}}
+\index{credential@{credential}!firebase::auth::AuthResult@{firebase::auth::AuthResult}}
+\doxysubsubsection{\texorpdfstring{credential}{credential}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_auth_result_a44b78f50ef2707b6cb731b5163d5826b} 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_credential}{Credential}} firebase\+::auth\+::\+Auth\+Result\+::credential}
+
+A \doxylink{classfirebase_1_1auth_1_1_credential}{Credential} instance for the recently signed-\/in user. This is not supported on desktop platforms. \Hypertarget{structfirebase_1_1auth_1_1_auth_result_a531cac980c6c47951ceeb67e3870ea94}\index{firebase::auth::AuthResult@{firebase::auth::AuthResult}!user@{user}}
+\index{user@{user}!firebase::auth::AuthResult@{firebase::auth::AuthResult}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \label{structfirebase_1_1auth_1_1_auth_result_a531cac980c6c47951ceeb67e3870ea94} 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_user}{User}} firebase\+::auth\+::\+Auth\+Result\+::user}
+
+The currently signed-\/in \doxylink{classfirebase_1_1auth_1_1_user}{User}, or an invalid \doxylink{classfirebase_1_1auth_1_1_user}{User} if there isn\textquotesingle{}t one (i.\+e. if the user is signed-\/out then is\+\_\+valid() will return false). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth/user.\+h\end{DoxyCompactItemize}

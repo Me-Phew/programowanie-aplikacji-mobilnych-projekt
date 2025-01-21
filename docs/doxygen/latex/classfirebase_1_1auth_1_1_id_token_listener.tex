@@ -1,0 +1,63 @@
+\doxysection{firebase\+::auth\+::Id\+Token\+Listener Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_id_token_listener}{}\label{classfirebase_1_1auth_1_1_id_token_listener}\index{firebase::auth::IdTokenListener@{firebase::auth::IdTokenListener}}
+
+
+Listener called when there is a change in the ID token.  
+
+
+
+
+{\ttfamily \#include $<$auth.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1auth_1_1_id_token_listener_a68c92b066db38dcddb317fdaec7d1555}{\texorpdfstring{$\sim$}{\string~}\+Id\+Token\+Listener}} ()
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1auth_1_1_id_token_listener_aa09db55f7cd7321f5177c0c40bc7401a}{On\+Id\+Token\+Changed}} (\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}} \texorpdfstring{$\ast$}{*}auth)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listener called when there is a change in the ID token. 
+
+Override base class method to handle ID token changes. Methods are invoked asynchronously and may be invoked on other threads. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_id_token_listener_a68c92b066db38dcddb317fdaec7d1555}\index{firebase::auth::IdTokenListener@{firebase::auth::IdTokenListener}!````~IdTokenListener@{\texorpdfstring{$\sim$}{\string~}IdTokenListener}}
+\index{````~IdTokenListener@{\texorpdfstring{$\sim$}{\string~}IdTokenListener}!firebase::auth::IdTokenListener@{firebase::auth::IdTokenListener}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IdTokenListener()}{\string~IdTokenListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_id_token_listener_a68c92b066db38dcddb317fdaec7d1555} 
+virtual firebase\+::auth\+::\+Id\+Token\+Listener\+::\texorpdfstring{$\sim$}{\string~}\+Id\+Token\+Listener (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyNote}{Note}
+\+: Destruction of the listener automatically calls Remove\+Id\+Token\+Listener() from the Auths this listener is registered with, if those Auths have not yet been destroyed. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_id_token_listener_aa09db55f7cd7321f5177c0c40bc7401a}\index{firebase::auth::IdTokenListener@{firebase::auth::IdTokenListener}!OnIdTokenChanged@{OnIdTokenChanged}}
+\index{OnIdTokenChanged@{OnIdTokenChanged}!firebase::auth::IdTokenListener@{firebase::auth::IdTokenListener}}
+\doxysubsubsection{\texorpdfstring{OnIdTokenChanged()}{OnIdTokenChanged()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_id_token_listener_aa09db55f7cd7321f5177c0c40bc7401a} 
+virtual void firebase\+::auth\+::\+Id\+Token\+Listener\+::\+On\+Id\+Token\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1auth_1_1_auth}{Auth}} \texorpdfstring{$\ast$}{*}}]{auth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when there is a change in the current user\textquotesingle{}s token.
+\begin{DoxyItemize}
+\item Right after the listener has been registered
+\item When a user signs in
+\item When the current user signs out
+\item When the current user changes
+\item When there is a change in the current user\textquotesingle{}s token
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em auth} & Disambiguates which \doxylink{classfirebase_1_1auth_1_1_auth}{Auth} instance the event corresponds to, in the case where you are using more than one at the same time. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth.\+h\end{DoxyCompactItemize}

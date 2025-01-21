@@ -1,0 +1,93 @@
+\doxysection{flutter\+::Flutter\+Engine Class Reference}
+\hypertarget{classflutter_1_1_flutter_engine}{}\label{classflutter_1_1_flutter_engine}\index{flutter::FlutterEngine@{flutter::FlutterEngine}}
+
+
+Inheritance diagram for flutter\+::Flutter\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classflutter_1_1_flutter_engine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Flutter\+Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classflutter_1_1_flutter_engine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_acb827b4778cbd7fa9816f61bed50bf83}\label{classflutter_1_1_flutter_engine_acb827b4778cbd7fa9816f61bed50bf83} 
+{\bfseries Flutter\+Engine} (const \mbox{\hyperlink{classflutter_1_1_dart_project}{Dart\+Project}} \&project)
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a041a48478b618b30570801247583ac2f}\label{classflutter_1_1_flutter_engine_a041a48478b618b30570801247583ac2f} 
+{\bfseries Flutter\+Engine} (\mbox{\hyperlink{classflutter_1_1_flutter_engine}{Flutter\+Engine}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_ac8a0b7ab286c382c9732141fba827c13}\label{classflutter_1_1_flutter_engine_ac8a0b7ab286c382c9732141fba827c13} 
+\mbox{\hyperlink{classflutter_1_1_flutter_engine}{Flutter\+Engine}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_flutter_engine}{Flutter\+Engine}} const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a4bab5f6796bdd0bd5c5d692adbd61d18}\label{classflutter_1_1_flutter_engine_a4bab5f6796bdd0bd5c5d692adbd61d18} 
+bool {\bfseries Run} ()
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a959ec96ba75f4e4b333e82d6cdc2bde6}\label{classflutter_1_1_flutter_engine_a959ec96ba75f4e4b333e82d6cdc2bde6} 
+bool {\bfseries Run} (const char \texorpdfstring{$\ast$}{*}entry\+\_\+point)
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_adae4fc975ccd429fff95e78f91cb5788}\label{classflutter_1_1_flutter_engine_adae4fc975ccd429fff95e78f91cb5788} 
+void {\bfseries Shut\+Down} ()
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a10c543c2520648dc937dc585c0b55a3d}\label{classflutter_1_1_flutter_engine_a10c543c2520648dc937dc585c0b55a3d} 
+std\+::chrono\+::nanoseconds {\bfseries Process\+Messages} ()
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a83823ade266a2c767ba59886fad0da46}\label{classflutter_1_1_flutter_engine_a83823ade266a2c767ba59886fad0da46} 
+void {\bfseries Reload\+System\+Fonts} ()
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_aa0e9f03107e8379a3a572e2b5a75466f}\label{classflutter_1_1_flutter_engine_aa0e9f03107e8379a3a572e2b5a75466f} 
+void {\bfseries Reload\+Platform\+Brightness} ()
+\item 
+Flutter\+Desktop\+Plugin\+Registrar\+Ref \mbox{\hyperlink{classflutter_1_1_flutter_engine_a1db4544111ae446d105025c09c99f764}{Get\+Registrar\+For\+Plugin}} (const std\+::string \&plugin\+\_\+name) override
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a69b49479da1cdcb174ea27bbb08df8cc}\label{classflutter_1_1_flutter_engine_a69b49479da1cdcb174ea27bbb08df8cc} 
+\mbox{\hyperlink{classflutter_1_1_binary_messenger}{Binary\+Messenger}} \texorpdfstring{$\ast$}{*} {\bfseries messenger} ()
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_acc7ae579961544b75dc36bacec1d0e29}\label{classflutter_1_1_flutter_engine_acc7ae579961544b75dc36bacec1d0e29} 
+void {\bfseries Set\+Next\+Frame\+Callback} (std\+::function$<$ void()$>$ callback)
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a0308ff81d9908d7e258eba50bec78e10}\label{classflutter_1_1_flutter_engine_a0308ff81d9908d7e258eba50bec78e10} 
+std\+::optional$<$ LRESULT $>$ {\bfseries Process\+External\+Window\+Message} (HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_plugin_registry}{flutter\+::\+Plugin\+Registry}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Plugin\+Registry} (\mbox{\hyperlink{classflutter_1_1_plugin_registry}{Plugin\+Registry}} const \&)=delete
+\item 
+\mbox{\hyperlink{classflutter_1_1_plugin_registry}{Plugin\+Registry}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_plugin_registry}{Plugin\+Registry}} const \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_flutter_engine_a3203bbad71b58c2f78b32e948aa76073}\label{classflutter_1_1_flutter_engine_a3203bbad71b58c2f78b32e948aa76073} 
+class {\bfseries Flutter\+View\+Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflutter_1_1_flutter_engine_a1db4544111ae446d105025c09c99f764}\index{flutter::FlutterEngine@{flutter::FlutterEngine}!GetRegistrarForPlugin@{GetRegistrarForPlugin}}
+\index{GetRegistrarForPlugin@{GetRegistrarForPlugin}!flutter::FlutterEngine@{flutter::FlutterEngine}}
+\doxysubsubsection{\texorpdfstring{GetRegistrarForPlugin()}{GetRegistrarForPlugin()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_flutter_engine_a1db4544111ae446d105025c09c99f764} 
+Flutter\+Desktop\+Plugin\+Registrar\+Ref flutter\+::\+Flutter\+Engine\+::\+Get\+Registrar\+For\+Plugin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{plugin\+\_\+name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_plugin_registry}{flutter\+::\+Plugin\+Registry}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/flutter\+\_\+engine.\+h\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/flutter\+\_\+engine.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\doxysection{installations.\+h}
+\hypertarget{installations_8h_source}{}\label{installations_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/installations.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/installations.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2020\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_INSTALLATIONS\_SRC\_INCLUDE\_FIREBASE\_INSTALLATIONS\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_INSTALLATIONS\_SRC\_INCLUDE\_FIREBASE\_INSTALLATIONS\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }installations\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}}\ \{}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a4589f1a305b7bf25951b8b345ca2ea53}{kErrorNone}}\ =\ 0,}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a26ab45bc766029a40d9253a66800fcc1}{kErrorUnknown}},}
+\DoxyCodeLine{00036\ \ \ kErrorNoAccess,}
+\DoxyCodeLine{00038\ \ \ kErrorInvalidConfiguration,}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ Implementation\ specific\ data\ for\ an\ Installation.}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }InstallationsInternal;}
+\DoxyCodeLine{00044\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{Installations}}\ \{}
+\DoxyCodeLine{00055\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{\string~Installations}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}{app}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ app\_;\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{Installations}}*\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_ae20e64d3287f3f92b87df2ded046b400}{GetInstance}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}{app}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a52fc64f9dff544d0c386f357e7a5b331}{GetId}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_af698eea1ed99a6780a0c236fd4e35dee}{GetIdLastResult}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_aef7348a481a79778ee096c4254339a9e}{Delete}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a01af4d36a7e004654310278f2fc7e370}{DeleteLastResult}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_aded92e1065ecbb884ac16f9272d3c03a}{GetToken}}(\textcolor{keywordtype}{bool}\ forceRefresh);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<std::string>}}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_ad9cb7f93dab61520ea67ca7125adb083}{GetTokenLastResult}}();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00107\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{Installations}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}{app}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations}{Installations}}*\ FindInstallations(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ \mbox{\hyperlink{classfirebase_1_1installations_1_1_installations_a9a100243b4563b53c35625ec34b6ac5b}{app}});}
+\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ Installations\ internal\ initialize.}}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{bool}\ InitInternal();}
+\DoxyCodeLine{00112\ \ \ \textcolor{comment}{//\ Clean\ up\ Installations\ instance.}}
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ DeleteInternal();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app\_;}
+\DoxyCodeLine{00116\ \ \ internal::InstallationsInternal*\ installations\_internal\_;}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \}\ \ \textcolor{comment}{//\ namespace\ installations}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_INSTALLATIONS\_SRC\_INCLUDE\_FIREBASE\_INSTALLATIONS\_H\_}}
+
+\end{DoxyCode}

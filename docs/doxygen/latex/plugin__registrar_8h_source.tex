@@ -1,0 +1,137 @@
+\doxysection{plugin\+\_\+registrar.\+h}
+\hypertarget{plugin__registrar_8h_source}{}\label{plugin__registrar_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/plugin\_registrar.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/plugin\_registrar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <flutter\_plugin\_registrar.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}binary\_messenger.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}texture\_registrar.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }Plugin;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ A\ object\ managing\ the\ registration\ of\ a\ plugin\ for\ various\ events.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Currently\ this\ class\ has\ very\ limited\ functionality,\ but\ is\ expected\ to}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ expand\ over\ time\ to\ more\ closely\ match\ the\ functionality\ of}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ the\ Flutter\ mobile\ plugin\ APIs'\ plugin\ registrars.}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}\ \{}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ Creates\ a\ new\ PluginRegistrar.\ |core\_registrar|\ and\ the\ messenger\ it}}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ provides\ must\ remain\ valid\ as\ long\ as\ this\ object\ exists.}}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}(FlutterDesktopPluginRegistrarRef\ core\_registrar);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar}{\string~PluginRegistrar}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}(\mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ Returns\ the\ messenger\ to\ use\ for\ creating\ channels\ to\ communicate\ with\ the}}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ Flutter\ engine.}}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ This\ pointer\ will\ remain\ valid\ for\ the\ lifetime\ of\ this\ instance.}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classflutter_1_1_binary_messenger}{BinaryMessenger}}*\ messenger()\ \{\ \textcolor{keywordflow}{return}\ messenger\_.get();\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Returns\ the\ texture\ registrar\ to\ use\ for\ the\ plugin\ to\ render\ a\ pixel}}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ buffer.}}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classflutter_1_1_texture_registrar}{TextureRegistrar}}*\ texture\_registrar()\ \{\ \textcolor{keywordflow}{return}\ texture\_registrar\_.get();\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Takes\ ownership\ of\ |plugin|.}}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Plugins\ are\ not\ required\ to\ call\ this\ method\ if\ they\ have\ other\ lifetime}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ management,\ but\ this\ is\ a\ convenient\ place\ for\ plugins\ to\ be\ owned\ to}}
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ ensure\ that\ they\ stay\ valid\ for\ any\ registered\ callbacks.}}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ AddPlugin(std::unique\_ptr<Plugin>\ plugin);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00057\ \ \ FlutterDesktopPluginRegistrarRef\ registrar()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ registrar\_;\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Destroys\ all\ owned\ plugins.\ Subclasses\ should\ call\ this\ at\ the\ beginning\ of}}
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ their\ destructors\ to\ prevent\ the\ possibility\ of\ an\ owned\ plugin\ trying\ to}}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ access\ destroyed\ state\ during\ its\ own\ destruction.}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ ClearPlugins();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Handle\ for\ interacting\ with\ the\ C\ API's\ registrar.}}
+\DoxyCodeLine{00066\ \ \ FlutterDesktopPluginRegistrarRef\ registrar\_;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ std::unique\_ptr<BinaryMessenger>\ messenger\_;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ std::unique\_ptr<TextureRegistrar>\ texture\_registrar\_;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ Plugins\ registered\ for\ ownership.}}
+\DoxyCodeLine{00073\ \ \ std::set<std::unique\_ptr<Plugin>>\ plugins\_;}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ A\ plugin\ that\ can\ be\ registered\ for\ ownership\ by\ a\ PluginRegistrar.}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_plugin}{Plugin}}\ \{}
+\DoxyCodeLine{00078\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_plugin}{\string~Plugin}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ A\ singleton\ to\ own\ PluginRegistrars.\ This\ is\ intended\ for\ use\ in\ plugins,}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ where\ there\ is\ no\ higher-\/level\ object\ to\ own\ a\ PluginRegistrar\ that\ can}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ own\ plugin\ instances\ and\ ensure\ that\ they\ live\ as\ long\ as\ the\ engine\ they}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ are\ registered\ with.}}
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}\ \{}
+\DoxyCodeLine{00087\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}*\ GetInstance();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}(\mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//\ Returns\ a\ plugin\ registrar\ wrapper\ of\ type\ T,\ which\ must\ be\ a\ kind\ of}}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ PluginRegistrar,\ creating\ it\ if\ necessary.\ The\ returned\ registrar\ will}}
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ live\ as\ long\ as\ the\ underlying\ FlutterDesktopPluginRegistrarRef,\ so}}
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ can\ be\ used\ to\ own\ plugin\ instances.}}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ Calling\ this\ multiple\ times\ for\ the\ same\ registrar\_ref\ with\ different}}
+\DoxyCodeLine{00100\ \ \ \textcolor{comment}{//\ template\ types\ results\ in\ undefined\ behavior.}}
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00102\ \ \ T*\ GetRegistrar(FlutterDesktopPluginRegistrarRef\ registrar\_ref)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{auto}\ insert\_result\ =}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ registrars\_.emplace(registrar\_ref,\ std::make\_unique<T>(registrar\_ref));}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{auto}\&\ registrar\_pair\ =\ *(insert\_result.first);}
+\DoxyCodeLine{00106\ \ \ \ \ FlutterDesktopPluginRegistrarSetDestructionHandler(registrar\_pair.first,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OnRegistrarDestroyed);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(registrar\_pair.second.get());}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{comment}{//\ Destroys\ all\ registrar\ wrappers\ created\ by\ the\ manager.}}
+\DoxyCodeLine{00112\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00113\ \ \ \textcolor{comment}{//\ This\ is\ intended\ primarily\ for\ use\ in\ tests.}}
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{void}\ Reset()\ \{\ registrars\_.clear();\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00117\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_manager}{PluginRegistrarManager}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keyword}{using\ }WrapperMap\ =\ std::map<FlutterDesktopPluginRegistrarRef,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<PluginRegistrar>>;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ OnRegistrarDestroyed(FlutterDesktopPluginRegistrarRef\ registrar);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ WrapperMap*\ registrars()\ \{\ \textcolor{keywordflow}{return}\ \&registrars\_;\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ WrapperMap\ registrars\_;}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRAR\_H\_}}
+
+\end{DoxyCode}

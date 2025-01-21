@@ -1,0 +1,131 @@
+\doxysection{lib/screens/profile/profile\+\_\+page.dart File Reference}
+\hypertarget{profile__page_8dart}{}\label{profile__page_8dart}\index{lib/screens/profile/profile\_page.dart@{lib/screens/profile/profile\_page.dart}}
+
+
+Ekran profilu użytkownika z możliwością edycji danych.  
+
+
+{\ttfamily import dart;}\newline
+Include dependency graph for profile\+\_\+page.\+dart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{profile__page_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_consumer_stateful_widget}{Consumer\+Stateful\+Widget}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{profile__page_8dart_ab339d53d3945a16dfdd20004616a8ddc}{init\+State}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{profile__page_8dart_aed2f088ebb8ae9ee8d5f7509ca1f9966}{\+\_\+upload\+Image}} (File image) async
+\begin{DoxyCompactList}\small\item\em Przesyła nowe zdjęcie profilowe na serwer. \end{DoxyCompactList}\item 
+Widget \mbox{\hyperlink{profile__page_8dart_af692e48d25c13ec9b3e86a44cf5bebfd}{\+\_\+build\+Profile\+Image}} ()
+\begin{DoxyCompactList}\small\item\em Buduje widget wyświetlający zdjęcie profilowe. \end{DoxyCompactList}\item 
+override Widget \mbox{\hyperlink{profile__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}{build}} (Build\+Context context)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{profile__page_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\item 
+class Edit\+Account extends \mbox{\hyperlink{class_consumer_stateful_widget}{Consumer\+Stateful\+Widget}} \mbox{\hyperlink{profile__page_8dart_a3e5b7c3cbcd5609846da2a2579e45d7b}{\+\_\+selected\+Image}}
+\item 
+bool \mbox{\hyperlink{profile__page_8dart_a34fdcc4bc4854d71d13ecc6b815e0db1}{\+\_\+is\+Loading}} = false
+\item 
+late Student \mbox{\hyperlink{profile__page_8dart_ac1724480a00d4ee7eca9a37a3cc5c7a6}{\+\_\+student}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ekran profilu użytkownika z możliwością edycji danych. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{profile__page_8dart_af692e48d25c13ec9b3e86a44cf5bebfd}\index{profile\_page.dart@{profile\_page.dart}!\_buildProfileImage@{\_buildProfileImage}}
+\index{\_buildProfileImage@{\_buildProfileImage}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_buildProfileImage()}{\_buildProfileImage()}}
+{\footnotesize\ttfamily \label{profile__page_8dart_af692e48d25c13ec9b3e86a44cf5bebfd} 
+Widget \+\_\+build\+Profile\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Buduje widget wyświetlający zdjęcie profilowe. 
+
+\begin{DoxyReturn}{Returns}
+Widget wyświetlający zdjęcie profilowe. 
+\end{DoxyReturn}
+\Hypertarget{profile__page_8dart_aed2f088ebb8ae9ee8d5f7509ca1f9966}\index{profile\_page.dart@{profile\_page.dart}!\_uploadImage@{\_uploadImage}}
+\index{\_uploadImage@{\_uploadImage}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_uploadImage()}{\_uploadImage()}}
+{\footnotesize\ttfamily \label{profile__page_8dart_aed2f088ebb8ae9ee8d5f7509ca1f9966} 
+Future$<$ void $>$ \+\_\+upload\+Image (\begin{DoxyParamCaption}\item[{File}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Przesyła nowe zdjęcie profilowe na serwer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Plik obrazu do przesłania. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{profile__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a}\index{profile\_page.dart@{profile\_page.dart}!build@{build}}
+\index{build@{build}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{profile__page_8dart_ab022cbdb8080a3d9d6ccf33cead2b33a} 
+override Widget build (\begin{DoxyParamCaption}\item[{Build\+Context}]{context}{}\end{DoxyParamCaption})}
+
+\Hypertarget{profile__page_8dart_ab339d53d3945a16dfdd20004616a8ddc}\index{profile\_page.dart@{profile\_page.dart}!initState@{initState}}
+\index{initState@{initState}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{initState()}{initState()}}
+{\footnotesize\ttfamily \label{profile__page_8dart_ab339d53d3945a16dfdd20004616a8ddc} 
+override void init\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{profile__page_8dart_a34fdcc4bc4854d71d13ecc6b815e0db1}\index{profile\_page.dart@{profile\_page.dart}!\_isLoading@{\_isLoading}}
+\index{\_isLoading@{\_isLoading}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_isLoading}{\_isLoading}}
+{\footnotesize\ttfamily \label{profile__page_8dart_a34fdcc4bc4854d71d13ecc6b815e0db1} 
+bool \+\_\+is\+Loading = false}
+
+\Hypertarget{profile__page_8dart_a3e5b7c3cbcd5609846da2a2579e45d7b}\index{profile\_page.dart@{profile\_page.dart}!\_selectedImage@{\_selectedImage}}
+\index{\_selectedImage@{\_selectedImage}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_selectedImage}{\_selectedImage}}
+{\footnotesize\ttfamily \label{profile__page_8dart_a3e5b7c3cbcd5609846da2a2579e45d7b} 
+class Edit\+Account extends \mbox{\hyperlink{class_consumer_stateful_widget}{Consumer\+Stateful\+Widget}} \+\_\+selected\+Image}
+
+\Hypertarget{profile__page_8dart_ac1724480a00d4ee7eca9a37a3cc5c7a6}\index{profile\_page.dart@{profile\_page.dart}!\_student@{\_student}}
+\index{\_student@{\_student}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{\_student}{\_student}}
+{\footnotesize\ttfamily \label{profile__page_8dart_ac1724480a00d4ee7eca9a37a3cc5c7a6} 
+late Student \+\_\+student}
+
+\Hypertarget{profile__page_8dart_a2276f26ae4897992f6da960ea88601e9}\index{profile\_page.dart@{profile\_page.dart}!library@{library}}
+\index{library@{library}!profile\_page.dart@{profile\_page.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{profile__page_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+

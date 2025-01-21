@@ -1,0 +1,34 @@
+\doxysection{flutter\+\_\+export.\+h}
+\hypertarget{flutter__export_8h_source}{}\label{flutter__export_8h_source}\index{windows/flutter/ephemeral/flutter\_export.h@{windows/flutter/ephemeral/flutter\_export.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_EXPORT\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_EXPORT\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ FLUTTER\_DESKTOP\_LIBRARY}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Add\ visibility/export\ annotations\ when\ building\ the\ library.}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ FLUTTER\_EXPORT\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ FLUTTER\_EXPORT\ \_\_attribute\_\_((visibility("{}default"{})))}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#else\ \ }\textcolor{comment}{//\ FLUTTER\_DESKTOP\_LIBRARY}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ Add\ import\ annotations\ when\ consuming\ the\ library.}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ FLUTTER\_EXPORT\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ FLUTTER\_EXPORT}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_DESKTOP\_LIBRARY}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_EXPORT\_H\_}}
+
+\end{DoxyCode}

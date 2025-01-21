@@ -1,0 +1,366 @@
+\doxysection{firebase\+::gma\+::Ad\+Size Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_ad_size}{}\label{classfirebase_1_1gma_1_1_ad_size}\index{firebase::gma::AdSize@{firebase::gma::AdSize}}
+
+
+The size of a banner ad.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::gma\+::Ad\+Size\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classfirebase_1_1gma_1_1_ad_size__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{Orientation}} \{ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba157371cb8a7b764b3e3247580cfde8e7}{k\+Orientation\+Current}} = 0
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba811023b7f3e5248bc24cb5f85cb8037b}{k\+Orientation\+Landscape}}
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba3e01ca92b8dd3bc842fd965678a76e53}{k\+Orientation\+Portrait}}
+ \}
+\begin{DoxyCompactList}\small\item\em Denotes the orientation of the \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}{Type}} \{ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa97f9898c758b1229d8af9b3e29400f03}{k\+Type\+Standard}} = 0
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa89899400adc683e00d0536e69f8830c8}{k\+Type\+Anchored\+Adaptive}}
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa6601dc62a2b5e8fff903647a37264e1c}{k\+Type\+Inline\+Adaptive}}
+ \}
+\begin{DoxyCompactList}\small\item\em Denotes the type size object that the \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} represents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_ad5d877505d4a3e62e699a5ff1a1cda27}{Ad\+Size}} (uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}}, uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a058997a76a84bd0d0f179fb5ba16d6db}{height}})
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a468d050d5280e0ea0f6061d669789546}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aad66334df7554ccde3bd56e4435b54a9}{operator!=}} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \&rhs) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a058997a76a84bd0d0f179fb5ba16d6db}{height}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a7f287d17f44ae7578a985d56effce56d}\label{classfirebase_1_1gma_1_1_ad_size_a7f287d17f44ae7578a985d56effce56d} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{Orientation}} {\bfseries orientation} () const
+\begin{DoxyCompactList}\small\item\em The \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} orientation. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_af541feae35ca0d079d6fb459c515d95e}\label{classfirebase_1_1gma_1_1_ad_size_af541feae35ca0d079d6fb459c515d95e} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}{Type}} {\bfseries type} () const
+\begin{DoxyCompactList}\small\item\em The \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} type, either standard size or adaptive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a4181668061ad12f251746387cd4cf91d}{Get\+Landscape\+Anchored\+Adaptive\+Banner\+Ad\+Size}} (uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}})
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad in landscape mode. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a501adaa23d1cd8fe5ce133f1e6984b0b}{Get\+Portrait\+Anchored\+Adaptive\+Banner\+Ad\+Size}} (uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}})
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad in portrait mode. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a9d341beeb830c739d1fabbda39661f17}{Get\+Current\+Orientation\+Anchored\+Adaptive\+Banner\+Ad\+Size}} (uint32\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}})
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad given the current orientation. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_ad725bdbc93c0403f013951331a0ddfdb}{Get\+Inline\+Adaptive\+Banner\+Ad\+Size}} (int \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}}, int max\+\_\+height)
+\begin{DoxyCompactList}\small\item\em This ad size is most suitable for banner ads given a maximum height. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a3510c1094e1639b863f362c67ed2b711}{Get\+Landscape\+Inline\+Adaptive\+Banner\+Ad\+Size}} (int \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}})
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and the device’s landscape height. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a9a714b6dd78bdd4e614c01dd8aa8a08a}{Get\+Portrait\+Inline\+Adaptive\+Banner\+Ad\+Size}} (int \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}})
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and the device’s portrait height. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_ac57f90839d12e3b1d6987aaaf0eb56d7}{Get\+Current\+Orientation\+Inline\+Adaptive\+Banner\+Ad\+Size}} (int \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}})
+\begin{DoxyCompactList}\small\item\em A convenience method to return an inline adaptive banner ad size given the current interface orientation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a4d6f8645be81638b7042b45c9abc6076}{k\+Banner}}
+\item 
+static const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a49a34fd6fd6b56ae65a8ed9d6504097a}{k\+Full\+Banner}}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_afbbb22a17c8aa9ed25c2e4a48f6beb14}\label{classfirebase_1_1gma_1_1_ad_size_afbbb22a17c8aa9ed25c2e4a48f6beb14} 
+static const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} {\bfseries k\+Large\+Banner}
+\begin{DoxyCompactList}\small\item\em Taller version of k\+Banner. Typically 320x100. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a138ac66fd9dce892a7d90af61ac71415}{k\+Leaderboard}}
+\item 
+static const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_adbeb9d4ffd402bc5eaff758cefb3c53a}{k\+Medium\+Rectangle}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a458877b8636eb3a884c4335445441c9e}\label{classfirebase_1_1gma_1_1_ad_size_a458877b8636eb3a884c4335445441c9e} 
+class {\bfseries firebase\+::gma\+::internal\+::\+Ad\+View\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The size of a banner ad. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!Orientation@{Orientation}}
+\index{Orientation@{Orientation}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{Orientation}{Orientation}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b} 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{firebase\+::gma\+::\+Ad\+Size\+::\+Orientation}}}
+
+
+
+Denotes the orientation of the \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kOrientationCurrent@{kOrientationCurrent}!firebase::gma::AdSize@{firebase::gma::AdSize}}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kOrientationCurrent@{kOrientationCurrent}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba157371cb8a7b764b3e3247580cfde8e7}\label{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b} 
+k\+Orientation\+Current&\doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} should reflect the current orientation of the device. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kOrientationLandscape@{kOrientationLandscape}!firebase::gma::AdSize@{firebase::gma::AdSize}}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kOrientationLandscape@{kOrientationLandscape}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba811023b7f3e5248bc24cb5f85cb8037b}\label{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b} 
+k\+Orientation\+Landscape&\doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} will be adaptively formatted in Landscape mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kOrientationPortrait@{kOrientationPortrait}!firebase::gma::AdSize@{firebase::gma::AdSize}}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kOrientationPortrait@{kOrientationPortrait}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba3e01ca92b8dd3bc842fd965678a76e53}\label{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b} 
+k\+Orientation\+Portrait&\doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} will be adaptively formatted in Portrait mode. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!Type@{Type}}
+\index{Type@{Type}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca} 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}{firebase\+::gma\+::\+Ad\+Size\+::\+Type}}}
+
+
+
+Denotes the type size object that the \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} represents. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeStandard@{kTypeStandard}!firebase::gma::AdSize@{firebase::gma::AdSize}}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kTypeStandard@{kTypeStandard}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa97f9898c758b1229d8af9b3e29400f03}\label{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca} 
+k\+Type\+Standard&The standard \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} type of a set height and width. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeAnchoredAdaptive@{kTypeAnchoredAdaptive}!firebase::gma::AdSize@{firebase::gma::AdSize}}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kTypeAnchoredAdaptive@{kTypeAnchoredAdaptive}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa89899400adc683e00d0536e69f8830c8}\label{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca} 
+k\+Type\+Anchored\+Adaptive&An adaptive size anchored to a portion of the screen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTypeInlineAdaptive@{kTypeInlineAdaptive}!firebase::gma::AdSize@{firebase::gma::AdSize}}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kTypeInlineAdaptive@{kTypeInlineAdaptive}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa6601dc62a2b5e8fff903647a37264e1c}\label{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca} 
+k\+Type\+Inline\+Adaptive&An adaptive size intended to be embedded in scrollable content. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_ad5d877505d4a3e62e699a5ff1a1cda27}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!AdSize@{AdSize}}
+\index{AdSize@{AdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{AdSize()}{AdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_ad5d877505d4a3e62e699a5ff1a1cda27} 
+firebase\+::gma\+::\+Ad\+Size\+::\+Ad\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{width}{, }\item[{uint32\+\_\+t}]{height}{}\end{DoxyParamCaption})}
+
+Creates a new \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & The height of the ad in density-\/independent pixels. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a9d341beeb830c739d1fabbda39661f17}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetCurrentOrientationAnchoredAdaptiveBannerAdSize@{GetCurrentOrientationAnchoredAdaptiveBannerAdSize}}
+\index{GetCurrentOrientationAnchoredAdaptiveBannerAdSize@{GetCurrentOrientationAnchoredAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetCurrentOrientationAnchoredAdaptiveBannerAdSize()}{GetCurrentOrientationAnchoredAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a9d341beeb830c739d1fabbda39661f17} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Current\+Orientation\+Anchored\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad given the current orientation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad. The size returned will have an aspect ratio similar to \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}, suitable for anchoring near the top or bottom of your app. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_ac57f90839d12e3b1d6987aaaf0eb56d7}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetCurrentOrientationInlineAdaptiveBannerAdSize@{GetCurrentOrientationInlineAdaptiveBannerAdSize}}
+\index{GetCurrentOrientationInlineAdaptiveBannerAdSize@{GetCurrentOrientationInlineAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetCurrentOrientationInlineAdaptiveBannerAdSize()}{GetCurrentOrientationInlineAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_ac57f90839d12e3b1d6987aaaf0eb56d7} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Current\+Orientation\+Inline\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A convenience method to return an inline adaptive banner ad size given the current interface orientation. 
+
+This \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} allows Google servers to choose an optimal ad size with a height less than or equal to the height of the screen in the requested orientation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a height that is always 0. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_ad725bdbc93c0403f013951331a0ddfdb}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetInlineAdaptiveBannerAdSize@{GetInlineAdaptiveBannerAdSize}}
+\index{GetInlineAdaptiveBannerAdSize@{GetInlineAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetInlineAdaptiveBannerAdSize()}{GetInlineAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_ad725bdbc93c0403f013951331a0ddfdb} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Inline\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{max\+\_\+height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This ad size is most suitable for banner ads given a maximum height. 
+
+This \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} allows Google servers to choose an optimal ad size with a height less than or equal to the max height given in
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels. \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+height} & The maximum height that a loaded ad will have. Must be at least 32 dp, but a max\+Height of 50 dp or higher is recommended.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a height that is always 0. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a4181668061ad12f251746387cd4cf91d}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetLandscapeAnchoredAdaptiveBannerAdSize@{GetLandscapeAnchoredAdaptiveBannerAdSize}}
+\index{GetLandscapeAnchoredAdaptiveBannerAdSize@{GetLandscapeAnchoredAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetLandscapeAnchoredAdaptiveBannerAdSize()}{GetLandscapeAnchoredAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a4181668061ad12f251746387cd4cf91d} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Landscape\+Anchored\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad in landscape mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad. The size returned will have an aspect ratio similar to BANNER, suitable for anchoring near the top or bottom of your app. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a3510c1094e1639b863f362c67ed2b711}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetLandscapeInlineAdaptiveBannerAdSize@{GetLandscapeInlineAdaptiveBannerAdSize}}
+\index{GetLandscapeInlineAdaptiveBannerAdSize@{GetLandscapeInlineAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetLandscapeInlineAdaptiveBannerAdSize()}{GetLandscapeInlineAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a3510c1094e1639b863f362c67ed2b711} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Landscape\+Inline\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and the device’s landscape height. 
+
+This ad size allows Google servers to choose an optimal ad size with a height less than or equal to the height of the screen in landscape orientation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a height that is always 0. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a501adaa23d1cd8fe5ce133f1e6984b0b}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetPortraitAnchoredAdaptiveBannerAdSize@{GetPortraitAnchoredAdaptiveBannerAdSize}}
+\index{GetPortraitAnchoredAdaptiveBannerAdSize@{GetPortraitAnchoredAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetPortraitAnchoredAdaptiveBannerAdSize()}{GetPortraitAnchoredAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a501adaa23d1cd8fe5ce133f1e6984b0b} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Portrait\+Anchored\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad in portrait mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a Google-\/optimized height to create a banner ad. The size returned will have an aspect ratio similar to BANNER, suitable for anchoring near the top or bottom of your app. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a9a714b6dd78bdd4e614c01dd8aa8a08a}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!GetPortraitInlineAdaptiveBannerAdSize@{GetPortraitInlineAdaptiveBannerAdSize}}
+\index{GetPortraitInlineAdaptiveBannerAdSize@{GetPortraitInlineAdaptiveBannerAdSize}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{GetPortraitInlineAdaptiveBannerAdSize()}{GetPortraitInlineAdaptiveBannerAdSize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a9a714b6dd78bdd4e614c01dd8aa8a08a} 
+static \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::\+Get\+Portrait\+Inline\+Adaptive\+Banner\+Ad\+Size (\begin{DoxyParamCaption}\item[{int}]{width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and the device’s portrait height. 
+
+This ad size allows Google servers to choose an optimal ad size with a height less than or equal to the height of the screen in portrait orientation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the ad in density-\/independent pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} with the given width and a height that is always 0. The exact size of the ad returned can be retrieved by calling \doxylink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{Ad\+View\+::ad\+\_\+size} once the ad has been loaded. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a058997a76a84bd0d0f179fb5ba16d6db}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!height@{height}}
+\index{height@{height}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a058997a76a84bd0d0f179fb5ba16d6db} 
+uint32\+\_\+t firebase\+::gma\+::\+Ad\+Size\+::height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The height of the region represented by this \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}. Value is in density-\/independent pixels. \Hypertarget{classfirebase_1_1gma_1_1_ad_size_aad66334df7554ccde3bd56e4435b54a9}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_aad66334df7554ccde3bd56e4435b54a9} 
+bool firebase\+::gma\+::\+Ad\+Size\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \&}]{rhs}{}\end{DoxyParamCaption}) const}
+
+Comparison operator.
+
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily rhs} refers to a different \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} as {\ttfamily this}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a468d050d5280e0ea0f6061d669789546}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a468d050d5280e0ea0f6061d669789546} 
+bool firebase\+::gma\+::\+Ad\+Size\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \&}]{rhs}{}\end{DoxyParamCaption}) const}
+
+Comparison operator.
+
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily rhs} refers to the same \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} as {\ttfamily this}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!width@{width}}
+\index{width@{width}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121} 
+uint32\+\_\+t firebase\+::gma\+::\+Ad\+Size\+::width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The width of the region represented by this \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}. Value is in density-\/independent pixels. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_size_a4d6f8645be81638b7042b45c9abc6076}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kBanner@{kBanner}}
+\index{kBanner@{kBanner}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{kBanner}{kBanner}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a4d6f8645be81638b7042b45c9abc6076} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::k\+Banner\hspace{0.3cm}{\ttfamily [static]}}
+
+Mobile Marketing Association (MMA) banner ad size (320x50 density-\/independent pixels). \Hypertarget{classfirebase_1_1gma_1_1_ad_size_a49a34fd6fd6b56ae65a8ed9d6504097a}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kFullBanner@{kFullBanner}}
+\index{kFullBanner@{kFullBanner}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{kFullBanner}{kFullBanner}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a49a34fd6fd6b56ae65a8ed9d6504097a} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::k\+Full\+Banner\hspace{0.3cm}{\ttfamily [static]}}
+
+Interactive Advertising Bureau (IAB) full banner ad size (468x60 density-\/independent pixels). \Hypertarget{classfirebase_1_1gma_1_1_ad_size_a138ac66fd9dce892a7d90af61ac71415}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kLeaderboard@{kLeaderboard}}
+\index{kLeaderboard@{kLeaderboard}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{kLeaderboard}{kLeaderboard}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_a138ac66fd9dce892a7d90af61ac71415} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::k\+Leaderboard\hspace{0.3cm}{\ttfamily [static]}}
+
+Interactive Advertising Bureau (IAB) leaderboard ad size (728x90 density-\/independent pixels). \Hypertarget{classfirebase_1_1gma_1_1_ad_size_adbeb9d4ffd402bc5eaff758cefb3c53a}\index{firebase::gma::AdSize@{firebase::gma::AdSize}!kMediumRectangle@{kMediumRectangle}}
+\index{kMediumRectangle@{kMediumRectangle}!firebase::gma::AdSize@{firebase::gma::AdSize}}
+\doxysubsubsection{\texorpdfstring{kMediumRectangle}{kMediumRectangle}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_size_adbeb9d4ffd402bc5eaff758cefb3c53a} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+Size\+::k\+Medium\+Rectangle\hspace{0.3cm}{\ttfamily [static]}}
+
+Interactive Advertising Bureau (IAB) medium rectangle ad size (300x250 density-\/independent pixels). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,146 @@
+\doxysection{firebase\+::storage\+::Storage Class Reference}
+\hypertarget{classfirebase_1_1storage_1_1_storage}{}\label{classfirebase_1_1storage_1_1_storage}\index{firebase::storage::Storage@{firebase::storage::Storage}}
+
+
+Entry point for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}.  
+
+
+
+
+{\ttfamily \#include $<$storage.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a684ce7fca43a5122169195b31ca29563}\label{classfirebase_1_1storage_1_1_storage_a684ce7fca43a5122169195b31ca29563} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Storage} ()
+\begin{DoxyCompactList}\small\item\em Destructor. You may delete an instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} when you are finished using it, to shut down the \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} library. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}} ()
+\begin{DoxyCompactList}\small\item\em Get the firease\+::\+App that this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}} ()
+\begin{DoxyCompactList}\small\item\em Get the URL that this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a476a4580fbe47370076974dd442ed8e0}\label{classfirebase_1_1storage_1_1_storage_a476a4580fbe47370076974dd442ed8e0} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} {\bfseries Get\+Reference} () const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} to the root of the database. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_ab0e71df0ae1b664dd55d9c7762762a7c}\label{classfirebase_1_1storage_1_1_storage_ab0e71df0ae1b664dd55d9c7762762a7c} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} {\bfseries Get\+Reference} (const char \texorpdfstring{$\ast$}{*}path) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} for the specified path. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a867b310c3229070a610b7f35255101b3}\label{classfirebase_1_1storage_1_1_storage_a867b310c3229070a610b7f35255101b3} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} {\bfseries Get\+Reference} (const std\+::string \&path) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} for the specified path. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_aba2ae40e27c8fc17819b71622d64b665}\label{classfirebase_1_1storage_1_1_storage_aba2ae40e27c8fc17819b71622d64b665} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} {\bfseries Get\+Reference\+From\+Url} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}}) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} for the provided URL. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a1db30b8b60083e668a33bed655d2fed0}\label{classfirebase_1_1storage_1_1_storage_a1db30b8b60083e668a33bed655d2fed0} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} {\bfseries Get\+Reference\+From\+Url} (const std\+::string \&\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}}) const
+\begin{DoxyCompactList}\small\item\em Get a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} for the provided URL. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_aff19f227824708589afe9c9b1df57456}\label{classfirebase_1_1storage_1_1_storage_aff19f227824708589afe9c9b1df57456} 
+double {\bfseries max\+\_\+download\+\_\+retry\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum time in seconds to retry a download if a failure occurs. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_ac6e638b08fe1f2a20de990052094720a}\label{classfirebase_1_1storage_1_1_storage_ac6e638b08fe1f2a20de990052094720a} 
+void {\bfseries set\+\_\+max\+\_\+download\+\_\+retry\+\_\+time} (double max\+\_\+transfer\+\_\+retry\+\_\+seconds)
+\begin{DoxyCompactList}\small\item\em Sets the maximum time to retry a download if a failure occurs. Defaults to 600 seconds (10 minutes). \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a8edee2fbdb726e94f40f2bd1ea4309c9}\label{classfirebase_1_1storage_1_1_storage_a8edee2fbdb726e94f40f2bd1ea4309c9} 
+double {\bfseries max\+\_\+upload\+\_\+retry\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum time to retry an upload if a failure occurs. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a2be9c12e8134817bfbebb87e321b716a}\label{classfirebase_1_1storage_1_1_storage_a2be9c12e8134817bfbebb87e321b716a} 
+void {\bfseries set\+\_\+max\+\_\+upload\+\_\+retry\+\_\+time} (double max\+\_\+transfer\+\_\+retry\+\_\+seconds)
+\begin{DoxyCompactList}\small\item\em Sets the maximum time to retry an upload if a failure occurs. Defaults to 600 seconds (10 minutes). \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_adfc88ec0a3929b4f1aa541a6cb83724f}\label{classfirebase_1_1storage_1_1_storage_adfc88ec0a3929b4f1aa541a6cb83724f} 
+double {\bfseries max\+\_\+operation\+\_\+retry\+\_\+time} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum time to retry operations other than upload and download if a failure occurs. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a74ff037cfdbd291ee804c5fdd056e8e1}\label{classfirebase_1_1storage_1_1_storage_a74ff037cfdbd291ee804c5fdd056e8e1} 
+void {\bfseries set\+\_\+max\+\_\+operation\+\_\+retry\+\_\+time} (double max\+\_\+transfer\+\_\+retry\+\_\+seconds)
+\begin{DoxyCompactList}\small\item\em Sets the maximum time to retry operations other than upload and download if a failure occurs. Defaults to 120 seconds (2 minutes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a057fc8bc69877c7c674f4b220dba1f9f}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Get an instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a21c3d30485f284cec6dd74e92c79cf19}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}{app}}, const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}{url}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Get an instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} corresponding to the given \doxylink{classfirebase_1_1_app}{App}, with the given Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} URL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the Firebase C++ SDK for Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}. 
+
+To use the SDK, call \doxylink{classfirebase_1_1storage_1_1_storage_a057fc8bc69877c7c674f4b220dba1f9f}{firebase\+::storage\+::\+Storage\+::\+Get\+Instance()} to obtain an instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage}, then use \doxylink{classfirebase_1_1storage_1_1_storage_a476a4580fbe47370076974dd442ed8e0}{Get\+Reference()} to obtain references to child blobs. From there you can upload data with Storage\+Reference\+::\+Put\+Stream(), get data via Storage\+Reference\+::\+Get\+Stream(). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f}\index{firebase::storage::Storage@{firebase::storage::Storage}!app@{app}}
+\index{app@{app}!firebase::storage::Storage@{firebase::storage::Storage}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_a9137d9cae869e00e233da1a41604f36f} 
+\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Storage\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the firease\+::\+App that this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a21c3d30485f284cec6dd74e92c79cf19}\index{firebase::storage::Storage@{firebase::storage::Storage}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::storage::Storage@{firebase::storage::Storage}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_a21c3d30485f284cec6dd74e92c79cf19} 
+static \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}} \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Storage\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{url}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get an instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} corresponding to the given \doxylink{classfirebase_1_1_app}{App}, with the given Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} URL. 
+
+Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the server backend.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & An instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ in}}  & {\em url} & Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} URL. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & Optional\+: If provided, write the init result here. Will be set to k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a057fc8bc69877c7c674f4b220dba1f9f}\index{firebase::storage::Storage@{firebase::storage::Storage}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::storage::Storage@{firebase::storage::Storage}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_a057fc8bc69877c7c674f4b220dba1f9f} 
+static \mbox{\hyperlink{classfirebase_1_1storage_1_1_storage}{Storage}} \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Storage\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get an instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+
+Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the server backend.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & An instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & Optional\+: If provided, write the init result here. Will be set to k\+Init\+Result\+Success if initialization succeeded, or k\+Init\+Result\+Failed\+Missing\+Dependency on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} corresponding to the given \doxylink{classfirebase_1_1_app}{App}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072}\index{firebase::storage::Storage@{firebase::storage::Storage}!url@{url}}
+\index{url@{url}!firebase::storage::Storage@{firebase::storage::Storage}}
+\doxysubsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_storage_a9e2d0b1cc78aab3fb0fa8eb8dc2e6072} 
+std\+::string firebase\+::storage\+::\+Storage\+::url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the URL that this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The URL this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with, or an empty string if this \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} was created with default parameters. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/storage.\+h\end{DoxyCompactItemize}

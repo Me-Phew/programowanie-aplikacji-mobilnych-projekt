@@ -1,0 +1,134 @@
+\doxysection{Wirtualny\+Auth Class Reference}
+\hypertarget{class_wirtualny_auth}{}\label{class_wirtualny_auth}\index{WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wirtualny_auth_a88a2eda0505cbf135d8bdc3f776c95b9}{Wirtualny\+Auth}} ()
+\item 
+Future$<$ Either$<$ Wirtualny\+Auth\+Exception, Student $>$ $>$ \mbox{\hyperlink{class_wirtualny_auth_a0f0a2599c571bfd9572021466865cf2d}{fetch\+Student}} (String token) async
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_wirtualny_auth_a5a8ab393c11ead02ab5d7349fbde5017}{relogin}} () async
+\item 
+Stream$<$ Student?$>$ \mbox{\hyperlink{class_wirtualny_auth_a485a0bddbade94fb7bbc6931ba2c3460}{auth\+State\+Changes}} ()
+\item 
+Future$<$ void $>$ \mbox{\hyperlink{class_wirtualny_auth_af2976287fa43d5c8418ac92a6b1d8121}{sign\+Out}} () async
+\item 
+Future$<$ Either$<$ Wirtualny\+Auth\+Exception, Student $>$ $>$ \mbox{\hyperlink{class_wirtualny_auth_a8794920ec2baff14d565e459d4d1ea7f}{login\+With\+Username\+And\+Password}} (Student\+Login\+With\+Username\+And\+Password\+Data login\+Data) async
+\item 
+Future$<$ Either$<$ Wirtualny\+Auth\+Exception, Profile\+Picture $>$ $>$ \mbox{\hyperlink{class_wirtualny_auth_a098c966b83d1827b954bd3fc3192b911}{change\+User\+Image}} (\{required File new\+Image\}) async
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{class_wirtualny_auth_a0f926a86229bcba88fce810da28168ae}{log}} = Logger(\textquotesingle{}\mbox{\hyperlink{class_wirtualny_auth}{Wirtualny\+Auth}}\textquotesingle{})
+\item 
+Student\+Login\+Response \mbox{\hyperlink{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa}{\+\_\+auth\+Data}}
+\item 
+int \mbox{\hyperlink{class_wirtualny_auth_a3923e838ca0289422118fb3f146ca510}{auth\+State\+Listeners\+Count}} = 0
+\item 
+late final Stream\+Controller$<$ Student?$>$ \mbox{\hyperlink{class_wirtualny_auth_af8f7704a695ffa78242e6dab98e60e9c}{\+\_\+auth\+State\+Controller}}
+\item 
+bool get \mbox{\hyperlink{class_wirtualny_auth_a8e949fe6a7905a1b945c14f545923a18}{\+\_\+auth\+State\+Has\+Listeners}} =$>$ \mbox{\hyperlink{class_wirtualny_auth_a3923e838ca0289422118fb3f146ca510}{auth\+State\+Listeners\+Count}} $>$ 0
+\item 
+Student get \mbox{\hyperlink{class_wirtualny_auth_a64f3476b73699934e7ba2e61ca86968a}{student}} =$>$ \mbox{\hyperlink{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa}{\+\_\+auth\+Data}}?.user
+\item 
+String get \mbox{\hyperlink{class_wirtualny_auth_aa576b0e87f0350a0d157d1758b78c7b1}{access\+Token}} =$>$ \mbox{\hyperlink{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa}{\+\_\+auth\+Data}}?.token
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wirtualny_auth_a88a2eda0505cbf135d8bdc3f776c95b9}\index{WirtualnyAuth@{WirtualnyAuth}!WirtualnyAuth@{WirtualnyAuth}}
+\index{WirtualnyAuth@{WirtualnyAuth}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{WirtualnyAuth()}{WirtualnyAuth()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a88a2eda0505cbf135d8bdc3f776c95b9} 
+Wirtualny\+Auth\+::\+Wirtualny\+Auth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wirtualny_auth_a485a0bddbade94fb7bbc6931ba2c3460}\index{WirtualnyAuth@{WirtualnyAuth}!authStateChanges@{authStateChanges}}
+\index{authStateChanges@{authStateChanges}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{authStateChanges()}{authStateChanges()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a485a0bddbade94fb7bbc6931ba2c3460} 
+Stream$<$ Student?$>$ Wirtualny\+Auth\+::auth\+State\+Changes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a098c966b83d1827b954bd3fc3192b911}\index{WirtualnyAuth@{WirtualnyAuth}!changeUserImage@{changeUserImage}}
+\index{changeUserImage@{changeUserImage}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{changeUserImage()}{changeUserImage()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a098c966b83d1827b954bd3fc3192b911} 
+Future$<$ Either$<$ Wirtualny\+Auth\+Exception, Profile\+Picture $>$ $>$ Wirtualny\+Auth\+::change\+User\+Image (\begin{DoxyParamCaption}\item[{\{required File new\+Image\}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a0f0a2599c571bfd9572021466865cf2d}\index{WirtualnyAuth@{WirtualnyAuth}!fetchStudent@{fetchStudent}}
+\index{fetchStudent@{fetchStudent}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{fetchStudent()}{fetchStudent()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a0f0a2599c571bfd9572021466865cf2d} 
+Future$<$ Either$<$ Wirtualny\+Auth\+Exception, Student $>$ $>$ Wirtualny\+Auth\+::fetch\+Student (\begin{DoxyParamCaption}\item[{String}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a8794920ec2baff14d565e459d4d1ea7f}\index{WirtualnyAuth@{WirtualnyAuth}!loginWithUsernameAndPassword@{loginWithUsernameAndPassword}}
+\index{loginWithUsernameAndPassword@{loginWithUsernameAndPassword}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{loginWithUsernameAndPassword()}{loginWithUsernameAndPassword()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a8794920ec2baff14d565e459d4d1ea7f} 
+Future$<$ Either$<$ Wirtualny\+Auth\+Exception, Student $>$ $>$ Wirtualny\+Auth\+::login\+With\+Username\+And\+Password (\begin{DoxyParamCaption}\item[{Student\+Login\+With\+Username\+And\+Password\+Data}]{login\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a5a8ab393c11ead02ab5d7349fbde5017}\index{WirtualnyAuth@{WirtualnyAuth}!relogin@{relogin}}
+\index{relogin@{relogin}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{relogin()}{relogin()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a5a8ab393c11ead02ab5d7349fbde5017} 
+Future$<$ void $>$ Wirtualny\+Auth\+::relogin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_af2976287fa43d5c8418ac92a6b1d8121}\index{WirtualnyAuth@{WirtualnyAuth}!signOut@{signOut}}
+\index{signOut@{signOut}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{signOut()}{signOut()}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_af2976287fa43d5c8418ac92a6b1d8121} 
+Future$<$ void $>$ Wirtualny\+Auth\+::sign\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa}\index{WirtualnyAuth@{WirtualnyAuth}!\_authData@{\_authData}}
+\index{\_authData@{\_authData}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{\_authData}{\_authData}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa} 
+Student\+Login\+Response Wirtualny\+Auth\+::\+\_\+auth\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_af8f7704a695ffa78242e6dab98e60e9c}\index{WirtualnyAuth@{WirtualnyAuth}!\_authStateController@{\_authStateController}}
+\index{\_authStateController@{\_authStateController}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{\_authStateController}{\_authStateController}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_af8f7704a695ffa78242e6dab98e60e9c} 
+late final Stream\+Controller$<$Student?$>$ Wirtualny\+Auth\+::\+\_\+auth\+State\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a8e949fe6a7905a1b945c14f545923a18}\index{WirtualnyAuth@{WirtualnyAuth}!\_authStateHasListeners@{\_authStateHasListeners}}
+\index{\_authStateHasListeners@{\_authStateHasListeners}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{\_authStateHasListeners}{\_authStateHasListeners}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a8e949fe6a7905a1b945c14f545923a18} 
+bool get Wirtualny\+Auth\+::\+\_\+auth\+State\+Has\+Listeners =$>$ \mbox{\hyperlink{class_wirtualny_auth_a3923e838ca0289422118fb3f146ca510}{auth\+State\+Listeners\+Count}} $>$ 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_aa576b0e87f0350a0d157d1758b78c7b1}\index{WirtualnyAuth@{WirtualnyAuth}!accessToken@{accessToken}}
+\index{accessToken@{accessToken}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{accessToken}{accessToken}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_aa576b0e87f0350a0d157d1758b78c7b1} 
+String get Wirtualny\+Auth\+::access\+Token =$>$ \mbox{\hyperlink{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa}{\+\_\+auth\+Data}}?.token\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a3923e838ca0289422118fb3f146ca510}\index{WirtualnyAuth@{WirtualnyAuth}!authStateListenersCount@{authStateListenersCount}}
+\index{authStateListenersCount@{authStateListenersCount}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{authStateListenersCount}{authStateListenersCount}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a3923e838ca0289422118fb3f146ca510} 
+int Wirtualny\+Auth\+::auth\+State\+Listeners\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a0f926a86229bcba88fce810da28168ae}\index{WirtualnyAuth@{WirtualnyAuth}!log@{log}}
+\index{log@{log}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a0f926a86229bcba88fce810da28168ae} 
+final Wirtualny\+Auth\+::log = Logger(\textquotesingle{}\mbox{\hyperlink{class_wirtualny_auth}{Wirtualny\+Auth}}\textquotesingle{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_wirtualny_auth_a64f3476b73699934e7ba2e61ca86968a}\index{WirtualnyAuth@{WirtualnyAuth}!student@{student}}
+\index{student@{student}!WirtualnyAuth@{WirtualnyAuth}}
+\doxysubsubsection{\texorpdfstring{student}{student}}
+{\footnotesize\ttfamily \label{class_wirtualny_auth_a64f3476b73699934e7ba2e61ca86968a} 
+Student get Wirtualny\+Auth\+::student =$>$ \mbox{\hyperlink{class_wirtualny_auth_a3b03ecd26120b9a19a63cb7d1fb969aa}{\+\_\+auth\+Data}}?.user\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/wirtualny-\/sdk/modules/auth/\mbox{\hyperlink{wirtualny__auth_8dart}{wirtualny\+\_\+auth.\+dart}}\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\doxysection{firebase\+::auth\+::Federated\+OAuth\+Provider Class Reference}
+\hypertarget{classfirebase_1_1auth_1_1_federated_o_auth_provider}{}\label{classfirebase_1_1auth_1_1_federated_o_auth_provider}\index{firebase::auth::FederatedOAuthProvider@{firebase::auth::FederatedOAuthProvider}}
+
+
+Authenticates with Federated OAuth Providers via the \doxylink{classfirebase_1_1auth_1_1_auth}{firebase\+::auth\+::\+Auth} and \doxylink{classfirebase_1_1auth_1_1_user}{firebase\+::auth\+::\+User} classes.  
+
+
+
+
+{\ttfamily \#include $<$auth.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::auth\+::Federated\+OAuth\+Provider\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfirebase_1_1auth_1_1_federated_o_auth_provider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firebase\+::auth\+::Federated\+OAuth\+Provider\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classfirebase_1_1auth_1_1_federated_o_auth_provider__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_federated_o_auth_provider_ab86ce7fa28d81a8a1959c6d4740e29fc}\label{classfirebase_1_1auth_1_1_federated_o_auth_provider_ab86ce7fa28d81a8a1959c6d4740e29fc} 
+{\bfseries Federated\+OAuth\+Provider} ()
+\begin{DoxyCompactList}\small\item\em Constructs an unconfigured provider. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_o_auth_provider_a56d5a371ef702293edcf15bb5262479a}{Federated\+OAuth\+Provider}} (const \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{Federated\+OAuth\+Provider\+Data}} \&provider\+\_\+data)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_o_auth_provider_a3be1e3b6e46af4facfb95b0b66d16ae0}{Set\+Provider\+Data}} (const \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{Federated\+OAuth\+Provider\+Data}} \&provider\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Configures the provider with OAuth provider information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classfirebase_1_1auth_1_1_federated_auth_provider}{firebase\+::auth\+::\+Federated\+Auth\+Provider}}}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1auth_1_1_federated_o_auth_provider_aea624f81c47468d1d1adcec9ced75c01}\label{classfirebase_1_1auth_1_1_federated_o_auth_provider_aea624f81c47468d1d1adcec9ced75c01} 
+class {\bfseries \+::firebase\+::auth\+::\+Auth}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Authenticates with Federated OAuth Providers via the \doxylink{classfirebase_1_1auth_1_1_auth}{firebase\+::auth\+::\+Auth} and \doxylink{classfirebase_1_1auth_1_1_user}{firebase\+::auth\+::\+User} classes. 
+
+Once configured with a provider id, and with OAuth scope and OAuth custom parameters via an Fedearted\+OAuth\+Provider\+Data structure, an object of this class may be used via \doxylink{classfirebase_1_1auth_1_1_auth_a6894064bd6e3804dee7d86786e93680f}{Auth\+::\+Sign\+In\+With\+Provider} to sign-\/in users, or via \doxylink{classfirebase_1_1auth_1_1_user_a0ab32323766476a0d16afd7f4b0074d4}{User\+::\+Link\+With\+Provider} and \doxylink{classfirebase_1_1auth_1_1_user_a35603c0b5336c919cbf90402959dfcd2}{User\+::\+Reauthenticate\+With\+Provider} for cross account linking and user reauthentication, respectively. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_federated_o_auth_provider_a56d5a371ef702293edcf15bb5262479a}\index{firebase::auth::FederatedOAuthProvider@{firebase::auth::FederatedOAuthProvider}!FederatedOAuthProvider@{FederatedOAuthProvider}}
+\index{FederatedOAuthProvider@{FederatedOAuthProvider}!firebase::auth::FederatedOAuthProvider@{firebase::auth::FederatedOAuthProvider}}
+\doxysubsubsection{\texorpdfstring{FederatedOAuthProvider()}{FederatedOAuthProvider()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_federated_o_auth_provider_a56d5a371ef702293edcf15bb5262479a} 
+firebase\+::auth\+::\+Federated\+OAuth\+Provider\+::\+Federated\+OAuth\+Provider (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{Federated\+OAuth\+Provider\+Data}} \&}]{provider\+\_\+data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs a \doxylink{classfirebase_1_1auth_1_1_federated_o_auth_provider}{Federated\+OAuth\+Provider} preconfigured with provider data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em provider\+\_\+data} & Contains the federated provider id and OAuth scopes and OAuth custom parameters required for user authentication and user linking. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1auth_1_1_federated_o_auth_provider_a3be1e3b6e46af4facfb95b0b66d16ae0}\index{firebase::auth::FederatedOAuthProvider@{firebase::auth::FederatedOAuthProvider}!SetProviderData@{SetProviderData}}
+\index{SetProviderData@{SetProviderData}!firebase::auth::FederatedOAuthProvider@{firebase::auth::FederatedOAuthProvider}}
+\doxysubsubsection{\texorpdfstring{SetProviderData()}{SetProviderData()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1auth_1_1_federated_o_auth_provider_a3be1e3b6e46af4facfb95b0b66d16ae0} 
+void firebase\+::auth\+::\+Federated\+OAuth\+Provider\+::\+Set\+Provider\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1auth_1_1_federated_o_auth_provider_data}{Federated\+OAuth\+Provider\+Data}} \&}]{provider\+\_\+data}{}\end{DoxyParamCaption})}
+
+
+
+Configures the provider with OAuth provider information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em provider\+\_\+data} & Contains the federated provider id and OAuth scopes and OAuth custom parameters required for user authentication and user linking. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/auth.\+h\end{DoxyCompactItemize}

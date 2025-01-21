@@ -1,0 +1,130 @@
+\doxysection{firebase\+::firestore\+::Geo\+Point Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_geo_point}{}\label{classfirebase_1_1firestore_1_1_geo_point}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+
+
+{\ttfamily \#include $<$geo\+\_\+point.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_abeaa0258595983ace6e0c0a833272a32}{Geo\+Point}} ()=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_af75b37aa89a82c258ff670313b563e49}{Geo\+Point}} (double \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a32345f452e056b9a4e758b5627e34310}{latitude}}, double \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_aa0ba0e8179ff2d84e2db28f9eee8fe95}{longitude}})
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a0ec4d648318c335388b14e7878aa5070}{Geo\+Point}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&other)=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a2e6c4a10f17fcb0bcce7836dff813755}{Geo\+Point}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&\&other)=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_ac01f189f1146da37246d6dff917b3003}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&other)=default
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a8120a7088c5e6ec8e48848cd7f0080fb}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&\&other)=default
+\item 
+double \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a32345f452e056b9a4e758b5627e34310}{latitude}} () const
+\item 
+double \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_aa0ba0e8179ff2d84e2db28f9eee8fe95}{longitude}} () const
+\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_ac3cb38aadadde9b1f6732e07c677e1b9}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point_a3b302363f6c2885aab9d97eab99b63f1}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&geo\+\_\+point)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An immutable object representing a geographical point in \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}. The point is represented as a latitude/longitude pair.
+
+Latitude values are in the range of \mbox{[}-\/90, 90\mbox{]}. Longitude values are in the range of \mbox{[}-\/180, 180\mbox{]}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_geo_point_abeaa0258595983ace6e0c0a833272a32}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!GeoPoint@{GeoPoint}}
+\index{GeoPoint@{GeoPoint}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{GeoPoint()}{GeoPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_abeaa0258595983ace6e0c0a833272a32} 
+firebase\+::firestore\+::\+Geo\+Point\+::\+Geo\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Creates a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} with both latitude and longitude set to 0. \Hypertarget{classfirebase_1_1firestore_1_1_geo_point_af75b37aa89a82c258ff670313b563e49}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!GeoPoint@{GeoPoint}}
+\index{GeoPoint@{GeoPoint}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{GeoPoint()}{GeoPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_af75b37aa89a82c258ff670313b563e49} 
+firebase\+::firestore\+::\+Geo\+Point\+::\+Geo\+Point (\begin{DoxyParamCaption}\item[{double}]{latitude}{, }\item[{double}]{longitude}{}\end{DoxyParamCaption})}
+
+Creates a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} from the provided latitude and longitude values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em latitude} & The latitude as number of degrees between -\/90 and 90. \\
+\hline
+{\em longitude} & The longitude as number of degrees between -\/180 and 180. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_geo_point_a0ec4d648318c335388b14e7878aa5070}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!GeoPoint@{GeoPoint}}
+\index{GeoPoint@{GeoPoint}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{GeoPoint()}{GeoPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_a0ec4d648318c335388b14e7878aa5070} 
+firebase\+::firestore\+::\+Geo\+Point\+::\+Geo\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copy constructor, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} is trivially copyable. \Hypertarget{classfirebase_1_1firestore_1_1_geo_point_a2e6c4a10f17fcb0bcce7836dff813755}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!GeoPoint@{GeoPoint}}
+\index{GeoPoint@{GeoPoint}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{GeoPoint()}{GeoPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_a2e6c4a10f17fcb0bcce7836dff813755} 
+firebase\+::firestore\+::\+Geo\+Point\+::\+Geo\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Move constructor, equivalent to copying. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_geo_point_a32345f452e056b9a4e758b5627e34310}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!latitude@{latitude}}
+\index{latitude@{latitude}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{latitude()}{latitude()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_a32345f452e056b9a4e758b5627e34310} 
+double firebase\+::firestore\+::\+Geo\+Point\+::latitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the latitude value of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}}. \Hypertarget{classfirebase_1_1firestore_1_1_geo_point_aa0ba0e8179ff2d84e2db28f9eee8fe95}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!longitude@{longitude}}
+\index{longitude@{longitude}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{longitude()}{longitude()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_aa0ba0e8179ff2d84e2db28f9eee8fe95} 
+double firebase\+::firestore\+::\+Geo\+Point\+::longitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the latitude value of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}}. \Hypertarget{classfirebase_1_1firestore_1_1_geo_point_ac01f189f1146da37246d6dff917b3003}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_ac01f189f1146da37246d6dff917b3003} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \& firebase\+::firestore\+::\+Geo\+Point\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copy assignment operator, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} is trivially copyable. \Hypertarget{classfirebase_1_1firestore_1_1_geo_point_a8120a7088c5e6ec8e48848cd7f0080fb}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_a8120a7088c5e6ec8e48848cd7f0080fb} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \& firebase\+::firestore\+::\+Geo\+Point\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Move assignment operator, equivalent to copying. \Hypertarget{classfirebase_1_1firestore_1_1_geo_point_ac3cb38aadadde9b1f6732e07c677e1b9}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_ac3cb38aadadde9b1f6732e07c677e1b9} 
+std\+::string firebase\+::firestore\+::\+Geo\+Point\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+\+: the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_geo_point_a3b302363f6c2885aab9d97eab99b63f1}\index{firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::GeoPoint@{firebase::firestore::GeoPoint}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_geo_point_a3b302363f6c2885aab9d97eab99b63f1} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} \&}]{geo\+\_\+point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point}{Geo\+Point}} to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_geo_point_ac3cb38aadadde9b1f6732e07c677e1b9}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/geo\+\_\+point.\+h\end{DoxyCompactItemize}

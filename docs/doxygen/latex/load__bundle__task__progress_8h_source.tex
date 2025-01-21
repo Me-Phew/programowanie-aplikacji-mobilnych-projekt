@@ -1,0 +1,86 @@
+\doxysection{load\+\_\+bundle\+\_\+task\+\_\+progress.\+h}
+\hypertarget{load__bundle__task__progress_8h_source}{}\label{load__bundle__task__progress_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/load\_bundle\_task\_progress.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/load\_bundle\_task\_progress.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_LOAD\_BUNDLE\_TASK\_PROGRESS\_H\_}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_LOAD\_BUNDLE\_TASK\_PROGRESS\_H\_}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }LoadBundleTaskProgressInternal;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}\ \{}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a430b4e8cd45932452037b66885bd9d07}{State}}\ \{\ kError,\ kInProgress,\ kSuccess\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a8c7ff9781dd9490b14fa61fe2e3c3444}{LoadBundleTaskProgress}}(int32\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_af93dc33230b0aca2c66d77c0f29a1c59}{documents\_loaded}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a58e37ceb36be130036f9d409b70e07d7}{total\_documents}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a6048181d0f8f00e8e73b0c64278b734e}{bytes\_loaded}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a93ddd7a82f701ffee0fdda31abd6842d}{total\_bytes}},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a430b4e8cd45932452037b66885bd9d07}{State}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a5262c3bb39026589fbce0a79f7d6f765}{state}});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ int32\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_af93dc33230b0aca2c66d77c0f29a1c59}{documents\_loaded}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ documents\_loaded\_;\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ int32\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a58e37ceb36be130036f9d409b70e07d7}{total\_documents}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ total\_documents\_;\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a6048181d0f8f00e8e73b0c64278b734e}{bytes\_loaded}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ bytes\_loaded\_;\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a93ddd7a82f701ffee0fdda31abd6842d}{total\_bytes}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ total\_bytes\_;\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a430b4e8cd45932452037b66885bd9d07}{State}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a5262c3bb39026589fbce0a79f7d6f765}{state}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ state\_;\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }EventListenerInternal;}
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }LoadBundleTaskProgressInternal;}
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#if\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}(LoadBundleTaskProgressInternal*\ internal);}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ int32\_t\ documents\_loaded\_\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ int32\_t\ total\_documents\_\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ int64\_t\ bytes\_loaded\_\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ int64\_t\ total\_bytes\_\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a430b4e8cd45932452037b66885bd9d07}{State}}\ state\_\ =\ State::kInProgress;}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_af95efbb68baed10bf7698db54e879d37}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}\&\ lhs,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}\&\ rhs)\ \{}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordflow}{return}\ lhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a5262c3bb39026589fbce0a79f7d6f765}{state}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a5262c3bb39026589fbce0a79f7d6f765}{state}}()\ \&\&}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ lhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a6048181d0f8f00e8e73b0c64278b734e}{bytes\_loaded}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a6048181d0f8f00e8e73b0c64278b734e}{bytes\_loaded}}()\ \&\&}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ lhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_af93dc33230b0aca2c66d77c0f29a1c59}{documents\_loaded}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_af93dc33230b0aca2c66d77c0f29a1c59}{documents\_loaded}}()\ \&\&}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ lhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a93ddd7a82f701ffee0fdda31abd6842d}{total\_bytes}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a93ddd7a82f701ffee0fdda31abd6842d}{total\_bytes}}()\ \&\&}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ lhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a58e37ceb36be130036f9d409b70e07d7}{total\_documents}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress_a58e37ceb36be130036f9d409b70e07d7}{total\_documents}}();}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a50e2f4e2b225cf9ceae9f9dfdb29b0e9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}\&\ lhs,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{LoadBundleTaskProgress}}\&\ rhs)\ \{}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordflow}{return}\ !(lhs\ ==\ rhs);}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00099\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_LOAD\_BUNDLE\_TASK\_PROGRESS\_H\_}}
+
+\end{DoxyCode}

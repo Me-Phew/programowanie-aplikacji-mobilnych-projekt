@@ -1,0 +1,5 @@
+<map id="firebase::auth::User" name="firebase::auth::User">
+<area shape="rect" id="Node000001" title="Firebase user account object." alt="" coords="16,96,153,123"/>
+<area shape="rect" id="Node000002" href="$classfirebase_1_1auth_1_1_user_info_interface.html" title="Interface implemented by each identity provider." alt="" coords="5,5,164,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,64,87,95,82,95,82,64"/>
+</map>

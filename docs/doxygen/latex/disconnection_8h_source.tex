@@ -1,0 +1,70 @@
+\doxysection{disconnection.\+h}
+\hypertarget{disconnection_8h_source}{}\label{disconnection_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/disconnection.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/disconnection.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_DISCONNECTION\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_DISCONNECTION\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }database\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }DatabaseReferenceInternal;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }DisconnectionHandlerInternal;}
+\DoxyCodeLine{00027\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler}{DisconnectionHandler}}\ \{}
+\DoxyCodeLine{00037\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler}{\string~DisconnectionHandler}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a1a3378d87dc8cd37c9817b019e7ec6d8}{Cancel}}();}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a867d5d86947d97febdd0f69ba8a63624}{CancelLastResult}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ab6f242cf8533b0e4f4d4274f50dc5ee8}{RemoveValue}}();}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ae102d5c9627d2fa243906c9731a5f95e}{RemoveValueLastResult}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a0027db21c8de31a540e1fa72479ab7bb}{SetValue}}(\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ value);}
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ad2bb7dc96ea40fd72155a9ed792118cf}{SetValueLastResult}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a4cfb3dd96237a2eec8b47bd2f42a4b30}{SetValueAndPriority}}(\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ value,\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ priority);}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_aba215d81a42b984dd7fea7e399125bd5}{SetValueAndPriorityLastResult}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}{UpdateChildren}}(\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ values);}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_ab3bca4eef583eef199adb6cb911ef252}{UpdateChildren}}(\textcolor{keyword}{const}\ std::map<std::string,\ Variant>\&\ values)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a52bb18fc78cc93604603c47c16f67d41}{UpdateChildren}}(\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}(values));}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler_a0b80dc59ea84e8c54407969699a31464}{UpdateChildrenLastResult}}();}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00141\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::DatabaseReferenceInternal;}
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }internal::DisconnectionHandlerInternal;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1database_1_1_disconnection_handler}{DisconnectionHandler}}(}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ internal::DisconnectionHandlerInternal*\ internal);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ internal::DisconnectionHandlerInternal*\ internal\_;}
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \}\ \ \textcolor{comment}{//\ namespace\ database}}
+\DoxyCodeLine{00154\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_DISCONNECTION\_H\_}}
+
+\end{DoxyCode}

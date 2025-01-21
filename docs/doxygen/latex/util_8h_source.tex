@@ -1,0 +1,54 @@
+\doxysection{util.\+h}
+\hypertarget{util_8h_source}{}\label{util_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/util.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/util.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_UTIL\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_UTIL\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/app.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }ModuleInitializerData;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1_module_initializer}{ModuleInitializer}}\ \{}
+\DoxyCodeLine{00040\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{InitResult}}\ (*\mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{InitializerFn}})(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app,\ \textcolor{keywordtype}{void}*\ context);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classfirebase_1_1_module_initializer}{ModuleInitializer}}();}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_module_initializer}{\string~ModuleInitializer}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1_module_initializer_a25ebba2d3b7dbba3c9b9e832b05076be}{Initialize}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app,\ \textcolor{keywordtype}{void}*\ context,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{InitializerFn}}*\ init\_fns,\ \textcolor{keywordtype}{size\_t}\ init\_fns\_count);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1_module_initializer_ae109b7189cb88e83af1ded9af45672b6}{Initialize}}(\mbox{\hyperlink{classfirebase_1_1_app}{App}}*\ app,\ \textcolor{keywordtype}{void}*\ context,\ \mbox{\hyperlink{classfirebase_1_1_module_initializer_a0329247f8bd36498ffe8f8ba2321b352}{InitializerFn}}\ init\_fn);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1_module_initializer_a2d9650083aae73471d85c7853425591e}{InitializeLastResult}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00095\ \ \ ModuleInitializerData*\ data\_;}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ NOLINTNEXTLINE\ -\/\ allow\ namespace\ overridden}}
+\DoxyCodeLine{00099\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_UTIL\_H\_}}
+
+\end{DoxyCode}

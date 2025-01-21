@@ -1,0 +1,157 @@
+\doxysection{plugin\+\_\+registrar\+\_\+windows.\+h}
+\hypertarget{plugin__registrar__windows_8h_source}{}\label{plugin__registrar__windows_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/plugin\_registrar\_windows.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/plugin\_registrar\_windows.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRAR\_WINDOWS\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRAR\_WINDOWS\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <flutter\_windows.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}flutter\_view.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}plugin\_registrar.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ A\ delegate\ callback\ for\ WindowProc\ delegation.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ Implementations\ should\ return\ a\ value\ only\ if\ they\ have\ handled\ the\ message}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ and\ want\ to\ stop\ all\ further\ handling.}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ }WindowProcDelegate\ =\ std::function<std::optional<}
+\DoxyCodeLine{00024\ \ \ \ \ LRESULT>(HWND\ hwnd,\ UINT\ message,\ WPARAM\ wparam,\ LPARAM\ lparam)>;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ An\ extension\ to\ PluginRegistrar\ providing\ access\ to\ Windows-\/specific}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ functionality.}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}\ \{}
+\DoxyCodeLine{00029\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Creates\ a\ new\ PluginRegistrar.\ |core\_registrar|\ and\ the\ messenger\ it}}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ provides\ must\ remain\ valid\ as\ long\ as\ this\ object\ exists.}}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ FlutterDesktopPluginRegistrarRef\ core\_registrar)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar}{PluginRegistrar}}(core\_registrar)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ FlutterDesktopViewRef\ implicit\_view\ =}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ FlutterDesktopPluginRegistrarGetView(core\_registrar);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (implicit\_view)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ implicit\_view\_\ =\ std::make\_unique<FlutterView>(implicit\_view);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{\string~PluginRegistrarWindows}}()\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Must\ be\ the\ first\ call.}}
+\DoxyCodeLine{00044\ \ \ \ \ ClearPlugins();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Explicitly\ cleared\ to\ facilitate\ destruction\ order\ testing.}}
+\DoxyCodeLine{00046\ \ \ \ \ implicit\_view\_.reset();}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}(\mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ Returns\ the\ implicit\ view,\ or\ nullptr\ if\ there\ is\ no\ implicit\ view.}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00055\ \ \ \textcolor{comment}{//\ See:}}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ https://api.flutter.dev/flutter/dart-\/ui/PlatformDispatcher/implicitView.html}}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00058\ \ \ \textcolor{comment}{//\ DEPRECATED:\ Use\ |GetViewById|\ instead.}}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{classflutter_1_1_flutter_view}{FlutterView}}*\ GetView()\ \{\ \textcolor{keywordflow}{return}\ implicit\_view\_.get();\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Returns\ the\ view\ with\ the\ given\ ID,\ or\ nullptr\ if\ the\ view\ does\ not\ exist.}}
+\DoxyCodeLine{00062\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ Destroying\ the\ shared\ pointer\ destroys\ the\ reference\ to\ the\ view;\ it\ does}}
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ not\ destroy\ the\ underlying\ view.}}
+\DoxyCodeLine{00065\ \ \ std::shared\_ptr<FlutterView>\ GetViewById(FlutterViewId\ view\_id)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ FlutterDesktopViewRef\ view\ =}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ FlutterDesktopPluginRegistrarGetViewById(registrar(),\ view\_id);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (!view)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_shared<FlutterView>(view);}
+\DoxyCodeLine{00073\ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ Registers\ |delegate|\ to\ receive\ WindowProc\ callbacks\ for\ the\ top-\/level}}
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{//\ window\ containing\ this\ Flutter\ instance.\ Returns\ an\ ID\ that\ can\ be\ used\ to}}
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ unregister\ the\ handler.}}
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ Delegates\ are\ not\ guaranteed\ to\ be\ called:}}
+\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//\ -\/\ The\ application\ may\ choose\ not\ to\ delegate\ WindowProc\ calls.}}
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ -\/\ If\ multiple\ plugins\ are\ registered,\ the\ first\ one\ that\ returns\ a\ value}}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ \ \ from\ the\ delegate\ message\ will\ "{}win"{},\ and\ others\ will\ not\ be\ called.}}
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ \ \ The\ order\ of\ delegate\ calls\ is\ not\ defined.}}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ Delegates\ should\ be\ implemented\ as\ narrowly\ as\ possible,\ only\ returning}}
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ a\ value\ in\ cases\ where\ it's\ important\ that\ other\ delegates\ not\ run,\ to}}
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ minimize\ the\ chances\ of\ conflicts\ between\ plugins.}}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{int}\ RegisterTopLevelWindowProcDelegate(WindowProcDelegate\ delegate)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (window\_proc\_delegates\_.empty())\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ FlutterDesktopPluginRegistrarRegisterTopLevelWindowProcDelegate(}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ registrar(),\ PluginRegistrarWindows::OnTopLevelWindowProc,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ delegate\_id\ =\ next\_window\_proc\_delegate\_id\_++;}
+\DoxyCodeLine{00094\ \ \ \ \ window\_proc\_delegates\_.emplace(delegate\_id,\ std::move(delegate));}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{return}\ delegate\_id;}
+\DoxyCodeLine{00096\ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//\ Unregisters\ a\ previously\ registered\ delegate.}}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{void}\ UnregisterTopLevelWindowProcDelegate(\textcolor{keywordtype}{int}\ proc\_id)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ window\_proc\_delegates\_.erase(proc\_id);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (window\_proc\_delegates\_.empty())\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ FlutterDesktopPluginRegistrarUnregisterTopLevelWindowProcDelegate(}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ registrar(),\ PluginRegistrarWindows::OnTopLevelWindowProc);}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ A\ FlutterDesktopWindowProcCallback\ implementation\ that\ forwards\ back\ to}}
+\DoxyCodeLine{00109\ \ \ \textcolor{comment}{//\ a\ PluginRegistarWindows\ instance\ provided\ as\ |user\_data|.}}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ OnTopLevelWindowProc(HWND\ hwnd,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT\ message,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WPARAM\ wparam,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LPARAM\ lparam,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LRESULT*\ result)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ registrar\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classflutter_1_1_plugin_registrar_windows}{PluginRegistrarWindows}}*\textcolor{keyword}{>}(user\_data);}
+\DoxyCodeLine{00117\ \ \ \ \ std::optional\ optional\_result\ =\ registrar-\/>CallTopLevelWindowProcDelegates(}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ hwnd,\ message,\ wparam,\ lparam);}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (optional\_result)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ *result\ =\ *optional\_result;}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ optional\_result.has\_value();}
+\DoxyCodeLine{00123\ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ std::optional<LRESULT>\ CallTopLevelWindowProcDelegates(HWND\ hwnd,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT\ message,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WPARAM\ wparam,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LPARAM\ lparam)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00129\ \ \ \ \ std::optional<LRESULT>\ result;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ window\_proc\_delegates\_)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ result\ =\ pair.second(hwnd,\ message,\ wparam,\ lparam);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{comment}{//\ Stop\ as\ soon\ as\ any\ delegate\ indicates\ that\ it\ has\ handled\ the\ message.}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00138\ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{//\ The\ associated\ FlutterView,\ if\ any.}}
+\DoxyCodeLine{00141\ \ \ std::unique\_ptr<FlutterView>\ implicit\_view\_;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ The\ next\ ID\ to\ return\ from\ RegisterWindowProcDelegate.}}
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{int}\ next\_window\_proc\_delegate\_id\_\ =\ 1;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ std::map<int,\ WindowProcDelegate>\ window\_proc\_delegates\_;}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_WINDOWS\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_PLUGIN\_REGISTRAR\_WINDOWS\_H\_}}
+
+\end{DoxyCode}

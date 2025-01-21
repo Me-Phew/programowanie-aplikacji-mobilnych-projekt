@@ -1,0 +1,95 @@
+\doxysection{mutex.\+h}
+\hypertarget{mutex_8h_source}{}\label{mutex_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/mutex.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/mutex.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_MUTEX\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_MUTEX\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/platform.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <pthread.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}\ \{}
+\DoxyCodeLine{00034\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ Bitfield\ that\ describes\ the\ mutex\ configuration.}}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{enum}\ Mode\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ kModeNonRecursive\ =\ (0\ <<\ 0),}
+\DoxyCodeLine{00038\ \ \ \ \ kModeRecursive\ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00039\ \ \ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}()\ :\ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}(kModeRecursive)\ \{\}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}(Mode\ mode);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex}{\string~Mutex}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Acquires\ the\ lock\ for\ this\ mutex,\ blocking\ until\ it\ is\ available.}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ Acquire();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ Releases\ the\ lock\ for\ this\ mutex\ acquired\ by\ a\ previous\ \`{}Acquire()`\ call.}}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ Release();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Returns\ the\ implementation-\/defined\ native\ mutex\ handle.}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Used\ by\ firebase::Thread\ implementation.}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00056\ \ \ HANDLE*\ native\_handle()\ \{\ \textcolor{keywordflow}{return}\ \&synchronization\_object\_;\ \}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00058\ \ \ pthread\_mutex\_t*\ native\_handle()\ \{\ \textcolor{keywordflow}{return}\ \&mutex\_;\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00066\ \ \ HANDLE\ synchronization\_object\_;}
+\DoxyCodeLine{00067\ \ \ Mode\ mode\_;}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00069\ \ \ pthread\_mutex\_t\ mutex\_;}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_WINDOWS}}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1_mutex_lock}{MutexLock}}\ \{}
+\DoxyCodeLine{00084\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1_mutex_lock}{MutexLock}}(\mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}\&\ mutex)\ :\ mutex\_(\&mutex)\ \{\ mutex\_-\/>Acquire();\ \}}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex_lock}{\string~MutexLock}}()\ \{\ mutex\_-\/>Release();\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ Copy\ is\ disallowed.}}
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex_lock}{MutexLock}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_mutex_lock}{MutexLock}}\&\ rhs);\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex_lock}{MutexLock}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_mutex_lock}{MutexLock}}\&\ rhs);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{classfirebase_1_1_mutex}{Mutex}}*\ mutex\_;}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_MUTEX\_H\_}}
+
+\end{DoxyCode}

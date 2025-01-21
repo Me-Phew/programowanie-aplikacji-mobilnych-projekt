@@ -1,0 +1,117 @@
+\doxysection{method\+\_\+codec.\+h}
+\hypertarget{method__codec_8h_source}{}\label{method__codec_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_codec.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_codec.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CODEC\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CODEC\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}method\_call.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}method\_result.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ Translates\ between\ a\ binary\ message\ and\ higher-\/level\ method\ call\ and}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ response/error\ objects.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec}}\ \{}
+\DoxyCodeLine{00021\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classflutter_1_1_method_codec}{\string~MethodCodec}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec}}(\mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec<T>}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec<T>}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Returns\ the\ MethodCall\ encoded\ in\ |message|,\ or\ nullptr\ if\ it\ cannot\ be}}
+\DoxyCodeLine{00031\ \ \ \textcolor{comment}{//\ decoded.}}
+\DoxyCodeLine{00032\ \ \ std::unique\_ptr<MethodCall<T>>\ DecodeMethodCall(\textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ message\_size)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(DecodeMethodCallInternal(message,\ message\_size));}
+\DoxyCodeLine{00035\ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ Returns\ the\ MethodCall\ encoded\ in\ |message|,\ or\ nullptr\ if\ it\ cannot\ be}}
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ decoded.}}
+\DoxyCodeLine{00039\ \ \ std::unique\_ptr<MethodCall<T>>\ DecodeMethodCall(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ message)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ message.size();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ data\ =\ size\ >\ 0\ ?\ \&message[0]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(DecodeMethodCallInternal(data,\ size));}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Returns\ a\ binary\ encoding\ of\ the\ given\ |method\_call|,\ or\ nullptr\ if\ the}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ method\ call\ cannot\ be\ serialized\ by\ this\ codec.}}
+\DoxyCodeLine{00048\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeMethodCall(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall<T>}}\&\ method\_call)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(EncodeMethodCallInternal(method\_call));}
+\DoxyCodeLine{00051\ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{comment}{//\ Returns\ a\ binary\ encoding\ of\ |result|.\ |result|\ must\ be\ a\ type\ supported}}
+\DoxyCodeLine{00054\ \ \ \textcolor{comment}{//\ by\ the\ codec.}}
+\DoxyCodeLine{00055\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeSuccessEnvelope(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ result\ =\ \textcolor{keyword}{nullptr})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(EncodeSuccessEnvelopeInternal(result));}
+\DoxyCodeLine{00058\ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ Returns\ a\ binary\ encoding\ of\ |error|.\ The\ |error\_details|\ must\ be\ a\ type}}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ supported\ by\ the\ codec.}}
+\DoxyCodeLine{00062\ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeErrorEnvelope(}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details\ =\ \textcolor{keyword}{nullptr})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ EncodeErrorEnvelopeInternal(error\_code,\ error\_message,\ error\_details));}
+\DoxyCodeLine{00068\ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{comment}{//\ Decodes\ the\ response\ envelope\ encoded\ in\ |response|,\ calling\ the}}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ appropriate\ method\ on\ |result|.}}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ Returns\ false\ if\ |response|\ cannot\ be\ decoded.\ In\ that\ case\ the\ caller\ is}}
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ responsible\ for\ calling\ a\ |result|\ method.}}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{bool}\ DecodeAndProcessResponseEnvelope(\textcolor{keyword}{const}\ uint8\_t*\ response,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ response\_size,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult<T>}}*\ result)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ DecodeAndProcessResponseEnvelopeInternal(response,\ response\_size,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result);}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<MethodCall<T>>\ DecodeMethodCallInternal(}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ message\_size)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeMethodCallInternal(}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall<T>}}\&\ method\_call)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeSuccessEnvelopeInternal(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ result)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{virtual}\ std::unique\_ptr<std::vector<uint8\_t>>\ EncodeErrorEnvelopeInternal(}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_code,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ error\_message,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keyword}{const}\ T*\ error\_details)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{comment}{//\ Implementation\ of\ the\ public\ interface,\ to\ be\ provided\ by\ subclasses.}}
+\DoxyCodeLine{00103\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ DecodeAndProcessResponseEnvelopeInternal(}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ response,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ response\_size,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult<T>}}*\ result)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CODEC\_H\_}}
+
+\end{DoxyCode}

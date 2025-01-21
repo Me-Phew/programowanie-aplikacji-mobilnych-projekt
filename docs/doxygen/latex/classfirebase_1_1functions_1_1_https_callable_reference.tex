@@ -1,0 +1,130 @@
+\doxysection{firebase\+::functions\+::Https\+Callable\+Reference Class Reference}
+\hypertarget{classfirebase_1_1functions_1_1_https_callable_reference}{}\label{classfirebase_1_1functions_1_1_https_callable_reference}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+
+
+{\ttfamily \#include $<$callable\+\_\+reference.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_a9f3499a8610b0f6710c9762bdfd4a159}\label{classfirebase_1_1functions_1_1_https_callable_reference_a9f3499a8610b0f6710c9762bdfd4a159} 
+{\bfseries Https\+Callable\+Reference} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. This creates an invalid \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}. Attempting to perform any operations on this reference will fail unless a valid \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} has been assigned to it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference_a6d561aa41b05bbb9eba078675bf87bd5}{Https\+Callable\+Reference}} (const \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} \&reference)
+\begin{DoxyCompactList}\small\item\em Copy constructor. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} instances, as they simply point to the same location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} \& \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference_a14eb4ffdf8b3749ad4dba8b8ad8557a1}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} \&reference)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} instances, as they simply point to the same location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference_ac4a41af2ff62f6bd5ebc315a073308d6}{functions}} ()
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classfirebase_1_1functions_1_1_functions}{firebase\+::functions\+::\+Functions} instance to which we refer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_result}{Https\+Callable\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference_a5ae8b9d0e3fabe5829017c571e060b65}{Call}} ()
+\begin{DoxyCompactList}\small\item\em Calls the function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_result}{Https\+Callable\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference_a3f341e154f26c998d99c3c7587550651}{Call}} (const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&data)
+\begin{DoxyCompactList}\small\item\em Calls the function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference_a5336817ae2270f23733504fc921f8e10}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} indicates that the reference is uninitialized (created with the default constructor) or that there was an error retrieving the reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a reference to a Cloud \doxylink{classfirebase_1_1functions_1_1_functions}{Functions} object. Developers can call HTTPS Callable \doxylink{classfirebase_1_1functions_1_1_functions}{Functions}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_a6d561aa41b05bbb9eba078675bf87bd5}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}!HttpsCallableReference@{HttpsCallableReference}}
+\index{HttpsCallableReference@{HttpsCallableReference}!firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+\doxysubsubsection{\texorpdfstring{HttpsCallableReference()}{HttpsCallableReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_https_callable_reference_a6d561aa41b05bbb9eba078675bf87bd5} 
+firebase\+::functions\+::\+Https\+Callable\+Reference\+::\+Https\+Callable\+Reference (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} \&}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} instances, as they simply point to the same location. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference} & \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_a5ae8b9d0e3fabe5829017c571e060b65}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}!Call@{Call}}
+\index{Call@{Call}!firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+\doxysubsubsection{\texorpdfstring{Call()}{Call()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_https_callable_reference_a5ae8b9d0e3fabe5829017c571e060b65} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_result}{Https\+Callable\+Result}} $>$ firebase\+::functions\+::\+Https\+Callable\+Reference\+::\+Call (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calls the function. 
+
+\begin{DoxyReturn}{Returns}
+The result of the call; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_a3f341e154f26c998d99c3c7587550651}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}!Call@{Call}}
+\index{Call@{Call}!firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+\doxysubsubsection{\texorpdfstring{Call()}{Call()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_https_callable_reference_a3f341e154f26c998d99c3c7587550651} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_result}{Https\+Callable\+Result}} $>$ firebase\+::functions\+::\+Https\+Callable\+Reference\+::\+Call (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Calls the function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The params to pass to the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the call; 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_ac4a41af2ff62f6bd5ebc315a073308d6}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}!functions@{functions}}
+\index{functions@{functions}!firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+\doxysubsubsection{\texorpdfstring{functions()}{functions()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_https_callable_reference_ac4a41af2ff62f6bd5ebc315a073308d6} 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_functions}{Functions}} \texorpdfstring{$\ast$}{*} firebase\+::functions\+::\+Https\+Callable\+Reference\+::functions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the \doxylink{classfirebase_1_1functions_1_1_functions}{firebase\+::functions\+::\+Functions} instance to which we refer. 
+
+The pointer will remain valid indefinitely.
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1functions_1_1_functions}{firebase\+::functions\+::\+Functions} instance that this \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} refers to. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_a5336817ae2270f23733504fc921f8e10}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_https_callable_reference_a5336817ae2270f23733504fc921f8e10} 
+bool firebase\+::functions\+::\+Https\+Callable\+Reference\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} indicates that the reference is uninitialized (created with the default constructor) or that there was an error retrieving the reference. 
+
+\begin{DoxyReturn}{Returns}
+true if this \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} is valid, false if this \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1functions_1_1_https_callable_reference_a14eb4ffdf8b3749ad4dba8b8ad8557a1}\index{firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::functions::HttpsCallableReference@{firebase::functions::HttpsCallableReference}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1functions_1_1_https_callable_reference_a14eb4ffdf8b3749ad4dba8b8ad8557a1} 
+\mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} \& firebase\+::functions\+::\+Https\+Callable\+Reference\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}} \&}]{reference}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. It\textquotesingle{}s totally okay (and efficient) to copy \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} instances, as they simply point to the same location. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reference} & \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination \doxylink{classfirebase_1_1functions_1_1_https_callable_reference}{Https\+Callable\+Reference}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/functions/callable\+\_\+reference.\+h\end{DoxyCompactItemize}

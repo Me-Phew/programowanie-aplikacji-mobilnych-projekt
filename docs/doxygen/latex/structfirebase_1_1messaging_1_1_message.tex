@@ -1,0 +1,201 @@
+\doxysection{firebase\+::messaging\+::Message Struct Reference}
+\hypertarget{structfirebase_1_1messaging_1_1_message}{}\label{structfirebase_1_1messaging_1_1_message}\index{firebase::messaging::Message@{firebase::messaging::Message}}
+
+
+Data structure used to send messages to, and receive messages from, cloud messaging.  
+
+
+
+
+{\ttfamily \#include $<$messaging.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::messaging\+::Message\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{structfirebase_1_1messaging_1_1_message__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_message_a14fb59167b60b3eff52f1e656e06fc8d}\label{structfirebase_1_1messaging_1_1_message_a14fb59167b60b3eff52f1e656e06fc8d} 
+{\bfseries Message} ()
+\begin{DoxyCompactList}\small\item\em Initialize the message. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_message_aa16266e60e2583b47a4ba8a276d051a2}\label{structfirebase_1_1messaging_1_1_message_aa16266e60e2583b47a4ba8a276d051a2} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Message} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_message_a9833168dfd13435832a6ff096d48170a}\label{structfirebase_1_1messaging_1_1_message_a9833168dfd13435832a6ff096d48170a} 
+{\bfseries Message} (const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. Makes a deep copy of this \doxylink{structfirebase_1_1messaging_1_1_message}{Message}. \end{DoxyCompactList}\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_message_aa121da258b6efb0fd1b3f15da8b9b879}\label{structfirebase_1_1messaging_1_1_message_aa121da258b6efb0fd1b3f15da8b9b879} 
+\mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \& {\bfseries operator=} (const \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message}{Message}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. Makes a deep copy of this \doxylink{structfirebase_1_1messaging_1_1_message}{Message}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afdb0f76d509b241f8e75c6438908bb35}{from}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_acb76d0cfae7959fed1f703075d43c611}{to}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ad89997ef39d1ec5c4fde0b055b9f72}{collapse\+\_\+key}}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ab07ea6b606eb0c507beea7841cc33400}{data}}
+\item 
+\Hypertarget{structfirebase_1_1messaging_1_1_message_ad7867e7bc94e148c31a52b08cf5456f7}\label{structfirebase_1_1messaging_1_1_message_ad7867e7bc94e148c31a52b08cf5456f7} 
+std\+::vector$<$ unsigned char $>$ {\bfseries raw\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Binary payload. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_ae4326ab26e85dbf2590e4f5efa1f8c9c}{message\+\_\+id}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aa384b95b8a9a8f33e4e37d76f268361c}{message\+\_\+type}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a830def80777c766936de1281224d6b23}{priority}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b}{time\+\_\+to\+\_\+live}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a77813a88e383a2095991b919994c9e5e}{error}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a35ee65569a8315b1833e4d0657663031}{error\+\_\+description}}
+\item 
+\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}{notification}}
+\item 
+bool \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82}{notification\+\_\+opened}}
+\item 
+std\+::string \mbox{\hyperlink{structfirebase_1_1messaging_1_1_message_a1ee3b958683c8fc861a7c0162e310ddb}{link}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data structure used to send messages to, and receive messages from, cloud messaging. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structfirebase_1_1messaging_1_1_message_a1ad89997ef39d1ec5c4fde0b055b9f72}\index{firebase::messaging::Message@{firebase::messaging::Message}!collapse\_key@{collapse\_key}}
+\index{collapse\_key@{collapse\_key}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{collapse\_key}{collapse\_key}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_a1ad89997ef39d1ec5c4fde0b055b9f72} 
+std\+::string firebase\+::messaging\+::\+Message\+::collapse\+\_\+key}
+
+This parameter identifies a group of messages (e.\+g., with collapse\+\_\+key\+: "{}\+Updates Available"{}) that can be collapsed, so that only the last message gets sent when delivery can be resumed. This is intended to avoid sending too many of the same messages when the device comes back online or becomes active.
+
+Note that there is no guarantee of the order in which messages get sent.
+
+Note\+: A maximum of 4 different collapse keys is allowed at any given time. This means a FCM connection server can simultaneously store 4 different send-\/to-\/sync messages per client app. If you exceed this number, there is no guarantee which 4 collapse keys the FCM connection server will keep.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_ab07ea6b606eb0c507beea7841cc33400}\index{firebase::messaging::Message@{firebase::messaging::Message}!data@{data}}
+\index{data@{data}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_ab07ea6b606eb0c507beea7841cc33400} 
+std\+::map$<$std\+::string, std\+::string$>$ firebase\+::messaging\+::\+Message\+::data}
+
+The metadata, including all original key/value pairs. Includes some of the HTTP headers used when sending the message. {\ttfamily gcm}, {\ttfamily google} and {\ttfamily goog} prefixes are reserved for internal use. \Hypertarget{structfirebase_1_1messaging_1_1_message_a77813a88e383a2095991b919994c9e5e}\index{firebase::messaging::Message@{firebase::messaging::Message}!error@{error}}
+\index{error@{error}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_a77813a88e383a2095991b919994c9e5e} 
+std\+::string firebase\+::messaging\+::\+Message\+::error}
+
+Error code. Used in "{}nack"{} messages for CCS, and in responses from the server. See the CCS specification for the externally-\/supported list.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_a35ee65569a8315b1833e4d0657663031}\index{firebase::messaging::Message@{firebase::messaging::Message}!error\_description@{error\_description}}
+\index{error\_description@{error\_description}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{error\_description}{error\_description}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_a35ee65569a8315b1833e4d0657663031} 
+std\+::string firebase\+::messaging\+::\+Message\+::error\+\_\+description}
+
+Human readable details about the error.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_afdb0f76d509b241f8e75c6438908bb35}\index{firebase::messaging::Message@{firebase::messaging::Message}!from@{from}}
+\index{from@{from}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{from}{from}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_afdb0f76d509b241f8e75c6438908bb35} 
+std\+::string firebase\+::messaging\+::\+Message\+::from}
+
+Authenticated ID of the sender. This is a project number in most cases.
+
+Any value starting with google.\+com, goog. or gcm. are reserved.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_a1ee3b958683c8fc861a7c0162e310ddb}\index{firebase::messaging::Message@{firebase::messaging::Message}!link@{link}}
+\index{link@{link}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{link}{link}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_a1ee3b958683c8fc861a7c0162e310ddb} 
+std\+::string firebase\+::messaging\+::\+Message\+::link}
+
+The link into the app from the message.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_ae4326ab26e85dbf2590e4f5efa1f8c9c}\index{firebase::messaging::Message@{firebase::messaging::Message}!message\_id@{message\_id}}
+\index{message\_id@{message\_id}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{message\_id}{message\_id}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_ae4326ab26e85dbf2590e4f5efa1f8c9c} 
+std\+::string firebase\+::messaging\+::\+Message\+::message\+\_\+id}
+
+\doxylink{structfirebase_1_1messaging_1_1_message}{Message} ID. This can be specified by sender. Internally a hash of the message ID and other elements will be used for storage. The ID must be unique for each topic subscription -\/ using the same ID may result in overriding the original message or duplicate delivery. \Hypertarget{structfirebase_1_1messaging_1_1_message_aa384b95b8a9a8f33e4e37d76f268361c}\index{firebase::messaging::Message@{firebase::messaging::Message}!message\_type@{message\_type}}
+\index{message\_type@{message\_type}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{message\_type}{message\_type}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_aa384b95b8a9a8f33e4e37d76f268361c} 
+std\+::string firebase\+::messaging\+::\+Message\+::message\+\_\+type}
+
+Equivalent with a content-\/type.
+
+Defined values\+:
+\begin{DoxyItemize}
+\item "{}deleted\+\_\+messages"{} -\/ indicates the server had too many messages and dropped some, and the client should sync with his own server. Current limit is 100 messages stored.
+\item "{}send\+\_\+event"{} -\/ indicates an upstream message has been pushed to the FCM server. It does not guarantee the upstream destination received it. Parameters\+: "{}message\+\_\+id"{}
+\item "{}send\+\_\+error"{} -\/ indicates an upstream message expired, without being sent to the FCM server. Parameters\+: "{}message\+\_\+id"{} and "{}error"{}
+\end{DoxyItemize}
+
+If this field is missing, the message is a regular message.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27}\index{firebase::messaging::Message@{firebase::messaging::Message}!notification@{notification}}
+\index{notification@{notification}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{notification}{notification}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_afc3866c370d13c23741d441302b10c27} 
+\mbox{\hyperlink{structfirebase_1_1messaging_1_1_notification}{Notification}}\texorpdfstring{$\ast$}{*} firebase\+::messaging\+::\+Message\+::notification}
+
+Optional notification to show. This only set if a notification was received with this message, otherwise it is null.
+
+The notification is only guaranteed to be valid during the call to \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. If you need to keep it around longer you will need to make a copy of either the \doxylink{structfirebase_1_1messaging_1_1_message}{Message} or \doxylink{structfirebase_1_1messaging_1_1_notification}{Notification}. Copying the \doxylink{structfirebase_1_1messaging_1_1_message}{Message} object implicitly makes a deep copy of the notification (allocated with new) which is owned by the \doxylink{structfirebase_1_1messaging_1_1_message}{Message}.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82}\index{firebase::messaging::Message@{firebase::messaging::Message}!notification\_opened@{notification\_opened}}
+\index{notification\_opened@{notification\_opened}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{notification\_opened}{notification\_opened}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_a7fb524a737b0299bc280fc712c928b82} 
+bool firebase\+::messaging\+::\+Message\+::notification\+\_\+opened}
+
+A flag indicating whether this message was opened by tapping a notification in the OS system tray. If the message was received this way this flag is set to true. \Hypertarget{structfirebase_1_1messaging_1_1_message_a830def80777c766936de1281224d6b23}\index{firebase::messaging::Message@{firebase::messaging::Message}!priority@{priority}}
+\index{priority@{priority}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_a830def80777c766936de1281224d6b23} 
+std\+::string firebase\+::messaging\+::\+Message\+::priority}
+
+Sets the priority of the message. Valid values are "{}normal"{} and "{}high."{} On i\+OS and tv\+OS, these correspond to APNs priority 5 and 10.
+
+By default, messages are sent with normal priority. Normal priority optimizes the client app\textquotesingle{}s battery consumption, and should be used unless immediate delivery is required. For messages with normal priority, the app may receive the message with unspecified delay.
+
+When a message is sent with high priority, it is sent immediately, and the app can wake a sleeping device and open a network connection to your server.
+
+For more information, see \href{https://firebase.google.com/docs/cloud-messaging/concept-options\#setting-the-priority-of-a-message}{\texttt{ Setting the priority of a message}}.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b}\index{firebase::messaging::Message@{firebase::messaging::Message}!time\_to\_live@{time\_to\_live}}
+\index{time\_to\_live@{time\_to\_live}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{time\_to\_live}{time\_to\_live}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_aaef43beaa2a7293a3d72e7fdc3eb8c5b} 
+int32\+\_\+t firebase\+::messaging\+::\+Message\+::time\+\_\+to\+\_\+live}
+
+This parameter specifies how long (in seconds) the message should be kept in FCM storage if the device is offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks. For more information, see \href{https://firebase.google.com/docs/cloud-messaging/concept-options\#ttl}{\texttt{ Setting the lifespan of a message}}.
+
+This field is only used for downstream messages received through \doxylink{classfirebase_1_1messaging_1_1_listener_a074808bae034dd30ba1e7756ca196281}{Listener\+::\+On\+Message()}. \Hypertarget{structfirebase_1_1messaging_1_1_message_acb76d0cfae7959fed1f703075d43c611}\index{firebase::messaging::Message@{firebase::messaging::Message}!to@{to}}
+\index{to@{to}!firebase::messaging::Message@{firebase::messaging::Message}}
+\doxysubsubsection{\texorpdfstring{to}{to}}
+{\footnotesize\ttfamily \label{structfirebase_1_1messaging_1_1_message_acb76d0cfae7959fed1f703075d43c611} 
+std\+::string firebase\+::messaging\+::\+Message\+::to}
+
+This parameter specifies the recipient of a message.
+
+For example it can be a registration token, a topic name, an Instance ID or project ID.
+
+\href{mailto:PROJECT_ID@gcm.googleapis.com}{\texttt{ PROJECT\+\_\+\+ID@gcm.\+googleapis.\+com}} or Instance ID are accepted. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/messaging.\+h\end{DoxyCompactItemize}

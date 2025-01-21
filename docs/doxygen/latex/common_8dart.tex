@@ -1,0 +1,125 @@
+\doxysection{lib/utils/common.dart File Reference}
+\hypertarget{common_8dart}{}\label{common_8dart}\index{lib/utils/common.dart@{lib/utils/common.dart}}
+
+
+Funkcje pomocnicze używane w aplikacji.  
+
+
+{\ttfamily import package;}\newline
+Include dependency graph for common.\+dart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{common_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{common_8dart_a928f3d36dceaaf5c08d32afb40458315}{get\+Lecture\+Form\+Display\+Name}} (String lang, String name)
+\begin{DoxyCompactList}\small\item\em Pobiera nazwę wykładu do wyświetlenia w zależności od języka. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{common_8dart_a1f17ec6eb197e12021e91b5cfc990ca9}{get\+Course\+Type\+Display\+Name}} (String lang, String name)
+\item 
+String \mbox{\hyperlink{common_8dart_a9d60e97a2b958d0961c263b6be21305e}{get\+Level\+Of\+Study\+Display\+Name}} (String lang, String name)
+\item 
+String \mbox{\hyperlink{common_8dart_a0022a23730a0e30a9cf2ea01a6133047}{get\+Obtained\+Title\+Display\+Name}} (String lang, String name)
+\item 
+String \mbox{\hyperlink{common_8dart_a82a1d0c63f8b7010b318160c49fecac6}{get\+Formatted\+Date}} (Date\+Time \mbox{\hyperlink{subject_8dart_ab3e6893a0c65b33a73f4a5cb350b9841}{date}})
+\item 
+String \mbox{\hyperlink{common_8dart_a15000478bea8d0f374a27315688c4c88}{get\+Formatted\+Date\+Time}} (Date\+Time \mbox{\hyperlink{subject_8dart_ab3e6893a0c65b33a73f4a5cb350b9841}{date}})
+\item 
+Future$<$ bool $>$ \mbox{\hyperlink{common_8dart_ac419a6e047c343ff1e44e22715a63218}{has\+Network\+Access}} () async
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{common_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funkcje pomocnicze używane w aplikacji. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{common_8dart_a1f17ec6eb197e12021e91b5cfc990ca9}\index{common.dart@{common.dart}!getCourseTypeDisplayName@{getCourseTypeDisplayName}}
+\index{getCourseTypeDisplayName@{getCourseTypeDisplayName}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{getCourseTypeDisplayName()}{getCourseTypeDisplayName()}}
+{\footnotesize\ttfamily \label{common_8dart_a1f17ec6eb197e12021e91b5cfc990ca9} 
+String get\+Course\+Type\+Display\+Name (\begin{DoxyParamCaption}\item[{String}]{lang}{, }\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{common_8dart_a82a1d0c63f8b7010b318160c49fecac6}\index{common.dart@{common.dart}!getFormattedDate@{getFormattedDate}}
+\index{getFormattedDate@{getFormattedDate}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{getFormattedDate()}{getFormattedDate()}}
+{\footnotesize\ttfamily \label{common_8dart_a82a1d0c63f8b7010b318160c49fecac6} 
+String get\+Formatted\+Date (\begin{DoxyParamCaption}\item[{Date\+Time}]{date}{}\end{DoxyParamCaption})}
+
+\Hypertarget{common_8dart_a15000478bea8d0f374a27315688c4c88}\index{common.dart@{common.dart}!getFormattedDateTime@{getFormattedDateTime}}
+\index{getFormattedDateTime@{getFormattedDateTime}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{getFormattedDateTime()}{getFormattedDateTime()}}
+{\footnotesize\ttfamily \label{common_8dart_a15000478bea8d0f374a27315688c4c88} 
+String get\+Formatted\+Date\+Time (\begin{DoxyParamCaption}\item[{Date\+Time}]{date}{}\end{DoxyParamCaption})}
+
+\Hypertarget{common_8dart_a928f3d36dceaaf5c08d32afb40458315}\index{common.dart@{common.dart}!getLectureFormDisplayName@{getLectureFormDisplayName}}
+\index{getLectureFormDisplayName@{getLectureFormDisplayName}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{getLectureFormDisplayName()}{getLectureFormDisplayName()}}
+{\footnotesize\ttfamily \label{common_8dart_a928f3d36dceaaf5c08d32afb40458315} 
+String get\+Lecture\+Form\+Display\+Name (\begin{DoxyParamCaption}\item[{String}]{lang}{, }\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera nazwę wykładu do wyświetlenia w zależności od języka. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lang} & Kod języka (np. "{}pl"{} dla polskiego). \\
+\hline
+{\em name} & Nazwa wykładu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nazwa wykładu do wyświetlenia. 
+\end{DoxyReturn}
+\Hypertarget{common_8dart_a9d60e97a2b958d0961c263b6be21305e}\index{common.dart@{common.dart}!getLevelOfStudyDisplayName@{getLevelOfStudyDisplayName}}
+\index{getLevelOfStudyDisplayName@{getLevelOfStudyDisplayName}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{getLevelOfStudyDisplayName()}{getLevelOfStudyDisplayName()}}
+{\footnotesize\ttfamily \label{common_8dart_a9d60e97a2b958d0961c263b6be21305e} 
+String get\+Level\+Of\+Study\+Display\+Name (\begin{DoxyParamCaption}\item[{String}]{lang}{, }\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{common_8dart_a0022a23730a0e30a9cf2ea01a6133047}\index{common.dart@{common.dart}!getObtainedTitleDisplayName@{getObtainedTitleDisplayName}}
+\index{getObtainedTitleDisplayName@{getObtainedTitleDisplayName}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{getObtainedTitleDisplayName()}{getObtainedTitleDisplayName()}}
+{\footnotesize\ttfamily \label{common_8dart_a0022a23730a0e30a9cf2ea01a6133047} 
+String get\+Obtained\+Title\+Display\+Name (\begin{DoxyParamCaption}\item[{String}]{lang}{, }\item[{String}]{name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{common_8dart_ac419a6e047c343ff1e44e22715a63218}\index{common.dart@{common.dart}!hasNetworkAccess@{hasNetworkAccess}}
+\index{hasNetworkAccess@{hasNetworkAccess}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{hasNetworkAccess()}{hasNetworkAccess()}}
+{\footnotesize\ttfamily \label{common_8dart_ac419a6e047c343ff1e44e22715a63218} 
+Future$<$ bool $>$ has\+Network\+Access (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{common_8dart_a2276f26ae4897992f6da960ea88601e9}\index{common.dart@{common.dart}!library@{library}}
+\index{library@{library}!common.dart@{common.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{common_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+

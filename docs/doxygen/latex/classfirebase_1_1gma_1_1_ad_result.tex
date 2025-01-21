@@ -1,0 +1,59 @@
+\doxysection{firebase\+::gma\+::Ad\+Result Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_ad_result}{}\label{classfirebase_1_1gma_1_1_ad_result}\index{firebase::gma::AdResult@{firebase::gma::AdResult}}
+
+
+Information about the result of an ad operation.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_result_ae5d776697d555aaa64ed4c7e70afbb44}\label{classfirebase_1_1gma_1_1_ad_result_ae5d776697d555aaa64ed4c7e70afbb44} 
+{\bfseries Ad\+Result} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_result_a790bad9cea90e6f8b3496ab790dbf76a}\label{classfirebase_1_1gma_1_1_ad_result_a790bad9cea90e6f8b3496ab790dbf76a} 
+{\bfseries Ad\+Result} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \&\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f}{ad\+\_\+error}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_result_a96f534e1443b8d9bf840b85b7346cf7b}\label{classfirebase_1_1gma_1_1_ad_result_a96f534e1443b8d9bf840b85b7346cf7b} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ad\+Result} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_result_a7be707506b4c99764742073eeeaa0c52}\label{classfirebase_1_1gma_1_1_ad_result_a7be707506b4c99764742073eeeaa0c52} 
+bool {\bfseries is\+\_\+successful} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the operation was successful. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f}{ad\+\_\+error}} () const
+\item 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{Response\+Info}} \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a4892f8f3db705cb417e7621eefe31f0d}{response\+\_\+info}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_result_aa5b423678a12251e5caa8b1c0d0958eb}\label{classfirebase_1_1gma_1_1_ad_result_aa5b423678a12251e5caa8b1c0d0958eb} 
+class {\bfseries Gma\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about the result of an ad operation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f}\index{firebase::gma::AdResult@{firebase::gma::AdResult}!ad\_error@{ad\_error}}
+\index{ad\_error@{ad\_error}!firebase::gma::AdResult@{firebase::gma::AdResult}}
+\doxysubsubsection{\texorpdfstring{ad\_error()}{ad\_error()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error}} \& firebase\+::gma\+::\+Ad\+Result\+::ad\+\_\+error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+An object representing an error which occurred during an ad operation. If the \doxylink{classfirebase_1_1gma_1_1_ad_result_a7be707506b4c99764742073eeeaa0c52}{Ad\+Result\+::is\+\_\+successful()} returned true, then the \doxylink{classfirebase_1_1gma_1_1_ad_error}{Ad\+Error} object returned via this method will contain no contextual information. \Hypertarget{classfirebase_1_1gma_1_1_ad_result_a4892f8f3db705cb417e7621eefe31f0d}\index{firebase::gma::AdResult@{firebase::gma::AdResult}!response\_info@{response\_info}}
+\index{response\_info@{response\_info}!firebase::gma::AdResult@{firebase::gma::AdResult}}
+\doxysubsubsection{\texorpdfstring{response\_info()}{response\_info()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_result_a4892f8f3db705cb417e7621eefe31f0d} 
+const \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{Response\+Info}} \& firebase\+::gma\+::\+Ad\+Result\+::response\+\_\+info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+For debugging and logging purposes, successfully loaded ads provide a \doxylink{classfirebase_1_1gma_1_1_response_info}{Response\+Info} object which contains information about the adapter which loaded the ad. If the ad failed to load then the object returned from this method will have default values. Information about the error should be retrieved via \doxylink{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f}{Ad\+Result\+::ad\+\_\+error()} instead. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,596 @@
+\doxysection{variant.\+h}
+\hypertarget{variant_8h_source}{}\label{variant_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/variant.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/variant.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_VARIANT\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_VARIANT\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }VariantInternal;}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ <SWIG>}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ SWIG\ uses\ the\ Variant\ class\ as\ a\ readonly\ object,\ and\ so\ ignores\ most\ of\ the}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ functions.\ In\ order\ to\ keep\ things\ clean,\ functions\ that\ should\ be\ exposed}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ are\ explicitly\ listed\ in\ app.SWIG,\ and\ everything\ else\ is\ ignored.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ </SWIG>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \{}
+\DoxyCodeLine{00048\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}},}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}{kTypeInt64}},}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}{kTypeDouble}},}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}{kTypeBool}},}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1aa2fe144a4817d080e5a840b8f62657e6}{kTypeStaticString}},}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}},}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}},}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}},}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ad3dcaa73712ffe0c42fd69f4d2dd0caa}{kTypeStaticBlob}},}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}},}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Note:\ If\ you\ add\ new\ types\ update\ enum\ InternalType;}}
+\DoxyCodeLine{00077\ \ \ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ <SWIG>}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ Because\ of\ the\ VariantVariantMap\ C\#\ class,\ we\ need\ to\ hide\ the\ constructors}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ explicitly,\ as\ the\ SWIG\ ignore\ does\ not\ seem\ to\ work\ with\ that\ macro.}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ </SWIG>}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#ifndef\ SWIG}}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}()\ :\ type\_(kInternalTypeNull),\ value\_(\{\})\ \{\}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_afb30b564129107050ee61c5612a870a5}{Variant}}(T\ value)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ set\_value\_t(value);}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_aaf440f3716ed46fdcba18c1f4a2f8109}{Variant}}(\textcolor{keyword}{const}\ std::string\&\ value)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\_mutable\_string}}(value);}
+\DoxyCodeLine{00142\ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_af4ff4674a4ea140eb74c66d2f1dc4893}{Variant}}(\textcolor{keyword}{const}\ std::vector<Variant>\&\ value)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a276a1ed8855a9a63a6632bd9b5956864}{set\_vector}}(value);}
+\DoxyCodeLine{00152\ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00163\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_aa361ad6b25c70323cc18a19ae1d9e472}{Variant}}(\textcolor{keyword}{const}\ std::vector<T>\&\ value)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}});}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector}}().reserve(value.size());}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ value.size();\ i++)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector}}().push\_back(\mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(value[i])));}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00181\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4c5da9332000eb578cec61b27775ef8a}{Variant}}(\textcolor{keyword}{const}\ T\ array\_of\_values[],\ \textcolor{keywordtype}{size\_t}\ array\_size)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}});}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector}}().reserve(array\_size);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ array\_size;\ i++)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector}}()[i]\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(array\_of\_values[i]);}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_aa01c7173ed132bbbc700b4494e21dc70}{Variant}}(\textcolor{keyword}{const}\ std::map<Variant,\ Variant>\&\ value)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4fbd1be786e58d3e8a62df09008eacaa}{set\_map}}(value);}
+\DoxyCodeLine{00200\ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00212\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00213\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a6ce0f6bb2468d7390c8dd16d9da41cf6}{Variant}}(\textcolor{keyword}{const}\ std::map<K,\ V>\&\ value)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}});}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{typename}\ std::map<K,\ V>::const\_iterator\ i\ =\ value.begin();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ i\ !=\ value.end();\ ++i)\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}}().insert(std::make\_pair(\mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(i-\/>first),\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}(i-\/>second)));}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00225\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a6cc3131bf93a5d95ffbe338b26674f5e}{Variant}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\ :\ type\_(kInternalTypeNull)\ \{\ *\textcolor{keyword}{this}\ =\ other;\ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00230\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ \mbox{\hyperlink{classfirebase_1_1_variant_ae1e6bf63e35ef94d64b58548e6f01241}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00238\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\&\ other)\ noexcept\ :\ type\_(kInternalTypeNull)\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ *\textcolor{keyword}{this}\ =\ std::move(other);}
+\DoxyCodeLine{00240\ \ \ \}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00246\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ \mbox{\hyperlink{classfirebase_1_1_variant_ae1e6bf63e35ef94d64b58548e6f01241}{operator=}}(\mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\&\ other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)\ ||\ defined(DOXYGEN)}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ SWIG}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00252\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_aabf383eed0a7edbce2e3398659a51f76}{\string~Variant}}()\ \{\ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}();\ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00263\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a79c43e421e296ce237cffef4125bfa56}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00298\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_afd5664045599f0f89c4bf25305a5194e}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00305\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a740cb6567ff70932c440227061840a51}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);\ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00312\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a22c38606dee2809dbbb6404d1da826ea}{operator>}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ other\ <\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00319\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a1ecbf0268ddb2874bb735ab2c3c56a82}{operator>=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ <\ other);\ \}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00326\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7cfaee0a2ff651538d1aab2789545841}{operator<=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ >\ other);\ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00334\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\ new\_type\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}});}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \textcolor{comment}{//\ Convenience\ functions\ (used\ similarly\ to\ constants).}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00341\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a44ad99ff82979b9cd8d483504b4877b7}{Null}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}();\ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00346\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a22e651a96c4de89af4e68132d747d639}{Zero}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab7b37f77dc471d923b8cf1d791c6b8a2}{Variant::FromInt64}}(0L);\ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00351\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_ae273dbb9a86a640e1eb29e6cc5ce64a3}{One}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab7b37f77dc471d923b8cf1d791c6b8a2}{Variant::FromInt64}}(1L);\ \}}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00356\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7ab8ad27db32a5969e8c3d998a96c7ea}{ZeroPointZero}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a8bd830b41aca84815c2c1af5d200a002}{Variant::FromDouble}}(0.0);\ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00361\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_ae1a2589bcb3615ee0b5ecf272430e1fd}{OnePointZero}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a8bd830b41aca84815c2c1af5d200a002}{Variant::FromDouble}}(1.0);\ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00366\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a58fc0f239239e033fbf754fe7c20ddf2}{False}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a3ac269783b0cd633b175b82da624e2b3}{Variant::FromBool}}(\textcolor{keyword}{false});\ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00371\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a71f7d0e2ef52fece8eedec032a2520f1}{True}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a3ac269783b0cd633b175b82da624e2b3}{Variant::FromBool}}(\textcolor{keyword}{true});\ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00376\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7e493fd37616ce5913d48d9d35bf192d}{EmptyString}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab3a9257e58b904e86c40cf20f11d0472}{Variant::FromStaticString}}(\textcolor{stringliteral}{"{}"{}});\ \}}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00381\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a9d85a432eba25a009a2e7b508bdb8f6a}{EmptyMutableString}}()\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{00383\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}});}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00385\ \ \ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00391\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a52395f2c31da28050d29d3e02e8b06af}{EmptyVector}}()\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{00393\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}});}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00395\ \ \ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00402\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a50c570355384a10db088b0b9684a18f8}{EmptyMap}}()\ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{00404\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}});}
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00406\ \ \ \}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00415\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_ac827a26897029a574be33df7c5559b96}{EmptyMutableBlob}}(\textcolor{keywordtype}{size\_t}\ size\_bytes)\ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{00417\ \ \ \ \ uint8\_t*\ blank\_data\ =\ \textcolor{keyword}{new}\ uint8\_t[size\_bytes];}
+\DoxyCodeLine{00418\ \ \ \ \ memset(blank\_data,\ 0,\ size\_bytes);}
+\DoxyCodeLine{00419\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}});}
+\DoxyCodeLine{00420\ \ \ \ \ v.set\_blob\_pointer(blank\_data,\ size\_bytes);}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00422\ \ \ \}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00427\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{comment}{//\ To\ avoid\ breaking\ user\ code,\ alias\ the\ small\ string\ type\ to\ mutable}}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{comment}{//\ string.}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\_\ ==\ kInternalTypeSmallString)\ \{}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}};}
+\DoxyCodeLine{00432\ \ \ \ \ \}}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\textcolor{keyword}{>}(type\_);}
+\DoxyCodeLine{00435\ \ \ \}}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00440\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_af1600a4a1a0e18130bf8524de02a3f95}{is\_null}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}};\ \}}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00445\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_adcd579e2f64e2a741e6bc69b5a3b053b}{is\_int64}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}{kTypeInt64}};\ \}}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00450\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a4595470815e248d85af17024ddd81b8b}{is\_double}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}{kTypeDouble}};\ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00455\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab62ef8216a38a4d1ba31d60fe4688447}{is\_bool}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}{kTypeBool}};\ \}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00460\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_ae3519092f95e50a2e5f2fa8ce95c6925}{is\_vector}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}};\ \}}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00465\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_acf1cfbea36669aa62fe0a6810ae9effd}{is\_map}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}};\ \}}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00470\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a14aa34be60368575751a6844effc8b35}{is\_static\_string}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1aa2fe144a4817d080e5a840b8f62657e6}{kTypeStaticString}};\ \}}
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00475\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_ac258153dca25fff87a6b02176ed2bf35}{is\_mutable\_string}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}};\ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00484\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}{is\_string}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00485\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a14aa34be60368575751a6844effc8b35}{is\_static\_string}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_ac258153dca25fff87a6b02176ed2bf35}{is\_mutable\_string}}()\ ||\ is\_small\_string();}
+\DoxyCodeLine{00486\ \ \ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00491\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a85cbc01667f687eda2339e204ea31b16}{is\_static\_blob}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ad3dcaa73712ffe0c42fd69f4d2dd0caa}{kTypeStaticBlob}};\ \}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00496\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_a02cb2432060aaac0caa63d8c455bd9e1}{is\_mutable\_blob}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}}()\ ==\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}};\ \}}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00505\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_aa173cbca691a113a6a69d27bffa68a43}{is\_blob}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a85cbc01667f687eda2339e204ea31b16}{is\_static\_blob}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_a02cb2432060aaac0caa63d8c455bd9e1}{is\_mutable\_blob}}();\ \}}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00511\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_ade0cb9b8908678452288bfc42509a732}{is\_numeric}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_adcd579e2f64e2a741e6bc69b5a3b053b}{is\_int64}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_a4595470815e248d85af17024ddd81b8b}{is\_double}}();\ \}}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00519\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad40d72d4b6dfa82b0225171def529da8}{is\_fundamental\_type}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00520\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_adcd579e2f64e2a741e6bc69b5a3b053b}{is\_int64}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_a4595470815e248d85af17024ddd81b8b}{is\_double}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_a7f8c3f42abb361bc7f485c81414ff9af}{is\_string}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_ab62ef8216a38a4d1ba31d60fe4688447}{is\_bool}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_af1600a4a1a0e18130bf8524de02a3f95}{is\_null}}();}
+\DoxyCodeLine{00521\ \ \ \}}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00526\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab4e645dbd88c36b0a73ea882df489894}{is\_container\_type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ae3519092f95e50a2e5f2fa8ce95c6925}{is\_vector}}()\ ||\ \mbox{\hyperlink{classfirebase_1_1_variant_acf1cfbea36669aa62fe0a6810ae9effd}{is\_map}}();\ \}}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00538\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad01c61777c591ca0126fcca035385c66}{AsString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00549\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a216631c80effb41d8d291e206e3aee8a}{AsInt64}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00559\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_af4cb90322db9a1a02bb9a05256b9de2a}{AsDouble}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00567\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_adf372a7a23a790a4cc0934c88ebfc362}{AsBool}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00577\ \ \ std::string\&\ \mbox{\hyperlink{classfirebase_1_1_variant_ab47d5faa896c1ee8de21f5900a90ae38}{mutable\_string}}()\ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\_\ ==\ kInternalTypeStaticString\ ||}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ type\_\ ==\ kInternalTypeSmallString)\ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \textcolor{comment}{//\ Automatically\ promote\ a\ static\ or\ small\ string\ to\ a\ mutable\ string.}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\_mutable\_string}}(\mbox{\hyperlink{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b}{string\_value}}(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00582\ \ \ \ \ \}}
+\DoxyCodeLine{00583\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}});}
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keywordflow}{return}\ *value\_.mutable\_string\_value;}
+\DoxyCodeLine{00585\ \ \ \}}
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00591\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c}{blob\_size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00592\ \ \ \ \ assert\_is\_blob();}
+\DoxyCodeLine{00593\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.blob\_value.size;}
+\DoxyCodeLine{00594\ \ \ \}}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00601\ \ \ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{classfirebase_1_1_variant_a5fc5ef90ef3adc60aadd7cb4f4cffecf}{blob\_data}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00602\ \ \ \ \ assert\_is\_blob();}
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.blob\_value.ptr;}
+\DoxyCodeLine{00604\ \ \ \}}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00614\ \ \ uint8\_t*\ \mbox{\hyperlink{classfirebase_1_1_variant_a7c11252dc8b94fbc2ed2ef9e9d226cad}{mutable\_blob\_data}}()\ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\_\ ==\ kInternalTypeStaticBlob)\ \{}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \textcolor{comment}{//\ Automatically\ promote\ a\ static\ blob\ to\ a\ mutable\ blob.}}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}{set\_mutable\_blob}}(\mbox{\hyperlink{classfirebase_1_1_variant_a5fc5ef90ef3adc60aadd7cb4f4cffecf}{blob\_data}}(),\ \mbox{\hyperlink{classfirebase_1_1_variant_ac1dec0fc940a8198e47fea43e73e041c}{blob\_size}}());}
+\DoxyCodeLine{00618\ \ \ \ \ \}}
+\DoxyCodeLine{00619\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}});}
+\DoxyCodeLine{00620\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}uint8\_t*\textcolor{keyword}{>}(value\_.blob\_value.ptr);}
+\DoxyCodeLine{00621\ \ \ \}}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00631\ \ \ uint8\_t*\ \mbox{\hyperlink{classfirebase_1_1_variant_a9e000134063bc38d283d815a0c848ac6}{mutable\_blob\_data}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00632\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}});}
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}uint8\_t*\textcolor{keyword}{>}(value\_.blob\_value.ptr);}
+\DoxyCodeLine{00634\ \ \ \}}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00642\ \ \ std::vector<Variant>\&\ \mbox{\hyperlink{classfirebase_1_1_variant_a72fbcfeaab24fd1c8de43d632e49f951}{vector}}()\ \{}
+\DoxyCodeLine{00643\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}});}
+\DoxyCodeLine{00644\ \ \ \ \ \textcolor{keywordflow}{return}\ *value\_.vector\_value;}
+\DoxyCodeLine{00645\ \ \ \}}
+\DoxyCodeLine{00651\ \ \ std::map<Variant,\ Variant>\&\ \mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}}()\ \{}
+\DoxyCodeLine{00652\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}});}
+\DoxyCodeLine{00653\ \ \ \ \ \textcolor{keywordflow}{return}\ *value\_.map\_value;}
+\DoxyCodeLine{00654\ \ \ \}}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00661\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1_variant_ac937c6b4e8f4f3029bb1a69bbb3ce404}{int64\_value}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00662\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}{kTypeInt64}});}
+\DoxyCodeLine{00663\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.int64\_value;}
+\DoxyCodeLine{00664\ \ \ \}}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00671\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classfirebase_1_1_variant_a81364423ba8aece9609016fca08cd931}{double\_value}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00672\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}{kTypeDouble}});}
+\DoxyCodeLine{00673\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.double\_value;}
+\DoxyCodeLine{00674\ \ \ \}}
+\DoxyCodeLine{00675\ }
+\DoxyCodeLine{00681\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ \mbox{\hyperlink{classfirebase_1_1_variant_a999ce2b76cba5b0a633cd17720887b4a}{bool\_value}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00682\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}{kTypeBool}});}
+\DoxyCodeLine{00683\ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.bool\_value;}
+\DoxyCodeLine{00684\ \ \ \}}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00695\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b}{string\_value}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00696\ \ \ \ \ assert\_is\_string();}
+\DoxyCodeLine{00697\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\_\ ==\ kInternalTypeMutableString)}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.mutable\_string\_value-\/>c\_str();}
+\DoxyCodeLine{00699\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\_\ ==\ kInternalTypeStaticString)}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.static\_string\_value;}
+\DoxyCodeLine{00701\ \ \ \ \ \textcolor{keywordflow}{else}\ \ \textcolor{comment}{//\ if\ (type\_\ ==\ kInternalTypeSmallString)}}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\_.small\_string;}
+\DoxyCodeLine{00703\ \ \ \}}
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00712\ \ \ std::string\ \mbox{\hyperlink{classfirebase_1_1_variant_ae02e2dddd9ff1eefa86e4c4464f748de}{mutable\_string}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00713\ \ \ \ \ assert\_is\_string();}
+\DoxyCodeLine{00714\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_a4077a3cb4fd02ca370dbd0bec02a091b}{string\_value}}();}
+\DoxyCodeLine{00715\ \ \ \}}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00722\ \ \ \textcolor{keyword}{const}\ std::vector<Variant>\&\ \mbox{\hyperlink{classfirebase_1_1_variant_ace787c8e7ab0cf9a0064919431808a36}{vector}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00723\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}});}
+\DoxyCodeLine{00724\ \ \ \ \ \textcolor{keywordflow}{return}\ *value\_.vector\_value;}
+\DoxyCodeLine{00725\ \ \ \}}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00734\ \ \ \textcolor{keyword}{const}\ std::map<Variant,\ Variant>\&\ \mbox{\hyperlink{classfirebase_1_1_variant_a6267c3ad031605e5a0b57ea924ed4825}{map}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00735\ \ \ \ \ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}});}
+\DoxyCodeLine{00736\ \ \ \ \ \textcolor{keywordflow}{return}\ *value\_.map\_value;}
+\DoxyCodeLine{00737\ \ \ \}}
+\DoxyCodeLine{00738\ }
+\DoxyCodeLine{00742\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a5ff60ccab8f984622e31be7fae87ade3}{set\_null}}()\ \{\ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}});\ \}}
+\DoxyCodeLine{00743\ }
+\DoxyCodeLine{00749\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(int64\_t\ value)\ \{}
+\DoxyCodeLine{00750\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}{kTypeInt64}});}
+\DoxyCodeLine{00751\ \ \ \ \ value\_.int64\_value\ =\ value;}
+\DoxyCodeLine{00752\ \ \ \}}
+\DoxyCodeLine{00753\ }
+\DoxyCodeLine{00760\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a1c4d1c3179ee486cd8cb81420f8ed02c}{set\_double\_value}}(\textcolor{keywordtype}{double}\ value)\ \{}
+\DoxyCodeLine{00761\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}{kTypeDouble}});}
+\DoxyCodeLine{00762\ \ \ \ \ value\_.double\_value\ =\ value;}
+\DoxyCodeLine{00763\ \ \ \}}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00770\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab5a6fbd7aee5c5fcf5b9f1e96ddc0c47}{set\_bool\_value}}(\textcolor{keywordtype}{bool}\ value)\ \{}
+\DoxyCodeLine{00771\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}{kTypeBool}});}
+\DoxyCodeLine{00772\ \ \ \ \ value\_.bool\_value\ =\ value;}
+\DoxyCodeLine{00773\ \ \ \}}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00786\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a2e5ff0117468094b0eb27e5908d0e527}{set\_string\_value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value)\ \{}
+\DoxyCodeLine{00787\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1aa2fe144a4817d080e5a840b8f62657e6}{kTypeStaticString}});}
+\DoxyCodeLine{00788\ \ \ \ \ value\_.static\_string\_value\ =\ value;}
+\DoxyCodeLine{00789\ \ \ \}}
+\DoxyCodeLine{00790\ }
+\DoxyCodeLine{00797\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a6fd0f849abfb67fc28b0e91b713416c3}{set\_string\_value}}(\textcolor{keywordtype}{char}*\ value)\ \{}
+\DoxyCodeLine{00798\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ len\ =\ strlen(value);}
+\DoxyCodeLine{00799\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ <\ kMaxSmallStringSize)\ \{}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\textcolor{keyword}{>}(kInternalTypeSmallString));}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ strncpy(value\_.small\_string,\ value,\ len\ +\ 1);}
+\DoxyCodeLine{00802\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\_mutable\_string}}(std::string(value,\ len));}
+\DoxyCodeLine{00804\ \ \ \ \ \}}
+\DoxyCodeLine{00805\ \ \ \}}
+\DoxyCodeLine{00806\ }
+\DoxyCodeLine{00812\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_ae7386879d8caf9f4e7bfbc743e8a88bf}{set\_string\_value}}(\textcolor{keyword}{const}\ std::string\&\ value)\ \{\ \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\_mutable\_string}}(value);\ \}}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00823\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\_mutable\_string}}(\textcolor{keyword}{const}\ std::string\&\ value,}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ use\_small\_string\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00825\ \ \ \ \ \textcolor{keywordflow}{if}\ (value.size()\ <\ kMaxSmallStringSize\ \&\&\ use\_small\_string)\ \{}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\textcolor{keyword}{>}(kInternalTypeSmallString));}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ strncpy(value\_.small\_string,\ value.data(),\ value.size()\ +\ 1);}
+\DoxyCodeLine{00828\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}});}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ *value\_.mutable\_string\_value\ =\ value;}
+\DoxyCodeLine{00831\ \ \ \ \ \}}
+\DoxyCodeLine{00832\ \ \ \}}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00842\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}{set\_mutable\_blob}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ src\_data,\ \textcolor{keywordtype}{size\_t}\ size\_bytes)\ \{}
+\DoxyCodeLine{00843\ \ \ \ \ uint8\_t*\ dest\_data\ =\ \textcolor{keyword}{new}\ uint8\_t[size\_bytes];\ \ \textcolor{comment}{//\ Will\ be\ deleted\ when}}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \`{}this`\ is\ deleted.}}
+\DoxyCodeLine{00845\ \ \ \ \ \textcolor{keywordflow}{if}\ (src\_data\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ memcpy(dest\_data,\ src\_data,\ size\_bytes);}
+\DoxyCodeLine{00847\ \ \ \ \ \}}
+\DoxyCodeLine{00848\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}});}
+\DoxyCodeLine{00849\ \ \ \ \ set\_blob\_pointer(dest\_data,\ size\_bytes);}
+\DoxyCodeLine{00850\ \ \ \}}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00864\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_acf89af59b693d087b8b57d08ed4e62e8}{set\_static\_blob}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ static\_data,\ \textcolor{keywordtype}{size\_t}\ size\_bytes)\ \{}
+\DoxyCodeLine{00865\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ad3dcaa73712ffe0c42fd69f4d2dd0caa}{kTypeStaticBlob}});}
+\DoxyCodeLine{00866\ \ \ \ \ set\_blob\_pointer(static\_data,\ size\_bytes);}
+\DoxyCodeLine{00867\ \ \ \}}
+\DoxyCodeLine{00868\ }
+\DoxyCodeLine{00874\ }
+\DoxyCodeLine{00875\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a276a1ed8855a9a63a6632bd9b5956864}{set\_vector}}(\textcolor{keyword}{const}\ std::vector<Variant>\&\ value)\ \{}
+\DoxyCodeLine{00876\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}});}
+\DoxyCodeLine{00877\ \ \ \ \ *value\_.vector\_value\ =\ value;}
+\DoxyCodeLine{00878\ \ \ \}}
+\DoxyCodeLine{00879\ }
+\DoxyCodeLine{00885\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a4fbd1be786e58d3e8a62df09008eacaa}{set\_map}}(\textcolor{keyword}{const}\ std::map<Variant,\ Variant>\&\ value)\ \{}
+\DoxyCodeLine{00886\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}});}
+\DoxyCodeLine{00887\ \ \ \ \ *value\_.map\_value\ =\ value;}
+\DoxyCodeLine{00888\ \ \ \}}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00900\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad5b601bec15b37a57584f44e48538bfa}{AssignMutableString}}(std::string**\ str)\ \{}
+\DoxyCodeLine{00901\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}});}
+\DoxyCodeLine{00902\ \ \ \ \ type\_\ =\ kInternalTypeMutableString;}
+\DoxyCodeLine{00903\ \ \ \ \ value\_.mutable\_string\_value\ =\ *str;}
+\DoxyCodeLine{00904\ \ \ \ \ *str\ =\ NULL;\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00905\ \ \ \}}
+\DoxyCodeLine{00906\ }
+\DoxyCodeLine{00917\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a92b0dcdefe620f70bac5101fa6d0ad9c}{AssignVector}}(std::vector<Variant>**\ vect)\ \{}
+\DoxyCodeLine{00918\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}});}
+\DoxyCodeLine{00919\ \ \ \ \ type\_\ =\ kInternalTypeVector;}
+\DoxyCodeLine{00920\ \ \ \ \ value\_.vector\_value\ =\ *vect;}
+\DoxyCodeLine{00921\ \ \ \ \ *vect\ =\ NULL;\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00922\ \ \ \}}
+\DoxyCodeLine{00923\ }
+\DoxyCodeLine{00934\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_variant_a83457c7fbf0cb6f2a94fd7fcabb67039}{AssignMap}}(std::map<Variant,\ Variant>**\ \mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}})\ \{}
+\DoxyCodeLine{00935\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4a33654e5d89b323457efdc190f331dd}{Clear}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}});}
+\DoxyCodeLine{00936\ \ \ \ \ type\_\ =\ kInternalTypeMap;}
+\DoxyCodeLine{00937\ \ \ \ \ value\_.map\_value\ =\ *\mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}};}
+\DoxyCodeLine{00938\ \ \ \ \ *\mbox{\hyperlink{classfirebase_1_1_variant_a67ee7ea34d4580cbc3e75685000ebe86}{map}}\ =\ NULL;\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00939\ \ \ \}}
+\DoxyCodeLine{00940\ }
+\DoxyCodeLine{00941\ \ \ \textcolor{comment}{//\ Convenience\ methods\ for\ the\ times\ when\ constructors\ are\ too\ ambiguious.}}
+\DoxyCodeLine{00942\ }
+\DoxyCodeLine{00948\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab7b37f77dc471d923b8cf1d791c6b8a2}{FromInt64}}(int64\_t\ value)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(value);\ \}}
+\DoxyCodeLine{00949\ }
+\DoxyCodeLine{00956\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a8bd830b41aca84815c2c1af5d200a002}{FromDouble}}(\textcolor{keywordtype}{double}\ value)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(value);\ \}}
+\DoxyCodeLine{00957\ }
+\DoxyCodeLine{00963\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a3ac269783b0cd633b175b82da624e2b3}{FromBool}}(\textcolor{keywordtype}{bool}\ value)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(value);\ \}}
+\DoxyCodeLine{00964\ }
+\DoxyCodeLine{00975\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_ab3a9257e58b904e86c40cf20f11d0472}{FromStaticString}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(value);\ \}}
+\DoxyCodeLine{00976\ }
+\DoxyCodeLine{00984\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a56561fd23a61fe794d7d4b5d4f320494}{FromMutableString}}(\textcolor{keyword}{const}\ std::string\&\ value)\ \{}
+\DoxyCodeLine{00985\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classfirebase_1_1_variant_ad4417ed5a59b99ad370d6baab2850fc4}{Variant}}(value);}
+\DoxyCodeLine{00986\ \ \ \}}
+\DoxyCodeLine{00987\ }
+\DoxyCodeLine{01000\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a15a255dcadfe55adf1c49bdcb5505aff}{FromStaticBlob}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ static\_data,\ \textcolor{keywordtype}{size\_t}\ size\_bytes)\ \{}
+\DoxyCodeLine{01001\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{01002\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_acf89af59b693d087b8b57d08ed4e62e8}{set\_static\_blob}}(static\_data,\ size\_bytes);}
+\DoxyCodeLine{01003\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{01004\ \ \ \}}
+\DoxyCodeLine{01005\ }
+\DoxyCodeLine{01012\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a162e582ad6645546f1c53ebe9fb08ddd}{FromMutableBlob}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ src\_data,\ \textcolor{keywordtype}{size\_t}\ size\_bytes)\ \{}
+\DoxyCodeLine{01013\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{01014\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_a0d4d14a8b3fb05978ad7ec499576d4b4}{set\_mutable\_blob}}(src\_data,\ size\_bytes);}
+\DoxyCodeLine{01015\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{01016\ \ \ \}}
+\DoxyCodeLine{01017\ }
+\DoxyCodeLine{01026\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a64d1e49f84515a8a56a93ecd6021b02d}{MutableStringFromStaticString}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value)\ \{}
+\DoxyCodeLine{01027\ \ \ \ \ std::string*\ str\ =\ \textcolor{keyword}{new}\ std::string(value);}
+\DoxyCodeLine{01028\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\ v;}
+\DoxyCodeLine{01029\ \ \ \ \ v.\mbox{\hyperlink{classfirebase_1_1_variant_ad5b601bec15b37a57584f44e48538bfa}{AssignMutableString}}(\&str);}
+\DoxyCodeLine{01030\ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{01031\ \ \ \}}
+\DoxyCodeLine{01032\ }
+\DoxyCodeLine{01039\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1_variant_ae671dc0bbf02296da964ac1b2bb39a2a}{TypeName}}(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}});}
+\DoxyCodeLine{01040\ }
+\DoxyCodeLine{01041\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01042\ \ \ \textcolor{comment}{//\ Internal\ Type\ of\ data\ that\ this\ variant\ object\ contains\ to\ avoid\ breaking}}
+\DoxyCodeLine{01043\ \ \ \textcolor{comment}{//\ API}}
+\DoxyCodeLine{01044\ \ \ \textcolor{keyword}{enum}\ InternalType\ \{}
+\DoxyCodeLine{01046\ \ \ \ \ kInternalTypeNull\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1abb3f2d9832b554399ebf0fd5d790896c}{kTypeNull}},}
+\DoxyCodeLine{01048\ \ \ \ \ kInternalTypeInt64\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a0c672e4d4ff759325e8955e160b85436}{kTypeInt64}},}
+\DoxyCodeLine{01050\ \ \ \ \ kInternalTypeDouble\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a5a3ab8ceabb9b532863bb8ff7483fc3e}{kTypeDouble}},}
+\DoxyCodeLine{01052\ \ \ \ \ kInternalTypeBool\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1accbb445d18e2ecc5ba6244aeb9f488dd}{kTypeBool}},}
+\DoxyCodeLine{01054\ \ \ \ \ kInternalTypeStaticString\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1aa2fe144a4817d080e5a840b8f62657e6}{kTypeStaticString}},}
+\DoxyCodeLine{01056\ \ \ \ \ kInternalTypeMutableString\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab8eb50d9186ffa1d7bebd9ddab6171ce}{kTypeMutableString}},}
+\DoxyCodeLine{01058\ \ \ \ \ kInternalTypeVector\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1add868c1404fbab8712d41754960de9f8}{kTypeVector}},}
+\DoxyCodeLine{01060\ \ \ \ \ kInternalTypeMap\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1a95df4995cd6c837a6a21e5576b1a06c0}{kTypeMap}},}
+\DoxyCodeLine{01064\ \ \ \ \ kInternalTypeStaticBlob\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ad3dcaa73712ffe0c42fd69f4d2dd0caa}{kTypeStaticBlob}},}
+\DoxyCodeLine{01068\ \ \ \ \ kInternalTypeMutableBlob\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}},}
+\DoxyCodeLine{01069\ \ \ \ \ \textcolor{comment}{//\ A\ c\ string\ stored\ in\ the\ Variant\ internal\ data\ blob\ as\ opposed\ to\ be}}
+\DoxyCodeLine{01070\ \ \ \ \ \textcolor{comment}{//\ newed\ as\ a\ std::string.\ Max\ size\ is\ 16\ bytes\ on\ x64\ and\ 8\ bytes\ on\ x86.}}
+\DoxyCodeLine{01071\ \ \ \ \ kInternalTypeSmallString\ =\ \mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1ab5e5a04b7e5bf27ec8346db471cfc7a1}{kTypeMutableBlob}}\ +\ 1,}
+\DoxyCodeLine{01072\ \ \ \ \ \textcolor{comment}{//\ Not\ a\ valid\ type.\ Used\ to\ get\ the\ total\ number\ of\ Variant\ types.}}
+\DoxyCodeLine{01073\ \ \ \ \ kMaxTypeValue,}
+\DoxyCodeLine{01074\ \ \ \};}
+\DoxyCodeLine{01075\ }
+\DoxyCodeLine{01077\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}\ kTypeNames[];}
+\DoxyCodeLine{01078\ }
+\DoxyCodeLine{01080\ \ \ \textcolor{keywordtype}{void}\ assert\_is\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01081\ }
+\DoxyCodeLine{01083\ \ \ \textcolor{keywordtype}{void}\ assert\_is\_not\_type(\mbox{\hyperlink{classfirebase_1_1_variant_a186a23e71959f678215d2c6cece6ddf1}{Type}}\ \mbox{\hyperlink{classfirebase_1_1_variant_a7370ae2720dd960e66a3e9a5168d9eda}{type}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01084\ }
+\DoxyCodeLine{01087\ \ \ \textcolor{keywordtype}{void}\ assert\_is\_string()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01088\ }
+\DoxyCodeLine{01091\ \ \ \textcolor{keywordtype}{void}\ assert\_is\_blob()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{01092\ }
+\DoxyCodeLine{01096\ \ \ \textcolor{keywordtype}{void}\ set\_blob\_pointer(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ blob\_ptr,\ \textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{01097\ \ \ \ \ assert\_is\_blob();}
+\DoxyCodeLine{01098\ \ \ \ \ value\_.blob\_value.ptr\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }uint8\_t*\textcolor{keyword}{>}(blob\_ptr);}
+\DoxyCodeLine{01099\ \ \ \ \ value\_.blob\_value.size\ =\ size;}
+\DoxyCodeLine{01100\ \ \ \}}
+\DoxyCodeLine{01101\ }
+\DoxyCodeLine{01102\ \ \ \textcolor{comment}{//\ If\ you\ hit\ a\ compiler\ error\ here\ it\ means\ you\ are\ trying\ to\ construct\ a}}
+\DoxyCodeLine{01103\ \ \ \textcolor{comment}{//\ variant\ with\ unsupported\ type.\ Ether\ cast\ to\ correct\ type\ or\ add\ support}}
+\DoxyCodeLine{01104\ \ \ \textcolor{comment}{//\ below.}}
+\DoxyCodeLine{01105\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{01106\ \ \ \textcolor{keywordtype}{void}\ set\_value\_t(T\ value)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{01107\ }
+\DoxyCodeLine{01108\ \ \ \textcolor{comment}{//\ Get\ whether\ this\ Variant\ contains\ a\ small\ string.}}
+\DoxyCodeLine{01109\ \ \ \textcolor{keywordtype}{bool}\ is\_small\_string()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type\_\ ==\ kInternalTypeSmallString;\ \}}
+\DoxyCodeLine{01110\ }
+\DoxyCodeLine{01111\ \ \ \textcolor{comment}{//\ Current\ type\ contained\ in\ this\ Variant.}}
+\DoxyCodeLine{01112\ \ \ InternalType\ type\_;}
+\DoxyCodeLine{01113\ }
+\DoxyCodeLine{01114\ \ \ \textcolor{comment}{//\ Older\ versions\ of\ visual\ studio\ cant\ have\ this\ inline\ in\ the\ union\ and\ do}}
+\DoxyCodeLine{01115\ \ \ \textcolor{comment}{//\ sizeof\ for\ small\ string}}
+\DoxyCodeLine{01116\ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{01117\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ ptr;}
+\DoxyCodeLine{01118\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size;}
+\DoxyCodeLine{01119\ \ \ \}\ BlobValue;}
+\DoxyCodeLine{01120\ }
+\DoxyCodeLine{01121\ \ \ \textcolor{comment}{//\ Union\ of\ plain\ old\ data\ (scalars\ or\ pointers).}}
+\DoxyCodeLine{01122\ \ \ \textcolor{keyword}{union\ }Value\ \{}
+\DoxyCodeLine{01123\ \ \ \ \ int64\_t\ int64\_value;}
+\DoxyCodeLine{01124\ \ \ \ \ \textcolor{keywordtype}{double}\ double\_value;}
+\DoxyCodeLine{01125\ \ \ \ \ \textcolor{keywordtype}{bool}\ bool\_value;}
+\DoxyCodeLine{01126\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ static\_string\_value;}
+\DoxyCodeLine{01127\ \ \ \ \ std::string*\ mutable\_string\_value;}
+\DoxyCodeLine{01128\ \ \ \ \ std::vector<Variant>*\ vector\_value;}
+\DoxyCodeLine{01129\ \ \ \ \ std::map<Variant,\ Variant>*\ map\_value;}
+\DoxyCodeLine{01130\ \ \ \ \ BlobValue\ blob\_value;}
+\DoxyCodeLine{01131\ \ \ \ \ \textcolor{keywordtype}{char}\ small\_string[\textcolor{keyword}{sizeof}(BlobValue)];}
+\DoxyCodeLine{01132\ \ \ \}\ value\_;}
+\DoxyCodeLine{01133\ }
+\DoxyCodeLine{01134\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{size\_t}\ kMaxSmallStringSize\ =\ \textcolor{keyword}{sizeof}(Value::small\_string);}
+\DoxyCodeLine{01135\ }
+\DoxyCodeLine{01136\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }firebase::internal::VariantInternal;}
+\DoxyCodeLine{01137\ \};}
+\DoxyCodeLine{01138\ }
+\DoxyCodeLine{01139\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01140\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<int64\_t>(int64\_t\ value)\ \{}
+\DoxyCodeLine{01141\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(value);}
+\DoxyCodeLine{01142\ \}}
+\DoxyCodeLine{01143\ }
+\DoxyCodeLine{01144\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01145\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<int>(\textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{01146\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(\textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{01147\ \}}
+\DoxyCodeLine{01148\ }
+\DoxyCodeLine{01149\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01150\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<int16\_t>(int16\_t\ value)\ \{}
+\DoxyCodeLine{01151\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(\textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{01152\ \}}
+\DoxyCodeLine{01153\ }
+\DoxyCodeLine{01154\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01155\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<uint8\_t>(uint8\_t\ value)\ \{}
+\DoxyCodeLine{01156\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(\textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{01157\ \}}
+\DoxyCodeLine{01158\ }
+\DoxyCodeLine{01159\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01160\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<int8\_t>(int8\_t\ value)\ \{}
+\DoxyCodeLine{01161\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(\textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{01162\ \}}
+\DoxyCodeLine{01163\ }
+\DoxyCodeLine{01164\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01165\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<char>(\textcolor{keywordtype}{char}\ value)\ \{}
+\DoxyCodeLine{01166\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a9e99b6f5dadca2973218774b095c27ae}{set\_int64\_value}}(\textcolor{keyword}{static\_cast<}int64\_t\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{01167\ \}}
+\DoxyCodeLine{01168\ }
+\DoxyCodeLine{01169\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01170\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<double>(\textcolor{keywordtype}{double}\ value)\ \{}
+\DoxyCodeLine{01171\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a1c4d1c3179ee486cd8cb81420f8ed02c}{set\_double\_value}}(value);}
+\DoxyCodeLine{01172\ \}}
+\DoxyCodeLine{01173\ }
+\DoxyCodeLine{01174\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01175\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<float>(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{01176\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a1c4d1c3179ee486cd8cb81420f8ed02c}{set\_double\_value}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(value));}
+\DoxyCodeLine{01177\ \}}
+\DoxyCodeLine{01178\ }
+\DoxyCodeLine{01179\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01180\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<bool>(\textcolor{keywordtype}{bool}\ value)\ \{}
+\DoxyCodeLine{01181\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_ab5a6fbd7aee5c5fcf5b9f1e96ddc0c47}{set\_bool\_value}}(value);}
+\DoxyCodeLine{01182\ \}}
+\DoxyCodeLine{01183\ }
+\DoxyCodeLine{01184\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01185\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<const\ char*>(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value)\ \{}
+\DoxyCodeLine{01186\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a2e5ff0117468094b0eb27e5908d0e527}{set\_string\_value}}(value);}
+\DoxyCodeLine{01187\ \}}
+\DoxyCodeLine{01188\ }
+\DoxyCodeLine{01189\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{01190\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Variant::set\_value\_t<char*>(\textcolor{keywordtype}{char}*\ value)\ \{}
+\DoxyCodeLine{01191\ \ \ \mbox{\hyperlink{classfirebase_1_1_variant_a4e1b5e81df10fe31b8cf700bb8bc6653}{set\_mutable\_string}}(value);}
+\DoxyCodeLine{01192\ \}}
+\DoxyCodeLine{01193\ }
+\DoxyCodeLine{01194\ \textcolor{comment}{//\ NOLINTNEXTLINE\ -\/\ allow\ namespace\ overridden}}
+\DoxyCodeLine{01195\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{01196\ }
+\DoxyCodeLine{01197\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_VARIANT\_H\_}}
+
+\end{DoxyCode}

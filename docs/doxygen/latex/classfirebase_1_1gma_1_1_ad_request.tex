@@ -1,0 +1,161 @@
+\doxysection{firebase\+::gma\+::Ad\+Request Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_ad_request}{}\label{classfirebase_1_1gma_1_1_ad_request}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+
+
+Contains targeting information used to fetch an ad.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_af3547b7db4bf5fdf22b0c373aea5efff}\label{classfirebase_1_1gma_1_1_ad_request_af3547b7db4bf5fdf22b0c373aea5efff} 
+{\bfseries Ad\+Request} ()
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request} with no custom configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_aeff46a25d8e0dea069e6dbd47b2bd341}{Ad\+Request}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}{content\+\_\+url}})
+\item 
+const std\+::string \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}{content\+\_\+url}} () const
+\item 
+const std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, std\+::string $>$ $>$ \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a6ab4d066477a2a63aecbb73808cbcf78}{extras}} () const
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a1d1fc602efd3f26385b199224ead13cd}{keywords}} () const
+\item 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a2128472033ccb615e3fa252dd8b41a69}{neighboring\+\_\+content\+\_\+urls}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a8c1b8d993e187b5cff8406c387d29939}{add\+\_\+extra}} (const char \texorpdfstring{$\ast$}{*}adapter\+\_\+class\+\_\+name, const char \texorpdfstring{$\ast$}{*}extra\+\_\+key, const char \texorpdfstring{$\ast$}{*}extra\+\_\+value)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade836aed5a4e0b41dec5b44dab2557ea}{add\+\_\+keyword}} (const char \texorpdfstring{$\ast$}{*}keyword)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a7e9dbe28d7748d17448ad875008726c6}{set\+\_\+content\+\_\+url}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}{content\+\_\+url}})
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_aeb0010c4c4984d56f300c2f6f2646472}{add\+\_\+neighboring\+\_\+content\+\_\+urls}} (const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a2128472033ccb615e3fa252dd8b41a69}{neighboring\+\_\+content\+\_\+urls}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains targeting information used to fetch an ad. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_aeff46a25d8e0dea069e6dbd47b2bd341}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!AdRequest@{AdRequest}}
+\index{AdRequest@{AdRequest}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{AdRequest()}{AdRequest()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_aeff46a25d8e0dea069e6dbd47b2bd341} 
+firebase\+::gma\+::\+Ad\+Request\+::\+Ad\+Request (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{content\+\_\+url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates an \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request} with the optional content URL.
+
+When requesting an ad, apps may pass the URL of the content they are serving. This enables keyword targeting to match the ad with the content.
+
+The URL is ignored if null or the number of characters exceeds 512.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em content\+\_\+url} & the url of the content being viewed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_a8c1b8d993e187b5cff8406c387d29939}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!add\_extra@{add\_extra}}
+\index{add\_extra@{add\_extra}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{add\_extra()}{add\_extra()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_a8c1b8d993e187b5cff8406c387d29939} 
+void firebase\+::gma\+::\+Ad\+Request\+::add\+\_\+extra (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{adapter\+\_\+class\+\_\+name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{extra\+\_\+key}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{extra\+\_\+value}{}\end{DoxyParamCaption})}
+
+Add a network extra for the associated ad mediation adapter.
+
+Appends an extra to the corresponding list of extras for the ad mediation adapter. Each ad mediation adapter can have multiple extra strings.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adapter\+\_\+class\+\_\+name} & the class name of the ad mediation adapter for which to add the extra. \\
+\hline
+\mbox{\texttt{ in}}  & {\em extra\+\_\+key} & a key which will be passed to the corresponding ad mediation adapter. \\
+\hline
+\mbox{\texttt{ in}}  & {\em extra\+\_\+value} & the value associated with extra\+\_\+key. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_ade836aed5a4e0b41dec5b44dab2557ea}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!add\_keyword@{add\_keyword}}
+\index{add\_keyword@{add\_keyword}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{add\_keyword()}{add\_keyword()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_ade836aed5a4e0b41dec5b44dab2557ea} 
+void firebase\+::gma\+::\+Ad\+Request\+::add\+\_\+keyword (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{keyword}{}\end{DoxyParamCaption})}
+
+Adds a keyword for targeting purposes.
+
+Multiple keywords may be added via repeated invocations of this method.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em keyword} & a string that GMA will use to aid in targeting ads. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_aeb0010c4c4984d56f300c2f6f2646472}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!add\_neighboring\_content\_urls@{add\_neighboring\_content\_urls}}
+\index{add\_neighboring\_content\_urls@{add\_neighboring\_content\_urls}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{add\_neighboring\_content\_urls()}{add\_neighboring\_content\_urls()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_aeb0010c4c4984d56f300c2f6f2646472} 
+void firebase\+::gma\+::\+Ad\+Request\+::add\+\_\+neighboring\+\_\+content\+\_\+urls (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{neighboring\+\_\+content\+\_\+urls}{}\end{DoxyParamCaption})}
+
+Adds to the list of URLs which represent web content near an ad.
+
+Promotes brand safety and allows displayed ads to have an app level rating (MA, T, PG, etc) that is more appropriate to neighboring content.
+
+Subsequent invocations append to the existing list.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em neighboring\+\_\+content\+\_\+urls} & neighboring content URLs to be attached to the existing neighboring content URLs. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!content\_url@{content\_url}}
+\index{content\_url@{content\_url}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{content\_url()}{content\_url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d} 
+const std\+::string \& firebase\+::gma\+::\+Ad\+Request\+::content\+\_\+url (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+The content URL targeting information.
+
+\begin{DoxyReturn}{Returns}
+the content URL for the \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}. The string will be empty if no content URL has been configured. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_request_a6ab4d066477a2a63aecbb73808cbcf78}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!extras@{extras}}
+\index{extras@{extras}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{extras()}{extras()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_a6ab4d066477a2a63aecbb73808cbcf78} 
+const std\+::map$<$ std\+::string, std\+::map$<$ std\+::string, std\+::string $>$ $>$ \& firebase\+::gma\+::\+Ad\+Request\+::extras (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A Map of adapter class names to their collection of extra parameters, as configured via \doxylink{classfirebase_1_1gma_1_1_ad_request_a8c1b8d993e187b5cff8406c387d29939}{add\+\_\+extra}. \Hypertarget{classfirebase_1_1gma_1_1_ad_request_a1d1fc602efd3f26385b199224ead13cd}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!keywords@{keywords}}
+\index{keywords@{keywords}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{keywords()}{keywords()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_a1d1fc602efd3f26385b199224ead13cd} 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \& firebase\+::gma\+::\+Ad\+Request\+::keywords (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Keywords which will help GMA to provide targeted ads, as added by \doxylink{classfirebase_1_1gma_1_1_ad_request_ade836aed5a4e0b41dec5b44dab2557ea}{add\+\_\+keyword}. \Hypertarget{classfirebase_1_1gma_1_1_ad_request_a2128472033ccb615e3fa252dd8b41a69}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!neighboring\_content\_urls@{neighboring\_content\_urls}}
+\index{neighboring\_content\_urls@{neighboring\_content\_urls}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{neighboring\_content\_urls()}{neighboring\_content\_urls()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_a2128472033ccb615e3fa252dd8b41a69} 
+const std\+::unordered\+\_\+set$<$ std\+::string $>$ \& firebase\+::gma\+::\+Ad\+Request\+::neighboring\+\_\+content\+\_\+urls (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the set of neighboring content URLs or an empty set if no URLs were set via \doxylink{classfirebase_1_1gma_1_1_ad_request_aeb0010c4c4984d56f300c2f6f2646472}{add\+\_\+neighboring\+\_\+content\+\_\+urls()}. \Hypertarget{classfirebase_1_1gma_1_1_ad_request_a7e9dbe28d7748d17448ad875008726c6}\index{firebase::gma::AdRequest@{firebase::gma::AdRequest}!set\_content\_url@{set\_content\_url}}
+\index{set\_content\_url@{set\_content\_url}!firebase::gma::AdRequest@{firebase::gma::AdRequest}}
+\doxysubsubsection{\texorpdfstring{set\_content\_url()}{set\_content\_url()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_request_a7e9dbe28d7748d17448ad875008726c6} 
+void firebase\+::gma\+::\+Ad\+Request\+::set\+\_\+content\+\_\+url (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{content\+\_\+url}{}\end{DoxyParamCaption})}
+
+When requesting an ad, apps may pass the URL of the content they are serving. This enables keyword targeting to match the ad with the content.
+
+The URL is ignored if null or the number of characters exceeds 512.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em content\+\_\+url} & the url of the content being viewed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

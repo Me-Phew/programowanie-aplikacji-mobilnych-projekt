@@ -1,0 +1,180 @@
+\doxysection{generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json Namespace Reference}
+\hypertarget{namespacegenerate__xml__from__google__services__json}{}\label{namespacegenerate__xml__from__google__services__json}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_a7f5d0a25748f1722a404b52cf14b42c1}{read\+\_\+xml\+\_\+value}} (xml\+\_\+node)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_af4081057500b5f809395afffb27ea315}{construct\+\_\+plist\+\_\+dictionary}} (xml\+\_\+root)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_a24db8e386be7f4050a4267fb633d526a}{update\+\_\+dict\+\_\+keys}} (key\+\_\+map, input\+\_\+dict)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_ab49bcd82689deef68f9a74bf76fe2569}{construct\+\_\+google\+\_\+services\+\_\+json}} (xml\+\_\+dict)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_a400fd75ad93fc92038fec447f1727a91}{convert\+\_\+plist\+\_\+to\+\_\+json}} (plist\+\_\+string, input\+\_\+filename)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_a9cc8ba9da2fe718b7108495ba36f9151}{gen\+\_\+string}} (parent, name, text)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_afe113895c9595b361355b8796e9c0d11}{indent}} (elem, level=0)
+\item 
+\mbox{\hyperlink{namespacegenerate__xml__from__google__services__json_a5d8b42f8b3635b3d350b2ea7076e1b7e}{argv\+\_\+as\+\_\+unicode\+\_\+win32}} ()
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a91d88b9c580dc290e8bed22b08f2af66}\label{namespacegenerate__xml__from__google__services__json_a91d88b9c580dc290e8bed22b08f2af66} 
+{\bfseries main} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a0e12a15eeb919425839929ef497a7fcc}\label{namespacegenerate__xml__from__google__services__json_a0e12a15eeb919425839929ef497a7fcc} 
+{\bfseries unicode} = str
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a54616e4717bf5d86b0ee02a6848a7be6}\label{namespacegenerate__xml__from__google__services__json_a54616e4717bf5d86b0ee02a6848a7be6} 
+str {\bfseries DEFAULT\+\_\+\+INPUT\+\_\+\+FILENAME} = \textquotesingle{}app/google-\/services.\+json\textquotesingle{}
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a9a9c521abacda54fc59483825ef6aa18}\label{namespacegenerate__xml__from__google__services__json_a9a9c521abacda54fc59483825ef6aa18} 
+str {\bfseries DEFAULT\+\_\+\+OUTPUT\+\_\+\+FILENAME} = \textquotesingle{}res/values/googleservices.\+xml\textquotesingle{}
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a012b11622047e0bf38d206707f3c1555}\label{namespacegenerate__xml__from__google__services__json_a012b11622047e0bf38d206707f3c1555} 
+str {\bfseries DEFAULT\+\_\+\+PLIST\+\_\+\+INPUT\+\_\+\+FILENAME} = \textquotesingle{}Google\+Service-\/Info.\+plist\textquotesingle{}
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a255ccc2c00b1479a084de11fc7757b55}\label{namespacegenerate__xml__from__google__services__json_a255ccc2c00b1479a084de11fc7757b55} 
+str {\bfseries DEFAULT\+\_\+\+JSON\+\_\+\+OUTPUT\+\_\+\+FILENAME} = \textquotesingle{}google-\/services-\/desktop.\+json\textquotesingle{}
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_ab8f4788814cfa91c400d130394363333}\label{namespacegenerate__xml__from__google__services__json_ab8f4788814cfa91c400d130394363333} 
+int {\bfseries OAUTH\+\_\+\+CLIENT\+\_\+\+TYPE\+\_\+\+ANDROID\+\_\+\+APP} = 1
+\item 
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a1f3e0860a913fe3321636a4bc2acf65e}\label{namespacegenerate__xml__from__google__services__json_a1f3e0860a913fe3321636a4bc2acf65e} 
+int {\bfseries OAUTH\+\_\+\+CLIENT\+\_\+\+TYPE\+\_\+\+WEB} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Stand-alone implementation of the Gradle Firebase plugin.
+
+Converts the services json file to xml:
+https://googleplex-android.googlesource.com/platform/tools/base/+/studio-master-dev/build-system/google-services/src/main/groovy/com/google/gms/googleservices
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacegenerate__xml__from__google__services__json_a5d8b42f8b3635b3d350b2ea7076e1b7e}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!argv\_as\_unicode\_win32@{argv\_as\_unicode\_win32}}
+\index{argv\_as\_unicode\_win32@{argv\_as\_unicode\_win32}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{argv\_as\_unicode\_win32()}{argv\_as\_unicode\_win32()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_a5d8b42f8b3635b3d350b2ea7076e1b7e} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+argv\+\_\+as\+\_\+unicode\+\_\+win32 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns unicode command line arguments on windows.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_ab49bcd82689deef68f9a74bf76fe2569}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!construct\_google\_services\_json@{construct\_google\_services\_json}}
+\index{construct\_google\_services\_json@{construct\_google\_services\_json}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{construct\_google\_services\_json()}{construct\_google\_services\_json()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_ab49bcd82689deef68f9a74bf76fe2569} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+construct\+\_\+google\+\_\+services\+\_\+json (\begin{DoxyParamCaption}\item[{}]{xml\+\_\+dict}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructs a google services json file from a dictionary.
+
+Args:
+  xml_dict: A dictionary of all the key/value pairs that are needed for the
+            output json file.
+Returns:
+  A string representing the output json file.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_af4081057500b5f809395afffb27ea315}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!construct\_plist\_dictionary@{construct\_plist\_dictionary}}
+\index{construct\_plist\_dictionary@{construct\_plist\_dictionary}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{construct\_plist\_dictionary()}{construct\_plist\_dictionary()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_af4081057500b5f809395afffb27ea315} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+construct\+\_\+plist\+\_\+dictionary (\begin{DoxyParamCaption}\item[{}]{xml\+\_\+root}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructs a dictionary of values based on the contents of a plist file.
+
+Args:
+  xml_root: An ElementTree node, that represents the root of the xml file
+            that is to be parsed.  (Which should be a dictionary containing
+            key-value pairs of the properties that need to be extracted.)
+
+Returns:
+  A dictionary, containing key-value pairs for all (supported) entries in the
+  node.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_a400fd75ad93fc92038fec447f1727a91}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!convert\_plist\_to\_json@{convert\_plist\_to\_json}}
+\index{convert\_plist\_to\_json@{convert\_plist\_to\_json}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{convert\_plist\_to\_json()}{convert\_plist\_to\_json()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_a400fd75ad93fc92038fec447f1727a91} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+convert\+\_\+plist\+\_\+to\+\_\+json (\begin{DoxyParamCaption}\item[{}]{plist\+\_\+string}{, }\item[{}]{input\+\_\+filename}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Converts an input plist string into a .json file and saves it.
+
+Args:
+  plist_string:    The contents of the loaded plist file.
+
+  input_filename:  The file name that the plist data was read from.
+Returns:
+  the converted string, or None if there were errors.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_a9cc8ba9da2fe718b7108495ba36f9151}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!gen\_string@{gen\_string}}
+\index{gen\_string@{gen\_string}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{gen\_string()}{gen\_string()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_a9cc8ba9da2fe718b7108495ba36f9151} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+gen\+\_\+string (\begin{DoxyParamCaption}\item[{}]{parent}{, }\item[{}]{name}{, }\item[{}]{text}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate one <string /> element and put into the list of keeps.
+
+Args:
+  parent:  The object that will hold the string.
+  name:    The name to store the string under.
+  text:    The text of the string.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_afe113895c9595b361355b8796e9c0d11}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!indent@{indent}}
+\index{indent@{indent}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{indent()}{indent()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_afe113895c9595b361355b8796e9c0d11} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+indent (\begin{DoxyParamCaption}\item[{}]{elem}{, }\item[{}]{level}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Recurse through XML tree and add indentation.
+
+Args:
+  elem:  The element to recurse over
+  level: The current indentation level.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_a7f5d0a25748f1722a404b52cf14b42c1}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!read\_xml\_value@{read\_xml\_value}}
+\index{read\_xml\_value@{read\_xml\_value}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{read\_xml\_value()}{read\_xml\_value()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_a7f5d0a25748f1722a404b52cf14b42c1} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+read\+\_\+xml\+\_\+value (\begin{DoxyParamCaption}\item[{}]{xml\+\_\+node}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Utility method for reading values from the plist XML.
+
+Args:
+  xml_node: An ElementTree node, that contains a value.
+
+Returns:
+  The value of the node, or None, if it could not be read.
+\end{DoxyVerb}
+ \Hypertarget{namespacegenerate__xml__from__google__services__json_a24db8e386be7f4050a4267fb633d526a}\index{generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}!update\_dict\_keys@{update\_dict\_keys}}
+\index{update\_dict\_keys@{update\_dict\_keys}!generate\_xml\_from\_google\_services\_json@{generate\_xml\_from\_google\_services\_json}}
+\doxysubsubsection{\texorpdfstring{update\_dict\_keys()}{update\_dict\_keys()}}
+{\footnotesize\ttfamily \label{namespacegenerate__xml__from__google__services__json_a24db8e386be7f4050a4267fb633d526a} 
+generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+update\+\_\+dict\+\_\+keys (\begin{DoxyParamCaption}\item[{}]{key\+\_\+map}{, }\item[{}]{input\+\_\+dict}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Creates a dict from input_dict with the same values but new keys.
+
+Two dictionaries are passed to this function: the key_map that represents a
+mapping of source keys to destination keys, and the input_dict that is the
+dictionary that is to be duplicated, replacing any key that matches a source
+key with a destination key. Source keys that are not present in the
+input_dict will not have their destination key represented in the result.
+
+In other words, if key_map is `{'old': 'new', 'foo': 'bar'}`, and input_dict
+is `{'old': 10}`, the result will be `{'new': 10}`.
+
+Args:
+  key_map (dict): A dictionary of strings to strings that maps source keys to
+    destination keys.
+  input_dict (dict): The dictionary of string keys to any value type, which
+    is to be duplicated, replacing source keys with the corresponding
+    destination keys from key_map.
+
+Returns:
+  dict: A new dictionary with updated keys.
+\end{DoxyVerb}
+ 

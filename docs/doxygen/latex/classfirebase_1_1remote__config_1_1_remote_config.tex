@@ -1,0 +1,604 @@
+\doxysection{firebase\+::remote\+\_\+config\+::Remote\+Config Class Reference}
+\hypertarget{classfirebase_1_1remote__config_1_1_remote_config}{}\label{classfirebase_1_1remote__config_1_1_remote_config}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+
+
+Entry point for the Firebase C++ SDK for Remote Config.  
+
+
+
+
+{\ttfamily \#include $<$remote\+\_\+config.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a56d2fef803ee1a6e8a36ae922a1ab0da}\label{classfirebase_1_1remote__config_1_1_remote_config_a56d2fef803ee1a6e8a36ae922a1ab0da} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info}} $>$ {\bfseries Ensure\+Initialized} ()
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1_future}{Future} that contains \doxylink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info} representing the initialization status of this Firebase Remote Config instance. Use this method to ensure Set/\+Get call not being blocked. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info}} $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aee034de4bf7aff0f025353e1dca0dd76}{Ensure\+Initialized\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a56d2fef803ee1a6e8a36ae922a1ab0da}{Ensure\+Initialized()} call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a7c2d60b397628e6b37030c428f15efab}{Activate\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()} call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc}{Fetch\+And\+Activate}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aa1d115c715af9fa9931e43c97ee492b7}{Fetch\+And\+Activate\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc}{Fetch\+And\+Activate()} call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db}{Fetch}} ()
+\begin{DoxyCompactList}\small\item\em Fetches config data from the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a84153103f3ab1c33ebd57f1df6a104ab}{Fetch}} (uint64\+\_\+t cache\+\_\+expiration\+\_\+in\+\_\+seconds)
+\begin{DoxyCompactList}\small\item\em Fetches config data from the server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a8fe3ca5331772d698124decb9e705d04}{Fetch\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db}{Fetch()} call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{Set\+Defaults}} (const \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant}{Config\+Key\+Value\+Variant}} \texorpdfstring{$\ast$}{*}defaults, size\+\_\+t number\+\_\+of\+\_\+defaults)
+\begin{DoxyCompactList}\small\item\em Sets the default values based on a mapping of string to \doxylink{classfirebase_1_1_variant}{Variant}. This allows you to specify defaults of type other than string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a8ec6870ed5e4f7e3025e3b2abb11691e}{Set\+Defaults}} (const \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value}{Config\+Key\+Value}} \texorpdfstring{$\ast$}{*}defaults, size\+\_\+t number\+\_\+of\+\_\+defaults)
+\begin{DoxyCompactList}\small\item\em Sets the default values based on a string map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a3dbe0c4db44bb7d2f8e5335d2a27f863}{Set\+Defaults\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{Set\+Defaults()} call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad}{Set\+Config\+Settings}} (\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{Config\+Settings}} settings)
+\begin{DoxyCompactList}\small\item\em Asynchronously changes the settings for this Remote Config instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{Config\+Settings}} \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ac66398c152730b884483a68e8a1272aa}{Get\+Config\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current settings of the \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_af59823e7be1166787fb435c6c3f0e4fb}{Set\+Config\+Settings\+Last\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad}{Set\+Config\+Settings()} call. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a740b3902a7296a2f430240f020b4c545}{Get\+Boolean}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a bool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a5b0d6c6c2e045aa8cbed949748dcdc83}{Get\+Boolean}} (const char \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a bool. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a1b376e125df82c8bc61b6e4686896122}{Get\+Long}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a 64-\/bit integer. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ab42f1de76b688ba0dd19a33c7fc41b92}{Get\+Long}} (const char \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a 64-\/bit integer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aeb6dc379aef6243e944e6592b4a34ffc}{Get\+Double}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a double. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ad384d427fae94006781a190820171a75}{Get\+Double}} (const char \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a double. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a2a0912229bc6bede3dd11cfe381f7886}{Get\+String}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ae485c87013d322c5d322288a9de7b843}{Get\+String}} (const char \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, converted to a string. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_af544c66efdec38ad1d4c5f5870476e85}{Get\+Data}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, as a vector of raw byte-\/data. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a5b0c4af52500e8efd8b4a0780b9b8dde}{Get\+Data}} (const char \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Returns the value associated with a key, as a vector of raw byte-\/data. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_aae5d89bc283cd241271a4095217c599d}{Get\+Keys\+By\+Prefix}} (const char \texorpdfstring{$\ast$}{*}prefix)
+\begin{DoxyCompactList}\small\item\em Gets the set of keys that start with the given prefix. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_afd40c81b26fcfdfc2d39a794e0a59548}{Get\+Keys}} ()
+\begin{DoxyCompactList}\small\item\em Gets the set of all keys. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a7c4340f577c5e05f9b08f3cebd89eda3}{Get\+All}} ()
+\begin{DoxyCompactList}\small\item\em Returns a Map of Firebase Remote Config key value pairs. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info}} \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a4be8dbac74bc25422c0619c0d219d398}{Get\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Returns information about the last fetch request, in the form of a \doxylink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info} struct. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9}\label{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9} 
+\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} {\bfseries app} ()
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classfirebase_1_1_app}{App} this remote config object is connected to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_a3377907581f92851adfc5a2bd25d23b3}{Add\+On\+Config\+Update\+Listener}} (std\+::function$<$ void(\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_update}{Config\+Update}} \&\&, \mbox{\hyperlink{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2}{Remote\+Config\+Error}})$>$ config\+\_\+update\+\_\+listener)
+\begin{DoxyCompactList}\small\item\em Starts listening for real-\/time config updates from the Remote Config backend and automatically fetches updates from the RC backend when they are available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_ae09919cd51bac22b4bf5fb91e4b07505}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config_acce67abf3190c8e36ddf0746426666c9}{app}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the Firebase C++ SDK for Remote Config. 
+
+To use the SDK, call \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ae09919cd51bac22b4bf5fb91e4b07505}{firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Instance()} to obtain an instance of \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config}, then call operations on that instance. The instance contains the complete set of FRC parameter values available to your app. The instance also stores values fetched from the FRC Server until they are made available for use with a call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!Activate@{Activate}}
+\index{Activate@{Activate}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Asynchronously activates the most recently fetched configs, so that the fetched key value pairs take effect.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} that contains true if fetched configs were activated. The future will contain false if the configs were already activated. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a7c2d60b397628e6b37030c428f15efab}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!ActivateLastResult@{ActivateLastResult}}
+\index{ActivateLastResult@{ActivateLastResult}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{ActivateLastResult()}{ActivateLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a7c2d60b397628e6b37030c428f15efab} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Activate\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()} call. 
+
+\begin{DoxyReturn}{Returns}
+The future result from the last call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a3377907581f92851adfc5a2bd25d23b3}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!AddOnConfigUpdateListener@{AddOnConfigUpdateListener}}
+\index{AddOnConfigUpdateListener@{AddOnConfigUpdateListener}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{AddOnConfigUpdateListener()}{AddOnConfigUpdateListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a3377907581f92851adfc5a2bd25d23b3} 
+\mbox{\hyperlink{classfirebase_1_1remote__config_1_1_config_update_listener_registration}{Config\+Update\+Listener\+Registration}} firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Add\+On\+Config\+Update\+Listener (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_update}{Config\+Update}} \&\&, \mbox{\hyperlink{namespacefirebase_1_1remote__config_a4f37bb4a75b0df5dc85cd38222dbc3a2}{Remote\+Config\+Error}})$>$}]{config\+\_\+update\+\_\+listener}{}\end{DoxyParamCaption})}
+
+
+
+Starts listening for real-\/time config updates from the Remote Config backend and automatically fetches updates from the RC backend when they are available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\+\_\+update\+\_\+listener} & An event handler callback that can be used to respond to config updates when they\textquotesingle{}re fetched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A registration object that allows the listener to remove the associated listener. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_aee034de4bf7aff0f025353e1dca0dd76}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!EnsureInitializedLastResult@{EnsureInitializedLastResult}}
+\index{EnsureInitializedLastResult@{EnsureInitializedLastResult}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{EnsureInitializedLastResult()}{EnsureInitializedLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_aee034de4bf7aff0f025353e1dca0dd76} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info}} $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Ensure\+Initialized\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a56d2fef803ee1a6e8a36ae922a1ab0da}{Ensure\+Initialized()} call. 
+
+\begin{DoxyReturn}{Returns}
+The future result from the last call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a56d2fef803ee1a6e8a36ae922a1ab0da}{Ensure\+Initialized()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Fetch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fetches config data from the server. 
+
+\begin{DoxyNote}{Note}
+This does not actually apply the data or make it accessible, it merely retrieves it and caches it. To accept and access the newly retrieved values, you must call \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()}.
+\end{DoxyNote}
+Note that this function is asynchronous, and will normally take an unspecified amount of time before completion.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} which can be used to determine when the fetch is complete. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a84153103f3ab1c33ebd57f1df6a104ab}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a84153103f3ab1c33ebd57f1df6a104ab} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Fetch (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{cache\+\_\+expiration\+\_\+in\+\_\+seconds}{}\end{DoxyParamCaption})}
+
+
+
+Fetches config data from the server. 
+
+\begin{DoxyNote}{Note}
+This does not actually apply the data or make it accessible, it merely retrieves it and caches it. To accept and access the newly retrieved values, you must call \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()}. Note that this function is asynchronous, and will normally take an unspecified amount of time before completion.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cache\+\_\+expiration\+\_\+in\+\_\+seconds} & The number of seconds to keep previously fetch data available. If cached data is available that is newer than cache\+\_\+expiration\+\_\+in\+\_\+seconds, then the function returns immediately and does not fetch any data. A cache\+\_\+expiration\+\_\+in\+\_\+seconds of zero will always cause a fetch.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} which can be used to determine when the fetch is complete. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!FetchAndActivate@{FetchAndActivate}}
+\index{FetchAndActivate@{FetchAndActivate}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{FetchAndActivate()}{FetchAndActivate()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Fetch\+And\+Activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Asynchronously fetches and then activates the fetched configs.
+
+If the time elapsed since the last fetch from the Firebase Remote Config backend is more than the default minimum fetch interval, configs are fetched from the backend.
+
+After the fetch is complete, the configs are activated so that the fetched key value pairs take effect.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} that contains true if the current call activated the fetched configs; if no configs were fetched from the backend and the local fetched configs have already been activated, the future will contain false. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_aa1d115c715af9fa9931e43c97ee492b7}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!FetchAndActivateLastResult@{FetchAndActivateLastResult}}
+\index{FetchAndActivateLastResult@{FetchAndActivateLastResult}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{FetchAndActivateLastResult()}{FetchAndActivateLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_aa1d115c715af9fa9931e43c97ee492b7} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ bool $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Fetch\+And\+Activate\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc}{Fetch\+And\+Activate()} call. 
+
+\begin{DoxyReturn}{Returns}
+The future result from the last call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ad0e0c13c56e959a3db1a5dedafbf24cc}{Fetch\+And\+Activate()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a8fe3ca5331772d698124decb9e705d04}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!FetchLastResult@{FetchLastResult}}
+\index{FetchLastResult@{FetchLastResult}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{FetchLastResult()}{FetchLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a8fe3ca5331772d698124decb9e705d04} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Fetch\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db}{Fetch()} call. 
+
+\begin{DoxyReturn}{Returns}
+The future result from the last call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a70447432de83b65063277c2c008d33db}{Fetch()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a7c4340f577c5e05f9b08f3cebd89eda3}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a7c4340f577c5e05f9b08f3cebd89eda3} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}} $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a Map of Firebase Remote Config key value pairs. 
+
+Evaluates the values of the parameters in the following order\+: The activated value, if the last successful \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a699b15146fb4d9570513c65e135d5cb5}{Activate()} contained the key. The default value, if the key was set with \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{Set\+Defaults()}. \Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a740b3902a7296a2f430240f020b4c545}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetBoolean@{GetBoolean}}
+\index{GetBoolean@{GetBoolean}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetBoolean()}{GetBoolean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a740b3902a7296a2f430240f020b4c545} 
+bool firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Boolean (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a bool. 
+
+Values of "{}1"{}, "{}true"{}, "{}t"{}, "{}yes"{}, "{}y"{} and "{}on"{} are interpreted (case insensitive) as {\ttfamily true} and "{}0"{}, "{}false"{}, "{}f"{}, "{}no"{}, "{}n"{}, "{}off"{}, and empty strings are interpreted (case insensitive) as {\ttfamily false}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value associated with the specified key converted to a boolean value. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a5b0d6c6c2e045aa8cbed949748dcdc83}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetBoolean@{GetBoolean}}
+\index{GetBoolean@{GetBoolean}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetBoolean()}{GetBoolean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a5b0d6c6c2e045aa8cbed949748dcdc83} 
+bool firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Boolean (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a bool. 
+
+Values of "{}1"{}, "{}true"{}, "{}t"{}, "{}yes"{}, "{}y"{} and "{}on"{} are interpreted (case insensitive) as {\ttfamily true} and "{}0"{}, "{}false"{}, "{}f"{}, "{}no"{}, "{}n"{}, "{}off"{}, and empty strings are interpreted (case insensitive) as {\ttfamily false}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved. \\
+\hline
+\mbox{\texttt{ out}}  & {\em info} & A return value, specifying the source of the returned value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value associated with the specified key converted to a boolean value. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ac66398c152730b884483a68e8a1272aa}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetConfigSettings@{GetConfigSettings}}
+\index{GetConfigSettings@{GetConfigSettings}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetConfigSettings()}{GetConfigSettings()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ac66398c152730b884483a68e8a1272aa} 
+\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{Config\+Settings}} firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Config\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the current settings of the \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} object. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{structfirebase_1_1remote__config_1_1_config_settings}{Config\+Settings} struct. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_af544c66efdec38ad1d4c5f5870476e85}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetData@{GetData}}
+\index{GetData@{GetData}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_af544c66efdec38ad1d4c5f5870476e85} 
+std\+::vector$<$ unsigned char $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, as a vector of raw byte-\/data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of bytes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a5b0c4af52500e8efd8b4a0780b9b8dde}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetData@{GetData}}
+\index{GetData@{GetData}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a5b0c4af52500e8efd8b4a0780b9b8dde} 
+std\+::vector$<$ unsigned char $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, as a vector of raw byte-\/data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved. \\
+\hline
+\mbox{\texttt{ out}}  & {\em info} & A return value, specifying the source of the returned value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of bytes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_aeb6dc379aef6243e944e6592b4a34ffc}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetDouble@{GetDouble}}
+\index{GetDouble@{GetDouble}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetDouble()}{GetDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_aeb6dc379aef6243e944e6592b4a34ffc} 
+double firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Double (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value associated with the specified key converted to a double. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ad384d427fae94006781a190820171a75}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetDouble@{GetDouble}}
+\index{GetDouble@{GetDouble}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetDouble()}{GetDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ad384d427fae94006781a190820171a75} 
+double firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Double (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved. \\
+\hline
+\mbox{\texttt{ out}}  & {\em info} & A return value, specifying the source of the returned value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value associated with the specified key converted to a double. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a4be8dbac74bc25422c0619c0d219d398}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetInfo()}{GetInfo()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a4be8dbac74bc25422c0619c0d219d398} 
+const \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info}} firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns information about the last fetch request, in the form of a \doxylink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info} struct. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{structfirebase_1_1remote__config_1_1_config_info}{Config\+Info} struct, containing fields reflecting the state of the most recent fetch request. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ae09919cd51bac22b4bf5fb91e4b07505}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ae09919cd51bac22b4bf5fb91e4b07505} 
+static \mbox{\hyperlink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config}} \texorpdfstring{$\ast$}{*} firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} object for an \doxylink{classfirebase_1_1_app}{App}. Creates the \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} if required.
+
+To get the \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} object for the default app, use, Get\+Instance(\+Get\+Default\+Firebase\+App());
+
+If the library \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} fails to initialize, init\+\_\+result\+\_\+out will be written with the result status (if a pointer is given).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & The \doxylink{classfirebase_1_1_app}{App} to use for the \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{Remote\+Config} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_afd40c81b26fcfdfc2d39a794e0a59548}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetKeys@{GetKeys}}
+\index{GetKeys@{GetKeys}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetKeys()}{GetKeys()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_afd40c81b26fcfdfc2d39a794e0a59548} 
+std\+::vector$<$ std\+::string $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Keys (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the set of all keys. 
+
+\begin{DoxyReturn}{Returns}
+Set of all Remote Config parameter keys. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_aae5d89bc283cd241271a4095217c599d}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetKeysByPrefix@{GetKeysByPrefix}}
+\index{GetKeysByPrefix@{GetKeysByPrefix}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetKeysByPrefix()}{GetKeysByPrefix()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_aae5d89bc283cd241271a4095217c599d} 
+std\+::vector$<$ std\+::string $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Keys\+By\+Prefix (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{prefix}{}\end{DoxyParamCaption})}
+
+
+
+Gets the set of keys that start with the given prefix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em prefix} & The key prefix to look for. If empty or null, this method will return all keys.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Set of Remote Config parameter keys that start with the specified prefix. Will return an empty set if there are no keys with the given prefix. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a1b376e125df82c8bc61b6e4686896122}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetLong@{GetLong}}
+\index{GetLong@{GetLong}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetLong()}{GetLong()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a1b376e125df82c8bc61b6e4686896122} 
+int64\+\_\+t firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Long (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a 64-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value associated with the specified key converted to a 64-\/bit integer. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ab42f1de76b688ba0dd19a33c7fc41b92}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetLong@{GetLong}}
+\index{GetLong@{GetLong}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetLong()}{GetLong()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ab42f1de76b688ba0dd19a33c7fc41b92} 
+int64\+\_\+t firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+Long (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a 64-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved. \\
+\hline
+\mbox{\texttt{ out}}  & {\em info} & A return value, specifying the source of the returned value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value associated with the specified key converted to a 64-\/bit integer. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a2a0912229bc6bede3dd11cfe381f7886}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetString@{GetString}}
+\index{GetString@{GetString}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a2a0912229bc6bede3dd11cfe381f7886} 
+std\+::string firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value as a string associated with the specified key. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ae485c87013d322c5d322288a9de7b843}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!GetString@{GetString}}
+\index{GetString@{GetString}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ae485c87013d322c5d322288a9de7b843} 
+std\+::string firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Get\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_value_info}{Value\+Info}} \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Returns the value associated with a key, converted to a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em key} & Key of the value to be retrieved. \\
+\hline
+\mbox{\texttt{ out}}  & {\em info} & A return value, specifying the source of the returned value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value as a string associated with the specified key. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!SetConfigSettings@{SetConfigSettings}}
+\index{SetConfigSettings@{SetConfigSettings}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{SetConfigSettings()}{SetConfigSettings()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Set\+Config\+Settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_settings}{Config\+Settings}}}]{settings}{}\end{DoxyParamCaption})}
+
+
+
+Asynchronously changes the settings for this Remote Config instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings} & The new settings to be applied.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{classfirebase_1_1_future}{Future} which can be used to determine when the operation is complete. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_af59823e7be1166787fb435c6c3f0e4fb}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!SetConfigSettingsLastResult@{SetConfigSettingsLastResult}}
+\index{SetConfigSettingsLastResult@{SetConfigSettingsLastResult}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{SetConfigSettingsLastResult()}{SetConfigSettingsLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_af59823e7be1166787fb435c6c3f0e4fb} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Set\+Config\+Settings\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad}{Set\+Config\+Settings()} call. 
+
+\begin{DoxyReturn}{Returns}
+The future result from the last call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_ac9116c37587495b8368aa6ebd3129aad}{Set\+Config\+Settings()}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a8ec6870ed5e4f7e3025e3b2abb11691e}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!SetDefaults@{SetDefaults}}
+\index{SetDefaults@{SetDefaults}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{SetDefaults()}{SetDefaults()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a8ec6870ed5e4f7e3025e3b2abb11691e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Set\+Defaults (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value}{Config\+Key\+Value}} \texorpdfstring{$\ast$}{*}}]{defaults}{, }\item[{size\+\_\+t}]{number\+\_\+of\+\_\+defaults}{}\end{DoxyParamCaption})}
+
+
+
+Sets the default values based on a string map. 
+
+\begin{DoxyNote}{Note}
+This completely overrides all previous values.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em defaults} & Array of \doxylink{structfirebase_1_1remote__config_1_1_config_key_value}{Config\+Key\+Value}, representing the new set of defaults to apply. If the same key is specified multiple times, the value associated with the last duplicate key is applied. \\
+\hline
+{\em number\+\_\+of\+\_\+defaults} & Number of elements in the defaults array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{classfirebase_1_1_future}{Future} which can be used to determine when the operation is complete. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!SetDefaults@{SetDefaults}}
+\index{SetDefaults@{SetDefaults}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{SetDefaults()}{SetDefaults()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Set\+Defaults (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structfirebase_1_1remote__config_1_1_config_key_value_variant}{Config\+Key\+Value\+Variant}} \texorpdfstring{$\ast$}{*}}]{defaults}{, }\item[{size\+\_\+t}]{number\+\_\+of\+\_\+defaults}{}\end{DoxyParamCaption})}
+
+
+
+Sets the default values based on a mapping of string to \doxylink{classfirebase_1_1_variant}{Variant}. This allows you to specify defaults of type other than string. 
+
+The type of each \doxylink{classfirebase_1_1_variant}{Variant} in the map determines the type of data for which you are providing a default. For example, boolean values can be retrieved with Get\+Bool(), integer values can be retrieved with \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a1b376e125df82c8bc61b6e4686896122}{Get\+Long()}, double values can be retrieved with \doxylink{classfirebase_1_1remote__config_1_1_remote_config_aeb6dc379aef6243e944e6592b4a34ffc}{Get\+Double()}, string values can be retrieved with \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a2a0912229bc6bede3dd11cfe381f7886}{Get\+String()}, and binary data can be retrieved with \doxylink{classfirebase_1_1remote__config_1_1_remote_config_af544c66efdec38ad1d4c5f5870476e85}{Get\+Data()}. Aggregate \doxylink{classfirebase_1_1_variant}{Variant} types are not allowed.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfirebase_1_1_variant}{firebase\+::\+Variant} for more information on how to create a \doxylink{classfirebase_1_1_variant}{Variant} of each type.
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+This completely overrides all previous values.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em defaults} & Array of \doxylink{structfirebase_1_1remote__config_1_1_config_key_value_variant}{Config\+Key\+Value\+Variant}, representing the new set of defaults to apply. If the same key is specified multiple times, the value associated with the last duplicate key is applied. \\
+\hline
+{\em number\+\_\+of\+\_\+defaults} & Number of elements in the defaults array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{classfirebase_1_1_future}{Future} which can be used to determine when the operation is complete. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1remote__config_1_1_remote_config_a3dbe0c4db44bb7d2f8e5335d2a27f863}\index{firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}!SetDefaultsLastResult@{SetDefaultsLastResult}}
+\index{SetDefaultsLastResult@{SetDefaultsLastResult}!firebase::remote\_config::RemoteConfig@{firebase::remote\_config::RemoteConfig}}
+\doxysubsubsection{\texorpdfstring{SetDefaultsLastResult()}{SetDefaultsLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1remote__config_1_1_remote_config_a3dbe0c4db44bb7d2f8e5335d2a27f863} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::remote\+\_\+config\+::\+Remote\+Config\+::\+Set\+Defaults\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the (possibly still pending) results of the most recent \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{Set\+Defaults()} call. 
+
+\begin{DoxyReturn}{Returns}
+The future result from the last call to \doxylink{classfirebase_1_1remote__config_1_1_remote_config_a21d35983b5f402e5cd8b5943473609de}{Set\+Defaults()}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/remote\+\_\+config.\+h\end{DoxyCompactItemize}

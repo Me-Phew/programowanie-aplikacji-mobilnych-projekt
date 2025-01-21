@@ -1,0 +1,494 @@
+\doxysection{firebase\+::storage\+::Metadata Class Reference}
+\hypertarget{classfirebase_1_1storage_1_1_metadata}{}\label{classfirebase_1_1storage_1_1_metadata}\index{firebase::storage::Metadata@{firebase::storage::Metadata}}
+
+
+\doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} stores default attributes such as size and content type.  
+
+
+
+
+{\ttfamily \#include $<$metadata.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_ace7d2bf647dc01f7700dc5d5e9b2274f}\label{classfirebase_1_1storage_1_1_metadata_ace7d2bf647dc01f7700dc5d5e9b2274f} 
+{\bfseries Metadata} ()
+\begin{DoxyCompactList}\small\item\em Create a default \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} that you can modify and use. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9c42ec15427bbb24418700d9fab83990}{Metadata}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \& \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a06db7aa344f2dd3d1473b36e1a4074c7}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af455652707a3d848dbdcde1890aa63d8}{bucket}} () const
+\begin{DoxyCompactList}\small\item\em Return the owning Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2179e837f2d03e2d6555d1342c7834f3}{set\+\_\+cache\+\_\+control}} (const char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\+\_\+control}})
+\begin{DoxyCompactList}\small\item\em Set the Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_abff9cbcd914196e5fe9d2a5577a76b78}{set\+\_\+cache\+\_\+control}} (const std\+::string \&\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\+\_\+control}})
+\begin{DoxyCompactList}\small\item\em Set the Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}{cache\+\_\+control}} () const
+\begin{DoxyCompactList}\small\item\em Return the Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2a8642236a6d82e3cdd48d438e13eb6b}{set\+\_\+content\+\_\+disposition}} (const char \texorpdfstring{$\ast$}{*}disposition)
+\begin{DoxyCompactList}\small\item\em Set the content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_adf667a05bbe421755dcd427d756056df}{set\+\_\+content\+\_\+disposition}} (const std\+::string \&disposition)
+\begin{DoxyCompactList}\small\item\em Set the content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ad072dffbe04ea125856046a08386c444}{content\+\_\+disposition}} () const
+\begin{DoxyCompactList}\small\item\em Return the content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af891c3d461d633bfcc88bff60ee1d31c}{set\+\_\+content\+\_\+encoding}} (const char \texorpdfstring{$\ast$}{*}encoding)
+\begin{DoxyCompactList}\small\item\em Set the content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9ccdabbe6a896e0e5fbc8ed39ee3e865}{set\+\_\+content\+\_\+encoding}} (const std\+::string \&encoding)
+\begin{DoxyCompactList}\small\item\em Set the content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_aa7197fa087b9e9ea0e2b90e3a4156b73}{content\+\_\+encoding}} () const
+\begin{DoxyCompactList}\small\item\em Return the content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a9ac2901ec8afb0894d4d8a82378ced44}{set\+\_\+content\+\_\+language}} (const char \texorpdfstring{$\ast$}{*}language)
+\begin{DoxyCompactList}\small\item\em Set the content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_acf13debd3ac1478fee8c58b19c82c645}{set\+\_\+content\+\_\+language}} (const std\+::string \&language)
+\begin{DoxyCompactList}\small\item\em Set the content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a25a290def1e3498754099ec7915cfa6d}{content\+\_\+language}} () const
+\begin{DoxyCompactList}\small\item\em Return the content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_affded2c5e3cd42b4f324aed8e6bb80fe}{set\+\_\+content\+\_\+type}} (const char \texorpdfstring{$\ast$}{*}type)
+\begin{DoxyCompactList}\small\item\em Set the content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a0a6e97bc82d682756e402a074e91292b}{set\+\_\+content\+\_\+type}} (const std\+::string \&type)
+\begin{DoxyCompactList}\small\item\em Set the content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ab6c8b27fe0e3e91ca954d43f0fd5e936}{content\+\_\+type}} () const
+\begin{DoxyCompactList}\small\item\em Return the content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a45af4059691d591d42e54a3242bd85fc}{creation\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Return the time the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} was created in milliseconds since the epoch. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ac1ab6c57b473d2b3eaef8554498ef6b4}{custom\+\_\+metadata}} () const
+\begin{DoxyCompactList}\small\item\em Return a map of custom metadata key value pairs. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a57384b5bb0e86fb7bc4ce92d85026be9}{generation}} () const
+\begin{DoxyCompactList}\small\item\em Return a version String indicating what version of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_aac882174ca155c905f43304ad230e2b9}{metadata\+\_\+generation}} () const
+\begin{DoxyCompactList}\small\item\em Return a version String indicating the version of this Storage\+Metadata. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a16fe6ed35b022305780bd52b3e90de70}{name}} () const
+\begin{DoxyCompactList}\small\item\em Return a simple name of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2e91b1e94a22914c44d5fc9afcf248ad}{path}} () const
+\begin{DoxyCompactList}\small\item\em Return the path of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_ac3f8d4604b4289696dd587a278249ae9}{Get\+Reference}} () const
+\begin{DoxyCompactList}\small\item\em Return the associated \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} to which this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} belongs. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_af7979f8cbbf2cd0dbfc8b285a5834563}{size\+\_\+bytes}} () const
+\begin{DoxyCompactList}\small\item\em Return the stored Size in bytes of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a2f995937bdc40c2cefc764365f9edcba}{updated\+\_\+time}} () const
+\begin{DoxyCompactList}\small\item\em Return the time the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} was last updated in milliseconds since the epoch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a35701a7f4384f75c940323bf5f8bad8a}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is returned when a method such as \doxylink{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}{Storage\+Reference\+::\+Get\+Metadata()} completes with an error. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata_a7f8efe59c7e2ff49e8b8c0d5eb65e326}{md5\+\_\+hash}} () const
+\begin{DoxyCompactList}\small\item\em MD5 hash of the data; encoded using base64. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} stores default attributes such as size and content type. 
+
+\doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} for a \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. You may also store custom metadata key value pairs. \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} values may be used to authorize operations using declarative validation rules. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a9c42ec15427bbb24418700d9fab83990}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!Metadata@{Metadata}}
+\index{Metadata@{Metadata}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{Metadata()}{Metadata()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a9c42ec15427bbb24418700d9fab83990} 
+firebase\+::storage\+::\+Metadata\+::\+Metadata (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_af455652707a3d848dbdcde1890aa63d8}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!bucket@{bucket}}
+\index{bucket@{bucket}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{bucket()}{bucket()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_af455652707a3d848dbdcde1890aa63d8} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::bucket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the owning Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+The owning Google Cloud \doxylink{classfirebase_1_1storage_1_1_storage}{Storage} bucket for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!cache\_control@{cache\_control}}
+\index{cache\_control@{cache\_control}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{cache\_control()}{cache\_control()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a53b21413182dcb753b687f18516d1b2f} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::cache\+\_\+control (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+The Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc7234\#section-5.2}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc7234\#section-\/5.\+2}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_ad072dffbe04ea125856046a08386c444}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!content\_disposition@{content\_disposition}}
+\index{content\_disposition@{content\_disposition}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{content\_disposition()}{content\_disposition()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_ad072dffbe04ea125856046a08386c444} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::content\+\_\+disposition (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+The content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc6266}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc6266}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_aa7197fa087b9e9ea0e2b90e3a4156b73}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!content\_encoding@{content\_encoding}}
+\index{content\_encoding@{content\_encoding}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{content\_encoding()}{content\_encoding()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_aa7197fa087b9e9ea0e2b90e3a4156b73} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::content\+\_\+encoding (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+The content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.11}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+11}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a25a290def1e3498754099ec7915cfa6d}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!content\_language@{content\_language}}
+\index{content\_language@{content\_language}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{content\_language()}{content\_language()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a25a290def1e3498754099ec7915cfa6d} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::content\+\_\+language (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+The content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.12}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+12}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_ab6c8b27fe0e3e91ca954d43f0fd5e936}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!content\_type@{content\_type}}
+\index{content\_type@{content\_type}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{content\_type()}{content\_type()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_ab6c8b27fe0e3e91ca954d43f0fd5e936} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::content\+\_\+type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+The content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.17}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+17}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a45af4059691d591d42e54a3242bd85fc}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!creation\_time@{creation\_time}}
+\index{creation\_time@{creation\_time}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{creation\_time()}{creation\_time()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a45af4059691d591d42e54a3242bd85fc} 
+int64\+\_\+t firebase\+::storage\+::\+Metadata\+::creation\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the time the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} was created in milliseconds since the epoch. 
+
+\begin{DoxyReturn}{Returns}
+The time the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} was created in milliseconds since the epoch. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_ac1ab6c57b473d2b3eaef8554498ef6b4}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!custom\_metadata@{custom\_metadata}}
+\index{custom\_metadata@{custom\_metadata}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{custom\_metadata()}{custom\_metadata()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_ac1ab6c57b473d2b3eaef8554498ef6b4} 
+std\+::map$<$ std\+::string, std\+::string $>$ \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::custom\+\_\+metadata (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return a map of custom metadata key value pairs. 
+
+The pointer returned is only valid during the lifetime of the \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} object that owns it.
+
+\begin{DoxyReturn}{Returns}
+The keys for custom metadata. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a57384b5bb0e86fb7bc4ce92d85026be9}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!generation@{generation}}
+\index{generation@{generation}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{generation()}{generation()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a57384b5bb0e86fb7bc4ce92d85026be9} 
+int64\+\_\+t firebase\+::storage\+::\+Metadata\+::generation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return a version String indicating what version of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxyReturn}{Returns}
+A value indicating the version of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_ac3f8d4604b4289696dd587a278249ae9}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!GetReference@{GetReference}}
+\index{GetReference@{GetReference}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{GetReference()}{GetReference()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_ac3f8d4604b4289696dd587a278249ae9} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}} firebase\+::storage\+::\+Metadata\+::\+Get\+Reference (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the associated \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} to which this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} belongs. 
+
+\begin{DoxyReturn}{Returns}
+The associated \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} to which this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} belongs. If this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is invalid or is not associated with any file, an invalid \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} is returned. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a35701a7f4384f75c940323bf5f8bad8a}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a35701a7f4384f75c940323bf5f8bad8a} 
+bool firebase\+::storage\+::\+Metadata\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is valid, false if it is not valid. An invalid \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is returned when a method such as \doxylink{classfirebase_1_1storage_1_1_storage_reference_aef5cbb884374fa0df754d9e0674b1878}{Storage\+Reference\+::\+Get\+Metadata()} completes with an error. 
+
+\begin{DoxyReturn}{Returns}
+true if this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is valid, false if this \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a7f8efe59c7e2ff49e8b8c0d5eb65e326}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!md5\_hash@{md5\_hash}}
+\index{md5\_hash@{md5\_hash}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{md5\_hash()}{md5\_hash()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a7f8efe59c7e2ff49e8b8c0d5eb65e326} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::md5\+\_\+hash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+MD5 hash of the data; encoded using base64. 
+
+\begin{DoxyReturn}{Returns}
+MD5 hash of the data; encoded using base64. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_aac882174ca155c905f43304ad230e2b9}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!metadata\_generation@{metadata\_generation}}
+\index{metadata\_generation@{metadata\_generation}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{metadata\_generation()}{metadata\_generation()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_aac882174ca155c905f43304ad230e2b9} 
+int64\+\_\+t firebase\+::storage\+::\+Metadata\+::metadata\+\_\+generation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return a version String indicating the version of this Storage\+Metadata. 
+
+\begin{DoxyReturn}{Returns}
+A value indicating the version of this Storage\+Metadata. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a16fe6ed35b022305780bd52b3e90de70}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!name@{name}}
+\index{name@{name}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a16fe6ed35b022305780bd52b3e90de70} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return a simple name of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. 
+
+\begin{DoxyReturn}{Returns}
+A simple name of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a06db7aa344f2dd3d1473b36e1a4074c7}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a06db7aa344f2dd3d1473b36e1a4074c7} 
+\mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \& firebase\+::storage\+::\+Metadata\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1storage_1_1_metadata}{Metadata}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination \doxylink{classfirebase_1_1storage_1_1_metadata}{Metadata}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a2e91b1e94a22914c44d5fc9afcf248ad}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!path@{path}}
+\index{path@{path}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a2e91b1e94a22914c44d5fc9afcf248ad} 
+const char \texorpdfstring{$\ast$}{*} firebase\+::storage\+::\+Metadata\+::path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the path of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. 
+
+\begin{DoxyReturn}{Returns}
+The path of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a2179e837f2d03e2d6555d1342c7834f3}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_cache\_control@{set\_cache\_control}}
+\index{set\_cache\_control@{set\_cache\_control}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_cache\_control()}{set\_cache\_control()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a2179e837f2d03e2d6555d1342c7834f3} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+cache\+\_\+control (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{cache\+\_\+control}{}\end{DoxyParamCaption})}
+
+
+
+Set the Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc7234\#section-5.2}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc7234\#section-\/5.\+2}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_abff9cbcd914196e5fe9d2a5577a76b78}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_cache\_control@{set\_cache\_control}}
+\index{set\_cache\_control@{set\_cache\_control}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_cache\_control()}{set\_cache\_control()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_abff9cbcd914196e5fe9d2a5577a76b78} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+cache\+\_\+control (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cache\+\_\+control}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Cache Control setting of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc7234\#section-5.2}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc7234\#section-\/5.\+2}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a2a8642236a6d82e3cdd48d438e13eb6b}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_disposition@{set\_content\_disposition}}
+\index{set\_content\_disposition@{set\_content\_disposition}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_disposition()}{set\_content\_disposition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a2a8642236a6d82e3cdd48d438e13eb6b} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+disposition (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{disposition}{}\end{DoxyParamCaption})}
+
+
+
+Set the content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc6266}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc6266}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_adf667a05bbe421755dcd427d756056df}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_disposition@{set\_content\_disposition}}
+\index{set\_content\_disposition@{set\_content\_disposition}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_disposition()}{set\_content\_disposition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_adf667a05bbe421755dcd427d756056df} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+disposition (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{disposition}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the content disposition of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc6266}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc6266}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_af891c3d461d633bfcc88bff60ee1d31c}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_encoding@{set\_content\_encoding}}
+\index{set\_content\_encoding@{set\_content\_encoding}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_encoding()}{set\_content\_encoding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_af891c3d461d633bfcc88bff60ee1d31c} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+encoding (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{encoding}{}\end{DoxyParamCaption})}
+
+
+
+Set the content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.11}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+11}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a9ccdabbe6a896e0e5fbc8ed39ee3e865}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_encoding@{set\_content\_encoding}}
+\index{set\_content\_encoding@{set\_content\_encoding}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_encoding()}{set\_content\_encoding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a9ccdabbe6a896e0e5fbc8ed39ee3e865} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+encoding (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{encoding}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the content encoding for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.11}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+11}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a9ac2901ec8afb0894d4d8a82378ced44}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_language@{set\_content\_language}}
+\index{set\_content\_language@{set\_content\_language}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_language()}{set\_content\_language()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a9ac2901ec8afb0894d4d8a82378ced44} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+language (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{language}{}\end{DoxyParamCaption})}
+
+
+
+Set the content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.12}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+12}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_acf13debd3ac1478fee8c58b19c82c645}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_language@{set\_content\_language}}
+\index{set\_content\_language@{set\_content\_language}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_language()}{set\_content\_language()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_acf13debd3ac1478fee8c58b19c82c645} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+language (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{language}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the content language for the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+This must be an ISO 639-\/1 two-\/letter language code. E.\+g. "{}zh"{}, "{}es"{}, "{}en"{}.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://www.loc.gov/standards/iso639-2/php/code_list.php}{\texttt{ https\+://www.\+loc.\+gov/standards/iso639-\/2/php/code\+\_\+list.\+php}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_affded2c5e3cd42b4f324aed8e6bb80fe}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_type@{set\_content\_type}}
+\index{set\_content\_type@{set\_content\_type}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_type()}{set\_content\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_affded2c5e3cd42b4f324aed8e6bb80fe} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+type (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Set the content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.17}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+17}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a0a6e97bc82d682756e402a074e91292b}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!set\_content\_type@{set\_content\_type}}
+\index{set\_content\_type@{set\_content\_type}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{set\_content\_type()}{set\_content\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a0a6e97bc82d682756e402a074e91292b} 
+void firebase\+::storage\+::\+Metadata\+::set\+\_\+content\+\_\+type (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the content type of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference}. 
+
+\begin{DoxySeeAlso}{See also}
+\href{https://tools.ietf.org/html/rfc2616\#section-14.17}{\texttt{ https\+://tools.\+ietf.\+org/html/rfc2616\#section-\/14.\+17}} 
+\end{DoxySeeAlso}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_af7979f8cbbf2cd0dbfc8b285a5834563}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!size\_bytes@{size\_bytes}}
+\index{size\_bytes@{size\_bytes}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{size\_bytes()}{size\_bytes()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_af7979f8cbbf2cd0dbfc8b285a5834563} 
+int64\+\_\+t firebase\+::storage\+::\+Metadata\+::size\+\_\+bytes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the stored Size in bytes of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. 
+
+\begin{DoxyReturn}{Returns}
+The stored Size in bytes of the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} object. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1storage_1_1_metadata_a2f995937bdc40c2cefc764365f9edcba}\index{firebase::storage::Metadata@{firebase::storage::Metadata}!updated\_time@{updated\_time}}
+\index{updated\_time@{updated\_time}!firebase::storage::Metadata@{firebase::storage::Metadata}}
+\doxysubsubsection{\texorpdfstring{updated\_time()}{updated\_time()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1storage_1_1_metadata_a2f995937bdc40c2cefc764365f9edcba} 
+int64\+\_\+t firebase\+::storage\+::\+Metadata\+::updated\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the time the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} was last updated in milliseconds since the epoch. 
+
+\begin{DoxyReturn}{Returns}
+The time the \doxylink{classfirebase_1_1storage_1_1_storage_reference}{Storage\+Reference} was last updated in milliseconds since the epoch. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/storage/metadata.\+h\end{DoxyCompactItemize}

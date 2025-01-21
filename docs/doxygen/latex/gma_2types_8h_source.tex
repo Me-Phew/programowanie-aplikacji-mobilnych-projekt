@@ -1,0 +1,513 @@
+\doxysection{types.\+h}
+\hypertarget{gma_2types_8h_source}{}\label{gma_2types_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/types.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/types.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_TYPES\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_TYPES\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/platform.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <jni.h>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#elif\ FIREBASE\_PLATFORM\_IOS\ ||\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <objc/objc.h>}}
+\DoxyCodeLine{00034\ \}\ \ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID,\ FIREBASE\_PLATFORM\_IOS,}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{struct\ }AdErrorInternal;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }AdapterResponseInfoInternal;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{struct\ }BoundingBox;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{struct\ }ResponseInfoInternal;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }AdapterResponseInfo;}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }AdViewBoundingBoxListener;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }AdView;}
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }InterstitialAd;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }PaidEventListener;}
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }ResponseInfo;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }AdViewInternal;}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#if\ FIREBASE\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ jobject\ \mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}};}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#elif\ FIREBASE\_PLATFORM\_IOS\ ||\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{id}\ \mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}};}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}};}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_PLATFORM\_ANDROID,\ FIREBASE\_PLATFORM\_IOS,}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FIREBASE\_PLATFORM\_TVOS}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14}{AdErrorCode}}\ \{}
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0ba0e33d712bb2a75f829d5f3df1706b}{kAdErrorCodeNone}},}
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14ae90077a56d597ebc392a1a63acc754b5}{kAdErrorCodeUninitialized}},}
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14aa5fe95a2ac2a2620e9bc625a7c55b14c}{kAdErrorCodeAlreadyInitialized}},}
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14ab9360a80bd77cfa5758057af6cd32eda}{kAdErrorCodeLoadInProgress}},}
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a9e0a77bbaae434b94066af9d8562a52f}{kAdErrorCodeInternalError}},}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a7968d215e60533f6465b40512e1cb9eb}{kAdErrorCodeInvalidRequest}},}
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14ada32e2568986f02e0be721e4623beb21}{kAdErrorCodeNetworkError}},}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0b42cfacfcdc60595fd32f1c3604f9ec}{kAdErrorCodeNoFill}},}
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a4d01d6deb18ee1aa2e9484767b91292c}{kAdErrorCodeNoWindowToken}},}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a7be1648c6bb67f6100d369fd47a1dcaa}{kAdErrorCodeAdNetworkClassLoadError}},}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a353b5ce7ddbbdfd63cfd422964175b49}{kAdErrorCodeServerError}},}
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14aa316486e03920fcc9197cab9904708d9}{kAdErrorCodeOSVersionTooLow}},}
+\DoxyCodeLine{00107\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14af0dcba2278710fd87c2edae912cec9bd}{kAdErrorCodeTimeout}},}
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14af5f96aa6e6c6e6b63ef0de4637eee32e}{kAdErrorCodeInterstitialAlreadyUsed}},}
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a340510234e828912d58d16f62a46372b}{kAdErrorCodeMediationDataError}},}
+\DoxyCodeLine{00114\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a8d2f772a946cdc7101aba4a608f684c0}{kAdErrorCodeMediationAdapterError}},}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a2814bf3c32554adfabc72cf2ea31b50f}{kAdErrorCodeMediationInvalidAdSize}},}
+\DoxyCodeLine{00118\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a2a0f07c345fe24fb465963cab42964cd}{kAdErrorCodeInvalidArgument}},}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a2b8b2f12fd88c64a833426b7940a4f00}{kAdErrorCodeReceivedInvalidResponse}},}
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a5ca0e40bda0b6a4530f18d55578dac6d}{kAdErrorCodeRewardedAdAlreadyUsed}},}
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a3cf4e2b0d26cea4dd331fe4d7f3bccb3}{kAdErrorCodeMediationNoFill}},}
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14ab6458089e95f54ba6f759a0c9fe508e7}{kAdErrorCodeAdAlreadyUsed}},}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14af52c6d6448ad765e43902f5b0eefdd7c}{kAdErrorCodeApplicationIdentifierMissing}},}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14af385c10f0994e158e22706ff802e9bae}{kAdErrorCodeInvalidAdString}},}
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a4d7aa27b8df041fcb11aa97d5941eeaf}{kAdErrorCodeAppNotInForeground}},}
+\DoxyCodeLine{00136\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a05f30a4554ffad600427e41b93375d3a}{kAdErrorCodeMediationShowError}},}
+\DoxyCodeLine{00138\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14ad2ed29cacae375fd52c06f0040d3ba67}{kAdErrorCodeAdNotReady}},}
+\DoxyCodeLine{00140\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0122b4f1672284559b4df015ba25413c}{kAdErrorCodeAdTooLarge}},}
+\DoxyCodeLine{00143\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a42fc54c8d9a5d227b4fd63d7d016337c}{kAdErrorCodeNotMainThread}},}
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14acda1a353d93a0d2650b39c7688517e74}{kAdErrorCodeNotInTestMode}},}
+\DoxyCodeLine{00147\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a25576de86fb9dfa2cef9f8492ada86dc}{kAdErrorCodeInspectorFailedToLoad}},}
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a7db4f12fef04563f080a490f340e3d1e}{kAdErrorCodeInsepctorAlreadyOpen}},}
+\DoxyCodeLine{00151\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0284f100f37ace3ef11ecd9a82804999}{kAdErrorCodeImageUrlMalformed}},}
+\DoxyCodeLine{00153\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a396dfc0a98f58ca71f59e5727a1ecffb}{kAdErrorCodeUnknown}},}
+\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{AdListener}}\ \{}
+\DoxyCodeLine{00158\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00159\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{\string~AdListener}}();}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener_a296c1936ddca41ceb2b1c25a1d5dd6f4}{OnAdClicked}}()\ \{\}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener_a5790b7fe841a3cb3f4bb08fccbbe7b4f}{OnAdClosed}}()\ \{\}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00169\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener_aedd4596049834f274e9ff41186bb355d}{OnAdImpression}}()\ \{\}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener_a9c844476cb30f7c42a90b9f3ef073575}{OnAdOpened}}()\ \{\}}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\ \{}
+\DoxyCodeLine{00177\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00179\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a1b94324ddc1ab32649bca69ac30eeabb}{AdError}}();}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a77580c82486072f1df1845d359a13019}{AdError}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\&\ ad\_error);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a35cd7b4e801b8b6dd066a0276dab9665}{\string~AdError}}();}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_adb46996768ccdbd56f1243ceafcd2bb1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\&\ obj);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00194\ \ \ std::unique\_ptr<AdError>\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_ab84a96a3ffc9734a7abbd3d1fd351e23}{GetCause}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14}{AdErrorCode}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a82066177203fdbde859db56edff182a0}{code}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_ae1228ba484951c40bd8f80d32503fc2f}{domain}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_afbd0c48fbd60a924131b988d9530d668}{message}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00208\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a6cbba63f609f27f7ddcf1db410049dd5}{response\_info}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a454dc49bbb1815ffe00a1d69583cb908}{ToString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00217\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_aab24d46d221e40b709989dce691d57e3}{kUndefinedDomain}};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00220\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info}{AdapterResponseInfo}};}
+\DoxyCodeLine{00221\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00222\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view}{AdView}};}
+\DoxyCodeLine{00223\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad}{InterstitialAd}};}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error_a1b94324ddc1ab32649bca69ac30eeabb}{AdError}}(\textcolor{keyword}{const}\ AdErrorInternal\&\ ad\_error\_internal);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{comment}{//\ Collection\ of\ response\ from\ adapters\ if\ this\ Result\ is\ due\ to\ a\ loadAd}}
+\DoxyCodeLine{00229\ \ \ \textcolor{comment}{//\ operation.}}
+\DoxyCodeLine{00230\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}}*\ response\_info\_;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00233\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ Google\ Mobile\ Ads\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00234\ \ \ AdErrorInternal*\ internal\_;}
+\DoxyCodeLine{00235\ \};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00238\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}}\ \{}
+\DoxyCodeLine{00239\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00241\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_ab8e095948d2c39e1afabbac46eb0447d}{ResponseInfo}}();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00247\ \ \ \textcolor{keyword}{const}\ std::vector<AdapterResponseInfo>\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_a643b5c72232647da66df08a2e9ed9e97}{adapter\_responses}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordflow}{return}\ adapter\_responses\_;}
+\DoxyCodeLine{00249\ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00253\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_af11fb9270a28a1d018c71ce8dcc9b45f}{mediation\_adapter\_class\_name}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ mediation\_adapter\_class\_name\_;}
+\DoxyCodeLine{00255\ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00259\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_a1d213c001c554bd2eff75316058bc25e}{response\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ response\_id\_;\ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00262\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_a84b8259e0739078c6e481bc47a91e5b4}{ToString}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ to\_string\_;\ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00265\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}};}
+\DoxyCodeLine{00266\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info_ab8e095948d2c39e1afabbac46eb0447d}{ResponseInfo}}(\textcolor{keyword}{const}\ ResponseInfoInternal\&\ internal);}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ std::vector<AdapterResponseInfo>\ adapter\_responses\_;}
+\DoxyCodeLine{00271\ \ \ std::string\ mediation\_adapter\_class\_name\_;}
+\DoxyCodeLine{00272\ \ \ std::string\ response\_id\_;}
+\DoxyCodeLine{00273\ \ \ std::string\ to\_string\_;}
+\DoxyCodeLine{00274\ \};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00277\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{AdResult}}\ \{}
+\DoxyCodeLine{00278\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00280\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_ae5d776697d555aaa64ed4c7e70afbb44}{AdResult}}();}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00283\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a790bad9cea90e6f8b3496ab790dbf76a}{AdResult}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f}{ad\_error}});}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00286\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a96f534e1443b8d9bf840b85b7346cf7b}{\string~AdResult}}();}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00289\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a7be707506b4c99764742073eeeaa0c52}{is\_successful}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00295\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a220ba02390d986be57e678071e0cfa0f}{ad\_error}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00302\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a4892f8f3db705cb417e7621eefe31f0d}{response\_info}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00305\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00309\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_ae5d776697d555aaa64ed4c7e70afbb44}{AdResult}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}}\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result_a4892f8f3db705cb417e7621eefe31f0d}{response\_info}});}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00312\ \ \ \textcolor{keywordtype}{bool}\ is\_successful\_;}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00316\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\ ad\_error\_;}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00319\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}}\ response\_info\_;}
+\DoxyCodeLine{00320\ \};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00323\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status}{AdapterStatus}}\ \{}
+\DoxyCodeLine{00324\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00325\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status}{AdapterStatus}}()\ :\ is\_initialized\_(\textcolor{keyword}{false}),\ latency\_(0)\ \{\}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00332\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_a39b3d54c1452181913657da91026d7ed}{description}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ description\_;\ \}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00335\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_aa8cda96aed4248f3b64f65ec6f7fb48f}{is\_initialized}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ is\_initialized\_;\ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00339\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_af9e208e23e5512e6024b38d78a340fa6}{latency}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ latency\_;\ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00342\ \ \ \textcolor{comment}{//\ Equality\ operator\ for\ testing.}}
+\DoxyCodeLine{00343\ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status}{AdapterStatus}}\&\ rhs)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_a39b3d54c1452181913657da91026d7ed}{description}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_a39b3d54c1452181913657da91026d7ed}{description}}()\ \&\&}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_aa8cda96aed4248f3b64f65ec6f7fb48f}{is\_initialized}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_aa8cda96aed4248f3b64f65ec6f7fb48f}{is\_initialized}}()\ \&\&}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_af9e208e23e5512e6024b38d78a340fa6}{latency}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_status_af9e208e23e5512e6024b38d78a340fa6}{latency}}());}
+\DoxyCodeLine{00347\ \ \ \}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00351\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00352\ \ \ std::string\ description\_;}
+\DoxyCodeLine{00353\ \ \ \textcolor{keywordtype}{bool}\ is\_initialized\_;}
+\DoxyCodeLine{00354\ \ \ \textcolor{keywordtype}{int}\ latency\_;}
+\DoxyCodeLine{00355\ \};}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00359\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_initialization_status}{AdapterInitializationStatus}}\ \{}
+\DoxyCodeLine{00360\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00363\ \ \ std::map<std::string,\ AdapterStatus>\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_initialization_status_a400ea253cd1f7e807b86ff1668b17178}{GetAdapterStatusMap}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{return}\ adapter\_status\_map\_;}
+\DoxyCodeLine{00365\ \ \ \}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#if\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00367\ \ \ \textcolor{comment}{//\ Equality\ operator\ for\ testing.}}
+\DoxyCodeLine{00368\ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_initialization_status}{AdapterInitializationStatus}}\&\ rhs)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_initialization_status_a400ea253cd1f7e807b86ff1668b17178}{GetAdapterStatusMap}}()\ ==\ rhs.\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_initialization_status_a400ea253cd1f7e807b86ff1668b17178}{GetAdapterStatusMap}}());}
+\DoxyCodeLine{00370\ \ \ \}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ !defined(DOXYGEN)}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00374\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }GmaInternal;}
+\DoxyCodeLine{00375\ \ \ std::map<std::string,\ AdapterStatus>\ adapter\_status\_map\_;}
+\DoxyCodeLine{00376\ \};}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00379\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_inspector_closed_listener}{AdInspectorClosedListener}}\ \{}
+\DoxyCodeLine{00380\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00381\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_inspector_closed_listener}{\string~AdInspectorClosedListener}}();}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00385\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_inspector_closed_listener_aa9129119e0746b281eccc0af86f85c46}{OnAdInspectorClosed}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{AdResult}}\&\ ad\_result)\ =\ 0;}
+\DoxyCodeLine{00386\ \};}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00390\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info}{AdapterResponseInfo}}\ \{}
+\DoxyCodeLine{00391\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00393\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_a00de265543c2c7879b8ec0b5496675d8}{\string~AdapterResponseInfo}}();}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00400\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{AdResult}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_a1f3f2c3e626758cb93e70d16865ce963}{ad\_result}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ad\_result\_;\ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00404\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_aeef4d6d5daa3549af928540a3e33a865}{adapter\_class\_name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ adapter\_class\_name\_;\ \}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00410\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_a95feaa12aba3497dceb2fd980a33cde2}{latency\_in\_millis}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ latency\_;\ \}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00413\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_a1abb2bda9cd5d96591b03e484e09218d}{ToString}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ to\_string\_;\ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00416\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_response_info}{ResponseInfo}};}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00419\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info}{AdapterResponseInfo}}(\textcolor{keyword}{const}\ AdapterResponseInfoInternal\&\ internal);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{AdResult}}\ ad\_result\_;}
+\DoxyCodeLine{00422\ \ \ std::string\ adapter\_class\_name\_;}
+\DoxyCodeLine{00423\ \ \ int64\_t\ latency\_;}
+\DoxyCodeLine{00424\ \ \ std::string\ to\_string\_;}
+\DoxyCodeLine{00425\ \};}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00428\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \{}
+\DoxyCodeLine{00429\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00431\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{Orientation}}\ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba157371cb8a7b764b3e3247580cfde8e7}{kOrientationCurrent}}\ =\ 0,}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00436\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba811023b7f3e5248bc24cb5f85cb8037b}{kOrientationLandscape}},}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00439\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9ba3e01ca92b8dd3bc842fd965678a76e53}{kOrientationPortrait}}}
+\DoxyCodeLine{00440\ \ \ \};}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00443\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}{Type}}\ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa97f9898c758b1229d8af9b3e29400f03}{kTypeStandard}}\ =\ 0,}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00448\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa89899400adc683e00d0536e69f8830c8}{kTypeAnchoredAdaptive}},}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00451\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dcaa6601dc62a2b5e8fff903647a37264e1c}{kTypeInlineAdaptive}},}
+\DoxyCodeLine{00452\ \ \ \};}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00456\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a4d6f8645be81638b7042b45c9abc6076}{kBanner}};}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00460\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a49a34fd6fd6b56ae65a8ed9d6504097a}{kFullBanner}};}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00463\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_afbbb22a17c8aa9ed25c2e4a48f6beb14}{kLargeBanner}};}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00467\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a138ac66fd9dce892a7d90af61ac71415}{kLeaderboard}};}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00471\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_adbeb9d4ffd402bc5eaff758cefb3c53a}{kMediumRectangle}};}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00477\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_ad5d877505d4a3e62e699a5ff1a1cda27}{AdSize}}(uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}},\ uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a058997a76a84bd0d0f179fb5ba16d6db}{height}});}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00489\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a4181668061ad12f251746387cd4cf91d}{GetLandscapeAnchoredAdaptiveBannerAdSize}}(uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}});}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00501\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a501adaa23d1cd8fe5ce133f1e6984b0b}{GetPortraitAnchoredAdaptiveBannerAdSize}}(uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}});}
+\DoxyCodeLine{00502\ }
+\DoxyCodeLine{00513\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a9d341beeb830c739d1fabbda39661f17}{GetCurrentOrientationAnchoredAdaptiveBannerAdSize}}(}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}});}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00530\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_ad725bdbc93c0403f013951331a0ddfdb}{GetInlineAdaptiveBannerAdSize}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}},\ \textcolor{keywordtype}{int}\ max\_height);}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00544\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a3510c1094e1639b863f362c67ed2b711}{GetLandscapeInlineAdaptiveBannerAdSize}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}});}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00558\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a9a714b6dd78bdd4e614c01dd8aa8a08a}{GetPortraitInlineAdaptiveBannerAdSize}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}});}
+\DoxyCodeLine{00559\ }
+\DoxyCodeLine{00572\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_ac57f90839d12e3b1d6987aaaf0eb56d7}{GetCurrentOrientationInlineAdaptiveBannerAdSize}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}});}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00577\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a468d050d5280e0ea0f6061d669789546}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\&\ rhs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00578\ }
+\DoxyCodeLine{00582\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aad66334df7554ccde3bd56e4435b54a9}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\&\ rhs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00586\ \ \ uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ width\_;\ \}}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00590\ \ \ uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a058997a76a84bd0d0f179fb5ba16d6db}{height}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ height\_;\ \}}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00593\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{Orientation}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a7f287d17f44ae7578a985d56effce56d}{orientation}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ orientation\_;\ \}}
+\DoxyCodeLine{00594\ }
+\DoxyCodeLine{00596\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}{Type}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_af541feae35ca0d079d6fb459c515d95e}{type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type\_;\ \}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00599\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }firebase::gma::internal::AdViewInternal;}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00602\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\ GetAnchoredAdaptiveBannerAdSize(uint32\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a2b055dcbd0229e425e84bffc058d1121}{width}},}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{Orientation}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a7f287d17f44ae7578a985d56effce56d}{orientation}});}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00606\ \ \ \textcolor{keywordtype}{bool}\ is\_equal(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{AdSize}}\&\ ad\_size)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00609\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_a1290f4ae53826584c2fa7588a791cf9b}{Orientation}}\ orientation\_;}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00612\ \ \ uint32\_t\ width\_;}
+\DoxyCodeLine{00613\ }
+\DoxyCodeLine{00615\ \ \ uint32\_t\ height\_;}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00618\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size_aaa8492e08dcaee1e52bc861ff9988dca}{Type}}\ type\_;}
+\DoxyCodeLine{00619\ \};}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00622\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{AdRequest}}\ \{}
+\DoxyCodeLine{00623\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00625\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_af3547b7db4bf5fdf22b0c373aea5efff}{AdRequest}}();}
+\DoxyCodeLine{00626\ }
+\DoxyCodeLine{00635\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_aeff46a25d8e0dea069e6dbd47b2bd341}{AdRequest}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}{content\_url}});}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{\string~AdRequest}}();}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00643\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}{content\_url}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ content\_url\_;\ \}}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00647\ \ \ \textcolor{keyword}{const}\ std::map<std::string,\ std::map<std::string,\ std::string>\ >\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a6ab4d066477a2a63aecbb73808cbcf78}{extras}}()\textcolor{keyword}{}}
+\DoxyCodeLine{00648\ \textcolor{keyword}{\ \ \ \ \ \ const\ }\{}
+\DoxyCodeLine{00649\ \ \ \ \ \textcolor{keywordflow}{return}\ extras\_;}
+\DoxyCodeLine{00650\ \ \ \}}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00654\ \ \ \textcolor{keyword}{const}\ std::unordered\_set<std::string>\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a1d1fc602efd3f26385b199224ead13cd}{keywords}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ keywords\_;\ \}}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00658\ \ \ \textcolor{keyword}{const}\ std::unordered\_set<std::string>\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a2128472033ccb615e3fa252dd8b41a69}{neighboring\_content\_urls}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00659\ \ \ \ \ \textcolor{keywordflow}{return}\ neighboring\_content\_urls\_;}
+\DoxyCodeLine{00660\ \ \ \}}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00672\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a8c1b8d993e187b5cff8406c387d29939}{add\_extra}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ adapter\_class\_name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ extra\_key,}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ extra\_value);}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00680\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade836aed5a4e0b41dec5b44dab2557ea}{add\_keyword}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ keyword);}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00688\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a7e9dbe28d7748d17448ad875008726c6}{set\_content\_url}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_ade75610d5718e33b2da05160924ed36d}{content\_url}});}
+\DoxyCodeLine{00689\ }
+\DoxyCodeLine{00699\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_aeb0010c4c4984d56f300c2f6f2646472}{add\_neighboring\_content\_urls}}(}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request_a2128472033ccb615e3fa252dd8b41a69}{neighboring\_content\_urls}});}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00703\ \ \ std::string\ content\_url\_;}
+\DoxyCodeLine{00704\ \ \ std::map<std::string,\ std::map<std::string,\ std::string>\ >\ extras\_;}
+\DoxyCodeLine{00705\ \ \ std::unordered\_set<std::string>\ keywords\_;}
+\DoxyCodeLine{00706\ \ \ std::unordered\_set<std::string>\ neighboring\_content\_urls\_;}
+\DoxyCodeLine{00707\ \};}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00710\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward}{AdReward}}\ \{}
+\DoxyCodeLine{00711\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00713\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_afe5565b61d17a486b251261e637ec21a}{AdReward}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_a947b5949d21a9e10f6c21306b2d2810c}{type}},\ int64\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_ae207bbea03dba544ad0f55d14c704510}{amount}})}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ :\ amount\_(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_ae207bbea03dba544ad0f55d14c704510}{amount}}),\ type\_(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_a947b5949d21a9e10f6c21306b2d2810c}{type}})\ \{\}}
+\DoxyCodeLine{00715\ }
+\DoxyCodeLine{00717\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_ae207bbea03dba544ad0f55d14c704510}{amount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ amount\_;\ \}}
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00720\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward_a947b5949d21a9e10f6c21306b2d2810c}{type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ type\_;\ \}}
+\DoxyCodeLine{00721\ }
+\DoxyCodeLine{00722\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00723\ \ \ \textcolor{keyword}{const}\ int64\_t\ amount\_;}
+\DoxyCodeLine{00724\ \ \ \textcolor{keyword}{const}\ std::string\ type\_;}
+\DoxyCodeLine{00725\ \};}
+\DoxyCodeLine{00726\ }
+\DoxyCodeLine{00728\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value}{AdValue}}\ \{}
+\DoxyCodeLine{00729\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00731\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{PrecisionType}}\ \{}
+\DoxyCodeLine{00733\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3a8679de42c2ea6f9e7a4cd6cfa620b36d}{kAdValuePrecisionUnknown}}\ =\ 0,}
+\DoxyCodeLine{00735\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3ae2f618e55fec703f67dd951f752981db}{kAdValuePrecisionEstimated}},}
+\DoxyCodeLine{00737\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3a40b071491590e2bdd32f46d84366e2ca}{kAdValuePrecisionPublisherProvided}}\ =\ 2,}
+\DoxyCodeLine{00739\ \ \ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3ab45bb6e6588b185181b5c53dc41db2fc}{kAdValuePrecisionPrecise}}\ =\ 3}
+\DoxyCodeLine{00740\ \ \ \};}
+\DoxyCodeLine{00741\ }
+\DoxyCodeLine{00743\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a789e06266ee31e321d3a8f54956577c5}{AdValue}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_aa56618706863a52324055b4349f9592c}{currency\_code}},\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{PrecisionType}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}{precision\_type}},}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23}{value\_micros}})}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ :\ currency\_code\_(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_aa56618706863a52324055b4349f9592c}{currency\_code}}),}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ precision\_type\_(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}{precision\_type}}),}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ value\_micros\_(\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23}{value\_micros}})\ \{\}}
+\DoxyCodeLine{00748\ }
+\DoxyCodeLine{00750\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_aa56618706863a52324055b4349f9592c}{currency\_code}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ currency\_code\_;\ \}}
+\DoxyCodeLine{00751\ }
+\DoxyCodeLine{00753\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{PrecisionType}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a234e7faf213d470875b7358017782f35}{precision\_type}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ precision\_type\_;\ \}}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00757\ \ \ int64\_t\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_ac84954c240f311bdcc03c46044fbcf23}{value\_micros}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value\_micros\_;\ \}}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00760\ \ \ \textcolor{keyword}{const}\ std::string\ currency\_code\_;}
+\DoxyCodeLine{00761\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value_a7301e2b32526050dc930f6d5bde08eb3}{PrecisionType}}\ precision\_type\_;}
+\DoxyCodeLine{00762\ \ \ \textcolor{keyword}{const}\ int64\_t\ value\_micros\_;}
+\DoxyCodeLine{00763\ \};}
+\DoxyCodeLine{00764\ }
+\DoxyCodeLine{00767\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{FullScreenContentListener}}\ \{}
+\DoxyCodeLine{00768\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00769\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{\string~FullScreenContentListener}}();}
+\DoxyCodeLine{00770\ }
+\DoxyCodeLine{00772\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener_a168f000bd84a0f9400e43b01860ce804}{OnAdClicked}}()\ \{\}}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00775\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener_a17da8203476b7316f35ae588bc2663c5}{OnAdDismissedFullScreenContent}}()\ \{\}}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00781\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener_af5524228ad9f16df0aa7a8cd794beef6}{OnAdFailedToShowFullScreenContent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_error}{AdError}}\&\ ad\_error)\ \{\}}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00784\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener_af8dd70af758f246622fdfaec7d7aa6fa}{OnAdImpression}}()\ \{\}}
+\DoxyCodeLine{00785\ }
+\DoxyCodeLine{00787\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener_a4b3cbb3207dd53c46603c25d911346e9}{OnAdShowedFullScreenContent}}()\ \{\}}
+\DoxyCodeLine{00788\ \};}
+\DoxyCodeLine{00789\ }
+\DoxyCodeLine{00791\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{PaidEventListener}}\ \{}
+\DoxyCodeLine{00792\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00793\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{\string~PaidEventListener}}();}
+\DoxyCodeLine{00794\ }
+\DoxyCodeLine{00796\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener_ab1605eef710417dff17d3f502d4108c9}{OnPaidEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_value}{AdValue}}\&\ value)\ \{\}}
+\DoxyCodeLine{00797\ \};}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00801\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration}{RequestConfiguration}}\ \{}
+\DoxyCodeLine{00804\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}{MaxAdContentRating}}\ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a54e05f425e43bd6ddf884b6e9fa919f4}{kMaxAdContentRatingUnspecified}}\ =\ -\/1,}
+\DoxyCodeLine{00807\ }
+\DoxyCodeLine{00809\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a0c2944bca865f41d233496ea5c3d0105}{kMaxAdContentRatingG}},}
+\DoxyCodeLine{00810\ }
+\DoxyCodeLine{00812\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61aee7541d3afc7b03ead0fc5ec5d1bd4dc}{kMaxAdContentRatingMA}},}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00815\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a5e24c9ab4d5cd9b8a57e914fe9b1e1d0}{kMaxAdContentRatingPG}},}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00818\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61a9057701879dcaa6d0752421b7e95cc23}{kMaxAdContentRatingT}}}
+\DoxyCodeLine{00819\ \ \ \};}
+\DoxyCodeLine{00820\ }
+\DoxyCodeLine{00825\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}{TagForChildDirectedTreatment}}\ \{}
+\DoxyCodeLine{00828\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a882437101730928b6dd950c696776e36}{kChildDirectedTreatmentUnspecified}}\ =\ -\/1,}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00832\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50ad0202ab89ad55f6b300bd12ca81f0030}{kChildDirectedTreatmentFalse}},}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00836\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50a0426a315b1c06acdb6d492ae46e8a101}{kChildDirectedTreatmentTrue}}}
+\DoxyCodeLine{00837\ \ \ \};}
+\DoxyCodeLine{00838\ }
+\DoxyCodeLine{00842\ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}{TagForUnderAgeOfConsent}}\ \{}
+\DoxyCodeLine{00846\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200aaca4f94a4790e0250786cf25d334db17}{kUnderAgeOfConsentUnspecified}}\ =\ -\/1,}
+\DoxyCodeLine{00847\ }
+\DoxyCodeLine{00851\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200adda683ae51844dd880f3b0cf42e5ef70}{kUnderAgeOfConsentFalse}},}
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00856\ \ \ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200a52b7925117145843b580d29739c654a4}{kUnderAgeOfConsentTrue}}}
+\DoxyCodeLine{00857\ \ \ \};}
+\DoxyCodeLine{00858\ }
+\DoxyCodeLine{00861\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a983586afe4b8e9180858f147e9e8fc61}{MaxAdContentRating}}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a3eaf00f4f8ba0aa1208e40276a1bd4a2}{max\_ad\_content\_rating}};}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00891\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_af443e316d761b48b3a011fc1b0969c50}{TagForChildDirectedTreatment}}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a886267aa5db747c816f8441c53179195}{tag\_for\_child\_directed\_treatment}};}
+\DoxyCodeLine{00892\ }
+\DoxyCodeLine{00920\ \ \ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_a0da2ae73e7c75d8008b3de8a6d05b200}{TagForUnderAgeOfConsent}}\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_ae900aeac5dbacbbba0247870ed42a795}{tag\_for\_under\_age\_of\_consent}};}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00924\ \ \ std::vector<std::string>\ \mbox{\hyperlink{structfirebase_1_1gma_1_1_request_configuration_ab6b956eed5680d685df7267ccefe89bd}{test\_device\_ids}};}
+\DoxyCodeLine{00925\ \};}
+\DoxyCodeLine{00926\ }
+\DoxyCodeLine{00928\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_user_earned_reward_listener}{UserEarnedRewardListener}}\ \{}
+\DoxyCodeLine{00929\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00930\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_user_earned_reward_listener}{\string~UserEarnedRewardListener}}();}
+\DoxyCodeLine{00935\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_user_earned_reward_listener_a7f96cabdc5dacfd0d2f0b202a66c7b57}{OnUserEarnedReward}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_reward}{AdReward}}\&\ reward)\ \{\}}
+\DoxyCodeLine{00936\ \};}
+\DoxyCodeLine{00937\ }
+\DoxyCodeLine{00938\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00939\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00940\ }
+\DoxyCodeLine{00941\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_TYPES\_H\_}}
+
+\end{DoxyCode}

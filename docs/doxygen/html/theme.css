@@ -1,0 +1,75 @@
+html.dark-mode {
+  --primary-color: #00da89;
+  --primary-dark-color: #008a57;
+  --primary-light-color: #87eec8;
+
+  --page-background-color: #02051f;
+  --page-foreground-color: #bfc8d5;
+  --page-secondary-foreground-color: #9aa5ce;
+  --separator-color: #1e2b3b;
+  --side-nav-background: #02051f;
+
+  --code-background: #131b2f;
+  --code-foreground: #79c5e3;
+
+  --tablehead-background: #131b2f;
+
+  --blockquote-background: #414868;
+  --blockquote-foreground: #73daca;
+
+  --warning-color: #e0af68;
+  --warning-color-dark: #ff9e64;
+  --warning-color-darker: #f7768e;
+  --bug-color: #f7768e;
+
+  --fragment-background: #131b2f;
+  --fragment-foreground: #a1a6be;
+  --fragment-keyword: #79c5e3;
+  --fragment-keywordtype: #c8626a;
+  --fragment-keywordflow: #ac82cb;
+  --fragment-token: #a0a5bd;
+  --fragment-comment: #676f93;
+  --fragment-link: #9be441;
+  --fragment-preprocessor: #c794e6;
+  --fragment-linenumber-color: #a1a6be;
+  --fragment-linenumber-background: #131b2f;
+  --fragment-linenumber-border: transparent;
+}
+
+html.light-mode {
+  --primary-color: #00da89;
+  --primary-dark-color: #008a57;
+  --primary-light-color: #87eec8;
+
+  --page-background-color: #ffffff;
+  --page-foreground-color: #0e1e2c;
+  --page-secondary-foreground-color: #f1effe;
+  --separator-color: #dee7ee;
+  --side-nav-background: #ffffff;
+
+  --code-background: #f8fafc;
+  --code-foreground: #6183b5;
+
+  --tablehead-background: #f8fafc;
+
+  --blockquote-background: #414868;
+  --blockquote-foreground: #73daca;
+
+  --warning-color: #e0af68;
+  --warning-color-dark: #ff9e64;
+  --warning-color-darker: #f7768e;
+  --bug-color: #f7768e;
+
+  --fragment-background: #f8fafc;
+  --fragment-foreground: #a0b1b9;
+  --fragment-keyword: #6183b5;
+  --fragment-keywordtype: #e63b35;
+  --fragment-keywordflow: #9d46d5;
+  --fragment-token: #a0a5bd;
+  --fragment-comment: #90a4ad;
+  --fragment-link: #37adb5;
+  --fragment-preprocessor: #9d46d5;
+  --fragment-linenumber-color: #a0b1b9;
+  --fragment-linenumber-background: #f8fafc;
+  --fragment-linenumber-border: transparent;
+}

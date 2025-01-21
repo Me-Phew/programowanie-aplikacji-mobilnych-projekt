@@ -1,0 +1,52 @@
+\doxysection{flutter\+::Method\+Codec\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_method_codec}{}\label{classflutter_1_1_method_codec}\index{flutter::MethodCodec$<$ T $>$@{flutter::MethodCodec$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a425e8121b027c9b979d182137f56ca85}\label{classflutter_1_1_method_codec_a425e8121b027c9b979d182137f56ca85} 
+{\bfseries Method\+Codec} (\mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}}$<$ T $>$ const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a90987172e464a380c2334df5ad5d6165}\label{classflutter_1_1_method_codec_a90987172e464a380c2334df5ad5d6165} 
+\mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}}$<$ T $>$ const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a07b9a629084ec05c02fee3c355ecb72b}\label{classflutter_1_1_method_codec_a07b9a629084ec05c02fee3c355ecb72b} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ T $>$ $>$ {\bfseries Decode\+Method\+Call} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}message, size\+\_\+t message\+\_\+size) const
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a5393dc1bdbdf16ce94aa452c0bcf077d}\label{classflutter_1_1_method_codec_a5393dc1bdbdf16ce94aa452c0bcf077d} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ T $>$ $>$ {\bfseries Decode\+Method\+Call} (const std\+::vector$<$ uint8\+\_\+t $>$ \&message) const
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a74e8ea9e49f7cbd57821e355aa0a5789}\label{classflutter_1_1_method_codec_a74e8ea9e49f7cbd57821e355aa0a5789} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Method\+Call} (const \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ T $>$ \&method\+\_\+call) const
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a988793a3b73f7ce91f52aa8fe00532b8}\label{classflutter_1_1_method_codec_a988793a3b73f7ce91f52aa8fe00532b8} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Success\+Envelope} (const T \texorpdfstring{$\ast$}{*}result=nullptr) const
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a5bc460f210eb71d2c85575b250d708f2}\label{classflutter_1_1_method_codec_a5bc460f210eb71d2c85575b250d708f2} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Error\+Envelope} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message="{}"{}, const T \texorpdfstring{$\ast$}{*}error\+\_\+details=nullptr) const
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a5070d7d25cfdeb533ffc4d4c8a893439}\label{classflutter_1_1_method_codec_a5070d7d25cfdeb533ffc4d4c8a893439} 
+bool {\bfseries Decode\+And\+Process\+Response\+Envelope} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}response, size\+\_\+t response\+\_\+size, \mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}}$<$ T $>$ \texorpdfstring{$\ast$}{*}result) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_method_codec_ac7cd25177968660eab4394e26eef09bc}\label{classflutter_1_1_method_codec_ac7cd25177968660eab4394e26eef09bc} 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ T $>$ $>$ {\bfseries Decode\+Method\+Call\+Internal} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}message, size\+\_\+t message\+\_\+size) const =0
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a2dc549711683854d595f222365bf5ddb}\label{classflutter_1_1_method_codec_a2dc549711683854d595f222365bf5ddb} 
+virtual std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Method\+Call\+Internal} (const \mbox{\hyperlink{classflutter_1_1_method_call}{Method\+Call}}$<$ T $>$ \&method\+\_\+call) const =0
+\item 
+\Hypertarget{classflutter_1_1_method_codec_abbbacb7bd8900002b0c6ff9cc9ad9c58}\label{classflutter_1_1_method_codec_abbbacb7bd8900002b0c6ff9cc9ad9c58} 
+virtual std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Success\+Envelope\+Internal} (const T \texorpdfstring{$\ast$}{*}result) const =0
+\item 
+\Hypertarget{classflutter_1_1_method_codec_aad16fd164c41eeb6bc537cb0b158b9d7}\label{classflutter_1_1_method_codec_aad16fd164c41eeb6bc537cb0b158b9d7} 
+virtual std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Error\+Envelope\+Internal} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \texorpdfstring{$\ast$}{*}error\+\_\+details) const =0
+\item 
+\Hypertarget{classflutter_1_1_method_codec_a06d0d0bf1d73492a89e09c584eabec64}\label{classflutter_1_1_method_codec_a06d0d0bf1d73492a89e09c584eabec64} 
+virtual bool {\bfseries Decode\+And\+Process\+Response\+Envelope\+Internal} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}response, size\+\_\+t response\+\_\+size, \mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}}$<$ T $>$ \texorpdfstring{$\ast$}{*}result) const =0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/method\+\_\+codec.\+h\end{DoxyCompactItemize}

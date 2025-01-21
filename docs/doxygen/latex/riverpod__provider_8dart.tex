@@ -1,0 +1,207 @@
+\doxysection{lib/providers/riverpod\+\_\+provider.dart File Reference}
+\hypertarget{riverpod__provider_8dart}{}\label{riverpod__provider_8dart}\index{lib/providers/riverpod\_provider.dart@{lib/providers/riverpod\_provider.dart}}
+
+
+Plik dostarczający providerów Riverpod.  
+
+
+{\ttfamily import package;}\newline
+Include dependency graph for riverpod\+\_\+provider.\+dart\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{riverpod__provider_8dart__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_state_notifier_3_01bool_01_4}{State\+Notifier$<$ bool $>$}}
+\item 
+class \mbox{\hyperlink{class_state_notifier_3_01_locale_01_4}{State\+Notifier$<$ Locale $>$}}
+\item 
+class \mbox{\hyperlink{class_state_notifier_3_01_string_01_4}{State\+Notifier$<$ String $>$}}
+\item 
+class \mbox{\hyperlink{class_state_notifier_3_01_student_04_4}{State\+Notifier$<$ Student?$>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{riverpod__provider_8dart_a2276f26ae4897992f6da960ea88601e9}{library}}
+\item 
+final \mbox{\hyperlink{riverpod__provider_8dart_aca5e4e25697bf06cb72466ef50456a3f}{dark\+Mode\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider trybu ciemnego. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_dark_mode_notifier}{Dark\+Mode\+Notifier}} extends State\+Notifier$<$ bool $>$ \mbox{\hyperlink{riverpod__provider_8dart_aedd59d44ee1a0b449cce157d1dc965af}{locale\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider języka. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_locale_notifier}{Locale\+Notifier}} extends State\+Notifier$<$ Locale $>$ \mbox{\hyperlink{riverpod__provider_8dart_a6923ff20d0d43da25e664ac89f58b060}{selected\+Language\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider wybranego języka. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_selected_language_notifier}{Selected\+Language\+Notifier}} extends State\+Notifier$<$ String $>$ \mbox{\hyperlink{riverpod__provider_8dart_a5e6c10afb501ba623ece3e901cc2ba52}{notifications\+Enabled\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider stanu powiadomień \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_notifications_notifier}{Notifications\+Notifier}} extends State\+Notifier$<$ bool $>$ \mbox{\hyperlink{riverpod__provider_8dart_a1f0500ed2e542663c9f79f3c014297e3}{biometrics\+Enabled\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider stanu biometrii. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_biometrics_notifier}{Biometrics\+Notifier}} extends State\+Notifier$<$ bool $>$ \mbox{\hyperlink{riverpod__provider_8dart_aefca3c15938c889087c1d69d6b69a189}{student\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider stanu studenta. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_notifier}{Student\+Notifier}} extends State\+Notifier$<$ Student?$>$ \mbox{\hyperlink{riverpod__provider_8dart_a21ee8f678dcb8db84f17199d1ad57a18}{profile\+Image\+Key\+Provider}}
+\begin{DoxyCompactList}\small\item\em Provider klucza obrazu profilowego. \end{DoxyCompactList}\item 
+final \mbox{\hyperlink{riverpod__provider_8dart_aca1b9286d1021ea64e15e8ec5eb9598e}{profile\+Picture\+Provider}} = State\+Provider$<$String?$>$((ref) =$>$ null)
+\begin{DoxyCompactList}\small\item\em Provider obrazu profilowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plik dostarczający providerów Riverpod. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/01-\/11
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Marcin Dudek 
+
+Mateusz Basiaga 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{riverpod__provider_8dart_a1f0500ed2e542663c9f79f3c014297e3}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!biometricsEnabledProvider@{biometricsEnabledProvider}}
+\index{biometricsEnabledProvider@{biometricsEnabledProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{biometricsEnabledProvider}{biometricsEnabledProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_a1f0500ed2e542663c9f79f3c014297e3} 
+class \mbox{\hyperlink{class_notifications_notifier}{Notifications\+Notifier}} extends State\+Notifier$<$ bool $>$ biometrics\+Enabled\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ StateNotifierProvider<BiometricsNotifier,\ bool>((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_biometrics_notifier}{BiometricsNotifier}}();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider stanu biometrii. 
+
+Dostarcza stan włączenia biometrii. \Hypertarget{riverpod__provider_8dart_aca5e4e25697bf06cb72466ef50456a3f}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!darkModeProvider@{darkModeProvider}}
+\index{darkModeProvider@{darkModeProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{darkModeProvider}{darkModeProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_aca5e4e25697bf06cb72466ef50456a3f} 
+final dark\+Mode\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ StateNotifierProvider<DarkModeNotifier,\ bool>((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_dark_mode_notifier}{DarkModeNotifier}}();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider trybu ciemnego. 
+
+Dostarcza stan trybu ciemnego aplikacji. \Hypertarget{riverpod__provider_8dart_a2276f26ae4897992f6da960ea88601e9}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!library@{library}}
+\index{library@{library}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{library}{library}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_a2276f26ae4897992f6da960ea88601e9} 
+library}
+
+\Hypertarget{riverpod__provider_8dart_aedd59d44ee1a0b449cce157d1dc965af}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!localeProvider@{localeProvider}}
+\index{localeProvider@{localeProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{localeProvider}{localeProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_aedd59d44ee1a0b449cce157d1dc965af} 
+class \mbox{\hyperlink{class_dark_mode_notifier}{Dark\+Mode\+Notifier}} extends State\+Notifier$<$ bool $>$ locale\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ StateNotifierProvider<LocaleNotifier,\ Locale>((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_locale_notifier}{LocaleNotifier}}();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider języka. 
+
+Dostarcza stan wybranego języka aplikacji. \Hypertarget{riverpod__provider_8dart_a5e6c10afb501ba623ece3e901cc2ba52}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!notificationsEnabledProvider@{notificationsEnabledProvider}}
+\index{notificationsEnabledProvider@{notificationsEnabledProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{notificationsEnabledProvider}{notificationsEnabledProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_a5e6c10afb501ba623ece3e901cc2ba52} 
+class \mbox{\hyperlink{class_selected_language_notifier}{Selected\+Language\+Notifier}} extends State\+Notifier$<$ String $>$ notifications\+Enabled\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ StateNotifierProvider<NotificationsNotifier,\ bool>((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_notifications_notifier}{NotificationsNotifier}}();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider stanu powiadomień 
+
+Dostarcza stan włączenia powiadomień. \Hypertarget{riverpod__provider_8dart_a21ee8f678dcb8db84f17199d1ad57a18}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!profileImageKeyProvider@{profileImageKeyProvider}}
+\index{profileImageKeyProvider@{profileImageKeyProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{profileImageKeyProvider}{profileImageKeyProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_a21ee8f678dcb8db84f17199d1ad57a18} 
+class \mbox{\hyperlink{class_student_notifier}{Student\+Notifier}} extends State\+Notifier$<$ Student?$>$ profile\+Image\+Key\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ StateProvider.autoDispose<ValueKey>((ref)\ =>\ \textcolor{keyword}{const}\ ValueKey(0))}
+
+\end{DoxyCode}
+
+
+Provider klucza obrazu profilowego. 
+
+Dostarcza klucz obrazu profilowego. \Hypertarget{riverpod__provider_8dart_aca1b9286d1021ea64e15e8ec5eb9598e}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!profilePictureProvider@{profilePictureProvider}}
+\index{profilePictureProvider@{profilePictureProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{profilePictureProvider}{profilePictureProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_aca1b9286d1021ea64e15e8ec5eb9598e} 
+final profile\+Picture\+Provider = State\+Provider$<$String?$>$((ref) =$>$ null)}
+
+
+
+Provider obrazu profilowego. 
+
+Dostarcza URL obrazu profilowego. \Hypertarget{riverpod__provider_8dart_a6923ff20d0d43da25e664ac89f58b060}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!selectedLanguageProvider@{selectedLanguageProvider}}
+\index{selectedLanguageProvider@{selectedLanguageProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{selectedLanguageProvider}{selectedLanguageProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_a6923ff20d0d43da25e664ac89f58b060} 
+class \mbox{\hyperlink{class_locale_notifier}{Locale\+Notifier}} extends State\+Notifier$<$ Locale $>$ selected\+Language\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ StateNotifierProvider<SelectedLanguageNotifier,\ String>((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_selected_language_notifier}{SelectedLanguageNotifier}}();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider wybranego języka. 
+
+Dostarcza stan wybranego języka aplikacji. \Hypertarget{riverpod__provider_8dart_aefca3c15938c889087c1d69d6b69a189}\index{riverpod\_provider.dart@{riverpod\_provider.dart}!studentProvider@{studentProvider}}
+\index{studentProvider@{studentProvider}!riverpod\_provider.dart@{riverpod\_provider.dart}}
+\doxysubsubsection{\texorpdfstring{studentProvider}{studentProvider}}
+{\footnotesize\ttfamily \label{riverpod__provider_8dart_aefca3c15938c889087c1d69d6b69a189} 
+class \mbox{\hyperlink{class_biometrics_notifier}{Biometrics\+Notifier}} extends State\+Notifier$<$ bool $>$ student\+Provider}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ StateNotifierProvider<StudentNotifier,\ Student?>((ref)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_notifier}{StudentNotifier}}();}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+
+Provider stanu studenta. 
+
+Dostarcza stan zalogowanego studenta. 

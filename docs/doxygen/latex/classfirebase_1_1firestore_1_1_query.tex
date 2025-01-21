@@ -1,0 +1,1058 @@
+\doxysection{firebase\+::firestore\+::Query Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_query}{}\label{classfirebase_1_1firestore_1_1_query}\index{firebase::firestore::Query@{firebase::firestore::Query}}
+
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} which you can read or listen to.  
+
+
+
+
+{\ttfamily \#include $<$query.\+h$>$}
+
+
+
+Inheritance diagram for firebase\+::firestore\+::Query\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classfirebase_1_1firestore_1_1_query__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}} \{ {\bfseries k\+Ascending}
+, {\bfseries k\+Descending}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a4f60a0201265ead1826025e27f759ef6}{Query}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a5ec9f17aec1c45cc2fd44e6f2fe89ea4}{Query}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_acf8a6439390db42df8a1b425074107a3}{Query}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a59b4bb456a9530e21b4e059fa0b60451}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ab059c12989ec55bbd571e59b5bf9a5c7}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a76e86914e4fe0e5c652ea4951e39a488}{firestore}} () const
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance associated with this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae24f6695aefc660d725069a628e885ec}{firestore}} ()
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance associated with this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aa2ca61a87427e6be034981deed981a3e}{Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns a query that counts the documents in the result set of this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a2422d82825534708c902f074672ea6c3}{Where}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&filter) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aed0d78e7ea7ec0bb4b124613d2f33815}{Where\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be equal to the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a8394443cb068581c85d7c3c4cd254042}{Where\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be equal to the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}{Where\+Not\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value does not equal the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aba6bd8a35ab9165f59d8c2df022744cc}{Where\+Not\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value does not equal the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ab863b5c3289369ffbef7ef7d490e7d0d}{Where\+Less\+Than}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9ed3c5716ee0c278eb91708897ae2c38}{Where\+Less\+Than}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a8b1256752b7f85389053a0e0ffa71f80}{Where\+Less\+Than\+Or\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than or equal to the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a002b0840ad9f81bf73547d4a15ee1aa2}{Where\+Less\+Than\+Or\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than or equal to the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a061e410f8aac5357ef6afb5f2cddf30e}{Where\+Greater\+Than}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae97619e07ae72bf007e658c611aadcc1}{Where\+Greater\+Than}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ac346e354f6cda65c42745325f84373f7}{Where\+Greater\+Than\+Or\+Equal\+To}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than or equal to the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a08b33afa5924a0460e8b01cca1114748}{Where\+Greater\+Than\+Or\+Equal\+To}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than or equal to the specified value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains}} (const std\+::string \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain the provided value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ad25cec571e18723419cb410378340f4d}{Where\+Array\+Contains}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&value) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain the provided value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any}} (const std\+::string \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain at least one value from the provided list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ab386a566c5f03ed8b1d071c1c95b6ef7}{Where\+Array\+Contains\+Any}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain at least one value from the provided list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In}} (const std\+::string \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must equal one of the values from the provided list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9a4c1953a6ba6e585daa36d3da5952b4}{Where\+In}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must equal one of the values from the provided list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}{Where\+Not\+In}} (const std\+::string \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must not equal any of the values from the provided list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a79e93ddbeb5275f6c11df8d94684668e}{Where\+Not\+In}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must not equal any of the values from the provided list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a7321502d5a84c6efafd83f8d9ba23160}{Order\+By}} (const std\+::string \&field, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}} direction=Direction\+::k\+Ascending) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that\textquotesingle{}s additionally sorted by the specified field. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_adff3a2fdb63158e545faf776fa2aec43}{Order\+By}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&field, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}} direction=Direction\+::k\+Ascending) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that\textquotesingle{}s additionally sorted by the specified field. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aebb07a6e5bb247c0902195901ab37bc9}{Limit}} (int32\+\_\+t limit) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that only returns the first matching documents up to the specified number. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_acd246d60423f120675ef86346bc39055}{Limit\+To\+Last}} (int32\+\_\+t limit) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that only returns the last matching documents up to the specified number. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a941679a11fe1f0c8dfcc5734ac4f9765}{Start\+At}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&snapshot) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts at the provided document (inclusive). The starting position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a3a8703633c6c9d0a2c8378f646707ce8}{Start\+At}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts at the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a663e772a791d4bc627640248aa7f2b3e}{Start\+After}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&snapshot) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts after the provided document (inclusive). The starting position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a8e1665b62ccc4da8500689b7d520f1ea}{Start\+After}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts after the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a7d337660fab8bf97ea5fd43eaf790f85}{End\+Before}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&snapshot) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends before the provided document (inclusive). The end position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_aaea523c523f3e6f7be9f2c1c115775a1}{End\+Before}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends before the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9856075dac1cde759cb8edbaf7454b75}{End\+At}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&snapshot) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends at the provided document (inclusive). The end position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ad39825878f57cc74ae4e290513aa661f}{End\+At}} (const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&values) const
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends at the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}{Get}} (\mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66}{Source}} source=\mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a6867faeaa475fda467e48267db2bb8a8}{Source\+::k\+Default}}) const
+\begin{DoxyCompactList}\small\item\em Executes the query and returns the results as a \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae0b372205de96efe45992d48d6f8aaef}{Add\+Snapshot\+Listener}} (std\+::function$<$ void(const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}, const std\+::string \&)$>$ callback)
+\begin{DoxyCompactList}\small\item\em Starts listening to the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} events referenced by this query. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a985be080cd45fb2300497c3a5061dad7}{Add\+Snapshot\+Listener}} (\mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{Metadata\+Changes}} metadata\+\_\+changes, std\+::function$<$ void(const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}, const std\+::string \&)$>$ callback)
+\begin{DoxyCompactList}\small\item\em Starts listening to the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} events referenced by this query. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a9e6b0fb2d4a4492d38a51932f834f666}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} could be the result of\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_query_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_af6cb3d6b6c0e0eca68e1f4cbc42db8bb}\label{classfirebase_1_1firestore_1_1_query_af6cb3d6b6c0e0eca68e1f4cbc42db8bb} 
+class {\bfseries Query\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a8f70753fd7a38842eb1451312d51025e}\label{classfirebase_1_1firestore_1_1_query_a8f70753fd7a38842eb1451312d51025e} 
+class {\bfseries Query\+Snapshot\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_query_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_query_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a0508c3e99180d675a2f94a191cd2a11c}\label{classfirebase_1_1firestore_1_1_query_a0508c3e99180d675a2f94a191cd2a11c} 
+class {\bfseries Collection\+Reference}
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_a55fd281ad6fb634804f15ae44f0868a3}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&rhs)
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a3d6062d431a2bd0d50a86d031bfcba23}\label{classfirebase_1_1firestore_1_1_query_a3d6062d431a2bd0d50a86d031bfcba23} 
+size\+\_\+t {\bfseries Query\+Hash} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&query)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} which you can read or listen to. 
+
+You can also construct refined \doxylink{classfirebase_1_1firestore_1_1_query}{Query} objects by adding filters and ordering.
+
+You cannot construct a valid \doxylink{classfirebase_1_1firestore_1_1_query}{Query} directly; use \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} methods that return a \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instead.
+
+\begin{DoxyNote}{Note}
+\doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} classes are not meant to be subclassed except for use in test mocks. Subclassing is not supported in production code and new SDK releases may break code that does so. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}\index{firebase::firestore::Query@{firebase::firestore::Query}!Direction@{Direction}}
+\index{Direction@{Direction}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a} 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{firebase\+::firestore\+::\+Query\+::\+Direction}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+An enum for the direction of a sort. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a4f60a0201265ead1826025e27f759ef6}\index{firebase::firestore::Query@{firebase::firestore::Query}!Query@{Query}}
+\index{Query@{Query}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a4f60a0201265ead1826025e27f759ef6} 
+firebase\+::firestore\+::\+Query\+::\+Query (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_query}{Query} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_query_a5ec9f17aec1c45cc2fd44e6f2fe89ea4}\index{firebase::firestore::Query@{firebase::firestore::Query}!Query@{Query}}
+\index{Query@{Query}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a5ec9f17aec1c45cc2fd44e6f2fe89ea4} 
+firebase\+::firestore\+::\+Query\+::\+Query (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is immutable and can be efficiently copied.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_acf8a6439390db42df8a1b425074107a3}\index{firebase::firestore::Query@{firebase::firestore::Query}!Query@{Query}}
+\index{Query@{Query}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Query()}{Query()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_acf8a6439390db42df8a1b425074107a3} 
+firebase\+::firestore\+::\+Query\+::\+Query (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a985be080cd45fb2300497c3a5061dad7}\index{firebase::firestore::Query@{firebase::firestore::Query}!AddSnapshotListener@{AddSnapshotListener}}
+\index{AddSnapshotListener@{AddSnapshotListener}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{AddSnapshotListener()}{AddSnapshotListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a985be080cd45fb2300497c3a5061dad7} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} firebase\+::firestore\+::\+Query\+::\+Add\+Snapshot\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1firestore_a9f0a586c44417cd24932561719c97f54}{Metadata\+Changes}}}]{metadata\+\_\+changes}{, }\item[{std\+::function$<$ void(const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}, const std\+::string \&)$>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts listening to the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} events referenced by this query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em metadata\+\_\+changes} & Indicates whether metadata-\/only changes (that is, only \doxylink{classfirebase_1_1firestore_1_1_document_snapshot_a5210e6e363d2814cecdf262cc7d85462}{Document\+Snapshot\+::metadata()} changed) should trigger snapshot events. \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback} & The std\+::function to call. When this function is called, snapshot value is valid if and only if error is \doxylink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4543bbd1182c0fba4a8a537de76b3a67}{Error\+::k\+Error\+Ok}. The std\+::string is an error message; the value may be empty if an error message is not available.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A registration object that can be used to remove the listener. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ae0b372205de96efe45992d48d6f8aaef}\index{firebase::firestore::Query@{firebase::firestore::Query}!AddSnapshotListener@{AddSnapshotListener}}
+\index{AddSnapshotListener@{AddSnapshotListener}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{AddSnapshotListener()}{AddSnapshotListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ae0b372205de96efe45992d48d6f8aaef} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} firebase\+::firestore\+::\+Query\+::\+Add\+Snapshot\+Listener (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} \&, \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}, const std\+::string \&)$>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts listening to the \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot} events referenced by this query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em callback} & The std\+::function to call. When this function is called, snapshot value is valid if and only if error is \doxylink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4543bbd1182c0fba4a8a537de76b3a67}{Error\+::k\+Error\+Ok}. The std\+::string is an error message; the value may be empty if an error message is not available.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A registration object that can be used to remove the listener. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_aa2ca61a87427e6be034981deed981a3e}\index{firebase::firestore::Query@{firebase::firestore::Query}!Count@{Count}}
+\index{Count@{Count}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_aa2ca61a87427e6be034981deed981a3e} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_aggregate_query}{Aggregate\+Query}} firebase\+::firestore\+::\+Query\+::\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a query that counts the documents in the result set of this query. 
+
+The returned query, when executed, counts the documents in the result set of this query without actually downloading the documents.
+
+Using the returned query to count the documents is efficient because only the final count, not the documents\textquotesingle{} data, is downloaded. The returned query can count the documents in cases where the result set is prohibitively large to download entirely (thousands of documents).
+
+\begin{DoxyReturn}{Returns}
+An aggregate query that counts the documents in the result set of this query. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a9856075dac1cde759cb8edbaf7454b75}\index{firebase::firestore::Query@{firebase::firestore::Query}!EndAt@{EndAt}}
+\index{EndAt@{EndAt}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{EndAt()}{EndAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a9856075dac1cde759cb8edbaf7454b75} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+End\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends at the provided document (inclusive). The end position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & The snapshot of the document to end at.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ad39825878f57cc74ae4e290513aa661f}\index{firebase::firestore::Query@{firebase::firestore::Query}!EndAt@{EndAt}}
+\index{EndAt@{EndAt}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{EndAt()}{EndAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ad39825878f57cc74ae4e290513aa661f} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+End\+At (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends at the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The field values to end this query at, in order of the query\textquotesingle{}s order by.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a7d337660fab8bf97ea5fd43eaf790f85}\index{firebase::firestore::Query@{firebase::firestore::Query}!EndBefore@{EndBefore}}
+\index{EndBefore@{EndBefore}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{EndBefore()}{EndBefore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a7d337660fab8bf97ea5fd43eaf790f85} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+End\+Before (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends before the provided document (inclusive). The end position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & The snapshot of the document to end before.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_aaea523c523f3e6f7be9f2c1c115775a1}\index{firebase::firestore::Query@{firebase::firestore::Query}!EndBefore@{EndBefore}}
+\index{EndBefore@{EndBefore}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{EndBefore()}{EndBefore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_aaea523c523f3e6f7be9f2c1c115775a1} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+End\+Before (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that ends before the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The field values to end this query before, in order of the query\textquotesingle{}s order by.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ae24f6695aefc660d725069a628e885ec}\index{firebase::firestore::Query@{firebase::firestore::Query}!firestore@{firestore}}
+\index{firestore@{firestore}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{firestore()}{firestore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ae24f6695aefc660d725069a628e885ec} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Query\+::firestore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance associated with this query. 
+
+The pointer will remain valid indefinitely.
+
+\begin{DoxyReturn}{Returns}
+Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance that this \doxylink{classfirebase_1_1firestore_1_1_query}{Query} refers to. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a76e86914e4fe0e5c652ea4951e39a488}\index{firebase::firestore::Query@{firebase::firestore::Query}!firestore@{firestore}}
+\index{firestore@{firestore}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{firestore()}{firestore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a76e86914e4fe0e5c652ea4951e39a488} 
+virtual const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Query\+::firestore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance associated with this query. 
+
+The pointer will remain valid indefinitely.
+
+\begin{DoxyReturn}{Returns}
+Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance that this \doxylink{classfirebase_1_1firestore_1_1_query}{Query} refers to. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}\index{firebase::firestore::Query@{firebase::firestore::Query}!Get@{Get}}
+\index{Get@{Get}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}} $>$ firebase\+::firestore\+::\+Query\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66}{Source}}}]{source}{ = {\ttfamily \mbox{\hyperlink{namespacefirebase_1_1firestore_a706b13a274f8586c90167ba6073e5c66a6867faeaa475fda467e48267db2bb8a8}{Source\+::k\+Default}}}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the query and returns the results as a \doxylink{classfirebase_1_1firestore_1_1_query_snapshot}{Query\+Snapshot}. 
+
+By default, \doxylink{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}{Get()} attempts to provide up-\/to-\/date data when possible by waiting for data from the server, but it may return cached data or fail if you are offline and the server cannot be reached. This behavior can be altered via the Source parameter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source} & A value to configure the get behavior (optional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} that will be resolved with the results of the \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a9e6b0fb2d4a4492d38a51932f834f666}\index{firebase::firestore::Query@{firebase::firestore::Query}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a9e6b0fb2d4a4492d38a51932f834f666} 
+bool firebase\+::firestore\+::\+Query\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}}.
+\item Deleting your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance, which will invalidate all the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} instances associated with it.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_aebb07a6e5bb247c0902195901ab37bc9}\index{firebase::firestore::Query@{firebase::firestore::Query}!Limit@{Limit}}
+\index{Limit@{Limit}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Limit()}{Limit()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_aebb07a6e5bb247c0902195901ab37bc9} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Limit (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{limit}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that only returns the first matching documents up to the specified number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em limit} & A non-\/negative integer to specify the maximum number of items to return.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_acd246d60423f120675ef86346bc39055}\index{firebase::firestore::Query@{firebase::firestore::Query}!LimitToLast@{LimitToLast}}
+\index{LimitToLast@{LimitToLast}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{LimitToLast()}{LimitToLast()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_acd246d60423f120675ef86346bc39055} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Limit\+To\+Last (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{limit}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that only returns the last matching documents up to the specified number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em limit} & A non-\/negative integer to specify the maximum number of items to return.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a59b4bb456a9530e21b4e059fa0b60451}\index{firebase::firestore::Query@{firebase::firestore::Query}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a59b4bb456a9530e21b4e059fa0b60451} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \& firebase\+::firestore\+::\+Query\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is immutable and can be efficiently copied.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ab059c12989ec55bbd571e59b5bf9a5c7}\index{firebase::firestore::Query@{firebase::firestore::Query}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ab059c12989ec55bbd571e59b5bf9a5c7} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \& firebase\+::firestore\+::\+Query\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_adff3a2fdb63158e545faf776fa2aec43}\index{firebase::firestore::Query@{firebase::firestore::Query}!OrderBy@{OrderBy}}
+\index{OrderBy@{OrderBy}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{OrderBy()}{OrderBy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_adff3a2fdb63158e545faf776fa2aec43} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Order\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}}}]{direction}{ = {\ttfamily Direction\+:\+:kAscending}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that\textquotesingle{}s additionally sorted by the specified field. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field to sort by. \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & The direction to sort (optional). If not specified, order will be ascending.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a7321502d5a84c6efafd83f8d9ba23160}\index{firebase::firestore::Query@{firebase::firestore::Query}!OrderBy@{OrderBy}}
+\index{OrderBy@{OrderBy}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{OrderBy()}{OrderBy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a7321502d5a84c6efafd83f8d9ba23160} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Order\+By (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_query_ae07a7722ee6cede6acbb4c2ef8d8f11a}{Direction}}}]{direction}{ = {\ttfamily Direction\+:\+:kAscending}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that\textquotesingle{}s additionally sorted by the specified field. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The field to sort by. \\
+\hline
+\mbox{\texttt{ in}}  & {\em direction} & The direction to sort (optional). If not specified, order will be ascending.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a663e772a791d4bc627640248aa7f2b3e}\index{firebase::firestore::Query@{firebase::firestore::Query}!StartAfter@{StartAfter}}
+\index{StartAfter@{StartAfter}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{StartAfter()}{StartAfter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a663e772a791d4bc627640248aa7f2b3e} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Start\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts after the provided document (inclusive). The starting position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & The snapshot of the document to start after.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a8e1665b62ccc4da8500689b7d520f1ea}\index{firebase::firestore::Query@{firebase::firestore::Query}!StartAfter@{StartAfter}}
+\index{StartAfter@{StartAfter}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{StartAfter()}{StartAfter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a8e1665b62ccc4da8500689b7d520f1ea} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Start\+After (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts after the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The field values to start this query after, in order of the query\textquotesingle{}s order by.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a941679a11fe1f0c8dfcc5734ac4f9765}\index{firebase::firestore::Query@{firebase::firestore::Query}!StartAt@{StartAt}}
+\index{StartAt@{StartAt}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{StartAt()}{StartAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a941679a11fe1f0c8dfcc5734ac4f9765} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Start\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts at the provided document (inclusive). The starting position is relative to the order of the query. The document must contain all of the fields provided in the order by of this query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & The snapshot of the document to start at.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a3a8703633c6c9d0a2c8378f646707ce8}\index{firebase::firestore::Query@{firebase::firestore::Query}!StartAt@{StartAt}}
+\index{StartAt@{StartAt}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{StartAt()}{StartAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a3a8703633c6c9d0a2c8378f646707ce8} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Start\+At (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} that starts at the provided fields relative to the order of the query. The order of the field values must match the order of the order by clauses of the query. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em values} & The field values to start this query at, in order of the query\textquotesingle{}s order by.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a2422d82825534708c902f074672ea6c3}\index{firebase::firestore::Query@{firebase::firestore::Query}!Where@{Where}}
+\index{Where@{Where}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{Where()}{Where()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a2422d82825534708c902f074672ea6c3} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_filter}{Filter}} \&}]{filter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The new filter to apply to the existing query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ad25cec571e18723419cb410378340f4d}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereArrayContains@{WhereArrayContains}}
+\index{WhereArrayContains@{WhereArrayContains}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereArrayContains()}{WhereArrayContains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ad25cec571e18723419cb410378340f4d} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Array\+Contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain the provided value. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains()}} filter and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}} or {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value that must be contained in the array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereArrayContains@{WhereArrayContains}}
+\index{WhereArrayContains@{WhereArrayContains}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereArrayContains()}{WhereArrayContains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Array\+Contains (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain the provided value. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains()}} filter and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}} or {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value that must be contained in the array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ab386a566c5f03ed8b1d071c1c95b6ef7}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereArrayContainsAny@{WhereArrayContainsAny}}
+\index{WhereArrayContainsAny@{WhereArrayContainsAny}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereArrayContainsAny()}{WhereArrayContainsAny()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ab386a566c5f03ed8b1d071c1c95b6ef7} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Array\+Contains\+Any (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain at least one value from the provided list. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}} filter and it cannot be combined with{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains()}} or {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list that contains the values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereArrayContainsAny@{WhereArrayContainsAny}}
+\index{WhereArrayContainsAny@{WhereArrayContainsAny}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereArrayContainsAny()}{WhereArrayContainsAny()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Array\+Contains\+Any (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field, the value must be an array, and that the array must contain at least one value from the provided list. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}} filter and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains()}} or {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field containing an array to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list that contains the values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a8394443cb068581c85d7c3c4cd254042}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereEqualTo@{WhereEqualTo}}
+\index{WhereEqualTo@{WhereEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereEqualTo()}{WhereEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a8394443cb068581c85d7c3c4cd254042} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be equal to the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_aed0d78e7ea7ec0bb4b124613d2f33815}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereEqualTo@{WhereEqualTo}}
+\index{WhereEqualTo@{WhereEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereEqualTo()}{WhereEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_aed0d78e7ea7ec0bb4b124613d2f33815} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be equal to the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ae97619e07ae72bf007e658c611aadcc1}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereGreaterThan@{WhereGreaterThan}}
+\index{WhereGreaterThan@{WhereGreaterThan}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereGreaterThan()}{WhereGreaterThan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ae97619e07ae72bf007e658c611aadcc1} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Greater\+Than (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a061e410f8aac5357ef6afb5f2cddf30e}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereGreaterThan@{WhereGreaterThan}}
+\index{WhereGreaterThan@{WhereGreaterThan}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereGreaterThan()}{WhereGreaterThan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a061e410f8aac5357ef6afb5f2cddf30e} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Greater\+Than (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a08b33afa5924a0460e8b01cca1114748}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereGreaterThanOrEqualTo@{WhereGreaterThanOrEqualTo}}
+\index{WhereGreaterThanOrEqualTo@{WhereGreaterThanOrEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereGreaterThanOrEqualTo()}{WhereGreaterThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a08b33afa5924a0460e8b01cca1114748} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Greater\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than or equal to the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ac346e354f6cda65c42745325f84373f7}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereGreaterThanOrEqualTo@{WhereGreaterThanOrEqualTo}}
+\index{WhereGreaterThanOrEqualTo@{WhereGreaterThanOrEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereGreaterThanOrEqualTo()}{WhereGreaterThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ac346e354f6cda65c42745325f84373f7} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Greater\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be greater than or equal to the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a9a4c1953a6ba6e585daa36d3da5952b4}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereIn@{WhereIn}}
+\index{WhereIn@{WhereIn}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereIn()}{WhereIn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a9a4c1953a6ba6e585daa36d3da5952b4} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must equal one of the values from the provided list. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}} filter and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list that contains the values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereIn@{WhereIn}}
+\index{WhereIn@{WhereIn}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereIn()}{WhereIn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+In (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must equal one of the values from the provided list. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}} filter and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list that contains the values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a9ed3c5716ee0c278eb91708897ae2c38}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereLessThan@{WhereLessThan}}
+\index{WhereLessThan@{WhereLessThan}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereLessThan()}{WhereLessThan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a9ed3c5716ee0c278eb91708897ae2c38} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Less\+Than (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ab863b5c3289369ffbef7ef7d490e7d0d}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereLessThan@{WhereLessThan}}
+\index{WhereLessThan@{WhereLessThan}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereLessThan()}{WhereLessThan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ab863b5c3289369ffbef7ef7d490e7d0d} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Less\+Than (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a002b0840ad9f81bf73547d4a15ee1aa2}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereLessThanOrEqualTo@{WhereLessThanOrEqualTo}}
+\index{WhereLessThanOrEqualTo@{WhereLessThanOrEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereLessThanOrEqualTo()}{WhereLessThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a002b0840ad9f81bf73547d4a15ee1aa2} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Less\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than or equal to the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a8b1256752b7f85389053a0e0ffa71f80}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereLessThanOrEqualTo@{WhereLessThanOrEqualTo}}
+\index{WhereLessThanOrEqualTo@{WhereLessThanOrEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereLessThanOrEqualTo()}{WhereLessThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a8b1256752b7f85389053a0e0ffa71f80} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Less\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value should be less than or equal to the specified value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_aba6bd8a35ab9165f59d8c2df022744cc}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereNotEqualTo@{WhereNotEqualTo}}
+\index{WhereNotEqualTo@{WhereNotEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereNotEqualTo()}{WhereNotEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_aba6bd8a35ab9165f59d8c2df022744cc} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Not\+Equal\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value does not equal the specified value. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}{Where\+Not\+Equal\+To()}} filter, and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}{Where\+Not\+In()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereNotEqualTo@{WhereNotEqualTo}}
+\index{WhereNotEqualTo@{WhereNotEqualTo}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereNotEqualTo()}{WhereNotEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Not\+Equal\+To (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} \&}]{value}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value does not equal the specified value. 
+
+A \doxylink{classfirebase_1_1firestore_1_1_query}{Query} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}{Where\+Not\+Equal\+To()}} filter, and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}{Where\+Not\+In()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & The value for comparison.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a79e93ddbeb5275f6c11df8d94684668e}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereNotIn@{WhereNotIn}}
+\index{WhereNotIn@{WhereNotIn}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereNotIn()}{WhereNotIn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a79e93ddbeb5275f6c11df8d94684668e} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Not\+In (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_path}{Field\+Path}} \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must not equal any of the values from the provided list. 
+
+One special case is that {\ttfamily Where\+Not\+In} cannot match {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value_a2f53ca0c77dfabd8ed8bd313721f960c}{Field\+Value\+::\+Null()}} values. To query for documents where a field exists and is {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value_a2f53ca0c77dfabd8ed8bd313721f960c}{Field\+Value\+::\+Null()}}, use {\ttfamily Where\+Not\+Equal\+To}, which can handle this special case.
+
+A {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}{Where\+Not\+In()}} filter, and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains()}}, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}}, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}}, or {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}{Where\+Not\+Equal\+To()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The path of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list that contains the values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}\index{firebase::firestore::Query@{firebase::firestore::Query}!WhereNotIn@{WhereNotIn}}
+\index{WhereNotIn@{WhereNotIn}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{WhereNotIn()}{WhereNotIn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Query\+::\+Where\+Not\+In (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{field}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_field_value}{Field\+Value}} $>$ \&}]{values}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates and returns a new \doxylink{classfirebase_1_1firestore_1_1_query}{Query} with the additional filter that documents must contain the specified field and the value must not equal any of the values from the provided list. 
+
+One special case is that {\ttfamily Where\+Not\+In} cannot match {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value_a2f53ca0c77dfabd8ed8bd313721f960c}{Field\+Value\+::\+Null()}} values. To query for documents where a field exists and is {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_field_value_a2f53ca0c77dfabd8ed8bd313721f960c}{Field\+Value\+::\+Null()}}, use {\ttfamily Where\+Not\+Equal\+To}, which can handle this special case.
+
+A {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} can have only one {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a4e6000e87b97a727ecd856e7ebd03942}{Where\+Not\+In()}} filter, and it cannot be combined with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a2ae9c099afea22f5ff60221fae3a3428}{Where\+Array\+Contains()}}, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a687498e294d9c263a999b9b1ee74cc60}{Where\+Array\+Contains\+Any()}}, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_a15034513fee79a02a2200a410db0caf1}{Where\+In()}}, or {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query_ad9a50c0c66c5881dff6c514e1b81e395}{Where\+Not\+Equal\+To()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em field} & The name of the field to compare. \\
+\hline
+\mbox{\texttt{ in}}  & {\em values} & The list that contains the values to match.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_query}{Query}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_query_a55fd281ad6fb634804f15ae44f0868a3}\index{firebase::firestore::Query@{firebase::firestore::Query}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::Query@{firebase::firestore::Query}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_query_a55fd281ad6fb634804f15ae44f0868a3} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/query.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,261 @@
+\doxysection{firebase\+::firestore\+::Document\+Change Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_document_change}{}\label{classfirebase_1_1firestore_1_1_document_change}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+
+
+A \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} represents a change to the documents matching a query.  
+
+
+
+
+{\ttfamily \#include $<$document\+\_\+change.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454}{Type}} \{ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454a300b0905bab3778110ad4f255e268e64}{k\+Added}}
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454aea9bda5c5f60cbfacdd0e1427c1a8dfb}{k\+Modified}}
+, \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454a4f44be333b6269b33c50c45819e5dc82}{k\+Removed}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_a6d3683a5aee3ede7a5dc09e7e65f86b5}{Document\+Change}} ()
+\begin{DoxyCompactList}\small\item\em Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} that has to be reassigned before it can be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_aeeffacb865746b754ca6da8450bff1e4}{Document\+Change}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_a3decd36de27096650b60b8eaae37367a}{Document\+Change}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_af1a6b5decc4c157b006ac4b18c1f1ed2}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_a5199a47576d6dde57a8fcd290caaf26e}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454}{Type}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_a2f9ad2e2bfb0bde2987098ee4f287a23}{type}} () const
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_af3af27ef4fccc2cc41c17265e18e1075}{document}} () const
+\begin{DoxyCompactList}\small\item\em The document affected by this change. \end{DoxyCompactList}\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_a85e9505487293296525f23ac0cffef09}{old\+\_\+index}} () const
+\item 
+virtual std\+::size\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_abf5e4bfe1aa04814c15b987fa9ea8aef}{new\+\_\+index}} () const
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ae0777c94ada80c3d3adaf1bb5503f7c0}{is\+\_\+valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} could be the result of\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::size\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_aa28f7435efe5d3b0ce79b4c532ee9568}{npos}} = static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_document_change_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a78fe9810384af4049d4b19b00be1f646}\label{classfirebase_1_1firestore_1_1_document_change_a78fe9810384af4049d4b19b00be1f646} 
+class {\bfseries Wrapper}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_document_change_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_document_change_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\item 
+bool \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_a0f421e2b78defa31ab917b61915659b1}{operator==}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&lhs, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&rhs)
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_abaad065041221093e7f54c0447cb71ed}\label{classfirebase_1_1firestore_1_1_document_change_abaad065041221093e7f54c0447cb71ed} 
+std\+::size\+\_\+t {\bfseries Document\+Change\+Hash} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&change)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} represents a change to the documents matching a query. 
+
+\doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} contains the document affected and the type of change that occurred (added, modified, or removed).
+
+\begin{DoxyNote}{Note}
+\doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} classes are not meant to be subclassed except for use in test mocks. Subclassing is not supported in production code and new SDK releases may break code that does so. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!Type@{Type}}
+\index{Type@{Type}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454} 
+enum class \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454}{firebase\+::firestore\+::\+Document\+Change\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+An enumeration of snapshot diff types. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAdded@{kAdded}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!kAdded@{kAdded}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454a300b0905bab3778110ad4f255e268e64}\label{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454} 
+k\+Added&Indicates a new document was added to the set of documents matching the query. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kModified@{kModified}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!kModified@{kModified}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454aea9bda5c5f60cbfacdd0e1427c1a8dfb}\label{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454} 
+k\+Modified&Indicates a document within the query was modified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRemoved@{kRemoved}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!kRemoved@{kRemoved}}}\Hypertarget{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454a4f44be333b6269b33c50c45819e5dc82}\label{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454} 
+k\+Removed&Indicates a document within the query was removed (either deleted or no longer matches the query). \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a6d3683a5aee3ede7a5dc09e7e65f86b5}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!DocumentChange@{DocumentChange}}
+\index{DocumentChange@{DocumentChange}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{DocumentChange()}{DocumentChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_a6d3683a5aee3ede7a5dc09e7e65f86b5} 
+firebase\+::firestore\+::\+Document\+Change\+::\+Document\+Change (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Creates an invalid \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} that has to be reassigned before it can be used. 
+
+Calling any member function on an invalid \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} will be a no-\/op. If the function returns a value, it will return a zero, empty, or invalid value, depending on the type of the value. \Hypertarget{classfirebase_1_1firestore_1_1_document_change_aeeffacb865746b754ca6da8450bff1e4}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!DocumentChange@{DocumentChange}}
+\index{DocumentChange@{DocumentChange}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{DocumentChange()}{DocumentChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_aeeffacb865746b754ca6da8450bff1e4} 
+firebase\+::firestore\+::\+Document\+Change\+::\+Document\+Change (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a3decd36de27096650b60b8eaae37367a}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!DocumentChange@{DocumentChange}}
+\index{DocumentChange@{DocumentChange}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{DocumentChange()}{DocumentChange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_a3decd36de27096650b60b8eaae37367a} 
+firebase\+::firestore\+::\+Document\+Change\+::\+Document\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move constructor. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_af3af27ef4fccc2cc41c17265e18e1075}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!document@{document}}
+\index{document@{document}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{document()}{document()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_af3af27ef4fccc2cc41c17265e18e1075} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_snapshot}{Document\+Snapshot}} firebase\+::firestore\+::\+Document\+Change\+::document (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The document affected by this change. 
+
+Returns the newly added or modified document if this \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} is for an updated document. Returns the deleted document if this document change represents a removal. \Hypertarget{classfirebase_1_1firestore_1_1_document_change_ae0777c94ada80c3d3adaf1bb5503f7c0}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_ae0777c94ada80c3d3adaf1bb5503f7c0} 
+bool firebase\+::firestore\+::\+Document\+Change\+::is\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is valid, false if it is not valid. An invalid {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} could be the result of\+: 
+
+
+\begin{DoxyItemize}
+\item Creating a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} using the default constructor.
+\item Moving from the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}}.
+\item Deleting your \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance, which will invalidate all the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} instances associated with it.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is valid, false if this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is invalid. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_abf5e4bfe1aa04814c15b987fa9ea8aef}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!new\_index@{new\_index}}
+\index{new\_index@{new\_index}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{new\_index()}{new\_index()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_abf5e4bfe1aa04814c15b987fa9ea8aef} 
+virtual std\+::size\+\_\+t firebase\+::firestore\+::\+Document\+Change\+::new\+\_\+index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The index of the changed document in the result set immediately after this \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} (that is, supposing that all prior \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} objects and the current \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} object have been applied). Returns \doxylink{classfirebase_1_1firestore_1_1_document_change_aa28f7435efe5d3b0ce79b4c532ee9568}{Document\+Change\+::npos} for \textquotesingle{}removed\textquotesingle{} events. \Hypertarget{classfirebase_1_1firestore_1_1_document_change_a85e9505487293296525f23ac0cffef09}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!old\_index@{old\_index}}
+\index{old\_index@{old\_index}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{old\_index()}{old\_index()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_a85e9505487293296525f23ac0cffef09} 
+virtual std\+::size\+\_\+t firebase\+::firestore\+::\+Document\+Change\+::old\+\_\+index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The index of the changed document in the result set immediately prior to this \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} (that is, supposing that all prior \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change} objects have been applied). Returns \doxylink{classfirebase_1_1firestore_1_1_document_change_aa28f7435efe5d3b0ce79b4c532ee9568}{Document\+Change\+::npos} for \textquotesingle{}added\textquotesingle{} events. \Hypertarget{classfirebase_1_1firestore_1_1_document_change_af1a6b5decc4c157b006ac4b18c1f1ed2}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_af1a6b5decc4c157b006ac4b18c1f1ed2} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \& firebase\+::firestore\+::\+Document\+Change\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is immutable and can be efficiently copied (no deep copy is performed).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a5199a47576d6dde57a8fcd290caaf26e}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_a5199a47576d6dde57a8fcd290caaf26e} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \& firebase\+::firestore\+::\+Document\+Change\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&\&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Move assignment operator. 
+
+Moving is more efficient than copying for a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}}. After being moved from, a {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} is equivalent to its default-\/constructed state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a2f9ad2e2bfb0bde2987098ee4f287a23}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!type@{type}}
+\index{type@{type}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_a2f9ad2e2bfb0bde2987098ee4f287a23} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change_ac97ee985130fa84cbf305fb4d7555454}{Type}} firebase\+::firestore\+::\+Document\+Change\+::type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the type of change that occurred (added, modified, or removed). 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_a0f421e2b78defa31ab917b61915659b1}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!operator==@{operator==}}
+\index{operator==@{operator==}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_a0f421e2b78defa31ab917b61915659b1} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{lhs}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_change}{Document\+Change}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Checks {\ttfamily lhs} and {\ttfamily rhs} for equality. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_document_change_aa28f7435efe5d3b0ce79b4c532ee9568}\index{firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}!npos@{npos}}
+\index{npos@{npos}!firebase::firestore::DocumentChange@{firebase::firestore::DocumentChange}}
+\doxysubsubsection{\texorpdfstring{npos}{npos}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_document_change_aa28f7435efe5d3b0ce79b4c532ee9568} 
+std\+::size\+\_\+t firebase\+::firestore\+::\+Document\+Change\+::npos = static\+\_\+cast$<$std\+::size\+\_\+t$>$(-\/1)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+The sentinel index used as a return value to indicate no matches. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/document\+\_\+change.\+h\end{DoxyCompactItemize}

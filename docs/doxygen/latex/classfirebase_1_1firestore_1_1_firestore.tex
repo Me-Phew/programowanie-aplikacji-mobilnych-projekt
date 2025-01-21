@@ -1,0 +1,589 @@
+\doxysection{firebase\+::firestore\+::Firestore Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_firestore}{}\label{classfirebase_1_1firestore_1_1_firestore}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+
+
+Entry point for the Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} C++ SDK.  
+
+
+
+
+{\ttfamily \#include $<$firestore.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a2928d0f91f517f15a73c5ad6a4ed94bd}{\texorpdfstring{$\sim$}{\string~}\+Firestore}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_af30801a3e89994a9a024ec0a263af21e}{Firestore}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \&src)=delete
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a301be5e26bc93f42807f5b4af050a4e1}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \&src)=delete
+\item 
+virtual const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}} () const
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} was created with. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a50cabf23b8ded663f92e234fec1392b9}{app}} ()
+\begin{DoxyCompactList}\small\item\em Returns the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} was created with. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad63645003fc293ca2adadee0c451ae20}{Collection}} (const char \texorpdfstring{$\ast$}{*}collection\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} instance that refers to the collection at the specified path within the database. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ae8a51d24ed695fc021aa3f3ba6ee192d}{Collection}} (const std\+::string \&collection\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} instance that refers to the collection at the specified path within the database. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a63e7155867ce6daf744c1738e029492a}{Document}} (const char \texorpdfstring{$\ast$}{*}document\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} instance that refers to the document at the specified path within the database. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a02fa5fda18ed29a7db92447e1cb29bdc}{Document}} (const std\+::string \&document\+\_\+path) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} instance that refers to the document at the specified path within the database. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_afa9e705594361a335fb28b502972ba07}{Collection\+Group}} (const char \texorpdfstring{$\ast$}{*}collection\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instance that includes all documents in the database that are contained in a collection or subcollection with the given collection\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a78f6593ffe159b7efce7b2ee14649318}{Collection\+Group}} (const std\+::string \&collection\+\_\+id) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instance that includes all documents in the database that are contained in a collection or subcollection with the given collection\+\_\+id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4}{settings}} () const
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a1f66673a54ef76ffd3123cabad46b405}{set\+\_\+settings}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4}{settings}})
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_aa0130a6f81ce177431562a64866fe3a1}{batch}} () const
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a334fd6ca23f019c97229926986a59e4a}{Run\+Transaction}} (std\+::function$<$ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}} \&, std\+::string \&)$>$ update)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a47a7d4e8fb544dc7ca2180bf0634fa09}{Run\+Transaction}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} options, std\+::function$<$ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}} \&, std\+::string \&)$>$ update)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a32d5a7ca5d03ceaca997f5adf74792cd}{Disable\+Network}} ()
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_aa067e500bc77ab24512399ab0cd697d8}{Enable\+Network}} ()
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8}{Terminate}} ()
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a15dc6d2f085313b4ba02b9f81efe34e0}{Wait\+For\+Pending\+Writes}} ()
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665}{Clear\+Persistence}} ()
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a377bf2232a3234157152be9ecb70814d}{Add\+Snapshots\+In\+Sync\+Listener}} (std\+::function$<$ void()$>$ callback)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad942b7143f40d56641863732002c3e78}{Load\+Bundle}} (const std\+::string \&bundle)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a5d23675f81f7102e286c3af051a02cfd}{Load\+Bundle}} (const std\+::string \&bundle, std\+::function$<$ void(const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&)$>$ progress\+\_\+callback)
+\item 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} $>$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a57dee7a67f00148a1ac5509c16c47d0e}{Named\+Query}} (const std\+::string \&query\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}}, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the given \doxylink{classfirebase_1_1_app}{App} with default database ID. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad922d78c4f51cbc57fab1c7d6c6ba43e}{Get\+Instance}} (\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the default \doxylink{classfirebase_1_1_app}{App} with default database ID. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a8e0b13f105661288c2fda598f893ae47}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}{app}}, const char \texorpdfstring{$\ast$}{*}db\+\_\+name, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the given \doxylink{classfirebase_1_1_app}{App} with the given database ID. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a50ca8d42887a8c4d299052754407ff52}{Get\+Instance}} (const char \texorpdfstring{$\ast$}{*}db\+\_\+name, \mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}init\+\_\+result\+\_\+out=nullptr)
+\begin{DoxyCompactList}\small\item\em Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the default \doxylink{classfirebase_1_1_app}{App} with the given database ID. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_af10daa3d7a5af55931934cfed8a62bee}{set\+\_\+log\+\_\+level}} (\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{Log\+Level}} log\+\_\+level)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore_a0578e000e0f165b6e28a10be038e66ab}{Firestore}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a7401e97391c424ed371f1e7d785f55b6}\label{classfirebase_1_1firestore_1_1_firestore_a7401e97391c424ed371f1e7d785f55b6} 
+class {\bfseries Field\+Value\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a8c7085a9846319e077daa5a195d5239f}\label{classfirebase_1_1firestore_1_1_firestore_a8c7085a9846319e077daa5a195d5239f} 
+class {\bfseries Firestore\+Internal}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a78fe9810384af4049d4b19b00be1f646}\label{classfirebase_1_1firestore_1_1_firestore_a78fe9810384af4049d4b19b00be1f646} 
+class {\bfseries Wrapper}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_ac4f4ee94f9e49da594928e63be8abf4a}\label{classfirebase_1_1firestore_1_1_firestore_ac4f4ee94f9e49da594928e63be8abf4a} 
+struct {\bfseries Converter\+Impl}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_aeed8221915145a800e54b2b1ed066496}\label{classfirebase_1_1firestore_1_1_firestore_aeed8221915145a800e54b2b1ed066496} 
+class {\bfseries Firestore\+Integration\+Test}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_abbd33ad636ebd684a32f49ab7c49f3c6}\label{classfirebase_1_1firestore_1_1_firestore_abbd33ad636ebd684a32f49ab7c49f3c6} 
+class {\bfseries Includes\+Test}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a2bdbc90bc452728168d462171cec8307}\label{classfirebase_1_1firestore_1_1_firestore_a2bdbc90bc452728168d462171cec8307} 
+{\footnotesize template$<$typename T , typename U , typename F $>$ }\\struct {\bfseries Cleanup\+Fn}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_afa20e8bdfeec8f8191cd8ad8a2a8ce77}\label{classfirebase_1_1firestore_1_1_firestore_afa20e8bdfeec8f8191cd8ad8a2a8ce77} 
+class {\bfseries csharp\+::\+Api\+Headers}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a03b5b43aafe5e8742f2af98d5fb5054a}\label{classfirebase_1_1firestore_1_1_firestore_a03b5b43aafe5e8742f2af98d5fb5054a} 
+class {\bfseries csharp\+::\+Transaction\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} C++ SDK. 
+
+To use the SDK, call \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{firebase\+::firestore\+::\+Firestore\+::\+Get\+Instance()} to obtain an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}, then use \doxylink{classfirebase_1_1firestore_1_1_firestore_ad63645003fc293ca2adadee0c451ae20}{Collection()} or \doxylink{classfirebase_1_1firestore_1_1_firestore_a63e7155867ce6daf744c1738e029492a}{Document()} to obtain references to child paths within the database. From there, you can set data via \doxylink{classfirebase_1_1firestore_1_1_collection_reference_ad67c20ff97e0b6b91b869badeca12013}{Collection\+Reference\+::\+Add()} and \doxylink{classfirebase_1_1firestore_1_1_document_reference_ad4a7cf6a1e9a51cafd99d3f9aeaeaeb7}{Document\+Reference\+::\+Set()}, or get data via \doxylink{classfirebase_1_1firestore_1_1_query_a207650647a8a4668c5f759afe27c7273}{Collection\+Reference\+::\+Get()} and \doxylink{classfirebase_1_1firestore_1_1_document_reference_a1b665ad5f842a184222c14fde179a252}{Document\+Reference\+::\+Get()}, attach listeners, and more.
+
+\begin{DoxyNote}{Note}
+\doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} classes are not meant to be subclassed except for use in test mocks. Subclassing is not supported in production code and new SDK releases may break code that does so. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a2928d0f91f517f15a73c5ad6a4ed94bd}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!````~Firestore@{\texorpdfstring{$\sim$}{\string~}Firestore}}
+\index{````~Firestore@{\texorpdfstring{$\sim$}{\string~}Firestore}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Firestore()}{\string~Firestore()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a2928d0f91f517f15a73c5ad6a4ed94bd} 
+virtual firebase\+::firestore\+::\+Firestore\+::\texorpdfstring{$\sim$}{\string~}\+Firestore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} object. 
+
+When deleted, this instance will be removed from the cache of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} objects. If you call \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Get\+Instance()} in the future with the same \doxylink{classfirebase_1_1_app}{App}, a new \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance will be created. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_af30801a3e89994a9a024ec0a263af21e}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Firestore@{Firestore}}
+\index{Firestore@{Firestore}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Firestore()}{Firestore()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_af30801a3e89994a9a024ec0a263af21e} 
+firebase\+::firestore\+::\+Firestore\+::\+Firestore (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \&}]{src}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted copy constructor; \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} must be created with \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Firestore\+::\+Get\+Instance()}. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_a0578e000e0f165b6e28a10be038e66ab}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Firestore@{Firestore}}
+\index{Firestore@{Firestore}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Firestore()}{Firestore()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a0578e000e0f165b6e28a10be038e66ab} 
+firebase\+::firestore\+::\+Firestore\+::\+Firestore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+Default constructor, to be used only for mocking {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a377bf2232a3234157152be9ecb70814d}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!AddSnapshotsInSyncListener@{AddSnapshotsInSyncListener}}
+\index{AddSnapshotsInSyncListener@{AddSnapshotsInSyncListener}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{AddSnapshotsInSyncListener()}{AddSnapshotsInSyncListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a377bf2232a3234157152be9ecb70814d} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} firebase\+::firestore\+::\+Firestore\+::\+Add\+Snapshots\+In\+Sync\+Listener (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Attaches a listener for a snapshots-\/in-\/sync event. Server-\/generated updates and local changes can affect multiple snapshot listeners. The snapshots-\/in-\/sync event indicates that all listeners affected by a given change have fired.
+
+NOTE\+: The snapshots-\/in-\/sync event only indicates that listeners are in sync with each other, but does not relate to whether those snapshots are in sync with the server. Use {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_snapshot_metadata}{Snapshot\+Metadata}} in the individual listeners to determine if a snapshot is from the cache or the server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A callback to be called every time all snapshot listeners are in sync with each other. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_listener_registration}{Listener\+Registration}} object that can be used to remove the listener. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a50cabf23b8ded663f92e234fec1392b9}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!app@{app}}
+\index{app@{app}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a50cabf23b8ded663f92e234fec1392b9} 
+virtual \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Firestore\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} was created with. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!app@{app}}
+\index{app@{app}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_ad85a3a3f0d7b7fc5e9ec863fe57d3033} 
+virtual const \mbox{\hyperlink{classfirebase_1_1_app}{App}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Firestore\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} was created with. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_aa0130a6f81ce177431562a64866fe3a1}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!batch@{batch}}
+\index{batch@{batch}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{batch()}{batch()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_aa0130a6f81ce177431562a64866fe3a1} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch}} firebase\+::firestore\+::\+Firestore\+::batch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a write batch, used for performing multiple writes as a single atomic operation.
+
+Unlike transactions, write batches are persisted offline and therefore are preferable when you don\textquotesingle{}t need to condition your writes on read data.
+
+\begin{DoxyReturn}{Returns}
+The created \doxylink{classfirebase_1_1firestore_1_1_write_batch}{Write\+Batch} object. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!ClearPersistence@{ClearPersistence}}
+\index{ClearPersistence@{ClearPersistence}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{ClearPersistence()}{ClearPersistence()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Clear\+Persistence (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clears the persistent storage. This includes pending writes and cached documents.
+
+Must be called while the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance is not started (after the app is shut down or when the app is first initialized). On startup, this method must be called before other methods (other than {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4}{settings()}} and {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a1f66673a54ef76ffd3123cabad46b405}{set\+\_\+settings()}}). If the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instance is still running, the function will complete with an error code of {\ttfamily Failed\+Precondition}.
+
+Note\+: {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665}{Clear\+Persistence()}} is primarily intended to help write reliable tests that use \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}. It uses the most efficient mechanism possible for dropping existing data but does not attempt to securely overwrite or otherwise make cached data unrecoverable. For applications that are sensitive to the disclosure of cache data in between user sessions we strongly recommend not to enable persistence in the first place. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_ad63645003fc293ca2adadee0c451ae20}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Collection@{Collection}}
+\index{Collection@{Collection}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Collection()}{Collection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_ad63645003fc293ca2adadee0c451ae20} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference}} firebase\+::firestore\+::\+Firestore\+::\+Collection (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{collection\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} instance that refers to the collection at the specified path within the database. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em collection\+\_\+path} & A slash-\/separated path to a collection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} instance. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_ae8a51d24ed695fc021aa3f3ba6ee192d}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Collection@{Collection}}
+\index{Collection@{Collection}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Collection()}{Collection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_ae8a51d24ed695fc021aa3f3ba6ee192d} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference}} firebase\+::firestore\+::\+Firestore\+::\+Collection (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{collection\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} instance that refers to the collection at the specified path within the database. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em collection\+\_\+path} & A slash-\/separated path to a collection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_collection_reference}{Collection\+Reference} instance. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_afa9e705594361a335fb28b502972ba07}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!CollectionGroup@{CollectionGroup}}
+\index{CollectionGroup@{CollectionGroup}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{CollectionGroup()}{CollectionGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_afa9e705594361a335fb28b502972ba07} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Firestore\+::\+Collection\+Group (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{collection\+\_\+id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instance that includes all documents in the database that are contained in a collection or subcollection with the given collection\+\_\+id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em collection\+\_\+id} & Identifies the collections to query over. Every collection or subcollection with this ID as the last segment of its path will be included. Cannot contain a slash.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instance. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a78f6593ffe159b7efce7b2ee14649318}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!CollectionGroup@{CollectionGroup}}
+\index{CollectionGroup@{CollectionGroup}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{CollectionGroup()}{CollectionGroup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a78f6593ffe159b7efce7b2ee14649318} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} firebase\+::firestore\+::\+Firestore\+::\+Collection\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{collection\+\_\+id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instance that includes all documents in the database that are contained in a collection or subcollection with the given collection\+\_\+id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em collection\+\_\+id} & Identifies the collections to query over. Every collection or subcollection with this ID as the last segment of its path will be included. Cannot contain a slash.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_query}{Query} instance. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a32d5a7ca5d03ceaca997f5adf74792cd}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!DisableNetwork@{DisableNetwork}}
+\index{DisableNetwork@{DisableNetwork}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{DisableNetwork()}{DisableNetwork()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a32d5a7ca5d03ceaca997f5adf74792cd} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Disable\+Network (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Disables network access for this instance. While the network is disabled, any snapshot listeners or Get() calls will return results from cache, and any write operations will be queued until network usage is re-\/enabled via a call to \doxylink{classfirebase_1_1firestore_1_1_firestore_aa067e500bc77ab24512399ab0cd697d8}{Enable\+Network()}.
+
+If the network was already disabled, calling {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a32d5a7ca5d03ceaca997f5adf74792cd}{Disable\+Network()}} again is a no-\/op. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_a63e7155867ce6daf744c1738e029492a}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Document@{Document}}
+\index{Document@{Document}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Document()}{Document()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a63e7155867ce6daf744c1738e029492a} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} firebase\+::firestore\+::\+Firestore\+::\+Document (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{document\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} instance that refers to the document at the specified path within the database. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em document\+\_\+path} & A slash-\/separated path to a document. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} instance. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a02fa5fda18ed29a7db92447e1cb29bdc}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Document@{Document}}
+\index{Document@{Document}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Document()}{Document()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a02fa5fda18ed29a7db92447e1cb29bdc} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference}} firebase\+::firestore\+::\+Firestore\+::\+Document (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{document\+\_\+path}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} instance that refers to the document at the specified path within the database. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em document\+\_\+path} & A slash-\/separated path to a document.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1firestore_1_1_document_reference}{Document\+Reference} instance. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_aa067e500bc77ab24512399ab0cd697d8}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!EnableNetwork@{EnableNetwork}}
+\index{EnableNetwork@{EnableNetwork}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{EnableNetwork()}{EnableNetwork()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_aa067e500bc77ab24512399ab0cd697d8} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Enable\+Network (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Re-\/enables network usage for this instance after a prior call to \doxylink{classfirebase_1_1firestore_1_1_firestore_a32d5a7ca5d03ceaca997f5adf74792cd}{Disable\+Network()}.
+
+If the network is currently enabled, calling {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_aa067e500bc77ab24512399ab0cd697d8}{Enable\+Network()}} is a no-\/op. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_a8e0b13f105661288c2fda598f893ae47}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a8e0b13f105661288c2fda598f893ae47} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Firestore\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{db\+\_\+name}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the given \doxylink{classfirebase_1_1_app}{App} with the given database ID. 
+
+Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} server backend.
+
+If you call \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Get\+Instance()} multiple times with the same \doxylink{classfirebase_1_1_app}{App}, you will get the same instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & Your instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ in}}  & {\em db\+\_\+name} & Name of the database. Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & If provided, the initialization result will be written here. Will be set to \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a11c8441be81525f6c644baf36f8aed3b}{firebase\+::k\+Init\+Result\+Success} if initialization succeeded, or \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a1c28184b82cd2bece405e416ebc24b5d}{firebase\+::k\+Init\+Result\+Failed\+Missing\+Dependency} on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the given \doxylink{classfirebase_1_1_app}{App} with the given database ID. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Firestore\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the given \doxylink{classfirebase_1_1_app}{App} with default database ID. 
+
+Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} server backend.
+
+If you call \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Get\+Instance()} multiple times with the same \doxylink{classfirebase_1_1_app}{App}, you will get the same instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em app} & Your instance of \doxylink{classfirebase_1_1_app}{firebase\+::\+App}. Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & If provided, the initialization result will be written here. Will be set to \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a11c8441be81525f6c644baf36f8aed3b}{firebase\+::k\+Init\+Result\+Success} if initialization succeeded, or \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a1c28184b82cd2bece405e416ebc24b5d}{firebase\+::k\+Init\+Result\+Failed\+Missing\+Dependency} on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the given \doxylink{classfirebase_1_1_app}{App} with default database ID. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a50ca8d42887a8c4d299052754407ff52}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a50ca8d42887a8c4d299052754407ff52} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Firestore\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{db\+\_\+name}{, }\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the default \doxylink{classfirebase_1_1_app}{App} with the given database ID. 
+
+Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} uses \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to communicate with Firebase Authentication to authenticate users to the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} server backend.
+
+If you call \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Get\+Instance()} multiple times with the same \doxylink{classfirebase_1_1_app}{App}, you will get the same instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em db\+\_\+name} & Name of the database. Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} will use this to communicate with Firebase Authentication. \\
+\hline
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & If provided, the initialization result will be written here. Will be set to \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a11c8441be81525f6c644baf36f8aed3b}{firebase\+::k\+Init\+Result\+Success} if initialization succeeded, or \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a1c28184b82cd2bece405e416ebc24b5d}{firebase\+::k\+Init\+Result\+Failed\+Missing\+Dependency} on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the default \doxylink{classfirebase_1_1_app}{App} with the given database ID. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_ad922d78c4f51cbc57fab1c7d6c6ba43e}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_ad922d78c4f51cbc57fab1c7d6c6ba43e} 
+static \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \texorpdfstring{$\ast$}{*} firebase\+::firestore\+::\+Firestore\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478}{Init\+Result}} \texorpdfstring{$\ast$}{*}}]{init\+\_\+result\+\_\+out}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the default \doxylink{classfirebase_1_1_app}{App} with default database ID. 
+
+Firebase \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} uses the default \doxylink{classfirebase_1_1_app}{App} to communicate with Firebase Authentication to authenticate users to the \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} server backend.
+
+If you call \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Get\+Instance()} multiple times, you will get the same instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em init\+\_\+result\+\_\+out} & If provided, the initialization result will be written here. Will be set to \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a11c8441be81525f6c644baf36f8aed3b}{firebase\+::k\+Init\+Result\+Success} if initialization succeeded, or \doxylink{namespacefirebase_a8f058cad989f8f1a6c5b42a77a8c3478a1c28184b82cd2bece405e416ebc24b5d}{firebase\+::k\+Init\+Result\+Failed\+Missing\+Dependency} on Android if Google Play services is not available on the current device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} corresponding to the default \doxylink{classfirebase_1_1_app}{App} with default database ID. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_ad942b7143f40d56641863732002c3e78}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!LoadBundle@{LoadBundle}}
+\index{LoadBundle@{LoadBundle}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{LoadBundle()}{LoadBundle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_ad942b7143f40d56641863732002c3e78} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} $>$ firebase\+::firestore\+::\+Firestore\+::\+Load\+Bundle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bundle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Loads a \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} bundle into the local cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle} & A string containing the bundle to be loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{classfirebase_1_1_future}{Future}} that is resolved when the loading is either completed or aborted due to an error. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a5d23675f81f7102e286c3af051a02cfd}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!LoadBundle@{LoadBundle}}
+\index{LoadBundle@{LoadBundle}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{LoadBundle()}{LoadBundle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a5d23675f81f7102e286c3af051a02cfd} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} $>$ firebase\+::firestore\+::\+Firestore\+::\+Load\+Bundle (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{bundle}{, }\item[{std\+::function$<$ void(const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_load_bundle_task_progress}{Load\+Bundle\+Task\+Progress}} \&)$>$}]{progress\+\_\+callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Loads a \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} bundle into the local cache, with the provided callback executed for progress updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bundle} & A string containing the bundle to be loaded. \\
+\hline
+{\em progress\+\_\+callback} & A callback that is called with progress updates, and completion or error updates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{classfirebase_1_1_future}{Future}} that is resolved when the loading is either completed or aborted due to an error. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a57dee7a67f00148a1ac5509c16c47d0e}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!NamedQuery@{NamedQuery}}
+\index{NamedQuery@{NamedQuery}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{NamedQuery()}{NamedQuery()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a57dee7a67f00148a1ac5509c16c47d0e} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}} $>$ firebase\+::firestore\+::\+Firestore\+::\+Named\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{query\+\_\+name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Reads a \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_query}{Query}} from the local cache, identified by the given name.
+
+Named queries are packaged into bundles on the server side (along with the resulting documents) and loaded into local cache using {\ttfamily Load\+Bundle}. Once in the local cache, you can use this method to extract a query by name.
+
+If a query cannot be found, the returned future will complete with its {\ttfamily error()} set to a non-\/zero error code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+\_\+name} & The name of the query to read from saved bundles. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a301be5e26bc93f42807f5b4af050a4e1}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a301be5e26bc93f42807f5b4af050a4e1} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \& firebase\+::firestore\+::\+Firestore\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} \&}]{src}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted copy assignment operator; \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} must be created with \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Firestore\+::\+Get\+Instance()}. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_a334fd6ca23f019c97229926986a59e4a}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!RunTransaction@{RunTransaction}}
+\index{RunTransaction@{RunTransaction}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{RunTransaction()}{RunTransaction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a334fd6ca23f019c97229926986a59e4a} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Run\+Transaction (\begin{DoxyParamCaption}\item[{std\+::function$<$ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}} \&, std\+::string \&)$>$}]{update}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Executes the given update and then attempts to commit the changes applied within the transaction. If any document read within the transaction has changed, the update function will be retried. If it fails to commit after 5 attempts, the transaction will fail.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update} & function or lambda to execute within the transaction context. The string reference parameter can be used to set the error message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} that will be resolved when the transaction finishes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a47a7d4e8fb544dc7ca2180bf0634fa09}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!RunTransaction@{RunTransaction}}
+\index{RunTransaction@{RunTransaction}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{RunTransaction()}{RunTransaction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a47a7d4e8fb544dc7ca2180bf0634fa09} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Run\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}}}]{options}{, }\item[{std\+::function$<$ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction}{Transaction}} \&, std\+::string \&)$>$}]{update}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Executes the given update and then attempts to commit the changes applied within the transaction. If any document read within the transaction has changed, the update function will be retried. If it fails to commit after the {\ttfamily max\+\_\+attempts} specified in the given {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}}, the transaction will fail.
+
+
+\begin{DoxyParams}{Parameters}
+{\em options} & The transaction options for controlling execution. \\
+\hline
+{\em update} & function or lambda to execute within the transaction context. The string reference parameter can be used to set the error message.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classfirebase_1_1_future}{Future} that will be resolved when the transaction finishes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_af10daa3d7a5af55931934cfed8a62bee}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!set\_log\_level@{set\_log\_level}}
+\index{set\_log\_level@{set\_log\_level}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{set\_log\_level()}{set\_log\_level()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_af10daa3d7a5af55931934cfed8a62bee} 
+static void firebase\+::firestore\+::\+Firestore\+::set\+\_\+log\+\_\+level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_a52d8f08cc8edeccdb334bf5c121aa698}{Log\+Level}}}]{log\+\_\+level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Sets the log verbosity of all \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} instances.
+
+The default verbosity level is {\ttfamily k\+Log\+Level\+Info}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em log\+\_\+level} & The desired verbosity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a1f66673a54ef76ffd3123cabad46b405}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!set\_settings@{set\_settings}}
+\index{set\_settings@{set\_settings}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{set\_settings()}{set\_settings()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a1f66673a54ef76ffd3123cabad46b405} 
+virtual void firebase\+::firestore\+::\+Firestore\+::set\+\_\+settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}}}]{settings}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets any custom settings used to configure this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} object. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!settings@{settings}}
+\index{settings@{settings}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{settings()}{settings()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_ab9cc3686403b7e736b957628ad51f9d4} 
+virtual \mbox{\hyperlink{classfirebase_1_1firestore_1_1_settings}{Settings}} firebase\+::firestore\+::\+Firestore\+::settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the settings used by this \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore} object. \Hypertarget{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{Terminate()}{Terminate()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Terminates this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} instance.
+
+After calling {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8}{Terminate()}}, only the {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665}{Clear\+Persistence()}} method may be used. Calling any other methods will result in an error.
+
+To restart after termination, simply create a new instance of {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore}{Firestore}} with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a3ad8553b7861a52a9b69847ce59c85f9}{Firestore\+::\+Get\+Instance()}}.
+
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8}{Terminate()}} does not cancel any pending writes and any tasks that are awaiting a response from the server will not be resolved. The next time you start this instance, it will resume attempting to send these writes to the server.
+
+Note\+: under normal circumstances, calling {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a21f096400b3374042497604b6bc4e7e8}{Terminate()}} is not required. This method is useful only when you want to force this instance to release all of its resources or in combination with {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_firestore_a87d6286f652a426e779a5a2d7390a665}{Clear\+Persistence()}} to ensure that all local state is destroyed between test runs.
+
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{classfirebase_1_1_future}{Future}} that is resolved when the instance has been successfully terminated. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_firestore_a15dc6d2f085313b4ba02b9f81efe34e0}\index{firebase::firestore::Firestore@{firebase::firestore::Firestore}!WaitForPendingWrites@{WaitForPendingWrites}}
+\index{WaitForPendingWrites@{WaitForPendingWrites}!firebase::firestore::Firestore@{firebase::firestore::Firestore}}
+\doxysubsubsection{\texorpdfstring{WaitForPendingWrites()}{WaitForPendingWrites()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_firestore_a15dc6d2f085313b4ba02b9f81efe34e0} 
+virtual \mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::firestore\+::\+Firestore\+::\+Wait\+For\+Pending\+Writes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Waits until all currently pending writes for the active user have been acknowledged by the backend.
+
+The returned future is resolved immediately without error if there are no outstanding writes. Otherwise, the future is resolved when all previously issued writes (including those written in a previous app session) have been acknowledged by the backend. The future does not wait for writes that were added after the method is called. If you wish to wait for additional writes, you have to call {\ttfamily Wait\+For\+Pending\+Writes} again.
+
+Any outstanding {\ttfamily Wait\+For\+Pending\+Writes} futures are resolved with an error during user change. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['accesstoken_0',['accessToken',['../class_wirtualny_auth.html#aa576b0e87f0350a0d157d1758b78c7b1',1,'WirtualnyAuth']]],
+  ['addfcmtoken_1',['addFCMToken',['../class_wirtualny_notifications.html#acc4543801f7b41056339bcae4ca67798',1,'WirtualnyNotifications']]],
+  ['announcement_2',['Announcement',['../class___0b_announcement.html#a02a298160ba45fb7a52f81c90c7e0c80',1,'_$Announcement']]],
+  ['announcement_3',['announcement',['../class_consumer_widget.html#a3474f849da5f718daabe13e4d1ba4ed2',1,'ConsumerWidget']]],
+  ['announcement_2edart_4',['announcement.dart',['../announcement_8dart.html',1,'']]],
+  ['announcement_2efreezed_2edart_5',['announcement.freezed.dart',['../announcement_8freezed_8dart.html',1,'']]],
+  ['announcement_5fdetails_5fpage_2edart_6',['announcement_details_page.dart',['../announcement__details__page_8dart.html',1,'']]],
+  ['announcementdetailspage_7',['AnnouncementDetailsPage',['../class_consumer_widget.html#aada7f87940b8ee8933f17df1a49b5b19',1,'ConsumerWidget']]],
+  ['announcements_5fpage_2edart_8',['announcements_page.dart',['../announcements__page_8dart.html',1,'']]],
+  ['announcements_5fresponse_2edart_9',['announcements_response.dart',['../announcements__response_8dart.html',1,'']]],
+  ['announcements_5fresponse_2efreezed_2edart_10',['announcements_response.freezed.dart',['../announcements__response_8freezed_8dart.html',1,'']]],
+  ['announcementspage_11',['AnnouncementsPage',['../class_announcements_page.html',1,'AnnouncementsPage'],['../class_stateful_widget.html#aa8e70c24cde2df02cc6debcbb1cd07b9',1,'StatefulWidget::AnnouncementsPage()'],['../announcements__page_8dart.html#abaa2452bef699c85abccba455216bb95',1,'AnnouncementsPage():&#160;announcements_page.dart']]],
+  ['announcementsresponse_12',['AnnouncementsResponse',['../class___0b_announcements_response.html#a8606e0a4443b1af6e5f201a7028faf14',1,'_$AnnouncementsResponse']]],
+  ['auth_13',['auth',['../class_wirtualny_sdk.html#a8f13d0689c2c3d0830281abdc7770a38',1,'WirtualnySdk']]],
+  ['auth_5fstate_5fprovider_2edart_14',['auth_state_provider.dart',['../auth__state__provider_8dart.html',1,'']]],
+  ['authenticatewithbiometrics_15',['authenticateWithBiometrics',['../biometrics_8dart.html#a5fd5d8fe963e803b306045a8037dd954',1,'biometrics.dart']]],
+  ['authstatechanges_16',['authStateChanges',['../class_wirtualny_auth.html#a485a0bddbade94fb7bbc6931ba2c3460',1,'WirtualnyAuth']]],
+  ['authstatelistenerscount_17',['authStateListenersCount',['../class_wirtualny_auth.html#a3923e838ca0289422118fb3f146ca510',1,'WirtualnyAuth']]],
+  ['authstateprovider_18',['authStateProvider',['../auth__state__provider_8dart.html#a14c3a89c85b3f6502ef24926ca3b5c1e',1,'auth_state_provider.dart']]],
+  ['autofillhints_19',['autofillHints',['../class_stateless_widget.html#aa95ff10163a08a0f3d7ea2f4caedb0bf',1,'StatelessWidget']]],
+  ['autorzy_20',['👥 Autorzy',['../md__r_e_a_d_m_e.html#autotoc_md8',1,'']]],
+  ['averagegrade_21',['averageGrade',['../class_subject.html#a46eda86b41bd579eb4916c6d6bc2ea78',1,'Subject']]]
+];

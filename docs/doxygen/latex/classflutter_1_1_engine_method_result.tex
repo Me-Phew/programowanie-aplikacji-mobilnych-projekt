@@ -1,0 +1,94 @@
+\doxysection{flutter\+::Engine\+Method\+Result\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_engine_method_result}{}\label{classflutter_1_1_engine_method_result}\index{flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}}
+
+
+Inheritance diagram for flutter\+::Engine\+Method\+Result\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classflutter_1_1_engine_method_result__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for flutter\+::Engine\+Method\+Result\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classflutter_1_1_engine_method_result__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_engine_method_result_af7c2525c46b64895f126bfed94077d33}\label{classflutter_1_1_engine_method_result_af7c2525c46b64895f126bfed94077d33} 
+{\bfseries Engine\+Method\+Result} (Binary\+Reply reply\+\_\+handler, const \mbox{\hyperlink{classflutter_1_1_method_codec}{Method\+Codec}}$<$ T $>$ \texorpdfstring{$\ast$}{*}codec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Method\+Result} (\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} const \&)=delete
+\item 
+\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_method_result}{Method\+Result}} const \&)=delete
+\item 
+void {\bfseries Success} (const T \&result)
+\item 
+void {\bfseries Success} ()
+\item 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \&error\+\_\+details)
+\item 
+void {\bfseries Error} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message="{}"{})
+\item 
+void {\bfseries Not\+Implemented} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classflutter_1_1_engine_method_result_a31c7321d477d5342f64d7a45a29586e4}{Success\+Internal}} (const T \texorpdfstring{$\ast$}{*}result) override
+\item 
+void \mbox{\hyperlink{classflutter_1_1_engine_method_result_ac4f0eadf9d6951ba6a9ffc51d5a82439}{Error\+Internal}} (const std\+::string \&error\+\_\+code, const std\+::string \&error\+\_\+message, const T \texorpdfstring{$\ast$}{*}error\+\_\+details) override
+\item 
+void \mbox{\hyperlink{classflutter_1_1_engine_method_result_ae313be87945d43e03c34d0abbd94270f}{Not\+Implemented\+Internal}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ T $>$}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflutter_1_1_engine_method_result_ac4f0eadf9d6951ba6a9ffc51d5a82439}\index{flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}!ErrorInternal@{ErrorInternal}}
+\index{ErrorInternal@{ErrorInternal}!flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ErrorInternal()}{ErrorInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_engine_method_result_ac4f0eadf9d6951ba6a9ffc51d5a82439} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{classflutter_1_1_engine_method_result}{flutter\+::\+Engine\+Method\+Result}}$<$ T $>$\+::\+Error\+Internal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+\_\+code}{, }\item[{const std\+::string \&}]{error\+\_\+message}{, }\item[{const T \texorpdfstring{$\ast$}{*}}]{error\+\_\+details}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ T $>$}}.
+
+\Hypertarget{classflutter_1_1_engine_method_result_ae313be87945d43e03c34d0abbd94270f}\index{flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}!NotImplementedInternal@{NotImplementedInternal}}
+\index{NotImplementedInternal@{NotImplementedInternal}!flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NotImplementedInternal()}{NotImplementedInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_engine_method_result_ae313be87945d43e03c34d0abbd94270f} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{classflutter_1_1_engine_method_result}{flutter\+::\+Engine\+Method\+Result}}$<$ T $>$\+::\+Not\+Implemented\+Internal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ T $>$}}.
+
+\Hypertarget{classflutter_1_1_engine_method_result_a31c7321d477d5342f64d7a45a29586e4}\index{flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}!SuccessInternal@{SuccessInternal}}
+\index{SuccessInternal@{SuccessInternal}!flutter::EngineMethodResult$<$ T $>$@{flutter::EngineMethodResult$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SuccessInternal()}{SuccessInternal()}}
+{\footnotesize\ttfamily \label{classflutter_1_1_engine_method_result_a31c7321d477d5342f64d7a45a29586e4} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{classflutter_1_1_engine_method_result}{flutter\+::\+Engine\+Method\+Result}}$<$ T $>$\+::\+Success\+Internal (\begin{DoxyParamCaption}\item[{const T \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classflutter_1_1_method_result}{flutter\+::\+Method\+Result$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/engine\+\_\+method\+\_\+result.\+h\end{DoxyCompactItemize}

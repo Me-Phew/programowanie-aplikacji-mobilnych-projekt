@@ -1,0 +1,318 @@
+\doxysection{future\+\_\+impl.\+h}
+\hypertarget{future__impl_8h_source}{}\label{future__impl_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/future\_impl.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/internal/future\_impl.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_FUTURE\_IMPL\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_FUTURE\_IMPL\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ You\ shouldn't\ include\ future\_impl.h\ directly,\ since\ its\ just\ the\ inline}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ implementation\ of\ the\ functions\ in\ future.h.\ Include\ future.h\ instead.}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }ReferenceCountedFutureImpl;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }CompletionCallbackHandle;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }FutureApiInterface\ \{}
+\DoxyCodeLine{00040\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ typedef\ void\ FutureCallbackFn(const\ FutureBase*\ future);}}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \string~FutureApiInterface();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ReferenceFuture(\textcolor{keyword}{const}\ FutureHandle\&\ handle)\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ReleaseFuture(\textcolor{keyword}{const}\ FutureHandle\&\ handle)\ =\ 0;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fba}{FutureStatus}}\ GetFutureStatus(\textcolor{keyword}{const}\ FutureHandle\&\ handle)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ GetFutureError(\textcolor{keyword}{const}\ FutureHandle\&\ handle)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetFutureErrorMessage(}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keyword}{const}\ FutureHandle\&\ handle)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ GetFutureResult(\textcolor{keyword}{const}\ FutureHandle\&\ handle)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{virtual}\ CompletionCallbackHandle\ AddCompletionCallback(}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keyword}{const}\ FutureHandle\&\ handle,\ FutureBase::CompletionCallback\ callback,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data,\ \textcolor{keywordtype}{void}\ (*user\_data\_delete\_fn)(\textcolor{keywordtype}{void}*),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ clear\_existing\_callbacks)\ =\ 0;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RemoveCompletionCallback(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keyword}{const}\ FutureHandle\&\ handle,\ CompletionCallbackHandle\ callback\_handle)\ =\ 0;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{virtual}\ CompletionCallbackHandle\ AddCompletionCallbackLambda(}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keyword}{const}\ FutureHandle\&\ handle,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ FutureBase\&)>\ callback,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ clear\_existing\_callbacks)\ =\ 0;}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RegisterFutureForCleanup(FutureBase*\ future)\ =\ 0;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ UnregisterFutureForCleanup(FutureBase*\ future)\ =\ 0;}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ RegisterForCleanup(FutureApiInterface*\ api,\ FutureBase*\ future)\ \{}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordflow}{if}\ (api\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00123\ \ \ \ \ api-\/>RegisterFutureForCleanup(future);}
+\DoxyCodeLine{00124\ \ \ \}}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ UnregisterForCleanup(FutureApiInterface*\ api,\ FutureBase*\ future)\ \{}
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordflow}{if}\ (api\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00129\ \ \ \ \ api-\/>UnregisterFutureForCleanup(future);}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{class\ }CompletionCallbackHandle\ \{}
+\DoxyCodeLine{00134\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ Construct\ a\ null\ CompletionCallbackHandle.}}
+\DoxyCodeLine{00136\ \ \ CompletionCallbackHandle()}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ :\ callback\_(nullptr),}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ user\_data\_(nullptr),}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ user\_data\_delete\_fn\_(nullptr)\ \{\}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00142\ \ \ \textcolor{keyword}{friend}\ class\ ::firebase::FutureBase;}
+\DoxyCodeLine{00143\ \ \ \textcolor{keyword}{friend}\ class\ ::firebase::ReferenceCountedFutureImpl;}
+\DoxyCodeLine{00144\ \ \ CompletionCallbackHandle(FutureBase::CompletionCallback\ callback,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data,\ \textcolor{keywordtype}{void}\ (*user\_data\_delete\_fn)(\textcolor{keywordtype}{void}*))}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ :\ callback\_(callback),}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ user\_data\_(user\_data),}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ user\_data\_delete\_fn\_(user\_data\_delete\_fn)\ \{\}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ FutureBase::CompletionCallback\ callback\_;}
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordtype}{void}*\ user\_data\_;}
+\DoxyCodeLine{00152\ \ \ void\ (*user\_data\_delete\_fn\_)(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00158\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{Future<T>::OnCompletion}}(TypedCompletionCallback\ callback,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00160\ \ \ \mbox{\hyperlink{classfirebase_1_1_future_base_a6815dec3b1f3648b01c01f0447560fe6}{FutureBase::OnCompletion}}(\textcolor{keyword}{reinterpret\_cast<}CompletionCallback\textcolor{keyword}{>}(callback),}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ user\_data);}
+\DoxyCodeLine{00162\ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ ResultType>}
+\DoxyCodeLine{00166\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{Future<ResultType>::OnCompletion}}(}
+\DoxyCodeLine{00167\ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ Future<ResultType>\&)>\ callback)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00168\ \ \ \mbox{\hyperlink{classfirebase_1_1_future_base_a6815dec3b1f3648b01c01f0447560fe6}{FutureBase::OnCompletion}}(}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ *\textcolor{keyword}{reinterpret\_cast<}std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const\ }FutureBase\&)\textcolor{keyword}{>}*>(\&callback));}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#if\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00174\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00175\ FutureBase::CompletionCallbackHandle\ Future<T>::AddOnCompletion(}
+\DoxyCodeLine{00176\ \ \ \ \ TypedCompletionCallback\ callback,\ \textcolor{keywordtype}{void}*\ user\_data)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordflow}{return}\ FutureBase::AddOnCompletion(}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}CompletionCallback\textcolor{keyword}{>}(callback),\ user\_data);}
+\DoxyCodeLine{00179\ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00182\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ ResultType>}
+\DoxyCodeLine{00183\ \textcolor{keyword}{inline}\ FutureBase::CompletionCallbackHandle\ Future<ResultType>::AddOnCompletion(}
+\DoxyCodeLine{00184\ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ Future<ResultType>\&)>\ callback)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordflow}{return}\ FutureBase::AddOnCompletion(}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ *\textcolor{keyword}{reinterpret\_cast<}std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const\ }FutureBase\&)\textcolor{keyword}{>}*>(\&callback));}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classfirebase_1_1_future_base_a062803984339e749d55b5a1825cb3b4d}{FutureBase::FutureBase}}()}
+\DoxyCodeLine{00193\ \ \ \ \ :\ mutex\_(Mutex::Mode::kModeNonRecursive),}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ api\_(NULL),}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ handle\_(0)\ \{\}\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{keyword}{inline}\ FutureBase::FutureBase(detail::FutureApiInterface*\ api,}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FutureHandle\&\ handle)}
+\DoxyCodeLine{00199\ \ \ \ \ :\ mutex\_(Mutex::Mode::kModeNonRecursive),\ api\_(api),\ handle\_(handle)\ \{}
+\DoxyCodeLine{00200\ \ \ api\_-\/>ReferenceFuture(handle\_);}
+\DoxyCodeLine{00201\ \ \ \textcolor{comment}{//\ Once\ the\ FutureBase\ has\ reference,\ we\ don't\ need\ extra\ handle\ reference.}}
+\DoxyCodeLine{00202\ \ \ handle\_.Detach();}
+\DoxyCodeLine{00203\ \ \ detail::RegisterForCleanup(api\_,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{keyword}{inline}\ FutureBase::\string~FutureBase()\ \{\ Release();\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{inline}\ FutureBase::FutureBase(\textcolor{keyword}{const}\ FutureBase\&\ rhs)}
+\DoxyCodeLine{00209\ \ \ \ \ :\ mutex\_(Mutex::Mode::kModeNonRecursive),}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ api\_(NULL)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00211\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00212\ \ \ *\textcolor{keyword}{this}\ =\ rhs;}
+\DoxyCodeLine{00213\ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{keyword}{inline}\ FutureBase\&\ FutureBase::operator=(\textcolor{keyword}{const}\ FutureBase\&\ rhs)\ \{}
+\DoxyCodeLine{00216\ \ \ Release();}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ detail::FutureApiInterface*\ new\_api;}
+\DoxyCodeLine{00219\ \ \ FutureHandle\ new\_handle;}
+\DoxyCodeLine{00220\ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ MutexLock\ lock(rhs.mutex\_);}
+\DoxyCodeLine{00222\ \ \ \ \ new\_api\ =\ rhs.api\_;}
+\DoxyCodeLine{00223\ \ \ \ \ new\_handle\ =\ rhs.handle\_;}
+\DoxyCodeLine{00224\ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00228\ \ \ \ \ api\_\ =\ new\_api;}
+\DoxyCodeLine{00229\ \ \ \ \ handle\_\ =\ new\_handle;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ api\_-\/>ReferenceFuture(handle\_);}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ detail::RegisterForCleanup(api\_,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00235\ \ \ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00238\ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)}}
+\DoxyCodeLine{00241\ \textcolor{keyword}{inline}\ FutureBase::FutureBase(FutureBase\&\&\ rhs)\ noexcept}
+\DoxyCodeLine{00242\ \ \ \ \ :\ mutex\_(Mutex::Mode::kModeNonRecursive),}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ api\_(NULL)\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00244\ \{}
+\DoxyCodeLine{00245\ \ \ *\textcolor{keyword}{this}\ =\ std::move(rhs);}
+\DoxyCodeLine{00246\ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{keyword}{inline}\ FutureBase\&\ FutureBase::operator=(FutureBase\&\&\ rhs)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00249\ \ \ Release();}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ detail::FutureApiInterface*\ new\_api;}
+\DoxyCodeLine{00252\ \ \ FutureHandle\ new\_handle;}
+\DoxyCodeLine{00253\ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ MutexLock\ lock(rhs.mutex\_);}
+\DoxyCodeLine{00255\ \ \ \ \ detail::UnregisterForCleanup(rhs.api\_,\ \&rhs);}
+\DoxyCodeLine{00256\ \ \ \ \ new\_api\ =\ rhs.api\_;}
+\DoxyCodeLine{00257\ \ \ \ \ new\_handle\ =\ rhs.handle\_;}
+\DoxyCodeLine{00258\ \ \ \ \ rhs.api\_\ =\ NULL;\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00259\ \ \ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00262\ \ \ api\_\ =\ new\_api;}
+\DoxyCodeLine{00263\ \ \ handle\_\ =\ new\_handle;}
+\DoxyCodeLine{00264\ \ \ detail::RegisterForCleanup(api\_,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00266\ \}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_MOVE\_OPERATORS)}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FutureBase::Release()\ \{}
+\DoxyCodeLine{00270\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00271\ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00272\ \ \ \ \ detail::UnregisterForCleanup(api\_,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00273\ \ \ \ \ api\_-\/>ReleaseFuture(handle\_);}
+\DoxyCodeLine{00274\ \ \ \ \ api\_\ =\ NULL;\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00275\ \ \ \}}
+\DoxyCodeLine{00276\ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fba}{FutureStatus}}\ FutureBase::status()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00279\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00280\ \ \ \textcolor{keywordflow}{return}\ api\_\ ==\ NULL\ ?\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa9b4a72ef84a53ec51395b07715599389}{kFutureStatusInvalid}}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ api\_-\/>GetFutureStatus(handle\_);}
+\DoxyCodeLine{00283\ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ FutureBase::error()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00286\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00287\ \ \ \textcolor{keywordflow}{return}\ api\_\ ==\ NULL\ ?\ -\/1\ :\ api\_-\/>GetFutureError(handle\_);\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00288\ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ FutureBase::error\_message()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00291\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00292\ \ \ \textcolor{keywordflow}{return}\ api\_\ ==\ NULL\ ?\ NULL\ :\ api\_-\/>GetFutureErrorMessage(handle\_);\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00293\ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ FutureBase::result\_void()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00296\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00297\ \ \ \textcolor{keywordflow}{return}\ api\_\ ==\ NULL\ ?\ NULL\ :\ api\_-\/>GetFutureResult(handle\_);\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00298\ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FutureBase::OnCompletion(CompletionCallback\ callback,}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00302\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00303\ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00304\ \ \ \ \ api\_-\/>AddCompletionCallback(handle\_,\ callback,\ user\_data,\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*clear\_existing\_callbacks=*/}\textcolor{keyword}{true});}
+\DoxyCodeLine{00306\ \ \ \}}
+\DoxyCodeLine{00307\ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#if\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00310\ \textcolor{keyword}{inline}\ FutureBase::CompletionCallbackHandle\ FutureBase::AddOnCompletion(}
+\DoxyCodeLine{00311\ \ \ \ \ CompletionCallback\ callback,\ \textcolor{keywordtype}{void}*\ user\_data)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00312\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00313\ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordflow}{return}\ api\_-\/>AddCompletionCallback(handle\_,\ callback,\ user\_data,\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*clear\_existing\_callbacks=*/}\textcolor{keyword}{false});}
+\DoxyCodeLine{00316\ \ \ \}}
+\DoxyCodeLine{00317\ \ \ \textcolor{keywordflow}{return}\ CompletionCallbackHandle();}
+\DoxyCodeLine{00318\ \}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FutureBase::RemoveOnCompletion(}
+\DoxyCodeLine{00321\ \ \ \ \ CompletionCallbackHandle\ completion\_handle)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00322\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00323\ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00324\ \ \ \ \ api\_-\/>RemoveCompletionCallback(handle\_,\ completion\_handle);}
+\DoxyCodeLine{00325\ \ \ \}}
+\DoxyCodeLine{00326\ \}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#if\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00330\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ FutureBase::OnCompletion(}
+\DoxyCodeLine{00331\ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ FutureBase\&)>\ callback)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00332\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00333\ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00334\ \ \ \ \ api\_-\/>AddCompletionCallbackLambda(handle\_,\ callback,}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*clear\_existing\_callbacks=*/}\textcolor{keyword}{true});}
+\DoxyCodeLine{00336\ \ \ \}}
+\DoxyCodeLine{00337\ \}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#if\ defined(INTERNAL\_EXPERIMENTAL)}}
+\DoxyCodeLine{00340\ \textcolor{keyword}{inline}\ FutureBase::CompletionCallbackHandle\ FutureBase::AddOnCompletion(}
+\DoxyCodeLine{00341\ \ \ \ \ std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ FutureBase\&)>\ callback)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00342\ \ \ MutexLock\ lock(mutex\_);}
+\DoxyCodeLine{00343\ \ \ \textcolor{keywordflow}{if}\ (api\_\ !=\ NULL)\ \{\ \ \textcolor{comment}{//\ NOLINT}}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordflow}{return}\ api\_-\/>AddCompletionCallbackLambda(}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ handle\_,\ callback,}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*clear\_existing\_callbacks=*/}\textcolor{keyword}{false});}
+\DoxyCodeLine{00347\ \ \ \}}
+\DoxyCodeLine{00348\ \ \ \textcolor{keywordflow}{return}\ CompletionCallbackHandle();}
+\DoxyCodeLine{00349\ \}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(INTERNAL\_\_EXPERIMENTAL)}}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ defined(FIREBASE\_USE\_STD\_FUNCTION)}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \textcolor{comment}{//\ NOLINTNEXTLINE\ -\/\ allow\ namespace\ overridden}}
+\DoxyCodeLine{00355\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_APP\_SRC\_INCLUDE\_FIREBASE\_INTERNAL\_FUTURE\_IMPL\_H\_}}
+
+\end{DoxyCode}

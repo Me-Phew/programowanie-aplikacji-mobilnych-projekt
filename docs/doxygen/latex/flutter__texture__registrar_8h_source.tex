@@ -1,0 +1,193 @@
+\doxysection{flutter\+\_\+texture\+\_\+registrar.\+h}
+\hypertarget{flutter__texture__registrar_8h_source}{}\label{flutter__texture__registrar_8h_source}\index{windows/flutter/ephemeral/flutter\_texture\_registrar.h@{windows/flutter/ephemeral/flutter\_texture\_registrar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_TEXTURE\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_TEXTURE\_REGISTRAR\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}flutter\_export.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }FlutterDesktopTextureRegistrar;}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Opaque\ reference\ to\ a\ texture\ registrar.}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }FlutterDesktopTextureRegistrar*}
+\DoxyCodeLine{00020\ \ \ \ \ FlutterDesktopTextureRegistrarRef;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Possible\ values\ for\ the\ type\ specified\ in\ FlutterDesktopTextureInfo.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Additional\ types\ may\ be\ added\ in\ the\ future.}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{comment}{//\ A\ Pixel\ buffer-\/based\ texture.}}
+\DoxyCodeLine{00026\ \ \ kFlutterDesktopPixelBufferTexture,}
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ A\ platform-\/specific\ GPU\ surface-\/backed\ texture.}}
+\DoxyCodeLine{00028\ \ \ kFlutterDesktopGpuSurfaceTexture}
+\DoxyCodeLine{00029\ \}\ FlutterDesktopTextureType;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ Supported\ GPU\ surface\ types.}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ Uninitialized.}}
+\DoxyCodeLine{00034\ \ \ kFlutterDesktopGpuSurfaceTypeNone,}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ A\ DXGI\ shared\ texture\ handle\ (Windows\ only).}}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ See}}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ https://docs.microsoft.com/en-\/us/windows/win32/api/dxgi/nf-\/dxgi-\/idxgiresource-\/getsharedhandle}}
+\DoxyCodeLine{00038\ \ \ kFlutterDesktopGpuSurfaceTypeDxgiSharedHandle,}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ A\ |ID3D11Texture2D|\ (Windows\ only).}}
+\DoxyCodeLine{00040\ \ \ kFlutterDesktopGpuSurfaceTypeD3d11Texture2D}
+\DoxyCodeLine{00041\ \}\ FlutterDesktopGpuSurfaceType;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ Supported\ pixel\ formats.}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Uninitialized.}}
+\DoxyCodeLine{00046\ \ \ kFlutterDesktopPixelFormatNone,}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Represents\ a\ 32-\/bit\ RGBA\ color\ format\ with\ 8\ bits\ each\ for\ red,\ green,\ blue}}
+\DoxyCodeLine{00048\ \ \ \textcolor{comment}{//\ and\ alpha.}}
+\DoxyCodeLine{00049\ \ \ kFlutterDesktopPixelFormatRGBA8888,}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//\ Represents\ a\ 32-\/bit\ BGRA\ color\ format\ with\ 8\ bits\ each\ for\ blue,\ green,\ red}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ and\ alpha.}}
+\DoxyCodeLine{00052\ \ \ kFlutterDesktopPixelFormatBGRA8888}
+\DoxyCodeLine{00053\ \}\ FlutterDesktopPixelFormat;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ An\ image\ buffer\ object.}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00057\ \ \ \textcolor{comment}{//\ The\ pixel\ data\ buffer.}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{const}\ uint8\_t*\ buffer;}
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Width\ of\ the\ pixel\ buffer.}}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{size\_t}\ width;}
+\DoxyCodeLine{00061\ \ \ \textcolor{comment}{//\ Height\ of\ the\ pixel\ buffer.}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{size\_t}\ height;}
+\DoxyCodeLine{00063\ \ \ \textcolor{comment}{//\ An\ optional\ callback\ that\ gets\ invoked\ when\ the\ |buffer|\ can\ be\ released.}}
+\DoxyCodeLine{00064\ \ \ void\ (*release\_callback)(\textcolor{keywordtype}{void}*\ release\_context);}
+\DoxyCodeLine{00065\ \ \ \textcolor{comment}{//\ Opaque\ data\ passed\ to\ |release\_callback|.}}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}*\ release\_context;}
+\DoxyCodeLine{00067\ \}\ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer}{FlutterDesktopPixelBuffer}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ A\ GPU\ surface\ descriptor.}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00071\ \ \ \textcolor{comment}{//\ The\ size\ of\ this\ struct.\ Must\ be}}
+\DoxyCodeLine{00072\ \ \ \textcolor{comment}{//\ sizeof(FlutterDesktopGpuSurfaceDescriptor).}}
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{size\_t}\ struct\_size;}
+\DoxyCodeLine{00074\ \ \ \textcolor{comment}{//\ The\ surface\ handle.\ The\ expected\ type\ depends\ on\ the}}
+\DoxyCodeLine{00075\ \ \ \textcolor{comment}{//\ |FlutterDesktopGpuSurfaceType|.}}
+\DoxyCodeLine{00076\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ Provide\ a\ |ID3D11Texture2D*|\ when\ using}}
+\DoxyCodeLine{00078\ \ \ \textcolor{comment}{//\ |kFlutterDesktopGpuSurfaceTypeD3d11Texture2D|\ or\ a\ |HANDLE|\ when\ using}}
+\DoxyCodeLine{00079\ \ \ \textcolor{comment}{//\ |kFlutterDesktopGpuSurfaceTypeDxgiSharedHandle|.}}
+\DoxyCodeLine{00080\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00081\ \ \ \textcolor{comment}{//\ The\ referenced\ resource\ needs\ to\ stay\ valid\ until\ it\ has\ been\ opened\ by}}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ Flutter.\ Consider\ incrementing\ the\ resource's\ reference\ count\ in\ the}}
+\DoxyCodeLine{00083\ \ \ \textcolor{comment}{//\ |FlutterDesktopGpuSurfaceTextureCallback|\ and\ registering\ a}}
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ |release\_callback|\ for\ decrementing\ the\ reference\ count\ once\ it\ has\ been}}
+\DoxyCodeLine{00085\ \ \ \textcolor{comment}{//\ opened.}}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}*\ handle;}
+\DoxyCodeLine{00087\ \ \ \textcolor{comment}{//\ The\ physical\ width.}}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{size\_t}\ width;}
+\DoxyCodeLine{00089\ \ \ \textcolor{comment}{//\ The\ physical\ height.}}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{size\_t}\ height;}
+\DoxyCodeLine{00091\ \ \ \textcolor{comment}{//\ The\ visible\ width.}}
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ It\ might\ be\ less\ or\ equal\ to\ the\ physical\ |width|.}}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{size\_t}\ visible\_width;}
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//\ The\ visible\ height.}}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ It\ might\ be\ less\ or\ equal\ to\ the\ physical\ |height|.}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{size\_t}\ visible\_height;}
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ The\ pixel\ format\ which\ might\ be\ optional\ depending\ on\ the\ surface\ type.}}
+\DoxyCodeLine{00098\ \ \ FlutterDesktopPixelFormat\ format;}
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ An\ optional\ callback\ that\ gets\ invoked\ when\ the\ |handle|\ has\ been\ opened.}}
+\DoxyCodeLine{00100\ \ \ void\ (*release\_callback)(\textcolor{keywordtype}{void}*\ release\_context);}
+\DoxyCodeLine{00101\ \ \ \textcolor{comment}{//\ Opaque\ data\ passed\ to\ |release\_callback|.}}
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordtype}{void}*\ release\_context;}
+\DoxyCodeLine{00103\ \}\ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_descriptor}{FlutterDesktopGpuSurfaceDescriptor}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ The\ pixel\ buffer\ copy\ callback\ definition\ provided\ to}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ the\ Flutter\ engine\ to\ copy\ the\ texture.}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ It\ is\ invoked\ with\ the\ intended\ surface\ size\ specified\ by\ |width|\ and}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ |height|\ and\ the\ |user\_data|\ held\ by}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ |FlutterDesktopPixelBufferTextureConfig|.}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ As\ this\ is\ usually\ called\ from\ the\ render\ thread,\ the\ callee\ must\ take}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ care\ of\ proper\ synchronization.\ It\ also\ needs\ to\ be\ ensured\ that\ the}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ returned\ |FlutterDesktopPixelBuffer|\ isn't\ released\ prior\ to\ unregistering}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ the\ corresponding\ texture.}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer}{FlutterDesktopPixelBuffer}}*\ (}
+\DoxyCodeLine{00116\ \ \ \ \ *FlutterDesktopPixelBufferTextureCallback)(\textcolor{keywordtype}{size\_t}\ width,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ height,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ The\ GPU\ surface\ callback\ definition\ provided\ to\ the\ Flutter\ engine\ to\ obtain}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ the\ surface.\ It\ is\ invoked\ with\ the\ intended\ surface\ size\ specified\ by}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ |width|\ and\ |height|\ and\ the\ |user\_data|\ held\ by}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ |FlutterDesktopGpuSurfaceTextureConfig|.}}
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_descriptor}{FlutterDesktopGpuSurfaceDescriptor}}*\ (}
+\DoxyCodeLine{00125\ \ \ \ \ *FlutterDesktopGpuSurfaceTextureCallback)(\textcolor{keywordtype}{size\_t}\ width,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ height,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ An\ object\ used\ to\ configure\ pixel\ buffer\ textures.}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00131\ \ \ \textcolor{comment}{//\ The\ callback\ used\ by\ the\ engine\ to\ copy\ the\ pixel\ buffer\ object.}}
+\DoxyCodeLine{00132\ \ \ FlutterDesktopPixelBufferTextureCallback\ callback;}
+\DoxyCodeLine{00133\ \ \ \textcolor{comment}{//\ Opaque\ data\ that\ will\ get\ passed\ to\ the\ provided\ |callback|.}}
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{void}*\ user\_data;}
+\DoxyCodeLine{00135\ \}\ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer_texture_config}{FlutterDesktopPixelBufferTextureConfig}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ An\ object\ used\ to\ configure\ GPU-\/surface\ textures.}}
+\DoxyCodeLine{00138\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00139\ \ \ \textcolor{comment}{//\ The\ size\ of\ this\ struct.\ Must\ be}}
+\DoxyCodeLine{00140\ \ \ \textcolor{comment}{//\ sizeof(FlutterDesktopGpuSurfaceTextureConfig).}}
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordtype}{size\_t}\ struct\_size;}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ The\ concrete\ surface\ type\ (e.g.}}
+\DoxyCodeLine{00143\ \ \ \textcolor{comment}{//\ |kFlutterDesktopGpuSurfaceTypeDxgiSharedHandle|)}}
+\DoxyCodeLine{00144\ \ \ FlutterDesktopGpuSurfaceType\ type;}
+\DoxyCodeLine{00145\ \ \ \textcolor{comment}{//\ The\ callback\ used\ by\ the\ engine\ to\ obtain\ the\ surface\ descriptor.}}
+\DoxyCodeLine{00146\ \ \ FlutterDesktopGpuSurfaceTextureCallback\ callback;}
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ Opaque\ data\ that\ will\ get\ passed\ to\ the\ provided\ |callback|.}}
+\DoxyCodeLine{00148\ \ \ \textcolor{keywordtype}{void}*\ user\_data;}
+\DoxyCodeLine{00149\ \}\ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_texture_config}{FlutterDesktopGpuSurfaceTextureConfig}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00152\ \ \ FlutterDesktopTextureType\ type;}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{struct_flutter_desktop_pixel_buffer_texture_config}{FlutterDesktopPixelBufferTextureConfig}}\ pixel\_buffer\_config;}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{struct_flutter_desktop_gpu_surface_texture_config}{FlutterDesktopGpuSurfaceTextureConfig}}\ gpu\_surface\_config;}
+\DoxyCodeLine{00156\ \ \ \};}
+\DoxyCodeLine{00157\ \}\ \mbox{\hyperlink{struct_flutter_desktop_texture_info}{FlutterDesktopTextureInfo}};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ Registers\ a\ new\ texture\ with\ the\ Flutter\ engine\ and\ returns\ the\ texture\ ID.}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ This\ function\ can\ be\ called\ from\ any\ thread.}}
+\DoxyCodeLine{00161\ FLUTTER\_EXPORT\ int64\_t\ FlutterDesktopTextureRegistrarRegisterExternalTexture(}
+\DoxyCodeLine{00162\ \ \ \ \ FlutterDesktopTextureRegistrarRef\ texture\_registrar,}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_flutter_desktop_texture_info}{FlutterDesktopTextureInfo}}*\ info);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ Asynchronously\ unregisters\ the\ texture\ identified\ by\ |texture\_id|\ from\ the}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ Flutter\ engine.}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ An\ optional\ |callback|\ gets\ invoked\ upon\ completion.}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ This\ function\ can\ be\ called\ from\ any\ thread.}}
+\DoxyCodeLine{00169\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{void}\ FlutterDesktopTextureRegistrarUnregisterExternalTexture(}
+\DoxyCodeLine{00170\ \ \ \ \ FlutterDesktopTextureRegistrarRef\ texture\_registrar,}
+\DoxyCodeLine{00171\ \ \ \ \ int64\_t\ texture\_id,}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ (*callback)(\textcolor{keywordtype}{void}*\ user\_data),}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ Marks\ that\ a\ new\ texture\ frame\ is\ available\ for\ a\ given\ |texture\_id|.}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//\ Returns\ true\ on\ success\ or\ false\ if\ the\ specified\ texture\ doesn't\ exist.}}
+\DoxyCodeLine{00177\ \textcolor{comment}{//\ This\ function\ can\ be\ called\ from\ any\ thread.}}
+\DoxyCodeLine{00178\ FLUTTER\_EXPORT\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00179\ FlutterDesktopTextureRegistrarMarkExternalTextureFrameAvailable(}
+\DoxyCodeLine{00180\ \ \ \ \ FlutterDesktopTextureRegistrarRef\ texture\_registrar,}
+\DoxyCodeLine{00181\ \ \ \ \ int64\_t\ texture\_id);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{00184\ \}\ \ \textcolor{comment}{//\ extern\ "{}C"{}}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_PUBLIC\_FLUTTER\_TEXTURE\_REGISTRAR\_H\_}}
+
+\end{DoxyCode}

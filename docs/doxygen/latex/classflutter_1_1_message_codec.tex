@@ -1,0 +1,34 @@
+\doxysection{flutter\+::Message\+Codec\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classflutter_1_1_message_codec}{}\label{classflutter_1_1_message_codec}\index{flutter::MessageCodec$<$ T $>$@{flutter::MessageCodec$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_message_codec_aefd1f722ddd961dbea287b2864f1732c}\label{classflutter_1_1_message_codec_aefd1f722ddd961dbea287b2864f1732c} 
+{\bfseries Message\+Codec} (\mbox{\hyperlink{classflutter_1_1_message_codec}{Message\+Codec}}$<$ T $>$ const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_message_codec_a211fd88fe587d4ec499678de463e7c77}\label{classflutter_1_1_message_codec_a211fd88fe587d4ec499678de463e7c77} 
+\mbox{\hyperlink{classflutter_1_1_message_codec}{Message\+Codec}} \& {\bfseries operator=} (\mbox{\hyperlink{classflutter_1_1_message_codec}{Message\+Codec}}$<$ T $>$ const \&)=delete
+\item 
+\Hypertarget{classflutter_1_1_message_codec_a0512d54e88a15486ad073e50d56e2ed8}\label{classflutter_1_1_message_codec_a0512d54e88a15486ad073e50d56e2ed8} 
+std\+::unique\+\_\+ptr$<$ T $>$ {\bfseries Decode\+Message} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}binary\+\_\+message, const size\+\_\+t message\+\_\+size) const
+\item 
+\Hypertarget{classflutter_1_1_message_codec_a99c8b5eb84468415db1a0afa3e1655d4}\label{classflutter_1_1_message_codec_a99c8b5eb84468415db1a0afa3e1655d4} 
+std\+::unique\+\_\+ptr$<$ T $>$ {\bfseries Decode\+Message} (const std\+::vector$<$ uint8\+\_\+t $>$ \&binary\+\_\+message) const
+\item 
+\Hypertarget{classflutter_1_1_message_codec_a816e540f2a99a23ba5842c22bb24d120}\label{classflutter_1_1_message_codec_a816e540f2a99a23ba5842c22bb24d120} 
+std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Message} (const T \&message) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classflutter_1_1_message_codec_a496c3774b18fe427abdaf215b4ea5e13}\label{classflutter_1_1_message_codec_a496c3774b18fe427abdaf215b4ea5e13} 
+virtual std\+::unique\+\_\+ptr$<$ T $>$ {\bfseries Decode\+Message\+Internal} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}binary\+\_\+message, const size\+\_\+t message\+\_\+size) const =0
+\item 
+\Hypertarget{classflutter_1_1_message_codec_a4db9c8ec3cee498a5add78236481ca0f}\label{classflutter_1_1_message_codec_a4db9c8ec3cee498a5add78236481ca0f} 
+virtual std\+::unique\+\_\+ptr$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ {\bfseries Encode\+Message\+Internal} (const T \&message) const =0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+windows/flutter/ephemeral/cpp\+\_\+client\+\_\+wrapper/include/flutter/message\+\_\+codec.\+h\end{DoxyCompactItemize}

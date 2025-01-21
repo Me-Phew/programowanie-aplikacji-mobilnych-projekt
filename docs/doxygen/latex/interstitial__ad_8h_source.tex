@@ -1,0 +1,69 @@
+\doxysection{interstitial\+\_\+ad.\+h}
+\hypertarget{interstitial__ad_8h_source}{}\label{interstitial__ad_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/interstitial\_ad.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/gma/interstitial\_ad.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2021\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_INTERSTITIAL\_AD\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_INTERSTITIAL\_AD\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}firebase/future.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}firebase/gma/types.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/internal/common.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }gma\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }internal\ \{}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ Forward\ declaration\ for\ platform-\/specific\ data,\ implemented\ in\ each\ library.}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }InterstitialAdInternal;}
+\DoxyCodeLine{00030\ \}\ \ \textcolor{comment}{//\ namespace\ internal}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad}{InterstitialAd}}\ \{}
+\DoxyCodeLine{00073\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a62b0bcde05b77dcde7c6a6c7fe5d9478}{InterstitialAd}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad}{\string~InterstitialAd}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_ae6efe1a1e4a0b13687f57f3aefefaf9c}{Initialize}}(\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{AdParent}}\ parent);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a000e39b7853970e8fe37e797c635ee25}{InitializeLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a4225f1868a1f48e3daee260d75be1e78}{LoadAd}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ad\_unit\_id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{AdRequest}}\&\ request);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<AdResult>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a52b3b191f73254c94fca116ed9f5a92e}{LoadAdLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a0bd3e10dc864610e5ebfb663a0d0aa57}{Show}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{classfirebase_1_1_future}{Future<void>}}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_ab5ec6a4bc3d028efabdcd0b0bb1700b1}{ShowLastResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_aecc8414a930c11c44ea93714fecfb72a}{SetFullScreenContentListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_full_screen_content_listener}{FullScreenContentListener}}*\ listener);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfirebase_1_1gma_1_1_interstitial_ad_a21f53766610a10c1f61419e0ef77dc40}{SetPaidEventListener}}(\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{PaidEventListener}}*\ listener);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \textcolor{comment}{//\ An\ internal,\ platform-\/specific\ implementation\ object\ that\ this\ class\ uses}}
+\DoxyCodeLine{00121\ \ \ \textcolor{comment}{//\ to\ interact\ with\ the\ Google\ Mobile\ Ads\ SDKs\ for\ iOS\ and\ Android.}}
+\DoxyCodeLine{00122\ \ \ internal::InterstitialAdInternal*\ internal\_;}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \}\ \ \textcolor{comment}{//\ namespace\ gma}}
+\DoxyCodeLine{00126\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_GMA\_SRC\_INCLUDE\_FIREBASE\_GMA\_INTERSTITIAL\_AD\_H\_}}
+
+\end{DoxyCode}

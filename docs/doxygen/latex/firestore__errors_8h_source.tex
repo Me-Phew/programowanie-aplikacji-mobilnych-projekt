@@ -1,0 +1,71 @@
+\doxysection{firestore\+\_\+errors.\+h}
+\hypertarget{firestore__errors_8h_source}{}\label{firestore__errors_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/firestore\_errors.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/firestore\_errors.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_FIRESTORE\_ERRORS\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_FIRESTORE\_ERRORS\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5}{Error}}\ \{}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ Note:\ NSError\ objects\ will\ never\ have\ a\ code\ with\ this\ value.}}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4543bbd1182c0fba4a8a537de76b3a67}{kErrorOk}}\ =\ 0,}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ kErrorNone\ =\ 0,}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a034361bf002510c82e7dd3c307bebaf3}{kErrorCancelled}}\ =\ 1,}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a26ab45bc766029a40d9253a66800fcc1}{kErrorUnknown}}\ =\ 2,}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5ab577ce97f7e0006d388ab0357516fdf0}{kErrorInvalidArgument}}\ =\ 3,}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a482ff646b328e1a44e594b8cb4ab7e06}{kErrorDeadlineExceeded}}\ =\ 4,}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a74ea89cf7525e272cb0be0ba61bfde39}{kErrorNotFound}}\ =\ 5,}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5afdf9a46c9e27c84348dcd1cf6b8b94d4}{kErrorAlreadyExists}}\ =\ 6,}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a5e4b23a79dba3cf4110f82d21fdec5d8}{kErrorPermissionDenied}}\ =\ 7,}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a2183f1693ceedd4f8e44251833add2c1}{kErrorResourceExhausted}}\ =\ 8,}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a4f8313a97899d38f9db35ca0e4203db0}{kErrorFailedPrecondition}}\ =\ 9,}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a50d563e40440520cfbf83506546c86c0}{kErrorAborted}}\ =\ 10,}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a281943ee475cc624ca9193d0dee6d1aa}{kErrorOutOfRange}}\ =\ 11,}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5af5fa5818a3d5f8ba53d2b82622380b3f}{kErrorUnimplemented}}\ =\ 12,}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5a95c398020e27b05cf08d62558493a800}{kErrorInternal}}\ =\ 13,}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5abc1f998b6a59756d3df8e3842af21258}{kErrorUnavailable}}\ =\ 14,}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5af495b2c284a9382e11ebd9f038f132bc}{kErrorDataLoss}}\ =\ 15,}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{namespacefirebase_1_1firestore_acbed0dcd73b55ce5a9d9c3d07bb9cac5ae655076d190802b2721c5661efb6e3e5}{kErrorUnauthenticated}}\ =\ 16}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00114\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIRESTORE\_CORE\_INCLUDE\_FIREBASE\_FIRESTORE\_FIRESTORE\_ERRORS\_H\_}}
+
+\end{DoxyCode}

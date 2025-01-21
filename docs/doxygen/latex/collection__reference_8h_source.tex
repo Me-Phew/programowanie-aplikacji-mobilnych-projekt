@@ -1,0 +1,81 @@
+\doxysection{collection\+\_\+reference.\+h}
+\hypertarget{collection__reference_8h_source}{}\label{collection__reference_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/collection\_reference.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/firestore/collection\_reference.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2018\ Google\ LLC}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_COLLECTION\_REFERENCE\_H\_}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_COLLECTION\_REFERENCE\_H\_}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/map\_field\_value.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}firebase/firestore/query.h"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }Future;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }firestore\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }CollectionReferenceInternal;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }DocumentReference;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_query}{Query}}\ \{}
+\DoxyCodeLine{00047\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a9e2f0db88d238d786e0dbbf604531c73}{CollectionReference}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a0cf3a420bbfc2afa7c6da72fc4a7a4d5}{CollectionReference}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\&\ other);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a11f173e91d21387fdc73c5888084ef7c}{CollectionReference}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\&\&\ other);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a8d829e0e70ca2920a7470766913204e8}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\&\ other);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_ae56858c3a6a28568b0cfc3220dc41b5c}{operator=}}(\mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference}{CollectionReference}}\&\&\ other);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a02f0a4d7b35254da1c416fe13e3b608b}{id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00117\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a2b057ed347e103985769012844ba50e0}{path}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a77da96667a781141b44ff9e6ac7041de}{Parent}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a35aadf810903bb44c33fb4ca9726f922}{Document}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_aa66d8113c37c3eabd474b6e7d0cb44f0}{Document}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ document\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a6936e13183a2f86ef8b46a1239a488c7}{Document}}(\textcolor{keyword}{const}\ std::string\&\ document\_path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00167\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classfirebase_1_1_future}{Future<DocumentReference>}}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_ad67c20ff97e0b6b91b869badeca12013}{Add}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacefirebase_1_1firestore_a599729e0c3f086110cce5e3542ba3f96}{MapFieldValue}}\&\ data);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00170\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfirebase_1_1firestore_1_1_document_reference}{DocumentReference}};}
+\DoxyCodeLine{00171\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }DocumentReferenceInternal;}
+\DoxyCodeLine{00172\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }FirestoreInternal;}
+\DoxyCodeLine{00173\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }ConverterImpl;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classfirebase_1_1firestore_1_1_collection_reference_a9e2f0db88d238d786e0dbbf604531c73}{CollectionReference}}(CollectionReferenceInternal*\ internal);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ CollectionReferenceInternal*\ internal()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ \};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \}\ \ \textcolor{comment}{//\ namespace\ firestore}}
+\DoxyCodeLine{00181\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_FIRESTORE\_SRC\_INCLUDE\_FIREBASE\_FIRESTORE\_COLLECTION\_REFERENCE\_H\_}}
+
+\end{DoxyCode}

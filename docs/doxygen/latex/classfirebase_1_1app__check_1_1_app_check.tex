@@ -1,0 +1,105 @@
+\doxysection{firebase\+::app\+\_\+check\+::App\+Check Class Reference}
+\hypertarget{classfirebase_1_1app__check_1_1_app_check}{}\label{classfirebase_1_1app__check_1_1_app_check}\index{firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}}
+
+
+Firebase \doxylink{classfirebase_1_1_app}{App} Check object.  
+
+
+
+
+{\ttfamily \#include $<$app\+\_\+check.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_a3e45a64dc4abe307b6fe2d5582a667b6}\label{classfirebase_1_1app__check_1_1_app_check_a3e45a64dc4abe307b6fe2d5582a667b6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+App\+Check} ()
+\begin{DoxyCompactList}\small\item\em Destructor. You may delete an instance of \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} when you are finished using it to shut down the \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} library. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc}{app}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} was created with. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_a8550e8e32e26c53d4d793a3135125fa9}\label{classfirebase_1_1app__check_1_1_app_check_a8550e8e32e26c53d4d793a3135125fa9} 
+void {\bfseries Set\+Token\+Auto\+Refresh\+Enabled} (bool is\+\_\+token\+\_\+auto\+\_\+refresh\+\_\+enabled)
+\begin{DoxyCompactList}\small\item\em Sets the is\+Token\+Auto\+Refresh\+Enabled flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}} $>$ \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_ae612f250510dde43931981e4ce88becf}{Get\+App\+Check\+Token}} (bool force\+\_\+refresh)
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_a6bc68dd8f8206fb0d1f1c79cea4cf2b6}\label{classfirebase_1_1app__check_1_1_app_check_a6bc68dd8f8206fb0d1f1c79cea4cf2b6} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}} $>$ {\bfseries Get\+App\+Check\+Token\+Last\+Result} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of the most recent call to \doxylink{classfirebase_1_1app__check_1_1_app_check_ae612f250510dde43931981e4ce88becf}{Get\+App\+Check\+Token()};. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3e7439d63ade51c66456b695face3936}{Add\+App\+Check\+Listener}} (\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{App\+Check\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_aeda964041317b387a343c02379961c52}\label{classfirebase_1_1app__check_1_1_app_check_aeda964041317b387a343c02379961c52} 
+void {\bfseries Remove\+App\+Check\+Listener} (\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{App\+Check\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\begin{DoxyCompactList}\small\item\em Unregisters an {\ttfamily \doxylink{classfirebase_1_1app__check_1_1_app_check_listener}{App\+Check\+Listener}} to changes in the token state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check}{App\+Check}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a37b594e136491b45e4dbaf4abf5265c9}{Get\+Instance}} (\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc}{app}})
+\item 
+static void \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_a4fcaddd90087f702ce90de7c6734c6ef}{Set\+App\+Check\+Provider\+Factory}} (\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{App\+Check\+Provider\+Factory}} \texorpdfstring{$\ast$}{*}factory)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_a493d5251e6b51a94c0e886da16af44a3}\label{classfirebase_1_1app__check_1_1_app_check_a493d5251e6b51a94c0e886da16af44a3} 
+class {\bfseries internal\+::\+App\+Check\+Internal}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Firebase \doxylink{classfirebase_1_1_app}{App} Check object. 
+
+\doxylink{classfirebase_1_1_app}{App} Check helps protect your API resources from abuse by preventing unauthorized clients from accessing your backend resources.
+
+With \doxylink{classfirebase_1_1_app}{App} Check, devices running your app will use an \doxylink{classfirebase_1_1app__check_1_1_app_check_provider}{App\+Check\+Provider} that attests to one or both of the following\+:
+\begin{DoxyItemize}
+\item Requests originate from your authentic app
+\item Requests originate from an authentic, untampered device 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_a3e7439d63ade51c66456b695face3936}\index{firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}!AddAppCheckListener@{AddAppCheckListener}}
+\index{AddAppCheckListener@{AddAppCheckListener}!firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}}
+\doxysubsubsection{\texorpdfstring{AddAppCheckListener()}{AddAppCheckListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_a3e7439d63ade51c66456b695face3936} 
+void firebase\+::app\+\_\+check\+::\+App\+Check\+::\+Add\+App\+Check\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_listener}{App\+Check\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Registers an {\ttfamily \doxylink{classfirebase_1_1app__check_1_1_app_check_listener}{App\+Check\+Listener}} to changes in the token state. This method should be used ONLY if you need to authorize requests to a non-\/\+Firebase backend. Requests to Firebase backends are authorized automatically if configured. \Hypertarget{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc}\index{firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}!app@{app}}
+\index{app@{app}!firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}}
+\doxysubsubsection{\texorpdfstring{app()}{app()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_a3bb6c6425f2b628fad2e2d13931372cc} 
+\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+App\+Check\+::app (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} that this \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} was created with. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{classfirebase_1_1_app}{firebase\+::\+App} this \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} was created with. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1app__check_1_1_app_check_ae612f250510dde43931981e4ce88becf}\index{firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}!GetAppCheckToken@{GetAppCheckToken}}
+\index{GetAppCheckToken@{GetAppCheckToken}!firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}}
+\doxysubsubsection{\texorpdfstring{GetAppCheckToken()}{GetAppCheckToken()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_ae612f250510dde43931981e4ce88becf} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{structfirebase_1_1app__check_1_1_app_check_token}{App\+Check\+Token}} $>$ firebase\+::app\+\_\+check\+::\+App\+Check\+::\+Get\+App\+Check\+Token (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\+refresh}{}\end{DoxyParamCaption})}
+
+Requests a Firebase \doxylink{classfirebase_1_1_app}{App} Check token. This method should be used ONLY if you need to authorize requests to a non-\/\+Firebase backend. Requests to Firebase backends are authorized automatically if configured. \Hypertarget{classfirebase_1_1app__check_1_1_app_check_a37b594e136491b45e4dbaf4abf5265c9}\index{firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_a37b594e136491b45e4dbaf4abf5265c9} 
+static \mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check}{App\+Check}} \texorpdfstring{$\ast$}{*} firebase\+::app\+\_\+check\+::\+App\+Check\+::\+Get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1_app}{\+::firebase\+::\+App}} \texorpdfstring{$\ast$}{*}}]{app}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the instance of \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} associated with the given {\ttfamily \doxylink{classfirebase_1_1_app}{App}} instance. \Hypertarget{classfirebase_1_1app__check_1_1_app_check_a4fcaddd90087f702ce90de7c6734c6ef}\index{firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}!SetAppCheckProviderFactory@{SetAppCheckProviderFactory}}
+\index{SetAppCheckProviderFactory@{SetAppCheckProviderFactory}!firebase::app\_check::AppCheck@{firebase::app\_check::AppCheck}}
+\doxysubsubsection{\texorpdfstring{SetAppCheckProviderFactory()}{SetAppCheckProviderFactory()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1app__check_1_1_app_check_a4fcaddd90087f702ce90de7c6734c6ef} 
+static void firebase\+::app\+\_\+check\+::\+App\+Check\+::\+Set\+App\+Check\+Provider\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{App\+Check\+Provider\+Factory}} \texorpdfstring{$\ast$}{*}}]{factory}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Installs the given \doxylink{classfirebase_1_1app__check_1_1_app_check_provider_factory}{App\+Check\+Provider\+Factory}, overwriting any that were previously associated with this \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} instance. Any App\+Check\+Token\+Listeners attached to this \doxylink{classfirebase_1_1app__check_1_1_app_check}{App\+Check} instance will be transferred from existing factories to the newly installed one.
+
+Automatic token refreshing will only occur if the global is\+Data\+Collection\+Default\+Enabled flag is set to true. To allow automatic token refreshing for Firebase \doxylink{classfirebase_1_1_app}{App} Check without changing the is\+Data\+Collection\+Default\+Enabled flag for other Firebase SDKs, call set\+Token\+Auto\+Refresh\+Enabled(bool) after installing the factory.
+
+This method should be called before initializing the Firebase \doxylink{classfirebase_1_1_app}{App}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/app\+\_\+check.\+h\end{DoxyCompactItemize}

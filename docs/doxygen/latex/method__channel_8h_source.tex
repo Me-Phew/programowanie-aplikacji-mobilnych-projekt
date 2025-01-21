@@ -1,0 +1,157 @@
+\doxysection{method\+\_\+channel.\+h}
+\hypertarget{method__channel_8h_source}{}\label{method__channel_8h_source}\index{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_channel.h@{windows/flutter/ephemeral/cpp\_client\_wrapper/include/flutter/method\_channel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2013\ The\ Flutter\ Authors.\ All\ rights\ reserved.}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Use\ of\ this\ source\ code\ is\ governed\ by\ a\ BSD-\/style\ license\ that\ can\ be}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ found\ in\ the\ LICENSE\ file.}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CHANNEL\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CHANNEL\_H\_}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}basic\_message\_channel.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}binary\_messenger.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}engine\_method\_result.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}method\_call.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}method\_codec.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}method\_result.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }flutter\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }EncodableValue;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ A\ handler\ for\ receiving\ a\ method\ call\ from\ the\ Flutter\ engine.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Implementations\ must\ asynchronously\ call\ exactly\ one\ of\ the\ methods\ on}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ |result|\ to\ indicate\ the\ result\ of\ the\ method\ call.}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{using\ }MethodCallHandler\ =}
+\DoxyCodeLine{00028\ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ MethodCall<T>\&\ call,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<MethodResult<T>>\ result)>;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ A\ channel\ for\ communicating\ with\ the\ Flutter\ engine\ using\ invocation\ of}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ asynchronous\ methods.}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T\ =\ EncodableValue>}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflutter_1_1_method_channel}{MethodChannel}}\ \{}
+\DoxyCodeLine{00035\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \textcolor{comment}{//\ Creates\ an\ instance\ that\ sends\ and\ receives\ method\ calls\ on\ the\ channel}}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ named\ |name|,\ encoded\ with\ |codec|\ and\ dispatched\ via\ |messenger|.}}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{classflutter_1_1_method_channel}{MethodChannel}}(\mbox{\hyperlink{classflutter_1_1_binary_messenger}{BinaryMessenger}}*\ messenger,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec<T>}}*\ codec)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ :\ messenger\_(messenger),\ name\_(name),\ codec\_(codec)\ \{\}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classflutter_1_1_method_channel}{\string~MethodChannel}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{comment}{//\ Prevent\ copying.}}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{classflutter_1_1_method_channel}{MethodChannel}}(\mbox{\hyperlink{classflutter_1_1_method_channel}{MethodChannel}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classflutter_1_1_method_channel}{MethodChannel}}\&\ operator=(\mbox{\hyperlink{classflutter_1_1_method_channel}{MethodChannel}}\ \textcolor{keyword}{const}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{comment}{//\ Sends\ a\ message\ to\ the\ Flutter\ engine\ on\ this\ channel.}}
+\DoxyCodeLine{00050\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ If\ |result|\ is\ provided,\ one\ of\ its\ methods\ will\ be\ invoked\ with\ the}}
+\DoxyCodeLine{00052\ \ \ \textcolor{comment}{//\ response\ from\ the\ engine.}}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ InvokeMethod(\textcolor{keyword}{const}\ std::string\&\ method,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<T>\ arguments,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<\mbox{\hyperlink{classflutter_1_1_method_result}{MethodResult<T>}}>\ result\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classflutter_1_1_method_call}{MethodCall<T>}}\ method\_call(method,\ std::move(arguments));}
+\DoxyCodeLine{00057\ \ \ \ \ std::unique\_ptr<std::vector<uint8\_t>>\ message\ =}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ codec\_-\/>EncodeMethodCall(method\_call);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (!result)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ messenger\_-\/>Send(name\_,\ message-\/>data(),\ message-\/>size(),\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ std::function\ requires\ a\ copyable\ lambda,\ so\ convert\ to\ a\ shared\ pointer.}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ This\ is\ safe\ since\ only\ one\ copy\ of\ the\ shared\_pointer\ will\ ever\ be}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ accessed.}}
+\DoxyCodeLine{00067\ \ \ \ \ std::shared\_ptr<MethodResult<T>>\ shared\_result(result.release());}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ codec\ =\ codec\_;}
+\DoxyCodeLine{00069\ \ \ \ \ std::string\ channel\_name\ =\ name\_;}
+\DoxyCodeLine{00070\ \ \ \ \ BinaryReply\ reply\_handler\ =\ [shared\_result,\ codec,\ channel\_name](}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ reply,\ \textcolor{keywordtype}{size\_t}\ reply\_size)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reply\_size\ ==\ 0)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ shared\_result-\/>NotImplemented();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ this\ channel's\ codec\ to\ decode\ and\ handle\ the}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{comment}{//\ reply.}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ decoded\ =\ codec-\/>DecodeAndProcessResponseEnvelope(}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ reply,\ reply\_size,\ shared\_result.get());}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!decoded)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Unable\ to\ decode\ reply\ to\ method\ "{}}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}invocation\ on\ channel\ "{}}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ channel\_name\ <<\ std::endl;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ shared\_result-\/>NotImplemented();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ messenger\_-\/>Send(name\_,\ message-\/>data(),\ message-\/>size(),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::move(reply\_handler));}
+\DoxyCodeLine{00090\ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{comment}{//\ Registers\ a\ handler\ that\ should\ be\ called\ any\ time\ a\ method\ call\ is}}
+\DoxyCodeLine{00093\ \ \ \textcolor{comment}{//\ received\ on\ this\ channel.\ A\ null\ handler\ will\ remove\ any\ previous\ handler.}}
+\DoxyCodeLine{00094\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ The\ handler\ will\ be\ owned\ by\ the\ underlying\ BinaryMessageHandler.}}
+\DoxyCodeLine{00096\ \ \ \textcolor{comment}{//\ Destroying\ the\ MethodChannel\ will\ not\ unregister\ the\ handler,\ so}}
+\DoxyCodeLine{00097\ \ \ \textcolor{comment}{//\ the\ caller\ is\ responsible\ for\ unregistering\ explicitly\ if\ the\ handler}}
+\DoxyCodeLine{00098\ \ \ \textcolor{comment}{//\ stops\ being\ valid\ before\ the\ engine\ is\ destroyed.}}
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{void}\ SetMethodCallHandler(MethodCallHandler<T>\ handler)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{if}\ (!handler)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ messenger\_-\/>SetMessageHandler(name\_,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ codec\ =\ codec\_;}
+\DoxyCodeLine{00105\ \ \ \ \ std::string\ channel\_name\ =\ name\_;}
+\DoxyCodeLine{00106\ \ \ \ \ BinaryMessageHandler\ binary\_handler\ =\ [handler,\ codec,\ channel\_name](}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ message,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ message\_size,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BinaryReply\ reply)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ this\ channel's\ codec\ to\ decode\ the\ call\ and\ build\ a\ result\ handler.}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ std::make\_unique<EngineMethodResult<T>>(std::move(reply),\ codec);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ std::unique\_ptr<MethodCall<T>>\ method\_call\ =}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ codec-\/>DecodeMethodCall(message,\ message\_size);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!method\_call)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Unable\ to\ construct\ method\ call\ from\ message\ on\ channel\ "{}}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ channel\_name\ <<\ std::endl;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ result-\/>NotImplemented();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ handler(*method\_call,\ std::move(result));}
+\DoxyCodeLine{00122\ \ \ \ \ \};}
+\DoxyCodeLine{00123\ \ \ \ \ messenger\_-\/>SetMessageHandler(name\_,\ std::move(binary\_handler));}
+\DoxyCodeLine{00124\ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{comment}{//\ Adjusts\ the\ number\ of\ messages\ that\ will\ get\ buffered\ when\ sending\ messages}}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{//\ to\ channels\ that\ aren't\ fully\ set\ up\ yet.\ For\ example,\ the\ engine\ isn't}}
+\DoxyCodeLine{00128\ \ \ \textcolor{comment}{//\ running\ yet\ or\ the\ channel's\ message\ handler\ isn't\ set\ up\ on\ the\ Dart\ side}}
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ yet.}}
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordtype}{void}\ Resize(\textcolor{keywordtype}{int}\ new\_size)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ internal::ResizeChannel(messenger\_,\ name\_,\ new\_size);}
+\DoxyCodeLine{00132\ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ Defines\ whether\ the\ channel\ should\ show\ warning\ messages\ when\ discarding}}
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ messages\ due\ to\ overflow.}}
+\DoxyCodeLine{00136\ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00137\ \ \ \textcolor{comment}{//\ When\ |warns|\ is\ false,\ the\ channel\ is\ expected\ to\ overflow\ and\ warning}}
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//\ messages\ will\ not\ be\ shown.}}
+\DoxyCodeLine{00139\ \ \ \textcolor{keywordtype}{void}\ SetWarnsOnOverflow(\textcolor{keywordtype}{bool}\ warns)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ internal::SetChannelWarnsOnOverflow(messenger\_,\ name\_,\ warns);}
+\DoxyCodeLine{00141\ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{classflutter_1_1_binary_messenger}{BinaryMessenger}}*\ messenger\_;}
+\DoxyCodeLine{00145\ \ \ std::string\ name\_;}
+\DoxyCodeLine{00146\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classflutter_1_1_method_codec}{MethodCodec<T>}}*\ codec\_;}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \}\ \ \textcolor{comment}{//\ namespace\ flutter}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FLUTTER\_SHELL\_PLATFORM\_COMMON\_CLIENT\_WRAPPER\_INCLUDE\_FLUTTER\_METHOD\_CHANNEL\_H\_}}
+
+\end{DoxyCode}

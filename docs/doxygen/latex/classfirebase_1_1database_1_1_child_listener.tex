@@ -1,0 +1,113 @@
+\doxysection{firebase\+::database\+::Child\+Listener Class Reference}
+\hypertarget{classfirebase_1_1database_1_1_child_listener}{}\label{classfirebase_1_1database_1_1_child_listener}\index{firebase::database::ChildListener@{firebase::database::ChildListener}}
+
+
+{\ttfamily \#include $<$listener.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_a85903f8c0785c8acf41be3097b489f93}{On\+Child\+Added}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot, const char \texorpdfstring{$\ast$}{*}previous\+\_\+sibling\+\_\+key)=0
+\begin{DoxyCompactList}\small\item\em This method is triggered when a new child is added to the location to which this listener was added. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_a48d5e76e56d5e426a38073e875321edd}{On\+Child\+Changed}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot, const char \texorpdfstring{$\ast$}{*}previous\+\_\+sibling\+\_\+key)=0
+\begin{DoxyCompactList}\small\item\em This method is triggered when the data at a child location has changed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_a5e3e042aca509c8963f9f8337ccf1d7a}{On\+Child\+Moved}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot, const char \texorpdfstring{$\ast$}{*}previous\+\_\+sibling\+\_\+key)=0
+\begin{DoxyCompactList}\small\item\em This method is triggered when a child location\textquotesingle{}s priority changes. See \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Database\+Reference\+::\+Set\+Priority()} for more information on priorities and ordering data. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_aa93f2703105e48959081e5c18d7a6df8}{On\+Child\+Removed}} (const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&snapshot)=0
+\begin{DoxyCompactList}\small\item\em This method is triggered when a child is removed from the location to which this listener was added. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classfirebase_1_1database_1_1_child_listener_ab63ac7fbf9b270f8454393dee0621d58}{On\+Cancelled}} (const \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}} \&error, const char \texorpdfstring{$\ast$}{*}error\+\_\+message)=0
+\begin{DoxyCompactList}\small\item\em This method will be triggered in the event that this listener either failed at the server, or is removed as a result of the security and Firebase rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Child listener interface. Subclasses of this listener class can be used to receive events about changes in the child locations of a \doxylink{classfirebase_1_1database_1_1_query}{firebase\+::database\+::\+Query} or \doxylink{classfirebase_1_1database_1_1_database_reference}{firebase\+::database\+::\+Database\+Reference}. Attach the listener to a location with \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Query\+::\+Add\+Child\+Listener()} or \doxylink{classfirebase_1_1database_1_1_query_a6ac1ee1619acbc89b03824e562cc9750}{Database\+Reference\+::\+Add\+Child\+Listener()} and the appropriate method will be triggered when changes occur. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1database_1_1_child_listener_ab63ac7fbf9b270f8454393dee0621d58}\index{firebase::database::ChildListener@{firebase::database::ChildListener}!OnCancelled@{OnCancelled}}
+\index{OnCancelled@{OnCancelled}!firebase::database::ChildListener@{firebase::database::ChildListener}}
+\doxysubsubsection{\texorpdfstring{OnCancelled()}{OnCancelled()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_child_listener_ab63ac7fbf9b270f8454393dee0621d58} 
+virtual void firebase\+::database\+::\+Child\+Listener\+::\+On\+Cancelled (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}} \&}]{error}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{error\+\_\+message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This method will be triggered in the event that this listener either failed at the server, or is removed as a result of the security and Firebase rules. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error} & A code corresponding to the error that occurred. \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+message} & A description of the error that occurred. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_child_listener_a85903f8c0785c8acf41be3097b489f93}\index{firebase::database::ChildListener@{firebase::database::ChildListener}!OnChildAdded@{OnChildAdded}}
+\index{OnChildAdded@{OnChildAdded}!firebase::database::ChildListener@{firebase::database::ChildListener}}
+\doxysubsubsection{\texorpdfstring{OnChildAdded()}{OnChildAdded()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_child_listener_a85903f8c0785c8acf41be3097b489f93} 
+virtual void firebase\+::database\+::\+Child\+Listener\+::\+On\+Child\+Added (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{previous\+\_\+sibling\+\_\+key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This method is triggered when a new child is added to the location to which this listener was added. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & An immutable snapshot of the data at the new data at the child location. \\
+\hline
+\mbox{\texttt{ in}}  & {\em previous\+\_\+sibling\+\_\+key} & The key name of sibling location ordered before the child. This will be nullptr for the first child node of a location. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_child_listener_a48d5e76e56d5e426a38073e875321edd}\index{firebase::database::ChildListener@{firebase::database::ChildListener}!OnChildChanged@{OnChildChanged}}
+\index{OnChildChanged@{OnChildChanged}!firebase::database::ChildListener@{firebase::database::ChildListener}}
+\doxysubsubsection{\texorpdfstring{OnChildChanged()}{OnChildChanged()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_child_listener_a48d5e76e56d5e426a38073e875321edd} 
+virtual void firebase\+::database\+::\+Child\+Listener\+::\+On\+Child\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{previous\+\_\+sibling\+\_\+key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This method is triggered when the data at a child location has changed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & An immutable snapshot of the data at the new data at the child location. \\
+\hline
+\mbox{\texttt{ in}}  & {\em previous\+\_\+sibling\+\_\+key} & The key name of sibling location ordered before the child. This will be nullptr for the first child node of a location. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_child_listener_a5e3e042aca509c8963f9f8337ccf1d7a}\index{firebase::database::ChildListener@{firebase::database::ChildListener}!OnChildMoved@{OnChildMoved}}
+\index{OnChildMoved@{OnChildMoved}!firebase::database::ChildListener@{firebase::database::ChildListener}}
+\doxysubsubsection{\texorpdfstring{OnChildMoved()}{OnChildMoved()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_child_listener_a5e3e042aca509c8963f9f8337ccf1d7a} 
+virtual void firebase\+::database\+::\+Child\+Listener\+::\+On\+Child\+Moved (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{previous\+\_\+sibling\+\_\+key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This method is triggered when a child location\textquotesingle{}s priority changes. See \doxylink{classfirebase_1_1database_1_1_database_reference_ab13ff4c59668c4a9dbd217282ea01835}{Database\+Reference\+::\+Set\+Priority()} for more information on priorities and ordering data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & An immutable snapshot of the data at the new data at the child location. \\
+\hline
+\mbox{\texttt{ in}}  & {\em previous\+\_\+sibling\+\_\+key} & The key name of sibling location ordered before the child. This will be nullptr for the first child node of a location. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1database_1_1_child_listener_aa93f2703105e48959081e5c18d7a6df8}\index{firebase::database::ChildListener@{firebase::database::ChildListener}!OnChildRemoved@{OnChildRemoved}}
+\index{OnChildRemoved@{OnChildRemoved}!firebase::database::ChildListener@{firebase::database::ChildListener}}
+\doxysubsubsection{\texorpdfstring{OnChildRemoved()}{OnChildRemoved()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1database_1_1_child_listener_aa93f2703105e48959081e5c18d7a6df8} 
+virtual void firebase\+::database\+::\+Child\+Listener\+::\+On\+Child\+Removed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1database_1_1_data_snapshot}{Data\+Snapshot}} \&}]{snapshot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This method is triggered when a child is removed from the location to which this listener was added. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em snapshot} & An immutable snapshot of the data at the new data at the child location. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/database/listener.\+h\end{DoxyCompactItemize}

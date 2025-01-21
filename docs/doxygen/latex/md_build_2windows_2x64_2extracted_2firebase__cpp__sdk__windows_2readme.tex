@@ -1,0 +1,1963 @@
+\chapter{Firebase C++ SDK}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme}{}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme}\index{Firebase C++ SDK@{Firebase C++ SDK}}
+\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md1}%
+\Hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md1}%
+
+
+The Firebase C++ SDK provides C++ interfaces for the following Firebase services on {\itshape i\+OS} and {\itshape Android}\+:
+
+
+\begin{DoxyItemize}
+\item Firebase Analytics
+\item Firebase App Check
+\item Firebase Authentication
+\item Firebase Cloud Messaging
+\item Firebase Dynamic Links (deprecated SDK)
+\item Cloud Firestore
+\item Firebase Functions
+\item Google Mobile Ads (with User Messaging Platform)
+\item Firebase Installations
+\item Firebase Instance ID (deprecated SDK)
+\item Firebase Realtime Database
+\item Firebase Remote Config
+\item Firebase Storage
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md2}{}\doxysection{\texorpdfstring{Desktop Workflow Implementations}{Desktop Workflow Implementations}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md2}
+The Firebase C++ SDK includes desktop workflow support for the following subset of Firebase features, enabling their use on Windows, OS X, and Linux\+:
+
+
+\begin{DoxyItemize}
+\item Firebase Authentication
+\item Firebase App Check
+\item Cloud Firestore
+\item Firebase Functions
+\item Firebase Remote Config
+\item Firebase Realtime Database
+\item Firebase Storage
+\end{DoxyItemize}
+
+This is a Beta feature, and is intended for workflow use only during the development of your app, not for publicly shipping code.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md3}{}\doxysection{\texorpdfstring{Stub Implementations}{Stub Implementations}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md3}
+Stub (non-\/functional) implementations of the remaining libraries are provided for convenience when building for Windows, Mac OS, and Linux so that you don\textquotesingle{}t need to conditionally compile code when also targeting the desktop.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md4}{}\doxysection{\texorpdfstring{Directory Structure}{Directory Structure}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md4}
+The following table provides an overview of the Firebase C++ SDK directory structure.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directories   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Contents    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Directories   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Contents    }\\\cline{1-2}
+\endhead
+include   &C++ headers    \\\cline{1-2}
+xcframeworks/\+API/\+ARCH   &i\+OS xcframeworks (compiled against libc++)    \\\cline{1-2}
+libs/ios/\+ARCH   &i\+OS static libraries (compiled against    \\\cline{1-2}
+&libc++)    \\\cline{1-2}
+&Multi-\/architecture libraries are    \\\cline{1-2}
+&provided in the {\itshape universal} directory.    \\\cline{1-2}
+libs/android/\+ARCH   &Android (GCC 4.\+8+ compatible) static    \\\cline{1-2}
+&libraries for each architecture. Only the    \\\cline{1-2}
+&LLVM libc++ STL runtime ("{}c++"{}) is supported.    \\\cline{1-2}
+&More information can be found in the    \\\cline{1-2}
+&\href{https://developer.android.com/ndk/guides/cpp-support.html\#runtimes}{\texttt{ NDK C++ Helper Runtimes}}    \\\cline{1-2}
+&documentation.   \\\cline{1-2}
+\end{longtabu}
+{\itshape Desktop Implementations} \texorpdfstring{$\vert$}{|} libs/darwin \texorpdfstring{$\vert$}{|} OS X static libraries (desktop or stub \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} implementations, compiled against libc++) frameworks/darwin \texorpdfstring{$\vert$}{|} OS X frameworks (desktop or stub \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} implementations, compiled against libc++) libs/linux/\+ARCH/\+ABI \texorpdfstring{$\vert$}{|} Linux static libraries (desktop or stub \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} implementations, GCC 4.\+8+, libc++). \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} Built against C++11 or legacy ABI. libs/windows \texorpdfstring{$\vert$}{|} Windows static libraries (desktop or stub \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} implementations, MSVC 2019+)\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md5}{}\doxysection{\texorpdfstring{C++ Language Standards}{C++ Language Standards}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md5}
+The Firebase C++ SDK supports the C++14 language standard. For more information, please see our \href{https://opensource.google/documentation/policies/cplusplus-support\#c_language_standard}{\texttt{ C++ Language Standard Support Criteria}}.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md6}{}\doxysection{\texorpdfstring{Library / XCFramework Dependencies}{Library / XCFramework Dependencies}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md6}
+Each feature has dependencies upon libraries in this SDK and components distributed as part of the core Firebase \href{https://firebase.google.com/docs/ios/setup}{\texttt{ i\+OS SDK}} and \href{https://firebase.google.com/docs/android/setup}{\texttt{ Android SDK}}.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md7}{}\doxysubsection{\texorpdfstring{Android Dependencies}{Android Dependencies}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries and Gradle Packages    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries and Gradle Packages    }\\\cline{1-2}
+\endhead
+All Firebase SDKs   &platform(com.\+google.\+firebase\+:firebase-\/bom\+:33.\+0.\+0)    \\\cline{1-2}
+&(Android Bill of Materials)    \\\cline{1-2}
+Firebase Analytics   &libfirebase\+\_\+analytics.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase App Check   &libfirebase\+\_\+app\+\_\+check.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/appcheck    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/appcheck-\/debug    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/appcheck-\/playintegrity    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Authentication   &libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/auth    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Dynamic Links   &libfirebase\+\_\+dynamic\+\_\+links.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/dynamic-\/links    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Cloud Firestore   &libfirebase\+\_\+firestore.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/firestore    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/auth    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Functions   &libfirebase\+\_\+functions    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a (optional)    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/functions    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/auth    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Google Mobile Ads   &libfirebase\+\_\+gma.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+android.\+gms\+:play-\/services-\/ads\+:23.\+0.\+0    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+android.\+ump\+:user-\/messaging-\/platform\+:2.\+2.\+0    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Installations   &libfirebase\+\_\+installations.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/installations    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Messaging   &libfirebase\+\_\+messaging.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/messaging    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&libmessaging\+\_\+java.\+jar (Android service)    \\\cline{1-2}
+&androidx.\+core\+:core\+:1.\+13.\+1 (Maven package)    \\\cline{1-2}
+Firebase Realtime Database   &libfirebase\+\_\+database.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/database    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/auth    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Remote Config   &libfirebase\+\_\+remote\+\_\+config.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/config    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Firebase Storage   &libfirebase\+\_\+storage.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/analytics    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/storage    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+&com.\+google.\+firebase\+:firebase-\/auth    \\\cline{1-2}
+&(Maven package)    \\\cline{1-2}
+Google Play services module   &com.\+google.\+android.\+gms\+:play-\/services-\/base\+:18.\+4.\+0    \\\cline{1-2}
+&(Maven package)   \\\cline{1-2}
+\end{longtabu}
+
+
+The Firebase C++ SDK uses an Android BoM (Bill of Materials) to specify a single Firebase Android SDK version number to use, rather than individual versions for each library. For more information, please see the \href{https://firebase.google.com/docs/android/learn-more\#bom}{\texttt{ Firebase Android SDK documentation}}.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Gradle dependency file}{Gradle dependency file}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md8}
+Firebase C++ includes an {\ttfamily Android/firebase\+\_\+dependencies.\+gradle} file that helps you include the correct Android dependencies and Proguard files for each Firebase product. To use it, include the following in your build.\+gradle file (you can omit any Firebase products you aren\textquotesingle{}t using)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{apply\ from:\ "{}\$gradle.firebase\_cpp\_sdk\_dir/Android/firebase\_dependencies.gradle"{}}
+\DoxyCodeLine{firebaseCpp.dependencies\ \{}
+\DoxyCodeLine{\ \ app\ \ //\ Recommended\ for\ all\ apps\ using\ Firebase.}
+\DoxyCodeLine{\ \ analytics}
+\DoxyCodeLine{\ \ appCheck}
+\DoxyCodeLine{\ \ auth}
+\DoxyCodeLine{\ \ database}
+\DoxyCodeLine{\ \ dynamicLinks}
+\DoxyCodeLine{\ \ firestore}
+\DoxyCodeLine{\ \ functions}
+\DoxyCodeLine{\ \ gma}
+\DoxyCodeLine{\ \ installations}
+\DoxyCodeLine{\ \ messaging}
+\DoxyCodeLine{\ \ remoteConfig}
+\DoxyCodeLine{\ \ storage}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Google Play services module}{Google Play services module}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md9}
+If you wish to use the {\ttfamily google\+\_\+play\+\_\+services\+::\+Check\+Availability} and {\ttfamily Make\+Available} functions, or {\ttfamily \doxylink{classfirebase_1_1_module_initializer}{firebase\+::\+Module\+Initializer}}, you must include com.\+google.\+android.\+gms\+:play-\/services-\/base as a dependency as well, as listed under "{}\+Google Play services module"{} in the table above. If you use the Gradle dependency file described above, this dependency will automatically be included. To omit it (not recommended), specify {\ttfamily app\+Without\+Play\+Services} instead of {\ttfamily app} in {\ttfamily firebase\+Cpp.\+dependencies}.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md10}{}\doxysubsection{\texorpdfstring{i\+OS Dependencies}{i\+OS Dependencies}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md10}
+i\+OS users can include either xcframeworks or static libraries depending upon their preferred build environment.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{XCFrameworks}{XCFrameworks}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md11}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Frameworks and Cocoapods    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Frameworks and Cocoapods    }\\\cline{1-2}
+\endhead
+Firebase Analytics   &firebase\+\_\+analytics.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Analytics Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase App Check   &firebase\+\_\+app\+\_\+check.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+App\+Check Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Authentication   &firebase\+\_\+auth.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Dynamic Links   &firebase\+\_\+dynamic\+\_\+links.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Dynamic\+Links Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Cloud Firestore   &firebase\+\_\+firestore.\+xcframework    \\\cline{1-2}
+&firebase\+\_\+auth.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Firestore Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Functions   &firebase\+\_\+functions.\+xcframework    \\\cline{1-2}
+&firebase\+\_\+auth.\+xcframework (optional)    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Functions Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Google Mobile Ads   &firebase\+\_\+gma.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Core\+Only Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Google-\/\+Mobile-\/\+Ads-\/\+SDK Cocoapod (11.\+2.\+0)    \\\cline{1-2}
+&Google\+User\+Messaging\+Platform Cocoapod (2.\+3.\+0)    \\\cline{1-2}
+Firebase Installations   &firebase\+\_\+installations.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase\+Installations Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Cloud Messaging   &firebase\+\_\+messaging.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Messaging Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Realtime Database   &firebase\+\_\+database.\+xcframework    \\\cline{1-2}
+&firebase\+\_\+auth.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Database Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Remote Config   &firebase\+\_\+remote\+\_\+config.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Remote\+Config Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Storage   &firebase\+\_\+storage.\+xcframework    \\\cline{1-2}
+&firebase\+\_\+auth.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+Storage Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)   \\\cline{1-2}
+\end{longtabu}
+
+
+Important\+: Each version of the Firebase C++ SDK supports a specific version of the Firebase i\+OS SDK. Please ensure that you reference the Cocoapod versions listed above.
+
+Note\+: Parts of the Firebase i\+OS SDK are written in Swift. If your application does not use any Swift code, you may need to add an empty .swift file to your Xcode project to ensure that the Swift runtime is included in your app.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Libraries}{Libraries}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md12}
+If you prefer to link against static libraries instead of xcframeworks (see the previous section) the following table describes the libraries and Cocoapods required for each SDK feature.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries and Cocoapods    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries and Cocoapods    }\\\cline{1-2}
+\endhead
+Firebase Analytics   &libfirebase\+\_\+analytics.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase/\+Analytics Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase App Check   &firebase\+\_\+app\+\_\+check.\+xcframework    \\\cline{1-2}
+&firebase.\+xcframework    \\\cline{1-2}
+&Firebase/\+App\+Check Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Authentication   &libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Dynamic Links   &libfirebase\+\_\+dynamic\+\_\+links.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase/\+Dynamic\+Links Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Cloud Firestore   &libfirebase\+\_\+firestore.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&Firebase/\+Firestore Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Functions   &libfirebase\+\_\+functions.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a (optional)    \\\cline{1-2}
+&Firebase/\+Functions Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Google Mobile Ads   &libfirebase\+\_\+gma.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase/\+Core\+Only Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Google-\/\+Mobile-\/\+Ads-\/\+SDK Cocoapod (11.\+2.\+0)    \\\cline{1-2}
+&Google\+User\+Messaging\+Platform Cocoapod (2.\+3.\+0)    \\\cline{1-2}
+Firebase Installations   &libfirebase\+\_\+installations.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase\+Installations Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Cloud Messaging   &libfirebase\+\_\+messaging.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase/\+Cloud\+Messaging Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Realtime Database   &libfirebase\+\_\+database.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&Firebase/\+Database Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Remote Config   &libfirebase\+\_\+remote\+\_\+config.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&Firebase/\+Remote\+Config Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+Firebase Storage   &libfirebase\+\_\+storage.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&Firebase/\+Storage Cocoapod (10.\+25.\+0)    \\\cline{1-2}
+&Firebase/\+Auth Cocoapod (10.\+25.\+0)   \\\cline{1-2}
+\end{longtabu}
+
+
+Important\+: Each version of the Firebase C++ SDK supports a specific version of the Firebase i\+OS SDK. Please ensure that you reference the Cocoapod versions listed above.
+
+Note\+: Parts of the Firebase i\+OS SDK are written in Swift. If your application does not use any Swift code, you may need to add an empty .swift file to your Xcode project to ensure that the Swift runtime is included in your app.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md13}{}\doxysubsection{\texorpdfstring{Desktop Implementation Dependencies}{Desktop Implementation Dependencies}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md13}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Linux libraries}{Linux libraries}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md14}
+For Linux, library versions are provided for 32-\/bit (i386) and 64-\/bit (x86\+\_\+64) platforms.
+
+Two sets of Linux libraries are available\+: one set built against the newer C++11 ABI, and another set built against the standard (legacy) ABI. This is equivalent to the compiler option -\/D\+\_\+\+GLIBCXX\+\_\+\+USE\+\_\+\+CXX11\+\_\+\+ABI=1 or 0, respectively.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries    }\\\cline{1-2}
+\endhead
+Firebase Authentication   &libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase App Check   &libfirebase\+\_\+app\+\_\+check.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Cloud Firestore   &libfirebase\+\_\+firestore.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Functions   &libfirebase\+\_\+functions.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a (optional)    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Realtime Database   &libfirebase\+\_\+database.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Remote Config   &libfirebase\+\_\+remote\+\_\+config.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Storage   &libfirebase\+\_\+storage.\+a    \\\cline{1-2}
+&libfirebase\+\_\+auth.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Analytics (stub)   &libfirebase\+\_\+analytics.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Dynamic Links (stub)   &libfirebase\+\_\+dynamic\+\_\+links.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Google Mobile Ads (stub)   &libfirebase\+\_\+gma.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Installations (stub)   &libfirebase\+\_\+installations.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Cloud Messaging (stub)   &libfirebase\+\_\+messaging.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a   \\\cline{1-2}
+\end{longtabu}
+
+
+The provided libraries have been tested using GCC 4.\+8.\+0, GCC 7.\+2.\+0, and Clang 5.\+0 on Ubuntu. When building C++ desktop apps on Linux, you will need to link the {\ttfamily pthread} system library (consult your compiler documentation for more information).\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{OS X libraries}{OS X libraries}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md15}
+For OS X (Darwin), library versions are provided for both Intel (x86\+\_\+64) and ARM (arm64) platforms, as well as universal libraries. See the table above (in the "{}\+Linux libraries"{} section) for the list of library dependencies. Frameworks are also provided for your convenience.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Frameworks    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Frameworks    }\\\cline{1-2}
+\endhead
+Firebase Authentication   &firebase\+\_\+auth.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase App Check   &libfirebase\+\_\+app\+\_\+check.\+framework    \\\cline{1-2}
+&libfirebase\+\_\+app.\+framework    \\\cline{1-2}
+Cloud Firestore   &firebase\+\_\+firestore.\+framework    \\\cline{1-2}
+&firebase\+\_\+auth.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Functions   &firebase\+\_\+functions.\+framework    \\\cline{1-2}
+&firebase\+\_\+auth.\+framework (optional)    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Realtime Database   &firebase\+\_\+database.\+framework    \\\cline{1-2}
+&firebase\+\_\+auth.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Remote Config   &firebase\+\_\+remote\+\_\+config.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Storage   &firebase\+\_\+storage.\+framework    \\\cline{1-2}
+&firebase\+\_\+auth.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Analytics (stub)   &firebase\+\_\+analytics.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Dynamic Links (stub)   &firebase\+\_\+dynamic\+\_\+links.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Google Mobile Ads (stub)   &libfirebase\+\_\+gma.\+a    \\\cline{1-2}
+&libfirebase\+\_\+app.\+a    \\\cline{1-2}
+Firebase Installations (stub)   &firebase\+\_\+installations.\+framework    \\\cline{1-2}
+&firebase.\+framework    \\\cline{1-2}
+Firebase Cloud Messaging (stub)   &firebase\+\_\+messaging.\+framework    \\\cline{1-2}
+&firebase.\+framework   \\\cline{1-2}
+\end{longtabu}
+
+
+The provided libraries have been tested using Xcode 14.\+1. When building C++ desktop apps on OS X, you will need to link the {\ttfamily gssapi\+\_\+krb5} and {\ttfamily pthread} system libraries, as well as the {\ttfamily Core\+Foundation}, {\ttfamily Foundation}, {\ttfamily GSS}, and {\ttfamily Security} OS X system frameworks (consult your compiler documentation for more information).\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Windows libraries}{Windows libraries}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md16}
+For Windows, library versions are provided depending on whether your project is building in 32-\/bit (x86) or 64-\/bit (x64) mode, which Windows runtime environment you are using (Multithreaded /\+MT or Multithreaded DLL /\+MD), and whether you are targeting Release or Debug.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries and Gradle Packages    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Feature   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Required Libraries and Gradle Packages    }\\\cline{1-2}
+\endhead
+Firebase Authentication   &firebase\+\_\+auth.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase App Check   &libfirebase\+\_\+app\+\_\+check.\+lib    \\\cline{1-2}
+&libfirebase\+\_\+app.\+lib    \\\cline{1-2}
+Cloud Firestore   &firebase\+\_\+firestore.\+lib    \\\cline{1-2}
+&firebase\+\_\+auth.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Functions   &firebase\+\_\+functions.\+lib    \\\cline{1-2}
+&firebase\+\_\+auth.\+lib (optional)    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Realtime Database   &firebase\+\_\+database.\+lib    \\\cline{1-2}
+&firebase\+\_\+auth.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Remote Config   &firebase\+\_\+remote\+\_\+config.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Storage   &firebase\+\_\+storage.\+lib    \\\cline{1-2}
+&firebase\+\_\+auth.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Analytics (stub)   &firebase\+\_\+analytics.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Dynamic Links (stub)   &firebase\+\_\+dynamic\+\_\+links.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Google Mobile Ads (stub)   &firebase\+\_\+gma.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Installations (stub)   &firebase\+\_\+installations.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib    \\\cline{1-2}
+Firebase Cloud Messaging (stub)   &firebase\+\_\+messaging.\+lib    \\\cline{1-2}
+&firebase\+\_\+app.\+lib   \\\cline{1-2}
+\end{longtabu}
+
+
+The provided libraries have been tested using Visual Studio 2019. When building C++ desktop apps on Windows, you will need to link the following Windows SDK libraries (consult your compiler documentation for more information)\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Firebase C++ Library   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows SDK library dependencies    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Firebase C++ Library   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Windows SDK library dependencies    }\\\cline{1-2}
+\endhead
+Authentication   &{\ttfamily advapi32, ws2\+\_\+32, crypt32}    \\\cline{1-2}
+App Check   &{\ttfamily advapi32, ws2\+\_\+32, crypt32}    \\\cline{1-2}
+Firestore   &{\ttfamily advapi32, ws2\+\_\+32, crypt32, rpcrt4, ole32, shell32, dbghelp, bcrypt}    \\\cline{1-2}
+Functions   &{\ttfamily advapi32, ws2\+\_\+32, crypt32, rpcrt4, ole32}    \\\cline{1-2}
+Realtime Database   &{\ttfamily advapi32, ws2\+\_\+32, crypt32, iphlpapi, psapi, userenv, shell32}    \\\cline{1-2}
+Remote Config   &{\ttfamily advapi32, ws2\+\_\+32, crypt32, rpcrt4, ole32, icu}    \\\cline{1-2}
+Storage   &{\ttfamily advapi32, ws2\+\_\+32, crypt32}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md17}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md17}
+See our \href{https://firebase.google.com/docs/cpp/setup}{\texttt{ setup guide}} to get started and download the prebuilt version of the Firebase C++ SDK.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md18}{}\doxysection{\texorpdfstring{Source Code}{Source Code}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md18}
+The Firebase C++ SDK is open source. You can find the source code (and information about building it) at \href{https://github.com/firebase/firebase-cpp-sdk}{\texttt{ github.\+com/firebase/firebase-\/cpp-\/sdk}}.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md19}{}\doxysection{\texorpdfstring{Platform Notes}{Platform Notes}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md19}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md20}{}\doxysubsection{\texorpdfstring{i\+OS Method Swizzling}{i\+OS Method Swizzling}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md20}
+On i\+OS, some application events (such as opening URLs and receiving notifications) require your application delegate to implement specific methods. For example, receiving a notification may require your application delegate to implement {\ttfamily application\+:did\+Receive\+Remote\+Notification\+:}. Because each i\+OS application has its own app delegate, Firebase uses {\itshape method swizzling}, which allows the replacement of one method with another, to attach its own handlers in addition to any you may have implemented.
+
+The Firebase Cloud Messaging library needs to attach handlers to the application delegate using method swizzling. If you are using these libraries, at load time, Firebase will identify your {\ttfamily App\+Delegate} class and swizzle the required methods onto it, chaining a call back to your existing method implementation.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md21}{}\doxysubsection{\texorpdfstring{Custom Android Build Systems}{Custom Android Build Systems}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md21}
+We currently provide generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+py to convert google-\/services.\+json to .xml resources to be included in an Android application. This script applies the same transformation that the Google Play Services Gradle plug-\/in performs when building Android applications. Users who don\textquotesingle{}t use Gradle (e.\+g ndk-\/build, makefiles, Visual Studio etc.) can use this script to automate the generation of string resources.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md22}{}\doxysubsection{\texorpdfstring{Pro\+Guard on Android}{Pro\+Guard on Android}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md22}
+Many Android build systems use \href{https://developer.android.com/studio/build/shrink-code.html}{\texttt{ Pro\+Guard}} for builds in Release mode to shrink application sizes and protect Java source code. If you use Pro\+Guard, you will need to add the files in libs/android/\texorpdfstring{$\ast$}{*}.pro corresponding to the Firebase C++ libraries you are using to your Pro\+Guard configuration.
+
+For example, with Gradle, build.\+gradle would contain\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{android\ \{}
+\DoxyCodeLine{\ \ [...other\ stuff...]}
+\DoxyCodeLine{\ \ buildTypes\ \{}
+\DoxyCodeLine{\ \ \ \ release\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ minifyEnabled\ true}
+\DoxyCodeLine{\ \ \ \ \ \ proguardFile\ getDefaultProguardFile('your-\/project-\/proguard-\/config.txt')}
+\DoxyCodeLine{\ \ \ \ \ \ proguardFile\ file(project.ext.firebase\_cpp\_sdk\_dir\ +\ "{}/libs/android/app.pro"{})}
+\DoxyCodeLine{\ \ \ \ \ \ proguardFile\ file(project.ext.firebase\_cpp\_sdk\_dir\ +\ "{}/libs/android/analytics.pro"{})}
+\DoxyCodeLine{\ \ \ \ \ \ [...and\ so\ on,\ for\ each\ Firebase\ C++\ library\ you\ are\ using.]}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md23}{}\doxysubsection{\texorpdfstring{Requiring Google Play services on Android}{Requiring Google Play services on Android}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md23}
+Many Firebase C++ libraries require \href{https://developers.google.com/android/guides/overview}{\texttt{ Google Play services}} on the user\textquotesingle{}s Android device. If a Firebase C++ library returns \href{http://firebase.google.com/docs/reference/cpp/namespace/firebase}{\texttt{ {\ttfamily k\+Init\+Result\+Failed\+Missing\+Dependency}}} on initialization, it means Google Play services is not available on the device (it needs to be updated, reactivated, permissions fixed, etc.) and that Firebase library cannot be used until the situation is corrected.
+
+You can find out why Google Play services is unavailable (and try to fix it) by using the functions in \href{http://firebase.google.com/docs/reference/cpp/namespace/google-play-services}{\texttt{ {\ttfamily google\+\_\+play\+\_\+services/availability.\+h}}}.
+
+Optionally, you can use \href{http://firebase.google.com/docs/reference/cpp/class/firebase/module-initializer}{\texttt{ {\ttfamily Module\+Initializer}}} to initialize one or more Firebase libraries, which will handle prompting the user to update Google Play services if required.
+
+Note\+: Some libraries do not require Google Play services and don\textquotesingle{}t return any initialization status. These can be used without Google Play services. The table below summarizes whether Google Play services is required by each Firebase C++ library.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Firebase C++ Library   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Google Play services required?    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Firebase C++ Library   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Google Play services required?    }\\\cline{1-2}
+\endhead
+Analytics   &Not required    \\\cline{1-2}
+App Check   &Not required    \\\cline{1-2}
+Cloud Messaging   &Required    \\\cline{1-2}
+Auth   &Required    \\\cline{1-2}
+Dynamic Links   &Required    \\\cline{1-2}
+Firestore   &Required    \\\cline{1-2}
+Functions   &Required    \\\cline{1-2}
+Installations   &Not Required    \\\cline{1-2}
+Instance ID   &Required    \\\cline{1-2}
+Google Mobile Ads   &Not required (usually; see below)    \\\cline{1-2}
+Realtime Database   &Required    \\\cline{1-2}
+Remote Config   &Required    \\\cline{1-2}
+Storage   &Required   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md24}{}\doxysubsubsection{\texorpdfstring{A note on Google Mobile Ads and Google Play services}{A note on Google Mobile Ads and Google Play services}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md24}
+Most versions of the Google Mobile Ads SDK for Android can work properly without Google Play services. However, if you are using the {\ttfamily com.\+google.\+android.\+gms\+:play-\/services-\/ads-\/lite} dependency instead of the standard {\ttfamily com.\+google.\+firebase\+:firebase-\/ads} dependency, Google Play services WILL be required in your specific case.
+
+GMA initialization will only return {\ttfamily k\+Init\+Result\+Failed\+Missing\+Dependency} when Google Play services is unavailable AND you are using {\ttfamily com.\+google.\+android.\+gms\+:play-\/services-\/ads-\/lite}.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md25}{}\doxysubsection{\texorpdfstring{Desktop project setup}{Desktop project setup}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md25}
+To use desktop workflow support, you must have an Android or i\+OS project set up in the Firebase console.
+
+If you have an Android project, you can simply use the {\ttfamily google-\/services.\+json} file on desktop.
+
+If you have an i\+OS project and don\textquotesingle{}t wish to create an Android project, you can use the included Python script {\ttfamily generate\+\_\+xml\+\_\+from\+\_\+google\+\_\+services\+\_\+json.\+py -\/-\/plist} to convert your {\ttfamily Google\+Service-\/\+Info.\+plist} file into a {\ttfamily google-\/services-\/desktop.\+json} file.
+
+By default, when your app initializes, Firebase will look for a file named {\ttfamily google-\/services.\+json} or {\ttfamily google-\/services-\/desktop.\+json} in the current directory. Ensure that one of these files is present, or call {\ttfamily App\+Options\+::\+Load\+From\+Json\+Config()} before initializing Firebase to specify your JSON configuration data directly.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md26}{}\doxysubsection{\texorpdfstring{Note on Firebase C++ desktop support}{Note on Firebase C++ desktop support}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md26}
+Firebase C++ SDK desktop support is a {\bfseries{Beta}} feature, and is intended for workflow use only during the development of your app, not for publicly shipping code.\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md27}{}\doxysection{\texorpdfstring{Release Notes}{Release Notes}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md27}
+\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md28}{}\doxysubsection{\texorpdfstring{12.\+0.\+0}{12.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md28}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 33.\+0.\+0.
+\item General (Android)\+: Updated min\+Sdk\+Version to 23, and target\+Sdk\+Version and compile\+Sdk\+Version to 34.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+25.\+0.
+\item General (i\+OS)\+: Minimum i\+OS deployment target is now 13.\+0.
+\item Auth\+: Removed methods that were deprecated in v11.\+0.\+0.
+\item Storage (i\+OS)\+: Fix invalid pointer in {\ttfamily Storage\+Reference\+::\+Get\+File()} when running in a secondary thread (\href{https://github.com/firebase/firebase-cpp-sdk/issues/1570}{\texttt{ \#1570}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md29}{}\doxysubsection{\texorpdfstring{11.\+10.\+0}{11.\+10.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md29}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+8.\+1.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+24.\+0.
+\item General (i\+OS, tv\+OS, Desktop)\+: i\+OS, tv\+OS, and mac\+OS SDKs are now built using Xcode 15.\+1.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 11.\+2.\+0 and Google\+User\+Messaging\+Platform version 2.\+3.\+0.
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 23.\+0.\+0 and user-\/messaging-\/platform version 2.\+2.\+0.
+\item Storage (Desktop)\+: Removed 5-\/minute timeout for uploads and downloads.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md30}{}\doxysubsection{\texorpdfstring{11.\+9.\+0}{11.\+9.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md30}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+7.\+4.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+22.\+0.
+\item Auth\+: Add User\+::\+Send\+Email\+Verification\+Before\+Updating\+Email, a new method to verify and change the User\textquotesingle{}s email.
+\item Auth\+: Deprecate the older method of updating emails, User\+::\+Update\+Email.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md31}{}\doxysubsection{\texorpdfstring{11.\+8.\+0}{11.\+8.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md31}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+7.\+1.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+20.\+0.
+\item Dynamic Links\+: The Dynamic Links SDK is now deprecated. See the \href{https://firebase.google.com/support/dynamic-links-faq}{\texttt{ support documentation}} for more information.
+\item Messaging (Android)\+: Fixed min\+Sdk\+Version in the firebase\+\_\+messaging.\+aar manifest file.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md32}{}\doxysubsection{\texorpdfstring{11.\+7.\+0}{11.\+7.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md32}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Firebase C++ on Android is now built using Android API level 33 and Gradle 6.\+7.\+1.
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+7.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+19.\+0.
+\item Analytics\+: Updated the consent management API to include new consent signals.
+\item Auth\+: Fix a bug where an anonymous account can\textquotesingle{}t be linked with email password credential. For background, see \href{https://cloud.google.com/identity-platform/docs/admin/email-enumeration-protection}{\texttt{ Email Enumeration Protection}}
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 22.\+6.\+0.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 10.\+14.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md33}{}\doxysubsection{\texorpdfstring{11.\+6.\+0}{11.\+6.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md33}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+15.\+0.
+\item Firestore\+: Add support for disjunctions in queries (OR queries) (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1453}{\texttt{ \#1453}}).
+\item GMA\+: Added the User Messaging Platform (UMP) SDK, required for obtaining consent from users before showing ads. See the \href{https://firebase.google.com/docs/admob/cpp/privacy/}{\texttt{ Get Started Guide}} for more information.
+\item GMA (i\+OS)\+: Added a new Cocoapod dependency for the UMP SDK\+: Google\+User\+Messaging\+Platform version 2.\+1.\+0.
+\item GMA (Android)\+: Added a new Maven package dependency for the UMP SDK\+: com.\+google.\+android.\+ump\+:user-\/messaging-\/platform version 2.\+1.\+0. This dependency will automatically be included if you include "{}gma"{} in the firebase\+Cpp.\+dependencies list in your build.\+gradle file.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md34}{}\doxysubsection{\texorpdfstring{11.\+5.\+0}{11.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md34}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+15.\+0.
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+3.\+1.
+\item General (Android)\+: Made dynamic code files read only to comply with new Android 14 security requirements. This fixes a crash at API level 34+.
+\item Analytics (i\+OS)\+: Added Initiate\+On\+Device\+Conversion\+Measurement\+With\+Phone\+Number function to facilitate the \href{https://support.google.com/google-ads/answer/12119136}{\texttt{ on-\/device conversion measurement}} API.
+\item Auth\+: Add Firebase Auth Emulator support. Set the environment variable USE\+\_\+\+AUTH\+\_\+\+EMULATOR=yes (and optionally AUTH\+\_\+\+EMULATOR\+\_\+\+PORT, default 9099) to connect to the local Firebase Auth Emulator.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 10.\+10.\+0.
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 22.\+3.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md35}{}\doxysubsection{\texorpdfstring{11.\+4.\+0}{11.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+2.\+2.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+13.\+0.
+\item General (i\+OS)\+: 32-\/bit i\+OS builds (i386 and armv7) are no longer supported.
+\item General\+: Add Firebase\+App.\+Get\+Apps(), to return the list of {\ttfamily \doxylink{classfirebase_1_1_app}{firebase\+::\+App}} instances.
+\item GMA (Android)\+: Fixed a crash when initializing GMA without a Firebase App.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md36}{}\doxysubsection{\texorpdfstring{11.\+3.\+0}{11.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md36}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+2.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+12.\+0.
+\item General (Desktop)\+: Fixed an error loading google-\/services.\+json and google-\/services-\/desktop.\+json from paths with international characters on Windows.
+\item Auth (Android)\+: Fixed an issue where Verify\+Phone\+Number\textquotesingle{}s internal builder failed to create Phone\+Auth\+Options with certain compiler settings.
+\item Auth (i\+OS)\+: Fixed an issue where functions that return Auth\+Result were not including updated credentials when encountering errors.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 10.\+8.\+0.
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 22.\+2.\+0.
+\item Remote Config (Desktop)\+: Additional fix for handling of non-\/\+English time zone names on Windows.
+\item Firestore (Android)\+: Fix the intermittent global references exhaustion crash when working with documents with a large number of keys and/or large map and/or array fields. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1364}{\texttt{ \#1364}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md37}{}\doxysubsection{\texorpdfstring{11.\+2.\+0}{11.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md37}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+1.\+1.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+11.\+0.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 10.\+6.\+0.
+\item App Check (Desktop)\+: Fixed expired tokens being cached on 32-\/bit systems.
+\item Remote Config (Android)\+: Fixed the Config\+Update classes being missing from the proguard files.
+\item Remote Config (Desktop)\+: Fixed handling of time zones on Windows when the time zone name in the current system language contains an accented character or apostrophe. This adds a requirement for applications using Remote Config on Windows desktop to link the "{}icu.\+dll"{} system library.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md38}{}\doxysubsection{\texorpdfstring{11.\+1.\+0}{11.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md38}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+1.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+10.\+0.
+\item General (Android)\+: Fix for deadlock within Jni\+Result\+Callback, commonly seen within Messaging, but affecting other products as well.
+\item Database/\+Firestore (Desktop)\+: Fixed a crash on Windows when the user\textquotesingle{}s home directory contains non-\/\+ANSI characters (Unicode above U+00\+FF).
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 22.\+1.\+0.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 10.\+5.\+0.
+\item Storage (Desktop)\+: Fixed a crash on Windows when uploading files from a path containing non-\/\+ANSI characters (Unicode above U+00\+FF).
+\item Firestore\+: Added Multi\+Db support. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1321}{\texttt{ \#1321}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md39}{}\doxysubsection{\texorpdfstring{11.\+0.\+1}{11.\+0.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md39}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (i\+OS)\+: Fixed a crash in {\ttfamily Credential\+::is\+\_\+valid()} when an {\ttfamily Auth\+Result} contains an invalid credential, such as when signing in anonymously.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md40}{}\doxysubsection{\texorpdfstring{11.\+0.\+0}{11.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md40}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Update minimum supported C++ standard to C++14.
+\item General (Android)\+: Update to Firebase Android BoM version 32.\+0.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+9.\+0.
+\item General (i\+OS, tv\+OS, Desktop)\+: i\+OS, tv\+OS, and mac\+OS SDKs are now built using Xcode 14.\+1.
+\item Ad\+Mob\+: Removed deprecated Ad\+Mob SDK. Please use the included Google Mobile Ads SDK ("{}\+GMA"{}) instead.
+\item App Check\+: Adds support for Firebase App Check on Android, i\+OS, tv\+OS, and desktop platforms.
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 22.\+0.\+0.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 10.\+4.\+0.
+\item Auth\+: Deprecated a number of methods, appending {\ttfamily \+\_\+\+DEPRECATED} to some of their names. This is a breaking change; you must either modify your code to refer to the {\ttfamily \+\_\+\+DEPRECATED} methods, or switch to the new methods, which have new return types {\ttfamily Auth\+Result} and {\ttfamily User} (rather than {\ttfamily Sign\+In\+Result} and {\ttfamily User \texorpdfstring{$\ast$}{*}}). The deprecated methods will be removed in the {\itshape next} major release of the Firebase C++ SDK. {\itshape (Note\+: do not mix and match using the old and new methods or undefined behavior may result.)}
+\item Firestore\+: Added {\ttfamily Query\+::\+Count()}, which fetches the number of documents in the result set without actually downloading the documents (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1207}{\texttt{ \#1207}}).
+\item Remote Config (Android/i\+OS)\+: Added support for real-\/time config updates. Use the new {\ttfamily Add\+On\+Config\+Update\+Listener} API to get real-\/time updates. Existing \href{https://firebase.google.com/docs/reference/cpp/class/firebase/remote-config/remote-config\#fetch}{\texttt{ {\ttfamily Fetch}}} and \href{https://firebase.google.com/docs/reference/cpp/class/firebase/remote-config/remote-config\#activate}{\texttt{ {\ttfamily Activate}}} APIs aren\textquotesingle{}t affected by this change. To learn more, see \href{https://firebase.google.com/docs/remote-config/get-started?platform=cpp\#add-real-time-listener}{\texttt{ Get started with Firebase Remote Config}}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md41}{}\doxysubsection{\texorpdfstring{10.\+7.\+0}{10.\+7.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md41}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+3.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+7.\+0.
+\item General\+: Add build time warning for C++11, since the next major release of the Firebase C++ SDK will set the new minimum C++ version to C++14.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md42}{}\doxysubsection{\texorpdfstring{10.\+6.\+0}{10.\+6.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md42}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+2.\+3.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+6.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md43}{}\doxysubsection{\texorpdfstring{10.\+5.\+0}{10.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md43}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+2.\+1.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+5.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md44}{}\doxysubsection{\texorpdfstring{10.\+4.\+0}{10.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md44}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+2.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+4.\+0.
+\item General (Desktop)\+: On mac\+OS, in order to support sandbox mode, apps can define a key/value pair for {\ttfamily FBApp\+Group\+Entitlement\+Name} in Info.\+plist. The value associated with this key will be used to prefix semaphore names created internally by the Firebase C++ SDK so that they conform with \href{https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html\#//apple_ref/doc/uid/TP40011183-CH3-SW24}{\texttt{ mac\+OS sandbox requirements}}.
+\item Analytics\+: Add {\ttfamily analytics\+::\+Set\+Consent()} and {\ttfamily analytics\+::\+Get\+Session\+Id()} APIs.
+\item GMA (Android)\+: Updated dependency to play-\/services-\/ads version 21.\+4.\+0. This new version requires Multidex to be enabled in your Android builds.
+\item GMA (i\+OS)\+: Updated dependency to Google-\/\+Mobile-\/\+Ads-\/\+SDK version 9.\+14.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md45}{}\doxysubsection{\texorpdfstring{10.\+3.\+0}{10.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md45}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+1.\+1.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+3.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md46}{}\doxysubsection{\texorpdfstring{10.\+2.\+0}{10.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md46}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+1.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+2.\+0.
+\item General (Desktop)\+: Linux x86 libraries have been fixed.
+\item NOTE\+: The next major release of the Firebase C++ SDK will drop support for C++11, setting the new minimum C++ version to C++14. For more information please see our \href{https://opensource.google/documentation/policies/cplusplus-support\#c_language_standard}{\texttt{ C++ Language Standard Support Criteria}}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md47}{}\doxysubsection{\texorpdfstring{10.\+1.\+0}{10.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md47}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+0.\+2.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+1.\+0.
+\item Firestore (Android)\+: Reduce the number of JNI global references consumed when creating or updating documents (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1111}{\texttt{ \#1111}}).
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item Linux x86 builds are broken since C++ SDK version 9.\+6.\+0. A fix is in progress.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md48}{}\doxysubsection{\texorpdfstring{10.\+0.\+0}{10.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md48}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 31.\+0.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 10.\+0.\+0.
+\item General\+: Remove unused headers for performance and test lab from the package.
+\item Auth (Android/i\+OS)\+: Deprecating {\ttfamily Phone\+Auth\+Provider\+::k\+Max\+Timeout\+Ms}. The actual range is determined by the underlying SDK, ex. \href{https://firebase.google.com/docs/reference/android/com/google/firebase/auth/PhoneAuthOptions.Builder}{\texttt{ Phone\+Auth\+Options.\+Builder from Android SDK}}.
+\item GMA (i\+OS)\+: Updated i\+OS dependency to Google Mobile Ads SDK version 9.\+11.\+0.\+1.
+\item Ad\+Mob (i\+OS)\+: Temporarily pinned Ad\+Mob dependency to a special version of the Google-\/\+Mobile-\/\+Ads-\/\+SDK Cocoapod, "{}7.\+69.\+0-\/cppsdk3"{}, to maintain compatibility with version 10.\+x of the Firebase i\+OS SDK.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md49}{}\doxysubsection{\texorpdfstring{9.\+6.\+0}{9.\+6.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md49}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 30.\+5.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 9.\+6.\+0.
+\item GMA (i\+OS)\+: Updated i\+OS dependency to Google Mobile Ads SDK version 9.\+9.\+0.
+\item GMA (Android)\+: Updated Android dependency to Google Mobile Ads SDK version 21.\+2.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md50}{}\doxysubsection{\texorpdfstring{9.\+5.\+0}{9.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md50}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Update to Firebase Android BoM version 30.\+4.\+0.
+\item General (i\+OS)\+: Update to Firebase Cocoapods version 9.\+5.\+0.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md51}{}\doxysubsection{\texorpdfstring{9.\+4.\+0}{9.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md51}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Desktop)\+: Fixed an issue with embedded dependencies that could cause duplicate symbol linker errors in conjunction with other libraries (\href{https://github.com/firebase/firebase-cpp-sdk/issues/989}{\texttt{ \#989}}).
+\item GMA (i\+OS)\+: Updated i\+OS dependency to Google Mobile Ads SDK version 9.\+7.\+0.
+\item General (Android, i\+OS, Linux 32-\/bit)\+: Fixed an integer overflow which could result in a crash or premature return when waiting for a {\ttfamily Future} with a timeout (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1042}{\texttt{ \#1042}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md52}{}\doxysubsection{\texorpdfstring{9.\+3.\+0}{9.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md52}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android, Linux)\+: Fixed a concurrency bug where waiting for an event with a timeout could occasionally return prematurely, as if the timeout had occurred (\href{https://github.com/firebase/firebase-cpp-sdk/pull/1021}{\texttt{ \#1021}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md53}{}\doxysubsection{\texorpdfstring{9.\+2.\+0}{9.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md53}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item GMA\+: Added the Google Mobile Ads SDK with updated support for Ad\+Mob. See the \href{https://firebase.google.com/docs/admob/cpp/quick-start}{\texttt{ Get Started Guide}} for more information.
+\item Ad\+Mob\+: The Ad\+Mob SDK has been deprecated. Please update your app to use the new Google Mobile Ads SDK which facilitates similar functionality.
+\item General (Android)\+: Switched over to Android BoM (Bill of Materials) for dependency versions. This requires Gradle 5.
+\item Database (Desktop)\+: If the app data directory doesn\textquotesingle{}t exist, create it. This fixes an issue with disk persistence on Linux.
+\item Messaging (Android)\+: Fixed \#973. Make sure all the resources are closed in {\ttfamily Registration\+Intent\+Service}.
+\item Firestore\+: Added {\ttfamily Transaction\+Options} to control how many times a transaction will retry commits before failing (\href{https://github.com/firebase/firebase-cpp-sdk/pull/966}{\texttt{ \#966}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md54}{}\doxysubsection{\texorpdfstring{9.\+1.\+0}{9.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md54}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Fixed a bug that required Android apps to include {\ttfamily com.\+google.\+android.\+gms\+:play-\/services-\/base} as an explicit dependency when only using Ad\+Mob, Analytics, Remote Config, or Messaging.
+\item Functions\+: Add a new method {\ttfamily Get\+Https\+Callable\+From\+URL}, to create callables with URLs other than cloudfunctions.\+net.
+\item Analytics (i\+OS)\+: Added Initiate\+On\+Device\+Conversion\+Measurement\+With\+Email function to facilitate the \href{https://support.google.com/google-ads/answer/12119136}{\texttt{ on-\/device conversion measurement}} API.
+\item Firestore (Desktop)\+: On Windows, you must additionally link against the bcrypt and dbghelp system libraries.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md55}{}\doxysubsection{\texorpdfstring{9.\+0.\+0}{9.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md55}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Firebase C++ on i\+OS is now built using Xcode 13.\+3.\+1.
+\item General (Android)\+: Firebase C++ on Android is now built against NDK version r21e.
+\item General (Android)\+: Support for gnustl (also known as libstdc++) has been removed. Please use libc++ instead. Android libraries have been moved from libs/android/\+ARCH/\+STL to libs/android/\+ARCH.
+\item Ad\+Mob (i\+OS)\+: Temporarily pinned Ad\+Mob dependency to a special version of the Google-\/\+Mobile-\/\+Ads-\/\+SDK Cocoapod, "{}7.\+69.\+0-\/cppsdk2"{}, to maintain compatibility with version 9.\+x of the Firebase i\+OS SDK.
+\item Analytics\+: Removed deprecated event names and parameters.
+\item Realtime Database (Desktop)\+: Fixed a bug handling server timestamps on 32-\/bit CPUs.
+\item Storage (Desktop)\+: Set Content-\/\+Type HTTP header when uploading with custom metadata.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md56}{}\doxysubsection{\texorpdfstring{8.\+11.\+0}{8.\+11.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md56}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore/\+Database (Desktop)\+: Upgrade Level\+Db dependency to 1.\+23 (\href{https://github.com/firebase/firebase-cpp-sdk/pull/886}{\texttt{ \#886}}).
+\item Firestore/\+Database (Desktop)\+: Enabled Snappy compression support in Level\+Db (\href{https://github.com/firebase/firebase-cpp-sdk/pull/885}{\texttt{ \#885}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md57}{}\doxysubsection{\texorpdfstring{8.\+10.\+0}{8.\+10.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md57}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Fixed additional issues on i\+OS 15 caused by early initialization of Firebase i\+OS SDK.
+\item Remote Config\+: Fixed default {\ttfamily Fetch()} timeout being 1000 times too high.
+\item Storage (Desktop)\+: Added retry logic to Put\+File, Get\+File, and other operations.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md58}{}\doxysubsection{\texorpdfstring{8.\+9.\+0}{8.\+9.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md58}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Fixed an intermittent crash on i\+OS 15 caused by constructing C++ objects during Objective-\/C\textquotesingle{}s {\ttfamily +load} method. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/706}{\texttt{ \#706}}) (\href{https://github.com/firebase/firebase-cpp-sdk/pull/783}{\texttt{ \#783}})
+\item General\+: Internal changes to Mutex class.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md59}{}\doxysubsection{\texorpdfstring{8.\+8.\+0}{8.\+8.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md59}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Fixed a data race that could manifest as null pointer dereference in {\ttfamily Future\+Base\+::\+Release()}. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/747}{\texttt{ \#747}})
+\item General (i\+OS)\+: i\+OS SDKs are now built using Xcode 12.\+4.
+\item General (Desktop)\+: mac\+OS SDKs are now built using Xcode 12.\+4.
+\item Auth (Desktop)\+: Fixed a crash in {\ttfamily error\+\_\+code()} when a request is cancelled or times out. (\href{https://github.com/firebase/firebase-cpp-sdk/issues/737}{\texttt{ \#737}})
+\item Firestore\+: Fix "{}unaligned pointers"{} build error on mac\+OS Monterey (\href{https://github.com/firebase/firebase-cpp-sdk/issues/712}{\texttt{ \#712}}).
+\item Messaging (Android)\+: Fixed crash during termination. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/739}{\texttt{ \#739}}) (\href{https://github.com/firebase/firebase-cpp-sdk/pull/745}{\texttt{ \#745}})
+\item Messaging (Android)\+: Fixed crash during initialization. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/760}{\texttt{ \#760}})
+\item Remote Config (Desktop)\+: Fixed cache expiration time value used by {\ttfamily Remote\+Config\+::\+Fetch\+And\+Activate()}. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/767}{\texttt{ \#767}})
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md60}{}\doxysubsection{\texorpdfstring{8.\+7.\+0}{8.\+7.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md60}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore\+: Released to general availability for Android and i\+OS (desktop support remains in beta).
+\item General (Android)\+: Minimum SDK version is now 19.
+\item General\+: Variant double type now support 64-\/bit while saving to json. (\href{https://github.com/firebase/quickstart-unity/issues/1133}{\texttt{ \#1133}}).
+\item Analytics (tv\+OS)\+: Analytics is now supported on tv\+OS.
+\item Firestore (i\+OS)\+: Fix a crash when {\ttfamily Transaction.\+Get\+Snapshot\+Async()} was invoked after {\ttfamily Firebase\+Firestore.\+Terminate\+Async()} (\href{https://github.com/firebase/firebase-ios-sdk/pull/8760}{\texttt{ \#8760}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md61}{}\doxysubsection{\texorpdfstring{8.\+6.\+0}{8.\+6.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md61}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Desktop)\+: Mac\+OS SDKs are now built using Xcode 12.\+2, and include support for ARM-\/based Mac systems.
+\item General (i\+OS)\+: i\+OS SDKs are now built using Xcode 12.\+2.
+\item Messaging (Android)\+: Fixes an issue to receive token when initialize the app. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/667}{\texttt{ \#667}}).
+\item Auth (Desktop)\+: Fix a crash that would occur if parsing the JSON response from the server failed (\href{https://github.com/firebase/firebase-cpp-sdk/pull/692}{\texttt{ \#692}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md62}{}\doxysubsection{\texorpdfstring{8.\+5.\+0}{8.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md62}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Updating Android and i\+OS dependencies to the latest.
+\item General\+: Fixes an issue with generating Proguard files. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/664}{\texttt{ \#664}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md63}{}\doxysubsection{\texorpdfstring{8.\+4.\+0}{8.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md63}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Updating Android and i\+OS dependencies to the latest.
+\item Firestore\+: Added {\ttfamily operator==} and {\ttfamily operator!=} for {\ttfamily Snapshot\+Metadata}, {\ttfamily Settings}, {\ttfamily Query\+Snapshot}, {\ttfamily Document\+Snapshot}, {\ttfamily Set\+Options}, and {\ttfamily Document\+Change}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md64}{}\doxysubsection{\texorpdfstring{8.\+3.\+0}{8.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md64}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: This release adds tv\+OS C++ libraries that wrap the community-\/supported Firebase tv\+OS SDK. {\ttfamily libs/tvos} contains tv\+OS-\/specific libraries, and the {\ttfamily xcframeworks} directory now includes support for both i\+OS and tv\+OS. The following products are currently included for tv\+OS\+: Auth, Database, Firestore, Functions, Installations, Messaging, Remote Config, Storage.
+\item General\+: When building from source, the compiler setting of "{}no exceptions"{} on app is PRIVATE now and will not affect any other targets in the build.
+\item Firestore\+: Removed the deprecated {\ttfamily Firestore\+::\+Run\+Transaction(\+Transaction\+Function\texorpdfstring{$\ast$}{*})} function. Please use the overload that takes a {\ttfamily std\+::function} argument instead.
+\item Firestore\+: {\ttfamily Field\+Value\+::\+Increment} functions are no longer guarded by the {\ttfamily INTERNAL\+\_\+\+EXPERIMENTAL} macro.
+\item Firestore\+: added more validation of invalid input.
+\item Firestore\+: added an {\ttfamily is\+\_\+valid} method to the public API classes that can be in an invalid state.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md65}{}\doxysubsection{\texorpdfstring{8.\+2.\+0}{8.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md65}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Updated Flatbuffers internal dependency from version 1.\+9 to 1.\+12.
+\item Firestore\+: Deprecated the {\ttfamily Firestore\+::\+Run\+Transaction(\+Transaction\+Function\texorpdfstring{$\ast$}{*})} function. Please use the overload that takes a {\ttfamily std\+::function} argument instead.
+\item Firestore\+: Removed the deprecated {\ttfamily Event\+Listener} class.
+\item Firestore\+: Removed the deprecated overloads of {\ttfamily Add\+Snapshot\+Listener} and {\ttfamily Add\+Snapshots\+In\+Sync\+Listener} functions that take an {\ttfamily Event\+Listener\texorpdfstring{$\ast$}{*}} argument. Please use the overloads that take a {\ttfamily std\+::function} argument instead.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md66}{}\doxysubsection{\texorpdfstring{8.\+1.\+0}{8.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md66}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore\+: Fixed a linker error when {\ttfamily Document\+Change\+::npos} was used. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/474}{\texttt{ \#474}}).
+\item Firestore\+: Added {\ttfamily Firestore\+::\+Named\+Query} that allows reading the queries used to build a Firestore Data Bundle.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md67}{}\doxysubsection{\texorpdfstring{8.\+0.\+0}{8.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md67}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Analytics\+: Removed {\ttfamily Set\+Current\+Screen()} following its removal from i\+OS SDK and deprecation from Android SDK. Please use {\ttfamily Log\+Event} with Screen\+View event to manually log screen changes.
+\item General (Android)\+: Firebase no longer supports STLPort. Please \href{https://developer.android.com/ndk/guides/cpp-support\#cs}{\texttt{ use libc++ instead}}.
+\item General (Android)\+: Firebase support for gnustl (also known as libstdc++) is deprecated and will be removed in the next major release. Please use libc++ instead.
+\item Instance Id\+: Removed support for the previously-\/deprecated Instance ID SDK.
+\item Remote Config\+: The previously-\/deprecated static methods have been removed. Please use the new instance-\/based {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{firebase\+::remote\+\_\+config\+::\+Remote\+Config}} API.
+\item Remote Config(\+Android)\+: Fix for getting Remote Config instance for a specific app object. (\href{https://github.com/firebase/quickstart-unity/issues/991}{\texttt{ \#991}}).
+\item General (Android)\+: Fixed a potential SIGABRT when an app was created with a non-\/default app name on Android Kit\+Kat (\href{https://github.com/firebase/firebase-cpp-sdk/pull/429}{\texttt{ \#429}}).
+\item Ad\+Mob (i\+OS)\+: Temporarily pinned Ad\+Mob dependency to a special version of the Google-\/\+Mobile-\/\+Ads-\/\+SDK Cocoapod, "{}7.\+69.\+0-\/cppsdk"{}, to maintain compatibility with version 8.\+x of the Firebase i\+OS SDK.
+\item General (i\+OS)\+: A Database URL is no longer required to be present in Google\+Service-\/\+Info.\+plist when not using the Real Time Database.
+\item Firestore\+: Added {\ttfamily Firestore\+::\+Load\+Bundle} to enable loading Firestore Data Bundles into the SDK cache. {\ttfamily Firestore\+::\+Named\+Query} will be available in a future release.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md68}{}\doxysubsection{\texorpdfstring{7.\+3.\+0}{7.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md68}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Update dependencies.
+\item General (Android)\+: Fix a gradle error if ANDROID\+\_\+\+NDK\+\_\+\+HOME is not set.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md69}{}\doxysubsection{\texorpdfstring{7.\+2.\+0}{7.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md69}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Firebase support for STLPort is deprecated and will be removed in the next major release. Please \href{https://developer.android.com/ndk/guides/cpp-support\#cs}{\texttt{ use libc++ instead}}.
+\item General (i\+OS)\+: i\+OS SDKs are now built using Xcode 12.
+\item General (i\+OS)\+: i\+OS SDKs are now providing XCFrameworks instead of Frameworks.
+\item Database\+: Fixed a potential crash that can occur as a result of a race condidtion when adding, removing and deleting {\ttfamily Value\+Listener}s or {\ttfamily Child\+Listener}s rapidly.
+\item Database\+: Fixed a crash when setting large values on Windows and Mac systems (\href{https://github.com/firebase/quickstart-unity/issues/517}{\texttt{ \#517}}).
+\item General\+: Fixed rare crashes at application exit when destructors were being executed (\href{https://github.com/firebase/firebase-cpp-sdk/pull/345}{\texttt{ \#345}}).
+\item General (Android)\+: Removed checks for Google Play services for Auth, Database, Functions and Storage as the native Android packages no longer need it. (\href{https://github.com/firebase/firebase-cpp-sdk/pull/361}{\texttt{ \#361}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md70}{}\doxysubsection{\texorpdfstring{7.\+1.\+1}{7.\+1.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md70}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Use non-\/conflicting file names for embedded resources in Android builds. This fixes segfault crashes on old Android devices (Android 5 and below).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md71}{}\doxysubsection{\texorpdfstring{7.\+1.\+0}{7.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md71}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Re-\/enabled Bitcode in i\+OS builds (\mbox{[}\#266\mbox{]}\mbox{[}\href{https://github.com/firebase/firebase-cpp-sdk/issues/266}{\texttt{ https\+://github.\+com/firebase/firebase-\/cpp-\/sdk/issues/266}}\mbox{]}).
+\item Auth\+: You can now specify a language for emails and text messages sent from your apps using {\ttfamily Use\+App\+Language()} or {\ttfamily set\+\_\+language\+\_\+code()}.
+\item Firestore\+: Fixed partial updates in {\ttfamily Update()} with {\ttfamily Field\+Value\+::\+Delete()} (\href{https://github.com/firebase/quickstart-unity/issues/882}{\texttt{ \#882}}).
+\item Messaging (Android)\+: Now uses {\ttfamily enqueue\+Work} instead of {\ttfamily start\+Service}. This fixes lost messages with data payloads received when the app is in the background. (\href{https://github.com/firebase/quickstart-unity/issues/877}{\texttt{ \#877}}
+\item Remote Config\+: Added {\ttfamily \doxylink{classfirebase_1_1remote__config_1_1_remote_config}{firebase\+::remote\+\_\+config\+::\+Remote\+Config}} class with new instance-\/based APIs to better manage fetching config data.
+\item Remote Config\+: Deprecated old module-\/based API in favor of the new instance-\/based API instead.
+\item Remote Config (Desktop)\+: Fixed multiple definition of Nanopb symbols in binary SDK (\mbox{[}\#271\mbox{]}\mbox{[}\href{https://github.com/firebase/firebase-cpp-sdk/issues/271}{\texttt{ https\+://github.\+com/firebase/firebase-\/cpp-\/sdk/issues/271}}\mbox{]}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md72}{}\doxysubsection{\texorpdfstring{7.\+0.\+1}{7.\+0.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md72}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Installations (Android)\+: Fix incorrect STL variants, which fixes a linker error on Android.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md73}{}\doxysubsection{\texorpdfstring{7.\+0.\+0}{7.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md73}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: i\+OS SDKs are now built using Xcode 11.\+7.
+\item General (Desktop)\+: Windows libraries are now built using Visual Studio 2019. While VS 2019 is binary-\/compatible with VS 2015 and VS 2017, you must use VS 2019 or newer to link the desktop SDK. The libraries have been moved from libs/windows/\+VS2015 to libs/windows/\+VS2019 to reflect this.
+\item General (Desktop)\+: Linux libraries are now built with both the C++11 ABI and the legacy ABI. The libraries have been moved from libs/linux/\$\{arch\} to libs/linux/\$\{arch\}/legacy and libs/linux/\$\{arch\}/cxx11 to reflect this.
+\item Ad\+Mob (Android)\+: Fix a JNI error when initializing without Firebase App.
+\item Analytics\+: Remove deprecated Set\+Minimum\+Session\+Duration call.
+\item Installations\+: Added Installations SDK. See \href{http://firebase.google.com/docs/reference/cpp/namespace/firebase/installations}{\texttt{ Documentations}} for details.
+\item Instance Id\+: Marked Instance Id as deprecated.
+\item Messaging\+: Added get\+Token, delete\+Token apis.
+\item Messaging\+: Removed deprecated Send() function.
+\item Messaging\+: raw\+\_\+data has been changed from a std\+::string to a std\+::vector$<$uint8\+\_\+t$>$, and can now be populated.
+\item Firestore\+: Added support for {\ttfamily Query\+::\+Where\+Not\+Equal\+To} and {\ttfamily Query\+::\+Where\+Not\+In}.
+\item Firestore\+: Added support for {\ttfamily Settings\+::set\+\_\+cache\+\_\+size\+\_\+bytes} and {\ttfamily Settings\+::cache\+\_\+size\+\_\+bytes}.
+\item Firestore\+: {\ttfamily Query} methods that return new {\ttfamily Query} objects are now {\ttfamily const}.
+\item Firestore\+: Added new internal HTTP headers to the g\+RPC connection.
+\item Firestore\+: Fixed a crash when writing to a document after having been offline for long enough that the auth token expired (\href{https://github.com/firebase/firebase-cpp-sdk/issues/182}{\texttt{ \#182}}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md74}{}\doxysubsection{\texorpdfstring{6.\+16.\+1}{6.\+16.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md74}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Database (Desktop)\+: Added a function to create directories recursively for persistent storage that fixes segfaults.
+\item Database (Desktop)\+: Fixed a problem with missing symbols on Windows.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md75}{}\doxysubsection{\texorpdfstring{6.\+16.\+0}{6.\+16.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md75}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Database (Desktop)\+: Enabled offline persistence.
+\item Auth\+: Fixed compiler error related to Sign\+In\+Result.
+\item Firestore\+: Defaulted to calling listeners and other callbacks on a dedicated thread. This avoids deadlock when using Firestore without an event loop on desktop platforms.
+\item Firestore\+: Added {\ttfamily Error\+::k\+Error\+None} as a synonym for {\ttfamily Error\+::k\+Error\+Ok}, which is more consistent with other Firebase C++ SDKs.
+\item Messaging (Android)\+: Updated library to be compatible with Android O, which should resolve a Illegal\+State\+Exception that could occur under certain conditions.
+\item Messaging\+: Deprecated the {\ttfamily Send} function.
+\item Firestore\+: Added {\ttfamily error\+\_\+message} parameter to snapshot listener callbacks.
+\item Ad\+Mob\+: Handling Illegal\+State\+Exception when creating and loading interstitial ads. Added {\ttfamily Constants\+Helper.\+CALLBACK\+\_\+\+ERROR\+\_\+\+UNKNOWN} as a fallback error.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md76}{}\doxysubsection{\texorpdfstring{6.\+15.\+1}{6.\+15.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md76}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore\+: all members of {\ttfamily Error} enumeration are now prefixed with {\ttfamily k\+Error}; for example, {\ttfamily Error\+::k\+Unavailable} is now {\ttfamily Error\+::k\+Error\+Unavailable}, which is more consistent with other Firebase C++ SDKs.
+\item Firestore\+: Firestore can now be compiled on Windows even in presence of {\ttfamily min} and {\ttfamily max} macros defined in {\ttfamily \texorpdfstring{$<$}{<}windows.\+h\texorpdfstring{$>$}{>}}.
+\item Fixed an issue that warns about Future handle not released properly.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md77}{}\doxysubsection{\texorpdfstring{6.\+15.\+0}{6.\+15.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md77}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed an issue whent creating Apps, and various Firestore changes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore\+: removed {\ttfamily \texorpdfstring{$\ast$}{*}\+Last\+Result} functions from the public API. Please use the futures returned by the async methods directly instead.
+\item Firestore\+: dropped the {\ttfamily From} prefix from the static functions in {\ttfamily Field\+Value}; for example, {\ttfamily Field\+Value\+::\+From\+Integer} is now just {\ttfamily Field\+Value\+::\+Integer}.
+\item Firestore\+: {\ttfamily Collection\+Reference\+::id} now returns a const reference.
+\item Firestore\+: Fixed absl {\ttfamily time\+\_\+internal} linker error on Windows.
+\item Firestore\+: changed the signature of the callback passed to {\ttfamily Firestore\+::\+Run\+Transaction} to pass the parameters by mutable reference, not by pointer. This is to indicate that these parameters are never null.
+\item App\+: Fixed an assert creating a custom App when there is no default App.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md78}{}\doxysubsection{\texorpdfstring{6.\+14.\+1}{6.\+14.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md78}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (i\+OS)\+: Added Sign\+In\+Result.\+User\+Info.\+updated\+\_\+credential field. On i\+OS, k\+Auth\+Error\+Credential\+Already\+In\+Use errors when linking with Apple may contain a valid updated\+\_\+credential for use in signing-\/in the Apple-\/linked user.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md79}{}\doxysubsection{\texorpdfstring{6.\+14.\+0}{6.\+14.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md79}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore\+: {\ttfamily Firestore\+::set\+\_\+logging\+\_\+enabled} is replaced by {\ttfamily Firestore\+::set\+\_\+log\+\_\+level} for consistency with other Firebase C++ APIs.
+\item Firestore\+: added an overload of {\ttfamily Firestore\+::\+Collection\+Group} that takes a pointer to {\ttfamily const char}.
+\item Firestore\+: {\ttfamily Firestore\+::set\+\_\+settings} now accepts the argument by value.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md80}{}\doxysubsection{\texorpdfstring{6.\+12.\+0}{6.\+12.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md80}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Added experimental support for Cloud Firestore SDK.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firestore\+: Experimental release of Firestore is now available on all supported platforms.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md81}{}\doxysubsection{\texorpdfstring{6.\+11.\+0}{6.\+11.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md81}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated dependencies, changed minimum Xcode, and fixed an issue in Database handling Auth token revocation.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Minimum Xcode version is now 10.\+3.
+\item General\+: When creating an App, the project\+\_\+id from the default App is used if one is not provided.
+\item Database (Desktop)\+: Fixed that database stops reconnecting to server after the auth token is revoked.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md82}{}\doxysubsection{\texorpdfstring{6.\+10.\+0}{6.\+10.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md82}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Auth bug fixes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth\+: Reverted the API of an experimental Federated\+Auth\+Handler callback handler.
+\item Auth (i\+OS)\+: Enabled the method OAuth\+Provider.\+Get\+Credential. This method takes a nonce parameter as required by Apple Sign-\/in.
+\item General (i\+OS)\+: Updated the CMake\+Lists.\+txt to link static libraries stored under libs/ios/universal for i\+OS targets
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md83}{}\doxysubsection{\texorpdfstring{6.\+9.\+0}{6.\+9.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md83}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated dependencies, added support for Apple Sign-\/in to Auth, support for signing-\/in using a 3rd party web providers and configuration of Big\+Query export in Messaging.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth\+: Added API for invoking Auth Sign\+In\+With\+Provider and User Link\+With\+Provider and Reauthenticate\+With\+Provider for sign in with third party auth providers.
+\item Auth\+: Added constant k\+Provider\+Id strings to auth provider classes.
+\item Auth (i\+OS)\+: Added support for linking Apple Sign-\/in credentials.
+\item Messaging (Android)\+: Added the option to enable or disable message delivery metrics export to Big\+Query. This functionality is currently only available on Android. Stubs are provided on i\+OS for cross platform compatibility.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md84}{}\doxysubsection{\texorpdfstring{6.\+8.\+0}{6.\+8.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md84}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated dependencies, added compiler/stdlib check, fixed issue in Admob and fixed resource generation issue with python3.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item App (Linux)\+: Added compiler/stdlib check to ensure both the developer\textquotesingle{}s executable and firebase library are compiled with the same compiler and stdlib.
+\item Admob (Android)\+: Fixed a potentially non thread safe operation in the destruction of Banner\+Views.
+\item General\+: Fixed an issue where resource generation from google-\/services.\+json would fail if python3 was used to execute the resource generation script.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md85}{}\doxysubsection{\texorpdfstring{6.\+7.\+0}{6.\+7.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md85}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated dependencies, fixed issues in Analytics, Database, Storage, and App.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item App\+: Added noexcept to move constructors to ensure STL uses move where possible.
+\item Storage (i\+OS/\+Android)\+: Fixed an issue where Storage\+::\+Get\+Reference\+From\+Url would return an invalid Storage\+Reference.
+\item Database\+: Fixed an issue causing timestamps to not be populated correctly when using Database\+Reference\+::\+Update\+Children().
+\item Database (Desktop)\+: Fixed an issue preventing listener events from being triggered after Database\+Reference\+::\+Update\+Children() is called.
+\item Database (Desktop)\+: Functions that take const char\texorpdfstring{$\ast$}{*} parameters will now fail gracefully if passed a null pointer.
+\item Database (Desktop)\+: Fixed an issue causing Database\+Reference\+::\+Run\+Transaction() to fail due to datastale when the location previously stored a vector with more than 10 items or a map with integer keys.
+\item App (Windows)\+: Fixed bug where literal value 0 will call string constructor for Variant class.
+\item Storage (Desktop)\+: Changed url() to return the empty string if the Storage instance was created with the default (null) URL.
+\item App\+: Added small string optimisation for variant.
+\item App\+: Reduced number of new/delete for variant if copying same type
+\item App\+: Ensure map sort order for variant is consistent.
+\item Database (Desktop)\+: Fixed an issue that could result in an incorrect snapshot being passed to listeners under specific circumstances.
+\item Analytics (i\+OS)\+: Fixed the racy behavior of {\ttfamily analytics\+::\+Get\+Analytics\+Instance\+Id()} after calling {\ttfamily analytics\+::\+Reset\+Analytics\+Data()}.
+\item Database (Desktop)\+: Fixed ordering issue of children when using Order\+By on double or int64 types with large values
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md86}{}\doxysubsection{\texorpdfstring{6.\+6.\+1}{6.\+6.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md86}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed an issue with Future having an undefined reference.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Fixed a potential undefined reference in Future\+::\+On\+Completion.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md87}{}\doxysubsection{\texorpdfstring{6.\+6.\+0}{6.\+6.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md87}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Update dependencies, fixed issues in Auth, Database and Remote\+Config
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (Android)\+: Fixed assert when not using default app instance.
+\item Auth (Desktop)\+: Fixed not loading provider list from cached user data.
+\item Database (Desktop)\+: Fixed a crash that could occur when trying to keep a location in the database synced when you do not have permission.
+\item Database (Desktop)\+: Queries on locations in the database with query rules now function properly, instead of always returning "{}\+Permission         denied"{}.
+\item Database (Desktop)\+: Fixed the map-\/to-\/vector conversion when firing events that have maps containing enitrely integer keys.
+\item Remote Config (Android)\+: Fixed a bug when passing a Variant of type Blob to Set\+Defaults() on Android.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md88}{}\doxysubsection{\texorpdfstring{6.\+5.\+0}{6.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md88}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated dependencies, and improved logging for Auth and Database.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (Linux)\+: Improved error logging if libsecret (required for login persistence) is not installed on Linux.
+\item Database\+: The database now supports setting the log level independently of the system level logger.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md89}{}\doxysubsection{\texorpdfstring{6.\+4.\+0}{6.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md89}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated dependencies, fixed issues with Futures and Auth persistence, and fixed a crash in Database.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Fixed an issue causing Futures to clear their data even if a reference was still being held.
+\item Auth (Desktop)\+: Fixed an issue with updated user info not being persisted.
+\item Database (Desktop)\+: Fixed a crash when saving a Server\+Timestamp during a transaction.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md90}{}\doxysubsection{\texorpdfstring{6.\+3.\+0}{6.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md90}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS/\+Android)\+: Fixed a bug that allows custom \doxylink{classfirebase_1_1_app}{firebase\+::\+App} instances to be created after the app has been restarted.
+\item Auth (desktop)\+: Changed destruction behavior. Instead of waiting for all async operations to finish, now Auth will cancel all async operations and quit. For callbacks that are already running, this will protect against cases where auth instances might not exist anymore.
+\item Auth (i\+OS)\+: Fixed an exception in firebase\+::auth\+::\+Verify\+Phone\+Number.
+\item Auth (i\+OS)\+: Stopped Auth from hanging on destruction if any local futures remain in scope.
+\item Database (desktop)\+: Fixed an issue that could cause a crash when updating the descendant of a location with a listener attached.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md91}{}\doxysubsection{\texorpdfstring{6.\+2.\+2}{6.\+2.\+2}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md91}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (desktop)\+: After loading a persisted user data, ensure token is not expired.
+\item Auth (desktop)\+: Ensure Database, Storage and Functions do not use an expired token after it\textquotesingle{}s loaded from persistent storage.
+\item Database (desktop)\+: Fixed Database\+Reference\+::\+Run\+Transaction() sending invalid data to the server which causes error message "{}\+Error on incoming         message"{} and freeze.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md92}{}\doxysubsection{\texorpdfstring{6.\+2.\+0}{6.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md92}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Added support for custom domains to Dynamic Links, and fixed issues in Database and Instance ID.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Added a way to configure SDK-\/wide log verbosity.
+\item Instance ID (Android)\+: Fixed a crash when destroying Instance\+ID objects.
+\item Dynamic Links\+: Added support for custom domains.
+\item Database\+: Added a way to configure log verbosity of Realtime Database instances.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md93}{}\doxysubsection{\texorpdfstring{6.\+1.\+0}{6.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md93}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Added Auth credential persistence on Desktop, fixed issues in Auth and Database, and added additional information to Messaging notifications.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (Desktop)\+: User\textquotesingle{}s credentials will now persist between sessions. See the \href{http://firebase.google.com/docs/auth/cpp/manage-users\#persist_a_users_credential}{\texttt{ documentation}} for more information.
+\item Auth (Desktop)\+: As part of the above change, if you call current\+\_\+user() immediately after creating the Auth instance, it will block until the saved user\textquotesingle{}s state is finished loading.
+\item Auth (Desktop)\+: Fixed an issue where Database/\+Functions/\+Storage might not use the latest auth token immediately after sign-\/in.
+\item Auth\+: Fixed an issue where an error code could get reported incorrectly on Android.
+\item Database (Desktop)\+: Fixed an issue that could cause a crash during shutdown.
+\item Database (i\+OS)\+: Fixed a race condition that could cause a crash when cleaning up database listeners on i\+OS.
+\item Database (i\+OS)\+: Fixed an issue where long (64-\/bit) values could get written to the database incorrectly (truncated to 32-\/bits).
+\item Cloud Functions\+: Change assert to log warning when App is deleted before Cloud Functions instance is deleted.
+\item Messaging (Android)\+: Added channel\+\_\+id to Messaging notifications.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md94}{}\doxysubsection{\texorpdfstring{6.\+0.\+0}{6.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md94}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed issues in Auth and Messaging, removed Firebase Invites, removed deprecated functions in Firebase Remote Config, and deprecated a function in Firebase Analytics.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Updated \href{https://firebase.google.com/support/release-notes/ios\#6.0.0}{\texttt{ Firebase i\+OS}} and \href{https://firebase.google.com/support/release-notes/ios\#2019-05-07}{\texttt{ Firebase Android}} dependencies.
+\item Auth\+: Fixed a race condition updating the current user.
+\item Messaging (i\+OS/\+Android)\+: Fix an issue where Subscribe and Unsubscribe never returned if the API was configured not to receive a registration token.
+\item Invites\+: Removed Firebase Invites library, as it is no longer supported.
+\item Remote Config\+: Removed functions using config namespaces.
+\item Analytics\+: Deprecated Set\+Minimum\+Session\+Duration.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item To work around a incompatible dependency, Ad\+Mob for Android temporarily requires an additional dependency on com.\+google.\+android.\+gms\+:play-\/services-\/measurement-\/sdk-\/api\+:16.\+5.\+0
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md95}{}\doxysubsection{\texorpdfstring{5.\+7.\+0}{5.\+7.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md95}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Deprecated functions in Remote Config.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Remote Config\+: Config namespaces are now deprecated. You\textquotesingle{}ll need to switch to methods that use the default namespace.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item To work around a incompatible dependency, Ad\+Mob for Android temporarily requires an additional dependency on com.\+google.\+android.\+gms\+:play-\/services-\/measurement-\/sdk-\/api\+:16.\+4.\+0
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md96}{}\doxysubsection{\texorpdfstring{5.\+6.\+1}{5.\+6.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md96}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed race condition on i\+OS SDK startup.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Updated to the latest i\+OS SDK to fix a crash on \doxylink{classfirebase_1_1_app}{firebase\+::\+App} creation caused by a race condition. The crash could occur when accessing the \mbox{[}FIRApp firebase\+User\+Agent\mbox{]} property of the i\+OS FIRApp.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md97}{}\doxysubsection{\texorpdfstring{5.\+6.\+0}{5.\+6.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md97}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Released an open-\/source version, added Game Center sign-\/in to Auth, enhanced Database on desktop, and fixed a crash when deleting App.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Firebase C++ is now \href{https://github.com/firebase/firebase-cpp-sdk}{\texttt{ open source}}.
+\item Auth (i\+OS)\+: Added Game Center authentication.
+\item Database (Desktop)\+: Reworked how cached server values work to be more in line with mobile implementations.
+\item Database (Desktop)\+: Simultaneous transactions are now supported.
+\item Database (Desktop)\+: The special Timestamp Server\+Value is now supported.
+\item Database (Desktop)\+: Keep\+Synchronized is now supported.
+\item App, Auth, Database, Remote Config, Storage\+: Fixed a crash when deleting {\ttfamily \doxylink{classfirebase_1_1_app}{firebase\+::\+App}} before deleting other Firebase subsystems.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md98}{}\doxysubsection{\texorpdfstring{5.\+5.\+0}{5.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md98}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Deprecated Firebase Invites and updated how Android dependencies are included.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Added a gradle file to the SDK that handles adding Firebase Android dependencies to your Firebase C++ apps. See the \href{https://github.com/firebase/quickstart-cpp}{\texttt{ Firebase C++ Samples}} for example usage.
+\item Invites\+: Firebase Invites is deprecated. Please refer to \href{https://firebase.google.com/docs/invites}{\texttt{ https\+://firebase.\+google.\+com/docs/invites}} for details.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md99}{}\doxysubsection{\texorpdfstring{5.\+4.\+4}{5.\+4.\+4}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md99}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed a bug in Cloud Functions on Android, and Ad\+Mob on i\+OS.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Cloud Functions (Android)\+: Fixed an issue with error handling.
+\item Ad\+Mob (i\+OS)\+: Fixed an issue with Rewarded Video ad unit string going out of scope.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md100}{}\doxysubsection{\texorpdfstring{5.\+4.\+3}{5.\+4.\+3}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md100}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fix for Firebase Storage on i\+OS.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Storage (i\+OS)\+: Fixed an issue when downloading files with {\ttfamily Get\+Bytes}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md101}{}\doxysubsection{\texorpdfstring{5.\+4.\+2}{5.\+4.\+2}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md101}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Removed a spurious error message in Auth on Android.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth (Android)\+: Removed an irrelevant error about the Java class Firebase\+Auth\+Web\+Exception.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md102}{}\doxysubsection{\texorpdfstring{5.\+4.\+0}{5.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md102}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fix for link shortening in Dynamic Links and a known issue in Database on Desktop.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Dynamic Links (Android)\+: Fixed short link generation failing with "{}error         8"{}.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item The Realtime Database Desktop SDK uses REST to access your database. Because of this, you must declare the indexes you use with Query\+::\+Order\+By\+Child() on Desktop or your listeners will fail.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md103}{}\doxysubsection{\texorpdfstring{5.\+3.\+1}{5.\+3.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md103}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated i\+OS and Android dependency versions and a bug fix for Invites.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Invites (Android)\+: Fixed an exception when the Android Minimum Version code option is used on the Android.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md104}{}\doxysubsection{\texorpdfstring{5.\+3.\+0}{5.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md104}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed bugs in Database and Functions; changed minimum Xcode version to 9.\+4.\+1.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Minimum Xcode version is now 9.\+4.\+1.
+\item Functions (Android)\+: Fixed an issue when a function returns an array.
+\item Database (Desktop)\+: Fixed issues in Child\+Listener.
+\item Database (Desktop)\+: Fixed crash that can occur if Database is deleted while asynchronous operations are still in progress.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item Dynamic Links (Android)\+: Shortening dynamic links fails with "{}\+Error 8"{}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md105}{}\doxysubsection{\texorpdfstring{5.\+2.\+1}{5.\+2.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md105}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed bugs in Auth and Desktop.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Database (Desktop)\+: Fixed support for {\ttfamily Child\+Listener} when used with {\ttfamily Query\+::\+Equal\+To()}, {\ttfamily Query\+::\+Start\+At()}, {\ttfamily Query\+::\+End\+At()}, {\ttfamily Query\+::\+Limit\+To\+First()} and {\ttfamily Query\+::\+Limit\+To\+Last()}.
+\item Database\+: Fixed a crash in Database\+Reference/\+Query copy assignment operator and copy constructor.
+\item Auth, Database\+: Fixed a race condition returning Futures when calling the same method twice in quick succession.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md106}{}\doxysubsection{\texorpdfstring{5.\+2.\+0}{5.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md106}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Changes to Database, Functions, Auth, and Messaging.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Database\+: Added a version of {\ttfamily Get\+Instance} that allows passing in the URL of the database to use.
+\item Functions\+: Added a way to specify which region to run the function in.
+\item Messaging\+: Changed {\ttfamily Subscribe} and {\ttfamily Unsubscribe} to return a Future.
+\item Auth (Android)\+: Fixed a crash in {\ttfamily User\+::\+Update\+Phone\+Number\+Credential()}.
+\item General (Android)\+: Fixed a null reference in the Google Play Services availability checker.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md107}{}\doxysubsection{\texorpdfstring{5.\+1.\+1}{5.\+1.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md107}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Updated Android and i\+OS dependency versions only.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md108}{}\doxysubsection{\texorpdfstring{5.\+1.\+0}{5.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md108}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Changes to Analytics, Auth, and Database; and added support for Cloud Functions for Firebase.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Analytics\+: Added {\ttfamily Reset\+Analytics\+Data()} to clear all analytics data for an app from the device.
+\item Analytics\+: Added {\ttfamily Get\+App\+Instance\+Id()} which allows developers to retrieve the current app\textquotesingle{}s analytics instance ID.
+\item Auth\+: Linking a credential with a provider that has already been linked now produces an error.
+\item Auth (i\+OS)\+: Fixed crashes in User\+::\+Link\+And\+Retrieve\+Data\+With\+Credential() and User\+::\+Reauthenticate\+And\+Retrieve\+Data().
+\item Auth (i\+OS)\+: Fixed photo URL never returning a value on i\+OS.
+\item Auth (Android)\+: Fixed setting profile photo URL with Update\+User\+Profile.
+\item Database\+: Added support for Server\+Values in Set\+Priority methods.
+\item Functions\+: Added support for Cloud Functions for Firebase on i\+OS, Android, and desktop.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md109}{}\doxysubsection{\texorpdfstring{5.\+0.\+0}{5.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md109}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Renamed the Android and i\+OS libraries to include firebase in their name, removed deprecated methods in App, Ad\+Mob, Auth, Database, and Storage, and exposed new APIs in Dynamic Links and Invites.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android/i\+OS)\+: Library names have been prefixed with "{}firebase\+\_\+"{}, for example libapp.\+a is now libfirebase\+\_\+app.\+a. This brings them in line with the naming scheme used on desktop, and i\+OS frameworks.
+\item General (Android)\+: Improved error handling when device is out of space.
+\item App\+: Removed deprecated accessor methods from Future.
+\item Ad\+Mob\+: Removed deprecated accessor methods from Banner\+View and Interstitial\+Ad.
+\item Auth\+: Removed deprecated accessors from Auth, Credential, User, and User\+Info\+Interface, including User\+::refresh\+\_\+token().
+\item Database\+: Removed deprecated accessors from Database\+Reference, Query, Data\+Snapshot, and Mutable\+Data.
+\item Dynamic Links\+: Added a field to received dynamic links describing the strength of the match.
+\item Invites\+: Added On\+Invite\+Received to Listener base class that includes the strength of the match on the received invite as an enum. Deprecated prior function that received it as a boolean value.
+\item Storage\+: Removed deprecated accessors from Storage\+Reference.
+\item Storage\+: Removed Metadata\+::download\+\_\+url() and Metadata\+::download\+\_\+urls(). Please use Storage\+Reference\+::\+Get\+Download\+Url() instead.
+\item Messaging\+: Added an optional initialization options struct. This can be used to suppress the prompt on i\+OS that requests permission to receive notifications at start up. Permission can be requested manually using the function \doxylink{namespacefirebase_1_1messaging_a0815c8bf5bcbbe0c2d1051786e3d5988}{firebase\+::messaging\+::\+Request\+Permission()}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md110}{}\doxysubsection{\texorpdfstring{4.\+5.\+1}{4.\+5.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md110}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed bugs in Database (Desktop) and Remote Config and exposed new APIs in Auth on Desktop and Messaging.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Messaging\+: Added the Set\+Auto\+Token\+Registration\+On\+Init\+Enabled() and Is\+Auto\+Token\+Registration\+On\+Init\+Enabled() methods to enable or disable auto-\/token generation.
+\item Auth (Desktop)\+: Added support for accessing user metadata.
+\item Database (Desktop)\+: Fixed a bug to make creation of database instances with invalid URLs return NULL.
+\item Database (Desktop)\+: Fixed an issue where incorrect values could be passed to On\+Child\+Added.
+\item Remote Config\+: Fixed a bug causing incorrect reporting of success or failure during a Fetch().
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md111}{}\doxysubsection{\texorpdfstring{4.\+5.\+0}{4.\+5.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md111}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Desktop workflow support for some features, Google Play Games authentication on Android, and changes to Ad\+Mob, Auth, and Storage.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth, Realtime Database, Remote Config, Storage (Desktop)\+: Stub implementations have been replaced with functional desktop implementations on Windows, OS X, and Linux.
+\item Ad\+Mob\+: Native Express ads have been discontinued, so {\ttfamily Native\+Express\+Ad\+View} has been marked deprecated and will be removed in a future version.
+\item Auth (Android)\+: Added Google Play Games authentication.
+\item Auth\+: Fixed a race condition initializing/destroying Auth instances.
+\item Storage\+: Added MD5 hash to Metadata.
+\item Storage\+: Fixed a crash when deleting listeners and other object instances.
+\item Storage\+: Controller can now be used from any thread.
+\item Storage (i\+OS)\+: Fixed incorrect content type when uploading.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item When using Firebase Realtime Database on desktop, only one Transaction may be run on a given subtree at the same time.
+\item When using Firebase Realtime Database on desktop, data persistence is not available.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md112}{}\doxysubsection{\texorpdfstring{4.\+4.\+3}{4.\+4.\+3}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md112}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed linking bug in App.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item App (i\+OS)\+: Removed unresolved symbols in the App library that could cause errors when forcing resolution.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md113}{}\doxysubsection{\texorpdfstring{4.\+4.\+2}{4.\+4.\+2}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md113}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Fixed bugs in Dynamic Links, Invites, Remote Config and Storage and fixed linking issues with the Windows and Linux stub libraries.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Dynamic Links (i\+OS)\+: Now fetches the invite ID when using universal links.
+\item Dynamic Links (i\+OS)\+: Fixed crash on failure of dynamic link completion.
+\item Dynamic Links (i\+OS)\+: Fixed an issue where some errors weren\textquotesingle{}t correctly reported.
+\item Invites\+: Fixed Send\+Invite never completing in the stub implementation.
+\item Remote Config (i\+OS)\+: Fixed an issue where some errors weren\textquotesingle{}t correctly reported.
+\item Storage\+: Fixed Metadata\+::content\+\_\+language returning the wrong data.
+\item Storage (i\+OS)\+: Reference paths formats are now consistent with other platforms.
+\item Storage (i\+OS)\+: Fixed an issue where trying to upload to a non-\/existent path would not complete the Future.
+\item Storage (i\+OS)\+: Fixed a crash when a download fails.
+\item General (Windows)\+: Updated all static libs to suppport different C runtime libraries and correspondingly updated the package directory structure.
+\item Linux\+: Fixed linking problems with all of the C++ stub libraries.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md114}{}\doxysubsection{\texorpdfstring{4.\+4.\+1}{4.\+4.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md114}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Realtime Database and Instance ID.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Realtime Database\+: Set\+Persistence\+Enabled now sets persistence enabled.
+\item Instance ID (i\+OS)\+: Get\+Token no longer fails without an APNS certificate, and no longer forces registering for notifications.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md115}{}\doxysubsection{\texorpdfstring{4.\+4.\+0}{4.\+4.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md115}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Support for Instance ID.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Instance ID\+: Added Instance ID library.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md116}{}\doxysubsection{\texorpdfstring{4.\+3.\+0}{4.\+3.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md116}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fix for Remote Config and a new feature for Auth.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth\+: Added support for accessing user metadata.
+\item Remote Config (Android)\+: Fixed remote\+\_\+config\+::\+Value\+Source conversion.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md117}{}\doxysubsection{\texorpdfstring{4.\+2.\+0}{4.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md117}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Analytics, Database, and Messaging; and updates for Auth and Messaging.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Analytics (i\+OS)\+: Fixed a bug which prevented the user ID and user properties being cleared.
+\item Database (Android)\+: Fixed Mutable\+Data\+::children\+\_\+count().
+\item Messaging (Android)\+: Fixed a bug which prevented the message ID field being set.
+\item Auth\+: Failed operations now return more specific error codes.
+\item Auth (i\+OS)\+: Phone Authentication no longer requires push notifications. When push notifications aren\textquotesingle{}t available, re\+CAPTCHA verification is used instead.
+\item Messaging\+: Messages sent to users can now contain a link URL.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md118}{}\doxysubsection{\texorpdfstring{4.\+1.\+0}{4.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md118}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Ad\+Mob, Auth, Messaging, Database, Storage, and Remote Config, and added features for Future\textquotesingle{}s On\+Completion callbacks and Database transaction callbacks.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Futures are now invalidated when their underlying Firebase API is destroyed.
+\item General\+: Added std\+::function support to Future\+::\+On\+Completion, to allow use of C++11 lambdas with captures.
+\item Ad\+Mob (i\+OS)\+: Fixed a crash if a Banner\+View is deleted while a call to Destroy() is still pending.
+\item Auth (Android)\+: Now assert fails if you call Get\+Credential without an Auth instance created.
+\item Database\+: Data\+Snapshot, Database\+Reference, Query, and other objects are invalidated when their Database instance is destroyed.
+\item Database\+: Added a context pointer to Database\+Reference\+::\+Run\+Transaction, as well as std\+::function support to allow use of C++11 lambdas with captures.
+\item Messaging (Android)\+: Fixed a bug where message\+\_\+type was not set in the Message struct.
+\item Messaging (i\+OS)\+: Fixed a race condition if a message is received before Firebase Cloud Messaging is initialized.
+\item Messaging (i\+OS)\+: Fixed a bug detecting whether the notification was opened if the app was running in the background.
+\item Remote Config\+: When listing keys, the list now includes keys with defaults set, even if they were not present in the fetched config.
+\item Storage\+: Storage\+Reference objects are invalidated when their Storage instance is destroyed.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item When building on Android using STLPort, the std\+::function versions of Future\+::\+On\+Completion and Database\+Reference\+::\+Run\+Transaction are not available.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md119}{}\doxysubsection{\texorpdfstring{4.\+0.\+4}{4.\+0.\+4}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md119}
+
+\begin{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Messaging (Android)\+: Fixed a bug resulting in Messages not having their message\+\_\+type field populated.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md120}{}\doxysubsection{\texorpdfstring{4.\+0.\+3}{4.\+0.\+3}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md120}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Dynamic Links, Messaging and i\+OS SDK compatibility.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (i\+OS)\+: Fixed an issue which resulted in custom options not being applied to \doxylink{classfirebase_1_1_app}{firebase\+::\+App} instances.
+\item General (i\+OS)\+: Fixed a bug which caused method implementation look ups to fail when other i\+OS SDKs rename the selectors of swizzled methods.
+\item Dynamic Links (Android)\+: Fixed future completion if short link creation fails.
+\item Messaging (i\+OS)\+: Fixed message handling when messages they are received via the direct channel to the FCM backend (i.\+e not via APNS).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md121}{}\doxysubsection{\texorpdfstring{4.\+0.\+2}{4.\+0.\+2}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md121}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Analytics, Auth, Dynamic Links, and Messaging.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Analytics (Android)\+: Fix Set\+Current\+Screen to work from any thread.
+\item Auth (i\+OS)\+: Fixed user being invalidated when linking a credential fails.
+\item Dynamic Links\+: Fixed an issue which caused an app to crash or not receive a Dynamic Link if the link is opened when the app is installed and not running.
+\item Messaging (i\+OS)\+: Fixed a crash when no Listener is set.
+\item Messaging\+: Fixed Listener\+::\+On\+Token\+Received occasionally being called twice with the same token.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md122}{}\doxysubsection{\texorpdfstring{4.\+0.\+1}{4.\+0.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md122}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Dynamic links and Invites on i\+OS and Cloud Messaging on Android and i\+OS.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Cloud Messaging (Android)\+: Fixed an issue where Terminate was not correctly shutting down the Cloud Messaging library.
+\item Cloud Messaging (i\+OS)\+: Fixed an issue where library would crash on start up if there was no registration token.
+\item Dynamic Links \& Invites (i\+OS)\+: Fixed an issue that resulted in apps not receiving a link when opening a link if the app is installed and not running.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md123}{}\doxysubsection{\texorpdfstring{4.\+0.\+0}{4.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md123}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Added support for phone number authentication, access to user metadata, a standalone dynamic library and bug fixes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth\+: Added support for phone number authentication.
+\item Auth\+: Added the ability to retrieve user metadata.
+\item Auth\+: Moved token notification to a separate listener object.
+\item Dynamic Links\+: Added a standalone library separate from Invites.
+\item Invites (i\+OS)\+: Fixed an issue in the analytics SDK\textquotesingle{}s method swizzling which resulted in dynamic links / invites not being sent to the application.
+\item Messaging (Android)\+: Fixed a regression introduced in 3.\+0.\+3 which caused a crash when opening up a notification when the app is running in the background.
+\item Messaging (i\+OS)\+: Fixed interoperation with other users of local notifications.
+\item General (Android)\+: Fixed crash in some circumstances after resolving dependencies by updating Google Play services.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md124}{}\doxysubsection{\texorpdfstring{3.\+1.\+2}{3.\+1.\+2}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md124}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Auth.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth\+: Fixed a crash caused by a stale memory reference when a \doxylink{classfirebase_1_1auth_1_1_auth}{firebase\+::auth\+::\+Auth} object is destroyed and then recreated for the same App object.
+\item Auth\+: Fixed potential memory corruption when Auth\+State\+Listener is destroyed. \#\#\# 3.\+1.\+1
+\end{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Auth, Invites, Messaging, and Storage, plus a general fix.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General (Android)\+: Fixed Google Play Services updater crash when clicking outside of the dialog on Android 4.\+x devices.
+\item Auth\+: Fixed user being invalidated when linking a credential fails.
+\item Auth\+: Deprecated User\+::refresh\+\_\+token().
+\item Messaging\+: Fixed incorrectly notifying the app of a message when a notification is received while the app is in the background and the app is then opened by via the app icon rather than the notification.
+\item Invites (i\+OS)\+: Fixed an issue which resulted in the app delegate method application\+:open\+URL\+:source\+Application\+:annotation\+: not being called when linking the invites library.
+\item Storage\+: Fixed a bug that prevented the construction of Metadata without a storage reference.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md125}{}\doxysubsection{\texorpdfstring{3.\+1.\+0}{3.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md125}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Added support for multiple storage buckets in Cloud Storage for Firebase, and fixed a bug in Invites.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Storage\+: Renamed "{}\+Firebase Storage"{} to "{}\+Cloud Storage for Firebase"{}.
+\item Storage\+: Added an overload for {\ttfamily Storage\+::\+Get\+Instance()} that accepts a {\ttfamily gs\+://...} URL, so you can use Cloud Storage with multiple buckets.
+\item Invites\+: (Android) Fixed an issue where invites with empty links would fail to be received.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md126}{}\doxysubsection{\texorpdfstring{3.\+0.\+0}{3.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md126}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Renamed some methods, fixed some bugs, and added some features.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Renamed and deprecated methods that were inconsistent with the Google C++ Style Guide. Deprecated methods will be removed in a future release (approximately 2-\/3 releases from now).
+\item Analytics\+: Added {\ttfamily Set\+Current\+Screen()}.
+\item Auth\+: Fixed a race condition accessing user data in callbacks.
+\item Auth\+: (Android) Added {\ttfamily is\+\_\+valid()} to check if a credential returned by {\ttfamily Get\+Credential()} is valid.
+\item Invites\+: (Android) Added a {\ttfamily Fetch()} function to fetch incoming invitations at times other than application start. You must call this on Android when your app returns to the foreground (on i\+OS, this is handled automatically).
+\item Messaging\+: Added a field to {\ttfamily \doxylink{structfirebase_1_1messaging_1_1_message}{firebase\+::messaging\+::\+Message}} specifying whether the message was received when the app was in the background.
+\item Messaging\+: (Android) Added an AAR file containing the Android manifest changes needed for receiving notifications. You can add this to your project instead of modifying the manifest directly.
+\item Messaging\+: (i\+OS) Fixed regression since 2.\+1.\+1 that broke messaging on i\+OS 8 \& 9 when an App\+Delegate did not implement remote notification methods.
+\item Invites\+: (i\+OS) Fixed regression since 2.\+1.\+1 that broke invites if the App\+Delegate did not implement the open URL method.
+\item Remote Config\+: Added support for initializing Remote Config defaults from {\ttfamily \doxylink{classfirebase_1_1_variant}{firebase\+::\+Variant}} values, including binary data.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md127}{}\doxysubsection{\texorpdfstring{2.\+1.\+3}{2.\+1.\+3}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md127}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Auth and Messaging, and a fix for Future callbacks.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Fixed a potential deadlock when running callbacks registered via {\ttfamily \doxylink{classfirebase_1_1_future_adeaf5d44738aecc8aa49857bfa64625d}{firebase\+::\+Future\+::\+On\+Completion()}}.
+\item Auth\+: (Android) Fixed an error in {\ttfamily firebase\+::auth\+::\+User\+::\+Photo\+Uri()}.
+\item Messaging\+: (Android) Fixed an issue where a blank message would appear.
+\item Messaging\+: (i\+OS) Removed hard dependency on Xcode 8.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md128}{}\doxysubsection{\texorpdfstring{2.\+1.\+2}{2.\+1.\+2}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md128}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fix for Ad\+Mob on Android.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Ad\+Mob\+: (Android) Fixed an issue in {\ttfamily firebase\+::admob\+::\+Interstitial\+Ad} that caused a crash after displaying multiple interstitial ads.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md129}{}\doxysubsection{\texorpdfstring{2.\+1.\+1}{2.\+1.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md129}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes for Firebase Authentication, Messaging and Invites.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Auth\+: (Android) Fixed an issue that caused a future to never complete when signing in while a user is already signed in.
+\item Messaging / Invites\+: (i\+OS) Fixed an issue with method swizzling that caused some of the application\textquotesingle{}s UIApplication\+Delegate methods to not be called.
+\item Messaging\+: (i\+OS) Fixed a bug which caused a crash when initializing the library when building with Xcode 8 for i\+OS 10.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md130}{}\doxysubsection{\texorpdfstring{2.\+1.\+0}{2.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md130}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Support for Firebase Storage and minor bugfixes in other libraries.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Storage\+: Added the Firebase Storage C++ client library.
+\item Auth\+: Added a check for saved user credentials when Auth is initialized.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item Storage\+: On Android, pausing and resuming storage operations will cause the transfer to fail with the error code k\+Error\+Unknown.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md131}{}\doxysubsection{\texorpdfstring{2.\+0.\+0}{2.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md131}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Support for Ad\+Mob Native Express Ads, Realtime Database and simplified the Invites API.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Ad\+Mob\+: Added support for Ad\+Mob Native Express Ads.
+\item Auth\+: Added Auth\+State\+Listener class which provides notifications when a user is logged in or logged out.
+\item Realtime Database\+: Added a client library.
+\item Invites\+: Breaking change which significantly simplifies the API.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item Ad\+Mob\+: When calling Initialize, the optional admob\+\_\+app\+\_\+id argument is ignored.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md132}{}\doxysubsection{\texorpdfstring{1.\+2.\+1}{1.\+2.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md132}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Bug fixes in Messaging.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Messaging\+: Fixed a bug that prevented Android apps from terminating properly.
+\item Messaging\+: Added missing copy constructor implementation in i\+OS and stub libraries.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md133}{}\doxysubsection{\texorpdfstring{1.\+2.\+0}{1.\+2.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md133}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item New features in Ad\+Mob, Authentication, Messaging, and Remote Config, a helper class for initialization, and bug fixes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item General\+: Added \doxylink{classfirebase_1_1_module_initializer}{firebase\+::\+Module\+Initializer}, a helper class to initialize Firebase modules and handle any missing dependency on Google Play services on Android.
+\item Ad\+Mob\+: Added Rewarded Video feature. For more information, see the \href{https://firebase.google.com/docs/admob/cpp/rewarded-video}{\texttt{ Rewarded Video C++ guide}}.
+\item Ad\+Mob\+: You can now pass your Ad\+Mob App ID to firebase\+::admob\+::\+Initialize() to help reduce latency for the initial ad request.
+\item Ad\+Mob\+: On both i\+OS and Android, you must call Banner\+View\+::\+Show() to display the ad. Previously, this was only required on Android.
+\item Ad\+Mob\+: Fixed an issue where Banner\+View\+::\+Listener received an incorrect bounding box.
+\item Ad\+Mob\+: Banner\+View now has a black background, rather than transparent.
+\item Authentication\+: Implemented User\+::\+Send\+Email\+Verification() and User\+::\+Email\+Verified() methods on Android.
+\item Invites\+: Fixed a bug that occurred when initializing Invites\+Sender and Invites\+Receiver at the same time.
+\item Invites\+: Fixed a potential crash at app shutdown on i\+OS when Invites\+Receiver\+::\+Fetch() is pending.
+\item Messaging\+: Added \doxylink{structfirebase_1_1messaging_1_1_notification}{firebase\+::messaging\+::\+Notification} and associated methods for retrieving the contents of a notification on Android and i\+OS.
+\item Messaging\+: Added support for i\+OS 10 notifications.
+\item Messaging\+: Fixed a crash that occurred on Android if Messaging was initialized before the native library was loaded.
+\item Remote\+Config\+: Added Get\+Keys() and Get\+Keys\+By\+Prefix() methods, which get a list of the app\textquotesingle{}s Remote Config parameter keys.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md134}{}\doxysubsection{\texorpdfstring{1.\+1.\+0}{1.\+1.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md134}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Minor bug fixes and new way of checking Google Play services availability.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Reverted the \doxylink{classfirebase_1_1_app}{firebase\+::\+App} changes from version 1.\+0.\+1 relating to Google Play services; this has been replaced with a new API.
+\item Each Firebase C++ library that requires Google Play services now checks for its availability at initialization time. See "{}\+Requiring Google Play         services on Android"{}.
+\begin{DoxyItemize}
+\item firebase\+::auth\+::\+Get\+Auth() now has an optional output parameter that indicates whether initialization was successful, and will return nullptr if not.
+\item \doxylink{namespacefirebase_1_1messaging_a5e3bd7545d50f7877ce9f72909718750}{firebase\+::messaging\+::\+Initialize()} now returns a result that indicates whether initialization was successful.
+\item Added firebase\+::invites\+::\+Initialize(), which you must call once prior to creating Invites\+Sender or Invites\+Receiver instances. This function returns a result that indicates whether initialization was successful.
+\item firebase\+::remote\+\_\+config\+::\+Initialize() now returns a result that indicates whether initialization was successful.
+\item firebase\+::admob\+::\+Initialize() now returns a result that indicates whether initialization was successful.
+\end{DoxyItemize}
+\item Added utility functions to check whether Google Play services is available. See google\+\_\+play\+\_\+services\+::\+Check\+Availability() and google\+\_\+play\+\_\+services\+::\+Make\+Available() for more information.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item Invites\+: If you call Invites\+Receiver\+::\+Fetch() or Invites\+Receiver\+::\+Convert\+Invitation() without first calling firebase\+::invites\+::\+Initialize(), the operation will never complete. To work around the issue, ensure that firebase\+::invites\+::\+Initialize() is called once before creating any Invites\+Receiver instances.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md135}{}\doxysubsection{\texorpdfstring{1.\+0.\+1}{1.\+0.\+1}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md135}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item Minor bug fixes.
+\end{DoxyItemize}
+\item Changes
+\begin{DoxyItemize}
+\item Modified \doxylink{classfirebase_1_1_app}{firebase\+::\+App} to check for the required version of Google Play services on creation to prevent \doxylink{classfirebase_1_1_app}{firebase\+::\+App} creation failing if a user\textquotesingle{}s device is out of date. If Google Play services is out of date, a dialog will prompt the user to install a new version. See "{}\+Requiring         Google Play services on Android"{}. With the previous version (version 1.\+0.\+0) the developer needed to manually check for an up to date Google Play services using Google\+Api\+Client.
+\item Fixed potential deadlock when using Set\+Listener from a notification callback in firebase\+::admob\+::\+Interstitial\+Ad and firebase\+::admob\+::\+Banner\+View on i\+OS.
+\item Fixed race condition on destruction of admob\+::\+Banner\+View on Android.
+\item Fixed Future handle leak. An internal memory leak would manifest for objects or modules that use futures for the lifetime of the object or module. For example, during the lifetime of Banner\+View each call to a method which returns a Future could potentially allocate memory which wouldn\textquotesingle{}t be reclaimed until the Banner\+View is destroyed.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md136}{}\doxysubsection{\texorpdfstring{1.\+0.\+0}{1.\+0.\+0}}\label{md_build_2windows_2x64_2extracted_2firebase__cpp__sdk__windows_2readme_autotoc_md136}
+
+\begin{DoxyItemize}
+\item Overview
+\begin{DoxyItemize}
+\item First public release. See our \href{https://firebase.google.com/docs/cpp/setup}{\texttt{ setup guide}} to get started.
+\end{DoxyItemize}
+\item Known Issues
+\begin{DoxyItemize}
+\item Android armeabi libraries must be linked with gcc 4.\+8. 
+\end{DoxyItemize}
+\end{DoxyItemize}

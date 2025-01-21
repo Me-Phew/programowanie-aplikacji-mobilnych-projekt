@@ -1,0 +1,367 @@
+\doxysection{firebase\+::gma\+::Ad\+View Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_ad_view}{}\label{classfirebase_1_1gma_1_1_ad_view}\index{firebase::gma::AdView@{firebase::gma::AdView}}
+
+
+Loads and displays Google Mobile Ads \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} ads.  
+
+
+
+
+{\ttfamily \#include $<$ad\+\_\+view.\+h$>$}
+
+
+
+Collaboration diagram for firebase\+::gma\+::Ad\+View\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfirebase_1_1gma_1_1_ad_view__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{Position}} \{ \newline
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baedf48fe4f19515ba8d0b4fb38b053dfe}{k\+Position\+Undefined}} = -\/1
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba92b1f34107c910b3f5d7095d3a7a231e}{k\+Position\+Top}} = 0
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba68094cd46ee314997899d5b4d1f69760}{k\+Position\+Bottom}}
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba39fca6160c5771e239d67c12e4f9d2be}{k\+Position\+Top\+Left}}
+, \newline
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba8b476ee59671bad46bbb63371ad4f997}{k\+Position\+Top\+Right}}
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baa50f38d9b6a82b155f203d8423e0d734}{k\+Position\+Bottom\+Left}}
+, \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baf81eefb070d9471e961e7053502730fa}{k\+Position\+Bottom\+Right}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a42f58debec2e7442a43ebfa1569ab7df}{Ad\+View}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe}{Initialize}} (\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}} parent, const char \texorpdfstring{$\ast$}{*}ad\+\_\+unit\+\_\+id, const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \&size)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a4383e098eca41ba4901149ca47b42e7e}{Initialize\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_aad082060ac538b3e5073765749e8e843}{Load\+Ad}} (const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&request)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a9424eb925f504c923196310c44bddaf7}{Load\+Ad\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box}{Bounding\+Box}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a28efa64f8028236ce9f3bda7bdf0d5d2}{bounding\+\_\+box}} () const
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab337140147edf4d430a7139840f4663e}{Set\+Ad\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_acb82158262dd0edd340383ba184c1a94}{Set\+Bounding\+Box\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{Ad\+View\+Bounding\+Box\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+void \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_af8e60309387dfb0d6f296cb0369551ba}{Set\+Paid\+Event\+Listener}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*}listener)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073}{Set\+Position}} (int x, int y)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a1d83b58317b3a4e6d91cc1adbbe045b4}{Set\+Position}} (\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{Position}} position)
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a0a4a74b3e6687e0c66682e94ffecf5e1}{Set\+Position\+Last\+Result}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_aa1f18f94b19a06cf7eb2822e71fd8379}\label{classfirebase_1_1gma_1_1_ad_view_aa1f18f94b19a06cf7eb2822e71fd8379} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Hide} ()
+\begin{DoxyCompactList}\small\item\em Hides the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a3d8c5844f511585ebf58d4fe14b9606a}{Hide\+Last\+Result}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ada11c46d71b26de6795e4b18efe219ec}\label{classfirebase_1_1gma_1_1_ad_view_ada11c46d71b26de6795e4b18efe219ec} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Show} ()
+\begin{DoxyCompactList}\small\item\em Shows the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_af713bfb896593061b098cc01fb957279}{Show\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_aaaa9615112e859950ce04f6a8f2fa281}{Pause}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a8c73fa0d3fb8feb9b63278e90a916754}{Pause\+Last\+Result}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a73fe38df8151dd8743e7e27f96a97e30}\label{classfirebase_1_1gma_1_1_ad_view_a73fe38df8151dd8743e7e27f96a97e30} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ {\bfseries Resume} ()
+\begin{DoxyCompactList}\small\item\em Resumes the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} after pausing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a6493893f240e5a4bfbc24107f3312818}{Resume\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a1b0f712d7011bf0e8c85d0f3c1aec342}{Destroy}} ()
+\item 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab0c466b0a6d036a8e1dbaccc2b33e43e}{Destroy\+Last\+Result}} () const
+\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}{ad\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a37d6332dc983b01e5f37c8c9f04fd8c1}\label{classfirebase_1_1gma_1_1_ad_view_a37d6332dc983b01e5f37c8c9f04fd8c1} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener}} \texorpdfstring{$\ast$}{*} {\bfseries ad\+\_\+listener\+\_\+}
+\begin{DoxyCompactList}\small\item\em Pointer to a listener for \doxylink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener} events. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a57f5070ad26a266ea072e62f133685be}\label{classfirebase_1_1gma_1_1_ad_view_a57f5070ad26a266ea072e62f133685be} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{Ad\+View\+Bounding\+Box\+Listener}} \texorpdfstring{$\ast$}{*} {\bfseries ad\+\_\+view\+\_\+bounding\+\_\+box\+\_\+listener\+\_\+}
+\begin{DoxyCompactList}\small\item\em Pointer to a listener for \doxylink{structfirebase_1_1gma_1_1_bounding_box}{Bounding\+Box} events. \end{DoxyCompactList}\item 
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a7d1e7a2674a5d30a8b077388e57ff26b}\label{classfirebase_1_1gma_1_1_ad_view_a7d1e7a2674a5d30a8b077388e57ff26b} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*} {\bfseries paid\+\_\+event\+\_\+listener\+\_\+}
+\begin{DoxyCompactList}\small\item\em Pointer to a listener for paid events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads and displays Google Mobile Ads \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} ads. 
+
+Each \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} object corresponds to a single GMA ad placement of a specified size. There are methods to load an ad, move it, show it and hide it, and retrieve the bounds of the ad onscreen.
+
+\doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} objects provide information about their current state through Futures. Methods like \doxylink{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe}{Initialize}, \doxylink{classfirebase_1_1gma_1_1_ad_view_aad082060ac538b3e5073765749e8e843}{Load\+Ad}, and \doxylink{classfirebase_1_1gma_1_1_ad_view_aa1f18f94b19a06cf7eb2822e71fd8379}{Hide} each have a corresponding \doxylink{classfirebase_1_1_future}{Future} from which the result of the last call can be determined. The two variants of \doxylink{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073}{Set\+Position} share a single result \doxylink{classfirebase_1_1_future}{Future}, since they\textquotesingle{}re essentially the same action.
+
+For example, you could initialize, load, and show an \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} while checking the result of the previous action at each step as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{namespace\ }gma\ =\ ::firebase::gma;}
+\DoxyCodeLine{gma::AdView*\ ad\_view\ =\ \textcolor{keyword}{new}\ gma::AdView();}
+\DoxyCodeLine{ad\_view-\/>Initialize(ad\_parent,\ \textcolor{stringliteral}{"{}YOUR\_AD\_UNIT\_ID"{}},\ desired\_ad\_size)}
+
+\end{DoxyCode}
+
+
+Then, later\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (ad\_view-\/>InitializeLastResult().status()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_aa31afaaff6e6fe7cf1f2a13961273fbaa33e40478e42949d7dc59951089f56921}{::firebase::kFutureStatusComplete}}\ \&\&}
+\DoxyCodeLine{\ \ \ \ ad\_view-\/>InitializeLastResult().error()\ ==}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{namespacefirebase_1_1gma_ac19d849edf4632e40563c52546ef7e14a0ba0e33d712bb2a75f829d5f3df1706b}{firebase::gma::kAdErrorCodeNone}})\ \{}
+\DoxyCodeLine{\ \ ad\_view-\/>LoadAd(your\_ad\_request);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}\index{firebase::gma::AdView@{firebase::gma::AdView}!Position@{Position}}
+\index{Position@{Position}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+enum \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{firebase\+::gma\+::\+Ad\+View\+::\+Position}}}
+
+The possible screen positions for a \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}, configured via \doxylink{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073}{Set\+Position}. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionUndefined@{kPositionUndefined}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionUndefined@{kPositionUndefined}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baedf48fe4f19515ba8d0b4fb38b053dfe}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Undefined&The position isn\textquotesingle{}t one of the predefined screen locations. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionTop@{kPositionTop}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionTop@{kPositionTop}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba92b1f34107c910b3f5d7095d3a7a231e}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Top&Top of the screen, horizontally centered. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionBottom@{kPositionBottom}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionBottom@{kPositionBottom}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba68094cd46ee314997899d5b4d1f69760}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Bottom&Bottom of the screen, horizontally centered. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionTopLeft@{kPositionTopLeft}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionTopLeft@{kPositionTopLeft}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba39fca6160c5771e239d67c12e4f9d2be}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Top\+Left&Top-\/left corner of the screen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionTopRight@{kPositionTopRight}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionTopRight@{kPositionTopRight}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09ba8b476ee59671bad46bbb63371ad4f997}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Top\+Right&Top-\/right corner of the screen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionBottomLeft@{kPositionBottomLeft}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionBottomLeft@{kPositionBottomLeft}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baa50f38d9b6a82b155f203d8423e0d734}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Bottom\+Left&Bottom-\/left corner of the screen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPositionBottomRight@{kPositionBottomRight}!firebase::gma::AdView@{firebase::gma::AdView}}\index{firebase::gma::AdView@{firebase::gma::AdView}!kPositionBottomRight@{kPositionBottomRight}}}\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09baf81eefb070d9471e961e7053502730fa}\label{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b} 
+k\+Position\+Bottom\+Right&Bottom-\/right corner of the screen. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a42f58debec2e7442a43ebfa1569ab7df}\index{firebase::gma::AdView@{firebase::gma::AdView}!AdView@{AdView}}
+\index{AdView@{AdView}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{AdView()}{AdView()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a42f58debec2e7442a43ebfa1569ab7df} 
+firebase\+::gma\+::\+Ad\+View\+::\+Ad\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Creates an uninitialized \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} object. \doxylink{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe}{Initialize} must be called before the object is used. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade}\index{firebase::gma::AdView@{firebase::gma::AdView}!ad\_size@{ad\_size}}
+\index{ad\_size@{ad\_size}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{ad\_size()}{ad\_size()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a8763a2951cdc291f544209d695ac7ade} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} firebase\+::gma\+::\+Ad\+View\+::ad\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns the \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} of the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}.
+
+\begin{DoxyReturn}{Returns}
+An \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} object representing the size of the ad. If this view has not been initialized then the \doxylink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size} will be 0,0. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a28efa64f8028236ce9f3bda7bdf0d5d2}\index{firebase::gma::AdView@{firebase::gma::AdView}!bounding\_box@{bounding\_box}}
+\index{bounding\_box@{bounding\_box}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{bounding\_box()}{bounding\_box()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a28efa64f8028236ce9f3bda7bdf0d5d2} 
+\mbox{\hyperlink{structfirebase_1_1gma_1_1_bounding_box}{Bounding\+Box}} firebase\+::gma\+::\+Ad\+View\+::bounding\+\_\+box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Retrieves the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}\textquotesingle{}s current onscreen size and location.
+
+\begin{DoxyReturn}{Returns}
+The current size and location. Values are in pixels, and location coordinates originate from the top-\/left corner of the screen. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a1b0f712d7011bf0e8c85d0f3c1aec342}\index{firebase::gma::AdView@{firebase::gma::AdView}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a1b0f712d7011bf0e8c85d0f3c1aec342} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Cleans up and deallocates any resources used by the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}. You must call this asynchronous operation before this object\textquotesingle{}s destructor is invoked or risk leaking device resources. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab0c466b0a6d036a8e1dbaccc2b33e43e}\index{firebase::gma::AdView@{firebase::gma::AdView}!DestroyLastResult@{DestroyLastResult}}
+\index{DestroyLastResult@{DestroyLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{DestroyLastResult()}{DestroyLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_ab0c466b0a6d036a8e1dbaccc2b33e43e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Destroy\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_a1b0f712d7011bf0e8c85d0f3c1aec342}{Destroy}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_a3d8c5844f511585ebf58d4fe14b9606a}\index{firebase::gma::AdView@{firebase::gma::AdView}!HideLastResult@{HideLastResult}}
+\index{HideLastResult@{HideLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{HideLastResult()}{HideLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a3d8c5844f511585ebf58d4fe14b9606a} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Hide\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_aa1f18f94b19a06cf7eb2822e71fd8379}{Hide}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe}\index{firebase::gma::AdView@{firebase::gma::AdView}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefirebase_1_1gma_a1ed4b6a8f045afeb8aea12e47884ca9c}{Ad\+Parent}}}]{parent}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{ad\+\_\+unit\+\_\+id}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_size}{Ad\+Size}} \&}]{size}{}\end{DoxyParamCaption})}
+
+Initializes the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em parent} & The platform-\/specific UI element that will host the ad. \\
+\hline
+\mbox{\texttt{ in}}  & {\em ad\+\_\+unit\+\_\+id} & The ad unit ID to use when requesting ads. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & The desired ad size for the ad. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a4383e098eca41ba4901149ca47b42e7e}\index{firebase::gma::AdView@{firebase::gma::AdView}!InitializeLastResult@{InitializeLastResult}}
+\index{InitializeLastResult@{InitializeLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{InitializeLastResult()}{InitializeLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a4383e098eca41ba4901149ca47b42e7e} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Initialize\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} that has the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_a5abfe11cf329ae36ea6f2a1207bb8efe}{Initialize}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_aad082060ac538b3e5073765749e8e843}\index{firebase::gma::AdView@{firebase::gma::AdView}!LoadAd@{LoadAd}}
+\index{LoadAd@{LoadAd}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{LoadAd()}{LoadAd()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_aad082060ac538b3e5073765749e8e843} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Ad\+View\+::\+Load\+Ad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request}} \&}]{request}{}\end{DoxyParamCaption})}
+
+Begins an asynchronous request for an ad. If successful, the ad will automatically be displayed in the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em request} & An \doxylink{classfirebase_1_1gma_1_1_ad_request}{Ad\+Request} struct with information about the request to be made (such as targeting info). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a9424eb925f504c923196310c44bddaf7}\index{firebase::gma::AdView@{firebase::gma::AdView}!LoadAdLastResult@{LoadAdLastResult}}
+\index{LoadAdLastResult@{LoadAdLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{LoadAdLastResult()}{LoadAdLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a9424eb925f504c923196310c44bddaf7} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ \mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} $>$ firebase\+::gma\+::\+Ad\+View\+::\+Load\+Ad\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_aad082060ac538b3e5073765749e8e843}{Load\+Ad}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_aaaa9615112e859950ce04f6a8f2fa281}\index{firebase::gma::AdView@{firebase::gma::AdView}!Pause@{Pause}}
+\index{Pause@{Pause}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_aaaa9615112e859950ce04f6a8f2fa281} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Pause (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Pauses the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}. Should be called whenever the C++ engine pauses or the application loses focus. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_a8c73fa0d3fb8feb9b63278e90a916754}\index{firebase::gma::AdView@{firebase::gma::AdView}!PauseLastResult@{PauseLastResult}}
+\index{PauseLastResult@{PauseLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{PauseLastResult()}{PauseLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a8c73fa0d3fb8feb9b63278e90a916754} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Pause\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_aaaa9615112e859950ce04f6a8f2fa281}{Pause}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_a6493893f240e5a4bfbc24107f3312818}\index{firebase::gma::AdView@{firebase::gma::AdView}!ResumeLastResult@{ResumeLastResult}}
+\index{ResumeLastResult@{ResumeLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{ResumeLastResult()}{ResumeLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a6493893f240e5a4bfbc24107f3312818} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Resume\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_a73fe38df8151dd8743e7e27f96a97e30}{Resume}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_ab337140147edf4d430a7139840f4663e}\index{firebase::gma::AdView@{firebase::gma::AdView}!SetAdListener@{SetAdListener}}
+\index{SetAdListener@{SetAdListener}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{SetAdListener()}{SetAdListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_ab337140147edf4d430a7139840f4663e} 
+void firebase\+::gma\+::\+Ad\+View\+::\+Set\+Ad\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Sets an \doxylink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener} for this ad view.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & An \doxylink{classfirebase_1_1gma_1_1_ad_listener}{Ad\+Listener} object which will be invoked when lifecycle events occur on this \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_acb82158262dd0edd340383ba184c1a94}\index{firebase::gma::AdView@{firebase::gma::AdView}!SetBoundingBoxListener@{SetBoundingBoxListener}}
+\index{SetBoundingBoxListener@{SetBoundingBoxListener}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{SetBoundingBoxListener()}{SetBoundingBoxListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_acb82158262dd0edd340383ba184c1a94} 
+void firebase\+::gma\+::\+Ad\+View\+::\+Set\+Bounding\+Box\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{Ad\+View\+Bounding\+Box\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Sets a listener to be invoked when the Ad\textquotesingle{}s bounding box changes size or location.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1gma_1_1_ad_view_bounding_box_listener}{Ad\+View\+Bounding\+Box\+Listener} object which will be invoked when the ad changes size, shape, or position. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_af8e60309387dfb0d6f296cb0369551ba}\index{firebase::gma::AdView@{firebase::gma::AdView}!SetPaidEventListener@{SetPaidEventListener}}
+\index{SetPaidEventListener@{SetPaidEventListener}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{SetPaidEventListener()}{SetPaidEventListener()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_af8e60309387dfb0d6f296cb0369551ba} 
+void firebase\+::gma\+::\+Ad\+View\+::\+Set\+Paid\+Event\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener}} \texorpdfstring{$\ast$}{*}}]{listener}{}\end{DoxyParamCaption})}
+
+Sets a listener to be invoked when this ad is estimated to have earned money.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em listener} & A \doxylink{classfirebase_1_1gma_1_1_paid_event_listener}{Paid\+Event\+Listener} object to be invoked when a paid event occurs on the ad. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073}\index{firebase::gma::AdView@{firebase::gma::AdView}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+Moves the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} so that its top-\/left corner is located at (x, y). Coordinates are in pixels from the top-\/left corner of the screen.
+
+When built for Android, the library will not display an ad on top of or beneath an {\ttfamily Activity}\textquotesingle{}s status bar. If a call to Set\+Position would result in an overlap, the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} is placed just below the status bar, so no overlap occurs. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & The desired horizontal coordinate. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & The desired vertical coordinate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{classfirebase_1_1_future}{Future} which will be completed when this move operation completes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a1d83b58317b3a4e6d91cc1adbbe045b4}\index{firebase::gma::AdView@{firebase::gma::AdView}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a1d83b58317b3a4e6d91cc1adbbe045b4} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_view_ab962353200f02b196b4230c3ac01c09b}{Position}}}]{position}{}\end{DoxyParamCaption})}
+
+Moves the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View} so that it\textquotesingle{}s located at the given predefined position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em position} & The predefined position to which to move the \doxylink{classfirebase_1_1gma_1_1_ad_view}{Ad\+View}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \doxylink{classfirebase_1_1_future}{Future} which will be completed when this move operation completes. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_ad_view_a0a4a74b3e6687e0c66682e94ffecf5e1}\index{firebase::gma::AdView@{firebase::gma::AdView}!SetPositionLastResult@{SetPositionLastResult}}
+\index{SetPositionLastResult@{SetPositionLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{SetPositionLastResult()}{SetPositionLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_a0a4a74b3e6687e0c66682e94ffecf5e1} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Set\+Position\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to either version of \doxylink{classfirebase_1_1gma_1_1_ad_view_ad3036c54c3d364cc61b4dcef7efe1073}{Set\+Position}. \Hypertarget{classfirebase_1_1gma_1_1_ad_view_af713bfb896593061b098cc01fb957279}\index{firebase::gma::AdView@{firebase::gma::AdView}!ShowLastResult@{ShowLastResult}}
+\index{ShowLastResult@{ShowLastResult}!firebase::gma::AdView@{firebase::gma::AdView}}
+\doxysubsubsection{\texorpdfstring{ShowLastResult()}{ShowLastResult()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_ad_view_af713bfb896593061b098cc01fb957279} 
+\mbox{\hyperlink{classfirebase_1_1_future}{Future}}$<$ void $>$ firebase\+::gma\+::\+Ad\+View\+::\+Show\+Last\+Result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a \doxylink{classfirebase_1_1_future}{Future} containing the status of the last call to \doxylink{classfirebase_1_1gma_1_1_ad_view_ada11c46d71b26de6795e4b18efe219ec}{Show}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/ad\+\_\+view.\+h\end{DoxyCompactItemize}

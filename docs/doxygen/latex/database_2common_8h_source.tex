@@ -1,0 +1,54 @@
+\doxysection{common.\+h}
+\hypertarget{database_2common_8h_source}{}\label{database_2common_8h_source}\index{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/common.h@{build/windows/x64/extracted/firebase\_cpp\_sdk\_windows/include/firebase/database/common.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ 2016\ Google\ LLC}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ "{}License"{});}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ you\ may\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ http://www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ "{}AS\ IS"{}\ BASIS,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ WITHOUT\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_COMMON\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_COMMON\_H\_}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}firebase/variant.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacefirebase}{firebase}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }database\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}}\ \{}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a4589f1a305b7bf25951b8b345ca2ea53}{kErrorNone}}\ =\ 0,}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a449ec7d89f1ea10b60d8c482705a7d80}{kErrorDisconnected}},}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ae4107651eb03b3a5578c1d269e3e1584}{kErrorExpiredToken}},}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231abf25851e1999cd0468de8a94834306d8}{kErrorInvalidToken}},}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a1489f3c18bc92ddcef64fd025b6fbcad}{kErrorMaxRetries}},}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231aac353a1e53bcfc6cc2d60adb32bf6e4d}{kErrorNetworkError}},}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a51ccc4696f0f8ad24aad214af174fe7e}{kErrorOperationFailed}},}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231af91a63a16e4bbe859d70273dc9214599}{kErrorOverriddenBySet}},}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ac562f511e335597e9ee888e931ab2987}{kErrorPermissionDenied}},}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231af0fc64bd2fa60402e9973bc8f6f444e4}{kErrorUnavailable}},}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231aafb67f0652362c7f68a16adc99f08595}{kErrorUnknownError}},}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ac821e79bdf06f7e3acaa440da5a1a801}{kErrorWriteCanceled}},}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a2b46764d2c7479b6859e129ab7385536}{kErrorInvalidVariantType}},}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231a0c9d49d794f752622fa5dcd8813ae302}{kErrorConflictingOperationInProgress}},}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231ae64c6ce35e43893af8d2470f451b25d0}{kErrorTransactionAbortedByUser}},}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{namespacefirebase_1_1database_a31e46acb6082d1b6060fc79149a6a0eb}{GetErrorMessage}}(\mbox{\hyperlink{namespacefirebase_1_1database_aacf6e57cd8d76d485eeb3907fc298231}{Error}}\ error);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classfirebase_1_1_variant}{Variant}}\&\ \mbox{\hyperlink{namespacefirebase_1_1database_af567fafd0b0b1241a6fc3e7f16f9db52}{ServerTimestamp}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \}\ \ \textcolor{comment}{//\ namespace\ database}}
+\DoxyCodeLine{00081\ \}\ \ \textcolor{comment}{//\ namespace\ firebase}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ FIREBASE\_DATABASE\_SRC\_INCLUDE\_FIREBASE\_DATABASE\_COMMON\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,73 @@
+\doxysection{firebase\+::gma\+::Adapter\+Response\+Info Class Reference}
+\hypertarget{classfirebase_1_1gma_1_1_adapter_response_info}{}\label{classfirebase_1_1gma_1_1_adapter_response_info}\index{firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}}
+
+
+Response information for an individual ad network contained within a \doxylink{classfirebase_1_1gma_1_1_response_info}{Response\+Info} object.  
+
+
+
+
+{\ttfamily \#include $<$types.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_response_info_a00de265543c2c7879b8ec0b5496675d8}\label{classfirebase_1_1gma_1_1_adapter_response_info_a00de265543c2c7879b8ec0b5496675d8} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Adapter\+Response\+Info} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_a1f3f2c3e626758cb93e70d16865ce963}{ad\+\_\+result}} () const
+\begin{DoxyCompactList}\small\item\em Information about the result including whether an error occurred, and any contextual information about that error. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_aeef4d6d5daa3549af928540a3e33a865}{adapter\+\_\+class\+\_\+name}} () const
+\item 
+int64\+\_\+t \mbox{\hyperlink{classfirebase_1_1gma_1_1_adapter_response_info_a95feaa12aba3497dceb2fd980a33cde2}{latency\+\_\+in\+\_\+millis}} () const
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_response_info_a1abb2bda9cd5d96591b03e484e09218d}\label{classfirebase_1_1gma_1_1_adapter_response_info_a1abb2bda9cd5d96591b03e484e09218d} 
+const std\+::string \& {\bfseries To\+String} () const
+\begin{DoxyCompactList}\small\item\em A log friendly string version of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_response_info_ae9db202ef6c7a4061448209e78cf0d0d}\label{classfirebase_1_1gma_1_1_adapter_response_info_ae9db202ef6c7a4061448209e78cf0d0d} 
+class {\bfseries Response\+Info}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Response information for an individual ad network contained within a \doxylink{classfirebase_1_1gma_1_1_response_info}{Response\+Info} object. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_response_info_a1f3f2c3e626758cb93e70d16865ce963}\index{firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}!ad\_result@{ad\_result}}
+\index{ad\_result@{ad\_result}!firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}}
+\doxysubsubsection{\texorpdfstring{ad\_result()}{ad\_result()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_adapter_response_info_a1f3f2c3e626758cb93e70d16865ce963} 
+\mbox{\hyperlink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}} firebase\+::gma\+::\+Adapter\+Response\+Info\+::ad\+\_\+result (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Information about the result including whether an error occurred, and any contextual information about that error. 
+
+\begin{DoxyReturn}{Returns}
+the error that occurred while rendering the ad. If no error occurred then the \doxylink{classfirebase_1_1gma_1_1_ad_result}{Ad\+Result}\textquotesingle{}s successful method will return true. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1gma_1_1_adapter_response_info_aeef4d6d5daa3549af928540a3e33a865}\index{firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}!adapter\_class\_name@{adapter\_class\_name}}
+\index{adapter\_class\_name@{adapter\_class\_name}!firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}}
+\doxysubsubsection{\texorpdfstring{adapter\_class\_name()}{adapter\_class\_name()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_adapter_response_info_aeef4d6d5daa3549af928540a3e33a865} 
+const std\+::string \& firebase\+::gma\+::\+Adapter\+Response\+Info\+::adapter\+\_\+class\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a string representation of a class name that identifies the ad network adapter. \Hypertarget{classfirebase_1_1gma_1_1_adapter_response_info_a95feaa12aba3497dceb2fd980a33cde2}\index{firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}!latency\_in\_millis@{latency\_in\_millis}}
+\index{latency\_in\_millis@{latency\_in\_millis}!firebase::gma::AdapterResponseInfo@{firebase::gma::AdapterResponseInfo}}
+\doxysubsubsection{\texorpdfstring{latency\_in\_millis()}{latency\_in\_millis()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1gma_1_1_adapter_response_info_a95feaa12aba3497dceb2fd980a33cde2} 
+int64\+\_\+t firebase\+::gma\+::\+Adapter\+Response\+Info\+::latency\+\_\+in\+\_\+millis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Amount of time the ad network spent loading an ad.
+
+\begin{DoxyReturn}{Returns}
+number of milliseconds the network spent loading an ad. This value is 0 if the network did not make a load attempt. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/gma/types.\+h\end{DoxyCompactItemize}

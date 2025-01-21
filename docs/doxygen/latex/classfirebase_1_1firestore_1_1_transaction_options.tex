@@ -1,0 +1,171 @@
+\doxysection{firebase\+::firestore\+::Transaction\+Options Class Reference}
+\hypertarget{classfirebase_1_1firestore_1_1_transaction_options}{}\label{classfirebase_1_1firestore_1_1_transaction_options}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+
+
+{\ttfamily \#include $<$transaction\+\_\+options.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_ae4b651df1c4dbc7fe7ff7a7a55532226}\label{classfirebase_1_1firestore_1_1_transaction_options_ae4b651df1c4dbc7fe7ff7a7a55532226} 
+{\bfseries Transaction\+Options} ()=default
+\begin{DoxyCompactList}\small\item\em Creates the default {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a2fb2e09c62b6d377281fac239bfc3f13}{Transaction\+Options}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a6760dab372ee10caa17b9d01749633d5}{Transaction\+Options}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a406614c6efaa753a9edf7de257cd85e9}{operator=}} (const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&other)=default
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_ad29e093bfe063c5315b997b4d70c49d5}{operator=}} (\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&\&other)=default
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a12bdaf84d6e3eaf54ddc103eeb66b513}{max\+\_\+attempts}} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum number of attempts to commit, after which the transaction fails. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_ad38cd17206e39a9752d56644ade12c77}{set\+\_\+max\+\_\+attempts}} (int32\+\_\+t \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a12bdaf84d6e3eaf54ddc103eeb66b513}{max\+\_\+attempts}})
+\begin{DoxyCompactList}\small\item\em Sets the maximum number of attempts to commit, after which the transaction fails. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a3f2b7c59d7277b44731358c9dfeaecee}{To\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options_a28819ee8ced2624637f96f2b319e2601}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Options to customize transaction behavior for {\ttfamily Firestore.\+run\+Transaction()}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_a2fb2e09c62b6d377281fac239bfc3f13}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!TransactionOptions@{TransactionOptions}}
+\index{TransactionOptions@{TransactionOptions}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{TransactionOptions()}{TransactionOptions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_a2fb2e09c62b6d377281fac239bfc3f13} 
+firebase\+::firestore\+::\+Transaction\+Options\+::\+Transaction\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_a6760dab372ee10caa17b9d01749633d5}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!TransactionOptions@{TransactionOptions}}
+\index{TransactionOptions@{TransactionOptions}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{TransactionOptions()}{TransactionOptions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_a6760dab372ee10caa17b9d01749633d5} 
+firebase\+::firestore\+::\+Transaction\+Options\+::\+Transaction\+Options (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move constructor. 
+
+Moving is not any more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} because this class is trivially copyable; however, future additions to this class may make it not trivially copyable, at which point moving would be more efficient than copying. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} to move data from. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_a12bdaf84d6e3eaf54ddc103eeb66b513}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!max\_attempts@{max\_attempts}}
+\index{max\_attempts@{max\_attempts}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{max\_attempts()}{max\_attempts()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_a12bdaf84d6e3eaf54ddc103eeb66b513} 
+int32\+\_\+t firebase\+::firestore\+::\+Transaction\+Options\+::max\+\_\+attempts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the maximum number of attempts to commit, after which the transaction fails. 
+
+The default value is 5. \Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_a406614c6efaa753a9edf7de257cd85e9}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_a406614c6efaa753a9edf7de257cd85e9} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \& firebase\+::firestore\+::\+Transaction\+Options\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy assignment operator. 
+
+This performs a deep copy, creating an independent instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} to copy from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_ad29e093bfe063c5315b997b4d70c49d5}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!operator=@{operator=}}
+\index{operator=@{operator=}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_ad29e093bfe063c5315b997b4d70c49d5} 
+\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \& firebase\+::firestore\+::\+Transaction\+Options\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Move assignment operator. 
+
+Moving is not any more efficient than copying for {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} because this class is trivially copyable; however, future additions to this class may make it not trivially copyable, at which point moving would be more efficient than copying. After being moved from, {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} is in a valid but unspecified state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} to move data from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the destination {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}}. 
+\end{DoxyReturn}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_ad38cd17206e39a9752d56644ade12c77}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!set\_max\_attempts@{set\_max\_attempts}}
+\index{set\_max\_attempts@{set\_max\_attempts}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{set\_max\_attempts()}{set\_max\_attempts()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_ad38cd17206e39a9752d56644ade12c77} 
+void firebase\+::firestore\+::\+Transaction\+Options\+::set\+\_\+max\+\_\+attempts (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{max\+\_\+attempts}{}\end{DoxyParamCaption})}
+
+
+
+Sets the maximum number of attempts to commit, after which the transaction fails. 
+
+The default value is 5.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em max\+\_\+attempts} & The maximum number of attempts; must be greater than zero. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_a3f2b7c59d7277b44731358c9dfeaecee}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!ToString@{ToString}}
+\index{ToString@{ToString}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_a3f2b7c59d7277b44731358c9dfeaecee} 
+std\+::string firebase\+::firestore\+::\+Transaction\+Options\+::\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Returns a string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} object for logging/debugging purposes.
+
+\begin{DoxyNote}{Note}
+the exact string representation is unspecified and subject to change; don\textquotesingle{}t rely on the format of the string. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classfirebase_1_1firestore_1_1_transaction_options_a28819ee8ced2624637f96f2b319e2601}\index{firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!firebase::firestore::TransactionOptions@{firebase::firestore::TransactionOptions}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classfirebase_1_1firestore_1_1_transaction_options_a28819ee8ced2624637f96f2b319e2601} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{}{, }\item[{const \mbox{\hyperlink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Outputs the string representation of this {\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options}{Transaction\+Options}} object to the given stream.
+
+\begin{DoxySeeAlso}{See also}
+{\ttfamily \doxylink{classfirebase_1_1firestore_1_1_transaction_options_a3f2b7c59d7277b44731358c9dfeaecee}{To\+String()}} for comments on the representation format. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+build/windows/x64/extracted/firebase\+\_\+cpp\+\_\+sdk\+\_\+windows/include/firebase/firestore/transaction\+\_\+options.\+h\end{DoxyCompactItemize}
