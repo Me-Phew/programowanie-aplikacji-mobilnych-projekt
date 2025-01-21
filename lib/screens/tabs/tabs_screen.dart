@@ -88,6 +88,8 @@ class _TabsScreenState extends State<TabsScreen> {
     duration: Duration(seconds: 2),
   );
 
+  bool connectionLost = false;
+
   @override
   void initState() {
     super.initState();
@@ -101,10 +103,16 @@ class _TabsScreenState extends State<TabsScreen> {
 
       if (connectivity.contains(ConnectivityResult.none)) {
         ScaffoldMessenger.of(context).showSnackBar(connectionLostSnackbar);
+        connectionLost = true;
 
         return;
       }
 
+      if (!connectionLost) {
+        return;
+      }
+
+      connectionLost = false;
       ScaffoldMessenger.of(context).clearSnackBars();
       ScaffoldMessenger.of(context).showSnackBar(connectionRecoveredSnackbar);
     });
